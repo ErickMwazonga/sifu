@@ -1,8 +1,8 @@
 def swap(string, i, j):
     strlst = list(string)
     temp = strlst[i]
-    strlst[i] = strlst[j];
-    strlst[j] = temp;
+    strlst[i] = strlst[j]
+    strlst[j] = temp
     return "".join(strlst)
 
 def reverse(string):
