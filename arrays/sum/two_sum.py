@@ -29,9 +29,8 @@ def twoSum2(nums, target):
         else:
             high -= 1
 
-
 # Given 
-nums = [2, 7, 11, 15]
+nums = [2, 6, 11, 7, 15]
 target = 9
 
 print(twoSum(nums, target))
