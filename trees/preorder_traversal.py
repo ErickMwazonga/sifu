@@ -6,7 +6,6 @@ Input: [1,null,2,3]
      2
     /
    3
-
 Output: [1,2,3]
 '''
 
@@ -23,7 +22,7 @@ def preorderTraversal(self, root):
         
         if node:
             res.append(node.val)
-
+            
             stack.append(node.right)
             stack.append(node.left)
         
