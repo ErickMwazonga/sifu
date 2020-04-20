@@ -22,9 +22,13 @@ def is_valid(str):
         if char in matches:
             stack.append(char)
         else:
-            # If stack is empty then it's false e.g ']'
-            if not stack or matches[stack.pop()] != char:
+            if not stack:
                 return False
+
+            last_open_bracket = stack.pop()
+            if matches[last_open_bracket] != char:
+                return False
+
     return not stack
 
 
