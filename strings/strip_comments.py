@@ -30,7 +30,6 @@ def solution(string, markers):
     return '\n'.join(res)
 
 # solution("a #b\nc\nd $e f g", ["#", "$"])
-
 # solution("a #b\nc\nd $e f g", ["#", "$"]), "a\nc\nd")
 
 solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"]), 

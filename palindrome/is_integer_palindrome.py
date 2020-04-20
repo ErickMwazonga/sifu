@@ -1,11 +1,11 @@
 """
 Check Whether a Number is Palindrome or Not
 
-Time complexity : O(log_{10}(n))O(log 10(n)).
+Time complexity : O(log 10(n)).
 We divided the input by 10 for every iteration,
-so the time complexity is O(log_{10}(n))O(log10(n))
+so the time complexity is O(log10(n))
 
-Space complexity : O(1)O(1).
+Space complexity : O(1)
 """
 
 def is_palindrome(num):
@@ -18,10 +18,10 @@ def is_palindrome(num):
         num //= 10
     
     if original_num == reversed_num:
-        print(f'{num} is a palindrome')
+        return True
     else:
-        print(f'{num} is not a palindrome')
+        return False
 
 
-is_palindrome(121)
-is_palindrome(1212)
+assert is_palindrome(121) == True
+assert is_palindrome(1212) == False
