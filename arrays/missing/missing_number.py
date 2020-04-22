@@ -67,5 +67,5 @@ def find_missing1(full_list, partial_list):
     return xor_sum
 
 arr = [0, 1, 2, 4, 5, 6]
-print(get_missing1(arr))
+print(find_missing(arr))
 
