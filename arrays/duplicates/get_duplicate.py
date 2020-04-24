@@ -36,7 +36,7 @@ def getDuplicate(A):
 
 
 assert findDuplicate([1,3,4,2,2]) == 2
-assert findDuplicate([1,2,4,3,3]) == 3
+assert findDuplicate([1,2,4,3,3,3]) == 3
 
 # SIngle duplicate
 assert getDuplicate([1,3,4,2,2]) == 2

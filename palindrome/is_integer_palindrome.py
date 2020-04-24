@@ -17,11 +17,7 @@ def is_palindrome(num):
         reversed_num = (reversed_num * 10) + remainder
         num //= 10
     
-    if original_num == reversed_num:
-        return True
-    else:
-        return False
-
+    return original_num == reversed_num
 
 assert is_palindrome(121) == True
 assert is_palindrome(1212) == False

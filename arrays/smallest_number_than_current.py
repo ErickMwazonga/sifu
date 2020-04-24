@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+How Many Numbers Are Smaller Than the Current Number
 Given the array nums, for each nums[i] find out 
 how many numbers in the array are smaller than it.
 That is, for each nums[i] you have to count the number 
@@ -13,6 +13,7 @@ Output: [4,0,1,1,3]
 """
 
 def smallerNumbersThanCurrent(nums):
+    '''Time complexity: O(nlogn)'''
     sorted_nums = sorted(nums)
     mappings = {}
     
@@ -22,5 +23,5 @@ def smallerNumbersThanCurrent(nums):
     return [mappings[x] for x in nums]
 
 
-nums = [8, 1, 2, 2, 3] # Output: [4,0,1,1,3]
-print(smallerNumbersThanCurrent(nums))
+nums = [8, 1, 2, 2, 3] 
+assert smallerNumbersThanCurrent(nums) == [4,0,1,1,3]
