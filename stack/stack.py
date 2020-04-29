@@ -14,7 +14,7 @@ class Stack:
 
     def __len__(self):
         return len(self.items)
-    
+
     def size(self):
         return len(self.items)
 
@@ -28,7 +28,7 @@ class Stack:
 
     def append(self, item):
         return self.items.append(item)
-    
+
     def show(self):
         return self.items
 
