@@ -8,7 +8,8 @@ We define the validity of a string by these rules:
 Any left parenthesis '(' must have a corresponding right parenthesis ')'.
 Any right parenthesis ')' must have a corresponding left parenthesis '('.
 Left parenthesis '(' must go before the corresponding right parenthesis ')'.
-'*' could be treated as a single right parenthesis ')' or a single left parenthesis '(' or an empty string.
+'*' could be treated as a single right parenthesis ')' or a single
+ left parenthesis '(' or an empty string.
 An empty string is also valid.
 
 Input: "()" -> Output: True
@@ -23,6 +24,7 @@ start from right to left，any point in the middle
 #right brackets + #stars >= #left brackets
 """
 
+
 def is_valid(s):
     left, star, right = 0, 0, 0
 
@@ -35,7 +37,7 @@ def is_valid(s):
             right += 1
         if left + star < right:
             return False
-        
+
     left, star, right = 0, 0, 0
     for c in s[::-1]:
         if c == '(':

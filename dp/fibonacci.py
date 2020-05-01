@@ -1,8 +1,10 @@
 def fib(n):
-    dp = [0, 1]
-    for i in range(2, len(n)):
-        dp[i] = dp[i-1] + dp[i-2]
+    dp = [0] * n
 
-    return dp[n]
+    for i in range(n):
+        if i <= 2:
+            dp[i] = i + 1
+        else:
+            dp[i] = dp[i-1] + dp[i-2]
 
-fib(5)
+    return dp[-1]

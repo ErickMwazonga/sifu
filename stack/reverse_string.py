@@ -6,7 +6,7 @@ def reverse(str):
 
     for i in str:
         stack.append(i)
-    
+
     for i in range(len(stack)):
         reversed = reversed + stack.pop()
 

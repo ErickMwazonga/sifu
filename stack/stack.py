@@ -8,6 +8,7 @@ max(), which returns the maximum value in the stack currently.
 If there are no elements in the stack, then it should throw an error or return null.
 '''
 
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -23,14 +24,18 @@ class Stack:
             raise Exception("Stack empty!")
         return self.items.pop()
 
+    def peek(self):
+        return self.items[-1]
+
     def isEmpty(self):
-        return self.size() == 0
+        return not self.size()
 
     def append(self, item):
         return self.items.append(item)
 
     def show(self):
         return self.items
+
 
 # s = Stack()
 # s.append('1')

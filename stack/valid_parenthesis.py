@@ -1,5 +1,7 @@
 """
-Given a string containing just the characters '(', ')', '{', '}', '[' and ']', 
+CHALLENGE: VALID PARENTHESIS
+Given a string containing just the characters
+'(', ')', '{', '}', '[' and ']',
 determine if the input string is valid.
 
 An input string is valid if:
@@ -14,11 +16,12 @@ Input: "([)]" -> Output: false
 Input: "{[]}" -> Output: true
 """
 
-def is_valid(str):
+
+def is_valid(_str: str) -> bool:
     stack = []
     matches = {'(': ')', '[': ']', '{': '}'}
 
-    for char in str:
+    for char in _str:
         if char in matches:
             stack.append(char)
         else:
@@ -32,11 +35,9 @@ def is_valid(str):
     return not stack
 
 
-assert is_valid(']') == False
-assert is_valid('()') == True
-assert is_valid('()[]{}') == True
-assert is_valid('(]') == False
-assert is_valid('([)]') == False
-assert is_valid('{[]}') == True
-
-
+assert is_valid(']') is False
+assert is_valid('()') is True
+assert is_valid('()[]{}') is True
+assert is_valid('(]') is False
+assert is_valid('([)]') is False
+assert is_valid('{[]}') is True

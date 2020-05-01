@@ -9,21 +9,21 @@ def push_digits(number):
 
 # Function to reverse the number 
 def reverse_number(number): 
-	
+
 	# Function call to push number's 
 	# digits to stack 
 	push_digits(number)
-	
+
 	reverse = 0
 	i = 1
-	
+
 	# Popping the digits and forming 
 	# the reversed number 
 	while (len(st) > 0): 
 		reverse = reverse + (st[len(st) - 1] * i)
 		st.pop()
 		i = i * 10
-	
+
 	# Return the reversed number formed 
 	return reverse
 
