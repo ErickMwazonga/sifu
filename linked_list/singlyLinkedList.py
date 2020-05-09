@@ -6,7 +6,7 @@ class Node:
     def __init__(self, data=None, next=None):
         self.data = data
         self.next = next
-    
+
     def __repr__(self):
         return repr(self.data)
 
@@ -15,7 +15,7 @@ class SinglyLinkedList:
     def __init__(self):
         """Create new SinglyLinkedList: 0(1) time"""
         self.head = None
-    
+
     def __repr__(self):
         """Return string representation of the list: 0(n) time"""
         nodes = []
@@ -53,13 +53,13 @@ class SinglyLinkedList:
         """Remove first occurrence of the key: 0(n) time"""
         curr = self.head
         prev = None
-        
+
         while curr and curr.data != key:
             prev = curr
             curr = curr.next
-        if prev is None: # Delete first element
+        if prev is None:  # Delete first element
             self.head = curr.next
-        elif curr: # Delete the other nodes
+        elif curr:  # Delete the other nodes
             prev.next = curr.next
             curr.next = None
 
@@ -74,8 +74,6 @@ class SinglyLinkedList:
             prev_node = curr
             curr = next_node
         self.head = prev_node
-
-
 
 
 lst = SinglyLinkedList()

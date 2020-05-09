@@ -10,28 +10,28 @@ If there are no elements in the stack, then it should throw an error or return n
 
 
 class Stack:
+
     def __init__(self):
         self.items = []
 
-    def __len__(self):
-        return len(self.items)
+    def push(self, item):
+        return self.items.append(item)
+
+    def pop(self):
+        if not self.items:
+            return None
+        return self.items.pop()
+
+    def peek(self):
+        if not self.items:
+            return None
+        return self.items[-1]
 
     def size(self):
         return len(self.items)
 
-    def pop(self):
-        if self.isEmpty():
-            raise Exception("Stack empty!")
-        return self.items.pop()
-
-    def peek(self):
-        return self.items[-1]
-
     def isEmpty(self):
         return not self.size()
-
-    def append(self, item):
-        return self.items.append(item)
 
     def show(self):
         return self.items
