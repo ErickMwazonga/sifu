@@ -13,6 +13,7 @@ Input : n = 5 and array[] = {1, 2, 3, 4 ,3}
 Output: 3
 '''
 
+
 def duplicatePositions(nums):
     res = []
 
@@ -21,9 +22,9 @@ def duplicatePositions(nums):
 
         if nums[pos] < 0:
             res.append(pos + 1)
-        
+
         nums[pos] = -nums[pos]
-    
+
     return res
 
 

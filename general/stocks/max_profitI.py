@@ -24,6 +24,7 @@ from typing import List
 # REVISIT - TODO
 def maxProfit(prices: List[int]) -> int:
     '''Linear Time, Constant Space'''
+    
     n = len(prices)
     if n < 2:
         return 0

@@ -20,6 +20,7 @@ def fractional_knapsack(weights, profits, capacity):
 
     return max_value, fractions
 
+
 profits = [5, 10, 15, 7, 8, 9, 4]
 # profits = [60, 100, 120]
 weights = [1, 3, 5, 4, 1, 3, 2]

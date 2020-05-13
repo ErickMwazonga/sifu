@@ -14,6 +14,7 @@ Invalid:
     [1,2]
 """
 
+
 def get_duplicates(arr):
     counts = {}
 
@@ -27,7 +28,6 @@ def get_duplicates(arr):
         else:
             counts[value] = 1
 
-get_duplicates([1,2, 2, 2, 3])
+
+get_duplicates([1, 2, 2, 2, 3])
 # get_duplicates([1,2,1,2])
-
-

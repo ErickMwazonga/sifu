@@ -8,16 +8,18 @@ so the time complexity is O(log10(n))
 Space complexity : O(1)
 """
 
+
 def is_palindrome(num):
     original_num = num
     reversed_num = 0
-    
+
     while(num != 0):
         remainder = num % 10
         reversed_num = (reversed_num * 10) + remainder
         num //= 10
-    
+
     return original_num == reversed_num
+
 
 assert is_palindrome(121) == True
 assert is_palindrome(1212) == False
