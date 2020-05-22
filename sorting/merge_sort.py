@@ -1,44 +1,98 @@
-# TODO
-'''
-So what's our total time cost? 0(nlogn)
-0(nlogn) comes from the number of times we have to cut n
-in half to get down to sublists of just 1 element (our base case). 
-The additional nn comes from the time cost of merging all nn
-items together each time we merge two sorted sublists.
-'''
+def mergeSort(A):
+    '''
+    Time O(n*log n), Space O(n)
+    '''
+
+    if len(A) > 1:
+        mid = len(A) // 2
+        L = A[:mid]
+        R = A[mid:]
+
+        # Sort the two halves
+        mergeSort(L)
+        mergeSort(R)
+
+        i = j = k = 0
+
+        # Until we reach either end of either L or M
+        # pick smaller among them
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                A[k] = L[i]
+                i += 1
+            else:
+                A[k] = R[j]
+                j += 1
+            k += 1
+
+        # Copy any remaining elements of L[]
+        while i < len(L):
+            A[k] = L[i]
+            i += 1
+            k += 1
+
+        # Copy any remaining elements of R[]
+        while j < len(R):
+            A[k] = R[j]
+            j += 1
+            k += 1
 
 
-def merge_sort(list_to_sort):
-    # Base case: lists with fewer than 2 elements are sorted
-    if len(list_to_sort) < 2:
-        return list_to_sort
+# ABSTRACT SOLUTION - TO BE REVISED
+def mergeSort2(A, low, high):
+    if low < high:
+        mid = (high + low) // 2
+        mergeSort2(A, low, mid)
+        mergeSort2(A, mid+1, high)
+        merge(A, low, mid, high)
 
-    # Step 1: divide the list in half
-    # We use integer division, so we'll never get a "half index"
-    mid_index = len(list_to_sort) // 2
-    left = list_to_sort[:mid_index]
-    right = list_to_sort[mid_index:]
 
-    # Step 2: sort each half
-    sorted_left = merge_sort(left)
-    sorted_right = merge_sort(right)
+def merge(A, low, mid, high):
+    len_lefthalf = (mid - low) + 1
+    len_righthalf = high - mid
 
-    # Step 3: merge the sorted halves
-    sorted_list = []
-    current_index_left = 0
-    current_index_right = 0
+    # create temp arrays
+    L = [0] * len_lefthalf
+    R = [0] * len_righthalf
 
-    # sortedLeft's first element comes next
-    # if it's less than sortedRight's first
-    # element or if sortedRight is exhausted
-    while len(sorted_list) < len(left) + len(right):
-        if ((current_index_left < len(left)) and
-                (current_index_right == len(right) or
-                 sorted_left[current_index_left] <
-                 sorted_right[current_index_right])):
-            sorted_list.append(sorted_left[current_index_left])
-            current_index_left += 1
+    # Copy data to temp arrays L[] and R[]
+    for i in range(0, len_lefthalf):
+        L[i] = A[low + i]
+
+    for j in range(0, len_righthalf):
+        R[j] = A[mid + 1 + j]
+
+    # Merge the temp arrays back into arr[l..r]
+    i = 0     # Initial index of first subarray
+    j = 0     # Initial index of second subarray
+    k = low     # Initial index of merged subarray
+
+    while i < len_lefthalf and j < len_righthalf:
+        if L[i] <= R[j]:
+            A[k] = L[i]
+            i += 1
         else:
-            sorted_list.append(sorted_right[current_index_right])
-            current_index_right += 1
-    return sorted_list
+            A[k] = R[j]
+            j += 1
+        k += 1
+
+    # Copy any remaining elements of L[]
+    while i < len_lefthalf:
+        A[k] = L[i]
+        i += 1
+        k += 1
+
+    # Copy any remaining elements of R[]
+    while j < len_righthalf:
+        A[k] = R[j]
+        j += 1
+        k += 1
+
+
+A = [8, 7, 2, 1, 0, 9, 6]
+size = len(A)
+# mergeSort(A, 0, size - 1)
+
+
+mergeSort(A)
+assert A == [0, 1, 2, 6, 7, 8, 9]

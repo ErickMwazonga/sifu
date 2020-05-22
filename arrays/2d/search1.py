@@ -45,11 +45,9 @@ class SolutionSorted:
         while i < n_rows and j >= 0:
             if matrix[i][j] == target:
                 return True
-            elif matrix[i][j] < target:
-                # Move down a row
+            elif matrix[i][j] < target: # Move down a row
                 i += 1
-            elif matrix[i][j] > target:
-                # Move left a column
+            elif matrix[i][j] > target: # Move left a column
                 j -= 1
         return False
 

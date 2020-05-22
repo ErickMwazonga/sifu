@@ -4,10 +4,10 @@ https://www.programiz.com/dsa/quick-sort
 Worst Case Complexity -> O(n^2)
 Pivot element picked is either the greatest or the smallest element.
 
-Best Case Complexity -> O(n*log n)
+Best Case Complexity -> O(nlog n)
 Pivot element is always the middle element or near to the middle element.
 
-Average Case Complexity [Big-theta]: O(n*log n)
+Average Case Complexity [Big-theta]: O(nlog n)
 It occurs when the above conditions do not occur.
 
 The space complexity -> O(log n).

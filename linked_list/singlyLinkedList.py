@@ -1,11 +1,9 @@
 class Node:
-    """
-    A node in a single linked list
-    """
+    '''A node in a single linked list'''
 
-    def __init__(self, data=None, next=None):
+    def __init__(self, data=None):
         self.data = data
-        self.next = next
+        self.next = None
 
     def __repr__(self):
         return repr(self.data)
@@ -13,61 +11,112 @@ class Node:
 
 class SinglyLinkedList:
     def __init__(self):
-        """Create new SinglyLinkedList: 0(1) time"""
+        '''Create new SinglyLinkedList: 0(1) time'''
         self.head = None
 
-    def __repr__(self):
-        """Return string representation of the list: 0(n) time"""
+    def printList(self):
+        '''Return string representation of the list: 0(n) time'''
         nodes = []
         curr = self.head
+
         while curr:
-            nodes.append(repr(curr))
+            nodes.append(curr.data)
             curr = curr.next
-        return f"[{', '.join(nodes)}]"
+        return nodes
 
     def prepend(self, data):
-        """Insert a new element at the beginning: 0(1) time"""
-        self.head = Node(data=data, next=self.head)
+        '''Insert at the beginning: 0(1) time'''
+        new_node = Node(data)
+
+        new_node.next = self.head
+        self.head = new_node
 
     def append(self, data):
-        """Insert a new element at the end: 0(n) time"""
-        if not self.head:
-            self.head = Node(data=data)
+        '''Insert at the end: 0(n) time'''
+        new_node = Node(data)
+
+        if not self.head:  # Empty List
+            self.head = new_node
             return
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-        curr.next = Node(data=data)
+
+        last = self.head
+        while last.next:
+            last = last.next
+
+        last.next = new_node
+
+    def insertAfter(self, node, data):
+        ''' Insert after a node'''
+        if node is None:
+            return
+
+        new_node = Node(data)
+        new_node.next = node.next
+        node.next = new_node
 
     def find(self, key):
-        """
+        '''
         Search for the first element with key, return element
         or None if does not exist: 0(n) time
-        """
+        '''
         curr = self.head
         while curr and curr.data != key:
             curr = curr.next
         return curr
 
-    def remove(self, key):
-        """Remove first occurrence of the key: 0(n) time"""
+    def deleteNth(self, position):
+        '''Remove first occurrence of the position: 0(n) time'''
+
+        if self.head is None:  # Empty list
+            return
+
+        prev = None
+        curr = self.head
+        i = 0
+
+        # If position if of the first element
+        if position == 0:
+            self.head = curr.next
+            curr = None
+            return
+
+        # Find the key to be deleted
+        while curr and i < position:
+            i += 1
+            prev = curr
+            curr = curr.next
+
+        if not curr:
+            return 'Position beyond length of list'
+
+        next = curr.next
+        prev.next = next
+
+    def deleteNode(self, data):
+        '''Remove first occurrence of the data: 0(n) time'''
         curr = self.head
         prev = None
 
-        while curr and curr.data != key:
+        while curr and curr.data != data:
             prev = curr
             curr = curr.next
-        if prev is None:  # Delete first element
+
+        # Delete first element
+        if prev is None:
             self.head = curr.next
-        elif curr:  # Delete the other nodes
+
+        # Delete the other nodes
+        elif curr:
             prev.next = curr.next
             curr.next = None
 
     def reverse(self):
-        """Reverse the list in-place: 0(n) time"""
+        '''Reverse the list in-place: 0(n) time'''
+
         curr = self.head
         prev_node = None
         next_node = None
+
         while curr:
             next_node = curr.next
             curr.next = prev_node
@@ -76,15 +125,19 @@ class SinglyLinkedList:
         self.head = prev_node
 
 
-lst = SinglyLinkedList()
-# print(lst)
+sll = SinglyLinkedList()
 
-lst.prepend(23)
-lst.prepend('a')
-lst.prepend(42)
-lst.prepend('X')
-lst.append('the')
-lst.append('end')
+sll.prepend(23)
+sll.prepend('a')
+sll.prepend(42)
+sll.prepend('X')
+sll.append('the')
+sll.append('end')
 
-# print(lst)
-print(lst.find('end'))
+
+assert sll.printList() == ['X', 42, 'a', 23, 'the', 'end']
+assert sll.deleteNth(10) == 'Position beyond length of list'
+sll.deleteNth(3)
+assert sll.printList() == ['X', 42, 'a', 'the', 'end']
+sll.deleteNode('the')
+assert sll.printList() == ['X', 42, 'a', 'end']
