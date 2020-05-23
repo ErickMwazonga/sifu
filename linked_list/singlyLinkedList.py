@@ -141,3 +141,5 @@ sll.deleteNth(3)
 assert sll.printList() == ['X', 42, 'a', 'the', 'end']
 sll.deleteNode('the')
 assert sll.printList() == ['X', 42, 'a', 'end']
+sll.reverse()
+assert sll.printList() == ['end', 'a', 42, 'X']
