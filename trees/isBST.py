@@ -8,7 +8,8 @@ the nodes in its right subtree are less than its parent’s key.
 If a node is a right child, then its key and the keys of
 the nodes in its left subtree are greater than its parent’s key.
 """
-# A tree node
+
+
 class Tree: 
   def __init__(self, data): 
     self.data = data 

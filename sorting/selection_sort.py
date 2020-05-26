@@ -1,36 +1,33 @@
 """
 Selection Sort
-The selection sort algorithm sorts an array by repeatedly finding the minimum element 
-(considering ascending order) from unsorted part and putting it at the beginning.
-The algorithm maintains two subarrays in a given array.
+Selection sort is an algorithm that selects
+the smallest element from an unsorted list in each iteration
+and places that element at the beginning of the unsorted list.
 
-1) The subarray which is already sorted.
-2) Remaining subarray which is unsorted.
+Worst: O(n2) -> sort in ascending order but the array is in descending.
+Best: O(n2) -> array is already sorted,.
+Average: O(n2) -> elements of the array are in jumbled order.
 
-In every iteration of selection sort, the minimum element (considering ascending order)
-from the unsorted subarray is picked and moved to the sorted subarray.
-
-Time Complexity: O(n2) as there are two nested loops.
-
-Auxiliary Space: O(1)
-The good thing about selection sort is it never makes more than O(n) swaps 
-and can be useful when memory write is a costly operation.
+Space: O(1) -> extra variable temp for min index.
 """
 
-def selection_sort(A):
+from typing import List
+
+
+def selection_sort(A: List) -> List:
     n = len(A)
 
-    for i in range(n-1):
-        _min = i
-        for j in range(i+1, n):
-            if A[j] < A[_min]:
-                _min =  j
-        A[i], A[_min] = A[_min], A[i] 
-    
+    for step in range(n-1):
+        min_index = step
+        for i in range(step+1, n):
+            if A[i] < A[min_index]:
+                min_index = i
+
+        A[step], A[min_index] = A[min_index], A[step]
+
     return A
 
-a = [3, 5, 1, 6, 9, 2]
-assert selection_sort(a) == [1, 2, 3, 5, 6, 9]
 
-
-
+data = [-2, 45, 0, 11, -9]
+selection_sort(data)
+assert data == [-9, -2, 0, 11, 45]
