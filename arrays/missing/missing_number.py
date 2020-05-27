@@ -13,12 +13,14 @@ Input: arr[] = {1, 2, 3, 5}
 Output: 4
 """
 
+
 def get_missing(A): 
     length = len(A) + 1
     total = length * (length + 1) // 2
 
     sum_of_A = sum(A) 
     return total - sum_of_A
+
 
 def get_missing_one(nums):
     """
@@ -40,16 +42,18 @@ def get_missing_one(nums):
         xor_all ^= i
     return xor_all ^ xor_nums
 
+
 def get_missing_zero(nums):
     length = len(nums)
     xor_nums = nums[0]
     xor_all = 0
-    
+
     for i in range(1, length):
         xor_nums ^= nums[i]
     for i in range(1, length+1):
         xor_all ^= i
     return xor_nums ^ xor_all
+
 
 # Find missing between two given sets
 def find_missing(full_list, partial_list):
@@ -66,6 +70,6 @@ def find_missing1(full_list, partial_list):
         xor_sum ^= num
     return xor_sum
 
+
 arr = [0, 1, 2, 4, 5, 6]
 print(find_missing(arr))
-

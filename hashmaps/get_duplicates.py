@@ -24,7 +24,8 @@ def get_duplicates(arr):
     for value in arr:
         if value in counts:
             counts[value] += 1
-            if counts.get(value) == 2: print(value, end=' ')
+            if counts.get(value) == 2:
+                print(value, end=' ')
         else:
             counts[value] = 1
 

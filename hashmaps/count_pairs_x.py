@@ -17,38 +17,25 @@ Input : arr[] = {1, 2, 3}
 Output : 0
 """
 
-def countPairs(arr):
-    """Time Complexity : O(n2)"""
-    n = len(arr)
-    ans = 0
-
-    for i in range(0 , n):
-        for j in range(i + 1, n):
-            if (arr[i] == arr[j]):
-                ans += 1
-        
-    return ans 
-
 
 def countPairs2(arr):
     """Time Complexity : O(n)"""
     n = len(arr)
-    mp = dict() 
+    mp = {}
 
     # Finding frequency of each number.
     for i in range(n):
         elem = arr[i]
-        if elem in mp.keys(): 
-            mp[elem] += 1
-        else: 
-            mp[elem] = 1
-    
+        if elem in mp.keys():
+            mp[elem] = mp.get(elem, 0) + 1
+
     # Calculating pairs of each value.
     ans = 0
     for it in mp:
         count = mp[it]
         ans += (count * (count - 1)) // 2
     return ans
+
 
 def countPairs3(arr):
     def no_of_repeats(n):
@@ -60,17 +47,19 @@ def countPairs3(arr):
     res = sum([no_of_repeats(i) for i in freqs])
     return res
 
+
 def countPairs4(arr):
     freqs = [arr.count(i) for i in list(set(arr))]
 
     def no_of_repeats(n):
         return (n * (n - 1)) // 2
-    
+
     res = sum([no_of_repeats(i) for i in freqs])
     return res
 
-arr = [1, 1, 2 ] 
+
+arr = [1, 1, 2] 
 arr1 = [1, 1, 1, 3, 3, 4, 1]
 # print(countPairs(arr))
-print(countPairs(arr1)) 
-print(countPairs3(arr1)) 
+print(countPairs2(arr1))
+print(countPairs3(arr1))

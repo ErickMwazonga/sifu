@@ -27,3 +27,10 @@ def merge_ranges(meetings):
             merged_meetings.append((current_meeting_start, current_meeting_end))
 
     return merged_meetings
+
+
+meetings1 = [(0, 1), (3, 5), (4, 8), (10, 12), (9, 10)]
+assert merge_ranges(meetings1) == [(0, 1), (3, 8), (9, 12)]
+
+meetings2 = [(1, 3), (5, 8), (4, 10), (20, 25)]
+assert merge_ranges(meetings2) == [(1, 3), (4, 10), (20, 25)]

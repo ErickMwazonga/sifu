@@ -10,8 +10,10 @@ find the duplicate one.
 You must not modify the array (assume the array is read only).
 You must use only constant, O(1) extra space.
 Your runtime complexity should be less than O(n2).
-There is only one duplicate number in the array, but it could be repeated more than once.
+There is only one duplicate number in the array,
+but it could be repeated more than once.
 '''
+
 
 def findDuplicate(nums):
     '''
@@ -27,17 +29,17 @@ def findDuplicate(nums):
         nums[pos] = -nums[pos]
 
 
-def getDuplicate(A): 
+def getDuplicate(A):
     length = len(A) - 1
     total = length * (length + 1) // 2
 
-    sum_of_A = sum(A) 
+    sum_of_A = sum(A)
     return sum_of_A - total
 
 
-assert findDuplicate([1,3,4,2,2]) == 2
-assert findDuplicate([1,2,4,3,3,3]) == 3
+assert findDuplicate([1, 3, 4, 2, 2]) == 2
+assert findDuplicate([1, 2, 4, 3, 3, 3]) == 3
 
 # SIngle duplicate
-assert getDuplicate([1,3,4,2,2]) == 2
-assert getDuplicate([1,2,4,3,3]) == 3
+assert getDuplicate([1, 3, 4, 2, 2]) == 2
+assert getDuplicate([1, 2, 4, 3, 3]) == 3

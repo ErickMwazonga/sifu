@@ -1,4 +1,5 @@
-# Tree traversal
+# Tree traversals
+# Traversing a tree means visiting every node in the tree.
 
 
 class Node:
@@ -9,6 +10,8 @@ class Node:
 
 
 def inorder(root):
+    '''Left, Root, Right'''
+
     if root:
         inorder(root.left)
         print(str(root.val) + "->", end='')
@@ -16,6 +19,8 @@ def inorder(root):
 
 
 def postorder(root):
+    '''Left, Right, Root'''
+
     if root:
         postorder(root.left)
         postorder(root.right)
@@ -23,6 +28,8 @@ def postorder(root):
 
 
 def preorder(root):
+    '''Root, Left, Right'''
+
     if root:
         print(str(root.val) + "->", end='')
         preorder(root.left)
