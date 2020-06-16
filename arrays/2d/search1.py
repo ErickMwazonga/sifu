@@ -31,6 +31,25 @@ from typing import List
 Matrix = List[List[int]]
 
 
+class Solution:
+    def searchMatrix(self, matrix: Matrix, target: int) -> bool:
+        if not matrix or not matrix[0]:
+            return False
+
+        for i in range(len(matrix)):
+            if target < matrix[i][0] or target > matrix[i][-1]:
+                i += 1
+
+            if i >= len(matrix):
+                return False
+
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == target:
+                    return True
+
+        return False
+
+
 class SolutionSorted:
     '''
     Notice that the elements become smaller as we move
@@ -45,9 +64,9 @@ class SolutionSorted:
         while i < n_rows and j >= 0:
             if matrix[i][j] == target:
                 return True
-            elif matrix[i][j] < target: # Move down a row
+            elif matrix[i][j] < target:  # Move down a row
                 i += 1
-            elif matrix[i][j] > target: # Move left a column
+            elif matrix[i][j] > target:  # Move left a column
                 j -= 1
         return False
 
