@@ -5,10 +5,8 @@ rotated at some unknown point.
 Write a code to find the minimum element in a sorted and rotated array.
 
 You may assume no duplicate exists in the array.
-Example 1:
+Examples
 Input: [6, 7, 8, 1, 2] -> 1
-
-Example 2:
 Input: [8, 9, 10, 1, 0, 1, 2] -> 0
 '''
 

@@ -8,9 +8,7 @@ have to modify the input 2D matrix directly.
 DO NOT allocate another 2D matrix and do the rotation.
 '''
 
-
 class Solution:
-
     def rotate_final(self, matrix):
         # Two steps: reverse and transpose in place
         matrix.reverse()
@@ -53,4 +51,8 @@ m = [
     [4, 5, 6],
     [7, 8, 9]
 ]
-s.rotate(m) == [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+s.rotate(m) == [
+    [7, 4, 1],
+    [8, 5, 2],
+    [9, 6, 3]
+]

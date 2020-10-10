@@ -14,21 +14,7 @@ There is only one duplicate number in the array,
 but it could be repeated more than once.
 '''
 
-
-def findDuplicate(nums):
-    '''
-    Time complixity 0(n)
-    Space Complexity 0(1) extra space
-    '''
-    for v in nums:
-        pos = abs(v) - 1
-
-        if nums[pos] < 0:
-            return pos + 1
-
-        nums[pos] = -nums[pos]
-
-
+# A single duplicate
 def getDuplicate(A):
     length = len(A) - 1
     total = length * (length + 1) // 2
@@ -36,10 +22,6 @@ def getDuplicate(A):
     sum_of_A = sum(A)
     return sum_of_A - total
 
-
-assert findDuplicate([1, 3, 4, 2, 2]) == 2
-assert findDuplicate([1, 2, 4, 3, 3, 3]) == 3
-
-# SIngle duplicate
+# Single duplicate
 assert getDuplicate([1, 3, 4, 2, 2]) == 2
 assert getDuplicate([1, 2, 4, 3, 3]) == 3

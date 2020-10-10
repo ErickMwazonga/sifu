@@ -19,7 +19,7 @@ class LinkedList(object):
         current_node = self.head
         next_node = current_node.next
 
-        while next_node is not None:
+        while (next_node):
             current_node.next = previous_node
             previous_node = current_node
             current_node = next_node

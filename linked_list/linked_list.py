@@ -41,7 +41,7 @@ def get_nth(head, idx):
     #     current_node = current_node.next
     #     num_of_nodes += 1
     
-    # return current_node
+    return current_node
 
 def insert_nth(head, index, data):
     num_of_nodes = 1
@@ -52,7 +52,7 @@ def insert_nth(head, index, data):
         return Node(data)
 
     # Prepend node - Set new head 
-    if(index == 0):
+    if index == 0:
         new_node = Node(data)
         new_node.next = head
         return new_node
@@ -73,7 +73,7 @@ def insert_nth(head, index, data):
     return head
 
 def delete_nth(head, index):
-    if(index == 0):
+    if index == 0:
         new_head = head.next
         head.next = None
         return new_head

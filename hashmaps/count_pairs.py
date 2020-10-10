@@ -21,16 +21,12 @@ Output : 0
 
 def countPairs(arr):
     """Time Complexity : O(n)"""
-    n = len(arr)
     mp = {}
 
     # Finding frequency of each number.
-    for i in range(n):
-        elem = arr[i]
-
-        if elem in mp.keys():
-            mp[elem] = mp.get(elem, 0) + 1
-
+    for elem inarr:
+        mp[elem] = mp.get(elem, 0) + 1
+       
     # Calculating pairs of each value.
     ans = 0
     for it in mp:
@@ -39,8 +35,5 @@ def countPairs(arr):
     return ans
 
 
-arr = [1, 1, 2]
-arr1 = [1, 1, 1, 3, 3, 4, 1]
-# print(countPairs(arr))
-print(countPairs(arr1))
-print(countPairs(arr1)) 
+assert countPairs([1, 1, 2]) == 2
+assert countPairs([1, 1, 1, 3, 3, 4, 1]) = ???

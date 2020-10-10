@@ -4,7 +4,6 @@ For example, given:
   [(0, 1), (3, 8), (9, 12)]
 '''
 
-
 def merge_ranges(meetings):
     '''O(nlgn) time and O(n)O(n) space.'''
 

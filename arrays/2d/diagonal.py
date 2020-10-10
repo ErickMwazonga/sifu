@@ -2,6 +2,7 @@
 def secDiagonal(A):
     res = []
     i, j = 0, len(A)-1
+    
     while i < len(A) and j >= 0:
         res.append(A[i][j])
         i += 1

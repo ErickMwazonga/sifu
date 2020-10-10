@@ -22,21 +22,16 @@ from typing import List
 def longest_subsequence(A: List) -> int:
     visited = set(A)
     max_len = 0
-    for i in range(len(A)):
+
+    for num in nums:
         count = 1
-        backward, forward = A[i] - 1, A[i] + 1
-        while backward in visited:
-            visited.remove(backward)
-            count += 1
-            backward -= 1
+        forward = num + 1
+
         while forward in visited:
-            visited.remove(forward)
             count += 1
             forward += 1
-        if count > max_len:
-            max_len = count
+        max_len = max(max_len, count)
     return max_len
-
 
 assert longest_subsequence([1, 9, 3, 10, 4, 20, 2]) == 4
 assert longest_subsequence([36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]) == 5
@@ -46,16 +41,21 @@ assert longest_subsequence([-1, 0, 1]) == 3
 def longest_subsequence2(A: List) -> int:
     visited = set(A)
     max_len = 0
-    for i in range(len(A)):
+
+    for num in A:
         count = 1
-        forward = A[i] + 1
+        backward, forward = num - 1, num + 1
+
+        while backward in visited:
+            count += 1
+            backward -= 1
         while forward in visited:
+            visited.remove(forward)
             count += 1
             forward += 1
-        if count > max_len:
-            max_len = count
-    return max_len
+        max_len = max(max_len, count)
 
+    return max_len
 
 assert longest_subsequence2([1, 9, 3, 10, 4, 20, 2]) == 4
 assert longest_subsequence2([36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]) == 5

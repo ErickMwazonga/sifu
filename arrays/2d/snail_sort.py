@@ -93,3 +93,38 @@ def spiralOrder(matrix):
         col_begin += 1
 
     return res
+
+
+# INTERVIEW - MICROSOFT ON-SCREEN
+# ---------------------------------
+def visit_in_spiral(matrix):
+	result = []
+  
+  if not len(matrix):
+  	return matrix
+  
+  def spiral_helper(matrix):
+  	# 1. first row
+    first_row = matrix[0]
+    result.extend(first_row)
+    matrix.pop(0)
+    
+  	# 2. loop row 1 to n: print last item
+    for i in range(0, len(matrix)):
+        result.append(matrix[i].pop())
+        
+    # 3. last row in reverse
+    for num in reversed(matrix[-1]): # -1 returns the last item
+    	result.append(num)
+      matrix.pop()
+      
+     # 4. first item of the remaining arrays
+     for i in range(len(matrix)-1, -1, -1):
+     	for j in range(0, len(matrix[0])):
+      	result.append(num)
+        matrix[i].pop(0)
+    	
+      if len(matrix):
+      	spiral_helper(matrix)
+    
+    return result

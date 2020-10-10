@@ -24,8 +24,6 @@ def rob(nums: List[int]) -> int:
     Time Complexity: O(n)
     Space Complexity: O(n)
     '''
-    if not nums:
-        return 0
 
     n = len(nums)
     if n <= 2:
@@ -50,8 +48,6 @@ def rob2(nums: List[int]) -> int:
     Time Complexity: O(n)
     Space Complexity: O(n)
     '''
-    if not nums:
-        return 0
 
     n = len(nums)
     if n <= 2:

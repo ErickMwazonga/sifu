@@ -24,4 +24,4 @@ def smallerNumbersThanCurrent(nums):
 
 
 nums = [8, 1, 2, 2, 3] 
-assert smallerNumbersThanCurrent(nums) == [4,0,1,1,3]
+assert smallerNumbersThanCurrent(nums) == [4, 0, 1, 1, 3]

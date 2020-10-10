@@ -2,11 +2,8 @@
 Minimum rotations required to get the same string
 Given a string, we need to find the minimum number of rotations required to get the same string.
 
-Input : s = "geeks"
-Output : 5
-
-Input : s = "aaaa"
-Output : 1
+Input : s = "geeks" -> 5
+Input : s = "aaaa" -> 1
 """
 
 def findRotations(str): 
@@ -23,6 +20,13 @@ def findRotations(str):
         # come out of the loop. 
         if (str == substring): 
             return i 
-    return n 
+    return n
+
+def findRotations2(_str):
+    check = ''
+    for r in range(1, len(_str) + 1):
+        check = _str[r:] + _str[:r]
+        if check == _str:
+            return r
 
 

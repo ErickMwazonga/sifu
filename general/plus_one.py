@@ -63,6 +63,7 @@ def plus_one(digits):
             i -= 1
         else:
             break
+
     if i == -1:
         digits.insert(0, 1)
 

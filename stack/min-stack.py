@@ -4,12 +4,11 @@ class MinStack:
         self.minData = []
 
     def push(self, x):
-        self.data.append(x)
         # Check if we need to update the minimum value
         if len(self.minData) == 0 or x <= self.minData[-1]:
             self.minData.append(x)
-            self.min = x
-
+        self.data.append(x)
+    
     def pop(self):
         if not len(self.data):
             return None
