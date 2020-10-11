@@ -21,15 +21,15 @@ def minimum_reversals(s: str) -> int:
                 stack.pop()
 
     # now the stack contains only unbalanced parenthesis
-    split = 0
     n = len(stack)
     if not n:
         retun 0 # Already Balanced
-    if n % 2 ! == 0:
+    if n % 2 != 0:
         return -1 # Cannot be balanced
     
+    open_count = 0
     while(n and stack[-1] != '}'):
         stack.pop()
-        split += 1
+        open_count += 1
   
-    return ceil((n-split)/2) + ceil(split/2) 
+    return (n - open_count) // 2 + open_count % 2

@@ -36,12 +36,24 @@ def get_nth(head, idx):
             break
         current_node = current_node.next
         num_of_nodes += 1
-
-    # while(num_of_nodes < 3):
-    #     current_node = current_node.next
-    #     num_of_nodes += 1
     
     return current_node
+
+def get_ith_item(head, i):
+    if i < 0:
+        raise ValueError('No negatives!!! 🐱')
+
+    current_node = head
+    current_position = 0
+
+    while current_node:
+        if current_position == i:
+            return current_node
+
+        current_node = current_node.next
+        current_position += 1
+
+    raise ValueError('Not Found')
 
 def insert_nth(head, index, data):
     num_of_nodes = 1
@@ -85,11 +97,6 @@ def delete_nth(head, index):
         if num_of_nodes == index:
             to_delete = current_node.next
             current_node.next = to_delete.next
-
-            # if to_delete:
-            #     current_node.next = to_delete.next
-            # else:
-            #     current_node.next = None
             break
 
         current_node = current_node.next 

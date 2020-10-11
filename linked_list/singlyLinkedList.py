@@ -122,7 +122,9 @@ class SinglyLinkedList:
             curr.next = prev_node
             prev_node = curr
             curr = next_node
+
         self.head = prev_node
+        return self.head
 
 
 sll = SinglyLinkedList()

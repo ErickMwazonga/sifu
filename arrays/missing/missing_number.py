@@ -11,6 +11,14 @@ Input: arr[] = {1, 2, 3, 5} -> 4
 """
 
 
+def missingNumber(nums):
+    n = len(nums)
+    visited = set(nums)
+    
+    for i in range(0, n + 1):
+        if i not in visited:
+            return i
+
 def get_missing(A): 
     length = len(A) + 1
     total = length * (length + 1) // 2
@@ -68,5 +76,7 @@ def find_missing1(full_list, partial_list):
     return xor_sum
 
 
-arr = [0, 1, 2, 4, 5, 6]
-print(find_missing(arr))
+assert find_missing([0, 1, 2, 4, 5, 6]) = 7
+assert find_missing([3,0,1]) = 2
+assert find_missing([9,6,4,2,3,5,7,0,1]) = 8
+

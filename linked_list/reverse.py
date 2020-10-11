@@ -12,21 +12,37 @@ class LinkedList(object):
         self.head = head
 
     def reverse(self) -> None:
-        if self.head is None:
+        if not self.head:
             return
 
         previous_node = None
         current_node = self.head
-        next_node = current_node.next
+        next_node = None
 
-        while (next_node):
+        while current_node:
+            next_node = current_node.next
             current_node.next = previous_node
             previous_node = current_node
             current_node = next_node
-            next_node = current_node.next
 
-        self.head = current_node
-        self.head.next = previous_node
+        return previous_node
+
+    def reverse_2(self, head):        
+        prev = None
+                
+        dummy = ListNode(0)
+        dummy.next = head
+        current = head
+                
+        while (current != None):
+            new = ListNode(current.val)
+            new.next = prev
+            prev = new
+            current = current.next
+        
+        head = dummy.next
+        
+        return prev
 
     def __iter__(self):
         current_node = self.head

@@ -10,19 +10,33 @@ class Node:
 
 
 def height(root):
+    '''
+    time: 0(n)
+    memory: o(1)
+    '''
+
     if root is None:
         return 0
 
     leftHeight = height(root.left)
     rightHeight = height(root.right)
 
-    # Use the larger one
-    if (leftHeight > rightHeight):
-        return leftHeight + 1
-    else:
-        return rightHeight + 1
+    depth = max(depth_left, depth_right) + 1
+    return depth
 
-    # return max(leftHeight, rightHeight) + 1
+def maximumDepth(root):
+    '''
+    time: 0(n), memory: o(1)
+    '''
+
+    if root is None:
+        return 0
+
+    leftHeight = maximumDepth(root.left)
+    rightHeight = maximumDepth(root.right)
+
+    depth = max(depth_left, depth_right) + 1
+    return depth
 
 
 # Driver program to test above function

@@ -30,8 +30,9 @@ def reverse(head):
     '''Function to reverse the linked list'''
     if not head: 
         return
-    prev = None
+
     curr = head
+    prev = None
     next_node = None
 
     while curr:
@@ -48,21 +49,27 @@ def addOne(head):
     """
     # Reverse linked list  
     head = reverse(head)
-    temp = head 
+    curr = head
     carry = 1
-    while(temp):
-        temp.data += carry 
-        if temp.data % 10 == 0: 
+
+    while curr:
+        curr.data += carry 
+        if curr.data % 10 == 0: 
             # update carry for next calulation  
             carry = 1
-            temp.data = 0
+            curr.data = 0
         else: 
             # update carry for next calulation  
             carry = 0
-        temp = temp.next
-  
-    # Reverse the modified list              
-    return reverse(head) 
+        curr = curr.next
+    
+    # add a node at the end of linked list if there is any carry left
+	if carry > 0:
+		curr.next = Node(carry)
+
+	# reverse the list again to restore the original order
+	head = reverse(head)
+	return head
 
 
 if __name__ == '__main__': 

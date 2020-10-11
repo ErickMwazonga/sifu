@@ -50,34 +50,38 @@ def is_valid(s):
             return False
     return True
 
-    # if stars_count >= unmatched_brackets_count:
-    #     return True
-    # return False
 
-    # custom_stack = []
-    # stars_seen = 0
+def is_valid_1(s):
+    '''
+    Time complexity: O(N).
+    Space complexity: O(N).
+    '''
 
-    # for char in str:
-    #     if char == '*':
-    #         stars_seen += 1
+    left = []
+    stars = []
+    
+    for i, ch in enumerate(s):
+        if ch == '*':
+            stars.append(i)
+        elif ch == '(':
+            left.append(i)
+        else:
+            if len(left) == 0 and len(stars) == 0:
+                return False
 
-    #     if char == '(':
-    #         custom_stack.append(char)
-
-    #     elif char == ')':
-    #         if not custom_stack:
-    #             custom_stack.append(char)
-    #         else:
-    #             custom_stack.pop()
-
-    # print(stars_seen, len(custom_stack))
-
-    # if stars_seen >= len(custom_stack):
-    #     return True
-    # return False
-
-    # return '(' not in custom_stack
-
+            if len(left) > 0:
+                left.pop()
+            else:                
+                stars.pop()
+                
+    while (len(left) > 0 and len(star) > 0):
+        if (left[-1] > star[-1]):
+            return False
+        
+        left.pop()
+        star.pop()
+                
+    return len(left) == 0
 
 assert is_valid('()') == True
 assert is_valid('(') == False
