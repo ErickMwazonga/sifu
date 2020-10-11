@@ -8,32 +8,94 @@ class Node:
         self.right = None
         self.val = item
 
+def preorder(root):
+    '''Root, Left, Right'''
+
+    data = []
+
+    def traverse(root):
+        if not root:
+            return
+
+        data.append(root.data)
+        traverse(root.left)
+        traverse(root.right)
+
+    traverse(root)
+    return data
+
+def preorder_ITERATIVELY(self, root: TreeNode):
+    res = []
+    stack = []
+
+    if not root:
+        return res
+
+    stack.append(root)
+    while stack:
+        node = stack.pop()
+        if node:
+            res.append(node.data)
+            stack.append(node.right)
+            stack.append(node.left)
+
+    return res
 
 def inorder(root):
     '''Left, Root, Right'''
 
-    if root:
-        inorder(root.left)
-        print(str(root.val) + "->", end='')
-        inorder(root.right)
+    data = []
+
+    def traverse(root):
+        if not root:
+            return
+
+        traverse(root.left)
+        data.append(root.data)
+        traverse(root.right)
+
+    traverse(root)
+    return data
+
+def inorder_ITERATIVELY(self, root):
+    res = []
+    stack = []
+
+    if not root:
+        return res
+
+    while True:
+        # push left child if available
+        while root:
+            stack.append(root)
+            root = root.left
+        
+        if not stack:
+            return res
+
+        # retrieve top node and point it to its right child if exists
+        node = stack.pop()
+        res.append(node.val)
+        root = node.right
+    
+    return res
 
 
 def postorder(root):
     '''Left, Right, Root'''
 
-    if root:
-        postorder(root.left)
-        postorder(root.right)
-        print(str(root.val) + "->", end='')
+    data = []
 
+    def traverse(root):
+        if not root:
+            return
 
-def preorder(root):
-    '''Root, Left, Right'''
+        traverse(root.left)
+        traverse(root.right)
+        data.append(root.data)
 
-    if root:
-        print(str(root.val) + "->", end='')
-        preorder(root.left)
-        preorder(root.right)
+    traverse(root)
+    return data
 
 
 root = Node(1)
