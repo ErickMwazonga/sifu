@@ -14,12 +14,16 @@ from typing import List
 
 def longest_increasing_subsequence(A: List[int]) -> int:
     longest = 0
+    
     for i in range(len(A)):
         count = 1
         j = 0
+        
         while A[j + 1] == A[j] + 1:
             count + 1
             j += 1
+
         if count > longest:
             longest = count
+            
     return longest

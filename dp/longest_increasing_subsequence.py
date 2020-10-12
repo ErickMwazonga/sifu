@@ -31,6 +31,7 @@ def longest_subsequence(A: List) -> int:
             count += 1
             forward += 1
         max_len = max(max_len, count)
+
     return max_len
 
 assert longest_subsequence([1, 9, 3, 10, 4, 20, 2]) == 4
