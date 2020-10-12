@@ -57,6 +57,7 @@ class Queue:
             while not self.inbox.is_empty():
                 popped = self.inbox.pop()
                 self.outbox.push(popped)
+
         return self.outbox.pop()
 
 

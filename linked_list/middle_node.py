@@ -21,7 +21,16 @@ class ListNode:
         self.val = x
         self.next = None
 
-    def middleNode(self, head: ListNode) -> ListNode:
+    def middleNode1(self, head: ListNode) -> ListNode:
+        fast, slow = head, head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        
+        return slow
+
+    def middleNode1(self, head: ListNode) -> ListNode:
         if head == None:
             return head
         
@@ -39,27 +48,3 @@ class ListNode:
             slow = slow.next
             
         return slow
-
-    def middleNode1(self, head: ListNode) -> ListNode:
-        fast, slow = head, head
-
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-        
-        return slow
-
-    def middleNode2(self, head: ListNode) -> ListNode:
-        fast, slow = head, head
-
-        while(True):
-            if not slow.next or not fast.next:
-                return slow
-            else:
-                slow = slow.next
-                fast = fast.next
-
-                if fast.next == None:
-                    return slow
-                else:
-                    fast = fast.next

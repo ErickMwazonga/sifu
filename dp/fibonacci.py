@@ -42,11 +42,10 @@ def fibber(n):
 
 def fib(n):
     dp = [0] * n
+    dp[0] = 0
+    dp[1] = 1
 
-    for i in range(n):
-        if i <= 2:
-            dp[i] = i + 1
-        else:
-            dp[i] = dp[i-1] + dp[i-2]
+    for i in range(2, n):
+        dp[i] = dp[i-1] + dp[i-2]
 
     return dp[-1]

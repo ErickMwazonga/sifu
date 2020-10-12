@@ -24,6 +24,18 @@ class SinglyLinkedList:
             curr = curr.next
         return nodes
 
+    def size(head):
+        if not head:
+            return 0
+        return  1 + size(head.next)
+        
+    def get_tail(head):
+        current_node = head
+
+        while(current_node.next):
+            current_node = current_node.next
+        return current_node
+
     def prepend(self, data):
         '''Insert at the beginning: 0(1) time'''
         new_node = Node(data)
@@ -39,11 +51,11 @@ class SinglyLinkedList:
             self.head = new_node
             return
 
-        last = self.head
-        while last.next:
-            last = last.next
+        curr = self.head
+        while curr.next:
+            curr = curr.next
 
-        last.next = new_node
+        curr.next = new_node
 
     def insertAfter(self, node, data):
         ''' Insert after a node'''
@@ -54,15 +66,63 @@ class SinglyLinkedList:
         new_node.next = node.next
         node.next = new_node
 
-    def find(self, key):
+    def insert_nth(head, index, data):
+        num_of_nodes = 1
+        current_node = head
+
+        # Insert to empty list
+        if not head:
+            return Node(data)
+
+        # Prepend node - Set new head 
+        if index == 0:
+            new_node = Node(data)
+            new_node.next = head
+            return new_node
+
+        while(current_node):
+            if num_of_nodes == index:
+                inserted_node = Node(data)
+                inserted_node.next = current_node.next 
+                current_node.next = inserted_node
+                break
+
+            current_node = current_node.next 
+            num_of_nodes += 1
+
+        if not current_node:
+            raise Exception()
+
+        return head
+
+    def get_node(self, val):
         '''
-        Search for the first element with key, return element
+        Search for the first element with val, return element
         or None if does not exist: 0(n) time
         '''
         curr = self.head
-        while curr and curr.data != key:
+        while curr:
+            if curr.data == val:
+                return curr
             curr = curr.next
-        return curr
+        
+        raise ValueError('Not Found')
+    
+    def get_ith(head, i):
+        if i < 0:
+            raise ValueError('No negatives!!! 🐱')
+
+        current_node = head
+        current_position = 0
+
+        while current_node:
+            if current_position == i:
+                return current_node
+
+            current_node = current_node.next
+            current_position += 1
+
+        raise ValueError('Not Found')
 
     def deleteNth(self, position):
         '''Remove first occurrence of the position: 0(n) time'''
@@ -70,15 +130,15 @@ class SinglyLinkedList:
         if self.head is None:  # Empty list
             return
 
+        # If position if of the first element
+        if position == 0:
+            new_head = head.next
+            head.next = None
+            return new_head
+
         prev = None
         curr = self.head
         i = 0
-
-        # If position if of the first element
-        if position == 0:
-            self.head = curr.next
-            curr = None
-            return
 
         # Find the key to be deleted
         while curr and i < position:
@@ -89,8 +149,8 @@ class SinglyLinkedList:
         if not curr:
             return 'Position beyond length of list'
 
-        next = curr.next
-        prev.next = next
+        _next = curr.next
+        prev.next = _next
 
     def deleteNode(self, data):
         '''Remove first occurrence of the data: 0(n) time'''

@@ -114,18 +114,15 @@ assert kle.heapsort([9, 5, 3, 1, 4, 2], 3) == 4
 # REVISIT
 import heapq
 
-
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         heapq.heapify(nums)
-        heap=[]
-        for i in range(k):
-            b=heapq.heappop(nums)
-            heapq.heappush(heap,b)
-        while nums:
-            c=heapq.heappop(nums)
-            while len(heap) >= k:
-                heapq.heappop(heap)
-            heapq.heappush(heap,c)
-        d=heapq.heappop(heap)
-        return d
+        amount = len(nums)
+
+        while amount > k:
+            heapq.heappop(nums)
+            amount -= 1
+
+        return nums[0]
+
+        

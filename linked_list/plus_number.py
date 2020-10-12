@@ -6,6 +6,7 @@ class Node:
 
 def printList(msg, head):
     print(msg, end='')
+    
     while head:
         print(head.data, end=" -> ")
         head = head.next

@@ -22,6 +22,7 @@ def newNode(data):
 def printList(head): 
     if not head: 
         return
+        
     while(head): 
         print("{}".format(head.data),end="") 
         head=head.next

@@ -14,7 +14,8 @@ def printList(head):
 
 # Sort given linked list using Merge sort algorithm
 def MergeSort(head):
-    '''O(nlogn)
+    '''O(nlogn)'''
+	
 	# Base case -- length 0 or 1
 	if head is None or head.next is None:
 		return head

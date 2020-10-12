@@ -15,10 +15,6 @@ Matrix = List[Unit]
 
 
 class SodukuValidator:
-    def is_unit_valid(self, unit: Unit) -> bool:
-        unit = [i for i in unit if i != '.' and i]
-        return len(unit) == len(set(unit))
-
     def check_board(self, board: Matrix) -> bool:
         if len(board) != 9:
             return False
@@ -26,6 +22,10 @@ class SodukuValidator:
             if len(row) != 9:
                 return False
         return True
+
+    def is_unit_valid(self, unit: Unit) -> bool:
+        unit = [i for i in unit if i != '.' and i]
+        return len(unit) == len(set(unit))
 
     def check_rows(self, board: Matrix) -> bool:
         for row in board:
