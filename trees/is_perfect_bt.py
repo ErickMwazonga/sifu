@@ -38,5 +38,6 @@ def is_perfect(root, d, level=0):
     if not root.left or not root.right:
         return False
 
-    return (is_perfect(root.left, d, level + 1) and
-            is_perfect(root.right, d, level + 1))
+    left_is_perfect = is_perfect(root.left, d, level + 1)
+    right_is_perfect = is_perfect(root.right, d, level + 1)
+    return left_is_perfect and right_is_perfect

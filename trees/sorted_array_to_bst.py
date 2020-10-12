@@ -29,14 +29,15 @@ class Solution:
         if not nums:
             return None
 
-        if len(nums) == 1:
+        n = len(nums)
+        if n == 1:
             return TreeNode(nums[0])
 
-        mid = len(nums) // 2
+        mid = n // 2
         root = TreeNode(nums[mid])
 
         root.left = self.conversion_helper(nums[0: mid])
-        root.right = self.conversion_helper(nums[mid + 1: len(nums)])
+        root.right = self.conversion_helper(nums[mid + 1: n])
 
         return root
 

@@ -24,7 +24,7 @@ def isFullTree(root):
         return True
 
     if root.leftChild and root.rightChild:
-        return (isFullTree(root.leftChild) and isFullTree(root.rightChild))
+        return isFullTree(root.leftChild and isFullTree(root.rightChild)
 
     return False
 
