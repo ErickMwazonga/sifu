@@ -24,7 +24,7 @@ def height(root):
     depth = max(depth_left, depth_right) + 1
     return depth
 
-def maximumDepth(root):
+def maxDepth(root):
     '''
     time: 0(n), memory: o(1)
     '''
@@ -32,8 +32,8 @@ def maximumDepth(root):
     if root is None:
         return 0
 
-    leftHeight = maximumDepth(root.left)
-    rightHeight = maximumDepth(root.right)
+    leftHeight = maxDepth(root.left)
+    rightHeight = maxDepth(root.right)
 
     depth = max(depth_left, depth_right) + 1
     return depth

@@ -25,24 +25,15 @@ class Solution:
 
         for i in range(n):
             # Since diagonal do not change, transpose only after i
-            for j in range(i+1, n):
+            for j in range(n):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
         return matrix
 
     def rotate(self, matrix):
         matrix.reverse()
         self.transpose(matrix)
 
-    def rotate2(self, matrix):
-        self.transpose(matrix)
-        n = len(matrix)
-
-        for i in range(n):
-            '''2 Pointer swapping'''
-            for j in range(n//2):
-                temp = matrix[i][j]
-                matrix[i][j] = matrix[i][n-1-j]
-                matrix[i][n-1-j] = temp
 
 
 s = Solution()

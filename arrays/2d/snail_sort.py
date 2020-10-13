@@ -6,7 +6,7 @@ def snail(arr):
         if not len(arr) or not len(arr[0]):
             return res
 
-        # If every row contains on element
+        # If every row contains an element
         if len(arr[0]) == 1:
             for i in range(len(arr)):
                 res.append(arr[i][0])
@@ -41,9 +41,9 @@ def snail(arr):
 
 
 b = [
- [1, 2, 3],
- [4, 5, 6],
- [7, 8, 9]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
 ]
 
 c = [

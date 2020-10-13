@@ -87,7 +87,7 @@ class SortedSearch:
 
         # Helper function to perform binary search for the target on a row
         def helper_search(row, target):
-            start, end = 0, n_cols-1
+            start, end = 0, n_cols - 1
 
             while start <= end:
                 mid = (start + end) // 2
@@ -102,9 +102,9 @@ class SortedSearch:
         if not n_rows or not n_cols:
             return False
 
-        start, end = 0, n_rows - 1
+        start, end = 0, n_rows
         # outer binary search to select the row
-        while start <= end:
+        while start < end:
             mid_row = (start + end) // 2
             # inner binary search on the row
             found = helper_search(matrix[mid_row], target)

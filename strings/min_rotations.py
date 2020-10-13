@@ -10,7 +10,7 @@ def findRotations(str):
       
     # tmp is the concatenated string. 
     tmp = str + str
-    n = len(str) 
+    n = len(str)
   
     for i in range(1, n + 1): 
         # substring from i index of original string size. 
@@ -19,7 +19,8 @@ def findRotations(str):
         # if substring matches with original string then we will  
         # come out of the loop. 
         if (str == substring): 
-            return i 
+            return i
+    
     return n
 
 def findRotations2(_str):

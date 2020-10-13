@@ -23,7 +23,9 @@ def get_odd_occurrence(arr):
         _hash[elem] = _hash.get(elem, 0) + 1
 
     for k, v in _hash.items(): 
-        if (v % 2 != 0): return k
+        if (v % 2 != 0):
+            return k
+    
     return -1
 
 A = [2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2] 

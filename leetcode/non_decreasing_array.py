@@ -15,17 +15,55 @@ Explanation: You could modify the first 4 to 1 to get a non-decreasing array.
 nums = [4,2,1] -> false
 Explanation: You can't get a non-decreasing array by modify at most one element.
 '''
-from typing import List
+
+def checkPossibility(self, nums):
+    count = 0
+
+    for i in range(len(nums) - 1):
+        if nums[i] > nums[i + 1]:
+            count += 1
+            
+            if i == 0:
+                nums[i] = nums[i + 1]
+            elif nums[i - 1] <= nums[i + 1]:
+                nums[i] = nums[i - 1]
+            else:
+                nums[i + 1] = nums[i]
+
+        if count > 1:
+            return False
+
+    return True
 
 
-# BEST VERSION
+def checkPossibility(self, nums):
+    """
+    First, find a pair where the order is wrong. Then there are two possibilities,
+    either the first in the pair can be modified or the second can be modified to create a valid sequence.
+    We simply modify both of them and check for validity of the modified arrays by comparing with the array after sorting.
+    """
+    one, two = nums[:], nums[:]
+    for i in range(len(nums) - 1):
+        if nums[i] > nums[i + 1]:
+            one[i] = nums[i + 1]
+            two[i + 1] = nums[i]
+            break
+
+    return one == sorted(one) or two == sorted(two)
+
+    
 def checkPossibilityBest(self, nums: List[int]) -> bool:
     count = 0
+    n = len(nums)
+
+    if n <= 2:
+        return True
 
     for i in range(0, len(nums)-1):
         if nums[i] > nums[i+1]:
             count += 1
-            if count >= 2:
+
+            if count > 1:
                 return False
             elif (i-1) >= 0 and nums[i+1] < nums[i-1]:
                 nums[i+1] = nums[i]

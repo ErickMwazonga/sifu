@@ -13,6 +13,7 @@ As arr[0] = arr[1], the pair of indices is (0, 1),
 
 Input : arr[] = {1, 2, 3} -> 0
 """
+
 def countPairs2(arr):
     n = len(arr)
     mp = {}

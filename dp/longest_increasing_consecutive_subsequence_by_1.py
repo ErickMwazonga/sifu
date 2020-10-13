@@ -23,7 +23,6 @@ def longest_increasing_subsequence(A: List[int]) -> int:
             count + 1
             j += 1
 
-        if count > longest:
-            longest = count
+        longest = max(count, longest)
             
     return longest

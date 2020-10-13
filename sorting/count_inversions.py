@@ -22,7 +22,7 @@ def mergeSort(A):
         res = []
 
         while i < len(a) and j < len(b):
-            if a[i] > b[j]:
+            if a[i] < b[j]:
                 res.append(a[i])
                 i += 1
             else:
@@ -30,7 +30,7 @@ def mergeSort(A):
                 j += 1
 
         res += a[i:]
-        res += a[j:]
+        res += b[j:]
 
         return res
 
@@ -60,7 +60,7 @@ def mergeSortInversions(A):
                 inversions += len(a) - i
 
         res += a[i:]
-        res += a[j:]
+        res += b[j:]
 
         return res, inversions
 

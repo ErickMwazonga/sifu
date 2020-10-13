@@ -15,6 +15,7 @@ class Solution:
     Time complexity: ~N^2
     Space complexity: ~N
     '''
+    
     def lengthOfLIS(self, nums):
         if not nums:
             return 0

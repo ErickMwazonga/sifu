@@ -33,7 +33,7 @@ class Solution(object):
         MAX = float('inf')
         dp = [0] + [MAX] * amount
         
-        for i in range(coin, amount + 1):
+        for i in range(0, amount + 1):
             for coin in coins:
                 if i - coin < 0:
                     continue

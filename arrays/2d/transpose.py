@@ -15,16 +15,24 @@ def transpose(matrix: Matrix) -> Matrix:
     for i in range(n_rows):
         for j in range(n_cols):
             transposed[j][i] = matrix[i][j]
+
     return transposed
 
 
-input_x = [[1, 2], [3, 4], [5, 6]]
-output_x = [[1, 3, 5], [2, 4, 6]]
+input_x = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+]
+output_x = [
+    [1, 3, 5],
+    [2, 4, 6]
+]
 
 assert transpose(input_x) == output_x
 
 
-def transpose_square_in_place(matrix):
+def transpose_SQUARE_in_place(matrix):
     n = len(matrix)
 
     for i in range(n):
@@ -34,5 +42,9 @@ def transpose_square_in_place(matrix):
     return matrix
 
 
-m = [[1, 2, 3],  [4, 5, 6],  [7, 8, 9]]
-print(transpose_square_in_place(m))
+m = [
+    [1, 2, 3],
+    [4, 5, 6], 
+    [7, 8, 9]
+]
+print(transpose_SQUARE_in_place(m))

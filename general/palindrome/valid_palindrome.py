@@ -13,3 +13,16 @@ Explanation: You could delete the character 'c'.
 Note:
 The string will only contain lowercase characters a-z. The maximum length of the string is 50000.
 """
+
+def validPalindrome(self, s: str) -> bool:
+    left, right = 0, len(s)
+
+    while left < right:
+        if s[left] == s[right]:
+            # Move inwards
+            left += 1
+            right -= 1
+        else:
+            # Get the subsets eliminating either of the chars
+            first, second = s[left+1: right+1], s[left: right]
+            return first == first[::-1] or second == second[::-1]

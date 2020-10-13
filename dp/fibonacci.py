@@ -1,3 +1,13 @@
+def fib(n):
+    dp = [0] * n
+    dp[0] = 0
+    dp[1] = 1
+
+    for i in range(2, n):
+        dp[i] = dp[i-1] + dp[i-2]
+
+    return dp[-1]
+    
 def fibonacci(n):
     '''O(2^n)) -> Exponential'''
     if n <= 1:
@@ -39,13 +49,3 @@ def fibber(n):
         prev, curr = curr, prev + curr
     return prev
 
-
-def fib(n):
-    dp = [0] * n
-    dp[0] = 0
-    dp[1] = 1
-
-    for i in range(2, n):
-        dp[i] = dp[i-1] + dp[i-2]
-
-    return dp[-1]

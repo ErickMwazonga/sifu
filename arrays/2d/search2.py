@@ -30,15 +30,17 @@ class Solution:
         if not n_rows or not n_cols:
             return False
 
-        maxRow, maxCol = n_rows-1, n_cols-1
+        maxRow, maxCol = n_rows - 1, n_cols - 1
         row, col = 0, maxCol
 
         while row <= maxRow and col >= 0:
             current_value = matrix[row][col]
+
             if current_value == target:
                 return True
             elif current_value < target:
                 row += 1
             else:
                 col -= 1
+        
         return False

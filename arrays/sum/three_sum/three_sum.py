@@ -15,14 +15,16 @@ def three_sum(nums, target):
     '''Time complexity: 0(n^2)'''
 
     nums.sort()
+    n = len(nums)
 
-    for i in range(len(nums)-2):
+    for i in range(n-2):
         partial_target = target - nums[i]
         j = i + 1
-        k = len(nums) - 1
+        k = n - 1
 
         while j < k:
             partial_sum = nums[j] + nums[k]
+
             if partial_sum == partial_target:
                 print([nums[i], nums[j], nums[k]])
                 return True

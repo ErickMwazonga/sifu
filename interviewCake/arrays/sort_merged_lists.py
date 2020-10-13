@@ -9,7 +9,7 @@ alices_list = [1, 5, 8, 12, 14, 19]
 
 
 def merge_sorted_lists(arr1, arr2):
-    '''Time O(nlgn)'''
+    '''Time O(nlogn)'''
     return sorted(arr1 + arr2)
 
 
@@ -46,7 +46,7 @@ def merge_lists(my_list, alices_list):
 
 
 def merge_lists_DRY(my_list, alices_list):
-    '''O(n) time and O(n)O(n) additional space'''
+    '''O(n) time and O(n) additional space'''
 
     # Make a list big enough to fit the elements from both lists
     merged_list_size = len(my_list) + len(alices_list)

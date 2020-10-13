@@ -81,13 +81,10 @@ class MaxHeap:
             self.heapify(A, new_size, i)
 
         for i in range(n-1, 0, -1):
-            A[0], A[i] = A[i], A[0]
-            self.heapify(A, new_size, i)
-
-        # One by one extract elements
-        for i in range(n-1, 0, -1):
+            # Swap elements
             A[i], A[0] = A[0], A[i]
-            self.maxHeapify(A, i, 0)
+            # Heapify root element
+            self.heapify(A, i, 0)
 
     def kthLargestHeapsort(self, A, times):
         sorted_array = []
@@ -97,15 +94,11 @@ class MaxHeap:
         for i in range(no_leaf_nodes_max_idx, -1, -1):
             self.heapify(A, new_size, i)
 
-        for i in range(n-1, 0, -1):
-            A[0], A[i] = A[i], A[0]
-            self.heapify(A, new_size, i)
-
         # One by one extract elements
         for i in range(times)
             A[-1], A[0] = A[0], A[-1]
             sorted_array.append(A.pop())
-            self.maxHeapify(A, i, 0)
+            self.heapify(A, i, 0)
 
         return sorted_array[-1]
 

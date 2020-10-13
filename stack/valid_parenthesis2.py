@@ -35,6 +35,7 @@ def is_valid(s):
             star += 1
         else:
             right += 1
+
         if left + star < right:
             return False
 
@@ -46,8 +47,10 @@ def is_valid(s):
             star += 1
         else:
             right += 1
+
         if right + star < left:
             return False
+
     return True
 
 

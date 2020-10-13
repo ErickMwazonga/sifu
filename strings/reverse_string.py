@@ -8,6 +8,7 @@ def swap(string, i, j):
 def reverse(string):
     i = 0
     j = len(string) - 1
+
     while (i < j):
         swap(string, i, j)
         i += 1

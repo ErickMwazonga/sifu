@@ -21,7 +21,7 @@ Given word = "ABCB", return false.
 from typing import List
 
 # REVISIT
-def word_search(board: List[List[str]], word: str) -> bool:
+def word_search(board, word) -> bool:
     for i in range(len(board)):
         for j in range(len(i)):
             if board[i][j] == word[0] and dfs(board, i, j, 0, word):
@@ -29,7 +29,7 @@ def word_search(board: List[List[str]], word: str) -> bool:
     return False
 
 
-def dfs(board: List[List[str]], i: int, j: int, count: int, word: str) -> bool:
+def dfs(board, i, j, count, word) -> bool:
     if count == len(word):
         return True
 

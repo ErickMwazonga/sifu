@@ -14,6 +14,7 @@ Output: [4,0,1,1,3]
 
 def smallerNumbersThanCurrent(nums):
     '''Time complexity: O(nlogn)'''
+
     sorted_nums = sorted(nums)
     mappings = {}
     

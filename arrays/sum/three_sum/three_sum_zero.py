@@ -17,17 +17,18 @@ A solution set is:
 def three_sum_zero(nums):
     nums.sort()
     res = []
-    length = len(nums)
+    n = len(nums)
 
-    for i in range(length-2):
+    for i in range(n-2):
         if i > 0 and nums[i] == nums[i-1]:
             continue
 
         l = i + 1
-        r = length - 1
+        r = n - 1
 
         while l < r:
             total = nums[i] + nums[l] + nums[r]
+            
             if total < 0:
                 l += 1
             elif total > 0:

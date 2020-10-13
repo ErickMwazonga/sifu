@@ -5,7 +5,7 @@ For example, given:
 '''
 
 def merge_ranges(meetings):
-    '''O(nlgn) time and O(n)O(n) space.'''
+    '''O(nlogn) time and O(n) space.'''
 
     # Sort by start time
     sorted_meetings = sorted(meetings)

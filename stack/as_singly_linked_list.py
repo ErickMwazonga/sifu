@@ -14,18 +14,15 @@ class Stack:
 
     # Checks if stack is empty
     def isempty(self):
-        if self.head == None: 
-            return True
-        else: 
-            return False
-
+        return self.head is None: 
+        
     # Method to add data to the stack
     # adds to the start of the stack
     def push(self, data):
         if self.head == None: 
             self.head = Node(data)
         else: 
-            newnode = Node(data) 
+            newnode = Node(data)
             newnode.next = self.head 
             self.head = newnode 
 

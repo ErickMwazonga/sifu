@@ -53,6 +53,7 @@ assert climb_stairs(6) == 13
 assert climb_stairs(7) == 21
 
 
+# FIBONACCI
 def fib(n):
     dp = [0] * n
 

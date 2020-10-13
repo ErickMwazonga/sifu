@@ -12,6 +12,7 @@ def checkEmpty(input, pattern):
 
     if len(input):
         return True
+        
     checkEmpty(input, pattern)
 
 

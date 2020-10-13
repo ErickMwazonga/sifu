@@ -11,11 +11,15 @@ Return -1 if the given expression can't be balanced.
 
 def minimum_reversals(s: str) -> int:
     stack = []
+
+    # Get unbalanced stack
     for ch in s:
         if ch == '{':
             stack.append(ch)
         else:
-            if not len(stack) or stack[-1] == '}':
+            if not len(stack):
+                stack.append(ch)
+            elif stack[-1] == '}':
                 stack.append(ch)
             elif stack[-1] == '{':
                 stack.pop()

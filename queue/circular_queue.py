@@ -26,9 +26,10 @@ class CircularQueue:
             return False
 
         next_step = (self.tail + 1) % self.maxlen
-        self.queue[next_step] = value
         self.tail = next_step
         self.currlen += 1
+
+        self.queue[next_step] = value
 
         if self.currlen == 1:
             self.head = 0
@@ -39,9 +40,11 @@ class CircularQueue:
         if self.isEmpty():
             return False
 
-        self.head = (self.head + 1) % self.maxlen
+        to_remove = (self.head + 1) % self.maxlen
+        self.head = to_remove
         self.currlen -= 1
-        if self.isEmpty():
+        
+        if self.currlen == 0:
             self.head = self.tail = -1
 
         return True

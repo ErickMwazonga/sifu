@@ -30,6 +30,7 @@ def longest_subsequence(A: List) -> int:
         while forward in visited:
             count += 1
             forward += 1
+        
         max_len = max(max_len, count)
 
     return max_len

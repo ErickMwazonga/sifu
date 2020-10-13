@@ -14,9 +14,9 @@ def dutchNationalFlagSorting(A):
 
     low = 0
     traverse = 0
-    high = len(A) - 1
+    high = len(A)
 
-    while traverse <= high:
+    while traverse < high:
         traverse_value = A[traverse]
 
         if traverse_value == 0:

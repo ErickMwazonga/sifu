@@ -48,6 +48,7 @@ class Solution:
 
         for i in range(2, n):
             money[i] = max(money[i-1], money[i-2] + nums[i])
+            
         return money[-1]
 
 
