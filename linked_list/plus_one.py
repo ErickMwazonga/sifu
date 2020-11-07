@@ -54,7 +54,7 @@ def addOne(head):
     carry = 1
 
     while curr:
-        curr.data += carry 
+        curr.data += carry
         if curr.data % 10 == 0: 
             # update carry for next calulation  
             carry = 1

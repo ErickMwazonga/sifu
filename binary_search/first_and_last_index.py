@@ -25,7 +25,9 @@ def find_first_and_last(A, target):
         if target != A[i]:
             continue
 
-        if first == -1:
+        if first != -1:
+            continue
+        else:
             first = i
 
         last = i

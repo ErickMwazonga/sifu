@@ -62,7 +62,7 @@ class MaxHeap:
         # Swap first and last element
         A[0], A[size-1] = A[size-1], A[0]
 
-        popped = A.pop(size-1)
+        popped = A.pop()
 
         new_size = len(A)
         no_leaf_nodes_max_idx = (new_size // 2) - 1
@@ -80,10 +80,10 @@ class MaxHeap:
         for i in range(no_leaf_nodes_max_idx, -1, -1):
             self.heapify(A, new_size, i)
 
+        # Heapify root element iteratively
         for i in range(n-1, 0, -1):
             # Swap elements
             A[i], A[0] = A[0], A[i]
-            # Heapify root element
             self.heapify(A, i, 0)
 
     def kthLargestHeapsort(self, A, times):

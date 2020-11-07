@@ -16,14 +16,15 @@ def merge_ranges(meetings):
     for current_meeting_start, current_meeting_end in sorted_meetings[1:]:
         last_merged_meeting_start, last_merged_meeting_end = merged_meetings[-1]
 
-        # If the current meeting overlaps with the last merged meeting, use the
-        # later end time of the two
-        if (current_meeting_start <= last_merged_meeting_end):
-            new_meeting_end = max(last_merged_meeting_end, current_meeting_end)
-            merged_meetings[-1] = (last_merged_meeting_start, new_meeting_end)
-        else:
+        if (current_meeting_start > last_merged_meeting_end):
             # Add the current meeting since it doesn't overlap
             merged_meetings.append((current_meeting_start, current_meeting_end))
+        else:
+            # If the current meeting overlaps with the last merged meeting, use the
+            # later end time of the two
+            new_meeting_end = max(last_merged_meeting_end, current_meeting_end)
+            merged_meetings[-1] = (last_merged_meeting_start, new_meeting_end)
+            
 
     return merged_meetings
 

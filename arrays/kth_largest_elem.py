@@ -6,7 +6,7 @@ def findKthLargest(self, nums, k):
 
     return nums[len(nums) - k]
 
-assert findKthLargest([56,14,7,98,32,12,11,50,45,78,7,5,69]) == 5
+assert findKthLargest([56, 14, 7, 98, 32, 12, 11, 50, 45, 78, 7, 5, 69]) == 5
 
 
 def findKthLargest(self, nums: List[int], k: int) -> int:

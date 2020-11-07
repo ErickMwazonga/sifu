@@ -26,6 +26,7 @@ def lengthOfLongestSubstring(self, s):
     Space: O(k)
     [k = length of the longest substring w/o repeating characters]
     """
+
     longest = 0
     left, right = 0, 0
     seen = set()

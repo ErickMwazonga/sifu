@@ -30,8 +30,8 @@ def checkPossibility(self, nums):
             else:
                 nums[i + 1] = nums[i]
 
-        if count > 1:
-            return False
+    if count > 1:
+        return False
 
     return True
 

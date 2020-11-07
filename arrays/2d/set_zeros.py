@@ -18,6 +18,36 @@ Output:
 '''
 
 
+def setZeroes(matrix):
+    """
+    Do not return anything, modify matrix in-place instead.
+    """
+
+    n, m = len(matrix), len(matrix[0])
+
+    # Get the rows and cols that have 0 value
+    rows = set()
+    cols = set()
+
+    for row in range(n):
+        for col in range(m):
+            if matrix[row][col] == 0:
+                rows.add(row)
+                cols.add(col)
+                    
+    # traverse row wise and update columns
+    for row in rows:
+        for j in range(m):
+            matrix[row][j] = 0
+        
+    # traverse column wise and update rows
+    for col in cols:
+        for row in range(n):
+            matrix[row][col] = 0
+            
+    return matrix
+
+
 def set_zeros(A):
     zeros = {'rows': set(), 'cols': set()}
 
@@ -29,8 +59,8 @@ def set_zeros(A):
 
     for i in range(len(A)):
         for j in range(len(A[0])):
-            if i in zeros['rows']:
-                A[i] = [0] * len(A[0])
+            if i in zeros['rows'] and A[i][j] != 0:
+                A[i][j] = 0
             elif j in zeros['cols'] and A[i][j] != 0:
                 A[i][j] = 0
 
