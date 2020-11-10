@@ -21,7 +21,7 @@ class ListNode:
         self.val = x
         self.next = None
 
-    def middleNode1(self, head: ListNode) -> ListNode:
+    def middleNode1(self, head):
         fast, slow = head, head
 
         while fast and fast.next:
@@ -30,7 +30,7 @@ class ListNode:
         
         return slow
 
-    def middleNode1(self, head: ListNode) -> ListNode:
+    def middleNode2(self, head):
         if head == None:
             return head
         

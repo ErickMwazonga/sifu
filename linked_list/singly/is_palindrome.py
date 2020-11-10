@@ -4,13 +4,8 @@ https://leetcode.com/problems/palindrome-linked-list/
 
 Given a singly linked list, determine if it is a palindrome.
 
-Example 1:
-Input: 1->2
-Output: false
-
-Example 2:
-Input: 1->2->2->1
-Output: true
+Input: 1->2   = false
+Input: 1->2->2->1  = true
 
 Could you do it in O(n) time and O(1) space?
 '''
@@ -19,6 +14,19 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
+    def reverse(self, head):
+        prev_node = None
+        curr_node = head
+        next_node = None
+
+        while curr_node:
+            next_node = curr_node.next
+            curr_node.next = prev_node
+            prev_node = curr_node
+            curr_node = next_node
+        
+        return prev_node
 
     def is_palindrome(sel, head):
         reversed_head = self.reverse(head)
@@ -39,16 +47,3 @@ class ListNode:
             head = head.next
         
         return vals == vals[::-1]
-
-    def reverse(self, head):
-        prev_node = None
-        curr_node = head
-        next_node = None
-
-        while curr_node:
-            next_node = curr_node.next
-            curr_node.next = prev_node
-            prev_node = curr_node
-            curr_node = next_node
-        
-        return prev_node

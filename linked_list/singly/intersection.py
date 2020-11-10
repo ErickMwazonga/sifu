@@ -13,7 +13,7 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+    def getIntersectionNode(self, headA, headB):
         visited = set()
         
         while headA != None:            
