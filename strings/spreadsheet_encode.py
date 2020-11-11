@@ -26,6 +26,7 @@ class Solution:
     AA
     (A * 26^1 + A * 26^0)
     '''
+
     def titleToNumber(self, s: str) -> int:
         num = 0
         count = len(s) - 1

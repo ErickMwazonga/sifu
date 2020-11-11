@@ -34,13 +34,11 @@ def is_perm_2(str_1, str_2):
     if len(str_1) != len(str_2):
         return False
 
-    d = dict()
+    d = {}
     
     for i in str_1:
-        if i in d:
-            d[i] += 1
-        else:
-            d[i] = 1
+        d.get(i, 0) + 1
+       
     for i in str_2:
         if i in d:
             d[i] -= 1

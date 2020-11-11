@@ -27,10 +27,10 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 from typing import List
 
 def maxProfit(self, prices: List[int]) -> int:
-    max_profit = 0
-    
     if not prices:
         return max_profit
+    
+    max_profit = 0
     
     for i in range(1, len(prices)):
         if prices[i] > prices[i - 1]:

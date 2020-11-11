@@ -14,37 +14,30 @@ A solution set is:
 ]
 """
 
-def three_sum_zero(nums):
+def threeSum(nums):
     nums.sort()
-    res = []
-    n = len(nums)
-
+    lis, n = [], len(nums)
+  
     for i in range(n-2):
-        if i > 0 and nums[i] == nums[i-1]:
-            continue
-
-        l = i + 1
-        r = n - 1
-
-        while l < r:
-            total = nums[i] + nums[l] + nums[r]
+        low = i + 1
+        high = n - 1
+        
+        while (low < high):
+            s = nums[i] + nums[low] + nums[high]
             
-            if total < 0:
-                l += 1
-            elif total > 0:
-                r -= 1
-            else:
-                res.append([nums[i], nums[l], nums[r]])
-                while l < r and nums[l] == nums[l+1]:
-                    l += 1
-                while l < r and nums[r] == nums[r-1]:
-                    r -= 1
+            if s == 0:
+                lis.append((nums[i], nums[low], nums[high]))
+                low = low + 1
+                high = high - 1
+            if s < 0:
+                low = low + 1
+            if s > 0:
+                high = high - 1
                 
-                l += 1
-                r -= 1
-
-    
+    res = list(set(lis))     
+    res = [list(x) for x in res]
+    return res
 
 a = [-1, 0, 1, 2, -1, -4]
 
-print(three_sum_zero(a))
+print(threeSum(a))

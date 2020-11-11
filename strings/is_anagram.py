@@ -36,9 +36,11 @@ def is_anagram(s1, s2):
         else:
             _freqs[c] -= 1
     
-    for v in _freqs.values():
-        if v != 0:
-            return False
+    if any(_freqs.values()):
+        return False
+    # for v in _freqs.values():
+    #     if v != 0:
+    #         return False
     
     return True
 

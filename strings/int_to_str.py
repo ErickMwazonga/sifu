@@ -17,11 +17,11 @@ def int_to_str(input_int):
 
     output_str = []
     while input_int > 0:
-        remainder = input_int % 10
-        output_str.append(chr(ord('0') + remainder))
-        input_int //= 10
-    output_str = output_str[::-1]
+        input_int, remainder = divmod(input_int, 10)
+        char_rep = chr(ord('0') + remainder)
+        output_str.append(char_rep)
 
+    output_str = output_str[::-1]
     output_str = ''.join(output_str)
 
     if is_negative:

@@ -15,14 +15,14 @@ Invalid:
 
 
 def get_duplicates(arr):
-    counts = {}
-
     if arr == set(arr):
         print('Invalid')
 
+    counts = {}
     for value in arr:
         if value in counts:
             counts[value] += 1
+
             if counts.get(value) == 2:
                 print(value, end=' ')
         else:

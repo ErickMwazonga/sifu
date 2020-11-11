@@ -1,4 +1,5 @@
 '''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 https://medium.com/algorithms-and-leetcode/best-time-to-buy-sell-stocks-on-leetcode-the-ultimate-guide-ce420259b323
 121. Best Time to Buy and Sell Stock
 Say you have an array for which the ith element
@@ -45,12 +46,12 @@ def maxProfit(prices) -> int:
     if n <= 1:
         return 0
 
-    max_profit, min_stock = float('-inf'), prices[0]
+    min_stock, max_profit = prices[0], float('-inf')
 
-    for p in prices:
-        profit = p - min_stock
+    for price in prices:
+        profit = price - min_stock
+        min_stock = min(min_stock, price)
         max_profit = max(max_profit, profit)
-        min_stock = min(min_stock, p)
 
     return max_profit
 

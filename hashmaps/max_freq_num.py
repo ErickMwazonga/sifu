@@ -25,9 +25,9 @@ def mostFrequent(arr):
     max_count = 0
     res = -1
     for i in Hash:
-        if (max_count < Hash[i]):
-            res = i
+        if (Hash[i] > max_count):
             max_count = Hash[i]
+            res = i
 
     return res
 

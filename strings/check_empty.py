@@ -1,10 +1,9 @@
 def checkEmpty(input, pattern): 
-      
     if len(input) == 0: 
         return False
     
     index = input.find(pattern)
-    if (index == (-1)): 
+    if index == -1: 
         return False
 
     # slice input string in two parts and concatenate 

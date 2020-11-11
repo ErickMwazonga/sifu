@@ -84,6 +84,7 @@ class KthLargestElement:
         # O(n) time
         size = len(A)
         no_leaf_nodes_max_idx = (size // 2) - 1
+
         for i in range(no_leaf_nodes_max_idx, -1, -1):
             self.max_heapify(A, i)
 
@@ -109,20 +110,5 @@ class KthLargestElement:
 
 kle = KthLargestElement()
 assert kle.heapsort([9, 5, 3, 1, 4, 2], 3) == 4
-
-
-# REVISIT
-import heapq
-
-class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        heapq.heapify(nums)
-        amount = len(nums)
-
-        while amount > k:
-            heapq.heappop(nums)
-            amount -= 1
-
-        return nums[0]
 
         

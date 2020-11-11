@@ -28,5 +28,5 @@ def duplicatePositions(nums):
     return res
 
 
-nums = [4, 3, 2, 7, 8, 2, 3, 1]  # Output: [2, 5, 3]
+nums = [4, 3, 2, 7, 8, 2, 3, 1]  # Output: [2, 3]
 print(duplicatePositions(nums))

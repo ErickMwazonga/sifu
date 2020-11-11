@@ -22,10 +22,10 @@ class MaxHeap:
         left_child = self.leftChild(i)
         right_child = self.rightChild(i)
 
-        if left_child < n and A[i] < A[left_child]:
+        if left_child < n and A[left_child] > A[i]:
             largest = left_child
 
-        if right_child < n and A[largest] < A[right_child]:
+        if right_child < n and A[right_child] > A[largest]:
             largest = right_child
 
         if largest != i:
@@ -48,11 +48,7 @@ class MaxHeap:
             A.append(num)
         else:
             A.append(num)
-            new_size = len(A)
-            no_leaf_nodes_max_idx = (new_size // 2) - 1
-
-            for i in range(no_leaf_nodes_max_idx, -1, -1):
-                self.maxHeapify(A, new_size, i)
+            self.build_max_heap(A)
 
     def deleteNode(self, A):  # extractMax
         '''Time - Heapify optimizes from O(nlogn) to O(n)'''
@@ -64,41 +60,30 @@ class MaxHeap:
 
         popped = A.pop()
 
-        new_size = len(A)
-        no_leaf_nodes_max_idx = (new_size // 2) - 1
-        for i in range(no_leaf_nodes_max_idx, -1, -1):
-            self.maxHeapify(A, new_size, i)
+        self.build_max_heap(A)
 
         return popped
 
     def heapSort(self, A):
         '''Time - Heapify optimizes from O(nlogn) to O(n)'''
 
-        n = len(A)
-        max_indx_no_leaf_nodes = (new_n // 2) - 1
-
-        for i in range(no_leaf_nodes_max_idx, -1, -1):
-            self.heapify(A, new_size, i)
+        self.build_max_heap(A)
 
         # Heapify root element iteratively
         for i in range(n-1, 0, -1):
             # Swap elements
             A[i], A[0] = A[0], A[i]
-            self.heapify(A, i, 0)
+            self.maxHeapify(A, i, 0)
 
     def kthLargestHeapsort(self, A, times):
         sorted_array = []
-        n = len(A)
-        max_indx_no_leaf_nodes = (new_n // 2) - 1
-
-        for i in range(no_leaf_nodes_max_idx, -1, -1):
-            self.heapify(A, new_size, i)
+        self.build_max_heap(A)
 
         # One by one extract elements
         for i in range(times)
             A[-1], A[0] = A[0], A[-1]
             sorted_array.append(A.pop())
-            self.heapify(A, i, 0)
+            self.maxHeapify(A, i, 0)
 
         return sorted_array[-1]
 

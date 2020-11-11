@@ -16,8 +16,8 @@ but it could be repeated more than once.
 
 # A single duplicate
 def getDuplicate(A):
-    length = len(A) - 1
-    total = length * (length + 1) // 2
+    n = len(A) - 1
+    total = n * (n + 1) // 2
 
     sum_of_A = sum(A)
     return sum_of_A - total
