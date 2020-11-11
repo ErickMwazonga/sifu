@@ -25,13 +25,14 @@ assert plus_one([1, 9, 9]) == [2, 0, 0]
 
 
 def plus_one_iteratively(arr):
-    for i in range(len(arr) - 1, -1, -1):
+    n = len(arr)
+    for i in range(n - 1, -1, -1):
         if arr[i] < 9:
             arr[i] += 1
             return arr
         arr[i] = 0
 
-    res = [0] * (len(arr) + 1)
+    res = [0] * (n + 1)
     res[0] = 1
     return res
 
@@ -39,32 +40,39 @@ def plus_one_iteratively(arr):
 assert plus_one_iteratively([1, 2, 3]) == [1, 2, 4]
 assert plus_one_iteratively([9, 9, 9]) == [1, 0, 0, 0]
 assert plus_one_iteratively([1, 9, 9]) == [2, 0, 0]
-assert plus_one_iteratively([4,3,2,1]) == [4,3,2,2]
 
 
 def plus_one(digits):
     '''
-    Example 1:
-        Input: digits = [2, 1, 6]
-        Output: [2, 1, 7]
-    Example 2:
-        Input: digits = [3, 6, 9, 9]
-        Output: [3, 7, 0, 0]
-    Example 3:
-        Input: digits = [9, 9, 9, 9]
-        Output: [1, 0, 0, 0, 0]
+    digits = [2, 1, 6] -> [2, 1, 7]
+    digits = [3, 6, 9, 9] -> [3, 7, 0, 0]
+    digits = [9, 9, 9, 9] -> [1, 0, 0, 0, 0]
     '''
     i = len(digits) - 1
 
     while i >= 0:
         digits[i] += 1
-        if digits[i] == 10:
+        if digits[i] != 10:
+           break
+        else:
             digits[i] = 0
             i -= 1
-        else:
-            break
 
     if i == -1:
         digits.insert(0, 1)
 
     return digits
+
+
+def plus_one(A):
+    A[-1] += 1
+    for i in reversed(range(1, len(A))):
+        if A[i] != 10:
+            break
+        A[i] = 0
+        A[i-1] += 1
+
+    if A[0] == 10:
+        A[0] = 1
+        A.append(0)
+    return A

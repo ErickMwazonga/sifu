@@ -30,19 +30,33 @@ class TreeNode:
 
 
 class Solution:
+    def levelorder_print(self, root):
+        if not root:
+            return
+
+        queue, res = [root], []
+        
+        while queue:
+            node = queue.pop(0)
+            res.append(node.val)
+
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+        return res
+
     def levelOrder(self, root: TreeNode):
         '''
         Time complexity: O(N) since each node is processed exactly once.
         Space complexity: O(N) to keep the output structure that contains N node values.
         '''
 
-        result = []
-
         if not root:
-            return result
+            return []
 
-        queue = []
-        queue.append(root)
+        queue, result = [root], []
 
         while queue:
             level_size = len(queue)
@@ -52,9 +66,9 @@ class Solution:
                 node = queue.pop(0)
                 level.append(node.val)
 
-                if node.left != None:
+                if node.left:
                     queue.append(node.left)
-                if node.right != None:
+                if node.right:
                     queue.append(node.right)
                     
             result.append(level)

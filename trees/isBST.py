@@ -9,12 +9,11 @@ If a node is a right child, then its key and the keys of
 the nodes in its left subtree are greater than its parent’s key.
 """
 
-
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
@@ -28,7 +27,7 @@ class Solution:
         return True
 
     def inOrder(self, root, output):
-        if root is None:
+        if not root:
             return
         
         self.inOrder(root.left, output)

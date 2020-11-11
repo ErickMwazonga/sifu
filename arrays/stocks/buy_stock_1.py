@@ -22,8 +22,22 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
 from typing import List
 
+def buy_and_sell_once(A):
+    '''
+    # Time Complexity: O(n^2), Space Complexity: O(1)
+    '''
 
-def maxProfit(prices: List[int]) -> int:
+    max_profit = 0
+    n = len(A)
+
+    for i in range(n-1):
+        for j in range(i+1, n):
+            if A[j] - A[i] > max_profit:
+                max_profit = A[j] - A[i]
+
+    return max_profit
+
+def maxProfit(prices) -> int:
     '''Linear Time, Constant Space'''
 
     n = len(prices)
@@ -34,7 +48,8 @@ def maxProfit(prices: List[int]) -> int:
     max_profit, min_stock = float('-inf'), prices[0]
 
     for p in prices:
-        max_profit = max(max_profit, p - min_stock)
+        profit = p - min_stock
+        max_profit = max(max_profit, profit)
         min_stock = min(min_stock, p)
 
     return max_profit

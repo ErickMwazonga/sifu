@@ -8,6 +8,7 @@ class Node:
         self.right = None
         self.val = item
 
+
 def preorder(root):
     '''Root, Left, Right'''
 
@@ -24,19 +25,18 @@ def preorder(root):
     traverse(root)
     return data
 
-def preorder_ITERATIVELY(self, root: TreeNode):
-    res = []
-    stack = []
-
+def preorder_ITERATIVELY(root):
     if not root:
-        return res
+        return []
 
-    stack.append(root)
+    res, stack = [], [root]
     while stack:
         node = stack.pop()
-        if node:
-            res.append(node.data)
+        res.append(node.val)
+
+        if node.right:
             stack.append(node.right)
+        if node.left:
             stack.append(node.left)
 
     return res
@@ -57,13 +57,11 @@ def inorder(root):
     traverse(root)
     return data
 
-def inorder_ITERATIVELY(self, root):
-    res = []
-    stack = []
-
+def inorder_ITERATIVELY(root):
     if not root:
-        return res
+        return []
 
+    res, stack = [], []
     while True:
         # push left child if available
         while root:
@@ -75,7 +73,7 @@ def inorder_ITERATIVELY(self, root):
 
         # retrieve top node and point it to its right child if exists
         node = stack.pop()
-        res.append(node.val)
+        res.append(node.data)
         root = node.right
     
     return res
@@ -96,6 +94,25 @@ def postorder(root):
 
     traverse(root)
     return data
+
+def postorder_ITERATIVELY(root):
+    if not root:
+        return []
+
+    res, stack = [], [root]
+    while stack:
+        node = stack.pop()
+        res.append(node.val)
+
+        # pre-order, right first
+        if node.left:
+            stack.append(node.left)
+        if node.right:
+            stack.append(node.right)
+
+    # reverse result
+    return res[::-1]
+
 
 
 root = Node(1)

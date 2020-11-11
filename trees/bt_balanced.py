@@ -8,7 +8,6 @@ a binary tree in which the depth of the two subtrees of every node never differ 
 
 Example 1:
 Given the following tree [3,9,20,null,null,15,7]:
-
     3
    / \
   9  20
@@ -42,10 +41,10 @@ class Solution:
         if abs(left_depth - right_depth) > 1:
             return False
 
-        if self.isBalanced(root.left) and self.isBalanced(root.right):
-            return True
+        if not self.isBalanced(root.left) or not self.isBalanced(root.right):
+            return False
 
-        return False
+        return True
         
 
     def maxDepth(self, root):

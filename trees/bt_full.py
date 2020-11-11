@@ -14,7 +14,6 @@ class Node:
 
 
 def isFullTree(root):
-
     # Tree empty case
     if not root:
         return True
@@ -22,11 +21,14 @@ def isFullTree(root):
     # Checking whether child is present
     if not root.leftChild and not root.rightChild:
         return True
+    
+    if not root.leftChild or not root.rightChild:
+        return False 
 
-    if root.leftChild and root.rightChild:
-        return isFullTree(root.leftChild) and isFullTree(root.rightChild)
+    if not self.isFullTree(root.left) or not self.isFullTree(root.right):
+        return False
 
-    return False
+    return True
 
 
 root = Node(1)

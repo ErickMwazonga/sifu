@@ -1,4 +1,5 @@
 '''
+https://leetcode.com/problems/valid-sudoku/
 Valid Sudoku
 Determine if a 9x9 Sudoku board is valid. Only the filled cells
 need to be validated according to the following rules:
@@ -9,10 +10,30 @@ need to be validated according to the following rules:
 digits 1-9 without repetition.
 '''
 
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        size = len(board)
+        seen = set()
+
+        for row in range(size):
+            for col in range(size):
+                num = board[row][col]
+
+                if num != ".":
+                    col_val = num + "col" + str(col)
+                    row_val = num + "row" + str(row)
+                    block_val = num + "block" + str(row // 3) + str(col // 3)
+                    
+                    if col_val in seen or row_val in seen or block_val in seen:
+                        return False
+                    else:
+                        seen.update([row_val, col_val, block_val])
+        return True
+
+
 from typing import List, Union
 Unit = List[Union[int, str]]
 Matrix = List[Unit]
-
 
 class SodukuValidator:
     def check_board(self, board: Matrix) -> bool:

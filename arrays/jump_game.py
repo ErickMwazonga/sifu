@@ -23,10 +23,9 @@ class Solution:
         max_jump = nums[0]
         
         for i in range(1, len(nums)):
-            if max_jump < i:
+            if i > max_jump:
                 return False
             
-            if max_jump < i + nums[i]:
-                max_jump = i + nums[i]
+            max_jump = max(max_jump, i + nums[i])
         
         return True

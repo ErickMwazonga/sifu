@@ -26,19 +26,22 @@ def calculateDepth(node):
 
 # Check if the tree is perfect binary tree
 def is_perfect(root, d, level=0):
-
-    # Check if the tree is empty
+    # An empty tree is perfect  
     if not root:
         return True
 
-    # Check the presence of trees
-    if not root.left and not root.right:
-        return d == level + 1
-
     if not root.left or not root.right:
         return False
+
+    # If leaf node, then its depth must  
+    # be same as depth of all other leaves.
+    if not root.left and not root.right:
+        return d == level + 1
 
     left_is_perfect = is_perfect(root.left, d, level + 1)
     right_is_perfect = is_perfect(root.right, d, level + 1)
 
     return left_is_perfect and right_is_perfect
+
+def main(root):
+    is_perfect(root, calculateDepth(root))

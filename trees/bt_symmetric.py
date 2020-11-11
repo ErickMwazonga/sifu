@@ -26,16 +26,16 @@ class TreeNode:
 
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
-        if root is None:
+        if not root:
             return True
         
         return self.isMirror(root.left, root.right)
 
     def isMirror(self, left_root, right_root):
-        if left_root == None and right_root == None:
+        if not left_root and not right_root:
             return True
     
-        if left_root == None or right_root == None:
+        if not left_root or not right_root:
             return False
  
         if left_root.val != right_root.val:

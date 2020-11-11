@@ -10,7 +10,6 @@ def maxDepth(root):
     '''
     time: 0(n), memory: o(1)
     '''
-
     if root is None:
         return 0
 
@@ -26,7 +25,7 @@ def minDepth(root):
     time: 0(n), memory: o(1)
     '''
 
-    if root is None:
+    if not root:
         return 0
     
     if not root.left and not root.right:

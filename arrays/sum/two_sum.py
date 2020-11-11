@@ -10,7 +10,6 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 """
 
-
 def twoSum(nums: list, target: int) -> list:
     '''
     Time complexity: 0(n) where n is the length of nums
@@ -41,6 +40,17 @@ def twoSum2(nums, target):
         else:
             high -= 1
 
-
 assert sorted(twoSum([2, 7, 11, 15], 9)) == sorted([0, 1])
 assert sorted(twoSum([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
+
+
+def two_sum_brute_force(A, target):
+    '''
+    Time Complexity: O(n^2), Space Complexity: O(1)
+    '''
+    for i in range(len(A)-1):
+        for j in range(i+1, len(A)):
+            if A[i] + A[j] == target:
+                print(A[i], A[j])
+                return True
+    return False

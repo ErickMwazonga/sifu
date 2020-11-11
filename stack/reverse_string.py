@@ -2,14 +2,15 @@ from stack import Stack
 
 def reverse(str):
     stack = Stack()
-    reversed = ''
 
-    for i in str:
-        stack.append(i)
+    for char in str:
+        stack.append(char)
 
+    _reversed = ''
     for _ in stack:
-        reversed = reversed + stack.pop()
+        _reversed += stack.pop()
 
-    return reversed
+    return _reversed
 
-print(reverse('Hello'))
+assert reverse('Hello') == 'olleh'
+
