@@ -1,9 +1,7 @@
-from stack import Stack
+def reverse(_str):
+    stack = []
 
-def reverse(str):
-    stack = Stack()
-
-    for char in str:
+    for char in _str:
         stack.append(char)
 
     _reversed = ''

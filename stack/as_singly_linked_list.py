@@ -1,19 +1,13 @@
 class Node: 
-
-    # Class to create nodes of linked list
-    # constucter initializes node automatically
     def __init__(self, data): 
         self.data = data 
         self.next = None
 
 class Stack:
-
-    # head is default NULL
     def __init__(self): 
         self.head = None
 
-    # Checks if stack is empty
-    def isempty(self):
+    def is_empty(self):
         return self.head is None: 
         
     # Method to add data to the stack
@@ -28,7 +22,7 @@ class Stack:
 
     # Remove element that is the current head (start of the stack) 
     def pop(self):
-        if self.isempty(): 
+        if self.is_empty(): 
             return None	
         else: 
             # Removes the head node and makes 

@@ -13,8 +13,6 @@ ILLUSTRATION
 []        []            # D
 '''
 
-from stack import Stack
-
 
 class QueueFromTwoStacks:
 
@@ -26,9 +24,9 @@ class QueueFromTwoStacks:
         self.in_stack.append(item)
     
     def dequeue(self):
-        if len(self.out_stack) == 0:
+        if self.out_stack:
             # Move items from instack to outstack in reverse
-            while len(self.in_stack) > 0:
+            while self.in_stack:
                 newest_in_stack_item = self.in_stack.pop()
                 self.out_stack.append(newest_in_stack_item)
 

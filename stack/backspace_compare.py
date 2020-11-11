@@ -24,11 +24,9 @@ Output: false -> Explanation: S becomes "c" while T becomes "b".
 
  def backspaceCompare(self, S: str, T: str) -> bool:
     '''
-    Time complexity: O(n).
-    Space complexity: O(n).
+    Time complexity: O(n), Space complexity: O(n).
     '''
-    S_stack = []
-    T_stack = []
+    S_stack, T_stack = [], []
     
     for c in S:
         if c != '#':

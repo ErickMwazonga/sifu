@@ -32,7 +32,7 @@ def minimum_reversals(s: str) -> int:
         return -1 # Cannot be balanced
     
     open_count = 0
-    while(n and stack[-1] != '}'):
+    while n and (stack[-1] != '}'):
         stack.pop()
         open_count += 1
   

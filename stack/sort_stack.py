@@ -10,25 +10,23 @@ Input : [3, 5, 1, 4, 2, 8]
 Output : [1, 2, 3, 4, 5, 8]
 '''
 
-from stack import Stack
-
 
 class SortedStack:
     def __init__(self, nums):
-        self.stack = Stack()
-        self.temp_stack = Stack()
+        self.stack = []
+        self.temp_stack = []
 
         for num in nums:
             self.stack.append(num)
 
     def sort(self):
-        while not self.stack.isEmpty():
+        while self.stack:
             # pop out the first element
             popped = self.stack.pop()
 
             # while temporary stack is not
             # empty and top of stack is greater than temp
-            while not self.temp_stack.isEmpty() and popped < self.temp_stack.peek():
+            while self.temp_stack and popped < self.temp_stack[-1]:
                 # pop from temporary stack and
                 # push it to the input stack
                 popped_from_temp = self.temp_stack.pop()
@@ -40,7 +38,6 @@ class SortedStack:
         return self.temp_stack
 
 
-ss = SortedStack([34, 3, 31, 98, 92, 23])
-print(ss.stack.show())
+ss = SortedStack([3, 5, 1, 4, 2, 8])
 ss.sort()
-print(ss.temp_stack.show())
+# print(ss.temp_stack.show())

@@ -1,4 +1,7 @@
-''''
+'''
+155. Min Stack
+https://leetcode.com/problems/min-stack/
+
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 push(x) -- Push element x onto stack.
@@ -15,11 +18,11 @@ class MinStack:
     def push(self, x):
         self.stack.append(x)
         
-        if len(self.min_stack) > 0:
+        if not self.min_stack:
+            self.min_stack.append(x)
+        else:
             current_min = min(x, self.min_stack[-1])
             self.min_stack.append(current_min)
-        else:
-            self.min_stack.append(x)
 
     def pop(self) -> None:
         self.min_stack.pop()
