@@ -16,8 +16,7 @@ Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
 class Solution:
     '''
-    Time complexity: ~N
-    Space complexity: ~1
+    Time complexity: ~N, Space complexity: ~1
     '''
     
     def maxProduct(self, nums: List[int]) -> int:
@@ -29,8 +28,8 @@ class Solution:
 
         for num in nums:
             choices = num, min_product * num, max_product * num
-            max_product = max(choices)            
-            min_product = min(choices)            
+            min_product = min(choices)  
+            max_product = max(choices)                      
             result = max(result, max_product)
 
         return result

@@ -1,3 +1,10 @@
+# Linear Search
+def linear_search(data, target):	
+	for i in range(len(data)):
+		if data[i] == target:
+			return True
+	return False
+
 # ITERATIVELY
 def binarySearch(arr, x):
     low, high = 0, len(arr) - 1

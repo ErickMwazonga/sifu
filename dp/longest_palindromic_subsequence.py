@@ -1,5 +1,6 @@
 '''
 5. Longest Palindromic Substring
+https://leetcode.com/problems/longest-palindromic-substring/
 
 Given a string s, return the longest palindromic substring in s.
 
@@ -7,13 +8,8 @@ Example 1:
 Input: s = "babad" -> "bab"
 Note: "aba" is also a valid answer.
 
-Example 2:
 Input: s = "cbbd" -> "bb"
-
-Example 3:
 Input: s = "a" -> "a"
-
-Example 4:
 Input: s = "ac" -> "a"
 '''
 
@@ -43,4 +39,4 @@ class Solution:
             right += 1
         
         # not string[left:right+1] because we are going outside   
-        return string[left + 1:right]   
+        return string[left + 1 : right]

@@ -29,15 +29,15 @@ def rob(nums: List[int]) -> int:
     if n <= 2:
         return max(nums)
 
-    DP = [0] * n
-    DP[0] = nums[0]
-    DP[1] = max(nums[0], nums[1])
+    dp = [0] * n
+    dp[0] = nums[0]
+    dp[1] = max(nums[0], nums[1])
 
     for i in range(2, n):
         # The max if we select it or not
-        DP[i] = max(nums[i] + DP[i-2], DP[i-1])
+        dp[i] = max(nums[i] + dp[i-2], dp[i-1])
 
-    return DP[-1]
+    return dp[-1]
 
 assert rob([1, 2, 3, 1]) == 4
 assert rob([2, 7, 9, 3, 1]) == 12

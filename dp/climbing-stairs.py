@@ -29,7 +29,6 @@ class Solution:
 
     def climbStairs(self, n):
         ways = []
-
         ways.extend([1, 2])
 
         for i in range(2, n):

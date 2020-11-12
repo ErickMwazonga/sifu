@@ -1,12 +1,13 @@
 
 
 def fractional_knapsack(weights, profits, capacity):
-    indexes = list(range(len(profits)))
+    n = len(profits)
+    indexes = list(range(n))
     ratios = [p/w for p, w in zip(profits, weights)]
     indexes.sort(key=lambda i: ratios[i], reverse=True)
 
     max_value = 0
-    fractions = [0] * len(profits)
+    fractions = [0] * n
 
     for i in indexes:
         if weights[i] <= capacity:

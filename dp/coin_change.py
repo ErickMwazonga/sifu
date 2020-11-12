@@ -1,5 +1,6 @@
 '''
 322. Coin Change
+https://leetcode.com/problems/coin-change/
 You are given coins of different denominations and a total amount of money amount.
 Write a function to compute the fewest number of coins that you need to make up that amount.
 If that amount of money cannot be made up by any combination of the coins, return -1.
@@ -35,10 +36,11 @@ class Solution(object):
         
         for i in range(0, amount + 1):
             for coin in coins:
-                if i - coin < 0:
+                balance = i - coin
+                if balance < 0:
                     continue
 
-                dp[i] = min(dp[i], dp[i - coin] + 1)
+                dp[i] = min(dp[i], dp[balance] + 1)
         
         if dp[amount] == MAX:  
             return -1

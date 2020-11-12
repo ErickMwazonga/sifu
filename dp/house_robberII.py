@@ -26,15 +26,13 @@ Total amount you can rob = 1 + 3 = 4.
 
 
 class Solution:
-    # Time:  O(n)
-    # Space: O(1)
+    '''Time:  O(n) # Space: O(1)'''
 
     def rob(self, nums):
         if len(nums) <= 2:
             return max(nums)
 
-        # Max(Not robbing th first house vs
-        # Robbing the first house)
+        # Max(Not robbing th first house vs Robbing the first house)
         return max(
             self.rob_section(nums[1:]),
             self.rob_section(nums[:-1])
