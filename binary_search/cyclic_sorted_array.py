@@ -8,12 +8,10 @@ of the cyclically sorted array.
 """
 
 def find(A):
-    low = 0
-    high = len(A) - 1
+    low, high = 0, len(A) - 1
 
     while low < high:
         mid = (low + high) // 2
-        print(A[mid])
 
         if A[mid] > A[high]:
             low = mid + 1

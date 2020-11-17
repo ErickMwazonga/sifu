@@ -26,16 +26,22 @@ def partition(A, low, high):
     A[i], A[high] = A[high], A[i]
     return i
 
+def quicksort_helper(A, low, high):
+    if low >= high:
+        return
 
-def quickSort(A, low, high):
-    if low < high:
-        pi = partition(A, low, high)
-        quickSort(A, low, pi-1)
-        quickSort(A, pi+1, high)
+    pi = partition(A, low, high)
+    quicksort_helper(A, low, pi-1)
+    quicksort_helper(A, pi+1, high)
+
+def quickSort(A):
+    n = len(data)
+    quicksort_helper(A, 0, n-1)
 
 
 data = [8, 7, 2, 1, 0, 9, 6]
-size = len(data)
-quickSort(data, 0, size - 1)
+n = len(data)
+quickSort(data)
+print(data)
 
-assert data == [0, 1, 2, 6, 7, 8, 9]
+# assert data == [0, 1, 2, 6, 7, 8, 9]

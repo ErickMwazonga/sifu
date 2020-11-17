@@ -18,6 +18,7 @@ def binarySearch(arr, x):
             low = mid + 1
         else: 
             high = mid - 1
+
     return -1 # NOT FOUND
 
 # RECURSIVE

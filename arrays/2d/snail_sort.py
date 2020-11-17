@@ -59,42 +59,6 @@ assert snail(b) == [1, 2, 3, 6, 9, 8, 7, 4, 5]
 assert snail(c) == [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]
 
 
-def spiralOrder(matrix):
-    res = []
-    if len(matrix) == 0:
-        return res
-
-    row_begin = 0
-    row_end = len(matrix) - 1
-    col_begin = 0
-    col_end = len(matrix[0]) - 1
-
-    while row_begin <= row_end and col_begin <= col_end:
-        # Step 1: Add the first row to result, remove it from arr
-        for i in range(col_begin, col_end+1):
-            res.append(matrix[row_begin][i])
-        row_begin += 1
-
-        # Step 2: Add the last elements to result, remove them from arr
-        for i in range(row_begin, row_end+1):
-            res.append(matrix[i][col_end])
-        col_end -= 1
-
-        # Step 3: Add the last row to result in reverse, remove it from arr
-        if row_begin <= row_end:
-            for i in range(col_end, col_begin-1, -1):
-                res.append(matrix[row_end][i])
-        row_end -= 1
-
-        # Step 4: Add the first elements to result in reverse,
-        if col_begin <= col_end:
-            for i in range(row_end, row_begin-1, -1):
-                res.append(matrix[i][col_begin])
-        col_begin += 1
-
-    return res
-
-
 # INTERVIEW - MICROSOFT ON-SCREEN
 # ---------------------------------
 def visit_in_spiral(matrix):
@@ -116,15 +80,15 @@ def visit_in_spiral(matrix):
     # 3. last row in reverse
     for num in reversed(matrix[-1]): # -1 returns the last item
     	result.append(num)
-      matrix.pop()
+        matrix.pop()
       
-     # 4. first item of the remaining arrays
-     for i in range(len(matrix)-1, -1, -1):
-     	for j in range(0, len(matrix[0])):
-      	result.append(num)
-        matrix[i].pop(0)
-    	
-      if len(matrix):
-      	spiral_helper(matrix)
+    # 4. first item of the remaining arrays
+    for i in range(len(matrix)-1, -1, -1):
+        for j in range(0, len(matrix[0])):
+            result.append(num)
+            matrix[i].pop(0)
+
+    if len(matrix):
+        spiral_helper(matrix)
     
     return result

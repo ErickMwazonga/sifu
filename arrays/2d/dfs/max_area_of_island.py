@@ -28,14 +28,16 @@ class Solution:
         if not grid:
             return 0
             
-        count = 0
+        max_count = 0
+        n, m = len(grid), len(grid[0])
         
-        for row in range(len(grid)):
-            for col in range(len(grid[0])):
+        for row in range(n):
+            for col in range(m):
                 if grid[row][col] == 1:
-                    count = max(self.dfs(grid, row, col), count)
+                    count = self.dfs(grid, row, col)
+                    max_count = max(max_count, count)
                     
-        return count
+        return max_count
     
     def dfs(self, grid, row, col):
         n, m = len(grid), len(grid[0])

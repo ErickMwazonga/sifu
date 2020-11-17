@@ -7,8 +7,7 @@ Matrix = List[List[int]]
 
 
 def transpose(matrix: Matrix) -> Matrix:
-    n_rows = len(matrix)
-    n_cols = len(matrix[0])
+    n_rows, n_cols = len(matrix), len(matrix[0])
 
     transposed = [[0 for _ in range(n_rows)] for _ in range(n_cols)]
 

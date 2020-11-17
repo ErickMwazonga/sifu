@@ -5,21 +5,21 @@ https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/submissi
 Given a m * n matrix grid which is sorted in non-increasing order both row-wise and column-wise. 
 Return the number of negative numbers in grid.
 
-Input: grid = [
+grid = [
     [4,3,2,-1],
     [3,2,1,-1],
     [1,1,-1,-2],
     [-1,-1,-2,-3]
 ] -> 8
-Input: grid = [
+grid = [
     [3,2],
     [1,0]
 ] -> 0
-Input: grid = [
+grid = [
     [1,-1],
     [-1,-1]
 ] -> 3
-Input: grid = [[-1]] -> 1
+grid = [[-1]] -> 1
 '''
 
  def countNegativesDESC(grid):

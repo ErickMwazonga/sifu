@@ -20,6 +20,7 @@ class Solution:
     def binaryTreePaths(self, root):
         if not root:
             return []
+
         res = []
         self.path(root, '', res)
         return res

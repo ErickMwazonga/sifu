@@ -32,7 +32,7 @@ def checkPossibility(nums):
 
     return True
     
-def checkPossibilityBest(self, nums: List[int]) -> bool:
+def checkPossibilityBest(nums):
     count = 0
     n = len(nums)
 
@@ -45,6 +45,6 @@ def checkPossibilityBest(self, nums: List[int]) -> bool:
 
             if count > 1:
                 return False
-            elif (i-1) >= 0 and nums[i+1] < nums[i-1]:
+            elif (i-1) >= 0 and nums[i-1] > nums[i+1]:
                 nums[i+1] = nums[i]
     return True

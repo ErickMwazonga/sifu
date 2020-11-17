@@ -1,7 +1,7 @@
 '''
+468. Validate IP Address
 https://leetcode.com/problems/validate-ip-address/
 
-468. Validate IP Address
 Given a string IP, return "IPv4" if IP is a valid IPv4 address,
 "IPv6" if IP is a valid IPv6 address or "Neither" if IP is not a correct IP of any type.
 
@@ -31,10 +31,10 @@ IP consists only of English letters, digits and the characters '.' and ':'
 
 class Solution:
     def validIPAddress(self, IP: str) -> str:
-        
         def isIPv4(s):
             try:
-                return str(int(s)) == s and 0 <= int(s) <= 255
+                num = int(s)
+                return str(num) == s and 0 <= num <= 255
             except:
                 return False
             

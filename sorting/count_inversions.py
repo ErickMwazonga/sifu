@@ -11,67 +11,35 @@ def mergeSort(A):
 
     if n == 1:
         return A
-    else:
-        mid = n // 2
-        a, b = A[:mid], A[mid:]
 
-        a = mergeSort(a)
-        b = mergeSort(b)
+    mid = n // 2
+    a, b = A[:mid], A[mid:]
 
-        i = j = 0
-        res = []
+    a = mergeSort(a)
+    b = mergeSort(b)
 
-        while i < len(a) and j < len(b):
-            if a[i] < b[j]:
-                res.append(a[i])
-                i += 1
-            else:
-                res.append(b[j])
-                j += 1
+    i = j = 0
+    res = []
 
-        res += a[i:]
-        res += b[j:]
+    while i < len(a) and j < len(b):
+        if a[i] < b[j]:
+            res.append(a[i])
+            i += 1
+        else:
+            res.append(b[j])
+            j += 1
 
-        return res
+    res += a[i:]
+    res += b[j:]
 
-def mergeSortInversions(A):
-    n = len(A)
-
-    if n == 1:
-        return A, 0
-    else:
-        mid = n // 2
-        a, b = A[:mid], A[mid:]
-
-        a, ai = mergeSort(a)
-        b, bi = mergeSort(b)
-
-        i = j = 0
-        res = []
-        inversions = 0 + ai + bi
-
-        while i < len(a) and j < len(b):
-            if a[i] > b[j]:
-                res.append(a[i])
-                i += 1
-            else:
-                res.append(b[j])
-                j += 1
-                inversions += len(a) - i
-
-        res += a[i:]
-        res += b[j:]
-
-        return res, inversions
-
+    return res
 
 def countInversions(A):
     if len(A) < 2:
         return 0
 
     mid = len(A) // 2
-    left_half = A[:mid]
-    right_half = A[mid:]
+    left_half, right_half = A[:mid], A[mid:]
 
     left_inversion_count = countInversions(left_half)
     right_inversion_count = countInversions(right_half)
@@ -87,7 +55,7 @@ def countInversions(A):
             A[k] = right_half[j]
             j += 1
             # Count left elements after the current as inversions since
-            # they are greate than current right element
+            # they are greater than current right element
             inversion_count += len(left_half) - i
         k += 1
 

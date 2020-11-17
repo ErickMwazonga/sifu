@@ -1,5 +1,8 @@
 """
-Question - Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? 
+15. 3Sum -> 0
+https://leetcode.com/problems/3sum/
+
+are there elements a, b, c in nums such that a + b + c = 0? 
 Find all unique triplets in the array which gives the sum of zero.
 
 Note:
@@ -27,12 +30,12 @@ def threeSum(nums):
             
             if s == 0:
                 lis.append((nums[i], nums[low], nums[high]))
-                low = low + 1
-                high = high - 1
+                low += 1
+                high -= 1
             if s < 0:
-                low = low + 1
+                low += 1
             if s > 0:
-                high = high - 1
+                high -= 1
                 
     res = list(set(lis))     
     res = [list(x) for x in res]

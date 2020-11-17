@@ -15,19 +15,21 @@ class Solution:
             '9': 'wxyz'
         }
         
-        if len(digits) == 0:
+        n = len(digits)
+        if n == 0:
             return []
         
-        if len(digits) == 1:
+        if n == 1:
             return list(mapping[digits[0]])
         
         all_combinations = list(mapping[digits[0]])
         
-        for i in range(1, len(digits)):
+        for i in range(1, n):
             current_combinations = []
+            letters = mapping[digits[i]]
             
             for combination in all_combinations:
-                for letter in mapping[digits[i]]:
+                for letter in letters:
                     current_combinations.append(f'{combination}{letter}')
                     
             all_combinations = current_combinations

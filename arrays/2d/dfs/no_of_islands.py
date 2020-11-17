@@ -39,9 +39,10 @@ class Solution:
             return 0
             
         count = 0
-        
-        for row in range(len(grid)):
-            for col in range(len(grid[0])):
+        n, m = len(grid), len(grid[0])
+
+        for row in range(n):
+            for col in range(m):
                 if grid[row][col] == '1':
                     self.dfs(grid, row, col)
                     count += 1

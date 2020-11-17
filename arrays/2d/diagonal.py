@@ -1,9 +1,10 @@
 
 def secDiagonal(A):
+    n = len(A)
     res = []
-    i, j = 0, len(A)-1
+    i, j = 0, n - 1
     
-    while i < len(A) and j >= 0:
+    while i < n and j >= 0:
         res.append(A[i][j])
         i += 1
         j -= 1

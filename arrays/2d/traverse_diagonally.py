@@ -1,38 +1,65 @@
 '''
-https://www.ritambhara.in/print-elements-of-a-matrix-in-diagonal-order/
-https://www.youtube.com/watch?v=T8ErAYobcbc
+498. Diagonal Traverse
+https://leetcode.com/problems/diagonal-traverse/
+https://leetcode.com/problems/diagonal-traverse/discuss/145195/python-solution-beats-100-using-bfs-just-like-maze-problem
 
-Given a square matrix of order N*N,
-write code to print all the elements in the order of their diagonal.
-For example, in the below matrix, the elements should be printed in the marked (in red) order,
-and the final output should be as shown below:
+Given a matrix of M x N elements (M rows, N columns),
+return all elements of the matrix in diagonal order as shown in the below image.
 
-input
+Example:
+Input:
 [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
+    [ 1, 2, 3 ],
+    [ 4, 5, 6 ],
+    [ 7, 8, 9 ]
 ]
-output
-[1, 4, 2, 7, 5, 3, 8, 6, 9]
+
+Output:  [1,2,4,7,5,3,6,8,9]
+
+Explanation: visit link
 '''
 
 def findDiagonalOrder(matrix):
-    res = []
+    n, m = len(matrix), len(matrix[0])
 
-    for k in range(n):
-        i, j = k, 0
+    if n == 0 or m == 0:
+        return []
 
-        while i >= 0:
-            res.append(matrix[i][j])
-            i -= 1
-            j += 1
+    row, col = 0, 0
+    result = []
 
-    for k in range(1, m):
-        i, j = n - 1, k
+    # Execute m * n times circle, in order to fill m * n element into aimArr
+    for i in range(n * m):
+        result.append(matrix[row][col])
 
-        while j < m:
-            res.append(matrix[i][j])
-            i -= 1
-            j += 1
+        '''
+        According to this subject model, we can find some rules about index of matrix.
+        For example, the sum of all moving up trajectory element can be divided by 2，
+        and the sum of all moving down trajectory element can't be divided by 2
+        '''
+        if (row + col) % 2 == 0:
+            # moving up
+            # If col == n - 1, it's mean this position is last column, so, only row index must be increased
+            if col == (m - 1):
+                row += 1
+            # If row == 0, it's mean this position is first row, so, only column index can be increased
+            elif row == 0:
+                col += 1
+            # In this condition, in order to moving up, column index must be increased and row index must be decreased
+            else:
+                row -= 1
+                col += 1
+        else:
+            # moving down
+            # If row == m - 1, it's mean this position is last row, so, only column index must be increased
+            if row == (n - 1):
+                col += 1
+            # If col == 0, it's mean this position is first column, so, only row index can be increased
+            elif col == 0:
+                row += 1
+            # In this condition, in order to moving down, row index must be increased and column index must be decreased
+            else:
+                row += 1
+                col -= 1
     
+    return res

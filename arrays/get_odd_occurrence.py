@@ -16,7 +16,7 @@ def get_odd_occurrence(arr):
     '''Time complexity: O(n)'''
     
     size = len(arr)
-    _hash = dict()
+    _hash = {}
 
     for i in range(size):
         elem = arr[i]

@@ -8,14 +8,15 @@ have to modify the input 2D matrix directly.
 DO NOT allocate another 2D matrix and do the rotation.
 '''
 
+# C L O C K W I S E
 class Solution:
     def rotate_final(self, matrix):
         # Two steps: reverse and transpose in place
         matrix.reverse()
 
         # Transpose
-        size = len(matrix)
-        for i in range(size):
+        n = len(matrix)
+        for i in range(n):
             for j in range(i):
                 # Do a transpose swap
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
@@ -33,7 +34,6 @@ class Solution:
     def rotate(self, matrix):
         matrix.reverse()
         self.transpose(matrix)
-
 
 
 s = Solution()

@@ -14,6 +14,20 @@ Space: O(1) -> extra variable temp for min index.
 from typing import List
 
 
+def insertionSort(A):
+    n = len(A)
+
+    for i in range(1, n):
+        pos = i
+        temp_val = A[i]
+
+        while pos > 0 and A[pos-1] > temp_val:
+            A[pos] = A[pos - 1]
+            pos -= 1
+        
+        A[pos] = temp_val
+
+
 def insertion_sort(A: List) -> List:
     n = len(A)
 

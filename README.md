@@ -9,3 +9,5 @@ DSA
 3. https://zhaonanli.gitbooks.io/leetcode/content
 4. https://somjang.tistory.com/entry/leetCode-729-My-Calendar-I-Python?category=351755
 5. https://leetcode.xnerv.wang/zigzag-conversion/
+6. https://techlarry.github.io/Leetcode/202.%20Happy%20Number/
+7. https://adit0503.gitbook.io/leetcode/200.-number-of-islands

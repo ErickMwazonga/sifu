@@ -1,5 +1,7 @@
 """
 Counting Sort
+https://www.interviewcake.com/concept/python3/counting-sort
+https://www.programiz.com/dsa/counting-sort
 https://www.programiz.com/dsa/counting-sort
 Counting sort is a sorting algorithm that sorts the elements
 of an array by counting the number of occurrences of each unique

@@ -1,6 +1,7 @@
 '''
 122. Best Time to Buy and Sell Stock II
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+https://medium.com/@rebeccahezhang/leetcode-122-best-time-to-buy-and-sell-stock-ii-fbf6d66d62e3
 
 Say you have an array prices for which the ith element is the price of a given stock on day i.
 Design an algorithm to find the maximum profit.
@@ -24,15 +25,15 @@ Input: [7,6,4,3,1] -> 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
 
-from typing import List
-
-def maxProfit(self, prices: List[int]) -> int:
-    if not prices:
-        return max_profit
+def maxProfit(prices) -> int:
+    n = len(prices)
+        
+    if n <= 1:
+        return 0
     
     max_profit = 0
     
-    for i in range(1, len(prices)):
+    for i in range(1, n):
         if prices[i] > prices[i - 1]:
             profit = prices[i] - prices[i - 1]
             max_profit += profit

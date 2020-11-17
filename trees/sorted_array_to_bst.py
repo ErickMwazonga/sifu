@@ -22,7 +22,7 @@ class Solution:
     Space complexity: O(N).
     '''
 
-    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+    def sortedArrayToBST(self, nums):
         return self.conversion_helper(nums)
 
     def conversion_helper(self, nums):

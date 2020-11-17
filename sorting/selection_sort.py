@@ -11,19 +11,17 @@ Average: O(n2) -> elements of the array are in jumbled order.
 Space: O(1) -> extra variable temp for min index.
 """
 
-from typing import List
-
-
-def selection_sort(A: List) -> List:
+def selection_sort(A):
     n = len(A)
 
-    for step in range(n-1):
-        min_index = step
-        for i in range(step+1, n):
-            if A[i] < A[min_index]:
-                min_index = i
+    for i in range(n-1):
+        min_index = i
 
-        A[step], A[min_index] = A[min_index], A[step]
+        for j in range(i+1, n):
+            if A[j] < A[min_index]:
+                min_index = j
+
+        A[i], A[min_index] = A[min_index], A[i]
 
     return A
 

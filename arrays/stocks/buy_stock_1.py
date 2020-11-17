@@ -21,22 +21,6 @@ Example 2:
 [7,6,4,3,1] -> 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
-from typing import List
-
-def buy_and_sell_once(A):
-    '''
-    # Time Complexity: O(n^2), Space Complexity: O(1)
-    '''
-
-    max_profit = 0
-    n = len(A)
-
-    for i in range(n-1):
-        for j in range(i+1, n):
-            if A[j] - A[i] > max_profit:
-                max_profit = A[j] - A[i]
-
-    return max_profit
 
 def maxProfit(prices) -> int:
     '''Linear Time, Constant Space'''
