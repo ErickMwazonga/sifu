@@ -28,29 +28,29 @@ class Solution:
         if not board:
             return
 
-        n_rows, n_cols = len(board), len(board[0])
+        n, m = len(board), len(board[0])
 
         # change left and right border O into D
-        for row in range(n_rows):
+        for row in range(n):
             self.dfs(board, row, 0)
-            self.dfs(board, row, n_cols - 1)
+            self.dfs(board, row, m - 1)
         
         # change up and down border O into D
-        for col in range(n_cols):
+        for col in range(m):
             self.dfs(board, 0, col)
-            self.dfs(board, n_rows - 1, col)
+            self.dfs(board, n - 1, col)
 
-        for row in range(n_rows):
-            for col in range(n_cols):
-                if board[row][col] == 'O':
-                    board[row][col] = 'X'
-                elif board[row][col] == 'D':
-                    board[row][col] = 'O'
+        for i in range(n):
+            for j in range(m):
+                if board[i][j] == 'O':
+                    board[i][j] = 'X'
+                elif board[i][j] == 'D':
+                    board[i][j] = 'O'
     
-    def helper(self, board, i: int, j: int) -> None:
-        n_rows, n_cols = len(board), len(board[0])
+    def dfs(self, board, i: int, j: int) -> None:
+        n, m = len(board), len(board[0])
 
-        if i >= 0 and i < n_rows and j >= 0 and j < n_cols:
+        if i >= 0 and i < n and j >= 0 and j < m:
             if board[i][j] == 'O':
                 board[i][j] = 'D'
                 self.dfs(board, i + 1, j)

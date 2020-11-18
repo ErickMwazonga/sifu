@@ -32,7 +32,7 @@ class SortedStack:
                 popped_from_temp = self.temp_stack.pop()
                 self.stack.append(popped_from_temp)
 
-            # push temp in tempory of stack
+            # push temp in temporary of stack
             self.temp_stack.append(popped)
 
         return self.temp_stack

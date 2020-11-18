@@ -19,7 +19,7 @@ class Queue:
     def enqueue(self, data):
         # Checking to avoid duplicate entry (not mandatory)
         if data not in self.queue:
-            self.queue.append(0)
+            self.queue.append(data)
             return True
         return False
 

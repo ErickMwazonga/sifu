@@ -27,51 +27,47 @@ def reverse(head):
         curr = next_node
     return prev # Return new head
 
-def addOne(head, digit):
+def addDigit(head, digit):
     head = reverse(head)
-
     curr = head
     carry = digit
+    last = None
 
-    while curry > 0:
-        # get sum of current node and carry
-		_sum = curr.data + carry
+    while curr:
+        curr.data += carry
 
-		# update value of the current node with the single-digit sum
-		curr.data = _sum % 10
+        if curr.data >= 10:
+            val, rem = divmod(curr.data, 10)
+            carry = 1
+            curr.data = rem
+        else:
+            carry = 0
+            break
 
-		# set carry for the next node
-		carry = _sum // 10
+        if not curr.next:
+            last = curr
 
-		# break if current node is the last node
-		if curr.next is None:
-			break
+        curr = curr.next
 
-		# move to the next node
-		curr = curr.next
-    
     # add a node at the end of linked list if there is any carry left
-	if carry > 0:
-		curr.next = Node(carry)
+    if carry == 1:
+        last.next = Node(1)
 
-	# reverse the list again to restore the original order
-	head = reverse(head)
-	return head
+    # reverse the list again to restore the original order
+    head = reverse(head)
+    return head
 
 
-if __name__ == '__main__':
+head = Node(9)
+head.next = Node(2)
+head.next.next = Node(9)
+head.next.next.next = Node(3)
 
-	head = Node(9)
-	head.next = Node(9)
-	head.next.next = Node(9)
-	head.next.next.next = Node(9)
-	head.next.next.next.next = Node(3)
+digit = 7
 
-	digit = 7
-
-	printList(" Original Linked List: ", head)
-	head = addDigit(head, digit)
-	printList("Resultant Linked List: ", head)
+printList(" Original Linked List: ", head)
+head2 = addDigit(head, digit)
+printList("Resultant Linked List: ", head2)
 
 # RESULT
 # Original Linked List: 9 -> 9 -> 9 -> 9 -> 9 -> None

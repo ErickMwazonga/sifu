@@ -44,13 +44,16 @@ class CircularLinkedList:
             new_node.next = self.head
 
     def is_circular_linked_list(self, input_list):
-        cur = input_list.head
-        while cur.next:
-            cur = cur.next
-            if cur.next == input_list.head:
+        curr = input_list.head
+
+        while curr.next:
+            curr = curr.next
+            if curr.next == input_list.head:
                 return True
+
         return False
-        print(cur.data)
+        
+        print(curr.data)
 
 cllist = CircularLinkedList()
 cllist.append(1)

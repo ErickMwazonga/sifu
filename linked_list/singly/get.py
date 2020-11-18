@@ -43,15 +43,15 @@ class LinkedList:
         if i < 0:
             raise ValueError('No negatives!!! 🐱')
 
-        current_node = head
-        current_position = 0
+        curr = head
+        position = 0
 
-        while current_node:
-            if current_position == i:
-                return current_node
+        while curr:
+            if position == i:
+                return curr
 
-            current_node = current_node.next
-            current_position += 1
+            curr = curr.next
+            position += 1
 
         raise ValueError('Not Found')
 

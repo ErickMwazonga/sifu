@@ -55,7 +55,7 @@ def addOne(head):
 
     while curr:
         curr.data += carry
-        if curr.data % 10 == 0: 
+        if curr.data == 10: 
             # update carry for next calulation  
             carry = 1
             curr.data = 0
@@ -65,7 +65,7 @@ def addOne(head):
         curr = curr.next
     
     # add a node at the end of linked list if there is any carry left
-	if carry > 0:
+	if carry == 1:
 		curr.next = Node(carry)
 
 	# reverse the list again to restore the original order

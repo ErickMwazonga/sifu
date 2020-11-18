@@ -30,32 +30,32 @@ class LinkedList:
         if not self.head:
             return
 
-        previous_node = None
-        current_node = self.head
-        next_node = None
+        prev = None
+        curr = self.head
+        _next = None
 
-        while current_node:
-            next_node = current_node.next
-            current_node.next = previous_node
-            previous_node = current_node
-            current_node = next_node
+        while curr:
+            _next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = _next
 
-        self.head = previous_node
-        # return previous_node
+        self.head = prev
+        # return prev
 
     def reverse_recursive(self):
-        def helper(current_node, previous_node):
-            if not current_node:
-                return previous_node
+        def helper(curr, prev):
+            if not curr:
+                return prev
 
-            next_node = current_node.next
-            current_node.next = previous_node
-            previous_node = current_node
-            current_node = next_node
+            _next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = _next
             
             return helper(curr, prev)
 
-        self.head = helper(current_node=self.head, previous_node=None)
+        self.head = helper(curr=self.head, prev=None)
 
 
 llist = LinkedList()

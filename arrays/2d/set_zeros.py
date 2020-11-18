@@ -26,8 +26,7 @@ def setZeroes(matrix):
     n, m = len(matrix), len(matrix[0])
 
     # Get the rows and cols that have 0 value
-    rows = set()
-    cols = set()
+    rows, cols = set(), set()
 
     for row in range(n):
         for col in range(m):

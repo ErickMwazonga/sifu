@@ -20,14 +20,14 @@ class SinglyLinkedList:
             curr = curr.next
         return nodes
 
-    def size(head):
+    def size(self, head):
         if not head:
             return 0
         return  1 + size(head.next)
 
-    def get_tail(head):
-        current_node = head
+    def get_tail(self, head):
+        curr = head
 
-        while(current_node.next):
-            current_node = current_node.next
-        return current_node
+        while curr.next:
+            curr = curr.next
+        return curr

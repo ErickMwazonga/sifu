@@ -14,8 +14,8 @@ class MaxHeap:
         return (2 * pos) + 2
 
     def isLeaf(self, A, pos):
-        size = len(A)
-        return pos <= size and pos >= (size // 2)
+        n = len(A)
+        return pos <= n and pos >= (n // 2)
 
     def maxHeapify(self, A, n, i):
         largest = i
@@ -34,17 +34,17 @@ class MaxHeap:
 
     def build_max_heap(self, A):
         # O(n) time
-        size = len(A)
-        no_leaf_nodes_max_idx = (size // 2) - 1
+        n = len(A)
+        no_leaf_nodes_max_idx = (n // 2) - 1
 
         for i in range(no_leaf_nodes_max_idx, -1, -1):
-            self.maxHeapify(A, size, i)
+            self.maxHeapify(A, n, i)
 
     def insertNode(self, A, num):
         '''Time - Heapify optimizes from O(nlogn) to O(n)'''
 
-        size = len(A)
-        if not size:
+        n = len(A)
+        if not n:
             A.append(num)
         else:
             A.append(num)
@@ -53,10 +53,10 @@ class MaxHeap:
     def deleteNode(self, A):  # extractMax
         '''Time - Heapify optimizes from O(nlogn) to O(n)'''
 
-        size = len(A)
+        n = len(A)
 
         # Swap first and last element
-        A[0], A[size-1] = A[size-1], A[0]
+        A[0], A[n-1] = A[n-1], A[0]
 
         popped = A.pop()
 
@@ -80,7 +80,7 @@ class MaxHeap:
         self.build_max_heap(A)
 
         # One by one extract elements
-        for i in range(times)
+        for i in range(times):
             A[-1], A[0] = A[0], A[-1]
             sorted_array.append(A.pop())
             self.maxHeapify(A, i, 0)

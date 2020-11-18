@@ -16,10 +16,13 @@ def spreadsheet_decode_column(col_num):
 
     while col_num > 0:
         col_num, remainder = divmod(col_num - 1, 26)
-        col_str = chr(ord('A') + remainder) + col_str
+        curr_str = chr(ord('A') + remainder)
+        col_str = curr_str + col_str
     return col_str
 
 
-assert spreadsheet_decode_column(1) == 'A'
-assert spreadsheet_decode_column(27) == 'AA'
-assert spreadsheet_decode_column(702) == 'ZZ'
+spreadsheet_decode_column(702)
+
+# assert spreadsheet_decode_column(1) == 'A'
+# assert spreadsheet_decode_column(27) == 'AA'
+# assert spreadsheet_decode_column(702) == 'ZZ'

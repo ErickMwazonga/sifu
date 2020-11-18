@@ -1,6 +1,8 @@
 """
-https://leetcode.com/problems/valid-parenthesis-string/
 678. Valid Parenthesis String
+https://leetcode.com/problems/valid-parenthesis-string/
+https://leetcode.com/problems/valid-parenthesis-string/discuss/107572/Java-using-2-stacks.-O(n)-space-and-time-complexity.
+
 Given a string containing only three types of characters: '(', ')' and '*',
 write a function to check whether this string is valid.
 We define the validity of a string by these rules:
@@ -36,8 +38,8 @@ def is_valid(s):
         else:
             right += 1
 
-        if left + star < right:
-            return False
+    if left + star < right:
+        return False
 
     left, star, right = 0, 0, 0
     for c in s[::-1]:
@@ -48,8 +50,8 @@ def is_valid(s):
         else:
             right += 1
 
-        if right + star < left:
-            return False
+    if right + star < left:
+        return False
 
     return True
 
@@ -60,8 +62,7 @@ def is_valid_1(s):
     Space complexity: O(N).
     '''
 
-    left = []
-    stars = []
+    left, stars = [], []
     
     for i, ch in enumerate(s):
         if ch == '*':
@@ -77,12 +78,12 @@ def is_valid_1(s):
             else:                
                 stars.pop()
                 
-    while (len(left) > 0 and len(star) > 0):
-        if (left[-1] > star[-1]):
+    while len(left) > 0 and len(stars) > 0:
+        if left[-1] > stars[-1]:
             return False
         
         left.pop()
-        star.pop()
+        stars.pop()
                 
     return len(left) == 0
 
@@ -93,3 +94,35 @@ assert is_valid('(*))') == True
 assert is_valid('(*)))') == False
 assert is_valid('(*()') == True
 assert is_valid(')(') == False
+
+
+def checkValidString(self, s):
+    """
+    :type s: str
+    :rtype: bool
+    """
+    # stack 1, try to test all the ( and * can balance all the )
+    S=[]        
+    # go through s from left to right
+    for x in s:
+        if x=='(' or x=='*':
+            S.append(x)
+        else:
+            if len(S)>0:
+                S.pop()
+            else:
+                return False        # this means left ( is not enough
+    
+    # stack 2, try to test all the ) and * can balance all the (
+    S=[]        
+    # go through s from right to left
+    for x in s[::-1]:
+        if x==')' or x=='*':
+            S.append(x)
+        else:
+            if len(S)>0:
+                S.pop()
+            else:
+                return False        # this means right ) is not enough
+    
+    return True

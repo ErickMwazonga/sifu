@@ -1,5 +1,4 @@
 '''
-74. Search a 2D Matrix
 https://leetcode.com/problems/search-a-2d-matrix/
 https://levelup.gitconnected.com/make-way-for-the-matrix-a-complete-guide-to-solving-2d-array-coding-problems-725096d122d9
 Write an efficient algorithm that searches
@@ -27,52 +26,6 @@ matrix = [
 target = 13
 Output: false
 '''
-
-from typing import List
-Matrix = List[List[int]]
-
-
-class Solution:
-    def searchMatrix(self, matrix, target) -> bool:
-        n, m = len(matrix), len(matrix[0])
-
-        if not n or not m:
-            return False
-
-        for i in range(n):
-            if target < matrix[i][0] or target > matrix[i][-1]:
-                i += 1
-
-            if i >= n:
-                return False
-
-            for j in range(m):
-                if matrix[i][j] == target:
-                    return True
-
-        return False
-
-
-class SolutionSorted:
-    '''
-    Notice that the elements become smaller as we move
-    left in a row and larger as we move down a column
-    '''
-    def searchMatrix(self, matrix, target):
-        if matrix == []:
-            return False
-        n, m = len(matrix), len(matrix[0])
-
-        i, j = 0, m - 1
-        while i < n and j >= 0:
-            if matrix[i][j] == target:
-                return True
-            elif matrix[i][j] < target:  # Move down a row
-                i += 1
-            elif matrix[i][j] > target:  # Move left a column
-                j -= 1
-        return False
-
 
 class SortedSearch:
     '''

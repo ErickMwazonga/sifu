@@ -4,12 +4,9 @@ class ListNode:
     	self.next = None
 
 def removeLoop(head: ListNode) -> bool:
-    # Initialize slow and fast to head node.
 	slow = fast = head
-	# Boolean to check if a loop exists in the given Linked List.
 	flag = False
 
-	# Traverse the Linked List.
 	while fast and fast.next:
     	slow = slow.next
     	fast = fast.next.next

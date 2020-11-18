@@ -16,18 +16,18 @@ def mostFrequent(arr):
     n = len(arr)
 
     # Insert all elements in Hash.
-    Hash = {}
+    freq = {}
     for i in range(n):
         curr_elem = arr[i]
-        Hash[curr_elem] = Hash.get(curr_elem, 0) + 1
+        freq[curr_elem] = freq.get(curr_elem, 0) + 1
 
     # find the max frequency
     max_count = 0
     res = -1
-    for i in Hash:
-        if (Hash[i] > max_count):
-            max_count = Hash[i]
-            res = i
+    for k, v in freq.items():
+        if v > max_count:
+            max_count = v
+            res = k
 
     return res
 

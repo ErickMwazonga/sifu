@@ -1,6 +1,5 @@
 '''
 LeetCode 160. Intersection of Two Linked Lists
-
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 Write a program to find the node at which the intersection of two singly linked lists begins.
@@ -16,11 +15,11 @@ class Solution:
     def getIntersectionNode(self, headA, headB):
         visited = set()
         
-        while headA != None:            
+        while headA:            
             visited.add(headA)
             headA = headA.next
 
-        while headB != None:            
+        while headB:            
             if headB in visited:
                 return headB
             headB = headB.next

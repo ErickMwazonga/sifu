@@ -1,5 +1,7 @@
 '''
 141. Linked List Cycle
+https://leetcode.com/problems/linked-list-cycle/
+
 Given head, the head of a linked list, determine if the linked list has a cycle in it.
 There is a cycle in a linked list if there is some node in the list that can be
 reached again by continuously following the next pointer.
@@ -24,14 +26,10 @@ def detectCycle(head):
     _hash = set()
 
     while curr:
-        # return false if we already have seen this node before
         if curr in _hash:
             return True
         
-        # insert current node into the set
         _hash.add(curr)
-
-        # move to the next node
         curr = curr.next
 
     return False

@@ -69,6 +69,7 @@ class LinkedList:
     def swap_nodes_alt(self, key_1, key_2):
         if key_1 == key_2:
             return
+            
         curr = self.head
         x, y = None, None # Assign None to avoid reference error
 

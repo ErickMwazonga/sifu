@@ -8,13 +8,12 @@ The robot can only move either down or right at any point in time. The robot is 
 of the grid (marked 'Finish' in the diagram below).
 How many possible unique paths are there?
 
-Example 1:
 Input: m = 3, n = 7
 Output: 28
-Example 2:
 
 Input: m = 3, n = 2
 Output: 3
+
 Explanation:
 From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
 1. Right -> Down -> Down
@@ -24,18 +23,17 @@ Example 3:
 
 Input: m = 7, n = 3
 Output: 28
-Example 4:
 
 Input: m = 3, n = 3
 Output: 6
 '''
 
- def uniquePaths(m: int, n: int) -> int:
-    dp = [[1 for _ in range(n)] for _ in range(m)]
+ def uniquePaths(n: int, m: int) -> int:
+    dp = [[1 for _ in range(m)] for _ in range(n)]
     
-    for i in range(1, m):
-        for j in range(1, n):
+    for i in range(1, n):
+        for j in range(1, m):
             dp[i][j] = dp[i-1][j] + dp[i][j-1]
             
-    # return dp[m-1][n-1]
+    # return dp[n-1][m-1]
     return dp[-1][-1]

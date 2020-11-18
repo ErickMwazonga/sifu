@@ -14,7 +14,7 @@ def isPalindrome(self, s: str) -> bool:
     Time complexity: O(N), Space complexity: O(N)
     '''
     s = s.lower()
-    left = right = ''
+    left = ''
     
     for i in range(0, len(s)):
         if s[i].isalnum():
@@ -26,19 +26,15 @@ def is_palindrome2(s):
     '''
     Time complexity: O(N), Space complexity: O(1)
     '''
-    i = 0
-    j = len(s) - 1
-
-    while i < j:
-        while not s[i].isalnum() and i < j:
-            i += 1
-        while not s[j].isalnum() and i < j:
-            j -= 1
-
-        if s[i].lower() != s[j].lower():
-            return False 
-        i += 1
-        j -= 1
+    s = [i.lower() for i in s if i.isalnum()]
+    low, high = 0, len(s) - 1
+    
+    while low < high:
+        if s[low] != s[high]:
+            return False
+        
+        low += 1
+        high -= 1
 
     return True
 

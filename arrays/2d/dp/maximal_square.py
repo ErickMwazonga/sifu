@@ -15,16 +15,16 @@ Output: 4
 '''
 
 def maximalSquare(matrix):
-    if not matrix or len(matrix) < 1:
+    if not matrix:
         return 0
     
-    n_rows, n_cols = len(matrix), len(matrix[0])
+    n, m = len(matrix), len(matrix[0])
     
-    dp = [[0] * (n_cols + 1) for _ in range(n_rows + 1)]
+    dp = [[0] * (m + 1) for _ in range(n + 1)]
     max_side = 0
     
-    for r in range(n_rows):
-        for c in range(n_cols):
+    for r in range(n):
+        for c in range(m):
             if matrix[r][c] == '1':
                 # Be careful of the indexing since dp grid has additional row and column
                 dp[r+1][c+1] = min(dp[r][c], dp[r+1][c], dp[r][c+1]) + 1

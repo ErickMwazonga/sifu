@@ -13,7 +13,7 @@ class Stack:
     # Method to add data to the stack
     # adds to the start of the stack
     def push(self, data):
-        if self.head == None: 
+        if not self.head: 
             self.head = Node(data)
         else: 
             newnode = Node(data)

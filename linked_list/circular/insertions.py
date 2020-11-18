@@ -38,20 +38,21 @@ class CircularLinkedList:
             self.head.next = self.head
         else:
             new_node = Node(data)
-            cur = self.head
-            while cur.next != self.head: # Not at the end yet(Not last node)
-                cur = cur.next
+            curr = self.head
+            
+            while curr.next != self.head: # Not at the end yet(Not last node)
+                curr = curr.next
 
-            cur.next = new_node
+            curr.next = new_node
             new_node.next = self.head
 
     def print_list(self):
-        cur = self.head
+        curr = self.head
 
-        while cur:
-            print(cur.data, end=' ')
-            cur = cur.next
-            if cur == self.head:
+        while curr:
+            print(curr.data, end=' ')
+            curr = curr.next
+            if curr == self.head:
                 break
 
 

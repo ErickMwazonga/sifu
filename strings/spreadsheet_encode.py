@@ -29,11 +29,12 @@ class Solution:
 
     def titleToNumber(self, s: str) -> int:
         num = 0
-        count = len(s) - 1
+        exp = len(s) - 1
         
         for char in s:
-            num += self.mapping(char) * (26 ** count)
-            count -= 1
+            val = self.mapping(char) * (26 ** exp)
+            num += val
+            exp -= 1
         
         return num
         

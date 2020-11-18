@@ -64,18 +64,18 @@ class LinkedList:
             return new_node
 
         count = 1
-        current_node = head
-        while current_node:
+        curr = head
+        while curr:
             if count == index:
                 inserted_node = Node(data)
-                inserted_node.next = current_node.next 
-                current_node.next = inserted_node
+                inserted_node.next = curr.next 
+                curr.next = inserted_node
                 break
 
-            current_node = current_node.next 
+            curr = curr.next 
             count += 1
 
-        if not current_node:
+        if not curr:
             raise Exception()
 
         return head

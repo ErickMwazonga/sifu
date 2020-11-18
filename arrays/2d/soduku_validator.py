@@ -12,11 +12,11 @@ digits 1-9 without repetition.
 
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        size = len(board)
+        n = len(board)
         seen = set()
 
-        for row in range(size):
-            for col in range(size):
+        for row in range(n):
+            for col in range(n):
                 num = board[row][col]
 
                 if num != ".":

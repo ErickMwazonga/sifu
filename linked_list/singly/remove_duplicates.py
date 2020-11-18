@@ -35,17 +35,17 @@ class LinkedList:
         curr = self.head
         prev = None
 
-        dup_values = dict()
+        _hash = set()
 
         while curr:
             temp = curr.next
-            if curr.data in dup_values:
+            if curr.data in _hash:
                 # Remove node:
                 prev.next = curr.next
                 curr = None
             else:
                 # Have not encountered element before.
-                dup_values[curr.data] = 1
+                _hash.add(curr.data)
                 prev = curr
 
             curr = temp

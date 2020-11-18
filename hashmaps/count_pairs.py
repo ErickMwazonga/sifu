@@ -16,16 +16,16 @@ Input : arr[] = {1, 2, 3} -> 0
 
 def countPairs(arr):
     n = len(arr)
-    mp = {}
+    mapping = {}
+    ans = 0
 
     # Finding frequency of each number.
     for num in arr:
-        mp[elem] = mp.get(num, 0) + 1
+        mapping[num] = mapping.get(num, 0) + 1
 
     # Calculating pairs of each value.
-    for it in mp:
-        count = mp[it]
-        ans += (count * (count - 1)) // 2
+    for k, v in mapping.items():
+        ans += (v * (v - 1)) // 2
     return ans
 
 

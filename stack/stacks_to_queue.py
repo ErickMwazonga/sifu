@@ -24,7 +24,7 @@ class QueueFromTwoStacks:
         self.in_stack.append(item)
     
     def dequeue(self):
-        if self.out_stack:
+        if not self.out_stack:
             # Move items from instack to outstack in reverse
             while self.in_stack:
                 newest_in_stack_item = self.in_stack.pop()
@@ -48,13 +48,13 @@ class Queue:
         return self.inbox.is_empty() and self.outbox.is_empty()
 
     def enqueue(self, data):
-        self.inbox.push(data)
+        self.inbox.append(data)
 
     def dequeue(self):
         if self.outbox.is_empty():
             while not self.inbox.is_empty():
                 popped = self.inbox.pop()
-                self.outbox.push(popped)
+                self.outbox.append(popped)
 
         return self.outbox.pop()
 

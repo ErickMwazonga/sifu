@@ -17,7 +17,6 @@ Consider the following matrix:
   [18, 21, 23, 26, 30]
 ]
 Given target = 5, return true.
-
 Given target = 20, return false.
 '''
 
@@ -25,22 +24,21 @@ Given target = 20, return false.
 class Solution:
 
     def searchMatrix(self, matrix, target):
-        n_rows, n_cols = len(matrix), len(matrix[0])
-
-        if not n_rows or not n_cols:
+       
+        if not matrix:
             return False
 
-        maxRow, maxCol = n_rows - 1, n_cols - 1
-        row, col = 0, maxCol
+        n, m = len(matrix), len(matrix[0])
+        i, j = 0, m - 1
 
-        while row <= maxRow and col >= 0:
-            current_value = matrix[row][col]
+        while i < n and j >= 0:
+            current_value = matrix[i][j]
 
             if current_value == target:
                 return True
             elif current_value < target:
-                row += 1
+                i += 1
             else:
-                col -= 1
+                j -= 1
         
         return False

@@ -26,45 +26,44 @@ class LinkedList:
             last_node = last_node.next
         last_node.next = new_node
 
-    def merge_sorted(self, llist):
-        p = self.head 
-        q = llist.head
-        s = None
-    
-        # If either of the list is empty
-        if not p:
-            return q
-        if not q:
-            return p
-
-        # Get where is placed
-        if p and q:
-            if p.data <= q.data:
-                s = p 
-                p = s.next
+    # iteratively
+    def mergeTwoLists1(self, l1, l2):
+        dummy = curr = ListNode(0)
+        while l1 and l2:
+            if l1.val < l2.val:
+                curr.next = l1
+                l1 = l1.next
             else:
-                s = q
-                q = s.next
-            new_head = s
-    
-        while p and q:
-            if p.data <= q.data:
-                s.next = p 
-                s = p 
-                p = s.next
-            else:
-                s.next = q
-                s = q
-                q = s.next
+                curr.next = l2
+                l2 = l2.next
+            curr = curr.next
+            
+        curr.next = l1 or l2
+        return dummy.next
 
-        # p is exhausted
-        if not p:
-            s.next = q 
-        # q is exhausted
-        if not q:
-            s.next = p
+    def mergeTwoLists(self, a, b):
+        if a and b:
+            if a.val > b.val:
+                a, b = b, a
+            a.next = self.mergeTwoLists(a.next, b)
+        return a or b
 
-        return new_head
+    def mergeTwoLists(self, l1, l2):
+        if not l1:
+            return l2
+
+        if not l2:
+            return l1
+        
+        start = None 
+        if l1.val < l2.val:
+            start = l1
+            start.next = self.mergeTwoLists(l1.next, l2)
+        else:
+            start = l2
+            start.next = self.mergeTwoLists(l1, l2.next)
+        
+        return start
 
 
 llist_1 = LinkedList()
@@ -92,3 +91,27 @@ llist_1.print_list()
 #llist.append("D")
 
 #llist.print_list()
+
+def mergeTwoLists(ListNode l1, ListNode l2):
+    head = ListNode(0) 
+    p = head
+    p1 = l1
+    p2 = l2
+
+    while p1 and p2:
+        if p1.val < p2.val:
+            p.next = p1
+            p1 = p1.next
+        else:
+            p.next = p2
+            p2 = p2.next
+
+        p = p.next
+
+    if p1:
+        p.next = p1
+
+    if p2:
+        p.next = p2
+
+    return head.next
