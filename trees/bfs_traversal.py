@@ -56,7 +56,7 @@ class Solution:
         if not root:
             return []
 
-        queue, result = [root], []
+        queue, res = [root], []
 
         while queue:
             level_size = len(queue)
@@ -71,6 +71,6 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
                     
-            result.append(level)
+            res.append(level)
 
-        return result
+        return res

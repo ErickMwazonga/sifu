@@ -21,7 +21,7 @@ return its bottom-up level order traversal as:
 '''
 
 def reverse_levelorder_print(self, root):
-    if root is None:
+    if not root:
         return 
 
     queue, stack = [root], []

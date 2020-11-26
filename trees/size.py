@@ -11,11 +11,10 @@ def size_(self, node):
     return 1 + self.size_(node.left) + self.size_(node.right)
 
 def size(self):
-    if self.root is None:
+    if not self.root:
         return 0
 
-    stack = Stack()
-    stack.push(self.root)
+    stack = [self.root]
 
     size = 1
     while stack:

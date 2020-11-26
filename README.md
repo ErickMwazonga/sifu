@@ -13,3 +13,4 @@ DSA
 7. https://adit0503.gitbook.io/leetcode/200.-number-of-islands
 8. https://velog.io/@jiselectric/Leetcode-Powx-n
 9. https://github.com/kdn251/interviews/tree/master/leetcode
+10. https://mrleonhuang.gitbooks.io/lintcode/content

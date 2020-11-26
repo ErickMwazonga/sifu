@@ -10,11 +10,11 @@ def maxDepth(root):
     '''
     time: 0(n), memory: o(1)
     '''
-    if root is None:
+    if not root:
         return 0
 
-    leftHeight = maxDepth(root.left)
-    rightHeight = maxDepth(root.right)
+    depth_left = maxDepth(root.left)
+    depth_right = maxDepth(root.right)
 
     depth = max(depth_left, depth_right) + 1
     return depth

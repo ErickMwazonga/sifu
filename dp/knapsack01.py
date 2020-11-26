@@ -12,7 +12,7 @@ def knapSack(values, w, W):
     # Build table K[][] in bottom up manner
     for i in range(n + 1):
         for j in range(W + 1):
-            current_weight = w[i- 1]
+            current_weight = w[i - 1]
             current_val = values[i - 1]
             rem_weight = j - current_weight
 

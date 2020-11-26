@@ -19,12 +19,12 @@ class Solution:
             return ""
         
         longest = ""
-        for middle in range(len(s)):
-            sub = self.find_palindrome_from(s, middle, middle)
+        for mid in range(len(s)):
+            sub = self.find_palindrome_from(s, mid, mid)
             if len(sub) > len(longest):
                 longest = sub
             
-            sub = self.find_palindrome_from(s, middle, middle + 1)
+            sub = self.find_palindrome_from(s, mid, mid + 1)
             if len(sub) > len(longest):
                 longest = sub
                 
@@ -35,8 +35,8 @@ class Solution:
             if string[left] != string[right]:
                 break
             
-            left -= 1
-            right += 1
+            left += 1
+            right -= 1
         
         # not string[left:right+1] because we are going outside   
         return string[left + 1 : right]

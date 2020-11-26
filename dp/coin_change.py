@@ -37,10 +37,14 @@ class Solution(object):
         for i in range(0, amount + 1):
             for coin in coins:
                 balance = i - coin
+
                 if balance < 0:
                     continue
 
-                dp[i] = min(dp[i], dp[balance] + 1)
+                dp[i] = min(
+                    dp[i],
+                    dp[balance] + 1
+                )
         
         if dp[amount] == MAX:  
             return -1

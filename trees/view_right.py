@@ -3,7 +3,7 @@ class Solution:
         if not root:
             return []
         
-        results, q = [root.val], [root]
+        res, q = [root.val], [root]
         
         while q:
             next_level = []
@@ -14,11 +14,11 @@ class Solution:
                     next_level.append(node.right)
 
             if next_level:
-                results.append(next_level[-1].val)
+                res.append(next_level[-1].val)
             
             q = next_level
         
-        return results
+        return res
 
 class Solution(object):
     def rightSideView(self, root):

@@ -1,4 +1,11 @@
 """
+69. Sqrt(x)
+https://leetcode.com/problems/sqrtx/
+Given a non-negative integer x, compute and return the square root of x.
+
+Since the return type is an integer, the decimal digits are truncated
+and only the integer part of the result is returned.
+
 Write a function that takes a non-negative integer and returns
 the largest integer whose square is less than or equal to
 the integer given.
@@ -13,10 +20,12 @@ def integer_square_root(k):
     low, high = 0, k
 
     while low <= high:
-        mid = (low + high) // 2
+        mid = low + (high - low) // 2
         mid_squared = mid * mid
 
-        if mid_squared <= k:
+        if mid_squared == k:
+            return mid
+        elif mid_squared < k:
             low = mid + 1
         else:
             high = mid - 1

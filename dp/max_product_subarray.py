@@ -23,13 +23,13 @@ class Solution:
         if not nums:
             return 0
         
-        result = nums[0]
+        res = nums[0]
         min_product = max_product = 1
 
         for num in nums:
             choices = num, min_product * num, max_product * num
             min_product = min(choices)  
             max_product = max(choices)                      
-            result = max(result, max_product)
+            res = max(res, max_product)
 
-        return result
+        return res

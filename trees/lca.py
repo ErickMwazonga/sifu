@@ -23,12 +23,11 @@ Output: 1
 '''
 
 def lowestCommonAncestor(self, root, p, q):
-    # found p and q?
-    # if (not root) or (root == p) or (root == q):
-    #     return root
     if not root:
         return None
-    elif root == p or root == q:
+
+    # found p and q?
+    if root == p or root == q:
         return root
 
     # search left and right subtree
