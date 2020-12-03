@@ -26,20 +26,16 @@ Output: false -> Explanation: S becomes "c" while T becomes "b".
     '''
     Time complexity: O(n), Space complexity: O(n).
     '''
-    S_stack, T_stack = [], []
+    def build(S):
+        _stack = []
+
+        for c in S:
+            if c != '#':
+                _stack.append(c)
+            else:
+                if _stack:
+                    _stack.pop()
+                    
+        return ''.join(_stack)
     
-    for c in S:
-        if c != '#':
-            S_stack.append(c)
-        else:
-            if S_stack:
-                S_stack.pop()
-                
-    for c in T:
-        if c != '#':
-            T_stack.append(c)
-        else:
-            if T_stack:
-                T_stack.pop()
-                
-    return ''.join(S_stack) == ''.join(T_stack)
+    return build(S) == build(T)

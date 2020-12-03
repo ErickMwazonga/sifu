@@ -1,5 +1,7 @@
 '''
 41. First Missing Positive
+https://leetcode.com/problems/first-missing-positive/
+
 Given an unsorted integer array, find the smallest missing positive integer.
 Example 1:
 
@@ -20,3 +22,25 @@ def first_missing_postive(arr):
     for i in range(1, len(arr) + 2):
         if i not in visisted:
             return i
+
+
+def firstMissingPositive(nums) -> int:
+    n = len(nums)
+    
+    # cleaning up the array (negative nos + nos > n)
+    for idx in range(n):
+        if nums[idx] <= 0 or nums[idx] > n:
+            nums[idx] = n + 1
+            
+    # placing our marker to see what numbers have been accounted for
+    for num in nums:
+        num = abs(num)
+        if num <= n and nums[num - 1] >= 0:
+            nums[num - 1] *= -1
+            
+    # final step for getting the answer
+    for idx in range(n):
+        if nums[idx] > 0:
+            return idx + 1
+        
+    return n + 1

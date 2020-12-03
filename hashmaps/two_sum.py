@@ -27,23 +27,6 @@ assert sorted(twoSum([2, 7, 11, 15], 9)) == sorted([0, 1])
 assert sorted(twoSum([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
 
 
-def twoSum2(nums, target):
-    '''If the values are sorted'''
-    low, high = 0, len(nums) - 1
-
-    while(low < high):
-        _sum = nums[low] + nums[high]
-        if _sum == target:
-            return [low, high]
-        elif _sum < target:
-            low += 1
-        else:
-            high -= 1
-
-assert sorted(twoSum([2, 7, 11, 15], 9)) == sorted([0, 1])
-assert sorted(twoSum([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
-
-
 def two_sum_brute_force(A, target):
     '''
     Time Complexity: O(n^2), Space Complexity: O(1)

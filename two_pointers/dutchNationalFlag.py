@@ -1,4 +1,7 @@
 '''
+75. Sort Colors
+https://leetcode.com/problems/sort-colors/
+
 For this problem, your goal is to sort an array of 0, 1 and 2's
 but you must do this in place, in linear time and without 
 any extra space (such as creating an extra array).
@@ -12,11 +15,9 @@ should run in O(n) time.
 def dutchNationalFlagSorting(A):
     '''Time Complexity: O(n), when n is lenth of array'''
 
-    low = 0
-    traverse = 0
-    high = len(A)
+    low, traverse, high = 0, 0, len(A) - 1
 
-    while traverse < high:
+    while traverse <= high:
         traverse_value = A[traverse]
 
         if traverse_value == 0:

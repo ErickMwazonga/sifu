@@ -25,3 +25,19 @@ class Solution:
             headB = headB.next
         
         return None
+
+    def getIntersectionNode(self, headA, headB):
+        '''
+        1. Two pointer point to heads of two lists. If one is end, 
+           then assign head of another list to it
+        2. These pointers will meet at intersection head finally.
+        '''
+
+        a = headA
+        b = headB
+
+        while a != b:
+            a = headB if a == None else a.next
+            b = headA if b == None else b.next
+
+        return a

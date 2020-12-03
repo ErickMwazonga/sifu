@@ -13,7 +13,7 @@ def maxArea(self, heights: List[int]) -> int:
     i, j = 0, len(heights) - 1
     max_area = 0  
 
-    while i < j:
+    while i <= j:
         area_width = j - i
         base_height = min(heights[i], heights[j])
         
