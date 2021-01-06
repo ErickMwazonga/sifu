@@ -47,6 +47,26 @@ class Solution:
 
         return res
 
+    def levelorder_print_improved(self, root):
+        if root is None:
+            return
+
+        queue, res = [root], []
+        i = 0
+        
+        while i < len(queue):
+            node = queue[i]
+            i += 1
+            
+            res.append(node.val)
+
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+        return res
+
     def levelOrder(self, root: TreeNode):
         '''
         Time complexity: O(N) since each node is processed exactly once.

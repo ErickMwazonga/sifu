@@ -70,7 +70,7 @@ def is_valid_1(s):
         elif ch == '(':
             left.append(i)
         else:
-            if len(left) == 0 and len(stars) == 0:
+            if not left and not stars:
                 return False
 
             if len(left) > 0:
@@ -79,11 +79,14 @@ def is_valid_1(s):
                 stars.pop()
                 
     while len(left) > 0 and len(stars) > 0:
-        if left[-1] > stars[-1]:
+        if left_stack.pop() > stars_stack.pop():
             return False
+
+        # if left[-1] > stars[-1]:
+        #     return False
         
-        left.pop()
-        stars.pop()
+        # left.pop()
+        # stars.pop()
                 
     return len(left) == 0
 

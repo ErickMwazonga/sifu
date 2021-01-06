@@ -23,7 +23,7 @@ def div_by_2(dec_num):
         dec_num, remainder = divmod(dec_num, 2)
         stack.push(remainder)
 
-    bin_num = ""
+    bin_num = ''
     while stack:
         bin_num += str(stack.pop())
 

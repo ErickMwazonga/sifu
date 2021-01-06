@@ -29,6 +29,7 @@ class LinkedList:
     # iteratively
     def mergeTwoLists1(self, l1, l2):
         dummy = curr = ListNode(0)
+
         while l1 and l2:
             if l1.val < l2.val:
                 curr.next = l1
@@ -65,6 +66,30 @@ class LinkedList:
         
         return start
 
+
+def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+    head = ListNode(0) 
+    p = head
+    p1 = l1
+    p2 = l2
+
+    while p1 and p2:
+        if p1.val < p2.val:
+            p.next = p1
+            p1 = p1.next
+        else:
+            p.next = p2
+            p2 = p2.next
+
+        p = p.next
+
+    if p1:
+        p.next = p1
+
+    if p2:
+        p.next = p2
+
+    return head.next
 
 llist_1 = LinkedList()
 llist_2 = LinkedList()

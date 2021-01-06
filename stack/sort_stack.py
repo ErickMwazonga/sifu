@@ -23,7 +23,7 @@ class SortedStack:
         while self.stack:
             # pop out the first element
             popped = self.stack.pop()
-
+ 
             # while temporary stack is not
             # empty and top of stack is greater than temp
             while self.temp_stack and popped < self.temp_stack[-1]:
@@ -35,6 +35,21 @@ class SortedStack:
             # push temp in temporary of stack
             self.temp_stack.append(popped)
 
+        return self.temp_stack
+
+    def sort2(self):
+        while self.stack:
+            # pop out the first element
+            popped = self.stack.pop()
+
+            if not self.temp_stack:
+                self.temp_stack.append(popped)
+            else:
+                while popped < self.temp_stack[-1]:
+                    popped_from_temp = self.temp_stack.pop()
+                    self.stack.append(popped_from_temp)
+                self.temp_stack.append(popped)
+        
         return self.temp_stack
 
 

@@ -42,8 +42,38 @@ def mergeSort(A):
 
 
 A = [8, 7, 2, 1, 0, 9, 6]
-size = len(A)
-# mergeSort(A, 0, size - 1)
 
 mergeSort(A)
 assert A == [0, 1, 2, 6, 7, 8, 9]
+
+
+def mergeSortV2(A):
+    n = len(A)
+
+    if n < 2:
+      return
+
+    mid = n // 2
+    L, R = A[:mid], A[mid:]
+
+    mergeSort(L)
+    mergeSort(R)
+
+    i = j = k = 0
+
+    while i < len(L) or j < len(R):
+        if i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                A[k] = L[i]
+                i += 1
+            else:
+                A[k] = R[j]
+                j += 1
+        elif i < len(L):
+            A[k] = L[i]
+            i += 1
+        else:
+            A[k] = R[j]
+            j += 1
+
+        k += 1

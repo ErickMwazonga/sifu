@@ -26,7 +26,7 @@ Output: false -> Explanation: S becomes "c" while T becomes "b".
     '''
     Time complexity: O(n), Space complexity: O(n).
     '''
-    def build(S):
+    def helper(S):
         _stack = []
 
         for c in S:
@@ -38,4 +38,4 @@ Output: false -> Explanation: S becomes "c" while T becomes "b".
                     
         return ''.join(_stack)
     
-    return build(S) == build(T)
+    return helper(S) == helper(T)

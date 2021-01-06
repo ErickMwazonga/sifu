@@ -7,6 +7,8 @@ def fib(n):
 
     return dp[-1]
     
+print(fib(10))
+
 def fibonacci(n):
     '''O(2^n)) -> Exponential'''
     if n <= 1:
