@@ -7,11 +7,18 @@ The digits are stored in reverse order, and each of their nodes contains a singl
 Add the two numbers and return the sum as a linked list.
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Example 1:
+    Input: list1 = 3 -> 2 -> 1 -> null, list2 = 5 -> 9 -> 4 -> 3 -> null
+    Output: 8 -> 1 -> 6 -> 3 -> null
+        Explanation: 123 + 3495 = 3618
+Example 2:
+    Input: list1 = 1 -> 6 -> 5 -> 4 -> null, list2 = 4 -> 8 -> 2 -> 7 -> 9 -> null
+    Output: 5 -> 4 -> 8 -> 1 -> 0 -> 1 -> null
+        Explanation: 4561 + 97284 + 101845
 '''
-def addTwoNumbers(ListNode l1, ListNode l2):
-    result_list = None
-    head = None
 
+def addTwoNumbers(ListNode l1, ListNode l2):
+    curr = head = None
     carry = 0
 
     while l1 or l2:
@@ -32,13 +39,13 @@ def addTwoNumbers(ListNode l1, ListNode l2):
         node = ListNode(value)
 
         # Add the newly created node in the result_list Linkedlist
-        if result_list:
-            result_list.next = node
-            result_list = result_list.next
+        if curr:
+            curr.next = node
+            curr = curr.next
         else:
-            result_list = head = node
+            curr = head = node
         
     if carry > 0:
-        result.next = ListNode(carry)
+        curr.next = ListNode(carry)
 
     return head

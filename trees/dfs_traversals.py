@@ -64,17 +64,17 @@ def inorder_ITERATIVELY(root):
     res, stack = [], []
     while True:
         # push left child if available
-        while root:
+        if root:
             stack.append(root)
             root = root.left
-        
-        if not stack:
-            return res
+        else:
+            if not stack:  
+                return res
 
-        # retrieve top node and point it to its right child if exists
-        node = stack.pop()
-        res.append(node.data)
-        root = node.right
+            # retrieve top node and point it to its right child if exists
+            node = stack.pop()
+            res.append(node.val)
+            root = node.right
     
     return res
 

@@ -55,6 +55,20 @@ class Solution:
         right_depth = self.maxDepth(root.right)
 
         return max(left_depth, right_depth) + 1
+    
+    def improved_balanced(self, root, height):
+        if not root:
+            return True
         
+        left_height, right_height = 0, 0
+        is_left_balanced = isBalanced(root.left, left_height)
+        is_right_balanced = isBalanced(root.right, right_height)
+
+        height = 1 + max(left_height, right_height)
+
+        if abs(left_height - right_height) > 0:
+            return False
+        
+        return is_left_balanced and is_right_balanced
 
     

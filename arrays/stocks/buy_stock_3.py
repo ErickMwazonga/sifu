@@ -48,8 +48,9 @@ def maxProfit2(prices):
     
     # backward traversal, max_profit records the max profit
     # after the ith day, this is the second transaction 
-    total_max, max_profit = 0, 0 
     current_max = prices[-1]
+    max_profit, total_max = 0, 0
+  
     for i in range(len(prices) - 1, -1, -1):
         current_max = max(current_max, prices[i])
         max_profit = max(max_profit, current_max - prices[i])
@@ -57,7 +58,7 @@ def maxProfit2(prices):
         
     return total_max
 
-assert maxProfit2([3,3,5,0,0,3,1,4]) == 6
+assert maxProfit2([3, 3, 5, 0, 0, 3, 1, 4]) == 6
 
 def maxProfit(prices):
     first_buy, first_sell = float('-inf'), 0

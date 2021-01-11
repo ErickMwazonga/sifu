@@ -41,7 +41,7 @@ class LinkedList:
             curr = _next
 
         self.head = prev
-        # return prev
+        # return self.head
 
     def reverse_recursive(self):
         def helper(curr, prev):

@@ -32,8 +32,29 @@ def removeDuplicates(self, nums: List[int]) -> int:
     count = 1
     
     for i in range(1, n):
-        if nums[i] != last_seen:
+        if nums[i] > nums[i-1]:
             nums[count] = nums[i] 
             count += 1
     
     return count
+
+
+# UNSORTED ARRAY
+def removeDuplicates(arr):
+    seen = set()
+    result = []
+    
+    for num in arr:
+        if num not in seen:
+            seen.add(num)
+            result.append(num)
+    
+    return result
+
+
+def removeDuplicates(arr):
+    visited = {}
+    for element in arr:
+        visited[element] = True
+
+    return list(visited.keys())

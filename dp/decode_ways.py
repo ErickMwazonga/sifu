@@ -10,29 +10,24 @@ A message containing letters from A-Z is being encoded to numbers using the foll
 Given a non-empty string containing only digits, determine the total number of ways to decode it.
 
 Example 1:
-Input: s = "12"
-Output: 2
-Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+Input: s = "12" -> 2
+    Explanation: It could be decoded as "AB" (1 2) or "L" (12).
 
 Example 2:
-Input: s = "226"
-Output: 3
-Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+Input: s = "226" -> 3
+    Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 
 Example 3:
-
-Input: s = "0"
-Output: 0
-Explanation: There is no character that is mapped to a number starting with '0'.
-We cannot ignore a zero when we face it while decoding.
-So, each '0' should be part of "10" --> 'J' or "20" --> 'T'.
+Input: s = "0" -> 0
+    Explanation: There is no character that is mapped to a number starting with '0'.
+    We cannot ignore a zero when we face it while decoding.
+    So, each '0' should be part of "10" --> 'J' or "20" --> 'T'.
 
 Example 4:
-Input: s = "1"
-Output: 1
+Input: s = "1" -> 1
 '''
 
- def numDecodings(self, s: str) -> int:
+def numDecodings(self, s: str) -> int:
     if not s:
         return 0
     
@@ -43,7 +38,7 @@ Output: 1
     dp[0] = 1 
     dp[1] = 0 if s[0] == "0" else 1
 
-    for i in range(2, len(s) + 1): 
+    for i in range(2, n + 1): 
         # One step jump
         if 0 < int(s[i-1:i]) <= 9:
             dp[i] += dp[i - 1]
@@ -53,3 +48,21 @@ Output: 1
             dp[i] += dp[i - 2]
             
     return dp[n]
+
+
+# RECURSION
+def waysToDecode(str, i = 0):
+    '''
+    Time complexity: O(2^n)
+    Space complexity: O(n)
+    '''
+
+    n = len(str)
+    if n == 0 or (i < n and str[i] == "0"):
+        return 0
+    elif i >= n-1:
+        return 1
+    elif "10" <= (str[i] + str[i+1]) <= "26":
+        return waysToDecode(str, i+1) + waysToDecode(str, i+2)
+    else:
+        return waysToDecode(str, i+1)

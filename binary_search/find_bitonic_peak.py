@@ -12,8 +12,7 @@ We assume that such a "peak" element exists.
 A = [1, 2, 3, 4, 5, 4, 3, 2, 1]
 
 def find_highest_number(A):
-    low = 0
-    high = len(A) - 1
+    low, high = 0, len(A) - 1
 
     # Require at least 3 elements for a bitonic sequence.
     if len(A) < 3:

@@ -29,3 +29,15 @@ class Solution:
             max_jump = max(max_jump, i + nums[i])
         
         return True
+
+    def canJump2(self, arr):
+        n = len(arr)
+        maxIndex = 0
+
+        for i in range(n):
+            if i > maxIndex:
+                return False
+            else:
+                maxIndex = max(maxIndex, i + arr[i])
+                
+        return maxIndex >= n-1

@@ -12,7 +12,6 @@ Input: [6, 7, 8, 1, 2] -> 1
 Input: [8, 9, 10, 1, 0, 1, 2] -> 0
 '''
 
-
 def naive_approach(A):
     _min = A[0]
 
@@ -22,35 +21,37 @@ def naive_approach(A):
 
     return _min
 
-def findMin(self, nums: List[int]) -> int:
-    first, last = 0, len(nums) - 1
+
+def findMin(self, A: List[int]) -> int:
+    '''O(logn)'''
+    left, right = 0, len(A) - 1
+
+    if A[right] > A[left]:
+        return A[left]
     
-    while first < last:
-        midpoint = (first + last) // 2
+    while left < right:
+        mid = (left + right) // 2
         
-        if nums[midpoint] > nums[last]:
-            first = midpoint + 1
+        if A[mid + 1] < A[mid]:
+            return A[mid+1]
+        elif A[mid] < A[mid-1]:
+            return A[mid]
+        elif A[mid] > A[right]:
+            left = mid + 1
         else:
-            last = midpoint
+            right = mid
             
-    return nums[first]
-
+    return A[left]
 
 def findMin(self, nums: List[int]) -> int:
-    if not nums:
-        return -1
-
-    low, high = 0, len(nums) - 1
-    mid = low + (high - low) // 2
-
-    while low < high:
-        if nums[mid] > nums[mid + 1]:
-            return nums[mid + 1]
-        elif nums[mid] > nums[high]:
-            low = mid + 1
+    left, right = 0, len(nums) - 1
+    
+    while left < right:
+        mid = (left + right) // 2
+        
+        if nums[mid] > nums[right]:
+            left = mid + 1
         else:
-            high = mid
-
-        mid = low + (high - low) // 2
-
-    return nums[mid]
+            right = mid
+            
+    return nums[left]

@@ -20,9 +20,9 @@ class Solution:
                 num = board[row][col]
 
                 if num != ".":
-                    col_val = num + "col" + str(col)
-                    row_val = num + "row" + str(row)
-                    block_val = num + "block" + str(row // 3) + str(col // 3)
+                    col_val = num + "col" + str(col) # f'col-{col}-{num}'
+                    row_val = num + "row" + str(row) # f'row-{row}-{num}'
+                    block_val = num + "block" + str(row // 3) + str(col // 3) # f'block-{row//3}-{col//3}-{num}'
                     
                     if col_val in seen or row_val in seen or block_val in seen:
                         return False

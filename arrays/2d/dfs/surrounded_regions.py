@@ -50,10 +50,11 @@ class Solution:
     def dfs(self, board, i: int, j: int) -> None:
         n, m = len(board), len(board[0])
 
-        if i >= 0 and i < n and j >= 0 and j < m:
-            if board[i][j] == 'O':
-                board[i][j] = 'D'
-                self.dfs(board, i + 1, j)
-                self.dfs(board, i - 1, j)
-                self.dfs(board, i, j + 1)
-                self.dfs(board, i, j - 1)
+        if i < 0 or j < 0 or i >= nb_row or j >= nb_col or  board[i][j] != 'O':
+            return
+
+        board[i][j] = 'D'
+        self.dfs(board, i + 1, j)
+        self.dfs(board, i - 1, j)
+        self.dfs(board, i, j + 1)
+        self.dfs(board, i, j - 1)

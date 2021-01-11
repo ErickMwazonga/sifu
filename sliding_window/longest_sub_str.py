@@ -20,18 +20,34 @@ Input: s = ""
 Output: 0
 '''
 
+def longestSubstring(s):
+	start = max_length = 0
+    seen_chars = {}
+
+    for i, c in enumerate(s):
+        # seen_chars[c] >= start: we do not want to count chars before the start
+        if c in seen_chars and seen_chars[c] >= start:
+            start = seen_chars[c] + 1
+        else:
+            max_length = max(max_length, i - start + 1)
+        
+        seen_chars[c] = i
+
+    return max_length
+
+
 def lengthOfLongestSubstring(self, s):
     """
-    Time:  O(n)
-    Space: O(k)
+    Time:  O(n), Space: O(k)
     [k = length of the longest substring w/o repeating characters]
     """
 
+    n = len(s)
     longest = 0
     left, right = 0, 0
     seen = set()
 
-    while left < len(s) and right < len(s):
+    while left < n and right < n:
         if s[right] not in seen:
             seen.add(s[right])
             right += 1
@@ -42,17 +58,3 @@ def lengthOfLongestSubstring(self, s):
 
     return longest
 
-
-def longestSubstring(s):
-	start = maxLength = 0
-    usedChar = {}
-
-    for i, c in enumerate(s):
-        if c in usedChar and start <= usedChar[c]:
-            start = usedChar[c] + 1
-        else:
-            maxLength = max(maxLength, i - start + 1)
-        
-        usedChar[c] = i
-
-    return maxLength

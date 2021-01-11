@@ -47,3 +47,21 @@ class ListNode:
             head = head.next
         
         return vals == vals[::-1]
+
+    # REVERSE ONLY THE RIGHT HALF
+    def isPalindromeList(self, head):
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        slow = self.reverse(slow)
+        head = head
+
+        while slow:
+            if slow.data != head.data:
+                return False
+            slow = slow.next
+            head = head.next
+        
+        return True

@@ -19,47 +19,28 @@ Output:  [1,2,4,7,5,3,6,8,9]
 Explanation: visit link
 '''
 
-def findDiagonalOrder(matrix):
-    n, m = len(matrix), len(matrix[0])
+from collections import defaultdict
 
-    if n == 0 or m == 0:
-        return []
+class Solution:
+    def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
+		## TIME COMPLEXITY : O(MxN) ##
+		## SPACE COMPLEXITY : O(MxN) ##
 
-    row, col = 0, 0
-    result = []
+        if not matrix:
+            return []
 
-    # Execute m * n times circle, in order to fill m * n element into aimArr
-    for i in range(n * m):
-        result.append(matrix[row][col])
+        n, m = len(matrix), len(matrix[0])
+        diagonals = defaultdict(list)
 
-        '''
-        According to this subject model, we can find some rules about index of matrix.
-        For example, the sum of all moving up trajectory element can be divided by 2，
-        and the sum of all moving down trajectory element can't be divided by 2
-        '''
-        if (row + col) % 2 == 0:
-            # moving up
-            # If col == n - 1, it's mean this position is last column, so, only row index must be increased
-            if col == (m - 1):
-                row += 1
-            # If row == 0, it's mean this position is first row, so, only column index can be increased
-            elif row == 0:
-                col += 1
-            # In this condition, in order to moving up, column index must be increased and row index must be decreased
+        for i in range(n):
+            for j in range(m):
+                diagonals[i+j].append(matrix[i][j])
+
+        res = []
+        for i, d in enumerate(diagonals.values()):
+            if i % 2 != 1:
+                res.extend(d)
             else:
-                row -= 1
-                col += 1
-        else:
-            # moving down
-            # If row == m - 1, it's mean this position is last row, so, only column index must be increased
-            if row == (n - 1):
-                col += 1
-            # If col == 0, it's mean this position is first column, so, only row index can be increased
-            elif col == 0:
-                row += 1
-            # In this condition, in order to moving down, row index must be increased and column index must be decreased
-            else:
-                row += 1
-                col -= 1
-    
-    return res
+                res.extend(d[::-1])
+
+        return res

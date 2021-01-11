@@ -14,10 +14,16 @@ Input: nums = [1] -> 1
 Input: nums = [0] -> 0
 Input: nums = [-1] -> -1
 Input: nums = [-2147483647] -> -2147483647
+Input: arr = [2, 3, -6, 4, 2, -8, 3] -> 6
+    Explanation: the maximum subarray is [4, 2], its sum is 6
+Input: arr = [2, 3, -1, 4, -10, 2, 5] -> 8
+    Explanation: the maximum subarray is [2, 3, -1, 4], its sum is 8
+Input: arr = [-3, -1, -2] -> Output: -1
+    Explanation: the maximum subarray is [-1], its sum is -1
 '''
 
 def maxSubArray(nums: List[int]) -> int:
-    curr_sum, max_sum = nums[0]
+    curr_sum = max_sum = nums[0]
 
     for num in nums[1:]:
         curr_sum = max(num, curr_sum + num)
@@ -26,7 +32,7 @@ def maxSubArray(nums: List[int]) -> int:
     return max_sum
 
 
- def maxSubArray(nums: List[int]) -> int:
+def maxSubArray(nums: List[int]) -> int:
     if not nums:
         return 0
     

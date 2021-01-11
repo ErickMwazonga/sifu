@@ -23,6 +23,11 @@ Output: 1
 '''
 
 def lowestCommonAncestor(self, root, p, q):
+    '''
+    Time complexity: O(n)
+    Space complexity: O(h)
+    '''
+
     if not root:
         return None
 

@@ -33,3 +33,14 @@ class Solution:
         self.inOrder(root.left, output)
         output.append(root.val)
         self.inOrder(root.right, output)
+
+
+# RECURSIVE SOLUTION
+def isBST(root, _min=float('-inf'), _max=float('inf')):
+    if not root:
+        return True
+    elif root.data <= _min or root.data >= _max:
+        return False
+    else:
+        return isBST(root.left, _min, root.data) and
+                isBST(root.right, root.data, _max)
