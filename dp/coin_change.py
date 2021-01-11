@@ -7,19 +7,11 @@ If that amount of money cannot be made up by any combination of the coins, retur
 
 You may assume that you have an infinite number of each kind of coin.
 
-Example 1:
+Examples
 Input: coins = [1,2,5], amount = 11 -> Output: 3 ------> 11 = 5 + 5 + 1
-
-Example 2:
 Input: coins = [2], amount = 3 -> Output: -1 
-
-Example 3:
 Input: coins = [1], amount = 0 -> Output: 0
-
-Example 4:
 Input: coins = [1], amount = 1 -> Output: 1
-
-Example 5:
 Input: coins = [1], amount = 2 -> Output: 2
 '''
 
@@ -38,13 +30,8 @@ class Solution(object):
             for coin in coins:
                 balance = i - coin
 
-                if balance < 0:
-                    continue
-
-                dp[i] = min(
-                    dp[i],
-                    dp[balance] + 1
-                )
+                if balance >= 0:
+                    dp[i] = min(dp[i], dp[balance] + 1)
         
         if dp[amount] == MAX:  
             return -1

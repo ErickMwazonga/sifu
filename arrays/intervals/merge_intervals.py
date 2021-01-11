@@ -34,3 +34,27 @@ assert merge_ranges(meetings1) == [(0, 1), (3, 8), (9, 12)]
 
 meetings2 = [(1, 3), (5, 8), (4, 10), (20, 25)]
 assert merge_ranges(meetings2) == [(1, 3), (4, 10), (20, 25)]
+
+
+# BEST SOLUTION
+'''
+Example 1:
+Input: intervals = [[1, 4], [5, 8], [7, 10], [9, 13], [14, 16], [16, 20], [17, 19]]
+Output: [[1, 4], [5, 13], [14, 20]]
+'''
+def mergeIntervals(intervals):
+    intervals.sort(key = lambda x: x[0])
+
+    for i in range(len(intervals)-1):
+        if intervals[i][1] >= intervals[i+1][0]:
+            intervals[i+1][0] = intervals[i][0]
+            intervals[i+1][1] = max(intervals[i][1], intervals[i+1][1])
+            intervals[i] = []
+
+    output = []
+
+    for interval in intervals:
+        if len(interval) != 0:
+            output.append(interval)
+
+    return output

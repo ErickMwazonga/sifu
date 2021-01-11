@@ -23,10 +23,14 @@ from typing import List
 
 
 def longest_subsequence(A: List) -> int:
+    '''
+    Time complexity: O(n), Space complexity: O(n)
+    '''
+
     visited = set(A)
     max_len = 0
 
-    for num in nums:
+    for num in A:
         count = 1
         forward = num + 1
 
