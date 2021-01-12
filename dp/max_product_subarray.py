@@ -15,9 +15,7 @@ Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 '''
 
 class Solution:
-    '''
-    Time complexity: ~N, Space complexity: ~1
-    '''
+    '''Time complexity: ~N, Space complexity: ~1'''
     
     def maxProduct(self, nums: List[int]) -> int:
         if not nums:

@@ -23,7 +23,7 @@ class MyCircularDeque:
         self.size = 0
         self.head = -1
         self.tail = 0
-        self.data = [0]*k
+        self.data = [0] * k
 
     def isEmpty(self) -> bool:
         return self.size == 0

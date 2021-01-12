@@ -35,7 +35,9 @@ def rob(nums: List[int]) -> int:
 
     for i in range(2, n):
         # The max if we select it or not
-        dp[i] = max(nums[i] + dp[i-2], dp[i-1])
+        include = nums[i] + dp[i-2]
+        exclude = dp[i-1]
+        dp[i] = max(include, exclude)
 
     return dp[-1]
 

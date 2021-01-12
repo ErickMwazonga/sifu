@@ -32,7 +32,7 @@ def numDecodings(self, s: str) -> int:
         return 0
     
     n = len(s)
-    dp = [0 for x in range(n + 1)]  # dp = [0] * (n + 1)
+    dp = [0] * (n + 1)
 
     # base case initialization
     dp[0] = 1 

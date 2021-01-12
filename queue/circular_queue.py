@@ -47,23 +47,20 @@ class CircularQueue:
             return False
         elif self.isEmpty():
             self.front = self.rear = 0
-            self.queue[self.rear] = value
-            self.size += 1
-            return True
         else:
             self.rear = (self.rear + 1) % self.max_size
-            self.queue[self.rear] = value
-            self.size += 1
-            return True
+        
+        self.queue[self.rear] = value
+        self.size += 1
+        return True
 
     def deQueue(self) -> bool:
         if self.isEmpty():
             return False
         elif self.front == self.rear: # One element left
             self.front = self.rear = -1
-            self.size -= 1
-            return True
         else:
             self.front = (self.front + 1) % self.max_size
-            self.size -= 1
-            return True
+
+        self.size -= 1
+        return True

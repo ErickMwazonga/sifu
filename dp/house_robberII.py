@@ -1,5 +1,7 @@
 '''
 House Robber II
+https://leetcode.com/problems/house-robber-ii/
+
 You are a professional robber planning to rob houses along a street.
 Each house has a certain amount of money stashed.
 All houses at this place are arranged in a circle.
@@ -32,7 +34,7 @@ class Solution:
         if len(nums) <= 2:
             return max(nums)
 
-        # Max(Not robbing th first house vs Robbing the first house)
+        # Max(Not robbing the first house vs Not Robbing the last house)
         return max(
             self.rob_section(nums[1:]),
             self.rob_section(nums[:-1])

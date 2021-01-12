@@ -38,21 +38,23 @@ class Logger:
 
     def __init__(self):
         ''' Initialize your data structure here.'''
+
         self.message_set = set()
         self.message_queue = deque()
 
     def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
         while self.message_queue:
             msg, ts = self.message_queue[0]
+            
             if timestamp - ts >= 10:
                 self.message_queue.popleft()
                 self.message_set.remove(msg)
             else:
                 break
 
-        if message not in self.message_set:
+        if message in self.message_set:
+            return False
+        else:
             self.message_set.add(message)
             self.message_queue.append((message, timestamp))
             return True
-        else:
-            return False

@@ -17,10 +17,7 @@ class TreeNode:
         self.right = None
 
 class Solution:
-    '''
-    Time complexity: O(N).
-    Space complexity: O(N).
-    '''
+    '''Time complexity: O(N), Space complexity: O(N)'''
 
     def sortedArrayToBST(self, nums):
         return self.conversion_helper(nums)

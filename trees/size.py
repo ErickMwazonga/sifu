@@ -20,10 +20,10 @@ def size(self):
     while stack:
         node = stack.pop()
         if node.left:
-            size += 1
             stack.push(node.left)
-        if node.right:
             size += 1
+        if node.right:
             stack.push(node.right)
+            size += 1
 
     return size

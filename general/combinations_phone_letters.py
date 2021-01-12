@@ -27,10 +27,10 @@ class Solution:
         
         for i in range(1, n):
             current_combinations = []
-            letters = mapping[digits[i]]
+            current_letters = mapping[digits[i]]
             
             for combination in all_combinations:
-                for letter in letters:
+                for letter in current_letters:
                     current_combinations.append(f'{combination}{letter}')
                     
             all_combinations = current_combinations

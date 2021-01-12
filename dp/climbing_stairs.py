@@ -27,8 +27,7 @@ class Solution:
     '''
 
     def climbStairs(self, n):
-        ways = []
-        ways.extend([1, 2])
+        ways = [1, 2]
 
         for i in range(2, n):
             distinct_ways = ways[i-1] + ways[i-2]

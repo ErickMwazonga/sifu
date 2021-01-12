@@ -25,10 +25,7 @@ def isFullTree(root):
     if not root.leftChild or not root.rightChild:
         return False 
 
-    if not self.isFullTree(root.left) or not self.isFullTree(root.right):
-        return False
-
-    return True
+    return self.isFullTree(root.left) and self.isFullTree(root.right):
 
 
 root = Node(1)

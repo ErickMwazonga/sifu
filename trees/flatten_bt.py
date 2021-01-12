@@ -29,7 +29,7 @@ def flatten(root: TreeNode) -> None:
     Do not return anything, modify root in-place instead.
     """
     if not root:
-        return 
+        return
     else:
         flatten(root.left)
         flatten(root.right)

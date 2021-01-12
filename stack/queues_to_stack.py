@@ -24,7 +24,8 @@ class Stack:
 
         # make new element on the head position by rotation
         for _ in range(n-1):
-            self.stack.append(self.stack.popleft())
+            popped = self.stack.popleft()
+            self.stack.append(popped)
 
     def pop(self):
         return self.stack.popleft()

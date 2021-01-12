@@ -22,12 +22,12 @@ class Node:
 
 def getLeaves(root, result): 
     if root:
-        printLeaves(root.left) 
+        getLeaves(root.left) 
           
         if not root.left and not root.right: 
             result.append(root.data)
   
-        printLeaves(root.right)
+        getLeaves(root.right)
 
 def getboundaryLeft(root, result): 
     if root: 
@@ -43,7 +43,7 @@ def getBoundaryRight(root, result):
         if root.right: 
             getBoundaryRight(root.right) 
             result.append(root.data)
-        elif(root.left):
+        elif root.left:
             getBoundaryRight(root.left)
             result.append(root.data)
 

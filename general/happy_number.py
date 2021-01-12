@@ -14,10 +14,10 @@ Return True if n is a happy number, and False if not.
 Example: 
 Input: 19 -> true
 Explanation: 
-12 + 92 = 82
-82 + 22 = 68
-62 + 82 = 100
-12 + 02 + 02 = 1
+1**2 + 9**2 = 82
+8**2 + 2**2 = 68
+6**2 + 8**2 = 100
+1**2 + 0**2 + 0**2 = 1
 '''
 
 def isHappy(n: int) -> bool:
@@ -47,12 +47,14 @@ def isHappy(self, n: int) -> bool:
 		slow = self.squared(slow)
 		fast = self.squared(self.squared(fast))
 
-	return fast==1
+	return fast == 1
 
 def squared(self, n):
 	result = 0
-	while n>0:
-		last = n%10
+
+	while n > 0:
+		last = n % 10
 		result += last * last
-		n = n//10
+		n = n // 10
+
 	return result

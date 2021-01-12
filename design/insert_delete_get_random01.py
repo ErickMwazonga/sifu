@@ -39,43 +39,44 @@ class RandomizedSet:
         self.values = []
 
     def insert(self, val: int) -> bool:
-        """
-        Inserts a value to the set. Returns true if the set did not already contain the specified element.
-        """
-        
-        if val not in self.values_indexes:
+
+        if val in self.values_indexes:
+            return False
+        else:
             self.values_indexes[val] = len(self.values)
             self.values.append(val)
             
             return True
-        else:
-            return False
 
     def remove(self, val: int) -> bool:
-        """
-        Removes a value from the set. Returns true if the set contained the specified element.
-        """
-        
         if val not in self.values_indexes:
             return False
         else:
-            index = self.values_indexes[val]
-            last = len(self.values) - 1
-            
-            self.values_indexes[self.values[last]] = index
-            
-            self.values[index], self.values[last] = self.values[last], self.values[index]
+            # essentially, we're going to move the last element in the list 
+            # into the location of the element we want to remove. 
+            # this is a significantly more efficient operation than the obvious 
+            # solution of removing the item and shifting the values of every item 
+            # in the dicitionary to match their new position in the list
+
+            last_elem_in_list = self.values[-1]
+            index_of_elem_to_remove = self.values_indexes[val]
+
+            self.values_indexes[last_elem_in_list] = index_of_elem_to_remove
+            self.values[index_of_elem_to_remove] = last_elem_in_list
+
+            # change the last element in the list to now be the value of the element 
+            # we want to remove
+            self.values[-1] = val
+
+            # remove the last element in the list
             self.values.pop()
-            
-            del self.values_indexes[val]
+
+            # remove the element to be removed from the dictionary
+            self.values_indexes.pop(val)
             
             return True
 
         def getRandom(self) -> int:
-            """
-            Get a random element from the set.
-            """
-
             n = len(self.values)
             random_index = random.randint(0, n - 1)        
 

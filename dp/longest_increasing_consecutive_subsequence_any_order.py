@@ -23,9 +23,7 @@ from typing import List
 
 
 def longest_subsequence(A: List) -> int:
-    '''
-    Time complexity: O(n), Space complexity: O(n)
-    '''
+    '''Time complexity: O(n), Space complexity: O(n)'''
 
     visited = set(A)
     max_len = 0

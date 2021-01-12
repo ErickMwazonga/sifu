@@ -41,8 +41,8 @@ def leastInterval(tasks, n: int) -> int:
         
     freq = [value for key, value in freq.items()]
     max_freq = max(freq)
-    max_freq_tasks = freq.count(max_freq)
+    no_of_tasks_with_max_freq = freq.count(max_freq)
     
-    all_counts = (max_freq - 1) * (n + 1) +  max_freq_tasks
+    all_counts = (max_freq - 1) * (n + 1) + no_of_tasks_with_max_freq
     
     return max(len(tasks), all_counts)
