@@ -4,7 +4,7 @@ from collections import OrderedDict
 class LRUCache:
 
 	def __init__(self, capacity):
-		self.lru = Orderedlrut()
+		self.lru = OrderedDict()
 		self.capacity = capacity
 
 	def get(self, key):

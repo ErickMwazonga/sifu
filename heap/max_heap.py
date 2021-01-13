@@ -76,10 +76,10 @@ class MaxHeap:
             self.maxHeapify(A, i, 0)
 
     def kthLargestHeapsort(self, A, times):
-        sorted_array = []
         self.build_max_heap(A)
 
         # One by one extract elements
+        sorted_array = []
         for i in range(times):
             A[-1], A[0] = A[0], A[-1]
             sorted_array.append(A.pop())
@@ -88,7 +88,6 @@ class MaxHeap:
         return sorted_array[-1]
 
 # -------------------------------
-
 mh = MaxHeap()
 
 arr = [3, 12, 11, 13, 5, 6, 7]

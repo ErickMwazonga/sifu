@@ -27,11 +27,13 @@ def minMeetingRooms(self, intervals):
         # now a meeting is going to start, is there a meeting ends
         # (meaning a meeting room is released)?
         endTime = ending_times[0]
+
         if endTime <= startTime:
             ending_times.pop(0)
         else:
             # need to ask for a new room
             rooms += 1
+            
     return rooms
 
 

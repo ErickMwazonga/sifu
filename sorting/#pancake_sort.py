@@ -14,12 +14,12 @@ Return the k-values corresponding to a sequence of pancake flips that sort arr. 
 the array within 10 * arr.length flips will be judged as correct.
 '''
 
-def flip(arr, i):
-    arr[:i+1] = reversed(arr[:i+1])
+def flip(A, i):
+    A[:i+1] = reversed(A[:i+1])
 
-def findMaxUpTo(arr, i):
-    val = max(arr[:i+1])
-    return arr.index(val)
+def findMaxUpTo(A, i):
+    val = max(A[:i+1])
+    return A.index(val)
 
 def pancake_sort(arr):
     # start from the array and one by one reduce the current size

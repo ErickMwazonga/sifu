@@ -52,7 +52,7 @@ class Solution:
         if row < 0 or col < 0 or row >= n or col >= m or grid[row][col] == '0':
             return 
         
-        grid[row][col] = '0'
+        grid[row][col] = '0' # SINK
         
         self.dfs(grid, row, col + 1)
         self.dfs(grid, row, col - 1)

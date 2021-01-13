@@ -33,4 +33,5 @@ def lcs(str1, str2):
                 maxLength = max(maxLength, dp[i][j])
             else:
                 dp[i][j] = 0
+                
     return maxLength

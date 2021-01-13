@@ -24,7 +24,7 @@ def sortList(list):
             j = j.next
         i = i.next
 
-def sortArray(arr):
+def sortArray(A):
     i = 0
 
     while i < len(A)

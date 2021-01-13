@@ -31,15 +31,17 @@ Space complexity: O(n*m)
 def paths(matrix):
     n, m = len(matrix), len(matrix[0])
 
-    dp = [([0] * m) for i in range(n)]
+    dp = [[0] * m for i in range(n)]
     dp[0][0] = 0 if (matrix[0][0] == 1) else 1
     
-    for i in range(1, m):
-        if matrix[0][i] == 1:
-            dp[0][i] = 0
+    # First row
+    for j in range(1, m):
+        if matrix[0][j] == 1:
+            dp[0][j] = 0
         else:
-            dp[0][i] = dp[0][i-1]
+            dp[0][j] = dp[0][j-1]
 
+    # First col
     for i in range(1, n):
         if matrix[i][0] == 1:
             dp[i][0] = 0
@@ -52,7 +54,10 @@ def paths(matrix):
                 dp[i][j] = 0
             else:
                 dp[i][j] = dp[i-1][j] + dp[i][j-1]
+
     return dp[n-1][m-1]
+
+
 
 # RECURSION
 def paths(matrix, i = 0, j = 0):

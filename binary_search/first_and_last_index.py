@@ -47,7 +47,7 @@ class Solution:
 
             if nums[mid] == target:
                 index = mid
-                high = mid + 1
+                high = mid - 1
             elif nums[mid] > target:
                 high = mid - 1
             else:

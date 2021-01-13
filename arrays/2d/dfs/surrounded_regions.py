@@ -53,7 +53,8 @@ class Solution:
         if i < 0 or j < 0 or i >= nb_row or j >= nb_col or  board[i][j] != 'O':
             return
 
-        board[i][j] = 'D'
+        board[i][j] = 'D' # SURROUND
+
         self.dfs(board, i + 1, j)
         self.dfs(board, i - 1, j)
         self.dfs(board, i, j + 1)

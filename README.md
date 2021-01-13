@@ -14,3 +14,5 @@ DSA
 8. https://velog.io/@jiselectric/Leetcode-Powx-n
 9. https://github.com/kdn251/interviews/tree/master/leetcode
 10. https://mrleonhuang.gitbooks.io/lintcode/content
+11. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
+12. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/

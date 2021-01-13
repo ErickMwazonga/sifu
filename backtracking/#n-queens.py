@@ -14,6 +14,7 @@ def isNotAttacked(board, row, col):
             i -= 1
             jLeft -= 1
             jRight += 1
+
     return True
 
 def nQueensRec(n, board, row):
@@ -26,8 +27,9 @@ def nQueensRec(n, board, row):
             board[row][i] = 'Q'
             sumWays += nQueensRec(n, board, row+1)
             board[row][i] = '.'
+
     return sumWays
 
 def nQueens(n):
     board = [['.'] * n for i in range(n)]
-    return nQueensRec(n, board, 0)
+    return nQueensRec(n, board, row=0)

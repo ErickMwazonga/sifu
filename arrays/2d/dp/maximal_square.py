@@ -28,7 +28,7 @@ def maximalSquare(matrix):
         for c in range(m):
             if matrix[r][c] == '1':
                 # Be careful of the indexing since dp grid has additional row and column
-                dp[r+1][c+1] = min(dp[r][c], dp[r+1][c], dp[r][c+1]) + 1
+                dp[r+1][c+1] = 1 + min(dp[r][c], dp[r+1][c], dp[r][c+1])
                 max_side = max(max_side, dp[r+1][c+1])
                 
     return max_side * max_side

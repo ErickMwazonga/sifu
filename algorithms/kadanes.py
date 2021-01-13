@@ -35,26 +35,8 @@ def maxSubArray(nums: List[int]) -> int:
 def max_subarray(A):
     max_ending_here = max_so_far = A[0]
 
-    for x in A[1:]:
-        max_ending_here = max(x, max_ending_here + x)
+    for num in A[1:]:
+        max_ending_here = max(num, max_ending_here + num)
         max_so_far = max(max_so_far, max_ending_here)
         
     return max_so_far
-
-
-def maxSubArray(nums: List[int]) -> int:
-    if not nums:
-        return 0
-    
-    summed = 0
-    n = len(nums)
-    solutions = [0] * n
-
-    for i, val in enumerate(nums):
-        if summed < 0:
-            summed = 0
-
-        summed += val
-        solutions[i] = summed
-    
-    return max(solutions)

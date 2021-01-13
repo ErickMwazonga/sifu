@@ -20,10 +20,7 @@ Output: 12 -> 2 + 9 + 1 = 12.
 from typing import List
 
 def rob(nums: List[int]) -> int:
-    '''
-    Time Complexity: O(n)
-    Space Complexity: O(n)
-    '''
+    '''Time Complexity: O(n), Space Complexity: O(n)'''
 
     n = len(nums)
     if n <= 2:
@@ -43,25 +40,3 @@ def rob(nums: List[int]) -> int:
 
 assert rob([1, 2, 3, 1]) == 4
 assert rob([2, 7, 9, 3, 1]) == 12
-
-
-def rob2(nums: List[int]) -> int:
-    '''
-    Time Complexity: O(n)
-    Space Complexity: O(n)
-    '''
-
-    n = len(nums)
-    if n <= 2:
-        return max(nums)
-
-    pre_list = [0, 0]
-    for i in range(n):
-        max_value = max(pre_list[0] + nums[i], pre_list[1])
-        pre_list[0] = pre_list[1]
-        pre_list[1] = max_value
-
-    return pre_list[1]
-
-assert rob2([1, 2, 3, 1]) == 4
-assert rob2([2, 7, 9, 3, 1]) == 12

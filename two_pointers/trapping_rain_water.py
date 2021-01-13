@@ -29,7 +29,7 @@ def trap(self, height: List[int]) -> int:
             res += leftmost - height[left]
             left += 1
         else:
-            res += rightmost-height[right]
+            res += rightmost - height[right]
             right -= 1
             
     return res

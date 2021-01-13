@@ -29,9 +29,7 @@ Output: 0
 '''
 
 def maxProfit2(prices):
-    '''
-    Two passes through the list, O(n) time, O(n) space:
-    '''
+    '''Two passes through the list, O(n) time, O(n) space'''
 
     if not prices:
         return 0

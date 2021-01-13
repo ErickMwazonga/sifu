@@ -39,7 +39,6 @@ class RandomizedSet:
         self.values = []
 
     def insert(self, val: int) -> bool:
-
         if val in self.values_indexes:
             return False
         else:
@@ -61,25 +60,19 @@ class RandomizedSet:
             last_elem_in_list = self.values[-1]
             index_of_elem_to_remove = self.values_indexes[val]
 
-            self.values_indexes[last_elem_in_list] = index_of_elem_to_remove
             self.values[index_of_elem_to_remove] = last_elem_in_list
+            self.values_indexes[last_elem_in_list] = index_of_elem_to_remove
 
-            # change the last element in the list to now be the value of the element 
-            # we want to remove
-            self.values[-1] = val
-
-            # remove the last element in the list
-            self.values.pop()
-
+            # remove the last element in the list 
             # remove the element to be removed from the dictionary
+            self.values.pop()
             self.values_indexes.pop(val)
             
             return True
 
         def getRandom(self) -> int:
-            n = len(self.values)
-            random_index = random.randint(0, n - 1)        
+            # n = len(self.values)
+            # random_index = random.randint(0, n - 1)        
+            # return self.values[random_index]
 
-            return self.values[random_index]
-
-            # return random.choice(self.values)
+            return random.choice(self.values)

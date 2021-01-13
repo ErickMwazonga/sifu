@@ -56,6 +56,7 @@ class SortedSearch:
                 end = mid_row - 1
             else:
                 start = mid_row + 1
+                
         return False
 
     
@@ -66,6 +67,7 @@ class SortedSearch:
 
             while start <= end:
                 mid = (start + end) // 2
+
                 if row[mid] == target:
                     return True
                 elif row[mid] < target:

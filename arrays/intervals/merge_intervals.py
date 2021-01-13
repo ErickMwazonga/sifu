@@ -43,9 +43,10 @@ Input: intervals = [[1, 4], [5, 8], [7, 10], [9, 13], [14, 16], [16, 20], [17, 1
 Output: [[1, 4], [5, 13], [14, 20]]
 '''
 def mergeIntervals(intervals):
+    n = len(intervals)
     intervals.sort(key = lambda x: x[0])
 
-    for i in range(len(intervals)-1):
+    for i in range(n-1):
         if intervals[i][1] >= intervals[i+1][0]:
             intervals[i+1][0] = intervals[i][0]
             intervals[i+1][1] = max(intervals[i][1], intervals[i+1][1])

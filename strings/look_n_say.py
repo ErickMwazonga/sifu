@@ -45,6 +45,7 @@ counting the number of digits in groups of the same digit. For example:
 '''
 
 class Solution:
+    
     def nextNumber(self, s):
         res = []
         i, n = 0, len(s)

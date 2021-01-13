@@ -30,6 +30,7 @@ Output: 3
 
 def findJudge(self, N: int, trust: List[List[int]]) -> int:
     '''Inspired by https://www.youtube.com/watch?v=ZUP_tIs4VaE&t=419s'''
+
     if N == 1 and not trust:
         return 1
     
@@ -49,6 +50,7 @@ def findJudge(self, N: int, trust: List[List[int]]) -> int:
         
     for i in range(len(mapping)):
         trusting, trusted_by = mapping[i]
+        
         if trusting == 0 and trusted_by == N-1:
             return i
         

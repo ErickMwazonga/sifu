@@ -40,4 +40,4 @@ class Solution:
             else:
                 maxIndex = max(maxIndex, i + arr[i])
                 
-        return maxIndex >= n-1
+        return maxIndex >= n - 1

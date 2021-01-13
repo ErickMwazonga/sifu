@@ -53,8 +53,8 @@ def maxProductPath(grid):
     n, m = len(grid), len(grid[0])
     
     # Construct matrix
-    dp_max = [[1 for j in range(m)] for i in range(n)]
-    dp_min = [[1 for j in range(m)] for i in range(n)]
+    dp_max = [[1] * m for i in range(n)]
+    dp_min = [[1] * m for i in range(n)]
     
     # Fill in topmost left
     dp_max[0][0] = dp_min[0][0] = grid[0][0]
@@ -85,3 +85,4 @@ def maxProductPath(grid):
         return -1
     
     return dp_max[n-1][m-1] % (10**9+7)
+    # return dp_max[n-1][m-1]

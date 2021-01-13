@@ -48,7 +48,7 @@ class LRUCache:
         self.add_node(node)
         self.lru[key] = node
         
-        if len(self.lru) > self.capacity:
+        if len(self.lru) >= self.capacity:
             nxt = self.head.next
             self.remove_node(nxt)
             self.lru.pop(nxt.key)

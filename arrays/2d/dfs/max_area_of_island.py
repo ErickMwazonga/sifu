@@ -45,11 +45,11 @@ class Solution:
         if row < 0 or col < 0 or row >= n or col >= m or grid[row][col] == 0:
             return 0
         
-        grid[row][col] = 0
+        grid[row][col] = 0 # SINK
 
         right = self.dfs(grid, row, col + 1)
         left = self.dfs(grid, row, col - 1)
         down = self.dfs(grid, row + 1, col)
         up = self.dfs(grid, row - 1, col)
     
-        return up + down + left + right + 1
+        return 1 + up + down + left + right

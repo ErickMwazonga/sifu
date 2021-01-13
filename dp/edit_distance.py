@@ -35,9 +35,11 @@ def minDistance(word1, word2):
 
     dp = [[0] * (m+1) for i in range(n+1)]
 
+    # first row
     for j in range(m+1):
         dp[0][j] = j
 
+    # first col
     for i in range(n+1):
         dp[i][0] = i
 

@@ -28,13 +28,13 @@ def findPeak(arr):
             return i
 
 # ITERATIVELY
-def findPeak(arr):
-    left, right = 0, len(arr) - 1
+def findPeak(A):
+    left, right = 0, len(A) - 1
 
     while left < right:
         mid = (left + right) // 2
 
-        if arr[mid] < arr[mid+1]:
+        if A[mid] < A[mid+1]:
             left = mid + 1
         else:
             right = mid

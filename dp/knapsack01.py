@@ -22,8 +22,8 @@ def knapSack(values, w, W):
             else:
 				# find maximum value we get by excluding or including the ith item
                 # max of exclude vs include
-                include = dp[i - 1][j]
-                exclude = dp[i - 1][rem_weight] + current_val
+                include = dp[i - 1][rem_weight] + current_val
+                exclude = dp[i - 1][j]
 
 				dp[i][j] = max(include, exclude)
 

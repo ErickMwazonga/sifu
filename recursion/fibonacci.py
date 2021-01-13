@@ -13,3 +13,20 @@ def fib(n):
         dp[i] = dp[i-1] + dp[i-2]
 
     return dp[-1]
+
+def fib2(n):
+    if n < 1:
+        return -1
+
+    prev, curr = 0, 1
+
+    if n == 1:
+        return curr
+    
+    for i in range(1, n):
+        temp = curr
+        curr = prev + curr
+        prev = temp
+      
+    return curr
+    

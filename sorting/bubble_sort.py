@@ -34,6 +34,18 @@ def bubbleSort(A: List) -> List:
         if not swapped:
             break
 
+def sortArray(A):
+    i = 0
+
+    while i < len(A)
+        j = 0
+
+        while j + 1 < len(A):
+            if A[j] > A[j+1]:
+                A[j], A[j+1] = A[j+1], A[j]
+            j += 1
+        i += 1
+
 
 data = [-2, 45, 0, 11, -9]
 bubbleSort(data)

@@ -47,8 +47,10 @@ class Solution:
         money[1] = max(nums[0], nums[1])
 
         for i in range(2, n):
-            money[i] = max(money[i-1], money[i-2] + nums[i])
-            
+            include = nums[i] + dp[i-2]
+            exclude = dp[i-1]
+            money[i] = max(include, exclude)
+
         return money[-1]
 
 
