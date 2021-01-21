@@ -9,35 +9,28 @@ def fib(n):
     
 print(fib(10))
 
+# RECURSION
 def fibonacci(n):
     '''O(2^n)) -> Exponential'''
     if n <= 1:
         return 1
     return fibonacci(n - 1) + fibonacci(n - 2)
 
-
-def fibber(n):
+# MEMOIZATION
+def fib_memoized(n, memo={}):
     '''Time - O(n), Space - O(n)'''
-    memo = {}
 
-    def fib(n):
-        if n < 0:
-            raise IndexError('Negative Index 🌜')
-        if n <= 1:
-            return 1
+    if n <= 1:
+        return 1
 
-        if n in memo:
-            return memo[n]
+    if n in memo:
+        return memo[n]
 
-        result = fib(n - 1) + fib(n - 2)
-        memo[n] = result  # Memoize
+    memo[n] = fib_memoized(n - 1) + fib_memoized(n - 2)
+    return memo[n]
 
-        return result
-
-    return fib(n)
-
-
-  def fib(n):
+# ITERATION
+def fib_iter(n):
     ''' O(n) time and O(1) space.'''
 
     if n < 0:

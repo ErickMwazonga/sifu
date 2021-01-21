@@ -18,10 +18,11 @@ Input: nums = [1], target = 0
 Output: -1
 '''
 
-def search(self, A: List[int], target: int) -> int:
+from typing import List
+
+class Solution:
     '''https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/894031/Python-O(logn)-Detailed-Explanation'''
 
-    class Solution:
     def search(self, nums: List[int], target: int) -> int:
         if not nums:
             return -1

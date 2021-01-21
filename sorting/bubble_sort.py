@@ -37,7 +37,7 @@ def bubbleSort(A: List) -> List:
 def sortArray(A):
     i = 0
 
-    while i < len(A)
+    while i < len(A):
         j = 0
 
         while j + 1 < len(A):

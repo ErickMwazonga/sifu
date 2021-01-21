@@ -13,7 +13,8 @@ Input: arr = [1, 3, 4, 7, 8] -> 4
     Explanation: arr[4] is a peak element because it's greater than or equal to arr[3], which is it's only neighbor
 Input: arr = [1, 5, 2, 6, 6, 3] -> 3
     Explanation: arr[3] is a peak element because it's greater than or equal
-    to arr[2] and greater than or equal to arr[4] (other valid outputs would be 1 and 4, because arr[1] and arr[4] are also peak elements)
+    to arr[2] and greater than or equal to arr[4] (other valid outputs would be 1 and 4,
+    because arr[1] and arr[4] are also peak elements)
 '''
 
 def findPeak(arr):
@@ -53,5 +54,5 @@ def findPeakRec(arr, left, right):
     else:
         return findPeakRec(arr, left, mid)
 
-def findPeak(arr):
+def findPeak2(arr):
     return findPeakRec(arr, 0, len(arr)-1)

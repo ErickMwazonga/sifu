@@ -9,17 +9,21 @@ int[] reset() Resets the array to its original configuration and returns it.
 int[] shuffle() Returns a random shuffling of the array.
 '''
 
+import random
+from typing import List
+
+
 # FISHER-YATES
 def shuffle(A) -> List[int]:
     """
     Returns a random shuffling of the array.
     Inspired by - https://www.youtube.com/watch?v=4zx5bM2OcvA
     """
-    
+
     last_index = len(A) - 1
     while last_index > 0:
         rand_index = random.randint(0, last_index)
         A[last_index], A[rand_index] = A[rand_index], A[last_index]
         last_index -= 1
-    
+
     return A

@@ -12,6 +12,8 @@ Input: [6, 7, 8, 1, 2] -> 1
 Input: [8, 9, 10, 1, 0, 1, 2] -> 0
 '''
 
+from typing import List
+
 def naive_approach(A):
     _min = A[0]
 

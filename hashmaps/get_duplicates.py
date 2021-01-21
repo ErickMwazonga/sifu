@@ -42,7 +42,7 @@ def findDuplicate(nums):
 
 
 # Approach 2: Set
-def findDuplicate(nums):
+def findDuplicate2(nums):
     seen = set()
     for num in nums:
         if num in seen:
