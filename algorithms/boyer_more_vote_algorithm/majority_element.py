@@ -31,7 +31,7 @@ class Solution:
 
             if counter == 0:
                 majority = nums[i]
-                counter += 1
+                counter = 1
 
         return majority
 
