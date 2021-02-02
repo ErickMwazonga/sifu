@@ -14,25 +14,29 @@ Return the k-values corresponding to a sequence of pancake flips that sort arr. 
 the array within 10 * arr.length flips will be judged as correct.
 '''
 
+
 def flip(A, i):
     A[:i+1] = reversed(A[:i+1])
+
 
 def findMaxUpTo(A, i):
     val = max(A[:i+1])
     return A.index(val)
+
 
 def pancake_sort(arr):
     # start from the array and one by one reduce the current size
     curr_size = len(arr) - 1
     # find the index of the maxmium element inside the arr[0..curr_size -1]
     while curr_size > 0:
-        mi = findMaxUpTo(arr, curr_size)
-        if mi != curr_size:
-            flip(arr, mi)
-            # once I flip it
+        max_index = findMaxUpTo(arr, curr_size)
+
+        if max_index != curr_size:
+            flip(arr, max_index)
             # now move the maximum number to the end by reversing current array
             flip(arr, curr_size)
         curr_size -= 1
+
     return arr
 
 

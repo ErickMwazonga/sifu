@@ -16,3 +16,5 @@ DSA
 10. https://mrleonhuang.gitbooks.io/lintcode/content
 11. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
 12. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/
+13. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
+14. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
