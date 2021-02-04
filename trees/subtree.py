@@ -14,7 +14,7 @@ Given tree s:
   / \
  1   2
 Given tree t:
-   4 
+   4
   / \
  1   2
 Return true, because t has the same structure and node values with a subtree of s.
@@ -35,26 +35,27 @@ Given tree t:
 Return false
 '''
 
+
 class Solution:
     def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
-        if not s: 
+        if not s:
             return False
 
-        if self.isSameTree(s, t): 
+        if self.isSameTree(s, t):
             return True
-            
+
         return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
 
-     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
         if not p and not q:
             return True
 
         if not p or not q:
             return False
-        
+
         if p.val != q.val:
             return False
-        
+
         left_isSame = self.isSameTree(p.left, q.left)
         right_isSame = self.isSameTree(p.right, q.right)
 

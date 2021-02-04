@@ -20,8 +20,9 @@ def height(root):
     leftHeight = height(root.left)
     rightHeight = height(root.right)
 
-    depth = max(depth_left, depth_right) + 1
+    depth = max(leftHeight, rightHeight) + 1
     return depth
+
 
 def maxDepth(root):
     '''
@@ -31,8 +32,8 @@ def maxDepth(root):
     if not root:
         return 0
 
-    leftHeight = maxDepth(root.left)
-    rightHeight = maxDepth(root.right)
+    depth_left = maxDepth(root.left)
+    depth_right = maxDepth(root.right)
 
     depth = max(depth_left, depth_right) + 1
     return depth
@@ -45,4 +46,4 @@ root.right = Node(3)
 root.left.left = Node(4)
 root.left.right = Node(5)
 
-print ("Height of tree is %d" %(height(root)))
+print("Height of tree is %d" % (height(root)))

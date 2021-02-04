@@ -18,17 +18,22 @@ Output:
 9   6 3   1
 '''
 
+import collections
+
+
 def invertTree(self, root: TreeNode) -> TreeNode:
     if not root:
         return
-    
+
     root.left, root.right = root.right, root.left
     self.invertTree(root.left)
     self.invertTree(root.right)
-    
+
     return root
 
 # BFS
+
+
 def invertTree2(self, root):
     queue = collections.deque([(root)])
     while queue:
@@ -38,8 +43,10 @@ def invertTree2(self, root):
             queue.append(node.left)
             queue.append(node.right)
     return root
-    
+
 # DFS
+
+
 def invertTree(self, root):
     stack = [root]
 
@@ -48,5 +55,5 @@ def invertTree(self, root):
         if node:
             node.left, node.right = node.right, node.left
             stack.extend([node.right, node.left])
-            
+
     return root
