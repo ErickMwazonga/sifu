@@ -22,31 +22,32 @@ grid = [
 grid = [[-1]] -> 1
 '''
 
- def countNegativesDESC(grid):
+
+def countNegativesDESC(grid):
     n, m = len(grid), len(grid[0])
     i, j = n - 1, 0
     count = 0
-    
+
     while j < m and i >= 0:
         if grid[i][j] < 0:
             count += m - j
             i -= 1
         else:
             j += 1
-            
+
     return count
+
 
 def countNegativesASC(grid):
     n, m = len(grid), len(grid[0])
     i, j = 0, m - 1
     count = 0
-    
+
     while j >= 0 and i < n:
         if grid[i][j] < 0:
             count += j + 1
             i += 1
         else:
             j -= 1
-            
-    return count
 
+    return count

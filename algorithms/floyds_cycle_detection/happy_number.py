@@ -11,46 +11,50 @@ Those numbers for which this process ends in 1 are happy numbers.
 
 Return True if n is a happy number, and False if not.
 
-Example: 
+Example:
 Input: 19 -> true
-Explanation: 
+Explanation:
 1**2 + 9**2 = 82
 8**2 + 2**2 = 68
 6**2 + 8**2 = 100
 1**2 + 0**2 + 0**2 = 1
 '''
 
+
 def isHappy(n: int) -> bool:
-	slow = squared(n)
-	fast = squared(squared(n))
+    slow = squared(n)
+    fast = squared(squared(n))
 
-	while slow != fast:
-		slow = squared(slow)
-		fast = squared(squared(fast))
+    while slow != fast:
+        slow = squared(slow)
+        fast = squared(squared(fast))
 
-	return slow == 1
+    return slow == 1
+
 
 def squared(n):
-	return sum([int(x) ** 2 for x in str(n)])
+    return sum([int(x) ** 2 for x in str(n)])
+
 
 def squared2(n):
-	result = 0
+    result = 0
 
-	while n > 0:
-		n, last = divmod(n, 10)
-		result += last * last
+    while n > 0:
+        n, last = divmod(n, 10)
+        result += last * last
 
-	return result
+    return result
+
 
 def isHappy(n):
-	seen = { n }
+    seen = {n}
 
-	while (n):
-		n = squared(n)
+    while (n):
+        n = squared(n)
 
-		if n == 1:
-			return True
-		elif n in seen:
+        if n == 1:
+            return True
+        elif n in seen:
             return False
-		else:
-			seen.add(n)
+        else:
+            seen.add(n)

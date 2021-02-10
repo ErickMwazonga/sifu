@@ -33,17 +33,17 @@ def setZeroes(matrix):
             if matrix[row][col] == 0:
                 rows.add(row)
                 cols.add(col)
-                    
+
     # traverse row wise and update columns
     for row in rows:
         for j in range(m):
             matrix[row][j] = 0
-        
+
     # traverse column wise and update rows
     for col in cols:
         for row in range(n):
             matrix[row][col] = 0
-            
+
     return matrix
 
 
@@ -62,6 +62,49 @@ def set_zeros(A):
                 A[i][j] = 0
             elif j in zeros['cols'] and A[i][j] != 0:
                 A[i][j] = 0
+
+
+'''
+Time complexity for all three progression is O(m * n).
+Space: O(1) for modification in place and using the first row
+and first col to keep track of zeros instead of zeroes_row and zeroes_col
+'''
+
+
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+
+        m, n = len(matrix), len(matrix[0])
+
+        first_row_has_zero = False
+        first_col_has_zero = False
+
+        # iterate through matrix to mark the zero row and cols
+        for row in range(m):
+            for col in range(n):
+                if matrix[row][col] == 0:
+                    if row == 0:
+                        first_row_has_zero = True
+                    if col == 0:
+                        first_col_has_zero = True
+                    matrix[row][0] = matrix[0][col] = 0
+
+        # iterate through matrix to update the cell to be zero if it's in a zero row or col
+        for row in range(1, m):
+            for col in range(1, n):
+                if matrix[0][col] == 0 or matrix[row][0] == 0:
+                    matrix[row][col] = 0
+                else:
+                    matrix[row][col]
+
+        # update the first row and col if they're zero
+        if first_row_has_zero:
+            for col in range(n):
+                matrix[0][col] = 0
+
+        if first_col_has_zero:
+            for row in range(m):
+                matrix[row][0] = 0
 
 
 m = [

@@ -2,7 +2,7 @@
 15. 3Sum -> 0
 https://leetcode.com/problems/3sum/
 
-are there elements a, b, c in nums such that a + b + c = 0? 
+are there elements a, b, c in nums such that a + b + c = 0?
 Find all unique triplets in the array which gives the sum of zero.
 
 Note:
@@ -17,29 +17,30 @@ A solution set is:
 ]
 """
 
+
 def threeSum(nums):
     nums.sort()
-    lis, n = [], len(nums)
-  
+    n = len(nums)
+    result = set()
+
     for i in range(n-2):
         low = i + 1
         high = n - 1
-        
-        while (low < high):
+
+        while low < high:
             s = nums[i] + nums[low] + nums[high]
-            
+
             if s == 0:
-                lis.append((nums[i], nums[low], nums[high]))
+                result.add((nums[i], nums[low], nums[high]))
                 low += 1
                 high -= 1
             if s < 0:
                 low += 1
             if s > 0:
                 high -= 1
-                
-    res = list(set(lis))     
-    res = [list(x) for x in res]
-    return res
+
+    return result
+
 
 a = [-1, 0, 1, 2, -1, -4]
 

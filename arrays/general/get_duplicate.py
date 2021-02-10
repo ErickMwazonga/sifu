@@ -15,12 +15,16 @@ but it could be repeated more than once.
 '''
 
 # A single duplicate
+
+
 def getDuplicate(A):
     n = len(A) - 1
     total = n * (n + 1) // 2
 
     sum_of_A = sum(A)
+
     return sum_of_A - total
+
 
 # Single duplicate
 assert getDuplicate([1, 3, 4, 2, 2]) == 2

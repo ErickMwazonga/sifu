@@ -2,19 +2,20 @@
 Rotate Image A N T I C L O C K W I S E
 '''
 
+
 class Solution:
     def transpose(self, matrix):
         n = len(matrix)
 
         for i in range(n):
-            for j in range(i+ 1, n):
-                matrix[j][i],matrix[i][j] = matrix[i][j],matrix[j][i]
+            for j in range(i + 1, n):
+                matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
 
     def rotate(self, matrix):
         # Two steps: reverse items and transpose in place
         for row in matrix:
             row.reverse()
-        
+
         self.transpose(matrix)
 
 

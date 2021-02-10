@@ -25,6 +25,7 @@ def preorder(root):
     traverse(root)
     return data
 
+
 def preorder_ITERATIVELY(root):
     if not root:
         return []
@@ -40,6 +41,7 @@ def preorder_ITERATIVELY(root):
             stack.append(node.left)
 
     return res
+
 
 def inorder(root):
     '''Left, Root, Right'''
@@ -57,6 +59,7 @@ def inorder(root):
     traverse(root)
     return data
 
+
 def inorder_ITERATIVELY(root):
     if not root:
         return []
@@ -68,14 +71,14 @@ def inorder_ITERATIVELY(root):
             stack.append(root)
             root = root.left
         else:
-            if not stack:  
+            if not stack:
                 return res
 
             # retrieve top node and point it to its right child if exists
             node = stack.pop()
             res.append(node.val)
             root = node.right
-    
+
     return res
 
 
@@ -95,6 +98,7 @@ def postorder(root):
     traverse(root)
     return data
 
+
 def postorder_ITERATIVELY(root):
     if not root:
         return []
@@ -112,7 +116,6 @@ def postorder_ITERATIVELY(root):
 
     # reverse result
     return res[::-1]
-
 
 
 root = Node(1)

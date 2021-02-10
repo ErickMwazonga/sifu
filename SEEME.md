@@ -14,8 +14,3 @@
 12. Palindrome String
 13. Reverse a Linked List.
 14. Traverse a binary tree in a zig zag manner
-
-# MORE
-
-rabin-karp
-knuth-morris-pratt(KMP)

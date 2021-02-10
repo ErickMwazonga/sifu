@@ -22,6 +22,7 @@ Example 3:
 Input: numbers = [-1,0], target = -1 -> [1,2]
 '''
 
+
 def twoSum(nums, target):
     low, high = 0, len(nums) - 1
 
@@ -34,6 +35,9 @@ def twoSum(nums, target):
             low += 1
         else:
             high -= 1
+
+    return []
+
 
 assert sorted(twoSum([2, 7, 11, 15], 9)) == sorted([0, 1])
 assert sorted(twoSum([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
