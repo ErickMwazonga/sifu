@@ -40,7 +40,7 @@ class Solution:
 
         res = []
         for i, d in enumerate(diagonals.values()):
-            if i % 2 != 1:
+            if i % 2 == 0:
                 res.extend(d[::-1])
             else:
                 res.extend(d)
