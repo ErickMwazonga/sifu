@@ -25,8 +25,7 @@ from typing import List
 
 class Solution:
     def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
-        ## TIME COMPLEXITY : O(MxN) ##
-        ## SPACE COMPLEXITY : O(MxN) ##
+        '''Time complexity O(MN), Space Complexity O(MN)'''
 
         if not matrix:
             return []
@@ -55,10 +54,4 @@ input = [
 ]
 
 soln = Solution()
-print(soln.findDiagonalOrder(input))
-
-
-# Output
-# [1,4,2,3,5,7,8,6,9]
-# Expected
-# [1,2,4,7,5,3,6,8,9]
+assert soln.findDiagonalOrder(input) == [1, 2, 4, 7, 5, 3, 6, 8, 9]
