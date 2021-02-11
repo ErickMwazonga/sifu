@@ -20,11 +20,13 @@ Explanation: visit link
 '''
 
 from collections import defaultdict
+from typing import List
+
 
 class Solution:
     def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
-		## TIME COMPLEXITY : O(MxN) ##
-		## SPACE COMPLEXITY : O(MxN) ##
+        ## TIME COMPLEXITY : O(MxN) ##
+        ## SPACE COMPLEXITY : O(MxN) ##
 
         if not matrix:
             return []
@@ -39,8 +41,24 @@ class Solution:
         res = []
         for i, d in enumerate(diagonals.values()):
             if i % 2 != 1:
-                res.extend(d)
-            else:
                 res.extend(d[::-1])
+            else:
+                res.extend(d)
 
         return res
+
+
+input = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+soln = Solution()
+print(soln.findDiagonalOrder(input))
+
+
+# Output
+# [1,4,2,3,5,7,8,6,9]
+# Expected
+# [1,2,4,7,5,3,6,8,9]
