@@ -22,6 +22,7 @@ Example 2:
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
 
+
 def maxProfit(prices) -> int:
     '''Linear Time, Constant Space'''
 
@@ -42,4 +43,3 @@ def maxProfit(prices) -> int:
 
 assert maxProfit([7, 1, 5, 3, 6, 4]) == 5
 assert maxProfit([7, 6, 4, 3, 1]) == 0
-

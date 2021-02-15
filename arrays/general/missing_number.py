@@ -11,19 +11,21 @@ Input: arr[] = {1, 2, 4, 6, 3, 7, 8} -> 5
 Input: arr[] = {1, 2, 3, 5} -> 4
 """
 
+
 def missingNumber(nums):
     n = len(nums)
     visited = set(nums)
-    
+
     for i in range(1, n + 2):
         if i not in visited:
             return i
 
-def get_missing(A): 
+
+def get_missing(A):
     n = len(A) + 1
     total = n * (n + 1) // 2
 
-    sum_of_A = sum(A) 
+    sum_of_A = sum(A)
     return total - sum_of_A
 
 
@@ -38,4 +40,3 @@ missingNumber([1, 2, 4, 6, 3, 7, 8])
 # assert find_missing([0, 1, 2, 4, 5, 6]) = 7
 # assert find_missing([3,0,1]) = 2
 # assert find_missing([9,6,4,2,3,5,7,0,1]) = 8
-

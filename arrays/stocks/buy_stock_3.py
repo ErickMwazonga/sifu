@@ -18,8 +18,8 @@ Input: prices = [1,2,3,4,5] -> 4
 Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
 Note that you cannot buy on day 1, buy on day 2 and sell them later,
 as you are engaging multiple transactions at the same time. You must sell before buying again.
-Example 3:
 
+Example 3:
 Input: prices = [7,6,4,3,1] -> 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
@@ -28,13 +28,14 @@ Input: prices = [1]
 Output: 0
 '''
 
+
 def maxProfit2(prices):
     '''Two passes through the list, O(n) time, O(n) space'''
 
     if not prices:
         return 0
-    
-    # forward traversal, profits record the max profit 
+
+    # forward traversal, profits record the max profit
     # by the ith day, this is the first transaction
     profits = []
     current_min, max_profit = prices[0], 0
@@ -43,20 +44,22 @@ def maxProfit2(prices):
         current_min = min(current_min, price)
         max_profit = max(max_profit, price - current_min)
         profits.append(max_profit)
-    
+
     # backward traversal, max_profit records the max profit
-    # after the ith day, this is the second transaction 
+    # after the ith day, this is the second transaction
     current_max = prices[-1]
     max_profit, total_max = 0, 0
-  
+
     for i in range(len(prices) - 1, -1, -1):
         current_max = max(current_max, prices[i])
         max_profit = max(max_profit, current_max - prices[i])
         total_max = max(total_max, max_profit + profits[i])
-        
+
     return total_max
 
+
 assert maxProfit2([3, 3, 5, 0, 0, 3, 1, 4]) == 6
+
 
 def maxProfit(prices):
     first_buy, first_sell = float('-inf'), 0

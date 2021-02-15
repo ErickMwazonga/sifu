@@ -15,19 +15,20 @@ Explanation: You will always arrive at index 3 no matter what.
 Its maximum jump length is 0, which makes it impossible to reach the last index.
 '''
 
+
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         if not nums:
             return False
-        
+
         max_jump = nums[0]
-        
+
         for i in range(1, len(nums)):
             if i > max_jump:
                 return False
-            
+
             max_jump = max(max_jump, i + nums[i])
-        
+
         return True
 
     def canJump2(self, arr):
@@ -37,7 +38,7 @@ class Solution:
         for i in range(n):
             if i > maxIndex:
                 return False
-            else:
-                maxIndex = max(maxIndex, i + arr[i])
-                
+
+            maxIndex = max(maxIndex, i + arr[i])
+
         return maxIndex >= n - 1

@@ -10,6 +10,7 @@ Note that pos is not passed as a parameter.
 
 '''
 
+
 class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
         slow = fast = head
@@ -22,13 +23,13 @@ class Solution:
             if slow == fast:
                 flag = True
                 break
-        
+
         if flag:
             slow = head
             while slow != fast:
                 slow = slow.next
                 fast = fast.next
-            
+
             return slow
 
         return None

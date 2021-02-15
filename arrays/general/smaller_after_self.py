@@ -14,14 +14,14 @@ To the right of 1 there is 0 smaller element.
 '''
 import bisect
 
+
 def countSmaller(nums):
     '''
-    Time Complexity: ~Nlog(N)
-    Space Complexity: ~N.
+    Time Complexity: ~Nlog(N), Space Complexity: ~N.
     '''
     result = []
     sorted_nums = []
-    
+
     for num in reversed(nums):
         index = bisect.bisect_left(sorted_nums, num)
         sorted_nums.insert(index, num)
@@ -29,4 +29,5 @@ def countSmaller(nums):
 
     return result
 
-countSmaller([5,2,6,1])
+
+countSmaller([5, 2, 6, 1])

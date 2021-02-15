@@ -19,19 +19,20 @@ Constraints:
 0 <= nums[i] <= 100
 """
 
+
 def smallerNumbersThanCurrent(nums):
     '''Time complexity: O(nlogn)'''
 
     sorted_nums = sorted(nums)
     mappings = {}
-    
+
     for k, v in enumerate(sorted_nums):
         if v not in mappings:
             mappings[v] = k
     return [mappings[x] for x in nums]
 
 
-nums = [8, 1, 2, 2, 3] 
+nums = [8, 1, 2, 2, 3]
 assert smallerNumbersThanCurrent(nums) == [4, 0, 1, 1, 3]
 
 

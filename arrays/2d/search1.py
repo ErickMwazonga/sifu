@@ -58,6 +58,7 @@ class SolutionSorted:
     Notice that the elements become smaller as we move
     left in a row and larger as we move down a column
     '''
+
     def searchMatrix(self, matrix, target):
         if matrix == []:
             return False
@@ -96,7 +97,7 @@ class SortedSearch:
         while start < end:
             mid_row = (start + end) // 2
             # inner binary search on the row
-            found = helper_search(matrix[mid_row], target)
+            found = self.helper_search(matrix[mid_row], target)
             if found:
                 return True
             elif matrix[mid_row][-1] > target:
@@ -105,9 +106,8 @@ class SortedSearch:
                 start = mid_row + 1
         return False
 
-    
         # Helper function to perform binary search for the target on a row
-        def helper_search(row, target):
+        def helper_search(self, row, target):
             n_cols = len(row)
             start, end = 0, n_cols - 1
 

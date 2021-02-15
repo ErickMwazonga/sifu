@@ -24,18 +24,19 @@ nums being modified to 0, 1, 2, 3, and 4 respectively. It doesn't matter what va
 are set beyond the returned length.
 '''
 
+
 def removeDuplicates(self, nums: List[int]) -> int:
     if not nums:
         return 0
-    
+
     n = len(nums)
     count = 1
-    
+
     for i in range(1, n):
         if nums[i] > nums[i-1]:
-            nums[count] = nums[i] 
+            nums[count] = nums[i]
             count += 1
-    
+
     return count
 
 
@@ -43,12 +44,12 @@ def removeDuplicates(self, nums: List[int]) -> int:
 def removeDuplicates(arr):
     seen = set()
     result = []
-    
+
     for num in arr:
         if num not in seen:
             seen.add(num)
             result.append(num)
-    
+
     return result
 
 

@@ -52,8 +52,9 @@ def plus_one(digits):
 
     while i >= 0:
         digits[i] += 1
+
         if digits[i] != 10:
-           break
+            break
         else:
             digits[i] = 0
             i -= 1
@@ -75,4 +76,5 @@ def plus_one(A):
     if A[0] == 10:
         A[0] = 1
         A.append(0)
+
     return A

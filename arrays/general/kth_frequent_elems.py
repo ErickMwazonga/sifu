@@ -18,19 +18,20 @@ in other words the set of the top k frequent elements is unique.
 You can return the answer in any order.
 '''
 
+
 def topKFrequent(nums, k):
     freqs = {}
     n = len(nums)
-    
+
     for num in nums:
         freqs[num] = freqs.get(num, 0) + 1
-    
+
     bucket = [[] for _ in range(n + 1)]
     for key, val in freqs.items():
         bucket[val].append(key)
-            
+
     res = []
     for i in range(n, -1, -1):
         res.extend(bucket[i])
-        
+
     return res[:k]

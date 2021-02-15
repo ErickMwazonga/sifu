@@ -15,8 +15,6 @@ Input:
 ]
 
 Output:  [1,2,4,7,5,3,6,8,9]
-
-Explanation: visit link
 '''
 
 from collections import defaultdict
@@ -37,21 +35,37 @@ class Solution:
             for j in range(m):
                 diagonals[i+j].append(matrix[i][j])
 
-        res = []
-        for i, d in enumerate(diagonals.values()):
-            if i % 2 == 0:
-                res.extend(d[::-1])
-            else:
-                res.extend(d)
+        result = []
+        for key, diagonal in diagonals.items():
+            if key % 2 == 0:
+                diagonal.reverse()
 
-        return res
+            result.extend(diagonal)
+
+        return result
+
+    def findDiagonalOrderOneDirectional(self, matrix):
+        if not matrix:
+            return []
+
+        n, m = len(matrix), len(matrix[0])
+        diagonals = defaultdict(list)
+
+        for i in range(n):
+            for j in range(m):
+                diagonals[i+j].append(matrix[i][j])
+
+        return list(diagonals.values())
 
 
-input = [
+matrix = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
 ]
+output = [[1], [2, 4], [3, 5, 7], [6, 8], [9]]
 
 soln = Solution()
-assert soln.findDiagonalOrder(input) == [1, 2, 4, 7, 5, 3, 6, 8, 9]
+assert soln.findDiagonalOrder(matrix) == [1, 2, 4, 7, 5, 3, 6, 8, 9]
+assert soln.findDiagonalOrderOneDirectional(
+    matrix) == output

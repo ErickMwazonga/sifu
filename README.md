@@ -19,6 +19,7 @@ DSA
 13. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
 14. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
 15. https://youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
+16. https://walkccc.me/LeetCode/problems/0009/
 
 ## 75 Curated Questions
 
@@ -31,3 +32,14 @@ DSA
 ### System Design
 
 1. https://afteracademy.com/tech-interview/system-design/top-questions
+
+### Groupings
+
+1. **BINARY SEARCH**
+   [33, 34, 69, 74, 153, 162, 374]
+2. **TREES**
+   BFS - [102, 199, 1161, 107, 103, 513, 515]
+3. **STACK**
+   [20, 155, 232, 225, 316, 678, 739, 844]
+4. **DESIGN**
+   [146, 359, 380, 384, 621, 933]

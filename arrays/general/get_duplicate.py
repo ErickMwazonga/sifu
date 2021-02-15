@@ -17,7 +17,7 @@ but it could be repeated more than once.
 # A single duplicate
 
 
-def getDuplicate(A):
+def get_duplicate(A):
     n = len(A) - 1
     total = n * (n + 1) // 2
 
@@ -27,5 +27,5 @@ def getDuplicate(A):
 
 
 # Single duplicate
-assert getDuplicate([1, 3, 4, 2, 2]) == 2
-assert getDuplicate([1, 2, 4, 3, 3]) == 3
+assert get_duplicate([1, 3, 4, 2, 2]) == 2
+assert get_duplicate([1, 2, 4, 3, 3]) == 3
