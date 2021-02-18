@@ -1,5 +1,7 @@
 '''
 1594. Maximum Non Negative Product in a Matrix
+https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/
+
 You are given a rows x cols matrix grid. Initially, you are located at the top-left corner (0, 0),
 and in each step, you can only move right or down in the matrix.
 Among all possible paths starting from the top-left corner (0, 0)
@@ -42,27 +44,28 @@ Constraints:
 -4 <= grid[i][j] <= 4
 '''
 
+
 def maxProductPath(grid):
     '''
     time: O(M * N), space: O(M * N)
     '''
-    
+
     if not grid:
         return -1
-    
+
     n, m = len(grid), len(grid[0])
-    
+
     # Construct matrix
     dp_max = [[1] * m for i in range(n)]
     dp_min = [[1] * m for i in range(n)]
-    
+
     # Fill in topmost left
     dp_max[0][0] = dp_min[0][0] = grid[0][0]
-    
+
     # Fill first rows
     for j in range(1, m):
         dp_max[0][j] = dp_min[0][j] = dp_max[0][j - 1] * grid[0][j]
-        
+
     # Fill first cols
     for i in range(1, n):
         dp_max[i][0] = dp_min[i][0] = dp_max[i - 1][0] * grid[i][0]
@@ -77,12 +80,12 @@ def maxProductPath(grid):
                 dp_min[r-1][c] * curr_val,
                 dp_min[r][c-1] * curr_val
             )
-            
+
             dp_max[r][c] = max(_prods)
             dp_min[r][c] = min(_prods)
 
     if dp_max[n-1][m-1] < 0:
         return -1
-    
+
     return dp_max[n-1][m-1] % (10**9+7)
     # return dp_max[n-1][m-1]

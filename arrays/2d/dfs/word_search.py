@@ -1,4 +1,5 @@
 '''
+79. Word Search
 https://leetcode.com/problems/word-search/
 https://www.youtube.com/watch?v=RqffW0smIbQ
 Given a 2D board and a word, find if the word exists in the grid.
@@ -21,6 +22,7 @@ Given word = "ABCB", return false.
 
 from typing import List
 
+
 class Solution:
     def exist(self, board, word) -> bool:
         if not board:
@@ -33,21 +35,21 @@ class Solution:
                     return True
         return False
 
-
     # check whether can find word, start at (i,j) position
+
     def dfs(self, board, i, j, word, visited) -> bool:
         if len(word) == 0:  # all the characters are checked
             return True
-        
+
         # boundary check + isVisisted + cannot be self
         n, m = len(board), len(board[0])
         if (i < 0 or i >= n or j < 0 or j >= m
             or word[0] != board[i][j] or (i, j) in visited
-        ):
+            ):
             return False
 
         visited.append((i, j))
-        
+
         # check whether can find "word" along one direction
         up = self.dfs(board, i+1, j, word[1:], visited)
         down = self.dfs(board, i-1, j, word[1:], visited)
@@ -55,9 +57,8 @@ class Solution:
         right = self.dfs(board, i, j-1, word[1:], visited)
 
         nxt = up or down or left or right
-        
+
         if not nxt:
-            visited.pop() # avoid visit agian
+            visited.pop()  # avoid visit agian
 
         return nxt
-

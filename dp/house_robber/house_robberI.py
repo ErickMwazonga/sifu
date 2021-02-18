@@ -1,4 +1,7 @@
 '''
+198. House Robber
+https://leetcode.com/problems/house-robber/
+
 You are a professional robber planning to rob houses along a street.
 Each house has a certain amount of money stashed,
 the only constraint stopping you from robbing each of them
@@ -19,10 +22,14 @@ Output: 12 -> 2 + 9 + 1 = 12.
 
 from typing import List
 
+
 def rob(nums: List[int]) -> int:
     '''Time Complexity: O(n), Space Complexity: O(n)'''
 
     n = len(nums)
+    if not nums:
+        return 0
+
     if n <= 2:
         return max(nums)
 
@@ -31,12 +38,23 @@ def rob(nums: List[int]) -> int:
     dp[1] = max(nums[0], nums[1])
 
     for i in range(2, n):
-        # The max if we select it or not
-        include = nums[i] + dp[i-2]
-        exclude = dp[i-1]
-        dp[i] = max(include, exclude)
+        # The max if we rob it or not
+        rob = nums[i] + dp[i-2]
+        dont_rob = dp[i-1]
+        dp[i] = max(rob, dont_rob)
 
     return dp[-1]
 
+
 assert rob([1, 2, 3, 1]) == 4
 assert rob([2, 7, 9, 3, 1]) == 12
+
+
+class Solution(object):
+    def rob(self, nums):
+        rob, not_rob = 0, 0
+
+        for num in nums:
+            rob, not_rob = not_rob + num, max(rob, not_rob)
+
+        return max(rob, not_rob)

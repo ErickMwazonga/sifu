@@ -32,14 +32,20 @@ DSA
 ### System Design
 
 1. https://afteracademy.com/tech-interview/system-design/top-questions
+2. https://github.com/shashank88/system_design
+3. https://thinksoftware.medium.com/how-to-ace-object-oriented-design-interviews-4f9a667e0780
+4. https://www.thinksoftwarelearning.com/courses/SystemDesignBible
 
 ### Groupings
 
-1. **BINARY SEARCH**
+1. **2D**
+   DFS - [79, 130, 200, 695]
+   DP - [62, 63, 64, 221, 1594]
+2. **BINARY SEARCH**
    [33, 34, 69, 74, 153, 162, 374]
-2. **TREES**
+3. **TREES**
    BFS - [102, 199, 1161, 107, 103, 513, 515]
-3. **STACK**
+4. **STACK**
    [20, 155, 232, 225, 316, 678, 739, 844]
-4. **DESIGN**
+5. **DESIGN**
    [146, 359, 380, 384, 621, 933]

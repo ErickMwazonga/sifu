@@ -1,5 +1,5 @@
 '''
-LeetCode 64. Minimum Path Sum
+64. Minimum Path Sum
 https://leetcode.com/problems/minimum-path-sum/
 
 Given a m x n grid filled with non-negative numbers,
@@ -24,7 +24,7 @@ class Solution:
             return
 
         n, m = len(grid), len[grid[0]]
-        
+
         dp = [[0] * m for i in range(n)]
         dp[0][0] = grid[0][0]
 
@@ -47,7 +47,7 @@ class Solution:
 # OTHER SOLUTIONS
 # ------------------------------------------------
 # By using recursion:
-def minimumCostPath(matrix, i = 0, j = 0):
+def minimumCostPath(matrix, i=0, j=0):
     ''' Time - O(2^nm), Space - O(nm) '''
 
     n = len(matrix)
@@ -66,23 +66,25 @@ def minimumCostPath(matrix, i = 0, j = 0):
         )
 
 # By using dynamoc programming:
+
+
 def minimumCostPath(matrix):
     ''' Time - O(2^nm), Space - O(nm) '''
 
     n = len(matrix)
     m = len(matrix[0])
-    
+
     costs = [[0] * m for i in range(n)]
     costs[0][0] = matrix[0][0]
-    
+
     for i in range(1, m):
         costs[0][i] = costs[0][i-1] + matrix[0][i]
-    
+
     for i in range(1, n):
         costs[i][0] = costs[i-1][0] + matrix[i][0]
-    
+
     for i in range(1, n):
         for j in range(1, m):
             costs[i][j] = min(costs[i-1][j], costs[i][j-1]) + matrix[i][j]
-        
+
     return costs[n-1][m-1]

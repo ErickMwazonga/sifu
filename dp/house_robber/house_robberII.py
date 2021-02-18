@@ -28,28 +28,31 @@ Total amount you can rob = 1 + 3 = 4.
 
 
 class Solution:
-    '''Time:  O(n) # Space: O(1)'''
+    '''Time:  O(n) # Space: O(n)'''
 
-    def rob(self, nums):
+    def rob(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+
         if len(nums) <= 2:
             return max(nums)
 
-        # Max(Not robbing the first house vs Not Robbing the last house)
-        return max(
-            self.rob_section(nums[1:]),
-            self.rob_section(nums[:-1])
-        )
+        dont_rob_first_house = self.rob_section(nums[1:])
+        dont_rob_last_house = self.rob_section(nums[:-1])
+
+        return max(dont_rob_first_house, dont_rob_last_house)
 
     def rob_section(self, nums):
         n = len(nums)
+
         money = [0] * n
         money[0] = nums[0]
         money[1] = max(nums[0], nums[1])
 
         for i in range(2, n):
-            include = nums[i] + dp[i-2]
-            exclude = dp[i-1]
-            money[i] = max(include, exclude)
+            rob = nums[i] + money[i-2]
+            dont_rob = money[i-1]
+            money[i] = max(rob, dont_rob)
 
         return money[-1]
 
