@@ -19,7 +19,7 @@ Output: true
 '''
 
 
-def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+def canConstruct(ransomNote: str, magazine: str) -> bool:
     if len(ransomNote) > len(magazine):
         return False
 
@@ -34,3 +34,7 @@ def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         freqs[c] -= 1
 
     return True
+
+assert canConstruct('a', 'b') == False
+assert canConstruct('aa', 'ab') == False
+assert canConstruct('aa', 'aab') == True

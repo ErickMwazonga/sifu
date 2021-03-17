@@ -13,35 +13,56 @@ It occurs when the above conditions do not occur.
 The space complexity -> O(log n).
 '''
 
+class QuickSort:
+    def swap(self, A, i, j):
+        A[i], A[j] = A[j], A[i]
 
-def partition(A, low, high):
-    pivot = A[high]
-    i = low
+    def partition(self, A, low, high):
+        pivot = A[high]
+        i = low
 
-    for j in range(low, high):  # Upto the 2nd last element
-        if A[j] <= pivot:
-            A[i], A[j] = A[j], A[i]
-            i += 1
+        for j in range(low, high):  # Upto the 2nd last element
+            if A[j] <= pivot:
+                self.swap(A, i, j)
+                i += 1
 
-    A[i], A[high] = A[high], A[i]
-    return i
+        self.swap(A, i, high)
+        return i
 
-def quicksort_helper(A, low, high):
-    if low >= high:
-        return
+    def qs_helper(self, A, low, high):
+        if low >= high:
+            return
 
-    pi = partition(A, low, high)
-    quicksort_helper(A, low, pi-1)
-    quicksort_helper(A, pi+1, high)
+        pi = self.partition(A, low, high)
+        self.qs_helper(A, low, pi-1)
+        self.qs_helper(A, pi+1, high)
 
-def quickSort(A):
-    n = len(data)
-    quicksort_helper(A, 0, n-1)
+    def quickSort(self, A):
+        n = len(data)
+        self.qs_helper(A, 0, n-1)
 
 
 data = [8, 7, 2, 1, 0, 9, 6]
-n = len(data)
-quickSort(data)
-print(data)
+qs = QuickSort()
+qs.quickSort(data)
 
-# assert data == [0, 1, 2, 6, 7, 8, 9]
+assert data == [0, 1, 2, 6, 7, 8, 9]
+
+
+class QuickSort2:
+    def quick_sort(self, A):
+        length = len(A)
+
+        if length <= 1:
+            return A
+      
+        pivot = A.pop()
+        items_greater, items_lower = [], []
+
+        for item in A:
+            if item > pivot:
+                items_greater.append(item)
+            else:
+                items_lower.append(item)
+
+        return self.quick_sort(items_lower) + [pivot] + self.quick_sort(items_greater)

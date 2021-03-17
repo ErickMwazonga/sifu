@@ -49,3 +49,7 @@ DSA
    [20, 155, 232, 225, 316, 678, 739, 844]
 5. **DESIGN**
    [146, 359, 380, 384, 621, 933]
+
+
+https://www.learnbyexample.org/python-string/
+https://www.digitalocean.com/community/tutorials/how-to-convert-data-types-in-python-3

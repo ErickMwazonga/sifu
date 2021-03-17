@@ -22,3 +22,7 @@ def firstUniqChar(s: str):
             return i
 
     return -1
+
+
+assert firstUniqChar("leetcode") == 0
+assert firstUniqChar("loveleetcode") == 2

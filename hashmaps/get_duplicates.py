@@ -16,15 +16,15 @@ Invalid:
 
 def get_duplicates(arr):
     if arr == set(arr):
-        print('Invalid')
+        return None
 
-    counts = {}
+    counts, res = {}, []
     for value in arr:
         if value in counts:
             counts[value] += 1
 
             if counts[value] == 2:
-                print(value, end=' ')
+                res.append(value)
         else:
             counts[value] = 1
 
@@ -32,19 +32,12 @@ def get_duplicates(arr):
 get_duplicates([1, 2, 2, 2, 3])
 # get_duplicates([1,2,1,2])
 
-
-# Approach 1: Sorting
-def findDuplicate(nums):
-    nums.sort()
-    for i in range(1, len(nums)):
-        if nums[i] == nums[i-1]:
-            return nums[i]
-
-
-# Approach 2: Set
 def findDuplicate2(nums):
-    seen = set()
+    seen, res = set(), set()
+
     for num in nums:
         if num in seen:
-            return num
+            res.add(num)
         seen.add(num)
+
+    return list(res)
