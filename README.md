@@ -1,8 +1,6 @@
-# sifu
+# Sifu
 
-DSA
-
-## Resources
+A list of grouped leetcode DSA problems with solutions that helps one prepare well for a coding interview.
 
 1. https://goodtecher.com/
 2. https://github.com/iverson52000/DataStructure_Algorithm
