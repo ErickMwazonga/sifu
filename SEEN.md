@@ -14,3 +14,6 @@
 12. Palindrome String
 13. Reverse a Linked List.
 14. Traverse a binary tree in a zig zag manner
+15. LinkedList intersection
+16. Reverse array in place
+17. Design the tictoc game
