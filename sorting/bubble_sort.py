@@ -23,8 +23,8 @@ def bubbleSort(A: List) -> List:
 
         # Last i elements are already in place
         for j in range(0, unsorted_until_index):
-            if A[j] > A[j + 1]:
-                A[j], A[j + 1] = A[j + 1], A[j]
+            if A[j] > A[j+1]:
+                A[j], A[j+1] = A[j+1], A[j]
                 swapped = True
 
         unsorted_until_index -= 1
@@ -33,6 +33,7 @@ def bubbleSort(A: List) -> List:
         # then the array is already sorted.
         if not swapped:
             break
+
 
 def sortArray(A):
     i = 0

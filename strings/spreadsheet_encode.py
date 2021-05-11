@@ -13,12 +13,13 @@ For example:
     AA -> 27
     AB -> 28 
     ...
+    
 Example 1:
-
 Input: "A" -> 1
 Input: "AB" -> 28
 Input: "ZY" -> 701
 '''
+
 
 class Solution:
     '''
@@ -30,14 +31,14 @@ class Solution:
     def titleToNumber(self, s: str) -> int:
         num = 0
         exp = len(s) - 1
-        
+
         for char in s:
             val = self.mapping(char) * (26 ** exp)
             num += val
             exp -= 1
-        
+
         return num
-        
+
     def mapping(self, char):
         return ord(char) - ord('A') + 1
 

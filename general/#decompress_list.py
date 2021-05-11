@@ -21,19 +21,20 @@ Input: nums = [1,1,2,3]
 Output: [1,3,3]
 
 Constraints:
-
 2 <= nums.length <= 100
 nums.length % 2 == 0
 1 <= nums[i] <= 100
 """
 
 # TODO
+
+
 def decompressRLElist(nums):
     res = []
-    
-    for i in range(0, len(nums), 2)
+
+    for i in range(0, len(nums), 2):
         freq = nums[i]
         val = nums[i+1]
-        res += [val] * freq        
+        res += [val] * freq
+
     return res
-            

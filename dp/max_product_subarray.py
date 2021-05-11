@@ -11,23 +11,29 @@ Explanation: [2,3] has the largest product 6.
 
 Example 2:
 Input: [-2,0,-1] -> 0
-Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
+Explanation: The result cannot be 2, because [-2,-1] is not a subarray
+
+NB: -sys.maxsize
 '''
 
-class Solution:
+
+def maxProduct(nums: list) -> int:
     '''Time complexity: ~N, Space complexity: ~1'''
-    
-    def maxProduct(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
-        
-        res = nums[0]
-        min_product = max_product = 1
 
-        for num in nums:
-            choices = num, min_product * num, max_product * num
-            min_product = min(choices)  
-            max_product = max(choices)                      
-            res = max(res, max_product)
+    if not nums:
+        return 0
 
-        return res
+    max_so_far = curr_min = curr_max = nums[0]
+
+    for num in nums[1:]:
+        choices = num, curr_min * num, curr_max * num
+        curr_min = min(choices)
+        curr_max = max(choices)
+
+        max_so_far = max(max_so_far, curr_max)
+
+    return max_so_far
+
+
+assert maxProduct([2, 3, -2, 4]) == 6
+assert maxProduct([-2, 0, -1]) == 0

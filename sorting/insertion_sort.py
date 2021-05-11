@@ -22,9 +22,9 @@ def insertionSort(A):
         temp_val = A[i]
 
         while pos > 0 and A[pos-1] > temp_val:
-            A[pos] = A[pos - 1]
+            A[pos] = A[pos-1]
             pos -= 1
-        
+
         A[pos] = temp_val
 
 
@@ -38,11 +38,11 @@ def insertion_sort(A: List) -> List:
         # Compare key with each element on the left of it
         # until an element smaller than it is found
         while j >= 0 and key < A[j]:
-            A[j + 1] = A[j]
+            A[j+1] = A[j]
             j -= 1
 
         # Place key at after the element just smaller than it.
-        A[j + 1] = key
+        A[j+1] = key
 
 
 data = [9, 5, 1, 4, 3]

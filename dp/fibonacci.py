@@ -6,10 +6,13 @@ def fib(n):
         dp[i] = dp[i-1] + dp[i-2]
 
     return dp[-1]
-    
+
+
 print(fib(10))
 
 # RECURSION
+
+
 def fibonacci(n):
     '''O(2^n)) -> Exponential'''
     if n <= 1:
@@ -17,6 +20,8 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 # MEMOIZATION
+
+
 def fib_memoized(n, memo={}):
     '''Time - O(n), Space - O(n)'''
 
@@ -30,6 +35,8 @@ def fib_memoized(n, memo={}):
     return memo[n]
 
 # ITERATION
+
+
 def fib_iter(n):
     ''' O(n) time and O(1) space.'''
 
@@ -41,5 +48,5 @@ def fib_iter(n):
     prev, curr = 0, 1
     for _ in range(n):
         prev, curr = curr, prev + curr
-    return prev
 
+    return prev

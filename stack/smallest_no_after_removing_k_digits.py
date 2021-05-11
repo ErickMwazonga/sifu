@@ -1,7 +1,9 @@
 '''
 Smallest number after removing k digits
 Description
-Given a positive integer k and string num that represents a positive integer, create a function that returns as a string, the smallest number that can be made by removing k digits from num. Note that both input and output don't contain leading zeroes, except for the number 0 itself.
+Given a positive integer k and string num that represents a positive integer,
+create a function that returns as a string, the smallest number that can be made by removing k digits from num.
+Note that both input and output don't contain leading zeroes, except for the number 0 itself.
 
 Example 1:
     Input: num = "825563", k = 2
@@ -13,6 +15,7 @@ Example 3:
     Input: num = "20050", k = 1
     Output: "50"
 '''
+
 
 def smallestAfterRemoving(num, k):
     if k == len(num):
@@ -33,5 +36,5 @@ def smallestAfterRemoving(num, k):
     while len(stack) > 0 and stack[-1] == "0":
         stack.pop()
     stack = stack[::-1]
-    
+
     return "".join(stack) if len(stack) > 0 else "0"

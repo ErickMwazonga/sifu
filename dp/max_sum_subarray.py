@@ -23,38 +23,28 @@ Input: arr = [-3, -1, -2] -> Output: -1
 '''
 
 # Kadane’s algorithm
-def maxSubArray(nums: List[int]) -> int:
+
+
+def maxSubArray(nums: list) -> int:
     curr_sum = max_sum = nums[0]
 
     for num in nums[1:]:
         curr_sum = max(num, curr_sum + num)
         max_sum = max(max_sum, curr_sum)
-    
+
     return max_sum
+
 
 def max_subarray(A):
     max_ending_here = max_so_far = A[0]
 
-    for x in A[1:]:
-        max_ending_here = max(x, max_ending_here + x)
+    for num in A[1:]:
+        max_ending_here = max(num, max_ending_here + num)
         max_so_far = max(max_so_far, max_ending_here)
-        
+
     return max_so_far
 
 
-def maxSubArray(nums: List[int]) -> int:
-    if not nums:
-        return 0
-    
-    summed = 0
-    n = len(nums)
-    solutions = [0] * n
-
-    for i, val in enumerate(nums):
-        if summed < 0:
-            summed = 0
-
-        summed += val
-        solutions[i] = summed
-    
-    return max(solutions)
+assert max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+assert max_subarray([5, 4, -1, 7, 8]) == 23
+assert max_subarray([1]) == 1

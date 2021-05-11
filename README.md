@@ -18,6 +18,9 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 14. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
 15. https://youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
 16. https://walkccc.me/LeetCode/problems/0009/
+17. https://linlaw0229.github.io/
+18. https://czxttkl.com/category/leetcode/
+19. https://hercy.me/
 
 ## 75 Curated Questions
 

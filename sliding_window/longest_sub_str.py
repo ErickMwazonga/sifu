@@ -9,19 +9,20 @@ Explanation: The answer is "abc", with the length of 3.
 Example 2:
 Input: s = "bbbbb" -> 1
 Explanation: The answer is "b", with the length of 1.
-Example 3:
 
+Example 3:
 Input: s = "pwwkew" -> 3
 Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-Example 4:
 
+Example 4:
 Input: s = ""
 Output: 0
 '''
 
+
 def longestSubstring(s):
-	start = max_length = 0
+    start = max_length = 0
     seen_chars = {}
 
     for i, c in enumerate(s):
@@ -30,7 +31,7 @@ def longestSubstring(s):
             start = seen_chars[c] + 1
         else:
             max_length = max(max_length, i - start + 1)
-        
+
         seen_chars[c] = i
 
     return max_length
@@ -57,4 +58,3 @@ def lengthOfLongestSubstring(self, s):
             left += 1
 
     return longest
-

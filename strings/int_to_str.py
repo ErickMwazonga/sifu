@@ -31,9 +31,7 @@ def int_to_str(input_int):
 
 
 input_int = 123
-
 print(type(input_int))
 
 output_str = int_to_str(input_int)
-
 print(type(output_str))

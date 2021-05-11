@@ -17,3 +17,5 @@
 15. LinkedList intersection
 16. Reverse array in place
 17. Design the tictoc game
+18. Anagram
+19. A stream of names(String), most repeated name

@@ -1,77 +1,79 @@
-class Node: 
-    def __init__(self, data): 
-        self.data = data 
+class Node:
+    def __init__(self, data):
+        self.data = data
         self.next = None
 
+
 class Stack:
-    def __init__(self): 
+    def __init__(self):
         self.head = None
 
     def is_empty(self):
-        return self.head is None: 
-        
+        return self.head is None
+
     # Method to add data to the stack
     # adds to the start of the stack
     def push(self, data):
-        if not self.head: 
+        if not self.head:
             self.head = Node(data)
-        else: 
+        else:
             newnode = Node(data)
-            newnode.next = self.head 
-            self.head = newnode 
+            newnode.next = self.head
+            self.head = newnode
 
-    # Remove element that is the current head (start of the stack) 
+    # Remove element that is the current head (start of the stack)
     def pop(self):
-        if self.is_empty(): 
-            return None	
-        else: 
-            # Removes the head node and makes 
-            # the preceeding one the new head 
-            poppednode = self.head 
+        if self.is_empty():
+            return None
+        else:
+            # Removes the head node and makes
+            # the preceeding one the new head
+            poppednode = self.head
             self.head = self.head.next
             poppednode.next = None
-            return poppednode.data 
+            return poppednode.data
 
-    # Returns the head node data 
-    def peek(self): 
-        if self.isempty(): 
+    # Returns the head node data
+    def peek(self):
+        if self.isempty():
             return None
-        else: 
-            return self.head.data 
+        else:
+            return self.head.data
 
-    # Prints out the stack	 
-    def display(self): 
-        iternode = self.head 
-        if self.isempty(): 
-            print("Stack Underflow") 
-        else: 
-            while(iternode != None): 
-                print(iternode.data,"->", end = " ") 
+    # Prints out the stack
+    def display(self):
+        iternode = self.head
+        if self.isempty():
+            print("Stack Underflow")
+        else:
+            while(iternode != None):
+                print(iternode.data, "->", end=" ")
                 iternode = iternode.next
             return
-        
-# Driver code 
-MyStack = Stack() 
 
-MyStack.push(11) 
-MyStack.push(22) 
-MyStack.push(33) 
-MyStack.push(44) 
 
-# Display stack elements 
-MyStack.display() 
+# Driver code
+MyStack = Stack()
 
-# Print top elementof stack 
-print("\nTop element is ", MyStack.peek()) 
+MyStack.push(11)
+MyStack.push(22)
+MyStack.push(33)
+MyStack.push(44)
 
-# Delete top elements of stack 
-MyStack.pop() 
-MyStack.pop() 
+# Display stack elements
+MyStack.display()
 
-# Display stack elements 
-MyStack.display() 
+# Print top elementof stack
+print("\nTop element is ", MyStack.peek())
 
-# Print top elementof stack 
-print("\nTop element is ", MyStack.peek()) 
+# Delete top elements of stack
+MyStack.pop()
+MyStack.pop()
 
-# This code is contributed by Mathew George 
+# Display stack elements
+MyStack.display()
+
+# Print top elementof stack
+print("\nTop element is ", MyStack.peek())
+
+# This code is contributed by Mathew George

@@ -16,6 +16,7 @@ import heapq
 
 class Solution:
     '''O(nlogn)'''
+
     def findKthLargest(self, nums, k):
         return sorted(nums)[-k]
 
@@ -107,5 +108,3 @@ class KthLargestElement:
 
 kle = KthLargestElement()
 assert kle.heapsort([9, 5, 3, 1, 4, 2], 3) == 4
-
-        
