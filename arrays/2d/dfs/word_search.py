@@ -20,8 +20,6 @@ Given word = "SEE", return true.
 Given word = "ABCB", return false.
 '''
 
-from typing import List
-
 
 class Solution:
     def exist(self, board, word) -> bool:

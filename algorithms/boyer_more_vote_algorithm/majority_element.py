@@ -9,11 +9,9 @@ Input: [3,2,3] ->3
 Input: [2,2,1,1,1,2,2] -> 2
 '''
 
-from typing import List
-
 
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
+    def majorityElement(self, nums: list[int]) -> int:
         '''
         Boyer Moore Majority Voting algorithm
         The Boyer–Moore majority vote algorithm is an algorithm for finding the majority of a

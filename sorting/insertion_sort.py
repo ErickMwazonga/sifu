@@ -11,8 +11,6 @@ Average: O(n2) -> elements of the array are in jumbled order.
 Space: O(1) -> extra variable temp for min index.
 """
 
-from typing import List
-
 
 def insertionSort(A):
     n = len(A)
@@ -28,7 +26,7 @@ def insertionSort(A):
         A[pos] = temp_val
 
 
-def insertion_sort(A: List) -> List:
+def insertion_sort(A: list) -> list:
     n = len(A)
 
     for step in range(1, n):

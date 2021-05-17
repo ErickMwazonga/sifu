@@ -16,20 +16,21 @@ Input: height = [4,2,0,3,2,5]
 Output: 9
 '''
 
-def trap(self, height: List[int]) -> int:
+
+def trap(self, height: list[int]) -> int:
     leftmost = rightmost = 0
     res = 0
     left, right = 0, len(height) - 1
-    
+
     while left < right:
         leftmost = max(leftmost, height[left])
         rightmost = max(rightmost, height[right])
-        
+
         if leftmost < rightmost:
             res += leftmost - height[left]
             left += 1
         else:
             res += rightmost - height[right]
             right -= 1
-            
+
     return res

@@ -18,8 +18,6 @@ Input: nums = [1], target = 0
 Output: -1
 '''
 
-from typing import List
-
 
 class Solution:
     def search(self, nums, target):
@@ -53,7 +51,7 @@ class Solution:
 class Solution2:
     '''https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/894031/Python-O(logn)-Detailed-Explanation'''
 
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums: list[int], target: int) -> int:
         if not nums:
             return -1
 

@@ -12,8 +12,12 @@ Input: root = [1,2,3] -> [1,3]
 '''
 
 
+class TreeNode:
+    pass
+
+
 class Solution:
-    def largestValues(self, root: TreeNode) -> List[int]:
+    def largestValues(self, root: TreeNode) -> list[int]:
         if not root:
             return []
 

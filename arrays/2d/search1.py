@@ -28,8 +28,8 @@ target = 13
 Output: false
 '''
 
-from typing import List
-Matrix = List[List[int]]
+
+Matrix = list[list[int]]
 
 
 class Solution:

@@ -10,5 +10,5 @@ def reverse(_str):
 
     return _reversed
 
-assert reverse('Hello') == 'olleh'
 
+assert reverse('Hello') == 'olleh'

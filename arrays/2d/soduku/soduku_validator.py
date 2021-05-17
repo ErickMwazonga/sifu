@@ -9,13 +9,13 @@ need to be validated according to the following rules:
 - Each of the 9 3x3 sub-boxes of the grid must contain the
 digits 1-9 without repetition.
 '''
-from typing import List, Union
-Unit = List[Union[int, str]]
-Matrix = List[Unit]
+from typing import Union
+Unit = list[Union[int, str]]
+Matrix = list[Unit]
 
 
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
         n = len(board)
         seen = set()
 

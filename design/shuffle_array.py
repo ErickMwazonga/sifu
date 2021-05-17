@@ -12,17 +12,17 @@ int[] shuffle() Returns a random shuffling of the array.
 
 class Solution:
 
-    def __init__(self, A: List[int]):
+    def __init__(self, A: list[int]):
         self.A = A
         self.original_nums = A[:]
 
-    def reset(self) -> List[int]:
+    def reset(self) -> list[int]:
         """
         Resets the array to its original configuration and return it.
         """
         return self.original_nums
 
-    def shuffle(self) -> List[int]:
+    def shuffle(self) -> list[int]:
         """
         Returns a random shuffling of the array.
         Inspired by - https://www.youtube.com/watch?v=4zx5bM2OcvA

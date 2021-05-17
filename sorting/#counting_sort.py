@@ -15,11 +15,10 @@ Best Case Complexity: O(n+k)
 Average Case Complexity: O(n+k)
 Space: O(1) -> O(max)
 """
-from typing import List
 
 
 # REVISTI
-def counting_sort(A: List) -> List:
+def counting_sort(A: list) -> list:
     size = len(A)
     output = [0] * size
 

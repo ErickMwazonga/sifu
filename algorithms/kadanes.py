@@ -22,11 +22,9 @@ Input: arr = [-3, -1, -2] -> Output: -1
     Explanation: the maximum subarray is [-1], its sum is -1
 '''
 
-from typing import List
-
 
 # Kadane’s algorithm
-def maxSubArray(nums: List[int]) -> int:
+def maxSubArray(nums: list[int]) -> int:
     curr_sum = max_sum = nums[0]
 
     for num in nums[1:]:

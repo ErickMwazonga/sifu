@@ -26,7 +26,7 @@ nums       index     target
 
 
 class Solution:
-    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+    def createTargetArray(self, nums: list[int], index: list[int]) -> list[int]:
         results = []
 
         for num, idx in zip(nums, index):

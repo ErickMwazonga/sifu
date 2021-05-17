@@ -18,11 +18,10 @@ Output:  [1,2,4,7,5,3,6,8,9]
 '''
 
 from collections import defaultdict
-from typing import List
 
 
 class Solution:
-    def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
+    def findDiagonalOrder(self, matrix: list[list[int]]) -> list[int]:
         '''Time complexity O(MN), Space Complexity O(MN)'''
 
         if not matrix:

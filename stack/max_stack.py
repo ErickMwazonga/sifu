@@ -12,9 +12,9 @@ class MaxStack(object):
         else:
             last_max = self.max_stack[-1]
 
-            if item >= lastmin:
+            if item >= last_max:
                 self.max_stack.append(item)
-    
+
     def pop(self):
         item = self.stack.pop()
 

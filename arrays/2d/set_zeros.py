@@ -72,7 +72,7 @@ and first col to keep track of zeros instead of zeroes_row and zeroes_col
 
 
 class Solution:
-    def setZeroes(self, matrix: List[List[int]]) -> None:
+    def setZeroes(self, matrix: list[list[int]]) -> None:
 
         m, n = len(matrix), len(matrix[0])
 

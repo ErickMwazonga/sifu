@@ -10,11 +10,10 @@ int[] shuffle() Returns a random shuffling of the array.
 '''
 
 import random
-from typing import List
 
 
 # FISHER-YATES
-def shuffle(A) -> List[int]:
+def shuffle(A) -> list[int]:
     """
     Returns a random shuffling of the array.
     Inspired by - https://www.youtube.com/watch?v=4zx5bM2OcvA

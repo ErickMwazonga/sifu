@@ -11,8 +11,9 @@ Output: false
 You may assume the string contains only lowercase alphabets.
 '''
 
+
 def is_anagram_(s1, s2):
-    # Requires n log n time (since any comparison 
+    # Requires n log n time (since any comparison
     s1 = "fairy tales"
     s2 = "rail safety"
 
@@ -21,27 +22,30 @@ def is_anagram_(s1, s2):
 
     return sorted(s1) == sorted(s2)
 
+
 def is_anagram(s1, s2):
     if len(s1) != len(s2):
         return False
-        
+
     _freqs = {}
-    
+
     for c in s1:
         _freqs[c] = _freqs.get(c, 0) + 1
-        
+
     for c in s2:
         if c not in _freqs:
             return False
         else:
             _freqs[c] -= 1
-    
+
     if any(_freqs.values()):
         return False
     # for v in _freqs.values():
     #     if v != 0:
     #         return False
-    
+
     return True
 
-print(is_anagram(s1, s2))
+
+assert is_anagram("anagram", "nagaram") == True
+assert is_anagram("rat", "car") == False

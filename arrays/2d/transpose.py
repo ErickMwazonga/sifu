@@ -2,8 +2,8 @@
 https://levelup.gitconnected.com/make-way-for-the-matrix-a-complete-guide-to-solving-2d-array-coding-problems-725096d122d9
 '''
 
-from typing import List
-Matrix = List[List[int]]
+
+Matrix = list[list[int]]
 
 
 def transpose(matrix: Matrix) -> Matrix:
@@ -43,7 +43,7 @@ def transpose_SQUARE_in_place(matrix):
 
 m = [
     [1, 2, 3],
-    [4, 5, 6], 
+    [4, 5, 6],
     [7, 8, 9]
 ]
 print(transpose_SQUARE_in_place(m))

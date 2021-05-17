@@ -12,7 +12,6 @@ Input: [6, 7, 8, 1, 2] -> 1
 Input: [8, 9, 10, 1, 0, 1, 2] -> 0
 '''
 
-from typing import List
 
 def naive_approach(A):
     _min = A[0]
@@ -23,29 +22,31 @@ def naive_approach(A):
 
     return _min
 
-def findMin(self, A: List[int]) -> int:
+
+def findMin(self, A: list[int]) -> int:
     left, right = 0, len(A) - 1
-    
+
     while left < right:
         mid = (left + right) // 2
-        
+
         if A[mid] > A[right]:
             left = mid + 1
         else:
             right = mid
-            
+
     return A[left]
-    
-def findMin(self, A: List[int]) -> int:
+
+
+def findMin(self, A: list[int]) -> int:
     '''O(logn)'''
     left, right = 0, len(A) - 1
 
     if A[right] > A[left]:
         return A[left]
-    
+
     while left < right:
         mid = (left + right) // 2
-        
+
         if A[mid + 1] < A[mid]:
             return A[mid+1]
         elif A[mid] < A[mid-1]:
@@ -54,6 +55,5 @@ def findMin(self, A: List[int]) -> int:
             left = mid + 1
         else:
             right = mid
-            
-    return A[left]
 
+    return A[left]

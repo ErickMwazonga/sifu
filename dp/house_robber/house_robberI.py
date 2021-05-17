@@ -20,10 +20,8 @@ Input: [2,7,9,3,1]
 Output: 12 -> 2 + 9 + 1 = 12.
 '''
 
-from typing import List
 
-
-def rob(nums: List[int]) -> int:
+def rob(nums: list[int]) -> int:
     '''Time Complexity: O(n), Space Complexity: O(n)'''
 
     n = len(nums)

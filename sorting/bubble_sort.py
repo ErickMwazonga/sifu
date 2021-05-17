@@ -1,5 +1,3 @@
-from typing import List
-
 '''
 BUbble Sort:
 It compares the adjacent elements and
@@ -14,7 +12,7 @@ Space: O(1) -> extra variable temp for swapping.
 '''
 
 
-def bubbleSort(A: List) -> List:
+def bubbleSort(A: list):
     n = len(A)
     unsorted_until_index = n - 1
 
