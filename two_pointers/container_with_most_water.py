@@ -9,20 +9,21 @@ Find two lines, which, together with the x-axis forms a container, such that the
 Notice that you may not slant the container.
 '''
 
-def maxArea(self, heights: List[int]) -> int:
+
+def maxArea(self, heights: list[int]) -> int:
     i, j = 0, len(heights) - 1
-    max_area = 0  
+    max_area = 0
 
     while i <= j:
         area_width = j - i
         base_height = min(heights[i], heights[j])
-        
+
         current_area = area_width * base_height
         max_area = max(max_area, current_area)
-        
+
         if heights[i] < heights[j]:
             i += 1
         else:
             j -= 1
-        
+
     return max_area

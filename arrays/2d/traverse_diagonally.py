@@ -66,5 +66,4 @@ output = [[1], [2, 4], [3, 5, 7], [6, 8], [9]]
 
 soln = Solution()
 assert soln.findDiagonalOrder(matrix) == [1, 2, 4, 7, 5, 3, 6, 8, 9]
-assert soln.findDiagonalOrderOneDirectional(
-    matrix) == output
+assert soln.findDiagonalOrderOneDirectional(matrix) == output

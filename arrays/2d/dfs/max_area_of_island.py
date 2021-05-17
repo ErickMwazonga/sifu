@@ -17,7 +17,8 @@ Example 1:
  [0,0,0,0,0,0,0,0,0,0,1,0,0],
  [0,0,0,0,0,0,0,1,1,1,0,0,0],
  [0,0,0,0,0,0,0,1,1,0,0,0,0]]
-Given the above grid, return 6. Note the answer is not 11, because the island must be connected 4-directionally.
+Given the above grid, return 6. Note the answer is not 11,
+because the island must be connected 4-directionally.
 Example 2:
 
 [[0,0,0,0,0,0,0,0]]

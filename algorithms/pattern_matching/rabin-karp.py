@@ -18,9 +18,8 @@ Output: -1
 Example 3:
 Input: haystack = "", needle = ""
 Output: 0
-'''
 
-'''
+ALGORITHM
 The Rabin–Karp algorithm or Karp–Rabin algorithm is a string-searching algorithm
 created by Richard M. Karp and Michael O. Rabin (1987)
 that uses hashing to find an exact match of a pattern string in a text.

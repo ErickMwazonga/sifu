@@ -12,7 +12,7 @@ Note that pos is not passed as a parameter.
 
 
 class Solution:
-    def detectCycle(self, head: ListNode) -> ListNode:
+    def detectCycle(self, head):
         slow = fast = head
         flag = False
 

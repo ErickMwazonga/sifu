@@ -17,7 +17,8 @@ Input: grid = [[-1,-2,-3],
                [-2,-3,-3],
                [-3,-3,-2]]
 Output: -1
-Explanation: It's not possible to get non-negative product in the path from (0, 0) to (2, 2), so return -1.
+Explanation: 
+It's not possible to get non-negative product in the path from (0, 0) to (2, 2), so return -1.
 
 Example 2:
 Input: grid = [[1,-2,1],

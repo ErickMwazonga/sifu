@@ -4,8 +4,8 @@ https://leetcode.com/problems/unique-paths/
 https://leetcode.com/problems/unique-paths/discuss/184248/8-lines-Java-DP-solution-0ms-beats-100-explained-with-graph
 
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
-The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner
-of the grid (marked 'Finish' in the diagram below).
+The robot can only move either down or right at any point in time. 
+The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
 How many possible unique paths are there?
 
 Input: m = 3, n = 7
@@ -27,8 +27,10 @@ Output: 28
 Input: m = 3, n = 3
 Output: 6
 '''
+
+
 class Solution(object):
-    
+
     # DP
     def uniquePaths(self, n: int, m: int) -> int:
         dp = [[1] * m for _ in range(n)]
@@ -40,7 +42,7 @@ class Solution(object):
                 dp[i][j] = right + down
 
         return dp[-1][-1]
-    
+
     # RECURSION
     def gridTravelerRec(self, n, m) -> int:
         '''Time: O(2^n+m), Space: O(n+m)'''
@@ -54,9 +56,9 @@ class Solution(object):
         right = self.gridTravelerRec(n, m-1)
         down = self.gridTravelerRec(n-1, m)
         return right + down
-    
+
     # MEMOIZATION
-    def uniquePathsMemoized(self, m, n, memo ={}):
+    def uniquePathsMemoized(self, m, n, memo={}):
         '''Time: O(n*m), Space: O(n+m)'''
 
         key = f'{m}-{n}'
@@ -75,4 +77,3 @@ class Solution(object):
 
         memo[key] = right + down
         return memo[key]
-    
