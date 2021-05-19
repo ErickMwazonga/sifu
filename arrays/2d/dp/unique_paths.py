@@ -19,8 +19,8 @@ From the top-left corner, there are a total of 3 ways to reach the bottom-right 
 1. Right -> Down -> Down
 2. Down -> Down -> Right
 3. Down -> Right -> Down
-Example 3:
 
+Example 3:
 Input: m = 7, n = 3
 Output: 28
 

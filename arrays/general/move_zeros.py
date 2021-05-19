@@ -60,7 +60,4 @@ def moveZeroes(nums) -> None:
             right += 1
 
 
-nums = [0, 1, 0, 3, 12]
-moveZeroes(nums)
-# Output: [1,3,12,0,0]
-print(nums)
+assert moveZeroes([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0]

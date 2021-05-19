@@ -21,20 +21,14 @@ Input: grid = [
   ["0","0","0","1","1"]
 ]
 Output: 3
- 
-
-Constraints:
-m == grid.length
-n == grid[i].length
-1 <= m, n <= 300
-grid[i][j] is '0' or '1'.
 '''
+
 
 class Solution:
     def numIslands(self, grid) -> int:
         if not grid:
             return 0
-            
+
         count = 0
         n, m = len(grid), len(grid[0])
 
@@ -43,17 +37,17 @@ class Solution:
                 if grid[row][col] == '1':
                     self.dfs(grid, row, col)
                     count += 1
-                    
+
         return count
-    
+
     def dfs(self, grid, row, col):
         n, m = len(grid), len(grid[0])
-        
+
         if row < 0 or col < 0 or row >= n or col >= m or grid[row][col] == '0':
-            return 
-        
-        grid[row][col] = '0' # SINK
-        
+            return
+
+        grid[row][col] = '0'  # SINK
+
         self.dfs(grid, row, col + 1)
         self.dfs(grid, row, col - 1)
         self.dfs(grid, row + 1, col)

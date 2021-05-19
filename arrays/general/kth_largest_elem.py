@@ -7,10 +7,12 @@ def findKthLargest(nums, k):
 
     return nums[n - k]
 
+
 def findKthLargest2(nums, k):
     res = sorted(nums, reverse=True)
     return res[k - 1]
 
 
-assert findKthLargest([56, 14, 7, 98, 32, 12, 11, 50, 45, 78, 7, 5, 69]) == 5
-assert findKthLargest2([56, 14, 7, 98, 32, 12, 11, 50, 45, 78, 7, 5, 69]) == 5
+nums = [56, 14, 7, 98, 32, 12, 11, 50, 45, 78, 7, 5, 69]
+assert findKthLargest(nums) == 5
+assert findKthLargest2(nums) == 5

@@ -35,7 +35,7 @@ def mostFrequent2(arr):
             max_count = curr
             most_frequent = num
 
-    return num
+    return most_frequent
 
 
 A = [1, 5, 2, 1, 3, 2, 1]
