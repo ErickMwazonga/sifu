@@ -25,7 +25,7 @@ are set beyond the returned length.
 '''
 
 
-def removeDuplicates(self, nums: List[int]) -> int:
+def removeDuplicates(self, nums: list[int]) -> int:
     if not nums:
         return 0
 

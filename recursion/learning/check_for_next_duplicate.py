@@ -1,5 +1,6 @@
 '''
-Given a string s, create a recursive boolean function that checks if it has adjacent duplicates
+Given a string s, create a recursive boolean function that
+checks if it has adjacent duplicates
 
 Examples
 'programming' -> True ...'mm'

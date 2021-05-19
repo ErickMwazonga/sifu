@@ -8,6 +8,7 @@ Examples:
     Target number = 11
     Output : 9
     9 is closest to 11 in given array
+    
     Input :arr[] = {2, 5, 6, 7, 8, 8, 9}
     Target number = 4
     Output : 5
@@ -18,10 +19,11 @@ Given[1, 4, 6]and target =5, return1or2.
 Given[1, 3, 3, 4]and target =2, return0or1or2.
 """
 
+
 def closestNumber(A, target):
     if not A:
         return -1
-    
+
     low, high = 0, len(A) - 1
 
     while low + 1 < high:
@@ -31,14 +33,13 @@ def closestNumber(A, target):
             low = mid
         else:
             high = mid
-        
-    
+
     left = abs(A[low] - target)
     right = abs(A[high] - target)
 
     if left <= right:
         return low
-     
+
     return high
 
 

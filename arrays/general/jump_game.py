@@ -17,7 +17,7 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 
 
 class Solution:
-    def canJump(self, nums: List[int]) -> bool:
+    def canJump(self, nums: list[int]) -> bool:
         if not nums:
             return False
 

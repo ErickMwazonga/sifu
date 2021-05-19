@@ -33,7 +33,7 @@ class Solution:
 
         return majority
 
-    def majorityElement2(self, nums: List[int]) -> int:
+    def majorityElement2(self, nums: list[int]) -> int:
         counter = {}
         majority = len(nums) // 2
 

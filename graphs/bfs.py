@@ -20,14 +20,15 @@ Output: 5 8 1 12 14 4 7 16
 
 '''
 
+
 class Graph:
     '''
     Time complexity: O(|V|+|E|)
     Space complexity: O(|V|)
     '''
-    
-    def __init__(self, adjList = {}):
-        # the adjacency list is of type Dict[int,List[int]]
+
+    def __init__(self, adjList={}):
+        # the adjacency list is of type Dict[int,list[int]]
         self.adjList = adjList
 
     def bfs(graph, root):

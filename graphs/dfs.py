@@ -19,22 +19,23 @@ root = 5
 Output: 5 8 12 14 4 1 7 16
 '''
 
+
 class Graph:
     '''
     Time complexity: O(|V|+|E|)
     Space complexity: O(|V|)
     '''
 
-    def __init__(self, adjList = {}):
-        # the adjacency list is of type Dict[int,List[int]]
+    def __init__(self, adjList={}):
+        # the adjacency list is of type Dict[int,list[int]]
         self.adjList = adjList
 
-    def dfs(graph, root, visited = set()):
+    def dfs(graph, root, visited=set()):
         if root in visited:
             return
         else:
             print(root)
             visited.add(root)
-            
+
             for neighbour in graph.adjList[root]:
                 dfs(graph, neighbour, visited)

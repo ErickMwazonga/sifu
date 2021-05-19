@@ -30,7 +30,7 @@ Total amount you can rob = 1 + 3 = 4.
 class Solution:
     '''Time:  O(n) # Space: O(n)'''
 
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if not nums:
             return 0
 

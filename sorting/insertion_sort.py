@@ -5,11 +5,15 @@ an unsorted element at its suitable place in each iteration.
 
 Worst: O(n2) -> sort in ascending order but the array is in descending.
 Best: O(n) -> array is already sorted, the outer loop runs for n times
-            -> whereas the inner loop does not run at all
+           -> whereas the inner loop does not run at all
 Average: O(n2) -> elements of the array are in jumbled order.
 
 Space: O(1) -> extra variable temp for min index.
 """
+
+---------------------------------
+[BUCKET SORT] VS[INSERTION SORT]
+---------------------------------
 
 
 def insertionSort(A):
