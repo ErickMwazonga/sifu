@@ -11,9 +11,9 @@ Average: O(n2) -> elements of the array are in jumbled order.
 Space: O(1) -> extra variable temp for min index.
 """
 
----------------------------------
-[BUCKET SORT] VS[INSERTION SORT]
----------------------------------
+# ---------------------------------
+# [BUCKET SORT] VS[INSERTION SORT]
+# ---------------------------------
 
 
 def insertionSort(A):

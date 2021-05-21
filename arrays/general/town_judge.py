@@ -32,7 +32,7 @@ Output: 3
 '''
 
 
-def findJudge(N: int, trust: List[List[int]]) -> int:
+def findJudge(N: int, trust: list[list[int]]) -> int:
     '''Inspired by https://www.youtube.com/watch?v=ZUP_tIs4VaE&t=419s'''
 
     if N == 1 and not trust:

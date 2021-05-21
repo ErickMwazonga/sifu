@@ -21,8 +21,8 @@ Example 1:
 Input: n = 1
 Output: "1"
 Explanation: This is the base case.
-Example 2:
 
+Example 2:
 Input: n = 4
 Output: "1211"
 Explanation:
@@ -44,31 +44,32 @@ counting the number of digits in groups of the same digit. For example:
 111221 is read off as "three 1s, two 2s, then one 1" or 312211.
 '''
 
+
 class Solution:
-    
+
     def nextNumber(self, s):
         res = []
         i, n = 0, len(s)
-        
+
         while i < n:
             count = 1
-            
+
             while i + 1 < n and s[i] == s[i+1]:
                 count += 1
                 i += 1
-            
+
             res.append(str(count) + s[i])
             i += 1
-            
+
         return ''.join(res)
-    
-    def countAndSay(n):
+
+    def countAndSay(self, n):
         s = '1'
-        
+
         if n == 1:
             return s
-        
+
         for i in range(n-1):
             s = self.nextNumber(s)
-        
+
         return s

@@ -6,21 +6,23 @@ Input : s = "geeks" -> 5
 Input : s = "aaaa" -> 1
 """
 
-def findRotations(str): 
-    # tmp is the concatenated string. 
+
+def findRotations(s):
+    # tmp is the concatenated string.
     tmp = s + s
     n = len(s)
-  
-    for i in range(1, n + 1): 
-        # substring from i index of original string size. 
-        substring = tmp[i: n] 
-  
-        # if substring matches with original string then we will  
-        # come out of the loop. 
-        if s == substring: 
+
+    for i in range(1, n + 1):
+        # substring from i index of original string size.
+        substring = tmp[i: n]
+
+        # if substring matches with original string then we will
+        # come out of the loop.
+        if s == substring:
             return i
-    
+
     return n
+
 
 def findRotations2(_str):
     check = ''
@@ -28,8 +30,6 @@ def findRotations2(_str):
 
     for i in range(1, n + 1):
         check = _str[i:] + _str[:i]
-        
+
         if check == _str:
             return i
-
-

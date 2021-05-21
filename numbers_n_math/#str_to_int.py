@@ -1,4 +1,7 @@
 """
+8. String to Integer (atoi)
+https://leetcode.com/problems/string-to-integer-atoi/
+ 
 You are given some numeric string as input. Convert the string you are
 given to an integer. Do not make use of the built-in "int" function.
 Example:
@@ -29,7 +32,6 @@ def str_to_int(input_str):
         return -1 * output_int
     else:
         return output_int
-
 
 
 s = "554"

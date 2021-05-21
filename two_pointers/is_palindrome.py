@@ -11,9 +11,8 @@ Note: For the purpose of this problem, we define empty string as valid palindrom
 
 
 def isPalindrome(self, s: str) -> bool:
-    '''
-    Time complexity: O(N), Space complexity: O(N)
-    '''
+    '''Time complexity: O(N), Space complexity: O(N)'''
+
     s = s.lower()
     left = ''
 
@@ -25,9 +24,8 @@ def isPalindrome(self, s: str) -> bool:
 
 
 def is_palindrome2(s):
-    '''
-    Time complexity: O(N), Space complexity: O(1)
-    '''
+    '''Time complexity: O(N), Space complexity: O(1)'''
+
     s = [i.lower() for i in s if i.isalnum()]
     low, high = 0, len(s) - 1
 

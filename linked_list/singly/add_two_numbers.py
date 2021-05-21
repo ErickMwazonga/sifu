@@ -17,7 +17,12 @@ Example 2:
         Explanation: 4561 + 97284 + 101845
 '''
 
-def addTwoNumbers(ListNode l1, ListNode l2):
+
+class ListNode:
+    pass
+
+
+def addTwoNumbers(l1: ListNode, l2: ListNode):
     curr = head = None
     carry = 0
 
@@ -27,11 +32,11 @@ def addTwoNumbers(ListNode l1, ListNode l2):
         if l1:
             _sum += l1.val
             l1 = l1.next
-       
+
         if l2:
             _sum += l2.val
             l2 = l2.next
-       
+
         _sum += carry
 
         # Create node with the remainder
@@ -44,7 +49,7 @@ def addTwoNumbers(ListNode l1, ListNode l2):
             curr = curr.next
         else:
             curr = head = node
-        
+
     if carry > 0:
         curr.next = ListNode(carry)
 
