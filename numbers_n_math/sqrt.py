@@ -18,6 +18,9 @@ Example:
 
 
 def integer_square_root(k):
+    if k < 0:
+        return k
+
     low, high = 0, k
 
     while low <= high:
@@ -34,5 +37,4 @@ def integer_square_root(k):
     return low - 1
 
 
-k = 300
-print(integer_square_root(k))
+assert integer_square_root(300) == 17

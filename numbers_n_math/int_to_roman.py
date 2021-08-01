@@ -34,6 +34,7 @@ class Solution:
         result = ''
         mapping = self.mapping()
 
+        # The dictionary loop doesn't affect time complexity since it doesn't change
         for roman, value in mapping.items():
             no_of_symbols = num // value
 
@@ -64,3 +65,12 @@ class Solution:
         }
 
         return _hash
+
+
+soln = Solution()
+
+assert soln.intToRoman(3) == "III"
+assert soln.intToRoman(4) == "IV"
+assert soln.intToRoman(9) == "IX"
+assert soln.intToRoman(58) == "LVIII"
+assert soln.intToRoman(1994) == "MCMXCIV"
