@@ -18,17 +18,18 @@ class Bank_Account:
         else:
             self._balance = balance
 
+    def __str__(self):
+        return f"""
+            Bank Account:
+            Account Owner: {self.owner}
+            Account Number: {self.account_number}
+            Creation Date: {str(self.created_at)}
+            Current Balance: {self.balance}
+        """
+
     @property
     def balance(self):
         return self._balance
-
-    @property
-    def account_number(self):
-        return self._account_number
-
-    @property
-    def created_at(self):
-        return self._created_at
 
     def deposit(self, amount):
         self.balance = self.balance + amount
@@ -41,11 +42,8 @@ class Bank_Account:
         self.balance = self.balance - amount
         return self.balance
 
-    def __str__(self):
-        return f"""
-            Bank Account:
-            Account Owner: {self.owner}
-            Account Number: {self.account_number}
-            Creation Date: {str(self.created_at)}
-            Current Balance: {self.balance}
-        """
+    def transfer_funds(self):
+        pass
+
+    def deposit_interest(self):
+        pass
