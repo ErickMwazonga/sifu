@@ -1,41 +1,34 @@
-def snail(arr):
+'''
+54. Spiral Matrix
+https://leetcode.com/problems/spiral-matrix/
+'''
+
+
+def spiralOrder(matrix):
     res = []
 
-    def sort():
-        # Return res for empty array
-        if not len(arr) or not len(arr[0]):
-            return res
+    if not len(matrix):
+        return res
 
-        # If every row contains an element
-        if len(arr[0]) == 1:
-            for i in range(len(arr)):
-                res.append(arr[i][0])
-            return res
+    while matrix:
+        # first row
+        res += matrix.pop(0)
+        # res.extend(matrix.pop(0))
 
-        # Base case: Add the elements if only one row left
-        if len(arr) <= 1:
-            return res.extend(arr.pop(0))
+        # last column
+        if matrix and matrix[0]:
+            for row in matrix:
+                res.append(row.pop())
+        # last row
+        if matrix:
+            res += matrix.pop()[::-1]
+            # res.extend(reversed(matrix[-1]))
 
-        # Step 1: Add the first row to result, remove it from arr
-        res.extend(arr.pop(0))
-
-        # Step 2: Add the last elements to result, remove them from arr
-        for i in arr:
-            el = i.pop()
-            res.append(el)
-
-        # Step 3: Add the last row to result in reverse, remove it from arr
-        res.extend(reversed(arr[-1]))
-        arr.pop()
-
-        # Step 4: Add the first elements to result in reverse,
-        # remove them from arr
-        for i in reversed(arr):
-            el = i.pop(0)
-            res.append(el)
-
-        # Step 5: REPEAT
-        sort()
+        # first column
+        if matrix and matrix[0]:
+            for row in matrix[::-1]:
+                # for row in reversed(matrix):
+                res.append(row.pop(0))
 
     return res
 
@@ -52,43 +45,75 @@ c = [
     [9,  10, 11, 12],
     [13, 14, 15, 16]
 ]
+assert spiralOrder([[1]]) == [1]
+assert spiralOrder([[7], [9], [6]]) == [[7], [9], [6]]
+assert spiralOrder(b) == [1, 2, 3, 6, 9, 8, 7, 4, 5]
+assert spiralOrder(c) == [
+    1, 2, 3, 4, 8, 12, 16,
+    15, 14, 13, 9, 5, 6, 7, 11, 10
+]
 
-assert snail([1]) == [1]
-assert snail([[7], [9], [6]]) == [[7], [9], [6]]
-assert snail(b) == [1, 2, 3, 6, 9, 8, 7, 4, 5]
-assert snail(c) == [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]
+
+def spiralOrderIter(matrix):
+    res = []
+
+    if not matrix:
+        return res
+
+    top, down = 0, len(matrix)-1
+    left, right = 0, len(matrix[0])-1
+
+    while (top <= down and left <= right):
+        for i in range(left, right+1):
+            res.append(matrix[top][i])
+        top += 1
+
+        for i in range(top, down+1):
+            res.append(matrix[i][right])
+        right -= 1
+
+        if (top <= down):
+            for i in range(right, left-1, -1):
+                res.append(matrix[down][i])
+            down -= 1
+
+        if (left <= right):
+            for i in range(down, top-1, -1):
+                res.append(matrix[i][left])
+            left += 1
+
+    return res
 
 
-# INTERVIEW - MICROSOFT ON-SCREEN
-# ---------------------------------
-def visit_in_spiral(matrix):
-    result = []
+def spiralOrder2(matrix):
+    res = []
 
-    if not len(matrix):
-        return matrix
+    if not matrix:
+        return res
 
-    def spiral_helper(matrix):
-        # 1. first row
-        first_row = matrix[0]
-        result.extend(first_row)
-        matrix.pop(0)
+    top, down = 0, len(matrix) - 1
+    left, right = 0, len(matrix[0]) - 1
 
-        # 2. loop row 1 to n: print last item
-        for i in range(0, len(matrix)):
-            result.append(matrix[i].pop())
+    while (top <= down and left <= right):
+        # first row
+        res.extend(matrix[top][left:right+1])
+        top += 1
 
-        # 3. last row in reverse
-        for num in reversed(matrix[-1]):  # -1 returns the last item
-            result.append(num)
-            matrix.pop()
+        # last column
+        for i in range(top, down+1):
+            res.append(matrix[i][right])
+        right -= 1
 
-        # 4. first item of the remaining arrays
-        for i in range(len(matrix)-1, -1, -1):
-            for j in range(0, len(matrix[0])):
-                result.append(num)
-                matrix[i].pop(0)
+        # last row
+        if (top <= down):
+            last_row = matrix[down][left:right+1]
+            res.extend(last_row[::-1])
+            down -= 1
 
-        if len(matrix):
-            spiral_helper(matrix)
+        # first column
+        if (left <= right):
+            for i in range(down, top-1, -1):
+                res.append(matrix[i][left])
+            left += 1
 
-        return result
+    return res
