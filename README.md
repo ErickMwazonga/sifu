@@ -1,7 +1,6 @@
 # Sifu
 
 A list of grouped leetcode DSA problems with solutions that helps one prepare well for a coding interview.
-https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
 
 1. https://goodtecher.com/
 2. https://github.com/iverson52000/DataStructure_Algorithm
@@ -23,6 +22,7 @@ https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/
 18. https://czxttkl.com/category/leetcode/
 19. https://hercy.me/
 20. https://github.com/jiselectric/Algorithm
+21. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
 
 ## 75 Curated Questions
 
@@ -53,7 +53,8 @@ https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/
 5. **DESIGN**
    [146, 359, 380, 384, 621, 933]
 
-https://www.lewuathe.com/radix-sort-in-python.html
-https://stackabuse.com/radix-sort-in-python/
-https://www.geeksforgeeks.org/python-program-for-radix-sort/
-https://www.alphacodingskills.com/python/pages/python-program-for-radix-sort.php#:~:text=Python%20Program%20-%20Radix%20Sort%20Radix%20sort%20is,counting%20sort%20as%20a%20subroutine%20to%20perform%20sorting.
+### Others
+1. https://www.lewuathe.com/radix-sort-in-python.html
+2. https://stackabuse.com/radix-sort-in-python/
+3. https://www.geeksforgeeks.org/python-program-for-radix-sort/
+4. https://www.alphacodingskills.com/python/pages/python-program-for-radix-sort.php#:~:text=Python%20Program%20-%20Radix%20Sort%20Radix%20sort%20is,counting%20sort%20as%20a%20subroutine%20to%20perform%20sorting.
