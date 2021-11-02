@@ -7,6 +7,7 @@ VIDEO
 https://www.youtube.com/watch?v=FSsriWQ0qYE&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=5
 '''
 
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -46,7 +47,7 @@ class LinkedList:
     def insert_after_node(self, prev_node, data):
         if not prev_node:
             print("Previous node is not in the list")
-            return 
+            return
 
         new_node = Node(data)
         new_node.next = prev_node.next
@@ -57,7 +58,7 @@ class LinkedList:
         if not head:
             return Node(data)
 
-        # Prepend node - Set new head 
+        # Prepend node - Set new head
         if index == 0:
             new_node = Node(data)
             new_node.next = head
@@ -68,11 +69,11 @@ class LinkedList:
         while curr:
             if count == index:
                 inserted_node = Node(data)
-                inserted_node.next = curr.next 
+                inserted_node.next = curr.next
                 curr.next = inserted_node
                 break
 
-            curr = curr.next 
+            curr = curr.next
             count += 1
 
         if not curr:

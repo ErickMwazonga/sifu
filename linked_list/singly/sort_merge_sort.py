@@ -3,13 +3,15 @@ Time complexity: O(nlogn)
 Space complexity: O(logn)
 '''
 
+
 class Node:
-    def __init__(self, data, next = None):
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
+
 class LinkedList:
-    def __init__(self, head = None):
+    def __init__(self, head=None):
         self.head = head
 
     def mergeSortedLists(head1, head2):
@@ -60,6 +62,7 @@ class LinkedList:
         headRightHalf = mergeSort(headRightHalf)
 
         return mergeSortedLists(head, headRightHalf)
+
 
 def sortList(list):
     list.head = mergeSort(list.head)

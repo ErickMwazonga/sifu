@@ -14,6 +14,7 @@ As arr[0] = arr[1], the pair of indices is (0, 1),
 Input : arr[] = {1, 2, 3} -> 0
 """
 
+
 def countPairs(arr):
     n = len(arr)
     mapping = {}
@@ -40,7 +41,7 @@ def countPairs3(arr):
     return res
 
 
-arr = [1, 1, 2] 
+arr = [1, 1, 2]
 arr1 = [1, 1, 1, 3, 3, 4, 1]
 # print(countPairs(arr))
 print(countPairs(arr1))

@@ -15,31 +15,32 @@ boolean enQueue(int value) Inserts an element into the circular queue. Return tr
 boolean deQueue() Deletes an element from the circular queue. Return true if the operation is successful.
 boolean isEmpty() Checks whether the circular queue is empty or not.
 boolean isFull() Checks whether the circular queue is full or not.
-''''
+'''
+
 
 class CircularQueue:
-   def __init__(self, k: int):
+    def __init__(self, k: int):
         self.queue = [None] * k
         self.size = 0
         self.max_size = k
         self.front = self.rear = -1
-    
+
     def isEmpty(self) -> bool:
         return self.size == 0
-        
+
     def isFull(self) -> bool:
         return self.size == self.max_size
 
     def Front(self) -> int:
         if self.isEmpty():
             return -1
-        
+
         return self.queue[self.front]
 
     def Rear(self) -> int:
         if self.isEmpty():
             return -1
-        
+
         return self.queue[self.rear]
 
     def enQueue(self, value: int) -> bool:
@@ -49,7 +50,7 @@ class CircularQueue:
             self.front = self.rear = 0
         else:
             self.rear = (self.rear + 1) % self.max_size
-        
+
         self.queue[self.rear] = value
         self.size += 1
         return True
@@ -57,7 +58,7 @@ class CircularQueue:
     def deQueue(self) -> bool:
         if self.isEmpty():
             return False
-        elif self.front == self.rear: # One element left
+        elif self.front == self.rear:  # One element left
             self.front = self.rear = -1
         else:
             self.front = (self.front + 1) % self.max_size

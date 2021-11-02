@@ -51,7 +51,7 @@ def mergeSortV2(A):
     n = len(A)
 
     if n < 2:
-      return
+        return
 
     mid = n // 2
     L, R = A[:mid], A[mid:]

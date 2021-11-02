@@ -11,16 +11,17 @@ Input: strs = ["dog","racecar","car"] -> ""
 Explanation: There is no common prefix among the input strings.
 '''
 
+
 def longestCommonPrefix(strs) -> str:
     l = list(zip(*strs))
     prefix = ''
-    
+
     for i in l:
         if len(set(i)) == 1:
             prefix += i[0]
         else:
             break
-            
+
     return prefix
 
 
@@ -28,11 +29,11 @@ def longestCommonPrefix(strs) -> str:
     if not strs or len(strs) == 0:
         return ""
 
-    for i in range(len(strs[0])): 
+    for i in range(len(strs[0])):
         c = strs[0][i]
 
         for j in range(1, len(strs)):
             if i == len(strs[j]) or strs[j][i] != c:
                 return strs[0][:i]
-                
+
     return strs[0] if strs else ""

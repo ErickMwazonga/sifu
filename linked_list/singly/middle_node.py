@@ -16,6 +16,7 @@ Output: Node 4 from this list (Serialization: [4,5,6])
 Since the list has two middle nodes with values 3 and 4, we return the second one.
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -27,13 +28,13 @@ class ListNode:
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        
+
         return slow
 
     def middleNode2(self, head):
         if head == None:
             return head
-        
+
         count = 0
 
         fast = head
@@ -42,9 +43,9 @@ class ListNode:
             count += 1
 
         mid = count // 2 + 1
-        
+
         slow = head
         for i in range(1, mid):
             slow = slow.next
-            
+
         return slow

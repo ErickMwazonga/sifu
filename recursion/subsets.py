@@ -14,30 +14,35 @@ Input: nums = [0]
 Output: [[],[0]]
 '''
 
+
 def subsets(nums):
     '''2^n'''
     output = [[]]
-    
+
     for num in nums:
         # output += [lst + [num] for lst in output]
         for i in range(len(res)):
             output.append(res[i] + [num])
-        
+
     return output
 
 # REQUIRE REVISION
+
+
 class Solution(object):
     def subsets(self, nums):
         ret = []
         self.dfs(nums, [], ret)
         return ret
-    
+
     def dfs(self, nums, path, ret):
         ret.append(path)
         for i in range(len(nums)):
             self.dfs(nums[i+1:], path+[nums[i]], ret)
 
 # REQUIRE REVISION
+
+
 class Solution(object):
     def subsets(self, nums):
         sol = []

@@ -9,6 +9,7 @@ Example:
     Input: 702 -> ZZ
 """
 
+
 def spreadsheet_decode_column(col_num):
     """Decodes a column number into a column id."""
 
@@ -18,6 +19,7 @@ def spreadsheet_decode_column(col_num):
         col_num, remainder = divmod(col_num - 1, 26)
         curr_str = chr(ord('A') + remainder)
         col_str = curr_str + col_str
+
     return col_str
 
 

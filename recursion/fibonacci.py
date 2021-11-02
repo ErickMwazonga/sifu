@@ -1,9 +1,10 @@
 def fibonacci(n):
     '''O(2^n)) -> Exponential'''
-    
+
     if n <= 1:
         return 1
     return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 def fib(n):
     dp = [0] * n
@@ -14,6 +15,7 @@ def fib(n):
 
     return dp[-1]
 
+
 def fib2(n):
     if n < 1:
         return -1
@@ -22,11 +24,10 @@ def fib2(n):
 
     if n == 1:
         return curr
-    
+
     for i in range(1, n):
         temp = curr
         curr = prev + curr
         prev = temp
-      
+
     return curr
-    

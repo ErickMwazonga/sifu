@@ -6,6 +6,8 @@ one is a permutation of the other.
 # Approach 1: Sorting
 # Time Complexity: O(n log n)
 # Space Complexity: O(1)
+
+
 def is_perm_1(str_1, str_2):
     str_1 = str_1.lower()
     str_2 = str_2.lower()
@@ -22,7 +24,7 @@ def is_perm_1(str_1, str_2):
         if str_1[i] != str_2[i]:
             return False
     return True
-    
+
 
 # Approach 2: Hash Table
 # Time Complexity: O(n)
@@ -35,10 +37,10 @@ def is_perm_2(str_1, str_2):
         return False
 
     d = {}
-    
+
     for i in str_1:
         d.get(i, 0) + 1
-       
+
     for i in str_2:
         if i in d:
             d[i] -= 1
@@ -46,7 +48,6 @@ def is_perm_2(str_1, str_2):
             d[i] = 1
 
     return all(value == 0 for value in d.values())
-
 
 
 is_permutation_1 = "google"

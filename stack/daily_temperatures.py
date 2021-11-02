@@ -13,6 +13,7 @@ Note: The length of temperatures will be in the range [1, 30000].
 Each temperature will be an integer in the range [30, 100].
 '''
 
+
 def dailyTemperatures(temps):
     n = len(temps)
     days_to_wait = [0] * n
@@ -20,7 +21,7 @@ def dailyTemperatures(temps):
 
     for i in range(n-1, -1, -1):
         while stack and temps[i] >= temps[stack[-1]]:
-            stack.pop() # remove lower and not soonest 
+            stack.pop()  # remove lower and not soonest
 
         if stack:
             days_to_wait[i] = stack[-1] - i
@@ -28,4 +29,3 @@ def dailyTemperatures(temps):
         stack.append(i)
 
     return days_to_wait
-

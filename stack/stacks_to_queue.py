@@ -12,6 +12,7 @@ int peek() Returns the element at the front of the queue.
 boolean empty() Returns true if the queue is empty, false otherwise.
 '''
 
+
 class MyQueue:
 
     def __init__(self):
@@ -20,11 +21,11 @@ class MyQueue:
 
     def push(self, x: int) -> None:
         self.inbox.append(x)
-        
+
     def pop(self) -> int:
         if self.empty():
             return -1
-        
+
         if self.outbox:
             return self.outbox.pop()
         else:
@@ -36,14 +37,14 @@ class MyQueue:
     def peek(self) -> int:
         if self.empty():
             return -1
-        
+
         if self.outbox:
             return self.outbox[-1]
         else:
             while self.inbox:
                 popped = self.inbox.pop()
                 self.outbox.append(popped)
-            return self.outbox[-1]    
+            return self.outbox[-1]
 
     def empty(self) -> bool:
         return not self.inbox and not self.outbox
@@ -60,7 +61,7 @@ class QueueFromTwoStacks:
 
     def enqueue(self, item):
         self.in_stack.append(item)
-    
+
     def dequeue(self):
         if not self.out_stack:
             while self.in_stack:
@@ -68,4 +69,3 @@ class QueueFromTwoStacks:
                 self.out_stack.append(popped)
 
         return self.out_stack.pop()
-

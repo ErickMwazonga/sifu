@@ -20,6 +20,7 @@ Example 3:
 def smallestAfterRemoving(num, k):
     if k == len(num):
         return "0"
+
     stack = []
 
     for digit in num:

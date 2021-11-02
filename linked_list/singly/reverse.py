@@ -52,7 +52,7 @@ class LinkedList:
             curr.next = prev
             prev = curr
             curr = _next
-            
+
             return helper(curr, prev)
 
         self.head = helper(curr=self.head, prev=None)
@@ -64,7 +64,7 @@ llist.append("B")
 llist.append("C")
 llist.append("D")
 
-#llist.reverse_iterative()
+# llist.reverse_iterative()
 llist.reverse_recursive()
 
 llist.print_list()

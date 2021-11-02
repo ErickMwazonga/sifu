@@ -21,6 +21,20 @@ class Solution:
         return sorted(nums)[-k]
 
 
+class SolutionK:
+    '''O(klogn)'''
+
+    def findKthLargest(self, nums, k):
+        minHeap = [-n for n in nums]
+        heapq.heapify(minHeap)
+
+        while k > 1:
+            heapq.heappop(minHeap)
+            k -= 1
+
+        return -minHeap[0]
+
+
 class Solution1:
     def findKthLargest(self, nums, k):
         q = []

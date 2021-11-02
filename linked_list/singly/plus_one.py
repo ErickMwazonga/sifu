@@ -8,28 +8,33 @@ Below are the steps :
     If there is a carry, move to the next node. Keep moving to the next node while there is a carry.
 3. Reverse modified linked list and return head.
 """
-  
+
+
 class Node:
     '''Linked list node'''
-    def __init__(self,data): 
-        self.data = data 
+
+    def __init__(self, data):
+        self.data = data
         self.next = None
+
 
 def newNode(data):
     '''Function to create a new node with given data '''
-    return Node(data) 
+    return Node(data)
 
-def printList(head): 
-    if not head: 
+
+def printList(head):
+    if not head:
         return
-        
-    while(head): 
-        print("{}".format(head.data),end="") 
-        head=head.next
+
+    while(head):
+        print("{}".format(head.data), end="")
+        head = head.next
+
 
 def reverse(head):
     '''Function to reverse the linked list'''
-    if not head: 
+    if not head:
         return
 
     curr = head
@@ -41,49 +46,49 @@ def reverse(head):
         curr.next = prev
         prev = curr
         curr = next_node
-    return prev # Return new head
+    return prev  # Return new head
 
-def addOne(head): 
+
+def addOne(head):
     """
     # Adds one to a linked lists and return the head  
     # node of resultant list 
     """
-    # Reverse linked list  
+    # Reverse linked list
     head = reverse(head)
     curr = head
     carry = 1
 
     while curr:
         curr.data += carry
-        if curr.data == 10: 
-            # update carry for next calulation  
+        if curr.data == 10:
+            # update carry for next calulation
             carry = 1
             curr.data = 0
-        else: 
-            # update carry for next calulation  
+        else:
+            # update carry for next calulation
             carry = 0
         curr = curr.next
-    
+
     # add a node at the end of linked list if there is any carry left
-	if carry == 1:
-		curr.next = Node(carry)
+        if carry == 1:
+            curr.next = Node(carry)
 
-	# reverse the list again to restore the original order
-	head = reverse(head)
-	return head
+        # reverse the list again to restore the original order
+        head = reverse(head)
+        return head
 
 
-if __name__ == '__main__': 
-    head = newNode(9) 
-    head.next = newNode(9) 
-    head.next.next = newNode(9) 
+if __name__ == '__main__':
+    head = newNode(9)
+    head.next = newNode(9)
+    head.next.next = newNode(9)
     head.next.next.next = newNode(9)
 
-    print("List is: ",end = "") 
-    printList(head) 
-  
-    head = addOne(head) 
-  
-    print("\nResultant list is: ",end="") 
-    printList(head) 
-  
+    print("List is: ", end="")
+    printList(head)
+
+    head = addOne(head)
+
+    print("\nResultant list is: ", end="")
+    printList(head)

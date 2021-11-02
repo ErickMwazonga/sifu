@@ -15,10 +15,11 @@ Input: [2,2,2,2,2] -> 1
 Explanation: The longest continuous increasing subsequence is [2], its length is 1. 
 '''
 
+
 def findLengthOfLCIS(nums):
     if not nums:
         return 0
-    
+
     count = max_count = 1
 
     for i in range(1, len(nums)):

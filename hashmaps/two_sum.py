@@ -10,6 +10,7 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 """
 
+
 def twoSum(nums: list, target: int) -> list:
     '''
     Time complexity: 0(n) where n is the length of nums

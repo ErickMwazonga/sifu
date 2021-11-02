@@ -14,9 +14,11 @@ Explanation: k= 2. 4 is the 2nd smallest element in the array.
 
 import random
 
-def kthSmallest(arr, n, k): 
-    arr.sort() 
+
+def kthSmallest(arr, n, k):
+    arr.sort()
     return arr[k-1]
+
 
 '''
 Method 4 (QuickSelect)
@@ -28,8 +30,10 @@ right sides of pivot, but recur for one of them according to the position of piv
 The worst case time complexity of this method is O(n2), but it works in O(n) on average.
 '''
 
+
 def swap(A, i, j):
     A[i], A[j] = A[j], A[i]
+
 
 def partition(A, lo, hi):
     pivot = A[lo]
@@ -51,6 +55,7 @@ def partition(A, lo, hi):
     swap(A, lo, j)
     print(A)
     return j
+
 
 def k_smallest(A, k):
     lo, hi = 0, len(A) - 1

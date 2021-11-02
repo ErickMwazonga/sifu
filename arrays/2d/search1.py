@@ -7,8 +7,8 @@ for a value in an m x n matrix. This matrix has the following properties:
 
 Integers in each row are sorted from left to right.
 The first integer of each row is greater than the last integer of the previous row
-Example 1:
 
+Example 1:
 Input:
 matrix = [
   [1,   3,  5,  7],
@@ -27,9 +27,6 @@ matrix = [
 target = 13
 Output: false
 '''
-
-
-Matrix = list[list[int]]
 
 
 class Solution:
@@ -60,8 +57,9 @@ class SolutionSorted:
     '''
 
     def searchMatrix(self, matrix, target):
-        if matrix == []:
+        if not matrix:
             return False
+
         n, m = len(matrix), len(matrix[0])
 
         i, j = 0, m - 1
@@ -72,6 +70,7 @@ class SolutionSorted:
                 i += 1
             elif matrix[i][j] > target:  # Move left a column
                 j -= 1
+
         return False
 
 
@@ -86,7 +85,23 @@ class SortedSearch:
     element within a row. Here’s the walkthrough:
     '''
 
-    def search_matrix(self, matrix: Matrix, target: int) -> bool:
+    # Helper function to perform binary search for the target on a row
+    def helper_search(self, row, target):
+        start, end = 0, len(row) - 1
+
+        while start <= end:
+            mid = (start + end) // 2
+
+            if row[mid] == target:
+                return True
+            elif row[mid] < target:
+                start = mid + 1
+            else:
+                end = mid - 1
+
+        return False
+
+    def search_matrix(self, matrix, target: int) -> bool:
         n_rows, n_cols = len(matrix), len(matrix[0])
 
         if not n_rows or not n_cols:
@@ -105,18 +120,3 @@ class SortedSearch:
             else:
                 start = mid_row + 1
         return False
-
-        # Helper function to perform binary search for the target on a row
-        def helper_search(self, row, target):
-            n_cols = len(row)
-            start, end = 0, n_cols - 1
-
-            while start <= end:
-                mid = (start + end) // 2
-                if row[mid] == target:
-                    return True
-                elif row[mid] < target:
-                    start = mid + 1
-                else:
-                    end = mid - 1
-            return False

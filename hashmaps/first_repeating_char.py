@@ -14,13 +14,14 @@ Input: str = "abcd"
 Output: '\0'
 '''
 
+
 def firstRepeatingCharacter(str):
     seen = set()
-    
+
     for char in str:
         if char in seen:
             return char
-        
+
         seen.add(char)
-        
+
     return '\0'

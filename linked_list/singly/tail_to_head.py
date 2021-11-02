@@ -33,10 +33,11 @@ class LinkedList:
         while last.next:
             second_to_last = last
             last = last.next
-    
-        last.next = self.head 
-        second_to_last.next = None 
+
+        last.next = self.head
+        second_to_last.next = None
         self.head = last
+
 
 # A -> B -> C -> D -> Null
 # D -> A -> B -> C -> Null

@@ -11,6 +11,7 @@ Average: O(n2) -> elements of the array are in jumbled order.
 Space: O(1) -> extra variable temp for min index.
 """
 
+
 def selection_sort(A):
     n = len(A)
 

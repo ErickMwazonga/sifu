@@ -7,6 +7,7 @@ s = "loveleetcode", -> return 2.
 Note: You may assume the string contain only lowercase letters.
 '''
 
+
 def firstUniqChar(s: str):
     '''
     Time complexity : O(N) since we go through the string of length N two times.

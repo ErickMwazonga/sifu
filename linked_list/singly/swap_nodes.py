@@ -34,58 +34,59 @@ class LinkedList:
 
         # Identical keys
         if key_1 == key_2:
-            return 
+            return
 
-        prev_1 = None 
-        curr_1 = self.head 
+        prev_1 = None
+        curr_1 = self.head
         while curr_1 and curr_1.data != key_1:
-            prev_1 = curr_1 
+            prev_1 = curr_1
             curr_1 = curr_1.next
 
-        prev_2 = None 
-        curr_2 = self.head 
+        prev_2 = None
+        curr_2 = self.head
         while curr_2 and curr_2.data != key_2:
-            prev_2 = curr_2 
+            prev_2 = curr_2
             curr_2 = curr_2.next
 
         # One node does not exist
         if not curr_1 or not curr_2:
-            return 
+            return
 
         if prev_1:
-            prev_1.next = curr_2 # First node is not the head
+            prev_1.next = curr_2  # First node is not the head
         else:
-            self.head = curr_2 # Change the head
+            self.head = curr_2  # Change the head
 
         if prev_2:
-            prev_2.next = curr_1 # Second node is not the head
+            prev_2.next = curr_1  # Second node is not the head
         else:
-            self.head = curr_1 # Change the head
+            self.head = curr_1  # Change the head
 
         # Update the next pointers
         curr_1.next, curr_2.next = curr_2.next, curr_1.next
-        
+
     ''' Alternate swap node function , swap by changing the data attribute of node '''
+
     def swap_nodes_alt(self, key_1, key_2):
         if key_1 == key_2:
             return
-            
+
         curr = self.head
-        x, y = None, None # Assign None to avoid reference error
+        x, y = None, None  # Assign None to avoid reference error
 
         while curr:
             if curr.data == key_1:
-                x = curr # key_1 found
+                x = curr  # key_1 found
             if curr.data == key_2:
-                y = curr # key_2 found
+                y = curr  # key_2 found
             curr = curr.next
-        
-        if x and y: # Check if both key's exist
+
+        if x and y:  # Check if both key's exist
             x.data, y.data = y.data, x.data
-        else: 
+        else:
             return
-        
-        
+
+
 llist = LinkedList()
 llist.append("A")
 llist.append("B")

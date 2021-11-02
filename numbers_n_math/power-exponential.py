@@ -27,7 +27,7 @@ def power(x, n):
         result = y * y
     else:
         result = x * power(x, n-1)
-    
+
     return 1 / result if is_negative else result
 
 

@@ -5,6 +5,7 @@ class Node:
         self.data = data
         self.next = None
 
+
 class SinglyLinkedList:
     def __init__(self):
         '''Create new SinglyLinkedList: 0(1) time'''
@@ -23,7 +24,7 @@ class SinglyLinkedList:
     def size(self, head):
         if not head:
             return 0
-        return  1 + size(head.next)
+        return 1 + self.size(head.next)
 
     def get_tail(self, head):
         curr = head

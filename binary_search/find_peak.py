@@ -22,6 +22,7 @@ Input: arr = [1, 5, 2, 6, 6, 3] -> 3
 
 def findPeak(arr):
     '''Time: O(n), Space: O(1)'''
+
     n = len(arr)
 
     for i in range(n):

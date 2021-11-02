@@ -20,6 +20,7 @@ return its bottom-up level order traversal as:
 ]
 '''
 
+
 def levelOrderBottom(root: TreeNode):
     if not root:
         return []
@@ -38,7 +39,7 @@ def levelOrderBottom(root: TreeNode):
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-                
+
         res.insert(0, level)
 
     return res

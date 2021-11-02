@@ -63,7 +63,7 @@ def is_valid_1(s):
     '''
 
     left, stars = [], []
-    
+
     for i, ch in enumerate(s):
         if ch == '*':
             stars.append(i)
@@ -75,20 +75,21 @@ def is_valid_1(s):
 
             if len(left) > 0:
                 left.pop()
-            else:                
+            else:
                 stars.pop()
-                
+
     while len(left) > 0 and len(stars) > 0:
         if left_stack.pop() > stars_stack.pop():
             return False
 
         # if left[-1] > stars[-1]:
         #     return False
-        
+
         # left.pop()
         # stars.pop()
-                
+
     return len(left) == 0
+
 
 assert is_valid('()') == True
 assert is_valid('(') == False
@@ -105,27 +106,27 @@ def checkValidString(self, s):
     :rtype: bool
     """
     # stack 1, try to test all the ( and * can balance all the )
-    S=[]        
+    S = []
     # go through s from left to right
     for x in s:
-        if x=='(' or x=='*':
+        if x == '(' or x == '*':
             S.append(x)
         else:
-            if len(S)>0:
+            if len(S) > 0:
                 S.pop()
             else:
                 return False        # this means left ( is not enough
-    
+
     # stack 2, try to test all the ) and * can balance all the (
-    S=[]        
+    S = []
     # go through s from right to left
     for x in s[::-1]:
-        if x==')' or x=='*':
+        if x == ')' or x == '*':
             S.append(x)
         else:
-            if len(S)>0:
+            if len(S) > 0:
                 S.pop()
             else:
                 return False        # this means right ) is not enough
-    
+
     return True

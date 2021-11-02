@@ -10,8 +10,8 @@ def getPermutations(arr):
                 remaining.pop(i)
                 remainingPermutations = getPermutations(remaining)
                 removedElement = [arr[i]]
-                
+
                 for permutation in remainingPermutations:
                     permutations.append(removedElement + permutation)
-                    
+
         return permutations

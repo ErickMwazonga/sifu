@@ -19,9 +19,8 @@ Example 3:
 
 
 def lcs(str1, str2):
-    '''
-    Time complexity: O(nm), Space complexity: O(nm)
-    '''
+    '''Time complexity: O(nm), Space complexity: O(nm)'''
+
     n, m = len(str1), len(str2)
 
     dp = [[0] * (m+1) for i in range(n+1)]

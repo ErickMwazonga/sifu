@@ -1,19 +1,22 @@
 class Node:
     '''Linked list node'''
-    def __init__(self,data): 
-        self.data = data 
+
+    def __init__(self, data):
+        self.data = data
         self.next = None
+
 
 def printList(msg, head):
     print(msg, end='')
-    
+
     while head:
         print(head.data, end=" -> ")
         head = head.next
     print("None")
 
+
 def reverse(head):
-    if not head: 
+    if not head:
         return
 
     curr = head
@@ -25,7 +28,8 @@ def reverse(head):
         curr.next = prev
         prev = curr
         curr = next_node
-    return prev # Return new head
+    return prev  # Return new head
+
 
 def addDigit(head, digit):
     head = reverse(head)

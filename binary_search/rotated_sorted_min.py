@@ -39,6 +39,7 @@ def findMin(self, A: list[int]) -> int:
 
 def findMin(self, A: list[int]) -> int:
     '''O(logn)'''
+
     left, right = 0, len(A) - 1
 
     if A[right] > A[left]:

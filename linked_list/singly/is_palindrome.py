@@ -10,6 +10,7 @@ Input: 1->2->2->1  = true
 Could you do it in O(n) time and O(1) space?
 '''
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -25,7 +26,7 @@ class ListNode:
             curr_node.next = prev_node
             prev_node = curr_node
             curr_node = next_node
-        
+
         return prev_node
 
     def is_palindrome(sel, head):
@@ -34,18 +35,18 @@ class ListNode:
         while head and reversed_head:
             if head.val != reversed_head.val:
                 return False
-            
+
             head = head.next
             reversed_head = reversed_head.next
-        
+
         return True
-    
+
     def isPalindrome(self, head):
         vals = []
         while head:
             vals.append(head.val)
             head = head.next
-        
+
         return vals == vals[::-1]
 
     # REVERSE ONLY THE RIGHT HALF
@@ -63,5 +64,5 @@ class ListNode:
                 return False
             slow = slow.next
             head = head.next
-        
+
         return True

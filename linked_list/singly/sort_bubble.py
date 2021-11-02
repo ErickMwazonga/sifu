@@ -1,17 +1,21 @@
 class Node:
-    def __init__(self, data, next = None):
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
+
 class LinkedList:
-    def __init__(self, head = None):
+    def __init__(self, head=None):
         self.head = head
+
 
 '''
 # BUBBLESORT 
 Time complexity: O(n²)
 Space complexity: O(1)
 '''
+
+
 def sortList(list):
     i = list.head
 
@@ -24,10 +28,11 @@ def sortList(list):
             j = j.next
         i = i.next
 
+
 def sortArray(A):
     i = 0
 
-    while i < len(A)
+    while i < len(A):
         j = 0
 
         while j + 1 < len(A):

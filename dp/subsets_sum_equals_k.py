@@ -17,7 +17,8 @@ Example 3:
         Explanation: there are no subsets that sum up to k
 '''
 
-def subsetsThatSumUpToK(arr, k, i = 0, _sum = 0):
+
+def subsetsThatSumUpToK(arr, k, i=0, _sum=0):
     '''
     Time complexity: O(2^n)
     Space complexity: O(n)

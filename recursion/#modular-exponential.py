@@ -18,7 +18,7 @@ def mod(x, n, m):
     (a * b) % m = ((a % m) * (b % m)) % m
     Time O(log n)
     '''
-    
+
     if n == 0:
         return 1
     elif n % 2 == 0:

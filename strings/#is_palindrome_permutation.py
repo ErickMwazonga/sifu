@@ -18,7 +18,7 @@ def is_palin_perm(input_str):
     d = dict()
 
     for i in input_str:
-        d[c] = d.get(i, 0) + 1
+        d[i] = d.get(i, 0) + 1
 
     odd_count = 0
     for k, v in d.items():

@@ -38,7 +38,7 @@ class LinkedList:
     def print_nth_from_last(self, n):
         total_len = self.len_iterative()
 
-        curr = self.head 
+        curr = self.head
         while curr:
             if total_len == n:
                 print(curr.data)
@@ -65,8 +65,9 @@ class LinkedList:
         while p and q:
             p = p.next
             q = q.next
-        
+
         return p.data
+
 
 llist = LinkedList()
 llist.append("A")

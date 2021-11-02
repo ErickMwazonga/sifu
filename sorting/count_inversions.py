@@ -6,6 +6,8 @@ GENERALLY two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j
 '''
 
 # REVISIT MERGE SORT
+
+
 def mergeSort(A):
     n = len(A)
 
@@ -40,6 +42,7 @@ def mergeSort(A):
         A[k] = R[j]
         j += 1
         k += 1
+
 
 def countInversions(A):
     n = len(A)

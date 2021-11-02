@@ -11,11 +11,13 @@ Output: 1->4->3->2->5->NULL
 '''
 
 # REVERSE 1
+
+
 def reverse():
-    if not self.head:
+    if not head:
         return
 
-    prev, curr, _next = None, self.head, None
+    prev, curr, _next = None, head, None
 
     while curr:
         _next = curr.next
@@ -26,7 +28,7 @@ def reverse():
     return prev
 
 
- def reverseBetween(head: ListNode, m, n):
+def reverseBetween(head: ListNode, m, n):
     '''https://www.youtube.com/watch?v=wk8-_M-2fzI&t=0s'''
 
     if not head:
@@ -34,16 +36,16 @@ def reverse():
 
     dummy = ListNode(0)
     dummy.next = head
-    
+
     curr, prev = head, dummy
     for _ in range(m - 1):
         curr = curr.next
         prev = prev.next
-        
+
     for _ in range(n - m):
         temp = curr.next
         curr.next = temp.next
         temp.next = prev.next
         prev.next = temp
-        
+
     return dummy.next

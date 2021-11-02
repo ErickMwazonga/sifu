@@ -13,6 +13,7 @@ It occurs when the above conditions do not occur.
 The space complexity -> O(log n).
 '''
 
+
 class QuickSort:
     def swap(self, A, i, j):
         A[i], A[j] = A[j], A[i]
@@ -55,7 +56,7 @@ class QuickSort2:
 
         if length <= 1:
             return A
-      
+
         pivot = A.pop()
         items_greater, items_lower = [], []
 
