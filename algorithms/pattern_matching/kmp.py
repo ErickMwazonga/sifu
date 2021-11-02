@@ -1,6 +1,7 @@
 class KMP:
     def partial(self, pattern):
         """ Calculate partial match table: String -> [Int]"""
+
         ret = [0]
 
         for i in range(1, len(pattern)):
@@ -15,6 +16,7 @@ class KMP:
         KMP search main algorithm: String -> String -> [Int] 
         Return all the matching position of pattern string P in T
         """
+
         partial, ret, j = self.partial(P), [], 0
 
         for i in range(len(T)):
