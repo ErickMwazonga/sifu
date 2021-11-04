@@ -43,4 +43,4 @@ class Solution:
         return ord(char) - ord('A') + 1
 
 
-print(spreadsheet_encode_column("ZZ"))
+print(Solution.spreadsheet_encode_column("ZZ"))

@@ -22,8 +22,7 @@ def reverse(chars: list):
 
     while left_index < right_index:
         # Swap characters
-        chars[left_index], chars[right_index] = \
-            chars[right_index], chars[left_index]
+        chars[left_index], chars[right_index] = chars[right_index], chars[left_index]
 
     # Move towards middle
     left_index += 1

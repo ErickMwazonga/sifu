@@ -40,7 +40,8 @@ class Solution:
 
         my_hash = 0
         for ch in s:
-            my_hash = (charcode(ch) + my_hash * self.base) % self.prime_mod
+            x = self.charcode(ch) + my_hash * self.base
+            my_hash = x % self.prime_mod
         return my_hash
 
     def strStr(self, haystack: str, needle: str) -> int:
@@ -56,14 +57,14 @@ class Solution:
         first_pow = self.base ** (N-1)
 
         for i in range(N-1, len(haystack)):
-            code = charcode(haystack[i])
+            code = self.charcode(haystack[i])
             rolling_hash = (rolling_hash * self.base + code) % self.prime_mod
 
             if rolling_hash == needle_hash and needle == haystack[i+1-N:i+1]:
                 return i+1-N
 
-            prev_code = charcode(haystack[i+1-N])
-            rolling_hash = (rolling_hash - prev_code *
-                            first_pow) % self.prime_mod
+            prev_code = self.charcode(haystack[i+1-N])
+            x = rolling_hash - prev_code * first_pow
+            rolling_hash = x % self.prime_mod
 
         return -1

@@ -78,14 +78,14 @@ class Solution:
         if m > n:
             return None
 
-        pattern_hash = create_hash(pattern, m - 1)
-        text_hash = create_hash(text, m - 1)
+        pattern_hash = self.create_hash(pattern, m - 1)
+        text_hash = self.create_hash(text, m - 1)
 
         for i in range(1, n - m + 2):
             if pattern_hash == text_hash:
                 window_text = text[i-1:i+m-1]
 
-                if check_equal(window_text, pattern):
+                if self.check_equal(window_text, pattern):
                     return i - 1
 
             # if i < n - m + 1:
