@@ -20,7 +20,7 @@ class Solution:
 
         while l <= r:
             m = (l + r) // 2
-            status = guess(m)
+            status = self.guessNumber(m)
 
             if status == 0:
                 return m

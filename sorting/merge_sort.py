@@ -1,7 +1,5 @@
 def mergeSort(A):
-    '''
-    Time O(n*log n), Space O(n)
-    '''
+    '''Time O(n*log n), Space O(n)'''
 
     n = len(A)
 

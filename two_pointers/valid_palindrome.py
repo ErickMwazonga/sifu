@@ -14,6 +14,7 @@ Note:
 The string will only contain lowercase characters a-z. The maximum length of the string is 50000.
 """
 
+
 def validPalindrome(self, s: str) -> bool:
     left, right = 0, len(s)
 

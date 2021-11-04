@@ -26,11 +26,12 @@ Input: intervals = [[1,5]], newInterval = [2,7]
 Output: [[1,7]]
 '''
 
+
 def insertInterval(intervals, newInterval):
     n = len(intervals)
     output = []
     i = 0
-    
+
     while i < n and intervals[i][1] < newInterval[0]:
         output.append(intervals[i])
         i += 1

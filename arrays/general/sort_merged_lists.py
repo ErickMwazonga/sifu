@@ -24,6 +24,7 @@ alices_list = [1, 5, 8, 12, 14, 19]
 
 def merge_sorted_lists(arr1, arr2):
     '''Time O(nlogn)'''
+
     return sorted(arr1 + arr2)
 
 

@@ -19,12 +19,14 @@ Input: [1,2,3,4,5,null,7] -> false
 Explanation: The node with value 7 isn't as far left as possible.
 '''
 
+
 class Solution:
     '''
     Use BFS to do a level order traversal, add children to the bfs queue,
     until we met the first empty node. For a complete binary tree,
     there should not be any node after we met an empty one.
     '''
+
     def isCompleteTree(self, root) -> bool:
         if not root:
             return True
@@ -35,10 +37,9 @@ class Solution:
 
             if not node:
                 break
-            
+
             queue.append(node.left)
             queue.append(node.right)
 
         # there should not be any node after we met an empty one
         return not any(queue)
-        

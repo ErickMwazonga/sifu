@@ -19,9 +19,7 @@ Output:
 
 
 def setZeroes(matrix):
-    """
-    Do not return anything, modify matrix in-place instead.
-    """
+    """Do not return anything, modify matrix in-place instead"""
 
     n, m = len(matrix), len(matrix[0])
 

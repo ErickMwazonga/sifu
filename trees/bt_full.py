@@ -12,20 +12,19 @@ class Node:
         self.leftChild = None
         self.rightChild = None
 
+    def isFullTree(self, root):
+        # Tree empty case
+        if not root:
+            return True
 
-def isFullTree(root):
-    # Tree empty case
-    if not root:
-        return True
+        # Checking whether child is present
+        if not root.leftChild and not root.rightChild:
+            return True
 
-    # Checking whether child is present
-    if not root.leftChild and not root.rightChild:
-        return True
-    
-    if not root.leftChild or not root.rightChild:
-        return False 
+        if not root.leftChild or not root.rightChild:
+            return False
 
-    return self.isFullTree(root.left) and self.isFullTree(root.right):
+        return self.isFullTree(root.left) and self.isFullTree(root.right)
 
 
 root = Node(1)

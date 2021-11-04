@@ -47,9 +47,7 @@ Constraints:
 
 
 def maxProductPath(grid):
-    '''
-    time: O(M * N), space: O(M * N)
-    '''
+    '''time: O(M * N), space: O(M * N)'''
 
     if not grid:
         return -1

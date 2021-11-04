@@ -9,6 +9,7 @@ NOTE
   ending time if the start time and end time are equal, end time comes first.
 '''
 
+
 def minMeetingRooms(self, intervals):
     '''
     Inspired by
@@ -33,7 +34,7 @@ def minMeetingRooms(self, intervals):
         else:
             # need to ask for a new room
             rooms += 1
-            
+
     return rooms
 
 
@@ -51,7 +52,7 @@ def minimum_rooms(intervals):
     starting_times.sort()
     ending_times.sort()
 
-    starting_index = ending_index =  0
+    starting_index = ending_index = 0
     max_rooms = current_rooms = 0
 
     while starting_index < len(starting_times) and ending_index < len(ending_times):
@@ -64,7 +65,7 @@ def minimum_rooms(intervals):
         else:
             current_rooms -= 1
             ending_index += 1
-        
+
         max_rooms = max(max_rooms, current_rooms)
 
     return max_rooms

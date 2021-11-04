@@ -12,11 +12,12 @@ Input: [-7,-3,2,3,11]
 Output: [4,9,9,49,121]
 '''
 
+
 def sortedSquares(A):
     res = []
-    
+
     i, j = 0, len(A) - 1
-    
+
     while i <= j:
         if abs(A[i]) > abs(A[j]):
             _sq = A[i] ** 2
@@ -26,5 +27,5 @@ def sortedSquares(A):
             _sq = A[j] ** 2
             res.insert(0, _sq)
             j -= 1
-    
+
     return res

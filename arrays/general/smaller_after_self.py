@@ -16,9 +16,8 @@ import bisect
 
 
 def countSmaller(nums):
-    '''
-    Time Complexity: ~Nlog(N), Space Complexity: ~N.
-    '''
+    '''Time Complexity: ~Nlog(N), Space Complexity: ~N'''
+
     result = []
     sorted_nums = []
 

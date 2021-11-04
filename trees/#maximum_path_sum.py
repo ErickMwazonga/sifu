@@ -10,8 +10,9 @@ The path sum of a path is the sum of the node's values in the path.
 Given the root of a binary tree, return the maximum path sum of any path.
 '''
 
+
 class Tree:
-    def __init__(self, data, left = None, right = None):
+    def __init__(self, data, left=None, right=None):
         self.data = data
         self.left = left
         self.right = right
@@ -31,6 +32,6 @@ class Tree:
             return maxFromTop
 
     def maxPathSum(root):
-        globalMaxSum = [float("-inf")] # Pass by reference
+        globalMaxSum = [float("-inf")]  # Pass by reference
         dfs(root, globalMaxSum)
         return globalMaxSum[0]

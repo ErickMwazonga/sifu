@@ -12,6 +12,7 @@ your program should output [0,0,1,1,2,2] and the algorithm
 should run in O(n) time.
 '''
 
+
 def dutchNationalFlagSorting(A):
     '''Time Complexity: O(n), when n is lenth of array'''
 
@@ -30,6 +31,7 @@ def dutchNationalFlagSorting(A):
             A[traverse], A[high] = A[high], A[traverse]
             high -= 1
     return A
+
 
 first_A = [2, 0, 0, 1, 2, 1]
 sec_A = [0, 1, 2, 0, 1, 2]

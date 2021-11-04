@@ -22,9 +22,7 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 
 def rotate(nums, k) -> None:
-    """
-    Do not return anything, modify nums in-place instead.
-    """
+    """Do not return anything, modify nums in-place instead"""
 
     temps = []
     n = len(nums)

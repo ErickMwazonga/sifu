@@ -17,7 +17,7 @@ Output: 9
 '''
 
 
-def trap(self, height: list[int]) -> int:
+def trap(height: list[int]) -> int:
     leftmost = rightmost = 0
     res = 0
     left, right = 0, len(height) - 1

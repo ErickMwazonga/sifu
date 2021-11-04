@@ -65,6 +65,7 @@ def paths(matrix, i=0, j=0):
     Time complexity: O(2^(n*m))
     Space complexity: O(n + m)
     '''
+
     n, m = len(matrix), len(matrix[0])
 
     if i > n-1 or j > m-1 or matrix[i][j] == 1:

@@ -25,26 +25,25 @@ The flattened tree should look like:
 
 
 def flatten(root: TreeNode) -> None:
-    """
-    Do not return anything, modify root in-place instead.
-    """
+    """Do not return anything, modify root in-place instead."""
+
     if not root:
         return
     else:
         flatten(root.left)
         flatten(root.right)
-        
+
         # Store the right subtree
         right_subtree = root.right
-        
+
         # Reassign the right to the left
         root.right = root.left
         root.left = None
-        
+
         # Iterate till extreme right
         temp = root
         while temp.right:
             temp = temp.right
-        
+
         # Join the prev right subtree
         temp.right = right_subtree

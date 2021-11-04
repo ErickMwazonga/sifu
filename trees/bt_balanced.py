@@ -27,11 +27,13 @@ Given the following tree [1,2,2,3,3,null,null,4,4]:
 Return false.
 '''
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
@@ -45,7 +47,6 @@ class Solution:
             return False
 
         return True
-        
 
     def maxDepth(self, root):
         if not root:
@@ -55,20 +56,18 @@ class Solution:
         right_depth = self.maxDepth(root.right)
 
         return max(left_depth, right_depth) + 1
-    
+
     def improved_balanced(self, root, height):
         if not root:
             return True
-        
+
         left_height, right_height = 0, 0
-        is_left_balanced = isBalanced(root.left, left_height)
-        is_right_balanced = isBalanced(root.right, right_height)
+        is_left_balanced = self.improved_balanced(root.left, left_height)
+        is_right_balanced = self.improved_balanced(root.right, right_height)
 
         height = 1 + max(left_height, right_height)
 
         if abs(left_height - right_height) > 0:
             return False
-        
-        return is_left_balanced and is_right_balanced
 
-    
+        return is_left_balanced and is_right_balanced

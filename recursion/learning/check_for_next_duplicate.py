@@ -8,6 +8,7 @@ Examples
 'pssst' -> True
 '''
 
+
 def hasAdjacentDuplicates(s, i=0):
     if i >= len(s) - 1:
         return False

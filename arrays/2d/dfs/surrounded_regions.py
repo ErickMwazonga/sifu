@@ -51,7 +51,7 @@ class Solution:
     def dfs(self, board, i: int, j: int) -> None:
         n, m = len(board), len(board[0])
 
-        if i < 0 or j < 0 or i >= nb_row or j >= nb_col or board[i][j] != 'O':
+        if i < 0 or j < 0 or i >= n or j >= m or board[i][j] != 'O':
             return
 
         board[i][j] = 'D'  # SURROUND
