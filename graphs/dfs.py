@@ -30,7 +30,7 @@ class Graph:
         # the adjacency list is of type Dict[int,list[int]]
         self.adjList = adjList
 
-    def dfs(graph, root, visited=set()):
+    def dfs(self, graph, root, visited=set()):
         if root in visited:
             return
         else:
@@ -38,4 +38,4 @@ class Graph:
             visited.add(root)
 
             for neighbour in graph.adjList[root]:
-                dfs(graph, neighbour, visited)
+                self.dfs(graph, neighbour, visited)

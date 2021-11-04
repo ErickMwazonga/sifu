@@ -35,6 +35,7 @@ def canConstruct(ransomNote: str, magazine: str) -> bool:
 
     return True
 
+
 assert canConstruct('a', 'b') == False
 assert canConstruct('aa', 'ab') == False
 assert canConstruct('aa', 'aab') == True

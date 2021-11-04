@@ -12,10 +12,12 @@ The last line is not preceded by any spaces.
 Write a program that prints a staircase of size n.
 '''
 
+
 def staircase(n):
     for i in range(1, n+1):
         _row = (' ' * (n-i)) + ('#' * i)
         print(_row)
+
 
 def staircase2(n):
     for i in range(n):
@@ -25,4 +27,3 @@ def staircase2(n):
             else:
                 print('#', end='')
         print()
-        

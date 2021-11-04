@@ -44,17 +44,17 @@ class RandomizedSet:
         else:
             self.values_indexes[val] = len(self.values)
             self.values.append(val)
-            
+
             return True
 
     def remove(self, val: int) -> bool:
         if val not in self.values_indexes:
             return False
         else:
-            # essentially, we're going to move the last element in the list 
-            # into the location of the element we want to remove. 
-            # this is a significantly more efficient operation than the obvious 
-            # solution of removing the item and shifting the values of every item 
+            # essentially, we're going to move the last element in the list
+            # into the location of the element we want to remove.
+            # this is a significantly more efficient operation than the obvious
+            # solution of removing the item and shifting the values of every item
             # in the dicitionary to match their new position in the list
 
             last_elem_in_list = self.values[-1]
@@ -63,16 +63,16 @@ class RandomizedSet:
             self.values[index_of_elem_to_remove] = last_elem_in_list
             self.values_indexes[last_elem_in_list] = index_of_elem_to_remove
 
-            # remove the last element in the list 
+            # remove the last element in the list
             # remove the element to be removed from the dictionary
             self.values.pop()
             self.values_indexes.pop(val)
-            
+
             return True
 
         def getRandom(self) -> int:
             # n = len(self.values)
-            # random_index = random.randint(0, n - 1)        
+            # random_index = random.randint(0, n - 1)
             # return self.values[random_index]
 
             return random.choice(self.values)

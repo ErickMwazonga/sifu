@@ -87,6 +87,7 @@ class MaxHeap:
 
         return sorted_array[-1]
 
+
 # -------------------------------
 mh = MaxHeap()
 

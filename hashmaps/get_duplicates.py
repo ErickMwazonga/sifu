@@ -32,6 +32,7 @@ def get_duplicates(arr):
 get_duplicates([1, 2, 2, 2, 3])
 # get_duplicates([1,2,1,2])
 
+
 def findDuplicate2(nums):
     seen, res = set(), set()
 

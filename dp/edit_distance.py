@@ -27,6 +27,7 @@ Explanation:
     exection -> execution (insert 'u')
 '''
 
+
 def minDistance(word1, word2):
     '''
     Time complexity: O(nm), Space complexity: O(nm)
@@ -49,9 +50,9 @@ def minDistance(word1, word2):
                 dp[i][j] = dp[i-1][j-1]
             else:
                 dp[i][j] = 1 + min(
-                    dp[i-1][j], # remove
-                    dp[i][j-1], # Insert
-                    dp[i-1][j-1] # replace
+                    dp[i-1][j],  # remove
+                    dp[i][j-1],  # Insert
+                    dp[i-1][j-1]  # replace
                 )
 
     return dp[n][m]

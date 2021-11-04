@@ -27,28 +27,28 @@ class LinkedList:
         last_node.next = new_node
 
     def rotate(self, k):
-        p = self.head 
-        q = self.head 
+        p = self.head
+        q = self.head
         prev = None
-        
+
         count = 0
-        
+
         # P to point to the kth node
         while p and count < k:
             prev = p
-            p = p.next 
-            q = q.next 
+            p = p.next
+            q = q.next
             count += 1
         p = prev
 
         # Q to point to the last node
         while q:
-            prev = q 
-            q = q.next 
-        q = prev 
+            prev = q
+            q = q.next
+        q = prev
 
-        q.next = self.head 
-        self.head = p.next 
+        q.next = self.head
+        self.head = p.next
         p.next = None
 
 

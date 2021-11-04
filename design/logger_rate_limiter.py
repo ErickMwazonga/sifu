@@ -31,6 +31,7 @@ logger.shouldPrintMessage(11,"foo"); returns true;
 
 from collections import deque
 
+
 class Logger:
     '''
     Time Complexity: ~N, Space Complexity: ~N
@@ -45,7 +46,7 @@ class Logger:
     def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
         while self.message_queue:
             msg, ts = self.message_queue[0]
-            
+
             if timestamp - ts >= 10:
                 self.message_queue.popleft()
                 self.message_set.remove(msg)

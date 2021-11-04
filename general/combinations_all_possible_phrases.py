@@ -23,23 +23,23 @@ def phrases(arr):
 
     if n == 0:
         return []
-    
+
     if n == 1:
         return arr[0]
-        
+
     all_combinations = arr[0]
-    
+
     for i in range(1, n):
         current_combinations = []
         current_phrases = arr[i]
-        
+
         for combination in all_combinations:
             for phrase in current_phrases:
                 current_combinations.append(f'{combination} {phrase}')
-            
+
         all_combinations = current_combinations
-        
-    return all_combinations 
+
+    return all_combinations
 
 
 def phrases(arr, i=0):

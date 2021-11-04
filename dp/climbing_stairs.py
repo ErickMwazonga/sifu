@@ -17,6 +17,7 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 '''
 
+
 class Solution:
     '''
     The total distinct ways to climb to i th stair is actually the
@@ -32,7 +33,7 @@ class Solution:
         for i in range(2, n):
             distinct_ways = ways[i-1] + ways[i-2]
             ways.append(distinct_ways)
-        
+
         return ways[n - 1]
 
     def fib(n):

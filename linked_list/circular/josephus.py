@@ -1,12 +1,12 @@
 class Node:
     def __init__(self, data):
-        self.data = data 
+        self.data = data
         self.next = None
 
 
 class CircularLinkedList:
     def __init__(self):
-        self.head = None 
+        self.head = None
 
     def append(self, data):
         if not self.head:
@@ -21,7 +21,7 @@ class CircularLinkedList:
             new_node.next = self.head
 
     def print_list(self):
-        curr = self.head 
+        curr = self.head
 
         while curr:
             print(curr.data)
@@ -41,17 +41,17 @@ class CircularLinkedList:
 
     def remove_node(self, node):
         if self.head == node:
-            curr = self.head 
+            curr = self.head
             while curr.next != self.head:
-                curr = curr.next 
-            curr.next = self.head.next 
+                curr = curr.next
+            curr.next = self.head.next
             self.head = self.head.next
         else:
-            curr = self.head 
+            curr = self.head
             prev = None
 
             while curr.next != self.head:
-                prev = curr 
+                prev = curr
                 curr = curr.next
 
                 if curr == node:
@@ -59,12 +59,12 @@ class CircularLinkedList:
                     curr = curr.next
 
     def josephus_circle(self, step):
-        curr = self.head 
+        curr = self.head
 
         while len(self) > 1:
-            count = 1 
+            count = 1
             while count != step:
-                curr = curr.next 
+                curr = curr.next
                 count += 1
             print("KILL:" + str(curr.data))
             self.remove_node(curr)

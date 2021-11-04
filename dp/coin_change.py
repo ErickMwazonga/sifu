@@ -25,15 +25,15 @@ class Solution(object):
     def coinChange(self, coins, amount):
         MAX = float('inf')
         dp = [0] + [MAX] * amount
-        
+
         for i in range(0, amount + 1):
             for coin in coins:
                 balance = i - coin
 
                 if balance >= 0:
                     dp[i] = min(dp[i], dp[balance] + 1)
-        
-        if dp[amount] == MAX:  
+
+        if dp[amount] == MAX:
             return -1
 
         return dp[-1]

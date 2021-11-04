@@ -15,21 +15,21 @@ target = 108
 
 def find(nums, target):
     index = -1
-    low, high = 0, len(nums) -1
-    
+    low, high = 0, len(nums) - 1
+
     while low <= high:
         mid = low + (high - low) // 2
-        
+
         if nums[mid] == target:
             index = mid
             high = mid - 1
         elif nums[mid] > target:
             high = mid - 1
         else:
-            low = mid + 1      
-    
+            low = mid + 1
+
     return index
-          
+
 
 def find2(A, target):
     low, high = 0, len(A) - 1

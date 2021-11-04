@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, data):
-        self.data = data 
+        self.data = data
         self.next = None
 
 
@@ -29,18 +29,18 @@ class CircularLinkedList:
             while cur.next != self.head:
                 cur = cur.next
             cur.next = new_node
-    
+
         self.head = new_node
 
     def append(self, data):
-        if not self.head: # No elements in the list
+        if not self.head:  # No elements in the list
             self.head = Node(data)
             self.head.next = self.head
         else:
             new_node = Node(data)
             curr = self.head
-            
-            while curr.next != self.head: # Not at the end yet(Not last node)
+
+            while curr.next != self.head:  # Not at the end yet(Not last node)
                 curr = curr.next
 
             curr.next = new_node

@@ -23,6 +23,7 @@ Any 'O' that is not on the border and it is not connected to an 'O' on the borde
 Two cells are connected if they are adjacent cells connected horizontally or vertically.
 '''
 
+
 class Solution:
     def solve(self, board) -> None:
         if not board:
@@ -34,7 +35,7 @@ class Solution:
         for row in range(n):
             self.dfs(board, row, 0)
             self.dfs(board, row, m - 1)
-        
+
         # change up and down border O into D
         for col in range(m):
             self.dfs(board, 0, col)
@@ -46,14 +47,14 @@ class Solution:
                     board[i][j] = 'X'
                 elif board[i][j] == 'D':
                     board[i][j] = 'O'
-    
+
     def dfs(self, board, i: int, j: int) -> None:
         n, m = len(board), len(board[0])
 
-        if i < 0 or j < 0 or i >= nb_row or j >= nb_col or  board[i][j] != 'O':
+        if i < 0 or j < 0 or i >= nb_row or j >= nb_col or board[i][j] != 'O':
             return
 
-        board[i][j] = 'D' # SURROUND
+        board[i][j] = 'D'  # SURROUND
 
         self.dfs(board, i + 1, j)
         self.dfs(board, i - 1, j)

@@ -13,7 +13,7 @@ Output: 1->4->3->2->5->NULL
 # REVERSE 1
 
 
-def reverse():
+def reverse(head):
     if not head:
         return
 

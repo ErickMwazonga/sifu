@@ -7,6 +7,6 @@ def reverse(self):
         cur.prev = cur.next
         cur.next = tmp
         cur = cur.prev
-        
+
     if tmp:
         self.head = tmp.prev

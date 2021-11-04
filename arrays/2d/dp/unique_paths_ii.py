@@ -28,12 +28,13 @@ Time complexity: O(n*m)
 Space complexity: O(n*m)
 '''
 
+
 def paths(matrix):
     n, m = len(matrix), len(matrix[0])
 
     dp = [[0] * m for i in range(n)]
     dp[0][0] = 0 if (matrix[0][0] == 1) else 1
-    
+
     # First row
     for j in range(1, m):
         if matrix[0][j] == 1:
@@ -58,9 +59,8 @@ def paths(matrix):
     return dp[n-1][m-1]
 
 
-
 # RECURSION
-def paths(matrix, i = 0, j = 0):
+def paths(matrix, i=0, j=0):
     '''
     Time complexity: O(2^(n*m))
     Space complexity: O(n + m)

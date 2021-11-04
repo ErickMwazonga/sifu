@@ -20,24 +20,24 @@ def knapSack(values, w, W):
             if current_weight > j:
                 dp[i][j] = dp[i - 1][j]
             else:
-				# find maximum value we get by excluding or including the ith item
+                # find maximum value we get by excluding or including the ith item
                 # max of exclude vs include
                 include = dp[i - 1][rem_weight] + current_val
                 exclude = dp[i - 1][j]
 
-				dp[i][j] = max(include, exclude)
+                dp[i][j] = max(include, exclude)
 
-	# return maximum value
-	return dp[n][W]
+        # return maximum value
+        return dp[n][W]
 
 
 if __name__ == '__main__':
 
-	# Input: set of items each with a weight and a value
-	v = [20, 5, 10, 40, 15, 25]
-	w = [1, 2, 3, 8, 7, 4]
+    # Input: set of items each with a weight and a value
+    v = [20, 5, 10, 40, 15, 25]
+    w = [1, 2, 3, 8, 7, 4]
 
-	# Knapsack capacity
-	W = 10
+    # Knapsack capacity
+    W = 10
 
-	print("Knapsack value is", knapSack(v, w, W))
+    print("Knapsack value is", knapSack(v, w, W))

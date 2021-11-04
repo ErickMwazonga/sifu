@@ -16,6 +16,7 @@ Example:
     so the number 17 is the correct response.
 """
 
+
 def integer_square_root(k):
     low, high = 0, k
 

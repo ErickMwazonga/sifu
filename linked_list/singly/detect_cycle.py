@@ -12,15 +12,16 @@ Return true if there is a cycle in the linked list. Otherwise, return false.
 '''
 
 # A linked list node
+
+
 class Node:
     def __init__(self, data=None, next=None):
         self.data = data
         self.next = next
 
+
 def detectCycle(head):
-    '''
-    time - O(n), space - O(n)
-    '''
+    '''time - O(n), space - O(n)'''
 
     curr = head
     _hash = set()
@@ -28,11 +29,12 @@ def detectCycle(head):
     while curr:
         if curr in _hash:
             return True
-        
+
         _hash.add(curr)
         curr = curr.next
 
     return False
+
 
 def detectCycle(head):
     '''

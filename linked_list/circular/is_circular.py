@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, data):
-        self.data = data 
+        self.data = data
         self.next = None
 
 
@@ -29,8 +29,8 @@ class LinkedList:
 
 class CircularLinkedList:
     def __init__(self):
-        self.head = None 
-    
+        self.head = None
+
     def append(self, data):
         if not self.head:
             self.head = Node(data)
@@ -52,8 +52,9 @@ class CircularLinkedList:
                 return True
 
         return False
-        
+
         print(curr.data)
+
 
 cllist = CircularLinkedList()
 cllist.append(1)

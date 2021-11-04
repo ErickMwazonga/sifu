@@ -31,18 +31,18 @@ One possible solution is
 A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> idle -> A
 '''
 
-    
+
 def leastInterval(tasks, n: int) -> int:
     '''https://leetcode.com/problems/task-scheduler/discuss/760778/Python-solution-with-easy-to-understand-video-explanation'''
 
     freq = {}
     for task in tasks:
         freq[task] = freq.get(task, 0) + 1
-        
+
     freq = list(freq.values())
     most_freq = max(freq)
     no_of_tasks_with_most_freq = freq.count(most_freq)
-    
+
     all_counts = (most_freq - 1) * (n + 1) + no_of_tasks_with_most_freq
-    
+
     return max(len(tasks), all_counts)

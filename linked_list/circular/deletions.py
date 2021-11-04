@@ -1,12 +1,12 @@
 class Node:
     def __init__(self, data):
-        self.data = data 
+        self.data = data
         self.next = None
 
 
 class CircularLinkedList:
     def __init__(self):
-        self.head = None 
+        self.head = None
 
     def append(self, data):
         if not self.head:
@@ -21,7 +21,7 @@ class CircularLinkedList:
             new_node.next = self.head
 
     def print_list(self):
-        curr = self.head 
+        curr = self.head
 
         while curr:
             print(curr.data)
@@ -37,41 +37,42 @@ class CircularLinkedList:
 
         # Key is the head
         if self.head.data == key:
-            curr = self.head 
+            curr = self.head
             while curr.next != self.head:
-                curr = curr.next 
+                curr = curr.next
             curr.next = self.head.next
             self.head = self.head.next
         else:
-            curr = self.head 
-            prev = None 
+            curr = self.head
+            prev = None
 
             while curr.next != self.head:
-                prev = curr 
+                prev = curr
                 curr = curr.next
 
                 if curr.data == key:
-                    prev.next = curr.next 
+                    prev.next = curr.next
                     curr = curr.next
 
     def remove_node(self, node):
         if self.head == node:
-            curr = self.head 
+            curr = self.head
             while curr.next != self.head:
-                curr = curr.next 
-            curr.next = self.head.next 
+                curr = curr.next
+            curr.next = self.head.next
             self.head = self.head.next
         else:
-            curr = self.head 
+            curr = self.head
             prev = None
 
             while curr.next != self.head:
-                prev = curr 
+                prev = curr
                 curr = curr.next
 
                 if curr == node:
                     prev.next = curr.next
                     curr = curr.next
+
 
 cllist = CircularLinkedList()
 cllist.append("A")

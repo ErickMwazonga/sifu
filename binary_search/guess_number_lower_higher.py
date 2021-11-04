@@ -13,14 +13,15 @@ You call a pre-defined API int guess(int num), which returns 3 possible results:
 Return the number that I picked.
 '''
 
+
 class Solution:
     def guessNumber(self, n: int) -> int:
         l, r = 1, n
-        
+
         while l <= r:
             m = (l + r) // 2
             status = guess(m)
-            
+
             if status == 0:
                 return m
             elif status == 1:

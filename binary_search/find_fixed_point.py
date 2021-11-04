@@ -41,7 +41,7 @@ def find_fixed_point(A):
             low = mid + 1
         else:
             high = mid - 1
-            
+
     return None
 
 

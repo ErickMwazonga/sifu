@@ -5,6 +5,7 @@ For example, 1111, 0000111110, 1111000 are valid strings but 01010011, 01010, 10
 https://www.geeksforgeeks.org/check-binary-string-0-1s-not-set-2-regular-expression-approach/
 """
 
+
 def has_zeros_in_ones(binary):
     if len(set(binary)) == 1:
         return 'VALID'
@@ -17,9 +18,9 @@ def has_zeros_in_ones(binary):
 
         if found_zero != -1:
             return 'INVALID'
-    
+
     return 'VALID'
-    
+
 
 # For example, 1111, 0000111110, 1111000 are valid strings but 01010011, 01010, 101 are not.
 # print(has_zeros_in_ones('1111'))

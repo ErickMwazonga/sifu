@@ -30,6 +30,7 @@ Constraints:
 IP consists only of English letters, digits and the characters '.' and ':'
 '''
 
+
 class Solution:
     def validIPAddress(self, IP: str) -> str:
         def isIPv4(s):
@@ -38,19 +39,19 @@ class Solution:
                 return str(num) == s and 0 <= num <= 255
             except:
                 return False
-            
+
         def isIPv6(s):
             try:
                 return len(s) <= 4 and int(s, 16) >= 0
             except:
                 return False
-        
+
         if IP.count('.') == 3:
             if all(isIPv4(s) for s in IP.split('.')):
                 return 'IPv4'
-        
+
         if IP.count(':') == 7:
             if all(isIPv6(s) for s in IP.split(':')):
                 return 'IPv6'
-        
+
         return "Neither"

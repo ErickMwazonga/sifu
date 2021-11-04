@@ -20,12 +20,14 @@ Output : 4
     7->6  6->3  3->2  2->1  
 """
 
-def countways(n): 
+
+def countways(n):
     if n == 1:
         return 0
     elif n % 2 == 0:
         return 1 + countways(n / 2)
     else:
         return 1 + min(countways(n - 1), countways(n + 1))
-    
+
+
 print(countways(15))
