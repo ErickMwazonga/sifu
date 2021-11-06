@@ -14,6 +14,7 @@ boolean empty() Returns true if the stack is empty, false otherwise.
 
 from collections import deque
 
+
 class Stack:
     def __init__(self):
         self.stack = deque()

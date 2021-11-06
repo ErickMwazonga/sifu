@@ -11,29 +11,33 @@ PROPERTIES
 '''
 
 # Create a node
+
+
 class Node:
     def __init__(self, key):
         self.key = key
         self.left = None
         self.right = None
 
-def search(root,key): 
-    if root is None or root.val == key: 
-        return root 
-  
-    if root.val < key: 
-        return search(root.right, key) 
-    
-    if root.val > key: 
-        return search(root.left, key) 
+
+def search(root, key):
+    if root is None or root.val == key:
+        return root
+
+    if root.val < key:
+        return search(root.right, key)
+
+    if root.val > key:
+        return search(root.left, key)
+
 
 def insert(node, key):
     # Return a new node if the tree is empty
     if node is None:
         return Node(key)
 
-    if key == node.val: 
-        return node 
+    if key == node.val:
+        return node
 
     # Traverse to the right place and insert the node
     if key < node.key:

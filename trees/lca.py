@@ -21,6 +21,7 @@ Input: root = [1,2], p = 1, q = 2
 Output: 1
 '''
 
+
 def lowestCommonAncestor(self, root, p, q):
     '''Time complexity: O(n), Space complexity: O(h)'''
 
@@ -38,6 +39,6 @@ def lowestCommonAncestor(self, root, p, q):
     # p and q appears in left and right respectively, then their ancestor is root
     if left and right:
         return root
-    
+
     # p and q not in left, then it must be in right, otherwise left
     return left or right

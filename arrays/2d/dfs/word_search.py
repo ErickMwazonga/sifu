@@ -34,7 +34,6 @@ class Solution:
         return False
 
     # check whether can find word, start at (i,j) position
-
     def dfs(self, board, i, j, word, visited) -> bool:
         if len(word) == 0:  # all the characters are checked
             return True

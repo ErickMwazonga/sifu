@@ -10,16 +10,19 @@ Search for a node to remove.
 If the node is found, delete the node.
 '''
 
+
 class Tree:
-    def __init__(self, data, left = None, right = None):
+    def __init__(self, data, left=None, right=None):
         self.data = data
         self.left = left
         self.right = right
+
 
 def getMinNode(root):
     while root.left:
         root = root.left
     return root
+
 
 def deleteNodeBst(root, num):
     if root is None:

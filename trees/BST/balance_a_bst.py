@@ -12,29 +12,30 @@ Output: [2,1,3,null,null,null,4]
 Explanation: This is not the only correct answer, [3,1,4,null,2,null,null] is also correct.
 '''
 
-def balanceBST(self, root):	
-	inorder_array = []
 
-	# build inorder traversal of the BST
-	def buildArray(node):
-		if not node:
-			return
-			
-		buildArray(node.left)
-		inorder_array.append(node.val)
-		buildArray(node.right)
+def balanceBST(root):
+    inorder_array = []
 
-	# build a BST from inorder array
-	def balanceBSTHelper(inorder_array):
-		if not inorder_array:
-			return 
+    # build inorder traversal of the BST
+    def buildArray(node):
+        if not node:
+            return
 
-		mid = len(inorder_array) // 2
-		node = TreeNode(inorder_array[mid])
-		node.left = balanceBSTHelper(inorder_array[ :mid ])
-		node.right = balanceBSTHelper(inorder_array[mid + 1: ])
+        buildArray(node.left)
+        inorder_array.append(node.val)
+        buildArray(node.right)
 
-		return node
+    # build a BST from inorder array
+    def balanceBSTHelper(inorder_array):
+        if not inorder_array:
+            return
 
-	buildArray(root)
-	return balanceBSTHelper(inorder_array)
+        mid = len(inorder_array) // 2
+        node = TreeNode(inorder_array[mid])
+        node.left = balanceBSTHelper(inorder_array[:mid])
+        node.right = balanceBSTHelper(inorder_array[mid + 1:])
+
+        return node
+
+    buildArray(root)
+    return balanceBSTHelper(inorder_array)

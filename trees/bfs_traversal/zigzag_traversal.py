@@ -45,10 +45,10 @@ def zigzagLevelOrder(root: TreeNode):
                 queue.append(node.right)
 
         if even_level:
-            res.append(level[::-1])   
+            res.append(level[::-1])
         else:
             res.append(level)
-        
+
         even_level = not even_level
 
     return res
@@ -61,25 +61,24 @@ def zigzagLevelOrder(root: TreeNode):
     queue, res = [root], []
     even_level = False
 
+    while queue:
+        n = len(queue)
+        level = [0] * n
 
-	while queue:
-		n = len(queue)
-		level = [0] * n 
-
-		for i in range(n):
+        for i in range(n):
             node = queue.pop(0)
 
-			if node.left:
-				queue.append(node.left)
-			if node.right:
-				queue.append(node.right)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
 
-			if even_level:
-				level[n-1-i] = node.val
-			else:
-				level[i] = node.val
-        
-		res.append(level)
-		even_level = not even_level
+            if even_level:
+                level[n-1-i] = node.val
+            else:
+                level[i] = node.val
 
-	return res
+        res.append(level)
+        even_level = not even_level
+
+        return res

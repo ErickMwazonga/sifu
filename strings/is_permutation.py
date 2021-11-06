@@ -23,6 +23,7 @@ def is_perm_1(str_1, str_2):
     for i in range(n):
         if str_1[i] != str_2[i]:
             return False
+
     return True
 
 

@@ -13,35 +13,39 @@ The right-most node is also defined in the same way with left and right exchange
 For example, boundary traversal of the following tree is “20 8 4 10 14 25 22”
 '''
 
-class Node: 
 
-    def __init__(self, data): 
-        self.data = data  
+class Node:
+
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
 
-def getLeaves(root, result): 
+
+def getLeaves(root, result):
     if root:
-        getLeaves(root.left) 
-          
-        if not root.left and not root.right: 
+        getLeaves(root.left)
+
+        if not root.left and not root.right:
             result.append(root.data)
-  
+
         getLeaves(root.right)
 
-def getboundaryLeft(root, result): 
-    if root: 
-        if root.left: 
+
+def getBoundaryLeft(root, result):
+    if root:
+        if root.left:
             result.append(root.data)
-            getboundaryLeft(root.left) 
+            getBoundaryLeft(root.left)
         elif root.right:
             result.append(root.data)
-            getboundaryLeft(root.right)
+            getBoundaryLeft(root.right)
 
-def getBoundaryRight(root, result): 
-    if root: 
-        if root.right: 
-            getBoundaryRight(root.right) 
+
+def getBoundaryRight(root, result):
+    if root:
+        if root.right:
+            getBoundaryRight(root.right)
             result.append(root.data)
         elif root.left:
             getBoundaryRight(root.left)
@@ -53,24 +57,23 @@ def printBoundary(root):
 
     if root:
         result.append(root.data)
-        getBoundaryLeft(root.left, result)   
-        getboundaryLeft(root, result) 
+        getBoundaryLeft(root.left, result)
+        getBoundaryLeft(root, result)
         getBoundaryRight(root.right, result)
 
     return result
 
 
-# Driver program to test above function 
-root = Node(20) 
-root.left = Node(8) 
-root.left.left = Node(4) 
-root.left.right = Node(12) 
-root.left.right.left = Node(10) 
-root.left.right.right = Node(14) 
-root.right = Node(22) 
-root.right.right = Node(25) 
-printBoundary(root) 
-
+# Driver program to test above function
+root = Node(20)
+root.left = Node(8)
+root.left.left = Node(4)
+root.left.right = Node(12)
+root.left.right.left = Node(10)
+root.left.right.right = Node(14)
+root.right = Node(22)
+root.right.right = Node(25)
+printBoundary(root)
 
 
 # COMPLETE BINARY TREE
@@ -82,18 +85,18 @@ def boundaryTraversal(root):
         if not root.left and not root.right:
             print(root.data)
             return
-  
+
         # List to store order of traversed nodes
         list = []
         list.append(root)
-  
+
         # Traverse left boundary without root
         # and last node
         temp = root.left
         while temp.left:
             list.append(temp)
             temp = temp.left
-  
+
         # BFS designed to only include leaf nodes
         q = deque()
         q.append(root)
@@ -105,7 +108,7 @@ def boundaryTraversal(root):
                 q.append(x.right)
             if x.left:
                 q.append(x.left)
-  
+
         # Traverse right boundary without root
         # and last node
         list_r = []
@@ -113,14 +116,13 @@ def boundaryTraversal(root):
         while temp.right:
             list.append(temp)
             temp = temp.right
-  
+
         # Reversing the order
         list_r = list_r[::-1]
-  
+
         # Concatenating the two lists
         list += list_r
-  
+
         # Printing the node's data from the list
-        print (" ".join([str(i.data) for i in list]))
+        print(" ".join([str(i.data) for i in list]))
     return
-  

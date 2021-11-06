@@ -33,6 +33,8 @@ In calls to MyCalendar.book(start, end), start and end are integers in the range
 '''
 
 # Approach #1: Brute Force [Accepted]
+
+
 class MyCalendar:
     '''
     Time Complexity: O(N^2) where N is the number of events booked. For each new event,
@@ -59,7 +61,7 @@ class Node:
         self.end = end
         self.left = None
         self.right = None
-    
+
     def insert(self, node):
         if node.end <= self.start:
             if not self.left:
@@ -75,8 +77,8 @@ class Node:
                 return self.right.insert(node)
         else:
             return False
-        
-        
+
+
 class MyCalendar:
 
     def __init__(self):
@@ -84,9 +86,9 @@ class MyCalendar:
 
     def book(self, start: int, end: int) -> bool:
         node = Node(start, end)
-        
+
         if not self.root:
             self.root = node
             return True
-        
+
         return self.root.insert(node)

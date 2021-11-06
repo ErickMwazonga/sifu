@@ -10,11 +10,13 @@ Given the sorted array: [-10,-3,0,5,9],
 One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
 '''
 
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
 
 class Solution:
     '''Time complexity: O(N), Space complexity: O(N)'''
@@ -37,5 +39,3 @@ class Solution:
         root.right = self.conversion_helper(nums[mid + 1: n])
 
         return root
-
-    

@@ -25,19 +25,20 @@ Input: root = [3,2,4,1]
 Output: [7,9,4,10]
 '''
 
+
 class Solution(object):
     def bstToGst(self, root):
-        
+
         self.sum = 0
-        
+
         def reverseInorder(self, root):
             if not root:
                 return
-            
+
             reverseInorder(self, root.right)
-            root.val += self.sum # change the current node with sum of all previos node values
-            self.sum = root.val # update the root_sum for the next node
-            reverseInorder(self, root.left) 
-            
+            root.val += self.sum  # change the current node with sum of all previos node values
+            self.sum = root.val  # update the root_sum for the next node
+            reverseInorder(self, root.left)
+
         reverseInorder(self, root)
         return root

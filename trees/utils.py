@@ -4,14 +4,14 @@ class Stack(object):
 
     def __len__(self):
         return self.size()
-     
+
     def size(self):
         return len(self.items)
 
     def push(self, item):
         self.items.append(item)
 
-    def pop(self):  
+    def pop(self):
         if not self.is_empty():
             return self.items.pop()
 
