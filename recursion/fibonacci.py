@@ -1,22 +1,43 @@
 from typing import Dict
 from functools import lru_cache
 
+'''
+Intuition
+fib(n) = fib(n-1) + fib(n-2) for n > 2
+'''
+
 
 def fibonacci(n):
-    '''O(2^n)) -> Exponential'''
+    '''
+    Time - O(2^n)) -> Exponential
+    Space - O(n) -> Storage of call stack
+    '''
 
     if n <= 1:
         return 1
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
+# MEMOIZATION - Maintain a CACHE
 def fibonacci_memo(n: int) -> int:
+    '''Time - O(n), Space - O(n)'''
+
     memo: Dict[int: int] = {0: 0, 1: 1}
 
     if n not in memo:
         memo[n] = memo[n-1] + memo[n-2]  # memoization
 
     return memo[n]
+
+
+def fib_memoized(n, memo={0: 0, 1: 1}):
+    '''Time - O(n), Space - O(n)'''
+
+    if n in memo:
+        return memo[n]
+    else:
+        memo[n] = fib_memoized[n-1, memo] + fib_memoized[n-2, memo]
+        return memo[n]
 
 
 @lru_cache(maxsize=None)
@@ -53,6 +74,8 @@ def fib2(n):
 
 
 def fib5(n: int) -> int:
+    '''Time - O(n), Space - O(1)'''
+
     if n == 0:
         return n
 
