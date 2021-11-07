@@ -42,8 +42,9 @@ class Solution:
 
     def dfs(self, grid, row, col):
         n, m = len(grid), len(grid[0])
+        outside = row < 0 or col < 0 or row >= n or col >= m
 
-        if row < 0 or col < 0 or row >= n or col >= m or grid[row][col] == '0':
+        if outside or grid[row][col] == '0':
             return
 
         grid[row][col] = '0'  # SINK
@@ -52,3 +53,22 @@ class Solution:
         self.dfs(grid, row, col - 1)
         self.dfs(grid, row + 1, col)
         self.dfs(grid, row - 1, col)
+
+
+soln = Solution()
+
+grid1 = [
+    ["1", "1", "1", "1", "0"],
+    ["1", "1", "0", "1", "0"],
+    ["1", "1", "0", "0", "0"],
+    ["0", "0", "0", "0", "0"]
+]
+assert soln.numIslands(grid1) == 1
+
+grid2 = [
+    ["1", "1", "0", "0", "0"],
+    ["1", "1", "0", "0", "0"],
+    ["0", "0", "1", "0", "0"],
+    ["0", "0", "0", "1", "1"]
+]
+assert soln.numIslands(grid2) == 3

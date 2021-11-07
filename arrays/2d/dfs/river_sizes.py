@@ -34,7 +34,7 @@ def riverSizes(matrix):
 
 
 def check(i, j, matrix):
-    outside = (i < 0 or i >= len(matrix)) or (j < 0 or j >= len(matrix[i]))
+    outside = i < 0 or i >= len(matrix) or j < 0 or j >= len(matrix[i])
 
     if outside or matrix[i][j] == 0:
         return 0
