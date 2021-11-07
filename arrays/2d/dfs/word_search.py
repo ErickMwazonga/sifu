@@ -40,9 +40,8 @@ class Solution:
 
         # boundary check + isVisisted + cannot be self
         n, m = len(board), len(board[0])
-        if (i < 0 or i >= n or j < 0 or j >= m
-            or word[0] != board[i][j] or (i, j) in visited
-            ):
+        outside = i < 0 or i >= n or j < 0 or j >= m
+        if (outside or word[0] != board[i][j] or (i, j) in visited):
             return False
 
         visited.append((i, j))
@@ -59,3 +58,15 @@ class Solution:
             visited.pop()  # avoid visit agian
 
         return nxt
+
+
+board = [
+    ['A', 'B', 'C', 'E'],
+    ['S', 'F', 'C', 'S'],
+    ['A', 'D', 'E', 'E']
+]
+
+soln = Solution()
+assert soln.exist(board, "ABCCED") == True
+assert soln.exist(board, "SEE") == True
+assert soln.exist(board, "ABCB") == False

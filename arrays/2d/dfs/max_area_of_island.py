@@ -46,7 +46,8 @@ class Solution:
     def dfs(self, grid, row, col):
         n, m = len(grid), len(grid[0])
 
-        if row < 0 or col < 0 or row >= n or col >= m or grid[row][col] == 0:
+        outside = row < 0 or col < 0 or row >= n or col >= m
+        if outside or grid[row][col] == 0:
             return 0
 
         grid[row][col] = 0  # SINK
@@ -57,3 +58,18 @@ class Solution:
         up = self.dfs(grid, row - 1, col)
 
         return 1 + up + down + left + right
+
+
+matrix = [
+    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
+    [0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+]
+
+soln = Solution()
+assert soln.maxAreaOfIsland(matrix) == 6
