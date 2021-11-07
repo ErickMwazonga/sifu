@@ -59,3 +59,9 @@ def findJudge(N: int, trust: list[list[int]]) -> int:
             return i
 
     return -1
+
+
+assert findJudge(2, [[1, 2]]) == 2
+assert findJudge(3, [[1, 3], [2, 3], [3, 1]]) == -1
+assert findJudge(3, [[1, 2], [2, 3]]) == -1
+assert findJudge(4, [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]) == 3
