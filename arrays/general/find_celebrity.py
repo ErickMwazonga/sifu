@@ -28,6 +28,7 @@ def find_celebrity(N):
 
     # Handle cases where there's no celebrity
     for i in range(N):
+        # The candidate knows me???? i don't know the candidate????
         if i != candidate and (knows(candidate, i) or not knows(i, candidate)):
             return -1
 
