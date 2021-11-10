@@ -18,10 +18,10 @@ Sample Output
 4 -> 5 -> 0 -> 1 -> 2 -> 3 // the new head node with value 4
 '''
 
-from index import SinglyLinkedList as LinkedList
+from index import Node, SinglyLinkedList as LinkedList
 
 
-def getLength(head):
+def getLength(head: Node):
     count = 1
 
     while head.next:
@@ -31,7 +31,7 @@ def getLength(head):
     return count
 
 
-def getTail(head):
+def getTail(head: Node):
     tail = head
 
     while tail.next:
@@ -40,7 +40,7 @@ def getTail(head):
     return tail
 
 
-def shiftLinkedList(head, k):
+def shiftLinkedList(head: Node, k: int):
     length = getLength(head)
     tail = getTail(head)
 

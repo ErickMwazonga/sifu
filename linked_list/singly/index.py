@@ -11,7 +11,7 @@ class SinglyLinkedList:
         '''Create new SinglyLinkedList: 0(1) time'''
         self.head = None
 
-    def printList(self):
+    def print_node_list(self):
         '''Return string representation of the list: 0(n) time'''
         nodes = []
         curr = self.head
@@ -19,10 +19,12 @@ class SinglyLinkedList:
         while curr:
             nodes.append(curr.data)
             curr = curr.next
+
         return nodes
 
     def print_list(self):
         cur_node = self.head
+
         while cur_node:
             print(cur_node.data, end="->")
             cur_node = cur_node.next
