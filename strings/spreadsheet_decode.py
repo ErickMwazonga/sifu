@@ -23,8 +23,6 @@ def spreadsheet_decode_column(col_num):
     return col_str
 
 
-spreadsheet_decode_column(702)
-
-# assert spreadsheet_decode_column(1) == 'A'
-# assert spreadsheet_decode_column(27) == 'AA'
-# assert spreadsheet_decode_column(702) == 'ZZ'
+assert spreadsheet_decode_column(1) == 'A'
+assert spreadsheet_decode_column(27) == 'AA'
+assert spreadsheet_decode_column(702) == 'ZZ'

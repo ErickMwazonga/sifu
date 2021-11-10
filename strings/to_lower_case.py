@@ -30,3 +30,9 @@ class Solution:
             else:
                 res += str[i]
         return res
+
+
+soln = Solution()
+soln.toLowerCase("Hello") == "hello"
+soln.toLowerCase("here") == "here"
+soln.toLowerCase("LOVELY") == "lovely"

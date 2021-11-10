@@ -40,6 +40,6 @@ def find_missing(full_list, partial_list):
     return sum(full_list) - sum(partial_list)
 
 
-assert find_missing([0, 1, 2, 4, 5, 6]) = 7
-assert find_missing([3, 0, 1]) = 2
-assert find_missing([9, 6, 4, 2, 3, 5, 7, 0, 1]) = 8
+assert find_missing([0, 1, 2, 4, 5, 6]) == 7
+assert find_missing([3, 0, 1]) == 2
+assert find_missing([9, 6, 4, 2, 3, 5, 7, 0, 1]) == 8

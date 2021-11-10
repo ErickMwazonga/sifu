@@ -25,10 +25,17 @@ nums       index     target
 
 
 class Solution:
-    def createTargetArray(self, nums: list[int], index: list[int]) -> list[int]:
+    def createTargetArray(self, nums, index) -> list[int]:
         results = []
 
         for num, idx in zip(nums, index):
             results.insert(idx, num)
 
         return results
+
+
+nums = [0, 1, 2, 3, 4]
+index = [0, 1, 2, 2, 1]
+
+soln = Solution()
+soln.createTargetArray(nums, index) == [0, 4, 1, 3, 2]

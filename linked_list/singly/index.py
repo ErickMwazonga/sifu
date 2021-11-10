@@ -21,6 +21,24 @@ class SinglyLinkedList:
             curr = curr.next
         return nodes
 
+    def print_list(self):
+        cur_node = self.head
+        while cur_node:
+            print(cur_node.data, end="->")
+            cur_node = cur_node.next
+
+    def append(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next
+        last_node.next = new_node
+
     def size(self, head):
         if not head:
             return 0

@@ -39,7 +39,7 @@ class SortedSearch:
     element within a row. Here’s the walkthrough:
     '''
 
-    def search_matrix(self, matrix: Matrix, target: int) -> bool:
+    def search_matrix(self, matrix, target) -> bool:
         n_rows, n_cols = len(matrix), len(matrix[0])
 
         if not n_rows or not n_cols:
@@ -50,7 +50,7 @@ class SortedSearch:
         while start < end:
             mid_row = (start + end) // 2
             # inner binary search on the row
-            found = helper_search(matrix[mid_row], target)
+            found = self.helper_search(matrix[mid_row], target)
             if found:
                 return True
             elif matrix[mid_row][-1] > target:
@@ -60,19 +60,18 @@ class SortedSearch:
 
         return False
 
-        # Helper function to perform binary search for the target on a row
+    # Helper function to perform binary search for the target on a row
+    def helper_search(row, target):
+        n_cols = len(row)
+        start, end = 0, n_cols - 1
 
-        def helper_search(row, target):
-            n_cols = len(row)
-            start, end = 0, n_cols - 1
+        while start <= end:
+            mid = (start + end) // 2
 
-            while start <= end:
-                mid = (start + end) // 2
-
-                if row[mid] == target:
-                    return True
-                elif row[mid] < target:
-                    start = mid + 1
-                else:
-                    end = mid - 1
-            return False
+            if row[mid] == target:
+                return True
+            elif row[mid] < target:
+                start = mid + 1
+            else:
+                end = mid - 1
+        return False

@@ -43,4 +43,7 @@ class Solution:
         return ord(char) - ord('A') + 1
 
 
-print(Solution.spreadsheet_encode_column("ZZ"))
+soln = Solution()
+assert soln.titleToNumber("A") == 1
+assert soln.titleToNumber("AB") == 28
+assert soln.titleToNumber("ZY") == 701

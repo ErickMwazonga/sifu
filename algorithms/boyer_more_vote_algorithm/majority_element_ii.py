@@ -49,3 +49,7 @@ class Solution:
         if count2 > len(nums)/3:
             ans.append(cand2)
         return ans
+
+
+soln = Solution()
+soln.majorityElement([1, 2]) == [1, 2]

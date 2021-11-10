@@ -45,3 +45,8 @@ def firstMissingPositive(nums) -> int:
             return idx + 1
 
     return n + 1
+
+
+assert first_missing_postive([1, 2, 0]) == 3
+assert first_missing_postive([3, 4, -1, 1]) == 2
+assert first_missing_postive([7, 8, 9, 11, 12]) == 1

@@ -42,3 +42,9 @@ def max_subarray(A):
         max_so_far = max(max_so_far, max_ending_here)
 
     return max_so_far
+
+
+assert maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+assert maxSubArray([2, 3, -1, 4, -10, 2, 5]) == 8
+assert maxSubArray([-3, -1, -2]) == -1
+assert max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6

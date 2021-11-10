@@ -35,3 +35,7 @@ def topKFrequent(nums, k):
         res.extend(bucket[i])
 
     return res[:k]
+
+
+assert topKFrequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+assert topKFrequent([1], 1) == [1]

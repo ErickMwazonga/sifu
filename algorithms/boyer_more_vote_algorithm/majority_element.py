@@ -43,3 +43,8 @@ class Solution:
         for k, v in counter.items():
             if v > majority:
                 return k
+
+
+soln = Solution()
+soln.majorityElement([3, 2, 3]) == 3
+soln.majorityElement([2, 2, 1, 1, 1, 2, 2]) == 2

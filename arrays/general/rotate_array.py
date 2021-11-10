@@ -37,9 +37,7 @@ def rotate(nums, k) -> None:
         nums[i] = temps[i]
 
 
-nums = [1, 2, 3, 4, 5, 6, 7]
-k = 3
-print(rotate(nums, k))
+assert rotate([1, 2, 3, 4, 5, 6, 7], 3) == [5, 6, 7, 1, 2, 3, 4]
 
 
 def rotate(nums, k: int) -> None:

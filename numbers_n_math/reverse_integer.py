@@ -14,7 +14,7 @@ Input: x = 0 -> 0
 '''
 
 
-def reverse(self, x: int) -> int:
+def reverse(x: int) -> int:
     is_negative = x < 0
 
     x = abs(x)
@@ -28,3 +28,9 @@ def reverse(self, x: int) -> int:
         return -reversed_x
 
     return reversed_x
+
+
+assert reverse(123) == 321
+assert reverse(-123) == -321
+assert reverse(120) == 21
+assert reverse(0) == 0

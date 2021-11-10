@@ -42,3 +42,8 @@ class Solution:
             maxIndex = max(maxIndex, i + arr[i])
 
         return maxIndex >= n - 1
+
+
+soln = Solution()
+soln.canJump([2, 3, 1, 1, 4]) == True
+soln.canJump([3, 2, 1, 0, 4]) == False

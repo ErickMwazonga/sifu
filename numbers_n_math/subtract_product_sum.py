@@ -14,14 +14,16 @@ Result = 24 - 9 = 15
 '''
 
 
-class Solution:
-    def subtractProductAndSum(self, n: int) -> int:
-        product = 1
-        _sum = 0
+def subtractProductAndSum(n: int) -> int:
+    product = 1
+    _sum = 0
 
-        while n > 0:
-            n, rem = divmod(n, 10)
-            product *= rem
-            _sum += rem
+    while n > 0:
+        n, rem = divmod(n, 10)
+        product *= rem
+        _sum += rem
 
-        return product - _sum
+    return product - _sum
+
+
+assert subtractProductAndSum(234) == 15

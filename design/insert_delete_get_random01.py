@@ -70,9 +70,9 @@ class RandomizedSet:
 
             return True
 
-        def getRandom(self) -> int:
-            # n = len(self.values)
-            # random_index = random.randint(0, n - 1)
-            # return self.values[random_index]
+    def getRandom(self) -> int:
+        # n = len(self.values)
+        # random_index = random.randint(0, n - 1)
+        # return self.values[random_index]
 
-            return random.choice(self.values)
+        return random.choice(self.values)

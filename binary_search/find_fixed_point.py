@@ -15,7 +15,7 @@ A = [-10, -5, 0, 3, 7]
 #A = [0, 2, 5, 8, 17]
 
 # No fixed point. Return "None":
-#A = [-10, -5, 3, 4, 7, 9]
+# A = [-10, -5, 3, 4, 7, 9]
 
 
 # Time Complexity: O(n)

@@ -15,7 +15,7 @@ The string will only contain lowercase characters a-z. The maximum length of the
 """
 
 
-def validPalindrome(self, s: str) -> bool:
+def validPalindrome(s: str) -> bool:
     left, right = 0, len(s)
 
     while left < right:
@@ -27,3 +27,7 @@ def validPalindrome(self, s: str) -> bool:
             # Get the subsets eliminating either of the chars
             first, second = s[left+1: right+1], s[left: right]
             return first == first[::-1] or second == second[::-1]
+
+
+assert validPalindrome("aba") == True
+assert validPalindrome("abca") == True

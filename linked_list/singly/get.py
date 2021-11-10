@@ -26,7 +26,7 @@ class LinkedList:
             last_node = last_node.next
         last_node.next = new_node
 
-     def get_node(self, val):
+    def get_node(self, val):
         '''
         Search for the first element with val, return element
         or None if does not exist: 0(n) time
@@ -36,9 +36,9 @@ class LinkedList:
             if curr.data == val:
                 return curr
             curr = curr.next
-        
+
         raise ValueError('Not Found')
-    
+
     def get_ith(head, i):
         if i < 0:
             raise ValueError('No negatives!!! 🐱')
@@ -55,7 +55,7 @@ class LinkedList:
 
         raise ValueError('Not Found')
 
-        
+
 llist = LinkedList()
 llist.append("A")
 llist.append("B")

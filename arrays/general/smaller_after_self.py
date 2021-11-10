@@ -29,4 +29,4 @@ def countSmaller(nums):
     return result
 
 
-countSmaller([5, 2, 6, 1])
+assert countSmaller([5, 2, 6, 1]) == [2, 1, 1, 0]

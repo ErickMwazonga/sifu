@@ -38,3 +38,6 @@ def decompressRLElist(nums):
         res += [val] * freq
 
     return res
+
+
+decompressRLElist([1, 1, 2, 3]) == [1, 3, 3]

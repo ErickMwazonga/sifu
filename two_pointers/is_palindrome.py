@@ -10,7 +10,7 @@ Note: For the purpose of this problem, we define empty string as valid palindrom
 '''
 
 
-def isPalindrome(self, s: str) -> bool:
+def isPalindrome(s: str) -> bool:
     '''Time complexity: O(N), Space complexity: O(N)'''
 
     s = s.lower()
@@ -40,3 +40,5 @@ def is_palindrome2(s):
 
 
 assert isPalindrome('pap') == True
+assert isPalindrome("race a car") == False
+assert isPalindrome("A man, a plan, a canal: Panama") == True

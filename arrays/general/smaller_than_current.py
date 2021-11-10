@@ -36,7 +36,7 @@ nums = [8, 1, 2, 2, 3]
 assert smallerNumbersThanCurrent(nums) == [4, 0, 1, 1, 3]
 
 
-def smallerNumbersThanCurrent(nums):
+def smallerNumbersThanCurrent2(nums):
     count = [0] * 102
     for num in nums:
         count[num + 1] += 1
@@ -45,3 +45,7 @@ def smallerNumbersThanCurrent(nums):
         count[i] += count[i-1]
 
     return [count[num] for num in nums]
+
+
+nums = [8, 1, 2, 2, 3]
+assert smallerNumbersThanCurrent2(nums) == [4, 0, 1, 1, 3]

@@ -29,48 +29,46 @@ Input: num = 1994 -> "MCMXCIV"
 '''
 
 
-class Solution:
-    def intToRoman(self, num: int) -> str:
-        result = ''
-        mapping = self.mapping()
+def intToRoman(self, num: int) -> str:
+    result = ''
+    mapping = self.mapping()
 
-        # The dictionary loop doesn't affect time complexity since it doesn't change
-        for roman, value in mapping.items():
-            no_of_symbols = num // value
+    # The dictionary loop doesn't affect time complexity since it doesn't change
+    for roman, value in mapping.items():
+        no_of_symbols = num // value
 
-            if no_of_symbols > 0:
-                result += roman * no_of_symbols
+        if no_of_symbols > 0:
+            result += roman * no_of_symbols
 
-            num %= value
+        num %= value
 
-        return result
-
-    def mapping(self):
-        # edge_cases = 4, 9, 10, 90, 400, 900
-
-        _hash = {
-            'M': 1000,
-            'CM': 900,
-            'D': 500,
-            'CD': 400,
-            'C': 100,
-            'XC': 90,
-            'L': 50,
-            'XL': 40,
-            'X': 10,
-            'IX': 9,
-            'V': 5,
-            'IV': 4,
-            'I': 1,
-        }
-
-        return _hash
+    return result
 
 
-soln = Solution()
+def mapping(self):
+    # edge_cases = 4, 9, 10, 90, 400, 900
 
-assert soln.intToRoman(3) == "III"
-assert soln.intToRoman(4) == "IV"
-assert soln.intToRoman(9) == "IX"
-assert soln.intToRoman(58) == "LVIII"
-assert soln.intToRoman(1994) == "MCMXCIV"
+    _hash = {
+        'M': 1000,
+        'CM': 900,
+        'D': 500,
+        'CD': 400,
+        'C': 100,
+        'XC': 90,
+        'L': 50,
+        'XL': 40,
+        'X': 10,
+        'IX': 9,
+        'V': 5,
+        'IV': 4,
+        'I': 1,
+    }
+
+    return _hash
+
+
+assert intToRoman(3) == "III"
+assert intToRoman(4) == "IV"
+assert intToRoman(9) == "IX"
+assert intToRoman(58) == "LVIII"
+assert intToRoman(1994) == "MCMXCIV"

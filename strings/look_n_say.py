@@ -49,6 +49,7 @@ class Solution:
 
     def nextNumber(self, s):
         res = []
+        s = str(s)
         i, n = 0, len(s)
 
         while i < n:
@@ -73,3 +74,8 @@ class Solution:
             s = self.nextNumber(s)
 
         return s
+
+
+soln = Solution()
+soln.nextNumber(1) == "1"
+soln.nextNumber(4) == "1211"

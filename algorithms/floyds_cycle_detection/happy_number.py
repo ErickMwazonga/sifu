@@ -46,7 +46,7 @@ def squared2(n):
     return result
 
 
-def isHappy(n):
+def isHappy2(n):
     seen = {n}
 
     while (n):
@@ -58,3 +58,6 @@ def isHappy(n):
             return False
         else:
             seen.add(n)
+
+
+assert isHappy(19) == True

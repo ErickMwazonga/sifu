@@ -34,5 +34,4 @@ def integer_square_root(k):
     return low - 1
 
 
-k = 300
-print(integer_square_root(k))
+assert integer_square_root(300) == 17
