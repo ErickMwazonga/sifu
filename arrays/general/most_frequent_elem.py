@@ -15,14 +15,14 @@ Output: 1
 
 
 def most_freq_elem(arr):
-    mapping = {}
+    frequency = {}
 
     for num in arr:
-        mapping[num] = mapping.get(num, 0) + 1
+        frequency[num] = frequency.get(num, 0) + 1
 
     most_frequent, most_count = -1, 0
 
-    for key, val in mapping.items():
+    for key, val in frequency.items():
         if val > most_count:
             most_count = val
             most_frequent = key
@@ -31,32 +31,33 @@ def most_freq_elem(arr):
 
 
 def most_freq_elem2(arr):
-    mapping = {}
+    frequency = {}
     most_frequent, most_count = -1, 0
 
     for num in arr:
-        mapping[num] = mapping.get(num, 0) + 1
+        frequency[num] = frequency.get(num, 0) + 1
 
-        if mapping[num] > most_count:
-            most_count = mapping[num]
+        if frequency[num] > most_count:
+            most_count = frequency[num]
             most_frequent = num
 
     return most_frequent
 
 
 def most_freq_elem3(arr):
-    mapping = {}
+    frequency = {}
 
     for num in arr:
-        mapping[num] = mapping.get(num, 0) + 1
+        frequency[num] = frequency.get(num, 0) + 1
 
-    return max(mapping, key=mapping.get)
+    return max(frequency, key=frequency.get)
 
 
 # TESTING
 assertions = [
     {'input': [3, 9, 1, 3, 6, 3, 8, 1, 6], 'output': 3},
-    {'input': [1, 9, 1, 3, 2, 3, 10], 'output': 1}
+    {'input': [1, 9, 1, 3, 2, 3, 10], 'output': 1},
+    {'input': [10, 20, 10, 20, 30, 20, 20], 'output': 20}
 ]
 
 for assertion in assertions:
