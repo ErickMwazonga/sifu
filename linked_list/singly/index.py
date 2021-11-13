@@ -29,6 +29,35 @@ class SinglyLinkedList:
             print(cur_node.data, end="->")
             cur_node = cur_node.next
 
+    def generate_list(metadata=None):
+        '''
+        metadata = {
+            'head': 0,
+            "nodes": [
+                {'value': 0, nxt: 1},
+                {'value': 1, nxt: 2},
+                {'value': 2, nxt: 3},
+                {'value': 3, nxt: 4},
+                {'value': 4, nxt: 5},
+                {'value': 5, nxt: 6},
+                {'value': 6, nxt: None}
+            ]
+        }
+        '''
+        head = None
+
+        nodes = metadata["nodes"]
+        for node in nodes:
+            val, nxt = node["value"], node["nxt"]
+
+            curr_node = Node(val)
+            curr_node.next = nxt
+
+            if val == metadata["head"]:
+                head = curr_node
+
+        return head
+
     def append(self, data):
         new_node = Node(data)
 

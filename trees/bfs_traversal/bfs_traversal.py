@@ -6,7 +6,7 @@ class TreeNode:
 
 
 class Solution:
-    def levelorder_print(self, root):
+    def levelorder_print(self, root: TreeNode):
         if not root:
             return
 
