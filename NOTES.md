@@ -19,4 +19,4 @@ index = 3
 
 for in in range(n):
     res.append(A[index])
-    index = (index + 1) % n;
+    index = (index + 1) % n
