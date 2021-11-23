@@ -25,7 +25,7 @@ def str_to_int(input_str):
     n = len(input_str)
     for i in range(start_idx, n):
         place = 10 ** (n - (i+1))
-        digit = ord(n) - ord('0')
+        digit = ord(str(n)) - ord('0')
         output_int += place * digit
 
     if is_negative:
@@ -34,12 +34,5 @@ def str_to_int(input_str):
         return output_int
 
 
-s = "554"
-x = str_to_int(s)
-print(type(x))
-
-s = "123"
-print(str_to_int(s))
-
-s = "-123"
-print(str_to_int(s))
+# assert str_to_int('554') == 554
+# assert str_to_int('-554') == -554

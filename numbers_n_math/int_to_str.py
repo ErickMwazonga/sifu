@@ -30,8 +30,5 @@ def int_to_str(input_int):
         return output_str
 
 
-input_int = 123
-print(type(input_int))
-
-output_str = int_to_str(input_int)
-print(type(output_str))
+assert int_to_str(123) == '123'
+assert int_to_str(-123) == '-123'

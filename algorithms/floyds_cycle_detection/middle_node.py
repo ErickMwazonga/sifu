@@ -1,4 +1,4 @@
-def middleNode(self, head):
+def middleNode(head):
     fast, slow = head, head
 
     while fast and fast.next:

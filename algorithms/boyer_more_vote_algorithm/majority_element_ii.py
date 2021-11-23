@@ -52,4 +52,4 @@ class Solution:
 
 
 soln = Solution()
-soln.majorityElement([1, 2]) == [1, 2]
+assert soln.majorityElement([1, 2]) == [1, 2]
