@@ -17,6 +17,6 @@ Another Example
 n = len(arr)
 index = 3
 
-for in in range(n):
+for i in range(n):
     res.append(A[index])
     index = (index + 1) % n
