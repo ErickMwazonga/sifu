@@ -1,10 +1,15 @@
 '''
-main_str = dgfabdghabchdabcgh
-substr = abc 
+Given a string and substring, return the indexes of first char of the substring in the main string
+Input
+    main_str = dgfabdghabchdabcgh
+    substr = abc 
+Output - [8, 11]
 '''
 
 
 def get_index_of_substr(mainstr, substr):
+    '''space - O(n), time - O(n)'''
+
     len_mainstr, len_substr = len(mainstr), len(substr)
     results = []
 
@@ -37,5 +42,3 @@ def get_index_of_substr(mainstr, substr):
 
 
 assert get_index_of_substr('dgfabdghabchdabcgh', 'abc') == [8, 13]
-
-'''space - O(n), time - O(n)'''
