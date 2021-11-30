@@ -21,15 +21,16 @@ def get_index_of_substr(mainstr, substr):
             i += 1
         else:
             starting_idx = i
-            _count = 0
+            is_substring = True
 
             for ch in substr:  # O(m)
                 if ch != mainstr[i]:
+                    is_substring = False
                     break
-                i += 1
-                _count += 1
 
-            if _count == len_substr:
+                i += 1
+
+            if is_substring:
                 results.append(starting_idx)
 
     return results
@@ -37,6 +38,4 @@ def get_index_of_substr(mainstr, substr):
 
 assert get_index_of_substr('dgfabdghabchdabcgh', 'abc') == [8, 13]
 
-'''
-space - O(n), time - O(n)
-'''
+'''space - O(n), time - O(n)'''
