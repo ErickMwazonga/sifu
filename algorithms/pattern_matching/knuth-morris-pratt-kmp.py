@@ -52,8 +52,8 @@ def get_prefix_arr(pattern):
     return prefix_arr
 
 
-string = "ABABDABACDABABCABABCABAB"
-pat = "ABABCABAB"
+string = 'ABABDABACDABABCABABCABAB'
+pat = 'ABABCABAB'
 
 initial_index = KMP_String(pat, string)
 

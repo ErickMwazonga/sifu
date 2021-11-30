@@ -15,9 +15,9 @@ For example:
     ...
     
 Example 1:
-Input: "A" -> 1
-Input: "AB" -> 28
-Input: "ZY" -> 701
+Input: 'A' -> 1
+Input: 'AB' -> 28
+Input: 'ZY' -> 701
 '''
 
 
@@ -44,6 +44,6 @@ class Solution:
 
 
 soln = Solution()
-assert soln.titleToNumber("A") == 1
-assert soln.titleToNumber("AB") == 28
-assert soln.titleToNumber("ZY") == 701
+assert soln.titleToNumber('A') == 1
+assert soln.titleToNumber('AB') == 28
+assert soln.titleToNumber('ZY') == 701

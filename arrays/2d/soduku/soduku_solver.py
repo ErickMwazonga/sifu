@@ -22,21 +22,21 @@ class Solution:
     def print_board(self):
         for i in range(9):
             if i % 3 == 0 and i != 0:
-                print("- - - - - - - - - - - - - ")
+                print('- - - - - - - - - - - - - ')
 
             for j in range(9):
                 if j % 3 == 0 and j != 0:
-                    print(" | ", end="")
+                    print(' | ', end='')
 
                 if j == 8:
                     print(self.board[i][j])
                 else:
-                    print(str(self.board[i][j]) + " ", end="")
+                    print(str(self.board[i][j]) + ' ', end='')
 
     def find_next_empty(self):
         for row in range(9):
             for col in range(9):
-                if self.board[row][col] == ".":
+                if self.board[row][col] == '.':
                     return row, col
         return -1, -1
 
@@ -55,7 +55,7 @@ class Solution:
                 if self.solve():
                     return True
 
-                self.board[row][col] = "."
+                self.board[row][col] = '.'
 
         return False
 

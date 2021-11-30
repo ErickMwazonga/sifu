@@ -15,7 +15,7 @@ def swap(s, i, j):
     temp = strlst[i]
     strlst[i] = strlst[j]
     strlst[j] = temp
-    return "".join(strlst)
+    return ''.join(strlst)
 
 
 def reverse(s):

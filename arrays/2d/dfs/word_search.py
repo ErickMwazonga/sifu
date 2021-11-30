@@ -4,7 +4,7 @@ https://leetcode.com/problems/word-search/
 https://www.youtube.com/watch?v=RqffW0smIbQ
 Given a 2D board and a word, find if the word exists in the grid.
 The word can be constructed from letters of sequentially adjacent cell,
-where "adjacent" cells are those horizontally or vertically neighboring.
+where 'adjacent' cells are those horizontally or vertically neighboring.
 The same letter cell may not be used more than once.
 
 Example:
@@ -15,9 +15,9 @@ board =
   ['A','D','E','E']
 ]
 
-Given word = "ABCCED", return true.
-Given word = "SEE", return true.
-Given word = "ABCB", return false.
+Given word = 'ABCCED', return true.
+Given word = 'SEE', return true.
+Given word = 'ABCB', return false.
 '''
 
 
@@ -46,7 +46,7 @@ class Solution:
 
         visited.append((i, j))
 
-        # check whether can find "word" along one direction
+        # check whether can find 'word' along one direction
         up = self.dfs(board, i+1, j, word[1:], visited)
         down = self.dfs(board, i-1, j, word[1:], visited)
         left = self.dfs(board, i, j+1, word[1:], visited)
@@ -67,6 +67,6 @@ board = [
 ]
 
 soln = Solution()
-assert soln.exist(board, "ABCCED") == True
-assert soln.exist(board, "SEE") == True
-assert soln.exist(board, "ABCB") == False
+assert soln.exist(board, 'ABCCED') == True
+assert soln.exist(board, 'SEE') == True
+assert soln.exist(board, 'ABCB') == False

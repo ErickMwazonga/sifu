@@ -1,7 +1,7 @@
-"""
+'''
 Given two strings, write a method to decide if 
 one is a permutation of the other.
-"""
+'''
 
 # Approach 1: Sorting
 # Time Complexity: O(n log n)
@@ -51,11 +51,11 @@ def is_perm_2(str_1, str_2):
     return all(value == 0 for value in d.values())
 
 
-is_permutation_1 = "google"
-is_permutation_2 = "ooggle"
+is_permutation_1 = 'google'
+is_permutation_2 = 'ooggle'
 
-not_permutation_1 = "not"
-not_permutation_2 = "top"
+not_permutation_1 = 'not'
+not_permutation_2 = 'top'
 
 print(is_perm_1(is_permutation_1, is_permutation_2))
 #print(is_perm_1(not_permutation_1, not_permutation_2))

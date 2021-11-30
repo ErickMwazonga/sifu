@@ -12,9 +12,10 @@ Input:
  \
   5
 
-Output: ["1->2->5", "1->3"]
+Output: ['1->2->5', '1->3']
 Explanation: All root-to-leaf paths are: 1->2->5, 1->3
 '''
+
 
 class Solution:
     def binaryTreePaths(self, root):
@@ -24,7 +25,7 @@ class Solution:
         res = []
         self.path(root, '', res)
         return res
-        
+
     def path(self, root, string, res):
         string += str(root.val)
 

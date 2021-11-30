@@ -1,10 +1,10 @@
-"""
+'''
 Minimum rotations required to get the same string
 Given a string, we need to find the minimum number of rotations required to get the same string.
 
-Input : s = "geeks" -> 5
-Input : s = "aaaa" -> 1
-"""
+Input : s = 'geeks' -> 5
+Input : s = 'aaaa' -> 1
+'''
 
 
 def findRotations(s):

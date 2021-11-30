@@ -8,13 +8,13 @@ For the purpose of this problem, we will return 0 when needle is an empty string
 This is consistent to C's strstr() and Java's indexOf().
 
 Examples:
-Input: haystack = "hello", needle = "ll"
+Input: haystack = 'hello', needle = 'll'
 Output: 2
 
-Input: haystack = "aaaaa", needle = "bba"
+Input: haystack = 'aaaaa', needle = 'bba'
 Output: -1
 
-Input: haystack = "", needle = ""
+Input: haystack = '', needle = ''
 Output: 0
 
 The Rabin–Karp algorithm or Karp–Rabin algorithm is a string-searching algorithm

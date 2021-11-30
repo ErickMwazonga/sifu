@@ -1,7 +1,7 @@
-"""
+'''
 Implement an algorithm to determine if a string has all
 unique characters.
-"""
+'''
 
 
 def is_unique_1(input_str):
@@ -19,18 +19,18 @@ def is_unique_2(input_str):
 
 
 def is_unique_3(input_str):
-    alpha = "abcdefghijklmnopqrstuvwxyz"
+    alpha = 'abcdefghijklmnopqrstuvwxyz'
 
     for i in input_str:
         if i in alpha:
-            alpha = alpha.replace(i, "")
+            alpha = alpha.replace(i, '')
         else:
             return False
     return True
 
 
-unique_str = "AbCDefG"
-non_unique_str = "non Unique STR"
+unique_str = 'AbCDefG'
+non_unique_str = 'non Unique STR'
 
 assert is_unique_1(unique_str) == True
 assert is_unique_1(non_unique_str) == False

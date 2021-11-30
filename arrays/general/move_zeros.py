@@ -15,7 +15,7 @@ Minimize the total number of operations.
 
 
 def moveZeroes(nums) -> None:
-    """Do not return anything, modify nums in-place instead"""
+    '''Do not return anything, modify nums in-place instead'''
 
     i = 0
 
@@ -26,9 +26,8 @@ def moveZeroes(nums) -> None:
 
 
 def moveZeroes2(nums) -> None:
-    """
-    Do not return anything, modify nums in-place instead.
-    """
+    '''Do not return anything, modify nums in-place instead.'''
+
     i, j = 0, 1
 
     while j < len(nums):

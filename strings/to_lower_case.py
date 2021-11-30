@@ -3,9 +3,9 @@
 https://leetcode.com/problems/to-lower-case/
 Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
 
-Input: "Hello" -> "hello"
-Input: "here" -> "here"
-Input: "LOVELY" -> "lovely"
+Input: 'Hello' -> 'hello'
+Input: 'here' -> 'here'
+Input: 'LOVELY' -> 'lovely'
 '''
 
 
@@ -22,7 +22,7 @@ class Solution:
         return ''.join(lowered)
 
     def toLowerCase2(self, str: str) -> str:
-        res = ""
+        res = ''
 
         for i in range(len(str)):
             if(ord(str[i]) >= 65 and ord(str[i]) <= 90):
@@ -33,6 +33,6 @@ class Solution:
 
 
 soln = Solution()
-soln.toLowerCase("Hello") == "hello"
-soln.toLowerCase("here") == "here"
-soln.toLowerCase("LOVELY") == "lovely"
+soln.toLowerCase('Hello') == 'hello'
+soln.toLowerCase('here') == 'here'
+soln.toLowerCase('LOVELY') == 'lovely'

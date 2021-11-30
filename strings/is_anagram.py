@@ -3,10 +3,10 @@
 https://leetcode.com/problems/valid-anagram/
 Given two strings s and t , write a function to determine if t is an anagram of s.
 
-Input: s = "anagram", t = "nagaram"
+Input: s = 'anagram', t = 'nagaram'
 Output: true
 
-Input: s = "rat", t = "car"
+Input: s = 'rat', t = 'car'
 Output: false
 You may assume the string contains only lowercase alphabets.
 '''
@@ -14,11 +14,11 @@ You may assume the string contains only lowercase alphabets.
 
 def is_anagram_(s1, s2):
     # Requires n log n time (since any comparison
-    s1 = "fairy tales"
-    s2 = "rail safety"
+    s1 = 'fairy tales'
+    s2 = 'rail safety'
 
-    s1 = s1.replace(" ", "").lower()
-    s2 = s2.replace(" ", "").lower()
+    s1 = s1.replace(' ', '').lower()
+    s2 = s2.replace(' ', '').lower()
 
     return sorted(s1) == sorted(s2)
 
@@ -47,5 +47,5 @@ def is_anagram(s1, s2):
     return True
 
 
-assert is_anagram("anagram", "nagaram") == True
-assert is_anagram("rat", "car") == False
+assert is_anagram('anagram', 'nagaram') == True
+assert is_anagram('rat', 'car') == False

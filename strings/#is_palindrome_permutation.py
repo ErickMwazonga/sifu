@@ -1,18 +1,16 @@
-"""
-Given a string, write a function to check if it is
-a permutation of a palindrome. A palindrome is a word
-or phrase that is the same forwards and backwards.
-A permutation is a rearrangement of letters. The
-palindrome does not need to be limited to just
-dictionary words.
-"""
+'''
+Given a string, write a function to check if it is a permutation of a palindrome. 
+A palindrome is a word or phrase that is the same forwards and backwards.
+A permutation is a rearrangement of letters. The palindrome does not need 
+to be limited to just dictionary words.
+'''
 
-palin_perm = "Tact Coa"
-not_palin_perm = "This is not a palindrome permutation"
+palin_perm = 'Tact Coa'
+not_palin_perm = 'This is not a palindrome permutation'
 
 
 def is_palin_perm(input_str):
-    input_str = input_str.replace(" ", "")
+    input_str = input_str.replace(' ', '')
     input_str = input_str.lower()
 
     d = dict()

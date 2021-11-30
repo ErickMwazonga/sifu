@@ -1,13 +1,13 @@
 '''
 14. Longest Common Prefix
 Write a function to find the longest common prefix string amongst an array of strings.
-If there is no common prefix, return an empty string "".
+If there is no common prefix, return an empty string ''.
 
 Example 1:
-Input: strs = ["flower","flow","flight"] -> "fl"
+Input: strs = ['flower','flow','flight'] -> 'fl'
 
 Example 2:
-Input: strs = ["dog","racecar","car"] -> ""
+Input: strs = ['dog','racecar','car'] -> ''
 Explanation: There is no common prefix among the input strings.
 '''
 
@@ -27,7 +27,7 @@ def longestCommonPrefix(strs) -> str:
 
 def longestCommonPrefix(strs) -> str:
     if not strs or len(strs) == 0:
-        return ""
+        return ''
 
     for i in range(len(strs[0])):
         c = strs[0][i]
@@ -36,4 +36,4 @@ def longestCommonPrefix(strs) -> str:
             if i == len(strs[j]) or strs[j][i] != c:
                 return strs[0][:i]
 
-    return strs[0] if strs else ""
+    return strs[0] if strs else ''

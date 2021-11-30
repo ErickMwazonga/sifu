@@ -7,8 +7,7 @@ which every parent node/internal node has either two or no children.
 
 class Node:
 
-    def __init__(self, item):
-        self.item = item
+    def __init__(self):
         self.leftChild = None
         self.rightChild = None
 
@@ -36,4 +35,5 @@ root.leftChild.rightChild = Node(5)
 root.leftChild.leftChild.leftChild = Node(6)
 root.leftChild.leftChild.rightChild = Node(7)
 
-assert isFullTree(root) == True
+node = Node()
+assert node.isFullTree(root) == True

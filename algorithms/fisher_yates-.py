@@ -14,10 +14,10 @@ import random
 
 # FISHER-YATES
 def shuffle(A) -> list[int]:
-    """
+    '''
     Returns a random shuffling of the array.
     Inspired by - https://www.youtube.com/watch?v=4zx5bM2OcvA
-    """
+    '''
 
     last_index = len(A) - 1
     while last_index > 0:

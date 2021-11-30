@@ -1,4 +1,4 @@
-"""
+'''
 1365. How Many Numbers Are Smaller Than the Current Number
 https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
 https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/discuss/524865/Clean-Python-3-sorting-and-counting
@@ -17,7 +17,7 @@ Output: [4,0,1,1,3]
 Constraints:
 2 <= nums.length <= 500
 0 <= nums[i] <= 100
-"""
+'''
 
 
 def smallerNumbersThanCurrent(nums):
