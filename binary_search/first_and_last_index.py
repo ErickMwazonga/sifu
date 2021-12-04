@@ -37,49 +37,49 @@ def find_first_and_last(A, target):
     return [first, last]
 
 
-class Solution:
-    def findFirstPosition(self, nums, target):
-        low, high = 0, len(nums) - 1
-        index = -1
-
-        while low <= high:
-            mid = low + (high - low) // 2
-
-            if nums[mid] == target:
-                index = mid
-                high = mid - 1
-            elif nums[mid] > target:
-                high = mid - 1
-            else:
-                low = mid + 1
-
-        return index
-
-    def findLastPosition(self, nums, target):
-        low, high = 0, len(nums) - 1
-        index = -1
-
-        while low <= high:
-            mid = low + (high - low) // 2
-
-            if nums[mid] == target:
-                index = mid
-                high = mid + 1
-            elif nums[mid] > target:
-                high = mid - 1
-            else:
-                low = mid + 1
-
-        return index
+class Solution(object):
 
     def searchRange(self, nums, target):
-        first_index = self.findFirstPosition(nums, target)
-        last_index = self.findLastPosition(nums, target)
+        result = [-1, -1]
+        result[0] = self.findStartingIndex(nums, target)
+        result[1] = self.findEndingIndex(nums, target)
+        return result
 
-        return [first_index, last_index]
+    def findStartingIndex(self, nums, target):
+        low, high = 0, len(nums) - 1
+        index = -1
+
+        while low <= high:
+            mid = low + (high - low) // 2
+
+            if nums[mid] == target:
+                index = mid
+                high = mid - 1
+            elif nums[mid] > target:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return index
+
+    def findEndingIndex(self, nums, target):
+        low, high = 0, len(nums) - 1
+        index = -1
+
+        while low <= high:
+            mid = low + (high - low) // 2
+
+            if nums[mid] == target:
+                index = mid
+                low = mid + 1
+            elif nums[mid] > target:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return index
 
 
 soln = Solution()
-arr = [1, 4, 7, 8, 11, 11, 11, 11, 11, 13]
-target = 11
+arr, target = [1, 4, 7, 8, 11, 11, 11, 11, 11, 13], 11
 assert soln.searchRange(arr, target) == [4, 8]
