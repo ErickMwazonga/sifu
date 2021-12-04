@@ -24,7 +24,7 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 20. https://github.com/jiselectric/Algorithm
 21. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
 
-## 75 Curated Questions
+### 75 Curated Questions
 
 1. https://seanprashad.com/leetcode-patterns/
 2. https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0
