@@ -24,7 +24,7 @@ Given target = 20, return false.
 class Solution:
 
     def searchMatrix(self, matrix, target):
-       
+
         if not matrix:
             return False
 
@@ -34,11 +34,11 @@ class Solution:
         while i < n and j >= 0:
             current_value = matrix[i][j]
 
-            if current_value == target:
+            if target == current_value:
                 return True
-            elif current_value < target:
+            elif target > current_value:
                 i += 1
             else:
                 j -= 1
-        
+
         return False
