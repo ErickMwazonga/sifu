@@ -1,4 +1,5 @@
 '''
+240. Search a 2D Matrix II
 https://leetcode.com/problems/search-a-2d-matrix-ii/
 https://levelup.gitconnected.com/make-way-for-the-matrix-a-complete-guide-to-solving-2d-array-coding-problems-725096d122d9
 Write an efficient algorithm that searches for a value in an m x n matrix.
@@ -21,24 +22,21 @@ Given target = 20, return false.
 '''
 
 
-class Solution:
-
-    def searchMatrix(self, matrix, target):
-
-        if not matrix:
-            return False
-
-        n, m = len(matrix), len(matrix[0])
-        i, j = 0, m - 1
-
-        while i < n and j >= 0:
-            current_value = matrix[i][j]
-
-            if target == current_value:
-                return True
-            elif target > current_value:
-                i += 1
-            else:
-                j -= 1
-
+def searchMatrix(matrix, target):
+    if not matrix:
         return False
+
+    n, m = len(matrix), len(matrix[0])
+    i, j = 0, m - 1
+
+    while i < n and j >= 0:
+        current_value = matrix[i][j]
+
+        if target == current_value:
+            return True
+        elif target > current_value:
+            i += 1
+        else:
+            j -= 1
+
+    return False
