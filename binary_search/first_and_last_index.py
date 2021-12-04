@@ -40,10 +40,10 @@ def find_first_and_last(A, target):
 class Solution(object):
 
     def searchRange(self, nums, target):
-        result = [-1, -1]
-        result[0] = self.findStartingIndex(nums, target)
-        result[1] = self.findEndingIndex(nums, target)
-        return result
+        start = self.findStartingIndex(nums, target)
+        end = self.findEndingIndex(nums, target)
+
+        return [start, end]
 
     def findStartingIndex(self, nums, target):
         low, high = 0, len(nums) - 1
