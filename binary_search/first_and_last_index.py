@@ -18,6 +18,40 @@ Output: [-1,-1]
 '''
 
 
+def searchRange(nums, target):
+    n = len(nums)
+    result = [-1, -1]
+
+    for i, num in enumerate(nums):
+        if num != target:
+            continue
+        else:
+            result[0], result[1] = i, i
+
+            while i+1 < n and nums[i+1] == target:
+                result[1] = i
+                i += 1
+
+    return result
+
+
+print(searchRange([5, 7, 7, 8, 8, 10], 8))
+
+
+def first_and_last(A, target):
+    n = len(A)
+
+    for i in range(n):
+        if A[i] == target:
+            start = i
+
+            while i+1 < n and arr[i+1] == target:
+                i += 1
+            return [start, i]
+
+    return [-1, -1]
+
+
 def find_first_and_last(A, target):
     # Naive Approach -> O(n)
     n = len(A)

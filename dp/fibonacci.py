@@ -50,3 +50,8 @@ def fib_iter(n):
         prev, curr = curr, prev + curr
 
     return prev
+
+
+assert fib_iter(5) == 5
+assert fib_iter(6) == 8
+assert fib_iter(7) == 13

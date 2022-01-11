@@ -18,12 +18,12 @@ Example:
 
 
 def integer_square_root(k):
-    if k < 0:
+    if k <= 1:
         return k
 
     low, high = 0, k
 
-    while low <= high:
+    while low < high:
         mid = low + (high - low) // 2
         mid_squared = mid * mid
 
@@ -32,9 +32,28 @@ def integer_square_root(k):
         elif mid_squared < k:
             low = mid + 1
         else:
-            high = mid - 1
+            high = mid
 
     return low - 1
 
 
+def mySqrt(x: int) -> int:
+    low, high = 0, x
+
+    while low <= high:
+        mid = low + (high - low) // 2
+        mid_squared = mid ** 2
+
+        if mid_squared <= x and (mid + 1) ** 2 > x:
+            return mid
+        elif mid_squared < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return low
+
+
 assert integer_square_root(300) == 17
+assert integer_square_root(16) == 4
+assert integer_square_root(17) == 4

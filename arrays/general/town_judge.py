@@ -32,6 +32,9 @@ Output: 3
 '''
 
 
+from collections import defaultdict
+
+
 def findJudge(N: int, trust: list[list[int]]) -> int:
     '''Inspired by https://www.youtube.com/watch?v=ZUP_tIs4VaE&t=419s'''
 
@@ -61,7 +64,29 @@ def findJudge(N: int, trust: list[list[int]]) -> int:
     return -1
 
 
+def findJudge2(N, trusts) -> int:
+    trusting = defaultdict(list)
+    trusted_by = defaultdict(int)
+
+    for trust in trusts:
+        person, trusted = trust
+
+        trusting[person].append(trusted)
+        trusted_by[trusted] += 1
+
+    for i in range(1, N+1):
+        if len(trusting[i]) == 0 and trusted_by[i] == N-1:
+            return i
+
+    return -1
+
+
 assert findJudge(2, [[1, 2]]) == 2
 assert findJudge(3, [[1, 3], [2, 3], [3, 1]]) == -1
 assert findJudge(3, [[1, 2], [2, 3]]) == -1
 assert findJudge(4, [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]) == 3
+
+assert findJudge2(2, [[1, 2]]) == 2
+assert findJudge2(3, [[1, 3], [2, 3], [3, 1]]) == -1
+assert findJudge2(3, [[1, 2], [2, 3]]) == -1
+assert findJudge2(4, [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]) == 3
