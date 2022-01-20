@@ -1,6 +1,6 @@
 '''
 238. Product of Array Except Self
-Given an array nums of n integers where n > 1, 
+Given an array nums of n integers where n > 1,
 return an array output such that output[i] is equal to
 the product of all the elements of nums except nums[i].
 
@@ -13,6 +13,22 @@ fits in a 32 bit integer.
 
 Note: Please solve it without division and in O(n).
 '''
+
+
+def productExceptSelf(nums):
+    size = len(nums)
+    output = [1] * size
+
+    for i in range(1, size):
+        output[i] = nums[i-1] * output[i-1]
+
+    right_product = 1
+
+    for i in range(size-1, -1, -1):
+        output[i] = output[i] * right_product
+        right_product = right_product * nums[i]
+
+    return output
 
 
 def productExceptSelf(nums):

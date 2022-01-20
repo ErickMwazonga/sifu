@@ -1,4 +1,6 @@
 # Sifu
+### Preparation
+https://serhatgiydiren.github.io/preparation-guide-for-tech-interviews
 
 A list of grouped leetcode DSA problems with solutions that helps one prepare well for a coding interview.
 
@@ -59,3 +61,9 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 3. https://www.geeksforgeeks.org/python-program-for-radix-sort/
 4. https://www.alphacodingskills.com/python/pages/python-program-for-radix-sort.php#:~:text=Python%20Program%20-%20Radix%20Sort%20Radix%20sort%20is,counting%20sort%20as%20a%20subroutine%20to%20perform%20sorting.
 5. https://www.educative.io/blog/crack-amazon-coding-interview-questions
+
+
+https://baihuqian.github.io/2018-09-08-nth-digit/
+https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
+https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
+https://serhatgiydiren.github.io/

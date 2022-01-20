@@ -40,6 +40,36 @@ def searchMatrix(matrix, target):
     return False
 
 
+class Solution:
+    '''
+    Time: O(log(nm))
+    https://www.youtube.com/watch?v=eT0UqrYuqbg
+    '''
+
+    def searchMatrix(self, matrix, target: int) -> bool:
+        if not matrix:
+            return False
+
+        rows, cols = len(matrix), len(matrix[0])
+
+        left, right = 0, rows * cols
+
+        while left < right:
+            mid = left + (right - left) // 2
+            i, j = mid // cols, mid % cols  # divmod(mid, cols)
+
+            mid_elem = matrix[i][j]
+
+            if mid_elem == target:
+                return True
+            elif mid_elem < target:
+                left = mid + 1
+            else:
+                right = mid
+
+        return False
+
+
 def searchMatrix2(matrix, target) -> bool:
     '''Time: O(M*N)'''
 
