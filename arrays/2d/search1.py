@@ -51,7 +51,6 @@ class Solution:
             return False
 
         rows, cols = len(matrix), len(matrix[0])
-
         left, right = 0, rows * cols
 
         while left < right:
