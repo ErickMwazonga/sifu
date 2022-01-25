@@ -67,3 +67,35 @@ https://baihuqian.github.io/2018-09-08-nth-digit/
 https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
 https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
 https://serhatgiydiren.github.io/
+
+
+HEAPS
+Top K Pattern
+LC #215 - Kth largest number in an array
+LC #973 - K closest points to origin
+LC #347 - Top k frequent elements/numbers
+LC #692 - Top k frequent words
+LC #264 - Ugly Number II
+LC #451 - Frequency Sort
+LC #703 - Kth largest number in a stream
+LC #767 - Reorganize String
+LC #358 - Rearrange string K distance apart
+LC #1439 - Kth smallest sum of a matrix with sorted rows
+
+Merge K sorted pattern
+LC #23 - Merge K sorted
+LC #373 - K pairs with the smallest sum
+LC #378 - K smallest numbers in M-sorted lists
+
+Two Heaps Pattern
+LC #295 - Find median from a data stream
+LC #480 - Sliding window Median
+LC #502 - Maximize Capital/IPO
+
+Minimum number Pattern
+LC #1167 - Minimum Cost to connect sticks/ropes
+LC #253 - Meeting Rooms II
+LC #759 - Employee free time
+LC #857 - Minimumcost to hire K workers
+LC #621 - Minimum number of CPU (Task scheduler)
+LC #871 - Minimum number of Refueling stops

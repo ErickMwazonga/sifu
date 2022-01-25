@@ -40,7 +40,6 @@ def flatten(input):
         new_list.extend(i)
     return new_list
 ```
-
 ### 3. Flatten List of Lists Using sum
 `sum` has an optional argument: sum(iterable [, start]), so you can do:
 ```py
@@ -49,7 +48,7 @@ flat_list = sum(regular_list, []) # [] + [1, 2, 3, 4] + [5, 6, 7] + [8, 9]
 
 flat_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-
+---
 ## Find i,j in a flattened 2d matrix
 Given a 2 matrix, 
 ```py
@@ -75,5 +74,95 @@ i, j = divmod(7, cols) # (2, 1) -> i.e row: 2, col: 1
 
 print(matrix[2][1]) # 7
 ```
+---
+## Reverse Iterables
+### 1. By `reverse()`
+It reverses an iterable in-place
+```py
+systems = ['Windows', 'macOS', 'Linux']
+systems.reverse()
+print(systems) # ['Linux', 'macOS', 'Windows']
+```
 
+### 2. By Slicing -> `[::-1]`
+```py
+systems = ['Windows', 'macOS', 'Linux']
+reversed_list = systems[::-1]
+print(systems) # ['Linux', 'macOS', 'Windows']
 
+# Printing Elements in Reversed Order
+n = len(systems)
+for i in range(n-1, -1, -1):
+    print(systems[i])
+```
+
+### 3. By `reversed()`
+```py
+systems = ['Windows', 'macOS', 'Linux']
+reversed_systems = reversed(systems)
+print(list(reversed_systems)) # ['Linux', 'macOS', 'Windows']
+
+# Printing Elements in Reversed Order
+for system in reversed(systems):
+    print(system)
+```
+
+## Sort Iterables
+### 1. By `sort()`
+Sorts an iterable in place
+
+```py
+prime = [11, 3, 7, 5, 2]
+prime.sort()
+print(prime) # [2, 3, 5, 7, 11]
+```
+
+### 2. By `sorted()`
+```py
+prime = [11, 3, 7, 5, 2]
+new_prime = sorted(prime)
+print(new_prime) # [2, 3, 5, 7, 11]
+```
+
+### Syntax: Pameters
+`sort()` and `sorted()` hav two optional parameters:<br>
+1. `reverse` - If True, the sorted list is descending order<br> 
+2. `key` - function that serves as a key for the sort comparison
+
+### Sort the list in Descending order
+```py
+vowels = ['e', 'a', 'u', 'o', 'i']
+vowels.sort(reverse=True)
+print(vowels) #['u', 'o', 'i', 'e', 'a']
+```
+
+### Sort with custom key function
+```py
+# Sort by lenth of strings in a list
+list.sort(key=len)
+sorted(list, key=len)
+
+e,g
+words = ['banana', 'pie', 'Washington', 'book']
+sorted(words, key=len) # ['pie', 'book', 'banana', 'Washington']
+```
+
+### Sort dictionary
+```py
+sorted_dict sorted(d.items(), key=lambda x: x[1])
+sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
+sorted_dict = dict(sorted_dict)
+
+# Alternatively
+sorted(d, key=d.get, reverse=True):
+
+# Examples
+employees = [
+    {'Name': 'Sifu', 'age': 25, 'salary': 10000},
+    {'Name': 'Chepe', 'age': 30, 'salary': 81000},
+    {'Name': 'Ericko', 'age': 18, 'salary': 110000},
+]
+
+employees.sort(key=lambda x: x.get('Name'))
+employees.sort(key=lambda x: x.get('salary'), reverse=True)
+```

@@ -19,41 +19,46 @@ Explanation: The answer [[-2,4],[3,3]] would also be accepted.
 '''
 
 import heapq
+import heap as theHeap
 
 
-def kClosest(self, points: list[list[int]], k: int) -> list[list[int]]:
+def kClosest(points, k):
     '''# KLOGN'''
 
-    minHeap = []
-    res = []
+    heap, res = [], []
 
     for point in points:
         x, y = point
         dist = (x ** 2) + (y ** 2)
-        minHeap.append([dist, point])
+        heapq.heappush(heap, [dist, point])
 
-    heapq.heapify(minHeap)
-
-    while k > 0:
-        _, point = heapq.heappop(minHeap)
-        res.append(point)
-        k -= 1
-
-    return res
-
-
-# NLOGN
-def kClosest2(self, points: list[list[int]], k: int) -> list[list[int]]:
-    heap = []
-    res = []
-
-    for point in points:
-        x, y = point
-        distance = (x ** 2) + (y ** 2)
-        heapq.heappush(heap, [distance, point])
-
-    for i in range(k):
+    for _ in range(k):
         distance, point = heapq.heappop(heap)
         res.append(point)
 
     return res
+
+
+def kClosest_CUSTOM(points, k):
+    '''# KLOGN'''
+
+    heapqq = theHeap.MinHeap()
+    heap, res = [], []
+
+    for point in points:
+        x, y = point
+        dist = (x ** 2) + (y ** 2)
+        heapqq.heappush(heap, [dist, point])
+
+    for _ in range(k):
+        distance, point = heapqq.heappop(heap)
+        res.append(point)
+
+    return res
+
+
+assert kClosest([[1, 3], [-2, 2]], 1) == [[-2, 2]]
+assert kClosest([[3, 3], [5, -1], [-2, 4]], 2) == [[3, 3], [-2, 4]]
+
+assert kClosest_CUSTOM([[1, 3], [-2, 2]], 1) == [[-2, 2]]
+assert kClosest_CUSTOM([[3, 3], [5, -1], [-2, 4]], 2) == [[3, 3], [-2, 4]]
