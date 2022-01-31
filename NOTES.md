@@ -174,4 +174,34 @@ employees.sort(key=lambda x: x.get('Name'))
 employees.sort(key=lambda x: x.get('salary'), reverse=True)
 ```
 ---
-## Max Heap
+## Heaps
+```py
+import heapq
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+### minHeap
+`heapq.heapify(lst)`
+<br/>
+
+### maxHeap
+1. Solution: `heapq._heapify_max(lst)`
+
+```py
+lst = [5, 1, 3, 7, 2]
+
+heapq._heapify_max(lst)
+pop_max = heapq._heappop_max(lst)
+```
+2. Solution: **Use Negatives**
+
+```py
+array = [1, 4, 6, 2, 5, 3, 9, 8, 7]
+maxHeap = []
+for num in array:
+    heapq.heappush(maxHeap, -num)
+
+print("maxHeap:", maxHeap)
+# maxHeap: [-9, -8, -6, -7, -2, -3, -4, -1, -5]
+```
+

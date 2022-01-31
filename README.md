@@ -67,3 +67,6 @@ https://baihuqian.github.io/2018-09-08-nth-digit/
 https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
 https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
 https://serhatgiydiren.github.io/
+
+FAANG Questions
+1. https://github.com/ombharatiya/FAANG-Coding-Interview-Questions
