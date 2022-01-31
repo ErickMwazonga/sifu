@@ -10,25 +10,24 @@ Note that pos is not passed as a parameter.
 '''
 
 
-class Solution:
-    def detectCycle(self, head):
-        slow = fast = head
-        flag = False
+def detectCycle(self, head):
+    slow = fast = head
+    flag = False
 
-        while fast and fast.next:
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+        if slow == fast:
+            flag = True
+            break
+
+    if flag:
+        slow = head
+        while slow != fast:
             slow = slow.next
-            fast = fast.next.next
+            fast = fast.next
 
-            if slow == fast:
-                flag = True
-                break
+        return slow
 
-        if flag:
-            slow = head
-            while slow != fast:
-                slow = slow.next
-                fast = fast.next
-
-            return slow
-
-        return None
+    return None

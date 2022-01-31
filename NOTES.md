@@ -133,7 +133,7 @@ print(new_prime) # [2, 3, 5, 7, 11]
 ```py
 vowels = ['e', 'a', 'u', 'o', 'i']
 vowels.sort(reverse=True)
-print(vowels) #['u', 'o', 'i', 'e', 'a']
+print(vowels) # ['u', 'o', 'i', 'e', 'a']
 ```
 
 ### Sort with custom key function
@@ -143,10 +143,17 @@ list.sort(key=len)
 sorted(list, key=len)
 
 e,g
-words = ['banana', 'pie', 'Washington', 'book']
-sorted(words, key=len) # ['pie', 'book', 'banana', 'Washington']
+words = ['pinapples', 'grape', 'apples', 'mangoes']
+sorted(words, key=len) # ['grape', 'apples', 'mangoes', 'pinapples']
 ```
 
+### Sort a list of list by sum
+```py
+nums = [[7, 9], [2, 4], [8, 1], [5, 6]]
+sorted(nums, key=sum) # [[2, 4], [8, 1], [5, 6], [7, 9]]
+```
+
+---
 ### Sort dictionary
 ```py
 sorted_dict sorted(d.items(), key=lambda x: x[1])
@@ -166,3 +173,5 @@ employees = [
 employees.sort(key=lambda x: x.get('Name'))
 employees.sort(key=lambda x: x.get('salary'), reverse=True)
 ```
+---
+## Max Heap

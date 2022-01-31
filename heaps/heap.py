@@ -21,7 +21,6 @@ class MinHeap:
         '''O(log(n))'''
 
         n = len(A)
-
         left, right = self.left(pos), self.right(pos)
 
         smallest = pos

@@ -16,7 +16,8 @@ input = [
 ];
 
 riverSizes(input); // returns [1, 2, 2, 2, 5]
-That is, in this input, there is one river of size 1, there are three rivers of size 2, and there is one river of size 5.
+That is, in this input, there is one river of size 1, 
+there are three rivers of size 2, and there is one river of size 5.
 Hint: it is acceptable to mutate the input arrays.
 '''
 

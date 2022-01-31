@@ -19,6 +19,9 @@ You can return the answer in any order.
 '''
 
 
+import heapq
+
+
 def topKFrequent(nums, k):
     freqs = {}
     n = len(nums)
@@ -35,6 +38,26 @@ def topKFrequent(nums, k):
         res.extend(bucket[i])
 
     return res[:k]
+
+
+assert topKFrequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+assert topKFrequent([1], 1) == [1]
+
+
+def topKFrequentXX(nums, k):
+    res, freqs = [], {}
+
+    for num in nums:
+        freqs[num] = freqs.get(num, 0) + 1
+
+    freqs = [(-v, k) for k, v in freqs.items()]
+    heapq.heapify(freqs)
+
+    for _ in range(k):
+        v, k = heapq.heappop(freqs)
+        res.append(k)
+
+    return res
 
 
 assert topKFrequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
