@@ -36,11 +36,10 @@ class MedianFinder:
             val = -heapq.heappop(self.small)
             heapq.heappush(self.large, val)
 
-        if len(self.small) > len(self.large) + 1:
+        if len(self.small) - len(self.large) > 1:
             val = -heapq.heappop(self.small)
             heapq.heappush(self.large, val)
-
-        if len(self.large) > len(self.small) + 1:
+        elif len(self.large) - len(self.small) > 1:
             val = heapq.heappop(self.large)
             heapq.heappush(self.small, -val)
 

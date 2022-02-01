@@ -1,8 +1,5 @@
-class MinHeap:
+class Heap:
     '''Min Heap Implementaion'''
-
-    def __init__(self, type='MIN'):
-        self.type = type
 
     def parent(self, pos):
         return (pos - 1) // 2
@@ -60,11 +57,11 @@ class MinHeap:
 
         return A
 
-    def build_heap(self, A):
+    def build_heap(self, A, type='MIN'):
         n = len(A)
         no_leaf_nodes_max_idx = (n // 2) - 1
 
-        is_min = self.type == 'MIN'
+        is_min = type == 'MIN'
         for k in range(no_leaf_nodes_max_idx, -1, -1):
             self.heapify(A, k) if is_min else self.maxHeapify(A, k)
 
@@ -86,5 +83,5 @@ class MinHeap:
 
 
 A = [3, 9, 2, 1, 4, 5]
-heapq = MinHeap()
+heapq = Heap()
 assert heapq.build_heap(A) == [1, 3, 2, 9, 4, 5]
