@@ -23,8 +23,8 @@ Explanation: On this case any permutation of size 6 would work since n = 0.
 ["B","B","B","A","A","A"]
 ...
 And so on.
-Example 3:
 
+Example 3:
 Input: tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2 -> Output: 16
 Explanation: 
 One possible solution is

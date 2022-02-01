@@ -19,17 +19,17 @@ C can be placed before D (500) and M (1000) to make 400 and 900.
 Given an integer, convert it to a roman numeral.
 
 ExampleS:
-Input: num = 3 -> "III"
-Input: num = 4 -> "IV"
-Input: num = 9 -> "IX"
-Input: num = 58 -> "LVIII"
+Input: num = 3 -> 'III'
+Input: num = 4 -> 'IV'
+Input: num = 9 -> 'IX'
+Input: num = 58 -> 'LVIII'
     Explanation: L = 50, V = 5, III = 3.
-Input: num = 1994 -> "MCMXCIV"
+Input: num = 1994 -> 'MCMXCIV'
     Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 '''
 
 
-def intToRoman(self, num: int) -> str:
+def intToRoman(num: int) -> str:
     result = ''
     mapping = self.mapping()
 
@@ -67,8 +67,8 @@ def mapping(self):
     return _hash
 
 
-assert intToRoman(3) == "III"
-assert intToRoman(4) == "IV"
-assert intToRoman(9) == "IX"
-assert intToRoman(58) == "LVIII"
-assert intToRoman(1994) == "MCMXCIV"
+assert intToRoman(3) == 'III'
+assert intToRoman(4) == 'IV'
+assert intToRoman(9) == 'IX'
+assert intToRoman(58) == 'LVIII'
+assert intToRoman(1994) == 'MCMXCIV'

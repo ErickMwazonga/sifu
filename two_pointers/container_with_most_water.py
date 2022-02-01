@@ -10,7 +10,7 @@ Notice that you may not slant the container.
 '''
 
 
-def maxArea(self, heights: list[int]) -> int:
+def maxArea(heights: list[int]) -> int:
     i, j = 0, len(heights) - 1
     max_area = 0
 

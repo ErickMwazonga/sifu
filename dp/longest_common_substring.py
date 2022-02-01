@@ -11,10 +11,6 @@ Example 2:
     Input: str1 = "printer", str2 = "external"
     Output: 3
     Explanation: the longest common substring of str1 and str2 is "ter"
-Example 3:
-    Input: str1 = "table", str2 = "dog"
-    Output: 0
-    Explanation: the longest common substring of str1 and str2 is ""
 '''
 
 

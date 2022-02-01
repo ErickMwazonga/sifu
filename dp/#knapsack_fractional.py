@@ -1,8 +1,7 @@
-
-
 def fractional_knapsack(weights, profits, capacity):
     n = len(profits)
     indexes = list(range(n))
+
     ratios = [p/w for p, w in zip(profits, weights)]
     indexes.sort(key=lambda i: ratios[i], reverse=True)
 

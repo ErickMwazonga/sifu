@@ -15,25 +15,13 @@ Explanation:
     horse -> rorse (replace 'h' with 'r')
     rorse -> rose (remove 'r')
     rose -> ros (remove 'e')
-
-Example 2:
-Input: word1 = "intention", word2 = "execution"
-Output: 5
-Explanation: 
-    intention -> inention (remove 't')
-    inention -> enention (replace 'i' with 'e')
-    enention -> exention (replace 'n' with 'x')
-    exention -> exection (replace 'n' with 'c')
-    exection -> execution (insert 'u')
 '''
 
 
 def minDistance(word1, word2):
-    '''
-    Time complexity: O(nm), Space complexity: O(nm)
-    '''
-    n, m = len(word1), len(word2)
+    '''Time: O(nm), Space: O(nm)'''
 
+    n, m = len(word1), len(word2)
     dp = [[0] * (m+1) for i in range(n+1)]
 
     # first row

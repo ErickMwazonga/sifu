@@ -24,10 +24,6 @@ as you are engaging multiple transactions at the same time. You must sell before
 Example 3:
 Input: prices = [7, 6, 4, 3, 1] -> 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
-
-Example 4:
-Input: prices = [1]
-Output: 0
 '''
 
 

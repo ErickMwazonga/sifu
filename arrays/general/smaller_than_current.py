@@ -13,10 +13,6 @@ Return the answer in an array.
 Example 1:
 Input: nums = [8,1,2,2,3]
 Output: [4,0,1,1,3]
-
-Constraints:
-2 <= nums.length <= 500
-0 <= nums[i] <= 100
 '''
 
 

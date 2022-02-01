@@ -5,7 +5,6 @@ representing the largest range of integers contained in that array.
 
 The first number in the output array should be the first number in the range,
 while the second number should be the last number in the range.
-
 A range of numbers is defined as a set of numbers that come right after each other in the set of real integers.
 
 For instance, the output

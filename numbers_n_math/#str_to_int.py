@@ -1,15 +1,15 @@
-"""
+'''
 8. String to Integer (atoi)
 https://leetcode.com/problems/string-to-integer-atoi/
  
 You are given some numeric string as input. Convert the string you are
-given to an integer. Do not make use of the built-in "int" function.
+given to an integer. Do not make use of the built-in 'int' function.
 Example:
-    "123" -> 123
-    "-12332" -> -12332
-    "554" -> 554
+    '123' -> 123
+    '-12332' -> -12332
+    '554' -> 554
     etc.
-"""
+'''
 
 
 def str_to_int(input_str):

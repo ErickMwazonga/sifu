@@ -23,7 +23,7 @@ def naive_approach(A):
     return _min
 
 
-def findMin(self, A: list[int]) -> int:
+def findMin(A: list[int]) -> int:
     left, right = 0, len(A) - 1
 
     while left < right:
@@ -37,7 +37,7 @@ def findMin(self, A: list[int]) -> int:
     return A[left]
 
 
-def findMin(self, A: list[int]) -> int:
+def findMin(A: list[int]) -> int:
     '''O(logn)'''
 
     left, right = 0, len(A) - 1

@@ -1,4 +1,4 @@
-"""
+'''
 Count of index pairs with equal elements in an array
 Given an array of n elements.
 The task is to count the total number of indices (i, j) such that arr[i] = arr[j] and i != j
@@ -12,7 +12,7 @@ As arr[0] = arr[1], the pair of indices is (0, 1),
 (0, 2) and (1, 2)
 
 Input : arr[] = {1, 2, 3} -> 0
-"""
+'''
 
 
 def countPairs(arr):

@@ -16,24 +16,20 @@ Input: coins = [1], amount = 2 -> Output: 2
 '''
 
 
-class Solution(object):
-    '''
-    Time complexity: ~N*M, M is amount
-    Space complexity: ~M, M is amount
-    '''
+def coinChange(coins, amount):
+    ''' Time: ~N*M, ~M '''
 
-    def coinChange(self, coins, amount):
-        MAX = float('inf')
-        dp = [0] + [MAX] * amount
+    MAX = float('inf')
+    dp = [0] + [MAX] * amount
 
-        for i in range(0, amount + 1):
-            for coin in coins:
-                balance = i - coin
+    for i in range(0, amount + 1):
+        for coin in coins:
+            balance = i - coin
 
-                if balance >= 0:
-                    dp[i] = min(dp[i], dp[balance] + 1)
+            if balance >= 0:
+                dp[i] = min(dp[i], dp[balance] + 1)
 
-        if dp[amount] == MAX:
-            return -1
+    if dp[amount] == MAX:
+        return -1
 
-        return dp[-1]
+    return dp[-1]

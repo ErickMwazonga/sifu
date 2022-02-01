@@ -13,11 +13,11 @@ B = [3, 3, 7, 15, 31]
 
 Example
 input
-a,b,c,d,e,f,g,h,i
-d,g,i,j,k,l,m
+a, b, c, d, e, f, g, h, i
+d, g, i, j, k, l, m
 
 output
-d,g,i
+d, g, i
 '''
 
 

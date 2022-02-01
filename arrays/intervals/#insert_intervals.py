@@ -17,10 +17,6 @@ Example 3:
 Input: intervals = [], newInterval = [5,7]
 Output: [[5,7]]
 
-Example 4:
-Input: intervals = [[1,5]], newInterval = [2,3]
-Output: [[1,5]]
-
 Example 5:
 Input: intervals = [[1,5]], newInterval = [2,7]
 Output: [[1,7]]

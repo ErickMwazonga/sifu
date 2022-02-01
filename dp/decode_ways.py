@@ -16,19 +16,10 @@ Input: s = "12" -> 2
 Example 2:
 Input: s = "226" -> 3
     Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
-
-Example 3:
-Input: s = "0" -> 0
-    Explanation: There is no character that is mapped to a number starting with '0'.
-    We cannot ignore a zero when we face it while decoding.
-    So, each '0' should be part of "10" --> 'J' or "20" --> 'T'.
-
-Example 4:
-Input: s = "1" -> 1
 '''
 
 
-def numDecodings(self, s: str) -> int:
+def numDecodings(s: str) -> int:
     if not s:
         return 0
 

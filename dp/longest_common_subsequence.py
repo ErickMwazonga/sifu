@@ -14,9 +14,6 @@ Example 1:
 Example 2:
     Input: text1 = "abc", text2 = "abc" -> 3
     Explanation: The longest common subsequence is "abc" and its length is 3.
-Example 3:
-    Input: text1 = "abc", text2 = "def" -> 0
-    Explanation: There is no such common subsequence, so the result is 0.
 '''
 
 

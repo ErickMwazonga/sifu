@@ -24,18 +24,16 @@ nums       index     target
 '''
 
 
-class Solution:
-    def createTargetArray(self, nums, index) -> list[int]:
-        results = []
+def createTargetArray(nums, index):
+    results = []
 
-        for num, idx in zip(nums, index):
-            results.insert(idx, num)
+    for num, idx in zip(nums, index):
+        results.insert(idx, num)
 
-        return results
+    return results
 
 
 nums = [0, 1, 2, 3, 4]
 index = [0, 1, 2, 2, 1]
 
-soln = Solution()
-soln.createTargetArray(nums, index) == [0, 4, 1, 3, 2]
+createTargetArray(nums, index) == [0, 4, 1, 3, 2]

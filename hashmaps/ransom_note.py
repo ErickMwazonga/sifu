@@ -8,13 +8,13 @@ can be constructed from the magazines ; otherwise, it will return false.
 
 Each letter in the magazine string can only be used once in your ransom note.
 
-Input: ransomNote = "a", magazine = "b"
+Input: ransomNote = 'a', magazine = 'b'
 Output: false
 
-Input: ransomNote = "aa", magazine = "ab"
+Input: ransomNote = 'aa', magazine = 'ab'
 Output: false
 
-Input: ransomNote = "aa", magazine = "aab"
+Input: ransomNote = 'aa', magazine = 'aab'
 Output: true
 '''
 

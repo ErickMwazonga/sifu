@@ -10,7 +10,6 @@ contain leading zeros. For example, "192.168.1.1" and "192.168.1.0" are valid IP
 but "192.168.01.1", while "192.168.1.00" and "192.168@1.1" are invalid IPv4 addresses.
 
 A valid IPv6 address is an IP in the form "x1:x2:x3:x4:x5:x6:x7:x8" where:
-
 1 <= xi.length <= 4
 xi is a hexadecimal string which may contain digits,
 lower-case English letter ('a' to 'f') and upper-case English letters ('A' to 'F').

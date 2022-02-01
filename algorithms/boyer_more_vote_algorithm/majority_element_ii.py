@@ -11,7 +11,7 @@ Input: nums = [1,2] -> [1,2]
 '''
 
 
-def majorityElement(self, nums):
+def majorityElement(nums):
     # There can only be 2 or less majority elements
 
     cand1, cand2 = None, None

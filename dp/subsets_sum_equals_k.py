@@ -11,10 +11,6 @@ Example 2:
     Input: arr = [1, 2, 3, 1, 4], k = 6
     Output: 4
         Explanation: subsets that sum up to k are [1, 2, 3], [1, 1, 4], [2, 3, 1], and [2, 4]
-Example 3:
-    Input: arr = [2, 4, 2, 6, 8], k = 7
-    Output: 0
-        Explanation: there are no subsets that sum up to k
 '''
 
 

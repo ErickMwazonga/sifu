@@ -38,11 +38,6 @@ Input: grid = [[ 1, 4,4,0],
                [-2, 0,0,1],
                [ 1,-1,1,1]]
 Output: 2
-Explanation: Maximum non-negative product is in bold (1 * -2 * 1 * -1 * 1 * 1 = 2).
- 
-Constraints:
-1 <= rows, cols <= 15
--4 <= grid[i][j] <= 4
 '''
 
 

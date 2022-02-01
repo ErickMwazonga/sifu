@@ -48,7 +48,7 @@ Input: [3,4,5,1,3,null,1]
 
 
 class Solution:
-    def rob(self, root: TreeNode) -> int:
+    def rob(self, root) -> int:
         return max(self.dfs(root))
 
     def dfs(self, root):

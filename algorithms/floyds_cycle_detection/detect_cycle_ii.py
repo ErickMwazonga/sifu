@@ -10,7 +10,7 @@ Note that pos is not passed as a parameter.
 '''
 
 
-def detectCycle(self, head):
+def detectCycle(head):
     slow = fast = head
     flag = False
 
