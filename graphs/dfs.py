@@ -6,18 +6,47 @@ by considering the vertex whose value is root as the arbitrary node.
 
 Example 1:
 Input: graph = {
-    '5' : [8, 1, 12],
-    '8' : [5, 12, 14, 4],
-    '12' : [5, 8, 14],
-    '14' : [8, 12, 4],
-    '4' : [8, 14],
-    '1' : [5, 7],
-    '7' : [1, 16],
-    '16' : [7]
+    5 : [8, 1, 12],
+    8 : [5, 12, 14, 4],
+    12 : [5, 8, 14],
+    14 : [8, 12, 4],
+    4 : [8, 14],
+    1 : [5, 7],
+    7 : [1, 16],
+    16 : [7]
 },
 root = 5
 Output: 5 8 12 14 4 1 7 16
 '''
+
+
+def dfs(graph, root):
+    res, visited, stack = [], set([root]), [root]
+
+    while stack:
+        curr = stack.pop()
+        res.append(curr)
+
+        for neighbor in reversed(graph[curr]):
+            if neighbor not in visited:
+                stack.append(neighbor)
+                visited.add(neighbor)
+
+    return res
+
+
+graph = {
+    5: [8, 1, 12],
+    8: [5, 12, 14, 4],
+    12: [5, 8, 14],
+    14: [8, 12, 4],
+    4: [8, 14],
+    1: [5, 7],
+    7: [1, 16],
+    16: [7]
+}
+
+assert dfs(graph, 5) == [5, 8, 14, 4, 1, 7, 16, 12]
 
 
 class Graph:
@@ -34,7 +63,6 @@ class Graph:
         if root in visited:
             return
         else:
-            print(root)
             visited.add(root)
 
             for neighbour in graph.adjList[root]:

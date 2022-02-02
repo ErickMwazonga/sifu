@@ -1,5 +1,28 @@
 # Sifu
-### Preparation
+
+## Data Strctures
+1. [ ] Arrays
+2. [ ] Strings
+3. [ ] Hashmaps + Hashsets
+4. [ ] Stacks
+5. [ ] Queues
+6. [ ] LinkedList
+7. [ ] Heaps
+8. [ ] Trees
+9. [ ] Graphs
+
+## Algorithms
+1. [ ] General Algorithms
+2. [ ] Sorting
+3. [ ] Binary Search
+4. [ ] Numbers n Math
+5. [ ] Two Pointers
+6. [ ] Slinding Window
+7. [ ] Recursion
+8. [ ] Dynamic Programming
+9. [ ] Backtracking
+   
+## Preparation
 https://serhatgiydiren.github.io/preparation-guide-for-tech-interviews
 
 A list of grouped leetcode DSA problems with solutions that helps one prepare well for a coding interview.
@@ -26,7 +49,7 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 20. https://github.com/jiselectric/Algorithm
 21. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
 
-### 75 Curated Questions
+## 75 Curated Questions
 
 1. https://seanprashad.com/leetcode-patterns/
 2. https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0
@@ -34,14 +57,14 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 4. https://leetcode.com/discuss/interview-question?currentPage=1&orderBy=hot&query
 5. https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
 
-### System Design
+## System Design
 
 1. https://afteracademy.com/tech-interview/system-design/top-questions
 2. https://github.com/shashank88/system_design
 3. https://thinksoftware.medium.com/how-to-ace-object-oriented-design-interviews-4f9a667e0780
 4. https://www.thinksoftwarelearning.com/courses/SystemDesignBible
 
-### Groupings
+## Groupings
 
 1. **2D**
    DFS - [79, 130, 200, 695]
@@ -55,7 +78,21 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 5. **DESIGN**
    [146, 359, 380, 384, 621, 933]
 
-### Others
+
+## Courses
+1. Graphs - https://www.youtube.com/watch?v=tWVWeAqZ0WU
+2. 10 Frequest asked questions - https://www.youtube.com/watch?v=o3DUXPRyvT8
+3. Top Coding question - https://www.youtube.com/watch?v=cWUmrgMw220&t=2283s
+### Sites
+1. https://structy.net/
+2. https://www.algoexpert.io/product
+
+## Youtube
+1. Alvin the programmer - https://www.youtube.com/c/alvin-the-programmer
+2. Neetcode - https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
+
+
+## Others
 1. https://www.lewuathe.com/radix-sort-in-python.html
 2. https://stackabuse.com/radix-sort-in-python/
 3. https://www.geeksforgeeks.org/python-program-for-radix-sort/

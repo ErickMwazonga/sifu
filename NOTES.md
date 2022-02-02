@@ -23,6 +23,10 @@ for i in range(n):
 ```
 ---
 ## Flatten an Array
+
+def transpose(strs):
+  grid = [ list(str) for str in strs ]
+  return list(map(list, zip(*grid)))
 ### 1. Basic iterative function
 ```py
 def flatten(input):
@@ -204,4 +208,10 @@ for num in array:
 print("maxHeap:", maxHeap)
 # maxHeap: [-9, -8, -6, -7, -2, -3, -4, -1, -5]
 ```
-
+---
+## Traversals
+### Depth First Searh
+Implemented using a STACK
+<br/>
+### Breadth First Search
+Implemented using a QUEUE
