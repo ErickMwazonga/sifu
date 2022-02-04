@@ -11,8 +11,6 @@ Note that pos is not passed as a parameter.
 Return true if there is a cycle in the linked list. Otherwise, return false.
 '''
 
-# A linked list node
-
 
 class Node:
     def __init__(self, data=None, next=None):
@@ -43,16 +41,13 @@ def detectCycle(head):
     time - O(n), space - O(1)
     '''
 
-    # take two references - slow and fast
     slow = fast = head
 
     while fast and fast.next:
         slow = slow.next  # move slow by one
         fast = fast.next.next  # move fast by two
 
-        # if they meet any any node, linked list contains a cycle
         if slow == fast:
             return True
 
-    # we reach here if slow & fast do not meet
     return False

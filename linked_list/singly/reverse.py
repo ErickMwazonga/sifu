@@ -1,70 +1,33 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+'''
+206. Reverse Linked List
+https://leetcode.com/problems/reverse-linked-list/
+
+Given the head of a singly linked list, reverse the list, and return the reversed list.
+'''
 
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
+def reverse(head):
+    '''Time-O(n), Space-O(1)'''
 
-    def print_list(self):
-        cur_node = self.head
-        while cur_node:
-            print(cur_node.data)
-            cur_node = cur_node.next
+    prev, curr = None, head
 
-    def append(self, data):
-        new_node = Node(data)
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
 
-        if self.head is None:
-            self.head = new_node
-            return
-
-        last_node = self.head
-        while last_node.next:
-            last_node = last_node.next
-        last_node.next = new_node
-
-    def reverse_iterative(self):
-        if not self.head:
-            return
-
-        prev = None
-        curr = self.head
-        _next = None
-
-        while curr:
-            _next = curr.next
-            curr.next = prev
-            prev = curr
-            curr = _next
-
-        self.head = prev
-        # return self.head
-
-    def reverse_recursive(self):
-        def helper(curr, prev):
-            if not curr:
-                return prev
-
-            _next = curr.next
-            curr.next = prev
-            prev = curr
-            curr = _next
-
-            return helper(curr, prev)
-
-        self.head = helper(curr=self.head, prev=None)
+    return prev
 
 
-llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
+def reverse_recursive(head):
+    '''Time-O(n), Space-O(n)'''
 
-# llist.reverse_iterative()
-llist.reverse_recursive()
+    if not head or not head.next:
+        return head
 
-llist.print_list()
+    p = reverse_recursive(head.next)
+    head.next.next = head
+    head.next = None
+
+    return p

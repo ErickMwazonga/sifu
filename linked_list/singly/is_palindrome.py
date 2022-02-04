@@ -11,15 +11,38 @@ Could you do it in O(n) time and O(1) space?
 '''
 
 
+def isPalindrome(head):
+    vals = []
+
+    while head:
+        vals.append(head.val)
+        head = head.next
+
+    return vals == vals[::-1]
+
+
+def isPalindrome2(head):
+    vals = []
+
+    while head:
+        vals.append(head.val)
+        head = head.next
+
+    left, right = 0, len(vals)
+    while left < right:
+        if vals[left] != vals[right]:
+            return False
+
+    return True
+
+
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
     def reverse(self, head):
-        prev_node = None
-        curr_node = head
-        next_node = None
+        prev_node, curr_node = None, head
 
         while curr_node:
             next_node = curr_node.next
@@ -29,7 +52,7 @@ class ListNode:
 
         return prev_node
 
-    def is_palindrome(sel, head):
+    def is_palindrome(self, head):
         reversed_head = self.reverse(head)
 
         while head and reversed_head:
@@ -41,28 +64,26 @@ class ListNode:
 
         return True
 
-    def isPalindrome(self, head):
-        vals = []
-        while head:
-            vals.append(head.val)
-            head = head.next
-
-        return vals == vals[::-1]
-
-    # REVERSE ONLY THE RIGHT HALF
     def isPalindromeList(self, head):
+        '''REVERSE ONLY THE RIGHT HALF'''
+
+        # Find middle
         slow = fast = head
+
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
 
-        slow = self.reverse(slow)
-        head = head
+        # Reverse second half
+        left = head
+        right = self.reverse(slow)
 
-        while slow:
-            if slow.data != head.data:
+        # Check palindrome
+        while left:
+            if left.data != right.data:
                 return False
-            slow = slow.next
-            head = head.next
+
+            left = left.next
+            right = right.next
 
         return True

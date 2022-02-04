@@ -29,17 +29,12 @@ class Solution:
         return None
 
     def getIntersectionNode(self, headA, headB):
-        '''
-        1. Two pointer point to heads of two lists. If one is end, 
-           then assign head of another list to it
-        2. These pointers will meet at intersection head finally.
-        '''
+        '''https://www.youtube.com/watch?v=D0X0BONOQhI'''
 
-        a = headA
-        b = headB
+        a, b = headA, headB
 
         while a != b:
-            a = headB if a == None else a.next
-            b = headA if b == None else b.next
+            a = a.next if a else headB
+            b = b.next if b else headA
 
         return a

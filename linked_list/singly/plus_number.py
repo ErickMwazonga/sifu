@@ -1,39 +1,23 @@
 class Node:
-    '''Linked list node'''
-
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
-def printList(msg, head):
-    print(msg, end='')
-
-    while head:
-        print(head.data, end=" -> ")
-        head = head.next
-    print("None")
+    pass
 
 
 def reverse(head):
-    if not head:
-        return
-
-    curr = head
-    prev = None
-    next_node = None
+    prev, curr = None, head
 
     while curr:
         next_node = curr.next
         curr.next = prev
         prev = curr
         curr = next_node
-    return prev  # Return new head
+
+    return prev
 
 
 def addDigit(head, digit):
     head = reverse(head)
     curr = head
+
     carry = digit
     last = None
 
@@ -41,12 +25,8 @@ def addDigit(head, digit):
         curr.data += carry
 
         if curr.data >= 10:
-            val, rem = divmod(curr.data, 10)
-            carry = 1
+            carry, rem = divmod(curr.data, 10)
             curr.data = rem
-        else:
-            carry = 0
-            break
 
         if not curr.next:
             last = curr
@@ -68,11 +48,4 @@ head.next.next = Node(9)
 head.next.next.next = Node(3)
 
 digit = 7
-
-printList(" Original Linked List: ", head)
 head2 = addDigit(head, digit)
-printList("Resultant Linked List: ", head2)
-
-# RESULT
-# Original Linked List: 9 -> 9 -> 9 -> 9 -> 9 -> None
-# Resultant Linked List: 1 -> 0 -> 0 -> 0 -> 0 -> 0 -> None

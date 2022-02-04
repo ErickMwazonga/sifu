@@ -1,5 +1,7 @@
 '''
+876. Middle of the Linked List
 https://leetcode.com/problems/middle-of-the-linked-list/
+
 Given a non-empty, singly linked list with head node head, return a middle node of linked list.
 If there are two middle nodes, return the second middle node.
 
@@ -22,30 +24,34 @@ class ListNode:
         self.val = x
         self.next = None
 
-    def middleNode1(self, head):
-        fast, slow = head, head
+    def middleNode(self, head):
+        count = self.get_length(head)
+        midpoint = count // 2
 
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
+        curr = head
+        i = 0
 
-        return slow
+        while i < midpoint:
+            curr = curr.next
+            i += 1
 
-    def middleNode2(self, head):
-        if head == None:
-            return head
+        return curr
 
+    def get_length(self, head):
         count = 0
 
-        fast = head
-        while not fast:
-            fast = fast.next
+        while head:
             count += 1
+            head = head.next
 
-        mid = count // 2 + 1
+        return count
 
-        slow = head
-        for i in range(1, mid):
-            slow = slow.next
 
-        return slow
+def middleNode(head):
+    fast, slow = head, head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+    return slow

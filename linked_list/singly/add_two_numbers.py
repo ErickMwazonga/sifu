@@ -19,16 +19,19 @@ Example 2:
 
 
 class ListNode:
-    pass
+    def __init__(self, val):
+        self.val = val
+        self.next = None
 
 
 def addTwoNumbers(l1: ListNode, l2: ListNode):
-    curr = head = None
+    curr = dummy = ListNode(0)
     carry = 0
 
     while l1 or l2:
-        # Find the sum at that index
         _sum = 0
+        _sum += carry
+
         if l1:
             _sum += l1.val
             l1 = l1.next
@@ -37,20 +40,13 @@ def addTwoNumbers(l1: ListNode, l2: ListNode):
             _sum += l2.val
             l2 = l2.next
 
-        _sum += carry
+        carry, val = divmod(_sum, 10)
 
-        # Create node with the remainder
-        carry, value = divmod(_sum % 10)
-        node = ListNode(value)
-
-        # Add the newly created node in the result_list Linkedlist
-        if curr:
-            curr.next = node
-            curr = curr.next
-        else:
-            curr = head = node
+        nxt = ListNode(val)
+        curr.next = nxt
+        curr = curr.next
 
     if carry > 0:
         curr.next = ListNode(carry)
 
-    return head
+    return dummy.next
