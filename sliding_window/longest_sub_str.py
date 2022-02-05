@@ -5,26 +5,26 @@ https://leetcode.com/problems/longest-substring-without-repeating-characters/
 Given a string s, find the length of the longest substring without repeating characters.
 
 Example 1:
-    Input: s = "abcabcbb" -> 3
-    Explanation: The answer is "abc", with the length of 3.
+    Input: s = 'abcabcbb' -> 3
+    Explanation: The answer is 'abc', with the length of 3.
 Example 2:
-    Input: s = "bbbbb" -> 1
-    Explanation: The answer is "b", with the length of 1.
+    Input: s = 'bbbbb' -> 1
+    Explanation: The answer is 'b', with the length of 1.
 Example 3:
-    Input: s = "pwwkew" -> 3
-    Explanation: The answer is "wke", with the length of 3.
-    Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+    Input: s = 'pwwkew' -> 3
+    Explanation: The answer is 'wke', with the length of 3.
+    Notice that the answer must be a substring, 'pwke' is a subsequence and not a substring.
 Example 4:
-    Input: s = ""
+    Input: s = ''
     Output: 0
 '''
 
 
 def lengthOfLongestSubstring(s):
-    """
+    '''
     Time:  O(n), Space: O(k)
     [k = length of the longest substring w/o repeating characters]
-    """
+    '''
 
     n = len(s)
     longest = left = right = 0
@@ -58,7 +58,7 @@ def longestSubstring(s):
     return max_length
 
 
-assert lengthOfLongestSubstring("abcabcbb") == 3
-assert lengthOfLongestSubstring("bbbbb") == 1
-assert lengthOfLongestSubstring("pwwkew") == 3
-assert lengthOfLongestSubstring("") == 0
+assert lengthOfLongestSubstring('abcabcbb') == 3
+assert lengthOfLongestSubstring('bbbbb') == 1
+assert lengthOfLongestSubstring('pwwkew') == 3
+assert lengthOfLongestSubstring('') == 0

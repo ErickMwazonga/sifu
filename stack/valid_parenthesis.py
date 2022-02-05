@@ -1,4 +1,4 @@
-"""
+'''
 20. Valid Parentheses
 https://leetcode.com/problems/valid-parentheses/
 
@@ -11,12 +11,12 @@ Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 Note that an empty string is also considered valid.
 
-Input: "()" -> Output: true
-Input: "()[]{}" -> Output: true
-Input: "(]" -> Output: false
-Input: "([)]" -> Output: false
-Input: "{[]}" -> Output: true
-"""
+Input: '()' -> Output: true
+Input: '()[]{}' -> Output: true
+Input: '(]' -> Output: false
+Input: '([)]' -> Output: false
+Input: '{[]}' -> Output: true
+'''
 
 
 def is_valid(_str: str) -> bool:
@@ -43,3 +43,29 @@ assert is_valid('()[]{}') is True
 assert is_valid('(]') is False
 assert is_valid('([)]') is False
 assert is_valid('{[]}') is True
+
+
+def is_valid(s):
+    '''GLOVO INTERVIEW'''
+
+    if not s:
+        return True
+
+    if len(s) % 2 != 0:
+        return False
+
+    matches = {')': '(', '}': '{', ']': '['}
+    stack = []
+
+    for bracket in s:
+        if not stack:
+            stack.append(bracket)
+        else:
+            if bracket not in matches:
+                stack.append(bracket)
+            else:
+                last = stack.pop()
+                if bracket not in matches or matches[bracket] != last:
+                    return False
+
+    return len(stack) == 0

@@ -1,13 +1,13 @@
 # Importing dependancies
 import sys
 
-"""
+'''
 To see if a binary tree is a binary search tree, check:
 If a node is a left child, then its key and the keys of 
 the nodes in its right subtree are less than its parent’s key.
 If a node is a right child, then its key and the keys of
 the nodes in its left subtree are greater than its parent’s key.
-"""
+'''
 
 
 class TreeNode:

@@ -1,5 +1,5 @@
-def remove_duplicates(self):
-    cur = self.head
+def remove_duplicates(head):
+    cur = head
     seen = dict()
 
     while cur:
@@ -8,5 +8,9 @@ def remove_duplicates(self):
             cur = cur.next
         else:
             nxt = cur.next
-            self.delete_node(cur)
+            delete_node(cur)
             cur = nxt
+
+
+def delete_node(head):
+    pass

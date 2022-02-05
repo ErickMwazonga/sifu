@@ -14,18 +14,18 @@ class Bank_Account:
         self._created_at = datetime.now().date()
 
         if balance < self.__MIN_BALANCE:
-            raise ValueError("Balance to small!")
+            raise ValueError('Balance to small!')
         else:
             self._balance = balance
 
     def __str__(self):
-        return f"""
+        return f'''
             Bank Account:
             Account Owner: {self.owner}
             Account Number: {self.account_number}
             Creation Date: {str(self.created_at)}
             Current Balance: {self.balance}
-        """
+        '''
 
     @property
     def balance(self):
@@ -43,7 +43,7 @@ class Bank_Account:
         return self.balance
 
     def transfer_funds(self):
-        pass
+        ...
 
     def deposit_interest(self):
         pass

@@ -1,4 +1,4 @@
-"""
+'''
 Insertion Sort
 Insertion sort is a sorting algorithm that places
 an unsorted element at its suitable place in each iteration.
@@ -9,7 +9,7 @@ Best: O(n) -> array is already sorted, the outer loop runs for n times
 Average: O(n2) -> elements of the array are in jumbled order.
 
 Space: O(1) -> extra variable temp for min index.
-"""
+'''
 
 # ---------------------------------
 # [BUCKET SORT] VS[INSERTION SORT]

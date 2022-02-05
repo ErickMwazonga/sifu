@@ -20,7 +20,6 @@ Output: 5 8 1 12 14 4 7 16
 '''
 
 
-
 def bfs(graph, root):
     res, visited, queue = [], set([root]), [root]
 
@@ -51,10 +50,7 @@ assert bfs(graph, 5) == [5, 8, 1, 12, 14, 4, 7, 16]
 
 
 class Graph:
-    '''
-    Time complexity: O(|V|+|E|)
-    Space complexity: O(|V|)
-    '''
+    '''Time complexity: O(|V|+|E|), Space complexity: O(|V|)'''
 
     def __init__(self, adjList={}):
         self.adjList = adjList

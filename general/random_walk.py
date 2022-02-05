@@ -2,7 +2,7 @@ import random
 
 
 def random_walk(n):
-    """Return coordinates after 'n' block random walk."""
+    '''Return coordinates after 'n' block random walk.'''
 
     x = y = 0
     for i in range(n):
@@ -19,7 +19,7 @@ def random_walk(n):
 
 
 def random_walk_2(n):
-    """Return coordinates after 'n' block random walk."""
+    '''Return coordinates after 'n' block random walk.'''
 
     x, y = 0, 0
     for i in range(n):

@@ -17,16 +17,14 @@ class Solution:
         self.original_nums = A[:]
 
     def reset(self) -> list[int]:
-        """
-        Resets the array to its original configuration and return it.
-        """
+        '''Resets the array to its original configuration and return it.'''
         return self.original_nums
 
     def shuffle(self) -> list[int]:
-        """
+        '''
         Returns a random shuffling of the array.
         Inspired by - https://www.youtube.com/watch?v=4zx5bM2OcvA
-        """
+        '''
         import random
 
         last_index = len(self.A) - 1

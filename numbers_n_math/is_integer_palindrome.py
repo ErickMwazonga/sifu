@@ -1,4 +1,4 @@
-"""
+'''
 Check Whether a Number is Palindrome or Not
 https://leetcode.com/problems/palindrome-number/
 
@@ -7,7 +7,7 @@ We divided the input by 10 for every iteration,
 so the time complexity is O(log10(n))
 
 Space complexity : O(1)
-"""
+'''
 
 
 def is_palindrome(num):

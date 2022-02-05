@@ -10,9 +10,9 @@ class Node:
 def printList(head):
     ptr = head
     while ptr:
-        print(ptr.data, end=" -> ")
+        print(ptr.data, end=' -> ')
         ptr = ptr.next
-    print("None")
+    print('None')
 
 # Sort given linked list using Merge sort algorithm
 
@@ -36,11 +36,11 @@ def MergeSort(head):
 
 
 def frontBackSplit(source):
-    """
+    '''
     Split the nodes of the given list into front and back halves,
     If the length is odd, the extra node should go in the front list.
     It uses the fast/slow pointer strategy
-    """
+    '''
 
     # if length is less than 2, handle separately
     if source is None or source.next is None:

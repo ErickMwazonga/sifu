@@ -1,5 +1,5 @@
+'''
 # YouTube Video: https://www.youtube.com/watch?v=X41iojWqQZY
-"""
 Use a stack data structure to convert integer values to their corresponding binary representation.
 Example : 242
 242 / 2 = 121 -> 0
@@ -10,7 +10,7 @@ Example : 242
 7 / 2 = 3     -> 1
 3 / 2 = 1     -> 1
 1 / 2 = 0	  -> 1
-"""
+'''
 
 
 def div_by_2(dec_num):

@@ -1,4 +1,4 @@
-"""
+'''
 Counting Sort
 https://www.interviewcake.com/concept/python3/counting-sort
 https://www.programiz.com/dsa/counting-sort
@@ -14,7 +14,7 @@ Worst Case Complexity: O(n+k)
 Best Case Complexity: O(n+k)
 Average Case Complexity: O(n+k)
 Space: O(1) -> O(max)
-"""
+'''
 
 
 # REVISTI

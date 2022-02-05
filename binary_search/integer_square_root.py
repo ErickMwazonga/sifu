@@ -1,4 +1,4 @@
-"""
+'''
 69. Sqrt(x)
 https://leetcode.com/problems/sqrtx/
 
@@ -14,7 +14,7 @@ Example:
     Then the expected output of the function should be
     17, since 17^2 = 289 < 300. Note that 18^2 = 324 > 300,
     so the number 17 is the correct response.
-"""
+'''
 
 
 def integer_square_root(k):

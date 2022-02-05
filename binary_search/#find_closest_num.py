@@ -1,7 +1,8 @@
+
+'''
+Given an array of sorted integers. We need to find the closest value to the given number.
 # YouTube Video: https://www.youtube.com/watch?v=0gkWZNE1H4Y&list=PL5tcWHG-UPH1kjiE-Fqt1xCSkcwyfn2Jb
-"""
-Given an array of sorted integers. We need to find the closest value to the 
-given number.
+
 Array may contain duplicate values and negative numbers.
 Examples:
     Input : arr[] = {1, 2, 4, 5, 6, 6, 8, 9}
@@ -17,7 +18,7 @@ Examples:
 Given[1, 4, 6]and target =3, return1.
 Given[1, 4, 6]and target =5, return1or2.
 Given[1, 3, 3, 4]and target =2, return0or1or2.
-"""
+'''
 
 
 def closestNumber(A, target):

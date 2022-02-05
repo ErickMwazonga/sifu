@@ -11,7 +11,7 @@ Input: str = "programming"
 Output: 'r'
 
 Input: str = "abcd"
-Output: '\0'
+Output: None
 '''
 
 
@@ -24,4 +24,4 @@ def firstRepeatingCharacter(str):
 
         seen.add(char)
 
-    return '\0'
+    return None

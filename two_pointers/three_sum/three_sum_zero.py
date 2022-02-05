@@ -1,4 +1,4 @@
-"""
+'''
 15. 3Sum -> 0
 https://leetcode.com/problems/3sum/
 
@@ -15,7 +15,7 @@ A solution set is:
   [-1, 0, 1],
   [-1, -1, 2]
 ]
-"""
+'''
 
 
 def threeSum(nums):

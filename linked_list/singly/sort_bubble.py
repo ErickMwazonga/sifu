@@ -4,11 +4,6 @@ class Node:
         self.next = next
 
 
-class LinkedList:
-    def __init__(self, head=None):
-        self.head = head
-
-
 '''
 # BUBBLESORT 
 Time complexity: O(n²)

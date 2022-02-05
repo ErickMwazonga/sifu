@@ -1,4 +1,4 @@
-"""
+'''
 https://www.geeksforgeeks.org/reduce-a-number-to-1-by-performing-given-operations/
 Reduce a number to 1 by performing given operations
 Given a number N. The task is to reduce the given number N to 1 in the minimum number of steps.
@@ -18,7 +18,7 @@ Output : 5
 Input : n = 7
 Output : 4
     7->6  6->3  3->2  2->1  
-"""
+'''
 
 
 def countways(n):
