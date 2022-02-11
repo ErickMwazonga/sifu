@@ -56,7 +56,7 @@ assert spiral_order(c) == [
 ]
 
 
-def spiral_orderIter(matrix):
+def spiral_order_iter(matrix):
     res = []
 
     if not matrix:

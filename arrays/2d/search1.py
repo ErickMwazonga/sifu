@@ -41,10 +41,7 @@ def search_matrix(matrix, target):
 
 
 class Solution:
-    '''
-    Time: O(log(nm))
-    https://www.youtube.com/watch?v=eT0UqrYuqbg
-    '''
+    '''Time: O(log(nm)) - https://www.youtube.com/watch?v=eT0UqrYuqbg'''
 
     def search_matrix(self, matrix, target: int) -> bool:
         if not matrix:

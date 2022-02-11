@@ -13,9 +13,8 @@ You must use only constant, O(1) extra space.
 Your runtime complexity should be less than O(n2).
 There is only one duplicate number in the array,
 but it could be repeated more than once.
-'''
-
 # A single duplicate
+'''
 
 
 def get_duplicate(A):
@@ -27,6 +26,5 @@ def get_duplicate(A):
     return sum_of_A - total
 
 
-# Single duplicate
 assert get_duplicate([1, 3, 4, 2, 2]) == 2
 assert get_duplicate([1, 2, 4, 3, 3]) == 3
