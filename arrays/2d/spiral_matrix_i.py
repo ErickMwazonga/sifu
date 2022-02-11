@@ -6,7 +6,7 @@ Given an m x n matrix, return all elements of the matrix in spiral order.
 '''
 
 
-def spiralOrder(matrix):
+def spiral_order(matrix):
     res = []
 
     if not len(matrix):
@@ -47,16 +47,16 @@ c = [
     [9,  10, 11, 12],
     [13, 14, 15, 16]
 ]
-assert spiralOrder([[1]]) == [1]
-assert spiralOrder([[7], [9], [6]]) == [[7], [9], [6]]
-assert spiralOrder(b) == [1, 2, 3, 6, 9, 8, 7, 4, 5]
-assert spiralOrder(c) == [
+assert spiral_order([[1]]) == [1]
+assert spiral_order([[7], [9], [6]]) == [[7], [9], [6]]
+assert spiral_order(b) == [1, 2, 3, 6, 9, 8, 7, 4, 5]
+assert spiral_order(c) == [
     1, 2, 3, 4, 8, 12, 16,
     15, 14, 13, 9, 5, 6, 7, 11, 10
 ]
 
 
-def spiralOrderIter(matrix):
+def spiral_orderIter(matrix):
     res = []
 
     if not matrix:
@@ -87,7 +87,7 @@ def spiralOrderIter(matrix):
     return res
 
 
-def spiralOrder2(matrix):
+def spiral_order2(matrix):
     res = []
 
     if not matrix:

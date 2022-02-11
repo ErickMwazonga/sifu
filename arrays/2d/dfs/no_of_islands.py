@@ -25,7 +25,7 @@ Output: 3
 
 
 class Solution:
-    def numIslands(self, grid) -> int:
+    def num_of_lands(self, grid) -> int:
         if not grid:
             return 0
 
@@ -63,7 +63,7 @@ grid1 = [
     ['1', '1', '0', '0', '0'],
     ['0', '0', '0', '0', '0']
 ]
-assert soln.numIslands(grid1) == 1
+assert soln.num_of_lands(grid1) == 1
 
 grid2 = [
     ['1', '1', '0', '0', '0'],
@@ -71,4 +71,4 @@ grid2 = [
     ['0', '0', '1', '0', '0'],
     ['0', '0', '0', '1', '1']
 ]
-assert soln.numIslands(grid2) == 3
+assert soln.num_of_lands(grid2) == 3

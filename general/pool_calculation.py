@@ -21,19 +21,19 @@ def pool_calculation(player1, player2, GAME_AMOUNT):
 
 
 def run():
-    GAME_AMOUNT = int(input("Enter the Game amount e.g. 50: "))
-    player_1_wins = int(input("Enter player 1 wins e.g. 5: "))
-    player_2_wins = int(input("Enter player 2 wins e.g. 2: "))
+    GAME_AMOUNT = int(input('Enter the Game amount e.g. 50: '))
+    player_1_wins = int(input('Enter player 1 wins e.g. 5: '))
+    player_2_wins = int(input('Enter player 2 wins e.g. 2: '))
 
     calculations = pool_calculation(player_1_wins, player_2_wins, GAME_AMOUNT)
 
     print('\nLETS TALK MONEY')
-    print("-" * 20)
+    print('-' * 20)
     for k, v in calculations.items():
         print(f'{k}: {v}')
 
-    print("-" * 20, '\n')
+    print('-' * 20, '\n')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     run()

@@ -14,30 +14,29 @@ Unit = list[Union[int, str]]
 Matrix = list[Unit]
 
 
-class Solution:
-    def isValidSudoku(self, board: list[list[str]]) -> bool:
-        n = len(board)
-        seen = set()
+def isValidSudoku(self, board) -> bool:
+    n = len(board)
+    seen = set()
 
-        for row in range(n):
-            for col in range(n):
-                num = board[row][col]
+    for row in range(n):
+        for col in range(n):
+            num = board[row][col]
 
-                if num != '.':
-                    # col_val = num + 'col' + str(col) # f'col-{col}-{num}'
-                    # row_val = num + 'row' + str(row) # f'row-{row}-{num}'
-                    # block_val = num + 'block' + str(row // 3) + str(col // 3) # f'block-{row//3}-{col//3}-{num}'
+            if num != '.':
+                # col_val = num + 'col' + str(col) # f'col-{col}-{num}'
+                # row_val = num + 'row' + str(row) # f'row-{row}-{num}'
+                # block_val = num + 'block' + str(row // 3) + str(col // 3) # f'block-{row//3}-{col//3}-{num}'
 
-                    col_val = f'col-{col}-{num}'
-                    row_val = f'row-{row}-{num}'
-                    block_val = f'block-{row//3}-{col//3}-{num}'
+                col_val = f'col-{col}-{num}'
+                row_val = f'row-{row}-{num}'
+                block_val = f'block-{row//3}-{col//3}-{num}'
 
-                    if (col_val in seen) or (row_val in seen) or (block_val in seen):
-                        return False
-                    else:
-                        seen.update([row_val, col_val, block_val])
+                if (col_val in seen) or (row_val in seen) or (block_val in seen):
+                    return False
+                else:
+                    seen.update([row_val, col_val, block_val])
 
-        return True
+    return True
 
 
 class SodukuValidator:

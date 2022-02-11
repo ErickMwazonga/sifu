@@ -14,7 +14,7 @@ Minimize the total number of operations.
 '''
 
 
-def moveZeroes(nums) -> None:
+def move_zeroes(nums) -> None:
     '''Do not return anything, modify nums in-place instead'''
 
     i = 0
@@ -25,7 +25,7 @@ def moveZeroes(nums) -> None:
             i += 1
 
 
-def moveZeroes2(nums) -> None:
+def move_zeroes2(nums) -> None:
     '''Do not return anything, modify nums in-place instead.'''
 
     i, j = 0, 1
@@ -42,7 +42,7 @@ def moveZeroes2(nums) -> None:
         j += 1
 
 
-def moveZeroes(nums) -> None:
+def move_zeroes(nums) -> None:
     left, right = 0, 1
 
     while right < len(nums):
@@ -57,4 +57,4 @@ def moveZeroes(nums) -> None:
             right += 1
 
 
-assert moveZeroes([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0]
+assert move_zeroes([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0]

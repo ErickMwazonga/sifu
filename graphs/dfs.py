@@ -50,10 +50,7 @@ assert dfs(graph, 5) == [5, 8, 14, 4, 1, 7, 16, 12]
 
 
 class Graph:
-    '''
-    Time complexity: O(|V|+|E|)
-    Space complexity: O(|V|)
-    '''
+    '''Time complexity: O(|V|+|E|), Space complexity: O(|V|)'''
 
     def __init__(self, adjList={}):
         # the adjacency list is of type Dict[int,list[int]]

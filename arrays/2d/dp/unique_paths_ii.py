@@ -22,14 +22,10 @@ Input: obstacleGrid = [[0,1],[0,0]]
 Output: 1
 '''
 
-# DP
-'''
-Time complexity: O(n*m)
-Space complexity: O(n*m)
-'''
-
 
 def paths(matrix):
+    '''# DP: Time complexity: O(n*m), Space complexity: O(n*m)'''
+
     n, m = len(matrix), len(matrix[0])
 
     dp = [[0] * m for i in range(n)]

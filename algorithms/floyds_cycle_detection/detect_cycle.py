@@ -1,6 +1,6 @@
 # LINKED LIST
 
-def detectCycle(head):
+def detect_cycle(head):
     slow = fast = head
 
     while fast and fast.next:

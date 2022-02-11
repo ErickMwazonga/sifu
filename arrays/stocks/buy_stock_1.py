@@ -20,7 +20,7 @@ Example 2:
 '''
 
 
-def maxProfit(prices) -> int:
+def max_profit(prices) -> int:
     '''Linear Time, Constant Space'''
 
     n = len(prices)
@@ -38,7 +38,7 @@ def maxProfit(prices) -> int:
     return max_profit
 
 
-def maxProfit2(prices) -> int:
+def max_profit2(prices) -> int:
     '''Linear Time, Constant Space'''
 
     n = len(prices)
@@ -55,5 +55,5 @@ def maxProfit2(prices) -> int:
     return max_profit
 
 
-assert maxProfit([7, 1, 5, 3, 6, 4]) == 5
-assert maxProfit([7, 6, 4, 3, 1]) == 0
+assert max_profit([7, 1, 5, 3, 6, 4]) == 5
+assert max_profit([7, 6, 4, 3, 1]) == 0

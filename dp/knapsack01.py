@@ -40,4 +40,4 @@ if __name__ == '__main__':
     # Knapsack capacity
     W = 10
 
-    print("Knapsack value is", knapSack(v, w, W))
+    print('Knapsack value is', knapSack(v, w, W))

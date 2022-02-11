@@ -1,13 +1,11 @@
 '''
-Given a set of positive integers and an integer s, is there any non-empty subset whose sum to s.
+Given a set of positive integers and an integer s, 
+is there any non-empty subset whose sum to s.
 '''
 
 
-def subsetSum(A, n, sum):
-    '''
-    Time complexity: O(2^n)
-    Space complexity: O(n)
-    '''
+def subset_sum(A, n, sum):
+    '''Time complexity: O(2^n), Space complexity: O(n)'''
 
     # return true if sum becomes 0 (subset found)
     if sum == 0:
@@ -19,11 +17,11 @@ def subsetSum(A, n, sum):
 
     # Case 1. include current item in the subset (A[n]) and recur
     # for remaining items (n - 1) with remaining sum (sum - A[n])
-    include = subsetSum(A, n - 1, sum - A[n])
+    include = subset_sum(A, n - 1, sum - A[n])
 
     # Case 2. exclude current item n from subset and recur for
     # remaining items (n - 1)
-    exclude = subsetSum(A, n - 1, sum)
+    exclude = subset_sum(A, n - 1, sum)
 
     # return true if we can get subset by including or excluding the
     # current item
@@ -31,7 +29,7 @@ def subsetSum(A, n, sum):
 
 
 # Return true if there exists a subsequence of A[0..n] with given sum
-def subsetSumImproved(A, n, sum, lookup):
+def subset_sum_improved(A, n, sum, lookup):
     # return true if sum becomes 0 (subset found)
     if sum == 0:
         return True
@@ -49,11 +47,11 @@ def subsetSumImproved(A, n, sum, lookup):
 
         # Case 1. include current item in the subset (A[n]) and recur
         # for remaining items (n - 1) with decreased sum (sum - A[n])
-        include = subsetSum(A, n - 1, sum - A[n], lookup)
+        include = subset_sum_improved(A, n - 1, sum - A[n], lookup)
 
         # Case 2. exclude current item n from subset and recur for
         # remaining items (n - 1)
-        exclude = subsetSum(A, n - 1, sum, lookup)
+        exclude = subset_sum_improved(A, n - 1, sum, lookup)
 
         # assign true if we get subset by including or excluding current item
         lookup[key] = include or exclude

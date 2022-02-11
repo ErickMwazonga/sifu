@@ -45,7 +45,7 @@ Output: [[1, 4], [5, 13], [14, 20]]
 '''
 
 
-def mergeIntervals(intervals):
+def merge_intervals(intervals):
     n = len(intervals)
     intervals.sort(key=lambda x: x[0])
 

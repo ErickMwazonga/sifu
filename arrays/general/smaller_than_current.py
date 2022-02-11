@@ -16,7 +16,7 @@ Output: [4,0,1,1,3]
 '''
 
 
-def smallerNumbersThanCurrent(nums):
+def smaller_numbers_than_current(nums):
     '''Time complexity: O(nlogn)'''
 
     sorted_nums = sorted(nums)
@@ -29,10 +29,10 @@ def smallerNumbersThanCurrent(nums):
 
 
 nums = [8, 1, 2, 2, 3]
-assert smallerNumbersThanCurrent(nums) == [4, 0, 1, 1, 3]
+assert smaller_numbers_than_current(nums) == [4, 0, 1, 1, 3]
 
 
-def smallerNumbersThanCurrent2(nums):
+def smaller_numbers_than_current2(nums):
     count = [0] * 102
     for num in nums:
         count[num + 1] += 1
@@ -44,4 +44,4 @@ def smallerNumbersThanCurrent2(nums):
 
 
 nums = [8, 1, 2, 2, 3]
-assert smallerNumbersThanCurrent2(nums) == [4, 0, 1, 1, 3]
+assert smaller_numbers_than_current2(nums) == [4, 0, 1, 1, 3]

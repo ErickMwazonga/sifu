@@ -4,13 +4,13 @@ Given two strings str1 and str2 made of alphabetical letters only,
 create a function that returns the length of their longest common substring.
 
 Example 1:
-    Input: str1 = "opposite", str2 = "position"
+    Input: str1 = 'opposite', str2 = 'position'
     Output: 5
-    Explanation: the longest common substring of str1 and str2 is "posit"
+    Explanation: the longest common substring of str1 and str2 is 'posit'
 Example 2:
-    Input: str1 = "printer", str2 = "external"
+    Input: str1 = 'printer', str2 = 'external'
     Output: 3
-    Explanation: the longest common substring of str1 and str2 is "ter"
+    Explanation: the longest common substring of str1 and str2 is 'ter'
 '''
 
 

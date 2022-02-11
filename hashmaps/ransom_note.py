@@ -19,7 +19,7 @@ Output: true
 '''
 
 
-def canConstruct(ransomNote: str, magazine: str) -> bool:
+def can_construct(ransomNote: str, magazine: str) -> bool:
     if len(ransomNote) > len(magazine):
         return False
 
@@ -36,6 +36,6 @@ def canConstruct(ransomNote: str, magazine: str) -> bool:
     return True
 
 
-assert canConstruct('a', 'b') == False
-assert canConstruct('aa', 'ab') == False
-assert canConstruct('aa', 'aab') == True
+assert can_construct('a', 'b') == False
+assert can_construct('aa', 'ab') == False
+assert can_construct('aa', 'aab') == True

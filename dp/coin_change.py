@@ -16,7 +16,7 @@ Input: coins = [1], amount = 2 -> Output: 2
 '''
 
 
-def coinChange(coins, amount):
+def coin_change(coins, amount):
     ''' Time: ~N*M, ~M '''
 
     MAX = float('inf')

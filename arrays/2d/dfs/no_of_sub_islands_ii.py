@@ -9,7 +9,6 @@ Any cells outside of the grid are considered water cells.
 An island in grid2 is considered a sub-island if there is an island in grid1 that contains 
 all the cells that make up this island in grid2.
 Return the number of islands in grid2 that are considered sub-islands.
-
 '''
 
 
@@ -20,7 +19,7 @@ class Solution:
     👉 Now count the sub-islands
     '''
 
-    def countSubIslands(self, grid1, grid2) -> int:
+    def count_sub_islands(self, grid1, grid2) -> int:
         n, m = len(grid2), len(grid2[0])
 
         # removing all the non-common sub-islands
@@ -36,6 +35,7 @@ class Solution:
                 if grid2[i][j] == 1:
                     self.dfs(grid2, i, j)
                     _count += 1
+
         return _count
 
     def dfs(self, grid, i, j):

@@ -8,18 +8,12 @@ def fib(n):
     return dp[-1]
 
 
-print(fib(10))
-
-# RECURSION
-
-
 def fibonacci(n):
     '''O(2^n)) -> Exponential'''
+
     if n <= 1:
         return 1
     return fibonacci(n - 1) + fibonacci(n - 2)
-
-# MEMOIZATION
 
 
 def fib_memoized(n, memo={}):
@@ -33,8 +27,6 @@ def fib_memoized(n, memo={}):
 
     memo[n] = fib_memoized(n - 1) + fib_memoized(n - 2)
     return memo[n]
-
-# ITERATION
 
 
 def fib_iter(n):

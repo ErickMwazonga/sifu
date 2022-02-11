@@ -22,7 +22,7 @@ are set beyond the returned length.
 '''
 
 
-def removeDuplicates(nums) -> int:
+def remove_duplicates(nums) -> int:
     if not nums:
         return 0
 
@@ -38,7 +38,7 @@ def removeDuplicates(nums) -> int:
 
 
 # UNSORTED ARRAY
-def removeDuplicates(arr):
+def remove_duplicates(arr):
     seen = set()
     result = []
 
@@ -50,7 +50,7 @@ def removeDuplicates(arr):
     return result
 
 
-def removeDuplicates(arr):
+def remove_duplicates(arr):
     visited = {}
     for element in arr:
         visited[element] = True

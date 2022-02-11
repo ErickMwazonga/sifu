@@ -11,7 +11,7 @@ Input: [2,2,1,1,1,2,2] -> 2
 
 
 class Solution:
-    def majorityElement(self, nums: list[int]) -> int:
+    def majority_element(self, nums: list[int]) -> int:
         '''
         Boyer Moore Majority Voting algorithm
         The Boyer–Moore majority vote algorithm is an algorithm for finding the majority of a
@@ -33,7 +33,7 @@ class Solution:
 
         return majority
 
-    def majorityElement2(self, nums: list[int]) -> int:
+    def majority_element2(self, nums: list[int]) -> int:
         counter = {}
         majority = len(nums) // 2
 
@@ -46,5 +46,5 @@ class Solution:
 
 
 soln = Solution()
-assert soln.majorityElement([3, 2, 3]) == 3
-assert soln.majorityElement([2, 2, 1, 1, 1, 2, 2]) == 2
+assert soln.majority_element([3, 2, 3]) == 3
+assert soln.majority_element([2, 2, 1, 1, 1, 2, 2]) == 2

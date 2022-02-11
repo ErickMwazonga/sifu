@@ -20,7 +20,7 @@ from collections import defaultdict
 
 
 class Solution:
-    def findDiagonalOrder(self, matrix: list[list[int]]) -> list[int]:
+    def find_diagonal_order(self, matrix: list[list[int]]) -> list[int]:
         '''Time complexity O(MN), Space Complexity O(MN)'''
 
         if not matrix:
@@ -42,7 +42,7 @@ class Solution:
 
         return result
 
-    def findDiagonalOrderOneDirectional(self, matrix):
+    def find_diagonal_order_one_directional(self, matrix):
         if not matrix:
             return []
 
@@ -64,5 +64,5 @@ matrix = [
 output = [[1], [2, 4], [3, 5, 7], [6, 8], [9]]
 
 soln = Solution()
-assert soln.findDiagonalOrder(matrix) == [1, 2, 4, 7, 5, 3, 6, 8, 9]
-assert soln.findDiagonalOrderOneDirectional(matrix) == output
+assert soln.find_diagonal_order(matrix) == [1, 2, 4, 7, 5, 3, 6, 8, 9]
+assert soln.find_diagonal_order_one_directional(matrix) == output

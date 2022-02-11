@@ -18,7 +18,7 @@ Explanation: Because the path 1→3→1→1→1 minimizes the sum.
 '''
 
 
-def minPathSum(grid):
+def min_path_sum(grid):
     if not grid:
         return
 
@@ -46,7 +46,7 @@ def minPathSum(grid):
 # OTHER SOLUTIONS
 # ------------------------------------------------
 # By using recursion:
-def minimumCostPath(matrix, i=0, j=0):
+def minimum_cost_path(matrix, i=0, j=0):
     ''' Time - O(2^nm), Space - O(nm) '''
 
     n = len(matrix)
@@ -55,20 +55,18 @@ def minimumCostPath(matrix, i=0, j=0):
     if i == n-1 and j == m-1:
         return matrix[i][j]
     elif i == n-1:
-        return matrix[i][j] + minimumCostPath(matrix, i, j+1)
+        return matrix[i][j] + minimum_cost_path(matrix, i, j+1)
     elif j == m-1:
-        return matrix[i][j] + minimumCostPath(matrix, i+1, j)
+        return matrix[i][j] + minimum_cost_path(matrix, i+1, j)
     else:
         return matrix[i][j] + min(
-            minimumCostPath(matrix, i+1, j),
-            minimumCostPath(matrix, i, j+1)
+            minimum_cost_path(matrix, i+1, j),
+            minimum_cost_path(matrix, i, j+1)
         )
 
-# By using dynamoc programming:
 
-
-def minimumCostPath(matrix):
-    ''' Time - O(2^nm), Space - O(nm) '''
+def minimum_cost_path(matrix):
+    '''DP: Time - O(2^nm), Space - O(nm) '''
 
     n = len(matrix)
     m = len(matrix[0])

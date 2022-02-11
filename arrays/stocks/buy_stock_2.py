@@ -28,7 +28,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
 
 
-def maxProfit(prices) -> int:
+def max_profit(prices) -> int:
     n = len(prices)
 
     if n <= 1:
@@ -44,6 +44,6 @@ def maxProfit(prices) -> int:
     return max_profit
 
 
-assert maxProfit([7, 1, 5, 3, 6, 4]) == 7
-assert maxProfit([1, 2, 3, 4, 5]) == 4
-assert maxProfit([7, 6, 4, 3, 1]) == 0
+assert max_profit([7, 1, 5, 3, 6, 4]) == 7
+assert max_profit([1, 2, 3, 4, 5]) == 4
+assert max_profit([7, 6, 4, 3, 1]) == 0

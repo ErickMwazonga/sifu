@@ -23,7 +23,7 @@ Output: [[1,7]]
 '''
 
 
-def insertInterval(intervals, newInterval):
+def insert_interval(intervals, newInterval):
     n = len(intervals)
     output = []
     i = 0

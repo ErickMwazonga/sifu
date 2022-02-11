@@ -16,12 +16,12 @@ const edges = [
 '''
 
 
-def undirectedPath(edges, nodeA, nodeB):
-    graph = buildGraph(edges)
-    return hasPath(graph, nodeA, nodeB, set())
+def undirected_path(edges, nodeA, nodeB):
+    graph = build_graph(edges)
+    return has_path(graph, nodeA, nodeB, set())
 
 
-def buildGraph(edges):
+def build_graph(edges):
     graph = {}
 
     for edge in edges:
@@ -38,7 +38,7 @@ def buildGraph(edges):
     return graph
 
 
-def hasPath(graph, src, dst, visited):
+def has_path(graph, src, dst, visited):
     if src == dst:
         return True
 
@@ -48,7 +48,7 @@ def hasPath(graph, src, dst, visited):
     visited.add(src)
 
     for neighbor in graph[src]:
-        if (hasPath(graph, neighbor, dst, visited) == True):
+        if (has_path(graph, neighbor, dst, visited) == True):
             return True
 
     return False

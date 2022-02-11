@@ -26,6 +26,7 @@ def hasPath(graph, src, dst):
     n = number of nodes, e = number edges
     Time: O(e), Space: O(n)
     '''
+
     if src == dst:
         return True
 
@@ -42,6 +43,7 @@ def hasPath(graph, src, dst):
     n = number of nodes, e = number edges
     Time: O(e), Space: O(n)
     '''
+
     queue = [src]
 
     while (queue.length):

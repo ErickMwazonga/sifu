@@ -13,6 +13,7 @@ class SinglyLinkedList:
 
     def print_node_list(self):
         '''Return string representation of the list: 0(n) time'''
+
         nodes = []
         curr = self.head
 
@@ -28,6 +29,28 @@ class SinglyLinkedList:
         while cur_node:
             print(cur_node.data, end="->")
             cur_node = cur_node.next
+
+    def get_values(self, head):
+        values = []
+
+        curr = self.head
+        while curr:
+            values.append(curr.next)
+            curr = curr.next
+
+        return values
+
+    def get_values_R(self, head):
+        values = []
+        fill_values(self, head, values)
+        return values
+
+    def fill_values(self, head, values):
+        if not head:
+            return
+
+        values.append(head.val)
+        self.fill_values(self, head.next, values)
 
     def generate_list(metadata=None):
         '''

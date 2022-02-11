@@ -15,7 +15,7 @@ Output: [1]
 import heapq
 
 
-def topKFrequent(nums, k):
+def top_K_frequent(nums, k):
     freqs = {}
     n = len(nums)
 
@@ -33,11 +33,11 @@ def topKFrequent(nums, k):
     return res[:k]
 
 
-assert topKFrequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
-assert topKFrequent([1], 1) == [1]
+assert top_K_frequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+assert top_K_frequent([1], 1) == [1]
 
 
-def topKFrequentXX(nums, k):
+def top_K_frequent_XX(nums, k):
     res, freqs = [], {}
 
     for num in nums:
@@ -53,5 +53,5 @@ def topKFrequentXX(nums, k):
     return res
 
 
-assert topKFrequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
-assert topKFrequent([1], 1) == [1]
+assert top_K_frequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+assert top_K_frequent([1], 1) == [1]

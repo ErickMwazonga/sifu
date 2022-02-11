@@ -15,10 +15,7 @@ Example 2:
 
 
 def subsetsThatSumUpToK(arr, k, i=0, _sum=0):
-    '''
-    Time complexity: O(2^n)
-    Space complexity: O(n)
-    '''
+    '''Time complexity: O(2^n), Space complexity: O(n)'''
 
     if _sum == k:
         return 1

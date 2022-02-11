@@ -32,7 +32,7 @@ Output: 6
 class Solution(object):
 
     # DP
-    def uniquePaths(self, n: int, m: int) -> int:
+    def unique_paths(self, n: int, m: int) -> int:
         dp = [[1] * m for _ in range(n)]
 
         for i in range(1, n):
@@ -44,7 +44,7 @@ class Solution(object):
         return dp[-1][-1]
 
     # RECURSION
-    def gridTravelerRec(self, n, m) -> int:
+    def grid_traveler_rec(self, n, m) -> int:
         '''Time: O(2^n+m), Space: O(n+m)'''
 
         if m == 1 and n == 1:
@@ -53,12 +53,12 @@ class Solution(object):
         if m == 0 or n == 0:
             return 0
 
-        right = self.gridTravelerRec(n, m-1)
-        down = self.gridTravelerRec(n-1, m)
+        right = self.grid_traveler_rec(n, m-1)
+        down = self.grid_traveler_rec(n-1, m)
         return right + down
 
     # MEMOIZATION
-    def uniquePathsMemoized(self, m, n, memo={}):
+    def unique_paths_memoized(self, m, n, memo={}):
         '''Time: O(n*m), Space: O(n+m)'''
 
         key = f'{m}-{n}'
@@ -72,8 +72,8 @@ class Solution(object):
         if m == 0 or n == 0:
             return 0
 
-        right = self.gridTravelerRec(n, m-1)
-        down = self.gridTravelerRec(n-1, m)
+        right = self.unique_paths_memoized(n, m-1)
+        down = self.unique_paths_memoized(n-1, m)
 
         memo[key] = right + down
         return memo[key]

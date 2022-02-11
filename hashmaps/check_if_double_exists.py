@@ -3,7 +3,7 @@ Check if N and its Double exits
 '''
 
 
-def checkExists(arr):
+def check_exists(arr):
     _hash = set(arr)
 
     for num in arr:
@@ -15,6 +15,6 @@ def checkExists(arr):
     return False
 
 
-assert checkExists([2, 5, 6, 4, 9]) == True
-assert checkExists([8, 5, 6, 4, 1]) == True
-assert checkExists([13, 5, 6, 4, 1]) == False
+assert check_exists([2, 5, 6, 4, 9]) == True
+assert check_exists([8, 5, 6, 4, 1]) == True
+assert check_exists([13, 5, 6, 4, 1]) == False

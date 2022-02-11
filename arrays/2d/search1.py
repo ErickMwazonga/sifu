@@ -29,7 +29,7 @@ Output: false
 '''
 
 
-def searchMatrix(matrix, target):
+def search_matrix(matrix, target):
     '''Time: O(M*N)'''
 
     for i in range(len(matrix)):
@@ -46,7 +46,7 @@ class Solution:
     https://www.youtube.com/watch?v=eT0UqrYuqbg
     '''
 
-    def searchMatrix(self, matrix, target: int) -> bool:
+    def search_matrix(self, matrix, target: int) -> bool:
         if not matrix:
             return False
 
@@ -69,7 +69,7 @@ class Solution:
         return False
 
 
-def searchMatrix2(matrix, target) -> bool:
+def search_matrix2(matrix, target) -> bool:
     '''Time: O(M*N)'''
 
     if not matrix:
@@ -92,7 +92,7 @@ def searchMatrix2(matrix, target) -> bool:
     return False
 
 
-def searchMatrix3(matrix, target):
+def search_matrix3(matrix, target):
     '''Time: O(M*N)'''
 
     if not matrix:
@@ -129,7 +129,7 @@ class SortedSearch:
 
         return False
 
-    def searchMatrix(self, matrix, target: int) -> bool:
+    def search_matrix(self, matrix, target: int) -> bool:
         if not matrix:
             return False
 

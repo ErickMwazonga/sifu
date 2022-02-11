@@ -13,7 +13,7 @@ Return the number of islands in grid2 that are considered sub-islands.
 
 
 class Solution:
-    def countSubIslands(self, grid1, grid2) -> int:
+    def count_sub_islands(self, grid1, grid2) -> int:
         num_sub_islands = 0
 
         for row in range(len(grid2)):

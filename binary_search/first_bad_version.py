@@ -28,17 +28,17 @@ Output: 1
 '''
 
 
-def isBadVersion(n):
+def is_bad_version(n):
     pass
 
 
-def firstBadVersion(n):
+def first_bad_version(n):
     low, high = 0, n
 
     while low < high:
         mid = low + (high - low) // 2
 
-        if isBadVersion(mid):
+        if is_bad_version(mid):
             high = mid
         else:
             low = mid + 1
@@ -46,14 +46,14 @@ def firstBadVersion(n):
     return low
 
 
-def firstBadVersion2(n):
+def first_bad_version2(n):
     low, high = 0, n
     bad = 1
 
     while low < high:
         mid = low + (high - low) // 2
 
-        if isBadVersion(mid):
+        if is_bad_version(mid):
             high = mid
             bad = mid
         else:

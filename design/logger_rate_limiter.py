@@ -33,9 +33,7 @@ from collections import deque
 
 
 class Logger:
-    '''
-    Time Complexity: ~N, Space Complexity: ~N
-    '''
+    '''Time Complexity: ~N, Space Complexity: ~N'''
 
     def __init__(self):
         ''' Initialize your data structure here.'''

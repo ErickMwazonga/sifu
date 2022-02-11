@@ -11,20 +11,22 @@ return [0, 1].
 '''
 
 
-def twoSum(nums: list, target: int) -> list:
+def two_sum(nums: list, target: int) -> list:
     '''Time complexity: 0(n)'''
 
     seen = {}
 
     for key, value in enumerate(nums):
         rem = target - value
+
         if rem in seen:
             return [key, seen[rem]]
+
         seen[value] = key
 
 
-assert sorted(twoSum([2, 7, 11, 15], 9)) == sorted([0, 1])
-assert sorted(twoSum([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
+assert sorted(two_sum([2, 7, 11, 15], 9)) == sorted([0, 1])
+assert sorted(two_sum([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
 
 
 def two_sum_brute_force(A, target):

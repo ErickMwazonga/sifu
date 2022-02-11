@@ -22,7 +22,7 @@ Output: 0
 '''
 
 
-def searchInsert(nums, target):
+def search_insert(nums, target):
     '''Intuition - Just find the lowest than target'''
 
     low, high = 0, len(nums)
@@ -38,8 +38,8 @@ def searchInsert(nums, target):
     return low
 
 
-assert searchInsert([1, 3, 5, 6], 5) == 2
-assert searchInsert([1, 3, 5, 6], 2) == 1
-assert searchInsert([1, 3, 5, 6], 7) == 4
-assert searchInsert([1, 3, 5, 5, 6], 0) == 0
-assert searchInsert([1], 0) == 0
+assert search_insert([1, 3, 5, 6], 5) == 2
+assert search_insert([1, 3, 5, 6], 2) == 1
+assert search_insert([1, 3, 5, 6], 7) == 4
+assert search_insert([1, 3, 5, 5, 6], 0) == 0
+assert search_insert([1], 0) == 0

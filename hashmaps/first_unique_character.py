@@ -2,17 +2,15 @@
 Given a string, find the first non-repeating character in it 
 and return it's index. If it doesn't exist, return -1.
 
-s = "leetcode" -> return 0.
-s = "loveleetcode", -> return 2.
+s = 'leetcode' -> return 0.
+s = 'loveleetcode', -> return 2.
 Note: You may assume the string contain only lowercase letters.
 '''
 
 
 def firstUniqChar(s: str):
-    '''
-    Time complexity : O(N) since we go through the string of length N two times.
-    Space complexity : O(N) since we have to keep a hash map with N elements.
-    '''
+    '''Time complexity : O(N), Space complexity : O(N)'''
+
     _hash = {}
 
     for char in s:
@@ -25,5 +23,5 @@ def firstUniqChar(s: str):
     return -1
 
 
-assert firstUniqChar("leetcode") == 0
-assert firstUniqChar("loveleetcode") == 2
+assert firstUniqChar('leetcode') == 0
+assert firstUniqChar('loveleetcode') == 2

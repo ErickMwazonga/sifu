@@ -11,7 +11,7 @@ Input: nums = [1,2] -> [1,2]
 '''
 
 
-def majorityElement(nums):
+def majority_element(nums):
     # There can only be 2 or less majority elements
 
     cand1, cand2 = None, None
@@ -50,4 +50,4 @@ def majorityElement(nums):
     return ans
 
 
-assert majorityElement([1, 2]) == [1, 2]
+assert majority_element([1, 2]) == [1, 2]

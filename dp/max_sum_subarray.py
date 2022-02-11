@@ -25,7 +25,7 @@ Input: arr = [-3, -1, -2] -> Output: -1
 # Kadane’s algorithm
 
 
-def maxSubArray(nums: list) -> int:
+def max_sub_array(nums: list) -> int:
     curr_sum = max_sum = nums[0]
 
     for num in nums[1:]:

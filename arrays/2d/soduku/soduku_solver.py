@@ -12,7 +12,7 @@ The '.' character indicates empty cells.
 
 class Solution:
 
-    def solveSudoku(self, board):
+    def solve_sudoku(self, board):
         self.board = board
         self.solve()
 

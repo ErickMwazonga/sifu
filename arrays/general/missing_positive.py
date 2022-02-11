@@ -25,7 +25,7 @@ def first_missing_postive(arr):
             return i
 
 
-def firstMissingPositive(nums) -> int:
+def first_missing_positive(nums) -> int:
     n = len(nums)
 
     # cleaning up the array (negative nos + nos > n)

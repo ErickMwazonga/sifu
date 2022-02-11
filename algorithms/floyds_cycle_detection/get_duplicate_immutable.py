@@ -6,7 +6,7 @@ https://leetcode.com/problems/find-the-duplicate-number/discuss/705111/summary-7
 '''
 
 
-def findDuplicate(nums) -> int:
+def find_duplicate(nums) -> int:
     slow = nums[0]
     fast = nums[slow]
 

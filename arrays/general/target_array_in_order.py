@@ -24,7 +24,7 @@ nums       index     target
 '''
 
 
-def createTargetArray(nums, index):
+def create_target_array(nums, index):
     results = []
 
     for num, idx in zip(nums, index):
@@ -36,4 +36,4 @@ def createTargetArray(nums, index):
 nums = [0, 1, 2, 3, 4]
 index = [0, 1, 2, 2, 1]
 
-createTargetArray(nums, index) == [0, 4, 1, 3, 2]
+create_target_array(nums, index) == [0, 4, 1, 3, 2]

@@ -13,7 +13,7 @@ Design a data structure that supports all following operations in average O(1) t
 
 Example 1:
 Input
-["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+['RandomizedSet', 'insert', 'remove', 'insert', 'getRandom', 'remove', 'insert', 'getRandom']
 [[], [1], [2], [2], [], [1], [2], []]
 Output
 [null, true, false, true, 2, true, false, 2]

@@ -17,7 +17,7 @@ NB: -sys.maxsize
 '''
 
 
-def maxProduct(nums: list) -> int:
+def max_product(nums: list) -> int:
     '''Time complexity: ~N, Space complexity: ~1'''
 
     if not nums:
@@ -35,5 +35,5 @@ def maxProduct(nums: list) -> int:
     return max_so_far
 
 
-assert maxProduct([2, 3, -2, 4]) == 6
-assert maxProduct([-2, 0, -1]) == 0
+assert max_product([2, 3, -2, 4]) == 6
+assert max_product([-2, 0, -1]) == 0

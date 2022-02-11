@@ -16,7 +16,7 @@ Output: 4
 '''
 
 
-def maximalSquare(matrix):
+def maximal_square(matrix):
     if not matrix:
         return 0
 

@@ -27,7 +27,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 '''
 
 
-def maxProfit2(prices):
+def max_rofit2(prices):
     '''Two passes through the list, O(n) time, O(n) space'''
 
     if not prices:
@@ -56,10 +56,10 @@ def maxProfit2(prices):
     return total_max
 
 
-assert maxProfit2([3, 3, 5, 0, 0, 3, 1, 4]) == 6
+assert max_rofit2([3, 3, 5, 0, 0, 3, 1, 4]) == 6
 
 
-def maxProfit(prices):
+def max_profit(prices):
     first_buy, first_sell = float('-inf'), 0
     second_buy, second_sell = float('-inf'), 0
 

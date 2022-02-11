@@ -67,6 +67,7 @@ def plus_one(digits):
 
 def plus_one(A):
     A[-1] += 1
+
     for i in reversed(range(1, len(A))):
         if A[i] != 10:
             break

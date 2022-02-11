@@ -6,7 +6,8 @@ In Josephus problem, n people are standing in a circle waiting to be executed an
 we kill the kth person and remove that person from the circle.
 '''
 
-def josephusProblem(n, k):
+
+def josephus_problem(n, k):
     if n == 1:
         return 0
-    return 1 + (josephusProblem(n-1, k) + k-1) % n
+    return 1 + (josephus_problem(n-1, k) + k-1) % n

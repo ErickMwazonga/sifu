@@ -17,7 +17,7 @@ Explanation: You can't get a non-decreasing array by modify at most one element.
 '''
 
 
-def checkPossibility(nums):
+def check_possibility(nums):
     changed = False
 
     for i in range(0, len(nums)-1):
@@ -33,7 +33,7 @@ def checkPossibility(nums):
     return True
 
 
-def checkPossibilityBest(nums):
+def check_possibility_best(nums):
     count = 0
     n = len(nums)
 
@@ -48,4 +48,5 @@ def checkPossibilityBest(nums):
                 return False
             elif (i-1) >= 0 and nums[i-1] > nums[i+1]:
                 nums[i+1] = nums[i]
+
     return True

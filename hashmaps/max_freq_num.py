@@ -8,7 +8,7 @@ return any of the elements.
 '''
 
 
-def mostFrequent(arr):
+def most_frequent(arr):
     freq = {}
 
     for num in arr:
@@ -23,7 +23,7 @@ def mostFrequent(arr):
     return res
 
 
-def mostFrequent2(arr):
+def most_frequent2(arr):
     freq = {}
     max_count, most_frequent = 0, -1
 
@@ -39,5 +39,5 @@ def mostFrequent2(arr):
 
 
 A = [1, 5, 2, 1, 3, 2, 1]
-assert mostFrequent(A) == 1
-assert mostFrequent2(A) == 1
+assert most_frequent(A) == 1
+assert most_frequent2(A) == 1

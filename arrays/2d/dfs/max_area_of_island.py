@@ -24,7 +24,7 @@ because the island must be connected 4-directionally.
 
 
 class Solution:
-    def maxAreaOfIsland(self, grid) -> int:
+    def max_area_of_island(self, grid) -> int:
         if not grid:
             return 0
 
@@ -68,4 +68,4 @@ matrix = [
 ]
 
 soln = Solution()
-assert soln.maxAreaOfIsland(matrix) == 6
+assert soln.max_area_of_island(matrix) == 6

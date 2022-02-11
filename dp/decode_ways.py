@@ -10,16 +10,16 @@ A message containing letters from A-Z is being encoded to numbers using the foll
 Given a non-empty string containing only digits, determine the total number of ways to decode it.
 
 Example 1:
-Input: s = "12" -> 2
-    Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+Input: s = '12' -> 2
+    Explanation: It could be decoded as 'AB' (1 2) or 'L' (12).
 
 Example 2:
-Input: s = "226" -> 3
-    Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+Input: s = '226' -> 3
+    Explanation: It could be decoded as 'BZ' (2 26), 'VF' (22 6), or 'BBF' (2 2 6).
 '''
 
 
-def numDecodings(s: str) -> int:
+def num_decodings(s: str) -> int:
     if not s:
         return 0
 
@@ -28,7 +28,7 @@ def numDecodings(s: str) -> int:
 
     # base case initialization
     dp[0] = 1
-    dp[1] = 0 if s[0] == "0" else 1
+    dp[1] = 0 if s[0] == '0' else 1
 
     for i in range(2, n + 1):
         # One step jump
@@ -43,18 +43,15 @@ def numDecodings(s: str) -> int:
 
 
 # RECURSION
-def waysToDecode(str, i=0):
-    '''
-    Time complexity: O(2^n)
-    Space complexity: O(n)
-    '''
+def ways_to_decode(str, i=0):
+    '''Time complexity: O(2^n), Space complexity: O(n)'''
 
     n = len(str)
-    if n == 0 or (i < n and str[i] == "0"):
+    if n == 0 or (i < n and str[i] == '0'):
         return 0
     elif i >= n-1:
         return 1
-    elif "10" <= (str[i] + str[i+1]) <= "26":
-        return waysToDecode(str, i+1) + waysToDecode(str, i+2)
+    elif '10' <= (str[i] + str[i+1]) <= '26':
+        return ways_to_decode(str, i+1) + ways_to_decode(str, i+2)
     else:
-        return waysToDecode(str, i+1)
+        return ways_to_decode(str, i+1)

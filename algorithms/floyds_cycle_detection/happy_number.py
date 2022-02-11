@@ -21,7 +21,7 @@ Explanation:
 '''
 
 
-def isHappy(n: int) -> bool:
+def is_happy(n: int) -> bool:
     slow = squared(n)
     fast = squared(squared(n))
 
@@ -46,7 +46,7 @@ def squared2(n):
     return result
 
 
-def isHappy2(n):
+def is_happy2(n):
     seen = {n}
 
     while (n):
@@ -60,4 +60,4 @@ def isHappy2(n):
             seen.add(n)
 
 
-assert isHappy(19) == True
+assert is_happy(19) == True

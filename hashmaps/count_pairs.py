@@ -15,7 +15,7 @@ Input : arr[] = {1, 2, 3} -> 0
 '''
 
 
-def countPairs(arr):
+def count_pairs(arr):
     n = len(arr)
     mapping = {}
     ans = 0
@@ -30,7 +30,7 @@ def countPairs(arr):
     return ans
 
 
-def countPairs3(arr):
+def count_pairs3(arr):
     def no_of_repeats(n):
         if n < 2:
             return 0
@@ -43,6 +43,6 @@ def countPairs3(arr):
 
 arr = [1, 1, 2]
 arr1 = [1, 1, 1, 3, 3, 4, 1]
-# print(countPairs(arr))
-print(countPairs(arr1))
-print(countPairs3(arr1))
+# print(count_pairs(arr))
+print(count_pairs(arr1))
+print(count_pairs3(arr1))

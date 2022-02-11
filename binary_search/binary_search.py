@@ -5,10 +5,8 @@ def linear_search(data, target):
             return True
     return False
 
-# ITERATIVELY
 
-
-def binarySearch(arr, x):
+def binary_search2(arr, x):
     low, high = 0, len(arr) - 1
 
     while low <= high:
@@ -23,19 +21,17 @@ def binarySearch(arr, x):
 
     return -1  # NOT FOUND
 
-# RECURSIVE
 
-
-def binarySearch2(arr, low, high, x):
+def binary_search3(arr, low, high, x):
     if low <= high:
         mid = low + (high - low) // 2
 
         if x == arr[mid]:
             return mid
         elif x > arr[mid]:
-            return binarySearch2(arr, mid+1, high, x)
+            return binary_search3(arr, mid+1, high, x)
         else:
-            return binarySearch2(arr, low, mid-1, x)
+            return binary_search3(arr, low, mid-1, x)
     else:
         return -1
 
@@ -45,4 +41,4 @@ x = 10
 low, high = 0, len(arr) - 1
 
 # print(binarySearch(arr, x))
-print(binarySearch2(arr, low, high, x))
+print(binary_search3(arr, low, high, x))

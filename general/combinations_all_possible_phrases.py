@@ -44,6 +44,7 @@ def phrases(arr):
 
 def phrases(arr, i=0):
     '''Time and Space O(m^n*ns)'''
+
     if i == len(arr):
         return ['']
     else:

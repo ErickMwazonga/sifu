@@ -41,7 +41,7 @@ Output: 2
 '''
 
 
-def maxProductPath(grid):
+def max_product_path(grid):
     '''time: O(M * N), space: O(M * N)'''
 
     if not grid:

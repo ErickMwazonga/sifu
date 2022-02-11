@@ -19,7 +19,7 @@ def guess():
     pass
 
 
-def guessNumber(n: int) -> int:
+def guess_number(n: int) -> int:
     low, high = 1, n
 
     while low <= high:

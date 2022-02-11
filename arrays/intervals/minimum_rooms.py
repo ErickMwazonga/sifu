@@ -10,7 +10,7 @@ NOTE
 '''
 
 
-def minMeetingRooms(intervals):
+def min_meeting_rooms(intervals):
     '''
     Inspired by
     https://medium.com/@edward.zhou/leetcode-253-meeting-rooms-ii-explained-python3-solution-3f8869612df

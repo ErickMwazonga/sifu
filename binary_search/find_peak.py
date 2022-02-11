@@ -20,7 +20,7 @@ Input: arr = [1, 5, 2, 6, 6, 3] -> 3
 '''
 
 
-def findPeak(arr):
+def find_peak(arr):
     '''Time: O(n), Space: O(1)'''
 
     n = len(arr)
@@ -35,7 +35,7 @@ def findPeak(arr):
 # ITERATIVELY
 
 
-def findPeak(A):
+def find_peak(A):
     left, right = 0, len(A) - 1
 
     while left < right:
@@ -51,17 +51,17 @@ def findPeak(A):
 # RECURSIVELY
 
 
-def findPeakRec(arr, left, right):
+def find_peak_rec(arr, left, right):
     if left >= right:
         return left
 
     mid = (left + right) // 2
 
     if arr[mid] < arr[mid+1]:
-        return findPeakRec(arr, mid+1, right)
+        return find_peak_rec(arr, mid+1, right)
     else:
-        return findPeakRec(arr, left, mid)
+        return find_peak_rec(arr, left, mid)
 
 
-def findPeak2(arr):
-    return findPeakRec(arr, 0, len(arr)-1)
+def find_peak2(arr):
+    return find_peak_rec(arr, 0, len(arr)-1)

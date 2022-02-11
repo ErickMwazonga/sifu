@@ -18,7 +18,7 @@ Output: [-1,-1]
 '''
 
 
-def searchRange(nums, target):
+def search_range(nums, target):
     n = len(nums)
     result = [-1, -1]
 
@@ -35,7 +35,7 @@ def searchRange(nums, target):
     return result
 
 
-print(searchRange([5, 7, 7, 8, 8, 10], 8))
+print(search_range([5, 7, 7, 8, 8, 10], 8))
 
 
 def first_and_last(A, target):
@@ -71,15 +71,15 @@ def find_first_and_last(A, target):
     return [first, last]
 
 
-class Solution(object):
+class Solution():
 
-    def searchRange(self, nums, target):
-        start = self.findStartingIndex(nums, target)
-        end = self.findEndingIndex(nums, target)
+    def search_range(self, nums, target):
+        start = self.find_starting_index(nums, target)
+        end = self.find_fnding_index(nums, target)
 
         return [start, end]
 
-    def findStartingIndex(self, nums, target):
+    def find_starting_index(self, nums, target):
         low, high = 0, len(nums)
         index = -1
 
@@ -96,7 +96,7 @@ class Solution(object):
 
         return index
 
-    def findEndingIndex(self, nums, target):
+    def find_fnding_index(self, nums, target):
         low, high = 0, len(nums)
         index = -1
 
@@ -116,4 +116,4 @@ class Solution(object):
 
 soln = Solution()
 arr, target = [1, 4, 7, 8, 11, 11, 11, 11, 11, 13], 11
-assert soln.searchRange(arr, target) == [4, 8]
+assert soln.search_range(arr, target) == [4, 8]

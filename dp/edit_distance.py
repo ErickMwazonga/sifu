@@ -9,7 +9,7 @@ Delete a character
 Replace a character
  
 Example 1:
-Input: word1 = "horse", word2 = "ros"
+Input: word1 = 'horse', word2 = 'ros'
 Output: 3
 Explanation: 
     horse -> rorse (replace 'h' with 'r')
@@ -18,7 +18,7 @@ Explanation:
 '''
 
 
-def minDistance(word1, word2):
+def min_distance(word1, word2):
     '''Time: O(nm), Space: O(nm)'''
 
     n, m = len(word1), len(word2)

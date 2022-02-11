@@ -36,10 +36,7 @@ class Solution:
 
 
 class Solution(object):
-    '''
-    # Time:  O(n * 4^n)
-    # Space: O(n)
-    '''
+    '''# Time:  O(n * 4^n), # Space: O(n)'''
 
     def letterCombinations(self, digits):
         sol = []

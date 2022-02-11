@@ -27,7 +27,7 @@ class Solution:
     L - Left
     '''
 
-    def numDistinctIslands(self, grid):
+    def num_distinct_islands(self, grid):
         n, m = len(grid), len(grid[0])
         distinct_paths = set()
 
@@ -71,5 +71,5 @@ input2 = [
 ]
 
 soln = Solution()
-assert soln.numDistinctIslands(input1) == 1
-assert soln.numDistinctIslands(input2) == 3
+assert soln.num_distinct_islands(input1) == 1
+assert soln.num_distinct_islands(input2) == 3

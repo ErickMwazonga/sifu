@@ -23,9 +23,9 @@ Explanation: All possible pairs are returned from the sequence: [1,3],[2,3]
 '''
 
 
-def kSmallestPairs(nums1, nums2, k: int):
-    # NAIVE APPROACH
+def k_smallest_pairs(nums1, nums2, k: int):  # NAIVE APPROACH
     result = []
+
     for i in nums1:
         for x in nums2:
             result.append([i, x])

@@ -17,7 +17,7 @@ Its maximum jump length is 0, which makes it impossible to reach the last index.
 
 
 class Solution:
-    def canJump(self, nums: list[int]) -> bool:
+    def can_jump(self, nums: list[int]) -> bool:
         if not nums:
             return False
 
@@ -31,7 +31,7 @@ class Solution:
 
         return True
 
-    def canJump2(self, arr):
+    def can_jump2(self, arr):
         n = len(arr)
         maxIndex = 0
 
@@ -45,5 +45,5 @@ class Solution:
 
 
 soln = Solution()
-soln.canJump([2, 3, 1, 1, 4]) == True
-soln.canJump([3, 2, 1, 0, 4]) == False
+soln.can_jump([2, 3, 1, 1, 4]) == True
+soln.can_jump([3, 2, 1, 0, 4]) == False

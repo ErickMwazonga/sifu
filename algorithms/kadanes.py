@@ -24,7 +24,7 @@ Input: arr = [-3, -1, -2] -> Output: -1
 
 
 # Kadane’s algorithm
-def maxSubArray(nums: list[int]) -> int:
+def max_sub_array(nums: list[int]) -> int:
     curr_sum = max_sum = nums[0]
 
     for num in nums[1:]:
@@ -44,7 +44,7 @@ def max_subarray(A):
     return max_so_far
 
 
-assert maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
-assert maxSubArray([2, 3, -1, 4, -10, 2, 5]) == 8
-assert maxSubArray([-3, -1, -2]) == -1
-assert max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+assert max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+assert max_sub_array([2, 3, -1, 4, -10, 2, 5]) == 8
+assert max_sub_array([-3, -1, -2]) == -1
+assert max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6

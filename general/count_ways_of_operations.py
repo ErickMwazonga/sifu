@@ -21,13 +21,13 @@ Output : 4
 '''
 
 
-def countways(n):
+def count_ways(n):
     if n == 1:
         return 0
     elif n % 2 == 0:
-        return 1 + countways(n / 2)
+        return 1 + count_ways(n / 2)
     else:
-        return 1 + min(countways(n - 1), countways(n + 1))
+        return 1 + min(count_ways(n - 1), count_ways(n + 1))
 
 
-print(countways(15))
+print(count_ways(15))

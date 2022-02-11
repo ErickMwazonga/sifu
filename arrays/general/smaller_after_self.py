@@ -16,7 +16,7 @@ To the right of 1 there is 0 smaller element.
 import bisect
 
 
-def countSmaller(nums):
+def count_smaller(nums):
     '''Time Complexity: ~Nlog(N), Space Complexity: ~N'''
 
     result = []
@@ -30,4 +30,4 @@ def countSmaller(nums):
     return result
 
 
-assert countSmaller([5, 2, 6, 1]) == [2, 1, 1, 0]
+assert count_smaller([5, 2, 6, 1]) == [2, 1, 1, 0]

@@ -2,7 +2,7 @@
 560. Subarray Sum Equals K
 https://leetcode.com/problems/subarray-sum-equals-k/
 
-Given an array of integers nums and an integer k,
+Given an array of integers nums and an integer k
 return the total number of continuous subarrays whose sum equals to k.
 
 Input: nums = [1,1,1], k = 2
@@ -15,7 +15,7 @@ Output: 2
 from collections import defaultdict
 
 
-def subarraySum(nums, k):
+def subarray_sum(nums, k):
     # first we start from a sum which is equal to 0, and the count of it is 1.
     # this is the input list ex :   [1 4 9 -5 8] -> the sum array (s) ex : [0  1    5    13    8    16 ]
 
@@ -31,13 +31,13 @@ def subarraySum(nums, k):
             count += sumDict[our_sum - k]
 
         # we check if s is already in the sumDict, if so, increase by 1, if not assign 1.
-        sumDict[s] = sumDict.get(our_sum, 0) + 1
+        sumDict[num] = sumDict.get(our_sum, 0) + 1
 
     # finally return the occurance
     return count
 
 
-def subarraySum2(nums: list[int], k: int) -> int:
+def subarray_sum2(nums: list[int], k: int) -> int:
     sums_so_far = defaultdict(int)
     our_sum = 0
     num_subarrays = 0
@@ -56,7 +56,7 @@ def subarraySum2(nums: list[int], k: int) -> int:
     return num_subarrays
 
 
-def subarraySum(nums, k):
+def subarray_sum(nums, k):
     _sums = {0: 1}
     cur_sum, max_sub = 0, 0
 

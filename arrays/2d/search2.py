@@ -7,8 +7,8 @@ This matrix has the following properties:
 
 Integers in each row are sorted in ascending from left to right.
 Integers in each column are sorted in ascending from top to bottom.
-Example:
 
+Example:
 Consider the following matrix:
 [
   [1,   4,  7, 11, 15],
@@ -22,7 +22,7 @@ Given target = 20, return false.
 '''
 
 
-def searchMatrix(matrix, target):
+def search_matrix(matrix, target):
     if not matrix:
         return False
 

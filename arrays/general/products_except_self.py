@@ -17,7 +17,7 @@ Note: Please solve it without division and in O(n).
 '''
 
 
-def productExceptSelf(nums):
+def product_except_self(nums):
     size = len(nums)
     output = [1] * size
 
@@ -33,7 +33,7 @@ def productExceptSelf(nums):
     return output
 
 
-def productExceptSelf(nums):
+def product_except_self(nums):
     size = len(nums)
 
     left_products = [1] * size
@@ -55,4 +55,4 @@ def productExceptSelf(nums):
     return output
 
 
-assert productExceptSelf([1, 2, 3, 4]) == [24, 12, 8, 6]
+assert product_except_self([1, 2, 3, 4]) == [24, 12, 8, 6]
