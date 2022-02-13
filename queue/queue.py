@@ -18,16 +18,19 @@ class Queue:
         if data not in self.queue:
             self.queue.append(data)
             return True
+
         return False
 
     def dequeue(self):
-        if len(self.queue) > 0:
+        if not self.queue:
             return self.queue.pop(0)
+
         return ('Queue Empty!')
 
     def isEmpty(self):
-        if len(self.queue) > 0:
+        if self.queue:
             return False
+
         return True
 
     def size(self):

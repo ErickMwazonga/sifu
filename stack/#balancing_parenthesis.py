@@ -5,8 +5,9 @@ number of bracket reversals which are required to
 make the expression balanced.
 Return -1 if the given expression can't be balanced.
 
-{{{ -> -1
-{{{{}} -> 1
+Examples
+1. {{{ -> -1
+2. {{{{}} -> 1
 '''
 
 

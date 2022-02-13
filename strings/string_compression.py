@@ -15,14 +15,14 @@ After you are done modifying the input array, return the new length of the array
 You must write an algorithm that uses only constant extra space.
  
 Example 1:
-Input: chars = ["a","a","b","b","c","c","c"]
-Output: Return 6, and the first 6 characters of the input array should be: ["a","2","b","2","c","3"]
-Explanation: The groups are "aa", "bb", and "ccc". This compresses to "a2b2c3".
+Input: chars = ['a','a','b','b','c','c','c']
+Output: Return 6, and the first 6 characters of the input array should be: ['a','2','b','2','c','3']
+Explanation: The groups are 'aa', 'bb', and 'ccc'. This compresses to 'a2b2c3'.
 
 Example 2:
-Input: chars = ["a"]
-Output: Return 1, and the first character of the input array should be: ["a"]
-Explanation: The only group is "a", which remains uncompressed since it's a single character.
+Input: chars = ['a']
+Output: Return 1, and the first character of the input array should be: ['a']
+Explanation: The only group is 'a', which remains uncompressed since it's a single character.
 '''
 
 
@@ -55,4 +55,4 @@ def compress(chars) -> int:
     return length
 
 
-compress(["a", "a", "b", "b", "c", "c", "c"])
+compress(['a', 'a', 'b', 'b', 'c', 'c', 'c'])

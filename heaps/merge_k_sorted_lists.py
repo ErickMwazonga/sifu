@@ -28,7 +28,8 @@ class ListNode:
 
 
 def mergeKLists(lists):
-    '''https://www.youtube.com/watch?v=zLcNwcR6yO4'''
+    '''Credit: https://www.youtube.com/watch?v=zLcNwcR6yO4'''
+
     heap = []
 
     for l in lists:
@@ -38,7 +39,7 @@ def mergeKLists(lists):
 
     head, curr = None, None
     while heap:
-        if head == None:
+        if not head:
             head = ListNode(heappop(heap))
             curr = head
         else:

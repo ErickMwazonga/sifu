@@ -17,7 +17,7 @@ class LinkedList:
     def append(self, data):
         new_node = Node(data)
 
-        if self.head is None:
+        if not self.head:
             self.head = new_node
             return
 
@@ -88,23 +88,23 @@ class LinkedList:
 
 
 llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
-llist.append("E")
-llist.append("F")
-llist.append("G")
+llist.append('A')
+llist.append('B')
+llist.append('C')
+llist.append('D')
+llist.append('E')
+llist.append('F')
+llist.append('G')
 
-print("Initial list")
+print('Initial list')
 llist.print_list()
 
-print(" swap by changing next attribute \n")
-llist.swap_nodes("A", "B")
+print('swap by changing next attribute \n')
+llist.swap_nodes('A', 'B')
 
 llist.print_list()
 
-print(" swap by changing data attribute \n ")
-llist.swap_nodes_alt("B", "A")
+print('swap by changing data attribute \n ')
+llist.swap_nodes_alt('B', 'A')
 
 llist.print_list()

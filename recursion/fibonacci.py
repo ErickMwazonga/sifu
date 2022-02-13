@@ -8,10 +8,7 @@ fib(n) = fib(n-1) + fib(n-2) for n > 2
 
 
 def fibonacci(n):
-    '''
-    Time - O(2^n)) -> Exponential
-    Space - O(n) -> Storage of call stack
-    '''
+    '''Time - O(2^n)) -> Exponential, Space - O(n) -> Storage of call stack'''
 
     if n <= 1:
         return 1

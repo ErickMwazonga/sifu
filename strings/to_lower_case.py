@@ -1,11 +1,13 @@
 '''
 709. To Lower Case
 https://leetcode.com/problems/to-lower-case/
+
 Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
 
-Input: 'Hello' -> 'hello'
-Input: 'here' -> 'here'
-Input: 'LOVELY' -> 'lovely'
+Examples
+1. 'Hello' -> 'hello'
+2. 'here' -> 'here'
+3. 'LOVELY' -> 'lovely'
 '''
 
 

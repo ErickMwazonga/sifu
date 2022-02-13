@@ -6,20 +6,20 @@ create a function that returns as a string, the smallest number that can be made
 Note that both input and output don't contain leading zeroes, except for the number 0 itself.
 
 Example 1:
-    Input: num = "825563", k = 2
-    Output: "2553"
+    Input: num = '825563', k = 2
+    Output: '2553'
 Example 2:
-    Input: num = "83866", k = 3
-    Output: "36"
+    Input: num = '83866', k = 3
+    Output: '36'
 Example 3:
-    Input: num = "20050", k = 1
-    Output: "50"
+    Input: num = '20050', k = 1
+    Output: '50'
 '''
 
 
 def smallestAfterRemoving(num, k):
     if k == len(num):
-        return "0"
+        return '0'
 
     stack = []
 
@@ -34,8 +34,8 @@ def smallestAfterRemoving(num, k):
         k -= 1
 
     stack = stack[::-1]
-    while len(stack) > 0 and stack[-1] == "0":
+    while len(stack) > 0 and stack[-1] == '0':
         stack.pop()
     stack = stack[::-1]
 
-    return "".join(stack) if len(stack) > 0 else "0"
+    return ''.join(stack) if len(stack) > 0 else '0'

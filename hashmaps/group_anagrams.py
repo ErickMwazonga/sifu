@@ -20,7 +20,7 @@ from collections import defaultdict
 
 
 def groupAnagrams(strs):
-    '''Time m.nlogn'''
+    '''Time O(m.nlogn)'''
 
     mapping = {}
 
@@ -47,7 +47,7 @@ def groupAnagrams2(strs):
 
 
 def groupAnagrams(strs):
-    '''Time m.n -> Credit: https://programmer.group/leetcode-49-group-anagrams.html'''
+    '''Time O(m.n) -> Credit: https://programmer.group/leetcode-49-group-anagrams.html'''
 
     res = defaultdict(list)
 

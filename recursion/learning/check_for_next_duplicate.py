@@ -3,9 +3,9 @@ Given a string s, create a recursive boolean function that
 checks if it has adjacent duplicates
 
 Examples
-'programming' -> True ...'mm'
-'ababa' -> False
-'pssst' -> True
+1. 'programming' -> True ...'mm'
+2. 'ababa' -> False
+3. 'pssst' -> True
 '''
 
 

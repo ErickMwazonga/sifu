@@ -21,7 +21,7 @@ Total time = 2 + 1 + 1 = 4.
 '''
 
 
-def calculate_time(self, keyboard: str, word: str) -> int:
+def calculate_time(keyboard: str, word: str) -> int:
     '''Time Complexity: O(N), Space Complexity: O(1)'''
 
     time = 0

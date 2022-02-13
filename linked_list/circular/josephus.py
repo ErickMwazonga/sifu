@@ -15,6 +15,7 @@ class CircularLinkedList:
         else:
             new_node = Node(data)
             curr = self.head
+
             while curr.next != self.head:
                 curr = curr.next
             curr.next = new_node
@@ -42,6 +43,7 @@ class CircularLinkedList:
     def remove_node(self, node):
         if self.head == node:
             curr = self.head
+
             while curr.next != self.head:
                 curr = curr.next
             curr.next = self.head.next
@@ -63,9 +65,11 @@ class CircularLinkedList:
 
         while len(self) > 1:
             count = 1
+
             while count != step:
                 curr = curr.next
                 count += 1
+
             print("KILL:" + str(curr.data))
             self.remove_node(curr)
             curr = curr.next

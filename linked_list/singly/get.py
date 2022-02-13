@@ -10,6 +10,7 @@ class LinkedList:
 
     def print_list(self):
         cur_node = self.head
+
         while cur_node:
             print(cur_node.data)
             cur_node = cur_node.next
@@ -28,6 +29,7 @@ class LinkedList:
 
     def get_node(self, val):
         curr = self.head
+
         while curr:
             if curr.data == val:
                 return curr

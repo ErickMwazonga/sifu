@@ -8,8 +8,8 @@ Given a string s, remove duplicate letters so that every letter appears once and
 You must make sure your result is the smallest in lexicographical order among all possible results.
 
 Examples:
-Input: s = "bcabc" -> "abc"
-Input: s = "cbacdcbc" -> "acdb"
+1. 'bcabc' -> 'abc'
+2. 'cbacdcbc' -> 'acdb'
 '''
 
 

@@ -2,7 +2,7 @@
 Given a string of 0 and 1, we need to check that the given string is valid or not.
 https://www.geeksforgeeks.org/check-binary-string-0-1s-not-set-2-regular-expression-approach/
 
-The given string is valid when there is no zero is present in between 1’s.
+The given string is valid when there is no zero is present in between 1's.
 For example, 1111, 0000111110, 1111000 are valid strings but 01010011, 01010, 101 are not.
 '''
 
@@ -23,7 +23,6 @@ def has_zeros_in_ones(binary):
     return 'VALID'
 
 
-# For example, 1111, 0000111110, 1111000 are valid strings but 01010011, 01010, 101 are not.
-# print(has_zeros_in_ones('1111'))
-# print(has_zeros_in_ones('0000111110'))
-print(has_zeros_in_ones('01010011'))
+assert has_zeros_in_ones('1111') == 'VALID'
+assert has_zeros_in_ones('0000111110') == 'VALID'
+assert has_zeros_in_ones('01010011') == 'INVALID'

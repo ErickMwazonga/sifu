@@ -4,13 +4,11 @@ https://leetcode.com/problems/longest-palindromic-substring/
 
 Given a string s, return the longest palindromic substring in s.
 
-Example 1:
-Input: s = 'babad' -> 'bab'
-Note: 'aba' is also a valid answer.
-
-Input: s = 'cbbd' -> 'bb'
-Input: s = 'a' -> 'a'
-Input: s = 'ac' -> 'a'
+Examples:
+1. 'babad' -> 'bab' => Note: 'aba' is also a valid answer.
+2. 'cbbd' -> 'bb'
+3. 'a' -> 'a'
+4. 'ac' -> 'a'
 '''
 
 

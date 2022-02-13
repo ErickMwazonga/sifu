@@ -1,7 +1,8 @@
 '''
 79. Word Search
 https://leetcode.com/problems/word-search/
-Check: https://www.youtube.com/watch?v=RqffW0smIbQ
+Credit: https://www.youtube.com/watch?v=RqffW0smIbQ
+
 Given a 2D board and a word, find if the word exists in the grid.
 The word can be constructed from letters of sequentially adjacent cell,
 where 'adjacent' cells are those horizontally or vertically neighboring.
@@ -15,9 +16,10 @@ board =
   ['A','D','E','E']
 ]
 
-Given word = 'ABCCED', return true.
-Given word = 'SEE', return true.
-Given word = 'ABCB', return false.
+Other Examples
+1. 'ABCCED' -> true
+2. 'SEE' -> true
+3. 'ABCB' -> false
 '''
 
 

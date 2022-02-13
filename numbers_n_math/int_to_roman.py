@@ -18,20 +18,20 @@ X can be placed before L (50) and C (100) to make 40 and 90.
 C can be placed before D (500) and M (1000) to make 400 and 900.
 Given an integer, convert it to a roman numeral.
 
-ExampleS:
-Input: num = 3 -> 'III'
-Input: num = 4 -> 'IV'
-Input: num = 9 -> 'IX'
-Input: num = 58 -> 'LVIII'
+Examples:
+1. 3 -> 'III'
+2. 4 -> 'IV'
+3. 9 -> 'IX'
+4. 58 -> 'LVIII'
     Explanation: L = 50, V = 5, III = 3.
-Input: num = 1994 -> 'MCMXCIV'
+5. 1994 -> 'MCMXCIV'
     Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 '''
 
 
 def intToRoman(num: int) -> str:
     result = ''
-    mapping = self.mapping()
+    mapping = mapping()
 
     # The dictionary loop doesn't affect time complexity since it doesn't change
     for roman, value in mapping.items():
@@ -45,7 +45,7 @@ def intToRoman(num: int) -> str:
     return result
 
 
-def mapping(self):
+def mapping():
     # edge_cases = 4, 9, 10, 90, 400, 900
 
     _hash = {

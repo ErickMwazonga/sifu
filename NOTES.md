@@ -215,3 +215,7 @@ Implemented using a STACK
 <br/>
 ### Breadth First Search
 Implemented using a QUEUE
+
+---
+## Infinity
+-sys.maxsize

@@ -36,7 +36,7 @@ class SortedSearch:
     return True else modify the middle row as needed and continue the
     search till start ≤ end. So, the outer binary search searches
     for the row while the inner binary search searches for the
-    element within a row. Here’s the walkthrough:
+    element within a row. Here's the walkthrough:
     '''
 
     def search_matrix(self, matrix, target) -> bool:

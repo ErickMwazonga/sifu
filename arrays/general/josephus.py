@@ -10,4 +10,5 @@ we kill the kth person and remove that person from the circle.
 def josephus_problem(n, k):
     if n == 1:
         return 0
+
     return 1 + (josephus_problem(n-1, k) + k-1) % n

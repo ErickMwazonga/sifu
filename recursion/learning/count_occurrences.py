@@ -2,6 +2,7 @@
 Given an array of integers arr and an integer num,
 create a recursive function that returns the number of occurrences of num in arr
 
+Examples
 input -> [4, 2, 7, 4, 4, 1, 2], num -> 4
 output = 3
 '''

@@ -21,10 +21,7 @@ Example 4:
 
 
 def lengthOfLongestSubstring(s):
-    '''
-    Time:  O(n), Space: O(k)
-    [k = length of the longest substring w/o repeating characters]
-    '''
+    '''Time:  O(n), Space: O(k) - [k = length of the longest substring w/o repeating characters]'''
 
     n = len(s)
     longest = left = right = 0

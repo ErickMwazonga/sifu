@@ -28,10 +28,7 @@ def subsetsThatSumUpToK(arr, k, i=0, _sum=0):
 
 
 def subsetsThatSumUpToK(arr, k):
-    '''
-    Time complexity: O(nk)
-    Space complexity: O(nk)
-    '''
+    '''Time complexity: O(nk), Space complexity: O(nk)'''
 
     def rec(arr, k, i, sum, memoiz):
         key = str(i) + " " + str(sum)

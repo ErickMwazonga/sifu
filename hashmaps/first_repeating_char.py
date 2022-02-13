@@ -4,14 +4,9 @@ Given a string str, create a function that returns the first repeating character
 If such character doesn't exist, return the null character '\0'.
 
 Examples
-Input: str = 'inside code'
-Output: 'i'
-
-Input: str = 'programming'
-Output: 'r'
-
-Input: str = 'abcd'
-Output: None
+1. 'inside code' -> 'i'
+2. 'programming' -> 'r'
+3. 'abcd' -> None
 '''
 
 

@@ -30,7 +30,6 @@ Input: [3,4,5,1,3,null,1]
    4   5
   / \   \ 
  1   3   1
-
 Output: 9
 Explanation: Maximum amount of money the thief can rob = 4 + 5 = 9.
 

@@ -11,7 +11,6 @@ Input:                               Output:
   [1, 0, 1],                           [0, 0, 0],
   [1, 1, 1]                            [1, 0, 1]
 ]                                    ]
-
 NB: Do not return anything, modify matrix in-place instead
 '''
 

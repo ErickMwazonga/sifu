@@ -14,10 +14,10 @@ For example:
     AB -> 28 
     ...
     
-Example 1:
-Input: 'A' -> 1
-Input: 'AB' -> 28
-Input: 'ZY' -> 701
+Examples:
+1. 'A' -> 1
+2. 'AB' -> 28
+3. 'ZY' -> 701
 '''
 
 

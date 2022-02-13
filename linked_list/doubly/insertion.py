@@ -10,7 +10,7 @@ class DoublyLinkedList:
         self.head = None
 
     def append(self, data):
-        if self.head is None:
+        if not self.head:
             new_node = Node(data)
             new_node.prev = None
             self.head = new_node
@@ -26,7 +26,7 @@ class DoublyLinkedList:
             new_node.next = None
 
     def prepend(self, data):
-        if self.head is None:
+        if not self.head:
             new_node = Node(data)
             new_node.next = self.head
             self.head = new_node
@@ -40,7 +40,7 @@ class DoublyLinkedList:
         curr = self.head
 
         while curr:
-            if curr.next is None and curr.data == key:
+            if not curr.next and curr.data == key:
                 self.append(data)
                 return
             elif curr.data == key:
@@ -56,7 +56,7 @@ class DoublyLinkedList:
         curr = self.head
 
         while curr:
-            if curr.prev is None and curr.data == key:
+            if not curr.prev and curr.data == key:
                 self.prepend(data)
             elif curr.data == key:
                 new_node = Node(data)

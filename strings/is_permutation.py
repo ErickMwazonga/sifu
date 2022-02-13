@@ -1,11 +1,11 @@
 '''
 Given two strings, write a method to decide if 
 one is a permutation of the other.
-'''
 
-# Approach 1: Sorting
-# Time Complexity: O(n log n)
-# Space Complexity: O(1)
+Approach 1: Sorting
+Time Complexity: O(n log n)
+Space Complexity: O(1)
+'''
 
 
 def is_perm_1(str_1, str_2):

@@ -18,14 +18,13 @@ For example, 2 is written as II in Roman numeral, just two one's added together.
 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 
 Examples
-Input: s = "III" -> 3
-Input: s = "IV" -> 4
-Input: s = "IX" -> 9
-Input: s = "LVIII" -> 58
-Explanation: L = 50, V= 5, III = 3.
-
-Input: s = "MCMXCIV" -> 1994
-Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+1. 'III' -> 3
+2. 'IV' -> 4
+3. 'IX' -> 9
+4. 'LVIII' -> 58
+    Explanation: L = 50, V= 5, III = 3.
+5. 'MCMXCIV' -> 1994
+    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 '''
 
 
@@ -53,8 +52,8 @@ def romanToInt(s: str) -> int:
     return total
 
 
-assert romanToInt("III") == 3
-assert romanToInt("IV") == 4
-assert romanToInt("IX") == 9
-assert romanToInt("LVIII") == 58
-assert romanToInt("MCMXCIV") == 1994
+assert romanToInt('III') == 3
+assert romanToInt('IV') == 4
+assert romanToInt('IX') == 9
+assert romanToInt('LVIII') == 58
+assert romanToInt('MCMXCIV') == 1994

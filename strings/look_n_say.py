@@ -18,13 +18,10 @@ For example, the saying and conversion for digit string '3322251':
 Given a positive integer n, return the nth term of the count-and-say sequence.
 
 Example 1:
-Input: n = 1
-Output: '1'
-Explanation: This is the base case.
+1 -> '1' :[Explanation: This is the base case]
 
 Example 2:
-Input: n = 4
-Output: '1211'
+4 -> 1211'
 Explanation:
 countAndSay(1) = '1'
 countAndSay(2) = say '1' = one 1 = '11'

@@ -17,7 +17,7 @@ class LinkedList:
     def append(self, data):
         new_node = Node(data)
 
-        if self.head is None:
+        if not self.head:
             self.head = new_node
             return
 
@@ -42,12 +42,12 @@ class LinkedList:
 # A -> B -> C -> D -> Null
 # D -> A -> B -> C -> Null
 llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
+llist.append('A')
+llist.append('B')
+llist.append('C')
+llist.append('D')
 
 llist.print_list()
 llist.move_tail_to_head()
-print("\n")
+print('\n')
 llist.print_list()

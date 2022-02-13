@@ -5,9 +5,10 @@ https://leetcode.com/problems/majority-element-ii/
 Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
 Follow-up: Could you solve the problem in linear time and in O(1) space?
 
-[3,2,3] -> [3]
-[1] -> [1]
-[1,2] -> [1,2]
+Examples
+1. [3,2,3] -> [3]
+2. [1] -> [1]
+3. [1,2] -> [1,2]
 '''
 
 

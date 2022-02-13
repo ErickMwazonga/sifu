@@ -7,10 +7,10 @@ If reversing x causes the value to go outside the signed 32-bit integer range [-
 Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
 
 Examples:
-Input: x = 123 -> 321
-Input: x = -123 -> -321
-Input: x = 120 -> 21
-Input: x = 0 -> 0
+1. 123 -> 321
+2. -123 -> -321
+3. 120 -> 21
+4. 0 -> 0
 '''
 
 

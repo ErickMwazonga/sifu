@@ -7,12 +7,12 @@ The frequency of a character is the number of times it appears in the string.
 Return the sorted string. If there are multiple answers, return any of them.
 
 Examples:
-'tree' -> 'eert'
+1. 'tree' -> 'eert'
 Explanation: 'e' appears twice while 'r' and 't' both appear once.
 So 'e' must appear before both 'r' and 't'. Therefore 'eetr' is also a valid answer.
 
-'cccaaa' -> 'aaaccc'
-'Aabb' -> 'bbAa'
+2. 'cccaaa' -> 'aaaccc'
+3. 'Aabb' -> 'bbAa'
 '''
 
 import heapq

@@ -36,10 +36,10 @@ class LinkedList:
 
 
 llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
+llist.append('A')
+llist.append('B')
+llist.append('C')
+llist.append('D')
 
 print(llist.len_recursive(llist.head))
 print(llist.len_iterative())

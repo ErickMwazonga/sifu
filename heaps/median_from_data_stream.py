@@ -1,7 +1,7 @@
 '''
 295. Find Median from Data Stream
 https://leetcode.com/problems/find-median-from-data-stream/
-Refer: https://www.youtube.com/watch?v=itmhHWaHupI  
+Credit: https://www.youtube.com/watch?v=itmhHWaHupI  
 
 The median is the middle value in an ordered integer list. If the size of the list is even,
 there is no middle value and the median is the mean of the two middle values.
@@ -15,7 +15,7 @@ double findMedian() returns the median of all elements so far. Answers within 10
 
 Example 1:
 Input
-["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"]
+['MedianFinder', 'addNum', 'addNum', 'findMedian', 'addNum', 'findMedian']
 [[], [1], [2], [], [3], []]
 Output
 [null, null, null, 1.5, null, 2.0]

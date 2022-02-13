@@ -5,12 +5,9 @@ https://leetcode.com/problems/valid-palindrome-ii/
 Given a non-empty string s, you may delete at most one character.
 Judge whether you can make it a palindrome.
 
-Example 1:
-Input: 'aba' -> True
-
-Example 2:
-Input: 'abca' -> True
-Explanation: You could delete the character 'c'.
+Examples:
+1. 'aba' -> True
+2. 'abca' -> True [Explanation: You could delete the character 'c'].
 '''
 
 

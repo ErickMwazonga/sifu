@@ -7,8 +7,8 @@ Given a string s, rearrange the characters of s so that any two adjacent charact
 Return any possible rearrangement of s or return '' if not possible.
 
 Examples:
-Input: s = 'aab' -> 'aba'
-Input: s = 'aaab' -> ''
+1. 'aab' -> 'aba'
+2. 'aaab' -> ''
 '''
 
 import heapq

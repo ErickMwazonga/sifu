@@ -10,6 +10,7 @@ class LinkedList:
 
     def print_list(self):
         cur_node = self.head
+
         while cur_node:
             print(cur_node.data)
             cur_node = cur_node.next
@@ -38,6 +39,7 @@ class CircularLinkedList:
         else:
             new_node = Node(data)
             cur = self.head
+
             while cur.next != self.head:
                 cur = cur.next
             cur.next = new_node
@@ -48,6 +50,7 @@ class CircularLinkedList:
 
         while curr.next:
             curr = curr.next
+
             if curr.next == input_list.head:
                 return True
 

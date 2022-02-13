@@ -10,15 +10,16 @@ divide and conquer approach, which is more subtle.
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4] -> 6
 Explanation: [4,-1,2,1] has the largest sum = 6.
 
-Input: nums = [1] -> 1
-Input: nums = [0] -> 0
-Input: nums = [-1] -> -1
-Input: nums = [-2147483647] -> -2147483647
-Input: arr = [2, 3, -6, 4, 2, -8, 3] -> 6
+Other Examples
+1. [1] -> 1
+2. [0] -> 0
+3. [-1] -> -1
+4. [-2147483647] -> -2147483647
+5. [2, 3, -6, 4, 2, -8, 3] -> 6
     Explanation: the maximum subarray is [4, 2], its sum is 6
-Input: arr = [2, 3, -1, 4, -10, 2, 5] -> 8
+6. [2, 3, -1, 4, -10, 2, 5] -> 8
     Explanation: the maximum subarray is [2, 3, -1, 4], its sum is 8
-Input: arr = [-3, -1, -2] -> Output: -1
+7. [-3, -1, -2] -> -1
     Explanation: the maximum subarray is [-1], its sum is -1
 '''
 

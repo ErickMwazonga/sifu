@@ -1,7 +1,7 @@
 '''
 498. Diagonal Traverse
 https://leetcode.com/problems/diagonal-traverse/
-https://leetcode.com/problems/diagonal-traverse/discuss/145195/python-solution-beats-100-using-bfs-just-like-maze-problem
+Credit: https://leetcode.com/problems/diagonal-traverse/discuss/145195/python-solution-beats-100-using-bfs-just-like-maze-problem
 
 Given a matrix of M x N elements (M rows, N columns),
 return all elements of the matrix in diagonal order as shown in the below image.

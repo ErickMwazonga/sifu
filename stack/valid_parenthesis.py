@@ -11,11 +11,11 @@ Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 Note that an empty string is also considered valid.
 
-Input: '()' -> Output: true
-Input: '()[]{}' -> Output: true
-Input: '(]' -> Output: false
-Input: '([)]' -> Output: false
-Input: '{[]}' -> Output: true
+1. '()' -> true
+2. '()[]{}' -> true
+3. '(]' -> false
+4. '([)]' -> false
+5. '{[]}' -> true
 '''
 
 

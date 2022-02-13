@@ -9,6 +9,7 @@ class Node:
 class SinglyLinkedList:
     def __init__(self):
         '''Create new SinglyLinkedList: 0(1) time'''
+
         self.head = None
 
     def print_node_list(self):
@@ -27,7 +28,7 @@ class SinglyLinkedList:
         cur_node = self.head
 
         while cur_node:
-            print(cur_node.data, end="->")
+            print(cur_node.data, end='->')
             cur_node = cur_node.next
 
     def get_values(self, head):
@@ -56,7 +57,7 @@ class SinglyLinkedList:
         '''
         metadata = {
             'head': 0,
-            "nodes": [
+            'nodes': [
                 {'value': 0, nxt: 1},
                 {'value': 1, nxt: 2},
                 {'value': 2, nxt: 3},
@@ -69,14 +70,14 @@ class SinglyLinkedList:
         '''
         head = None
 
-        nodes = metadata["nodes"]
+        nodes = metadata['nodes']
         for node in nodes:
-            val, nxt = node["value"], node["nxt"]
+            val, nxt = node['value'], node['nxt']
 
             curr_node = Node(val)
             curr_node.next = nxt
 
-            if val == metadata["head"]:
+            if val == metadata['head']:
                 head = curr_node
 
         return head
@@ -96,6 +97,7 @@ class SinglyLinkedList:
     def size(self, head):
         if not head:
             return 0
+
         return 1 + self.size(head.next)
 
     def get_tail(self, head):

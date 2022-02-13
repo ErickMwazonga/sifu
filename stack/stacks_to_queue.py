@@ -32,6 +32,7 @@ class MyQueue:
             while self.inbox:
                 popped = self.inbox.pop()
                 self.outbox.append(popped)
+
             return self.outbox.pop()
 
     def peek(self) -> int:
@@ -44,6 +45,7 @@ class MyQueue:
             while self.inbox:
                 popped = self.inbox.pop()
                 self.outbox.append(popped)
+
             return self.outbox[-1]
 
     def empty(self) -> bool:

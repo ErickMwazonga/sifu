@@ -1,5 +1,6 @@
 '''
 28. Implement strStr()
+https://leetcode.com/problems/implement-strstr/
 
 Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 Clarification:
@@ -17,7 +18,7 @@ Output: -1
 Input: haystack = '', needle = ''
 Output: 0
 
-The Rabin–Karp algorithm or Karp–Rabin algorithm is a string-searching algorithm
+The Rabin-Karp algorithm or Karp-Rabin algorithm is a string-searching algorithm
 created by Richard M. Karp and Michael O. Rabin (1987)
 that uses hashing to find an exact match of a pattern string in a text.
 It uses a rolling hash to quickly filter out positions of the text that cannot match the pattern,

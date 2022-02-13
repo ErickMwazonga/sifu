@@ -19,7 +19,7 @@ class Stack:
 
     # Function to add an element data in the stack
     def push(self, data):
-        if self.head is None:
+        if not self.head:
             self.head = Node(data)
         else:
             new_node = Node(data)
@@ -30,7 +30,7 @@ class Stack:
 
     # Function to pop top element and return the element from the stack
     def pop(self):
-        if self.head is None:
+        if not self.head:
             return None
         else:
             temp = self.head.data
@@ -46,24 +46,22 @@ class Stack:
     def size(self):
         temp = self.head
         count = 0
-        while temp is not None:
+
+        while not temp:
             count = count + 1
             temp = temp.next
         return count
 
     # Function to check if the stack is empty or not
     def isEmpty(self):
-        if self.head is None:
-            return True
-        else:
-            return False
+        return not self.head
 
     # Function to print the stack
     def printstack(self):
         print("stack elements are:")
         temp = self.head
 
-        while temp is not None:
+        while not temp:
             print(temp.data, end="->")
             temp = temp.next
 

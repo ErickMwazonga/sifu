@@ -21,7 +21,7 @@ return its bottom-up level order traversal as:
 '''
 
 
-def levelOrderBottom(root: TreeNode):
+def levelOrderBottom(root: None):
     if not root:
         return []
 

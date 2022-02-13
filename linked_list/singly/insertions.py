@@ -1,10 +1,7 @@
 '''
-SLIDES
-https://docs.google.com/presentation/d/1TCTdhhAAisXc1g7O2uh3OwjkUXeYbt18nDR-ba_6WOs/edit
-CODE
-https://github.com/vprusso/youtube_tutorials/blob/master/data_structures/linked_list
-VIDEO
-https://www.youtube.com/watch?v=FSsriWQ0qYE&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=5
+SLIDES: https://docs.google.com/presentation/d/1TCTdhhAAisXc1g7O2uh3OwjkUXeYbt18nDR-ba_6WOs/edit
+CODE: https://github.com/vprusso/youtube_tutorials/blob/master/data_structures/linked_list
+VIDEO: https://www.youtube.com/watch?v=FSsriWQ0qYE&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=5
 '''
 
 
@@ -28,7 +25,7 @@ class LinkedList:
         new_node = Node(data)
 
         # List is empty
-        if self.head is None:
+        if not self.head:
             self.head = new_node
             return
 
@@ -46,7 +43,7 @@ class LinkedList:
 
     def insert_after_node(self, prev_node, data):
         if not prev_node:
-            print("Previous node is not in the list")
+            print('Previous node is not in the list')
             return
 
         new_node = Node(data)
@@ -83,12 +80,12 @@ class LinkedList:
 
 
 llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
+llist.append('A')
+llist.append('B')
+llist.append('C')
+llist.append('D')
 
-llist.prepend("E")
-llist.insert_after_node(llist.head.next, "E")
+llist.prepend('E')
+llist.insert_after_node(llist.head.next, 'E')
 
 llist.print_list()

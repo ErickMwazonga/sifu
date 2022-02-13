@@ -10,7 +10,7 @@ and returns the number of requests that has happened in the past 3000 millisecon
 Specifically, return the number of requests that have happened in the inclusive range [t - 3000, t].
 It is guaranteed that every call to ping uses a strictly larger value of t than the previous call.
 
-Example 1:
+Examples:
 Input
 ['RecentCounter', 'ping', 'ping', 'ping', 'ping']
 [[], [1], [100], [3001], [3002]]

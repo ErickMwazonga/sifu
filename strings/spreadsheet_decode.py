@@ -3,10 +3,11 @@
 https://leetcode.com/problems/excel-sheet-column-title/
 Implement a function that converts an integer to the spreadsheet
 column ID.
-Example:
-    Input: 1 -> A
-    Input: 27 -> AA
-    Input: 702 -> ZZ
+
+Examples:
+1. 1 -> A
+2. 27 -> AA
+3. 702 -> ZZ
 '''
 
 

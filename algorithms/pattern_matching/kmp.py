@@ -1,6 +1,6 @@
 class KMP:
     def partial(self, pattern):
-        ''' Calculate partial match table: String -> [Int]'''
+        '''Calculate partial match table: String -> [Int]'''
 
         ret = [0]
 

@@ -14,9 +14,10 @@ Left parenthesis '(' must go before the corresponding right parenthesis ')'.
  left parenthesis '(' or an empty string.
 An empty string is also valid.
 
-Input: '()' -> Output: True
-Input: '(*)' -> Output: True
-Input: '(*))' -> Output: True
+Examples
+1. '()' -> True
+2. '(*)' -> True
+3. '(*))' -> True
 
 The idea is to check if there is any point violating the rule of valid parenthesis.
 In other words, from left to right, any point in the middle should have

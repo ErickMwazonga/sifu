@@ -1,11 +1,12 @@
 '''
 Write an algorithm that returns the first non-repeated character in a string. For example:
 
-1. firstNonRepeatedCharacter('ACBA') returns B
-2. firstNonRepeatedCharacter('BCABAC') returns null
-3. firstNonRepeatedCharacter('BAC') returns B
-4. firstNonRepeatedCharacter('GlovoOnGlovo') returns O
-5. firstNonRepeatedCharacter('What is the first non-repeated character?') returns W
+Examples
+1. 'ACBA' -> B
+2. 'BCABAC' -> None
+3. 'BAC' -> B
+4. 'GlovoOnGlovo' -> O
+5. 'What is the first non-repeated character?' -> W
 '''
 
 

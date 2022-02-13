@@ -16,8 +16,8 @@ class LinkedList:
 
     def append(self, data):
         new_node = Node(data)
-        
-        if self.head is None:
+
+        if not self.head:
             self.head = new_node
             return
 
@@ -36,14 +36,14 @@ class LinkedList:
             return
 
         # Node to be deleted is not head.
-        prev = None 
+        prev = None
         while curr and curr.data != key:
             prev = curr
             curr = curr.next
 
         # Node not found
         if not curr:
-            return 
+            return
 
         prev.next = curr.next
         curr = None
@@ -61,16 +61,17 @@ class LinkedList:
         prev = None
         count = 0
         while curr and count != pos:
-            prev = curr 
+            prev = curr
             curr = curr.next
             count += 1
 
         # Node not found
         if not curr:
-            return 
+            return
 
         prev.next = curr.next
         curr = None
+
 
 llist = LinkedList()
 llist.append("A")

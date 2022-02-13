@@ -11,11 +11,13 @@ class CircularLinkedList:
     def __len__(self):
         cur = self.head
         count = 0
+
         while cur:
             count += 1
             cur = cur.next
             if cur == self.head:
                 break
+
         return count
 
     def prepend(self, data):
@@ -26,6 +28,7 @@ class CircularLinkedList:
             new_node.next = new_node
         else:
             cur = self.head
+
             while cur.next != self.head:
                 cur = cur.next
             cur.next = new_node
@@ -51,6 +54,7 @@ class CircularLinkedList:
 
         while curr:
             print(curr.data, end=' ')
+
             curr = curr.next
             if curr == self.head:
                 break

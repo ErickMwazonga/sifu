@@ -1,8 +1,8 @@
 '''
 1143. Longest Common Subsequence
 https://leetcode.com/problems/longest-common-subsequence/
-Given two strings text1 and text2, return the length of their longest common subsequence.
 
+Given two strings text1 and text2, return the length of their longest common subsequence.
 A subsequence of a string is a new string generated from the original string with
 some characters(can be none) deleted without changing the relative order of the remaining characters.
 (eg, 'ace' is a subsequence of 'abcde' while 'aec' is not).
@@ -19,8 +19,8 @@ Example 2:
 
 class Solution:
     '''
-    Time complexity: O(MN). We’re solving M * Nsubproblems. Solving each subproblem is an O(1)operation.
-    Space complexity: O(MN).We’re allocating a 2D array of size M * N to save the answers to subproblems
+    Time complexity: O(MN). We're solving M * Nsubproblems. Solving each subproblem is an O(1)operation.
+    Space complexity: O(MN). We're allocating a 2D array of size M * N to save the answers to subproblems
     '''
 
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
