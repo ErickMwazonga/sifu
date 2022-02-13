@@ -5,12 +5,9 @@ Problem Description: Given an array A[] of size n, find the most frequent elemen
 i.e. the element which occurs the most number of times. 
 It is assured that at least one element is repeated.
 
-For example:
-Input: A[] = [3, 9, 1, 3, 6, 3, 8, 1, 6]
-Output: 3
-
-Input: A[] = [1, 9, 1, 3, 2, 3, 10]
-Output: 1
+Examplea:
+1. [3, 9, 1, 3, 6, 3, 8, 1, 6] -> 3
+2. [1, 9, 1, 3, 2, 3, 10] -> 1
 '''
 
 

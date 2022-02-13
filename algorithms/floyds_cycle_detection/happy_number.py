@@ -12,7 +12,7 @@ Those numbers for which this process ends in 1 are happy numbers.
 Return True if n is a happy number, and False if not.
 
 Example:
-Input: 19 -> true
+19 -> true
 Explanation:
 1**2 + 9**2 = 82
 8**2 + 2**2 = 68

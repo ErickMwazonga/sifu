@@ -28,7 +28,7 @@ def d(point1, point2):
     return (point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2
 
 
-def validSquare(p1: list[int], p2: list[int], p3: list[int], p4: list[int]) -> bool:
+def validSquare(p1, p2, p3, p4) -> bool:
     lengths = [
         d(p1, p2), d(p1, p3), d(p1, p4), d(p2, p3), d(p2, p4), d(p3, p4)
     ]

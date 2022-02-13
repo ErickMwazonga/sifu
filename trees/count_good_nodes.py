@@ -10,7 +10,7 @@ Return the number of good nodes in the binary tree.
 
 
 class Solution:
-    def goodNodes(self, root: TreeNode) -> int:
+    def goodNodes(self, root) -> int:
         return self.dfs(root)
 
     def dfs(self, root, max_node=float('-inf')):

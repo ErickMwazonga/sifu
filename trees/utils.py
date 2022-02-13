@@ -1,4 +1,5 @@
-class Stack(object):
+class Stack():
+
     def __init__(self):
         self.items = []
 
@@ -23,13 +24,14 @@ class Stack(object):
         return len(self.items) == 0
 
     def __str__(self):
-        s = ""
+        s = ''
         for i in range(len(self.items)):
-            s += str(self.items[i].value) + "-"
+            s += str(self.items[i].value) + '-'
         return s
 
 
-class Queue(object):
+class Queue():
+
     def __init__(self):
         self.items = []
 

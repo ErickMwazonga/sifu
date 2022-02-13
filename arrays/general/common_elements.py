@@ -28,4 +28,5 @@ def get_common_elems(A, B):
     return result
 
 
-assert get_common_elems([1, 1, 2, 3, 5, 5], [2, 2, 3, 4, 5, 7]) == [2, 3, 5]
+a, b = [1, 1, 2, 3, 5, 5], [2, 2, 3, 4, 5, 7]
+assert get_common_elems(a, b) == [2, 3, 5]

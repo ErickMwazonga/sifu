@@ -8,9 +8,7 @@ Do this faster than the naive method of repeated multiplication.
 
 
 def power(x, n):
-    '''
-    Time O(log n)
-    2^4 -> 2^2 * z^2
+    '''Time O(log n) - 2^4 -> 2^2 * z^2
     # Account for negatives
     '''
 

@@ -18,8 +18,6 @@ Output:
 9   6 3   1
 '''
 
-import collections
-
 
 class Solution:
 

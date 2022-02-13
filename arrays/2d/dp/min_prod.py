@@ -28,12 +28,6 @@ Output: 8
 Explanation: Maximum non-negative product is in bold (1 * 1 * -2 * -4 * 1 = 8).
 
 Example 3:
-Input: grid = [[1, 3],
-               [0,-4]]
-Output: 0
-Explanation: Maximum non-negative product is in bold (1 * 0 * -4 = 0).
-
-Example 4:
 Input: grid = [[ 1, 4,4,0],
                [-2, 0,0,1],
                [ 1,-1,1,1]]

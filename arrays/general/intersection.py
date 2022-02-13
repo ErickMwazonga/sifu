@@ -11,7 +11,7 @@ B = [3, 3, 7, 15, 31]
 # better by taking advantage of this fact.
 # print(set(A) & set(B))
 
-Example
+Examples
 input
 a, b, c, d, e, f, g, h, i
 d, g, i, j, k, l, m

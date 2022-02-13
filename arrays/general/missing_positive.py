@@ -3,8 +3,8 @@
 https://leetcode.com/problems/first-missing-positive/
 
 Given an unsorted integer array, find the smallest missing positive integer.
-Example 1:
 
+Examples:
 Input: [1,2,0] -> 3
 Input: [3,4,-1,1] ->  2
 Input: [7,8,9,11,12] -> 1

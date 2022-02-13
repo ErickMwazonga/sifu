@@ -8,7 +8,6 @@ Note this definition only applies to the input binary tree, and not apply to any
 
 The left-most node is defined as a leaf node you could reach when you always firstly travel to the
 left subtree if it exists. If not, travel to the right subtree. Repeat until you reach a leaf node.
-
 The right-most node is also defined in the same way with left and right exchanged.
 For example, boundary traversal of the following tree is “20 8 4 10 14 25 22”
 '''

@@ -24,7 +24,7 @@ The flattened tree should look like:
 '''
 
 
-def flatten(root: TreeNode) -> None:
+def flatten(root) -> None:
     '''Do not return anything, modify root in-place instead.'''
 
     if not root:

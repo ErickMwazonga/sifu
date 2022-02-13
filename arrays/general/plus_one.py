@@ -26,7 +26,7 @@ assert plus_one([1, 9, 9]) == [2, 0, 0]
 
 def plus_one_iteratively(arr):
     n = len(arr)
-    for i in range(n - 1, -1, -1):
+    for i in range(n-1, -1, -1):
         if arr[i] < 9:
             arr[i] += 1
             return arr

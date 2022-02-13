@@ -5,11 +5,8 @@ Given an array of DISTINCT elements, rearrange the elements of array in zig-zag 
 The converted array should be in form a < b > c < d > e < f. 
 
 Example:
-Input: [4, 3, 7, 8, 6, 2, 1] 
-Output: [3, 7, 4, 8, 2, 6, 1]
-
-Input: [1, 4, 3, 2] 
-Output: [1, 4, 2, 3]
+1. [4, 3, 7, 8, 6, 2, 1] -> [3, 7, 4, 8, 2, 6, 1]
+2. [1, 4, 3, 2] -> [1, 4, 2, 3]
 '''
 
 

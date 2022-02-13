@@ -42,4 +42,4 @@ root.right = Node(3)
 root.left.left = Node(4)
 root.left.right = Node(5)
 
-print("Height of tree is %d" % (height(root)))
+print(f'Height of tree is {(height(root))}')

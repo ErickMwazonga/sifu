@@ -1,6 +1,8 @@
 '''
 Given an array of time intervals (start, end) for classroom lectures (possibly overlapping),
 find the minimum number of rooms required.
+Credit: https://medium.com/@edward.zhou/leetcode-253-meeting-rooms-ii-explained-python3-solution-3f8869612df
+
 For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
 
 NOTE
@@ -11,11 +13,6 @@ NOTE
 
 
 def min_meeting_rooms(intervals):
-    '''
-    Inspired by
-    https://medium.com/@edward.zhou/leetcode-253-meeting-rooms-ii-explained-python3-solution-3f8869612df
-    '''
-
     starting_times = [i[0] for i in intervals]
     ending_times = [i[1] for i in intervals]
 

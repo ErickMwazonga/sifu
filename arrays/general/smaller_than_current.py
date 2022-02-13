@@ -25,6 +25,7 @@ def smaller_numbers_than_current(nums):
     for k, v in enumerate(sorted_nums):
         if v not in mappings:
             mappings[v] = k
+
     return [mappings[x] for x in nums]
 
 
@@ -34,6 +35,7 @@ assert smaller_numbers_than_current(nums) == [4, 0, 1, 1, 3]
 
 def smaller_numbers_than_current2(nums):
     count = [0] * 102
+
     for num in nums:
         count[num + 1] += 1
 

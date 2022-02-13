@@ -15,11 +15,6 @@ Example 2:
 Input: nums1 = [1,1,2], nums2 = [1,2,3], k = 2
 Output: [[1,1],[1,1]]
 Explanation: The first 2 pairs from: [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
-
-Example 3:
-Input: nums1 = [1,2], nums2 = [3], k = 3
-Output: [[1,3],[2,3]]
-Explanation: All possible pairs are returned from the sequence: [1,3],[2,3]
 '''
 
 

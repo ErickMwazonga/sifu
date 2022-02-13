@@ -20,7 +20,7 @@ from collections import defaultdict
 
 
 class Solution:
-    def find_diagonal_order(self, matrix: list[list[int]]) -> list[int]:
+    def find_diagonal_order(self, matrix):
         '''Time complexity O(MN), Space Complexity O(MN)'''
 
         if not matrix:

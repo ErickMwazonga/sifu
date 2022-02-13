@@ -37,7 +37,7 @@ Return false
 
 
 class Solution:
-    def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
+    def isSubtree(self, s, t) -> bool:
         if not s:
             return False
 
@@ -46,7 +46,7 @@ class Solution:
 
         return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
 
-    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+    def isSameTree(self, p, q) -> bool:
         if not p and not q:
             return True
 
