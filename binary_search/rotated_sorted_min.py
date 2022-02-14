@@ -8,8 +8,8 @@ Write a code to find the minimum element in a sorted and rotated array.
 
 You may assume no duplicate exists in the array.
 Examples
-[6, 7, 8, 1, 2] -> 1
-[8, 9, 10, 1, 0, 1, 2] -> 0
+1. [6, 7, 8, 1, 2] -> 1
+2. [8, 9, 10, 1, 0, 1, 2] -> 0
 '''
 
 
