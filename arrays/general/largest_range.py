@@ -12,8 +12,8 @@ array [2, 6] represents the range {2, 3, 4, 5, 6} , which is a range of length 5
 Note that numbers don't need to be sorted or adjacent in the input array in order to form a range.
 You can assume that there will only be one largest range.
 
-Sample Input -> array = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-Sample Output -> [0, 7]
+Example
+[1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6] -> [0, 7]
 
 Time complexity: O(n) one pass for creating a hashmap, another pass for traversing each value in the array
 Space complexity: O(n) store the hashmap

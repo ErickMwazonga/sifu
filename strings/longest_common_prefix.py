@@ -5,8 +5,7 @@ If there is no common prefix, return an empty string ''.
 
 Examples:
 1. ['flower','flow','flight'] -> 'fl'
-2. ['dog','racecar','car'] -> ''
-    Explanation: There is no common prefix among the input strings.
+2. ['dog','racecar','car'] -> '' => Explanation: There is no common prefix among the input strings.
 '''
 
 

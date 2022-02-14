@@ -7,9 +7,10 @@ array contain a single digit.
 
 You may assume the integer does not contain any leading zero,
 except the number 0 itself.
-# input -> Output
-# [1, 2, 3] -> [1, 2, 4]
-# [9, 9] -> [1, 0, 0]
+
+Examples
+1. [1, 2, 3] -> [1, 2, 4]
+2. [9, 9] -> [1, 0, 0]
 '''
 
 
