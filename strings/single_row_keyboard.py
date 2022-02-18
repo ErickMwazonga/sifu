@@ -1,10 +1,8 @@
 '''
 LeetCode 1165. Single-Row Keyboard
-PREMIUM
-
-Description
 https://leetcode.com/problems/single-row-keyboard/
 
+Description
 There is a special keyboard with all keys in a single row.
 Given a string keyboard of length 26 indicating the layout of the keyboard (indexed from 0 to 25),
 initially your finger is at index 0. To type a character,

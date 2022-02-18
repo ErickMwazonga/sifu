@@ -79,6 +79,10 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
    [146, 359, 380, 384, 621, 933]
 
 
+### Books
+1. Elements of Programming interviews in python adnan aziz 
+2. Daily Coding Problem: Get Exceptionally Good at Coding by Alex Miller and Lawrence Wu
+   
 ## Courses
 1. Graphs - https://www.youtube.com/watch?v=tWVWeAqZ0WU
 2. 10 Frequest asked questions - https://www.youtube.com/watch?v=o3DUXPRyvT8

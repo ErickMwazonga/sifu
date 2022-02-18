@@ -1,7 +1,7 @@
 '''
 122. Best Time to Buy and Sell Stock II
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
-https://medium.com/@rebeccahezhang/leetcode-122-best-time-to-buy-and-sell-stock-ii-fbf6d66d62e3
+Credit: https://medium.com/@rebeccahezhang/leetcode-122-best-time-to-buy-and-sell-stock-ii-fbf6d66d62e3
 
 Say you have an array prices for which the ith element is the price of a given stock on day i.
 Design an algorithm to find the maximum profit.

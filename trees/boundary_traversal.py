@@ -3,7 +3,7 @@ Boundary Traversal of binary tree
 
 The left boundary is defined as the path from the root to the left-most node.
 The right boundary is defined as the path from the root to the right-most node.
-If the root doesn’t have left subtree or right subtree, then the root itself is left boundary or right boundary.
+If the root doesn't have left subtree or right subtree, then the root itself is left boundary or right boundary.
 Note this definition only applies to the input binary tree, and not apply to any subtrees.
 
 The left-most node is defined as a leaf node you could reach when you always firstly travel to the

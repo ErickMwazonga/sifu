@@ -1,6 +1,3 @@
-# Importing dependancies
-import sys
-
 '''
 To see if a binary tree is a binary search tree, check:
 If a node is a left child, then its key and the keys of 

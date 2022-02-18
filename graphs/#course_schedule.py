@@ -1,7 +1,7 @@
 '''
 207. Course Schedule
 https://leetcode.com/problems/course-schedule/
-Check: https://www.youtube.com/watch?v=EgI5nU9etnU&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=2
+Credit: https://www.youtube.com/watch?v=EgI5nU9etnU&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=2
 
 There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. 
 You are given an array prerequisites where prerequisites[i] = [ai, bi] 

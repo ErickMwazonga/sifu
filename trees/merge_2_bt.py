@@ -2,7 +2,6 @@
 617. Merge Two Binary Trees
 https://leetcode.com/problems/merge-two-binary-trees/
 
-617. Merge Two Binary Trees
 You are given two binary trees root1 and root2.
 You need to merge the two trees into a new binary tree.
 The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node.

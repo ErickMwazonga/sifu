@@ -1,5 +1,6 @@
 '''
 First repeating character
+
 Given a string str, create a function that returns the first repeating character.
 If such character doesn't exist, return the null character '\0'.
 

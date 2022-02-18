@@ -219,3 +219,4 @@ Implemented using a QUEUE
 ---
 ## Infinity
 -sys.maxsize
+-inf, inf

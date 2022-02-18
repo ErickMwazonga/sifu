@@ -1,7 +1,8 @@
 '''
 House Robber III
 https://leetcode.com/problems/house-robber-iii/
-https://www.hrwhisper.me/leetcode-house-robber-iii/
+Credit: https://www.hrwhisper.me/leetcode-house-robber-iii/
+
 The thief has found himself a new place for his thievery again.
 There is only one entrance to this area, called the "root."
 Besides the root, each house has one and only one parent house.

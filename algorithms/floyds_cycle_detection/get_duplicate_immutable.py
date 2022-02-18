@@ -1,8 +1,9 @@
 '''
+287. Find the Duplicate Number
 https://leetcode.com/problems/find-the-duplicate-number/
 
-https://www.youtube.com/watch?v=dfIqLxAf-8s
-https://leetcode.com/problems/find-the-duplicate-number/discuss/705111/summary-7-solutions-%2B-consice-explanation-and-complexity-analysis
+Credit: https://www.youtube.com/watch?v=dfIqLxAf-8s
+Credit: https://leetcode.com/problems/find-the-duplicate-number/discuss/705111/summary-7-solutions-%2B-consice-explanation-and-complexity-analysis
 '''
 
 

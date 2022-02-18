@@ -1,7 +1,7 @@
 '''
 678. Valid Parenthesis String
 https://leetcode.com/problems/valid-parenthesis-string/
-https://leetcode.com/problems/valid-parenthesis-string/discuss/107572/Java-using-2-stacks.-O(n)-space-and-time-complexity.
+Credit: https://leetcode.com/problems/valid-parenthesis-string/discuss/107572/Java-using-2-stacks.-O(n)-space-and-time-complexity.
 
 Given a string containing only three types of characters: '(', ')' and '*',
 write a function to check whether this string is valid.
@@ -23,7 +23,7 @@ The idea is to check if there is any point violating the rule of valid parenthes
 In other words, from left to right, any point in the middle should have
 #left brackets + #stars >= #right brackets
 The same principles apply when
-start from right to left，any point in the middle
+start from right to left, any point in the middle
 #right brackets + #stars >= #left brackets
 '''
 

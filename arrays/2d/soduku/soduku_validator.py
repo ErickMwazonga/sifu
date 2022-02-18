@@ -10,38 +10,16 @@ need to be validated according to the following rules:
 - Each of the 9 3x3 sub-boxes of the grid must contain the
 digits 1-9 without repetition.
 '''
+
 from typing import Union
 Unit = list[Union[int, str]]
 Matrix = list[Unit]
 
 
-def isValidSudoku(self, board) -> bool:
-    n = len(board)
-    seen = set()
-
-    for row in range(n):
-        for col in range(n):
-            num = board[row][col]
-
-            if num != '.':
-                # col_val = num + 'col' + str(col) # f'col-{col}-{num}'
-                # row_val = num + 'row' + str(row) # f'row-{row}-{num}'
-                # block_val = num + 'block' + str(row // 3) + str(col // 3) # f'block-{row//3}-{col//3}-{num}'
-
-                col_val = f'col-{col}-{num}'
-                row_val = f'row-{row}-{num}'
-                block_val = f'block-{row//3}-{col//3}-{num}'
-
-                if (col_val in seen) or (row_val in seen) or (block_val in seen):
-                    return False
-                else:
-                    seen.update([row_val, col_val, block_val])
-
-    return True
-
-
 class SodukuValidator:
     def check_board(self, board: Matrix) -> bool:
+        if not board:
+            return False
         if len(board) != 9:
             return False
         for row in board:
@@ -70,7 +48,7 @@ class SodukuValidator:
                 return False
         return True
 
-    def check_squares(self, board: Matrix) -> bool:
+    def check_subgrid(self, board: Matrix) -> bool:
         for i in range(0, 9, 3):
             for j in range(0, 9, 3):
                 s_square = board[i][j:j+3] + \
@@ -83,7 +61,7 @@ class SodukuValidator:
     def isValidSudoku(self, board: Matrix) -> bool:
         if not self.check_board(board):
             return False
-        return self.check_rows(board) and self.check_cols(board) and self.check_squares(board)
+        return self.check_rows(board) and self.check_cols(board) and self.check_subgrid(board)
 
     # Other nice to have utils
     def transformer(self, grouping: Unit) -> list:

@@ -1,5 +1,6 @@
 '''
 Count of index pairs with equal elements in an array
+
 Given an array of n elements.
 The task is to count the total number of indices (i, j) such that arr[i] = arr[j] and i != j
 

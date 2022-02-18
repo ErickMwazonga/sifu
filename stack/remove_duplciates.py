@@ -1,8 +1,8 @@
 '''
 316. Remove Duplicate Letters
 https://leetcode.com/problems/remove-duplicate-letters/
-https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
-https://www.youtube.com/watch?v=2ayws5Y-WM4
+Credit: https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
+Credit: https://www.youtube.com/watch?v=2ayws5Y-WM4
 
 Given a string s, remove duplicate letters so that every letter appears once and only once.
 You must make sure your result is the smallest in lexicographical order among all possible results.

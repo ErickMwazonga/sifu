@@ -3,8 +3,8 @@
 https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
 Solution:
-https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/376531/Simple-and-Intuitive-Python3-Implementation-with-explanation
-https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/413214/Python-Recursive-Solutions
+Credit: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/376531/Simple-and-Intuitive-Python3-Implementation-with-explanation
+Credit: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/discuss/413214/Python-Recursive-Solutions
 
 Given preorder and inorder traversal of a tree, construct the binary tree.
 For example, given

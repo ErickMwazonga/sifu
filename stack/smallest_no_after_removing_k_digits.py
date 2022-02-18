@@ -1,6 +1,6 @@
 '''
 Smallest number after removing k digits
-Description
+
 Given a positive integer k and string num that represents a positive integer,
 create a function that returns as a string, the smallest number that can be made by removing k digits from num.
 Note that both input and output don't contain leading zeroes, except for the number 0 itself.

@@ -1,7 +1,7 @@
 '''
 12. Integer to Roman
 https://leetcode.com/problems/integer-to-roman/
-CREDIT: https://www.youtube.com/watch?v=yzB4M-UXqgI
+Credit: https://www.youtube.com/watch?v=yzB4M-UXqgI
 
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 Symbol       Value

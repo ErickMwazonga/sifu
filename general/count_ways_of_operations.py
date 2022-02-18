@@ -1,6 +1,7 @@
 '''
-https://www.geeksforgeeks.org/reduce-a-number-to-1-by-performing-given-operations/
 Reduce a number to 1 by performing given operations
+https://www.geeksforgeeks.org/reduce-a-number-to-1-by-performing-given-operations/
+
 Given a number N. The task is to reduce the given number N to 1 in the minimum number of steps.
 You can perform any one of the below operations in each step.
 

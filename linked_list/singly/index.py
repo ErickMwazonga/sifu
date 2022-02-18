@@ -1,5 +1,4 @@
 class Node:
-    '''A node in a single linked list'''
 
     def __init__(self, data=None):
         self.data = data
@@ -7,14 +6,40 @@ class Node:
 
 
 class SinglyLinkedList:
+
     def __init__(self):
-        '''Create new SinglyLinkedList: 0(1) time'''
+        self.head = None
+
+    def __init__(self, nodes=None):
+        '''
+        >>> llist = LinkedList(['a', 'b', 'c', 'd', 'e'])
+        >>> llist => a -> b -> c -> d -> e -> None
+        '''
 
         self.head = None
 
-    def print_node_list(self):
-        '''Return string representation of the list: 0(n) time'''
+        if nodes:
+            node = Node(data=nodes.pop(0))
+            self.head = node
 
+            for elem in nodes:
+                node.next = Node(data=elem)
+                node = node.next
+
+    def __repr__(self):
+        '''>>> llist => a -> b -> c -> None'''
+
+        node = self.head
+        nodes = []
+
+        while node:
+            nodes.append(node.data)
+            node = node.next
+
+        nodes.append('None')
+        return ' -> '.join(nodes)
+
+    def get_nodes(self):
         nodes = []
         curr = self.head
 
@@ -24,34 +49,35 @@ class SinglyLinkedList:
 
         return nodes
 
-    def print_list(self):
-        cur_node = self.head
+    def prepend(self, data):
+        node = Node(data)
+        node.next = self.head
+        self.head = node
 
-        while cur_node:
-            print(cur_node.data, end='->')
-            cur_node = cur_node.next
+    def append(self, data):
+        new_node = Node(data)
 
-    def get_values(self, head):
-        values = []
-
-        curr = self.head
-        while curr:
-            values.append(curr.next)
-            curr = curr.next
-
-        return values
-
-    def get_values_R(self, head):
-        values = []
-        fill_values(self, head, values)
-        return values
-
-    def fill_values(self, head, values):
-        if not head:
+        if not self.head:
+            self.head = new_node
             return
 
-        values.append(head.val)
-        self.fill_values(self, head.next, values)
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next
+        last_node.next = new_node
+
+    def size(self, head):
+        if not head:
+            return 0
+
+        return 1 + self.size(head.next)
+
+    def get_tail(self, head):
+        curr = head
+        while curr.next:
+            curr = curr.next
+
+        return curr
 
     def generate_list(metadata=None):
         '''
@@ -81,28 +107,3 @@ class SinglyLinkedList:
                 head = curr_node
 
         return head
-
-    def append(self, data):
-        new_node = Node(data)
-
-        if self.head is None:
-            self.head = new_node
-            return
-
-        last_node = self.head
-        while last_node.next:
-            last_node = last_node.next
-        last_node.next = new_node
-
-    def size(self, head):
-        if not head:
-            return 0
-
-        return 1 + self.size(head.next)
-
-    def get_tail(self, head):
-        curr = head
-
-        while curr.next:
-            curr = curr.next
-        return curr

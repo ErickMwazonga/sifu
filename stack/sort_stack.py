@@ -1,6 +1,7 @@
 '''
 SORT STACK
 https://www.geeksforgeeks.org/sort-stack-using-temporary-stack/
+
 Sort a stack using a temporary stack
 Given a stack of integers, sort it in ascending order using another temporary stack.
 Input : [34, 3, 31, 98, 92, 23]
