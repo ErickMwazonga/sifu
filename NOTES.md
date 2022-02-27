@@ -24,11 +24,12 @@ for i in range(n):
 ---
 ## Flatten an Array
 
-def transpose(strs):
-  grid = [ list(str) for str in strs ]
-  return list(map(list, zip(*grid)))
-### 1. Basic iterative function
 ```py
+def transpose(strs):
+  grid = [list(str) for str in strs]
+  return list(map(list, zip(*grid)))
+
+### 1. Basic iterative function
 def flatten(input):
     new_list = []
     for i in input:

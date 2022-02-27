@@ -104,10 +104,10 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 5. https://www.educative.io/blog/crack-amazon-coding-interview-questions
 
 
-https://baihuqian.github.io/2018-09-08-nth-digit/
-https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
-https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
-https://serhatgiydiren.github.io/
+1. https://baihuqian.github.io/2018-09-08-nth-digit/
+2. https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
+3. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
+4. https://serhatgiydiren.github.io/
 
 FAANG Questions
 1. https://github.com/ombharatiya/FAANG-Coding-Interview-Questions
