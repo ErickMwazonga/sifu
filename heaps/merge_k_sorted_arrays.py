@@ -10,7 +10,7 @@ Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 Naive Approach
 Put k lists in one big list - O(n*k), 
 Then sort the big list quicksort. 
-Overall time complexity would be O(nk)+O(nk log(nk)) = O(nk log(nk)).
+Overall time complexity would be O(nk) + O(nk log(nk)) = O(nklog(nk)).
 
 Best Approach
 https://medium.com/@amitrajit_bose/merge-k-sorted-arrays-6f9427661e67

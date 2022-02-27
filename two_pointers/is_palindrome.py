@@ -6,8 +6,9 @@ Given a string, determine if it is a palindrome,
 considering only alphanumeric characters and ignoring cases.
 Note: For the purpose of this problem, we define empty string as valid palindrome.
 
-"A man, a plan, a canal: Panama" -> true
-"race a car" -> false
+Examples
+1. 'A man, a plan, a canal: Panama' -> true
+2. 'race a car' -> false
 '''
 
 
@@ -41,5 +42,5 @@ def is_palindrome2(s):
 
 
 assert isPalindrome('pap') == True
-assert isPalindrome("race a car") == False
-assert isPalindrome("A man, a plan, a canal: Panama") == True
+assert isPalindrome('race a car') == False
+assert isPalindrome('A man, a plan, a canal: Panama') == True

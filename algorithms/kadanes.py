@@ -16,11 +16,11 @@ Other Examples
 3. [-1] -> -1
 4. [-2147483647] -> -2147483647
 5. [2, 3, -6, 4, 2, -8, 3] -> 6
-    Explanation: the maximum subarray is [4, 2], its sum is 6
+   Explanation: the maximum subarray is [4, 2], its sum is 6
 6. [2, 3, -1, 4, -10, 2, 5] -> 8
-    Explanation: the maximum subarray is [2, 3, -1, 4], its sum is 8
+   Explanation: the maximum subarray is [2, 3, -1, 4], its sum is 8
 7. [-3, -1, -2] -> -1
-    Explanation: the maximum subarray is [-1], its sum is -1
+   Explanation: the maximum subarray is [-1], its sum is -1
 '''
 
 

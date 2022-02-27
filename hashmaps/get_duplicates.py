@@ -1,7 +1,7 @@
 '''
 Imagine you have a list in memory of length n.
 The elements of the list are drawn from the set of integers between [1,n-1].
-So, you’re guaranteed to have at least one duplicate in the list.
+So, you're guaranteed to have at least one duplicate in the list.
 You have to write a function that prints out a duplicate in the list.
 
 Valid:

@@ -8,6 +8,7 @@ The robot can only move either down or right at any point in time.
 The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
 How many possible unique paths are there?
 
+Examples
 Input: m = 3, n = 7
 Output: 28
 

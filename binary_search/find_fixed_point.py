@@ -1,6 +1,6 @@
 '''
 https://leetcode.com/problems/fixed-point/
-https://xingxingpark.com/Leetcode-1064-Fixed-Point/
+Credit: https://xingxingpark.com/Leetcode-1064-Fixed-Point/
 
 A fixed point in an array 'A' is an index 'i' such that A[i] is equal to 'i'.
 Given an array of n distinct integers sorted in ascending order, write a
@@ -19,7 +19,7 @@ A = [-10, -5, 0, 3, 7]
 
 
 def find_fixed_point_linear(A):
-    '''# Time Complexity: O(n), # Space Complexity: O(1)'''
+    '''Time: O(n), Space: O(1)'''
 
     for i in range(len(A)):
         if A[i] == i:
@@ -28,7 +28,7 @@ def find_fixed_point_linear(A):
 
 
 def find_fixed_point(A):
-    '''# Time Complexity: O(log n), # Space Complexity: O(1)'''
+    '''Time: O(log n), Space: O(1)'''
 
     low, high = 0, len(A) - 1
 

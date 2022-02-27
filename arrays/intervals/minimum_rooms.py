@@ -7,7 +7,7 @@ For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
 
 NOTE
 - When a new meeting starts, we need an additional room.
-- When a meeting ends, we don’t need that room anymore prioritize the smaller starting or
+- When a meeting ends, we don't need that room anymore prioritize the smaller starting or
   ending time if the start time and end time are equal, end time comes first.
 '''
 

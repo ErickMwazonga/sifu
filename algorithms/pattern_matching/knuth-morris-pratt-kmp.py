@@ -4,11 +4,9 @@ https://www.codespeedy.com/kmp-string-matching-algorithm-in-python/
 
 
 def KMP_String(pattern, text):
-    a = len(text)
-    b = len(pattern)
+    a, b = len(text), len(pattern)
 
     prefix_arr = get_prefix_arr(pattern)
-
     initial_point = []
 
     i, j = 0, 0

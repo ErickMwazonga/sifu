@@ -36,7 +36,7 @@ Output: 2
 
 
 def max_product_path(grid):
-    '''time: O(M * N), space: O(M * N)'''
+    '''Time: O(M * N), Space: O(M * N)'''
 
     if not grid:
         return -1

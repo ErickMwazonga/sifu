@@ -7,7 +7,7 @@ class Node:
 
 
 def maxDepth(root):
-    '''time: 0(n), memory: o(1)'''
+    '''Time: 0(n), Memory: o(1)'''
 
     if not root:
         return 0
@@ -20,7 +20,7 @@ def maxDepth(root):
 
 
 def minDepth(root):
-    '''time: 0(n), memory: o(1)'''
+    '''Time: 0(n), Memory: o(1)'''
 
     if not root:
         return 0

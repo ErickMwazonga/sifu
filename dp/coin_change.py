@@ -9,11 +9,11 @@ If that amount of money cannot be made up by any combination of the coins, retur
 You may assume that you have an infinite number of each kind of coin.
 
 Examples
-Input: coins = [1,2,5], amount = 11 -> Output: 3 => 11 = 5 + 5 + 1
-Input: coins = [2], amount = 3 -> Output: -1 
-Input: coins = [1], amount = 0 -> Output: 0
-Input: coins = [1], amount = 1 -> Output: 1
-Input: coins = [1], amount = 2 -> Output: 2
+1. coins = [1,2,5], amount = 11 -> Output: 3 => 11 = 5 + 5 + 1
+2. coins = [2], amount = 3 -> Output: -1 
+3. coins = [1], amount = 0 -> Output: 0
+4. coins = [1], amount = 1 -> Output: 1
+5. coins = [1], amount = 2 -> Output: 2
 '''
 
 

@@ -12,6 +12,7 @@ Examples
 
 
 class Solution:
+
     def toLowerCase(self, str):
         lowered = []
         for i in str:
@@ -21,6 +22,7 @@ class Solution:
                 lowered += chr(char_code + 32)
             else:
                 lowered += i
+
         return ''.join(lowered)
 
     def toLowerCase2(self, str: str) -> str:
@@ -31,6 +33,7 @@ class Solution:
                 res += chr(ord(str[i])+32)
             else:
                 res += str[i]
+
         return res
 
 

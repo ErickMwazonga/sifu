@@ -17,7 +17,6 @@ class Solution:
         self.original_nums = A[:]
 
     def reset(self) -> list[int]:
-        '''Resets the array to its original configuration and return it.'''
         return self.original_nums
 
     def shuffle(self) -> list[int]:

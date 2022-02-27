@@ -8,7 +8,7 @@ Follow up: If you have figured out the O(n) solution, try coding another solutio
 divide and conquer approach, which is more subtle.
 
 Examples
-1. [-2,1,-3,4,-1,2,1,-5,4] -> 6
+1. [-2, 1, -3, 4, -1, 2, 1, -5, 4] -> 6
     Explanation: [4,-1,2,1] has the largest sum = 6.
 2. [1] -> 1
 3. [0] -> 0

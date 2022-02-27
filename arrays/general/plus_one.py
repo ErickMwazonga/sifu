@@ -1,12 +1,9 @@
 '''
-Given a non-empty array of digits representing
-a non-negative integer,plus one to the integer.
+Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
 The digits are stored such that the most significant digit 
-is at the head of the list, and each element in the 
-array contain a single digit.
+is at the head of the list, and each element in the  array contain a single digit.
 
-You may assume the integer does not contain any leading zero,
-except the number 0 itself.
+You may assume the integer does not contain any leading zero, except the number 0 itself.
 
 Examples
 1. [1, 2, 3] -> [1, 2, 4]

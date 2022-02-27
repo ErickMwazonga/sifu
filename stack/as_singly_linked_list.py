@@ -44,10 +44,10 @@ class Stack:
     def display(self):
         iternode = self.head
         if self.isempty():
-            print("Stack Underflow")
+            print('Stack Underflow')
         else:
             while(iternode != None):
-                print(iternode.data, "->", end=" ")
+                print(iternode.data, '->', end=' ')
                 iternode = iternode.next
             return
 
@@ -64,7 +64,7 @@ MyStack.push(44)
 MyStack.display()
 
 # Print top elementof stack
-print("\nTop element is ", MyStack.peek())
+print('\nTop element is ', MyStack.peek())
 
 # Delete top elements of stack
 MyStack.pop()
@@ -74,6 +74,6 @@ MyStack.pop()
 MyStack.display()
 
 # Print top elementof stack
-print("\nTop element is ", MyStack.peek())
+print('\nTop element is ', MyStack.peek())
 
 # This code is contributed by Mathew George

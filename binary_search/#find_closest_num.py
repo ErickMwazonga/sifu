@@ -1,22 +1,21 @@
 '''
 Given an array of sorted integers. We need to find the closest value to the given number.
-# YouTube Video: https://www.youtube.com/watch?v=0gkWZNE1H4Y&list=PL5tcWHG-UPH1kjiE-Fqt1xCSkcwyfn2Jb
+Credit: https://www.youtube.com/watch?v=0gkWZNE1H4Y&list=PL5tcWHG-UPH1kjiE-Fqt1xCSkcwyfn2Jb
 
 Array may contain duplicate values and negative numbers.
 Examples:
-    Input : arr[] = [1, 2, 4, 5, 6, 6, 8, 9]
-    Target number = 11
-    Output : 9
+Input: [1, 2, 4, 5, 6, 6, 8, 9]
+Target number = 11
+Output: 9
     9 is closest to 11 in given array
     
-    Input :arr[] = [2, 5, 6, 7, 8, 8, 9]
-    Target number = 4
-    Output : 5
-    Given[1, 2, 3]and target =2, return1.
-
-Given[1, 4, 6]and target =3, return1.
-Given[1, 4, 6]and target =5, return1or2.
-Given[1, 3, 3, 4]and target =2, return0or1or2.
+Input: [2, 5, 6, 7, 8, 8, 9]
+Target number = 4
+Output: 5
+Given [1, 2, 3] and target = 2, return 1.
+Given [1, 4, 6] and target = 3, return 1.
+Given [1, 4, 6] and target = 5, return 1 or 2.
+Given [1, 3, 3, 4] and target = 2, return 0 or 1 or 2.
 '''
 
 
@@ -43,6 +42,5 @@ def closestNumber(A, target):
     return high
 
 
-A = [1, 2, 4, 5, 6, 6, 8, 9]
-# A = [2, 5, 6, 7, 8, 8, 9]
-print(closestNumber(A, 11))
+assert closestNumber([1, 2, 4, 5, 6, 6, 8, 9], 11) == 9
+assert closestNumber([2, 5, 6, 7, 8, 8, 9], 4) == 5

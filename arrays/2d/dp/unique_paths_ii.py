@@ -24,7 +24,7 @@ Output: 1
 
 
 def paths(matrix):
-    '''# DP: Time complexity: O(n*m), Space complexity: O(n*m)'''
+    '''DP: Time complexity: O(n*m), Space complexity: O(n*m)'''
 
     n, m = len(matrix), len(matrix[0])
 

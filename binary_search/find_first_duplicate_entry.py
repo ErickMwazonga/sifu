@@ -3,7 +3,7 @@ Write a function that takes an array of sorted integers and a key and
 returns the index of the first occurrence of that key from the array.
 
 Example:
-idx   0     1  2   3    4    5    6    7    8    9
+idx   0    1   2   3    4    5    6    7    8    9
 A = [-14, -10, 2, 108, 108, 243, 285, 285, 285, 401]
 target = 108
 Returns index 3 since 108 appears for the first time at

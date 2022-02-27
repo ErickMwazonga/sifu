@@ -10,7 +10,7 @@ class Node:
 
 
 def height(root):
-    '''time: 0(n), memory: o(1)'''
+    '''Time: 0(n), Memory: o(1)'''
 
     if not root:
         return 0

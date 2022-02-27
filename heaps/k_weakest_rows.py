@@ -13,13 +13,13 @@ Return the indices of the k weakest rows in the matrix ordered from weakest to s
 
 Example:
 Input: mat =
-[[1,1,0,0,0],
- [1,1,1,1,0],
- [1,0,0,0,0],
- [1,1,0,0,0],
- [1,1,1,1,1]],
+[[1, 1, 0, 0, 0],
+ [1, 1, 1, 1, 0],
+ [1, 0, 0, 0, 0],
+ [1, 1, 0, 0, 0],
+ [1, 1, 1, 1, 1]],
 k = 3
-Output: [2,0,3]
+Output: [2, 0, 3]
 Explanation:
 The number of soldiers in each row is:
 - Row 0: 2
@@ -27,8 +27,9 @@ The number of soldiers in each row is:
 - Row 2: 1
 - Row 3: 2
 - Row 4: 5
-The rows ordered from weakest to strongest are [2,0,3,1,4].
+The rows ordered from weakest to strongest are [2, 0, 3, 1, 4].
 '''
+
 import heapq
 
 

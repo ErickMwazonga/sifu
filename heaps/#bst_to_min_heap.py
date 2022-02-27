@@ -3,7 +3,7 @@ Convert a Binary Search Tree into a Min Heap
 https://www.techiedelight.com/convert-binary-search-tree-into-min-heap/
 
 Given a binary search tree (BST), efficiently convert it into a min-heap. 
-In order words, convert a binary search tree into a complete binary tree where each node has a higher value than its parent’s value.
+In order words, convert a binary search tree into a complete binary tree where each node has a higher value than its parent's value.
 '''
 
 

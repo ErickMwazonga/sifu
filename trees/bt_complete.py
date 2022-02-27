@@ -10,12 +10,12 @@ is completely filled, and all nodes in the last level are as far left as possibl
 It can have between 1 and 2h nodes inclusive at the last level h.
 
 Example 1:
-Input: [1,2,3,4,5,6] -> true
+Input: [1, 2, 3, 4, 5, 6] -> true
 Explanation: Every level before the last is full (ie. levels with node-values {1} and {2, 3}),
 and all nodes in the last level ({4, 5, 6}) are as far left as possible.
 
 Example 2:
-Input: [1,2,3,4,5,null,7] -> false
+Input: [1, 2, 3, 4, 5, null, 7] -> false
 Explanation: The node with value 7 isn't as far left as possible.
 '''
 

@@ -17,13 +17,13 @@ import heap as theHeap
 
 
 def findKthLargest(nums, k):
-    '''O(nlogn)'''
+    '''Time: O(nlogn)'''
 
     return sorted(nums)[-k]
 
 
 def findKthLargest(nums, k):
-    '''O(klogn)'''
+    '''Time: O(klogn)'''
     import heapq
 
     max_heap = [-n for n in nums]

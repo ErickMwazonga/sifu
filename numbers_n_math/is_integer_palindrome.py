@@ -2,11 +2,8 @@
 Check Whether a Number is Palindrome or Not
 https://leetcode.com/problems/palindrome-number/
 
-Time complexity : O(log 10(n)).
-We divided the input by 10 for every iteration,
-so the time complexity is O(log10(n))
-
-Space complexity : O(1)
+Time complexity: O(log 10(n)), Space complexity: O(1)
+We divided the input by 10 for every iteration, so the time complexity is O(log10(n))
 '''
 
 

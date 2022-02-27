@@ -10,8 +10,8 @@ Implement run-length encoding and decoding. You can assume the string to be enco
 no digits and consists solely of alphabetic characters.
 You can assume the string to be decoded is valid.
 
-Encode: "WWWWWWWWWBBBBBBB" -> "9W7B"
-Decode: "9W7B" -> "WWWWWWWWWBBBBBBB"
+Encode: 'WWWWWWWWWBBBBBBB' -> '9W7B'
+Decode: '9W7B' -> 'WWWWWWWWWBBBBBBB'
 '''
 
 

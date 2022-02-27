@@ -8,6 +8,7 @@ can be constructed from the magazines ; otherwise, it will return false.
 
 Each letter in the magazine string can only be used once in your ransom note.
 
+Examples
 Input: ransomNote = 'a', magazine = 'b'
 Output: false
 

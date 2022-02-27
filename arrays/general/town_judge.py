@@ -15,6 +15,7 @@ representing that the person labelled a trusts the person labelled b.
 If the town judge exists and can be identified, return the label of the town judge. 
 Otherwise, return -1.
 
+Examples
 Input: N = 2, trust = [[1,2]]
 Output: 2
 

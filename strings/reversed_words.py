@@ -11,7 +11,7 @@ reverse_words(message) -> 'steal pound cake'
 
 
 def reverse_words(message):
-    '''O(n) time and O(1)O(1) space!'''
+    '''O(n) time and O(1) space!'''
 
     # First we reverse all the characters in the entire message
     reverse_characters(message, 0, len(message)-1)
