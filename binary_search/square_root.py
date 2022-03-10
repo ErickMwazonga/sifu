@@ -1,6 +1,7 @@
 '''
 69. Sqrt(x)
-https://leetcode.com/problems/sqrtx/
+Problem Link: https://leetcode.com/problems/sqrtx/
+Related: L69, L633
 
 Given a non-negative integer x, compute and return the square root of x.
 Since the return type is an integer, the decimal digits are truncated

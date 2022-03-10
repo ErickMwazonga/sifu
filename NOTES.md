@@ -161,7 +161,7 @@ sorted(nums, key=sum) # [[2, 4], [8, 1], [5, 6], [7, 9]]
 ---
 ### Sort dictionary
 ```py
-sorted_dict sorted(d.items(), key=lambda x: x[1])
+sorted_dict = sorted(d.items(), key=lambda x: x[1])
 sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
 sorted_dict = dict(sorted_dict)
 

@@ -1,6 +1,7 @@
 '''
 41. First Missing Positive
 https://leetcode.com/problems/first-missing-positive/
+Related: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 
 Given an unsorted integer array, find the smallest missing positive integer.
 
