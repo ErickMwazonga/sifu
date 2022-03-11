@@ -16,13 +16,25 @@ Output: 4
 import heap as theHeap
 
 
+def find_Kth_largest(nums, k):
+    nums.sort()
+    n = len(nums)
+
+    return nums[n - k]
+
+
+def find_Kth_largest1(nums, k):
+    res = sorted(nums, reverse=True)
+    return res[k - 1]
+
+
 def findKthLargest(nums, k):
     '''Time: O(nlogn)'''
 
     return sorted(nums)[-k]
 
 
-def findKthLargest(nums, k):
+def findKthLargest2(nums, k):
     '''Time: O(klogn)'''
     import heapq
 
