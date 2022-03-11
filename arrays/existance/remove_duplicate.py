@@ -8,8 +8,8 @@ only once and returns the new length.
 Do not allocate extra space for another array, you must do this by
 modifying the input array in-place with O(1) extra memory.
 
-Examples
-Input: nums = [1,1,2]
+Example 1:
+[1,1,2]
 Output: 2, nums = [1,2]
 Explanation: Your function should return length = 2, with the first two elements of
 nums being 1 and 2 respectively. It doesn't matter what you leave beyond the returned length.
@@ -23,10 +23,19 @@ are set beyond the returned length.
 '''
 
 
-def remove_duplicates(nums) -> int:
-    if not nums:
-        return 0
+def removeDuplicates(nums):
+    i = 1
 
+    while i < len(nums):
+        if nums[i] == nums[i-1]:
+            nums.pop(i)
+        else:
+            i += 1
+
+    return len(nums)
+
+
+def remove_duplicates(nums):
     n = len(nums)
     count = 1
 
@@ -38,22 +47,21 @@ def remove_duplicates(nums) -> int:
     return count
 
 
-# UNSORTED ARRAY
+def removeDuplicates(A):
+    count = 1
+    for i in range(1, len(A)):
+        if A[i] != A[i-1]:
+            count += 1
+
+    return count
+
+
 def remove_duplicates(arr):
-    seen = set()
-    result = []
+    seen, res = set(), []
 
     for num in arr:
         if num not in seen:
             seen.add(num)
-            result.append(num)
+            res.append(num)
 
-    return result
-
-
-def remove_duplicates(arr):
-    visited = {}
-    for element in arr:
-        visited[element] = True
-
-    return list(visited.keys())
+    return res
