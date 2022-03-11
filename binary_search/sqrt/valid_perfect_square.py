@@ -1,6 +1,6 @@
 '''
 367. Valid Perfect Square
-Problem Link: https://leetcode.com/problems/valid-perfect-square/
+Link: https://leetcode.com/problems/valid-perfect-square/
 Related: L69, L633
 
 Given a positive integer num, write a function which returns True if num is a perfect square else False.

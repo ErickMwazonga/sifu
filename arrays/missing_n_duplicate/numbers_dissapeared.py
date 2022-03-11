@@ -1,6 +1,6 @@
 '''
 448. Find All Numbers Disappeared in an Array
-Problem Link: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+Link: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 Similar: https://leetcode.com/problems/first-missing-positive/
 
 Given an array nums of n integers where nums[i] is in the range [1, n], 

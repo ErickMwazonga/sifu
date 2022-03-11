@@ -1,6 +1,6 @@
 '''
 69. Sqrt(x)
-Problem Link: https://leetcode.com/problems/sqrtx/
+Link: https://leetcode.com/problems/sqrtx/
 
 Given a non-negative integer x, compute and return the square root of x.
 Since the return type is an integer, the decimal digits are truncated
@@ -18,9 +18,6 @@ Example:
 
 
 def integer_square_root(k):
-    if k <= 1:
-        return k
-
     low, high = 0, k
 
     while low < high:

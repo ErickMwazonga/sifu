@@ -1,6 +1,6 @@
 '''
 15. 3Sum -> 0
-https://leetcode.com/problems/3sum/
+Link: https://leetcode.com/problems/3sum/
 
 Are there elements a, b, c in nums such that a + b + c = 0?
 Find all unique triplets in the array which gives the sum of zero.

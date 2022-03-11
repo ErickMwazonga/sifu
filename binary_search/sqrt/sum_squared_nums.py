@@ -1,6 +1,6 @@
 '''
 633. Sum of Square Numbers
-Problem Link: https://leetcode.com/problems/sum-of-square-numbers/
+Link: https://leetcode.com/problems/sum-of-square-numbers/
 Related: L69, L367
 
 Given a non-negative integer c, decide whether there're two integers a and b such that a2 + b2 = c.

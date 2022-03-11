@@ -7,8 +7,8 @@ If there is such a triplet present in array, then print the triplet
 and return true. Else return false.
 
 For example,
-if the given array is {12, 3, 4, 1, 6, 9} and given sum is 24,
-then there is a triplet (12, 3 and 9) present in array whose sum is 24.
+if the given array is [12, 3, 4, 1, 6, 9] and given sum is 24,
+then there is a triplet [12, 3 and 9] present in array whose sum is 24.
 '''
 
 
