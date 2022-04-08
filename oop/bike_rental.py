@@ -17,7 +17,7 @@ The bike rental shop can
 
 For simplicity we assume that
     - Any customer requests rentals of only one type i.e hourly, monthly or weekly
-    - Is free to chose the number of bikes he/she wants
+    - Is free to choose the number of bikes he/she wants
     - Requested bikes should be less than available stock.
 '''
 

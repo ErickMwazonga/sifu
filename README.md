@@ -111,3 +111,14 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 
 FAANG Questions
 1. https://github.com/ombharatiya/FAANG-Coding-Interview-Questions
+
+
+System Desgn
+1. https://github.com/donnemartin/system-design-primer
+2. https://www.youtube.com/watch?v=seeiGC2HP48&list=PL_esswHjNwIeiFfVFer8uYly3Zk6YqXd0
+3. https://www.youtube.com/watch?v=MZwctuH8OjE&list=UU-nf8kVIeRMAzW3SRMzJ8-g&index=18
+4. https://iq.opengenus.org/microsoft-teams-system-design/
+5. LLD - https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-car-rental-system.md
+
+System Desgn Others
+https://systeminterview.com/design-youtube.php
