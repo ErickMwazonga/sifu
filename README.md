@@ -118,7 +118,9 @@ System Desgn
 2. https://www.youtube.com/watch?v=seeiGC2HP48&list=PL_esswHjNwIeiFfVFer8uYly3Zk6YqXd0
 3. https://www.youtube.com/watch?v=MZwctuH8OjE&list=UU-nf8kVIeRMAzW3SRMzJ8-g&index=18
 4. https://iq.opengenus.org/microsoft-teams-system-design/
-5. LLD - https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-car-rental-system.md
+5. https://iq.opengenus.org/memcached-in-system-design/
+6. LLD - https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-car-rental-system.md
+7. https://www.enjoyalgorithms.com/blog
 
 System Desgn Others
 https://systeminterview.com/design-youtube.php

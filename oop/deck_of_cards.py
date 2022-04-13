@@ -71,3 +71,27 @@ class Deck:
 
     def draw_card(self) -> Union[Card, None]:
         return self.__cards.pop()
+
+
+class Player(object):
+    def __init__(self, name):
+        self.name = name
+        self.hand = []
+
+    def sayHello(self):
+        print('Hi! My name is {self.name}')
+
+    def draw(self, deck, num=1):
+        for _ in range(num):
+            card = deck.deal()
+            if card:
+                self.hand.append(card)
+            else:
+                return False
+        return True
+
+    def showHand(self):
+        print(f"self.name's hand: {self.hand}")
+
+    def discard(self):
+        return self.hand.pop()
