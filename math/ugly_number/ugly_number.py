@@ -16,9 +16,11 @@ Examples:
 
 
 def isUgly(num: int) -> bool:
-
     if num <= 0:
         return False
+
+    if num == 1:
+        return True
 
     primes = [2, 3, 5]
     for prime in primes:
@@ -29,5 +31,6 @@ def isUgly(num: int) -> bool:
 
 
 assert isUgly(6) == True
+assert isUgly(8) == True
 assert isUgly(1) == True
 assert isUgly(14) == False

@@ -30,12 +30,21 @@ def isRectangleOverlap(rec1, rec2) -> bool:
 
 
 def isRectangleOverlap2(rec1, rec2) -> bool:
-    Point = namedtuple('Point', 'x,y')
+    x1, y1, x2, y2 = 0, 1, 2, 3
 
-    a1, a2 = Point(rec1[0], rec1[1]), Point(rec1[2], rec1[3])
-    b1, b2 = Point(rec2[0], rec2[1]), Point(rec2[2], rec2[3])
-
-    x_overlap = a1.x < b2.x and b1.x < a2.x
-    y_overlap = a1.y < b2.y and b1.y < a2.y
+    x_overlap = rec1[x1] < rec2[x2] and rec2[x1] < rec1[x2]
+    y_overlap = rec1[y1] < rec2[y2] and rec2[y1] < rec1[y2]
 
     return x_overlap and y_overlap
+
+
+def isRectangleOverlap(rec1, rec2):
+    x1, y1, x2, y2 = 0, 1, 2, 3
+
+    left = max(rec1[x1], rec2[x1])
+    right = min(rec1[x2], rec2[x2])
+
+    bottom = max(rec1[y1], rec2[y1])
+    top = min(rec1[y2], rec2[y2])
+
+    return (right - left > 0) and (top - bottom > 0)

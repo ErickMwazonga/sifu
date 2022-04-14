@@ -33,7 +33,8 @@ def is_happy(n: int) -> bool:
 
 
 def squared(n):
-    return sum([int(x) ** 2 for x in str(n)])
+    squares = [int(x) ** 2 for x in str(n)]
+    return sum(squares)
 
 
 def squared2(n):
