@@ -8,9 +8,6 @@ The second rectangle is defined by its bottom-left corner (bx1, by1) and its top
 '''
 
 
-from collections import namedtuple
-
-
 def computeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) -> int:
     '''https://leetcode.com/problems/rectangle-area/discuss/1664235/Python-Solution-for-Coding-Kids'''
 
