@@ -41,3 +41,25 @@ def matrixReshape(matrix, r, c):
             index += 1
 
     return results
+
+
+def matrixReshape(mat, r: int, c: int):
+    if not mat:
+        return mat
+
+    n, m = len(mat), len(mat[0])
+
+    if n * m != r * c:
+        return mat
+
+    new_mat = [[0 for _ in range(c)] for _ in range(r)]
+
+    i = 0
+    while i < r * c:
+        old_row, old_col = divmod(i, m)
+        new_row, new_col = divmod(i, c)
+
+        new_mat[new_row][new_col] = mat[old_row][old_col]
+        i += 1
+
+    return new_mat

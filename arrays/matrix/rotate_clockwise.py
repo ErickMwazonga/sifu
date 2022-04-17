@@ -18,18 +18,16 @@ class Solution:
         matrix.reverse()
 
         # Transpose
-        n = len(matrix)
+        n, m = len(matrix), len(matrix[0])
         for i in range(n):
-            for j in range(i):
-                # Do a transpose swap
+            for j in range(i+1, m):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
     def transpose(self, matrix):
-        n = len(matrix)
+        n, m = len(matrix), len(matrix[0])
 
         for i in range(n):
-            # Since diagonal do not change, transpose only after i
-            for j in range(n):
+            for j in range(i+1, m):  # Items less than i have already been transposed
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
         return matrix

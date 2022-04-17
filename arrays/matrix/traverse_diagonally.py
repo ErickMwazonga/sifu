@@ -7,13 +7,9 @@ Given a matrix of M x N elements (M rows, N columns),
 return all elements of the matrix in diagonal order as shown in the below image.
 
 Example:
-Input:
-[
-    [ 1, 2, 3 ],
-    [ 4, 5, 6 ],
-    [ 7, 8, 9 ]
-]
-Output:  [1, 2, 4, 7, 5, 3, 6, 8, 9]
+[[ 1, 2, 3 ],
+ [ 4, 5, 6 ],    --> [1, 2, 4, 7, 5, 3, 6, 8, 9]
+ [ 7, 8, 9 ]] 
 '''
 
 from collections import defaultdict
@@ -21,26 +17,26 @@ from collections import defaultdict
 
 class Solution:
     def find_diagonal_order(self, matrix):
-        '''Time complexity O(MN), Space Complexity O(MN)'''
-
         if not matrix:
-            return []
+            return matrix
 
         n, m = len(matrix), len(matrix[0])
         diagonals = defaultdict(list)
 
+        # Build diagonals
         for i in range(n):
             for j in range(m):
                 diagonals[i+j].append(matrix[i][j])
 
-        result = []
-        for key, diagonal in diagonals.items():
-            if key % 2 == 0:
-                diagonal.reverse()
+        res = []
+        # Get values in respective order
+        for k, diagonal in diagonals.items():
+            if k % 2 == 0:
+                res.extend(diagonal[::-1])
+            else:
+                res.extend(diagonal)
 
-            result.extend(diagonal)
-
-        return result
+        return res
 
     def find_diagonal_order_one_directional(self, matrix):
         if not matrix:
@@ -56,11 +52,9 @@ class Solution:
         return list(diagonals.values())
 
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
 output = [[1], [2, 4], [3, 5, 7], [6, 8], [9]]
 
 soln = Solution()

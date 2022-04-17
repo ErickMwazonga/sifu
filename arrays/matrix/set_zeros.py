@@ -15,6 +15,25 @@ NB: Do not return anything, modify matrix in-place instead
 '''
 
 
+def set_zeroes(matrix) -> None:
+    n, m = len(matrix), len(matrix[0])
+    affected_rows, affected_cols = set(), set()
+
+    for i in range(n):
+        for j in range(m):
+            if matrix[i][j] == 0:
+                affected_rows.add(i)
+                affected_cols.add(j)
+
+    for i in affected_rows:
+        for j in range(m):
+            matrix[i][j] = 0
+
+    for i in affected_cols:
+        for j in range(n):
+            matrix[j][i] = 0
+
+
 def set_zeros(A):
     n, m = len(A), len(A[0])
     affected_rows, affected_cols = set(), set()
@@ -34,33 +53,12 @@ def set_zeros(A):
                 A[i][j] = 0
 
 
-def set_zeros2(A):
-    n, m = len(A), len(A[0])
-    affected_rows, affected_cols = set(), set()
+_input = [[1, 1, 1],
+          [1, 0, 1],
+          [1, 1, 1]]
 
-    for i in range(n):
-        for j in range(m):
-            if A[i][j] == 0:
-                affected_rows.add(i)
-                affected_cols.add(j)
+output = [[1, 0, 1],
+          [0, 0, 0],
+          [1, 0, 1]]
 
-    for i in range(n):
-        for j in range(m):
-            if A[i][j] != 0 and i in affected_rows:
-                A[i][j] = 0
-
-            if A[i][j] != 0 and j in affected_cols:
-                A[i][j] = 0
-
-
-m = [
-    [1, 1, 1],
-    [1, 0, 1],
-    [1, 1, 1]
-]
-
-assert set_zeros(m) == [
-    [1, 0, 1],
-    [0, 0, 0],
-    [1, 0, 1]
-]
+assert set_zeros(_input) == output

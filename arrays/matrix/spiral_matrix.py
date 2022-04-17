@@ -4,48 +4,48 @@ Link: https://leetcode.com/problems/spiral-matrix/
 
 Given an m x n matrix, return all elements of the matrix in spiral order.
 
-Input 
+Examples 
 [
     [1, 2, 3], 
-    [4, 5, 6],            
+    [4, 5, 6],      ----->  [1, 2, 3, 6, 9, 8, 7, 4, 5]          
     [7, 8, 9]
 ]
-Output - [1, 2, 3, 6, 9, 8, 7, 4, 5]
 
-Input
 [
-    [1, 2, 3, 4], 
-    [5, 6, 7, 8],        
+    [1,  2,  3,  4], 
+    [5,  6,  7,  8],  ------>  [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]       
     [9, 10, 11, 12]
 ]
-Output - [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+Output -
 '''
 
 
 def spiral_order(matrix):
     res = []
 
-    if not len(matrix):
+    if not matrix:
         return res
 
     while matrix:
-        # first row
-        res += matrix.pop(0)
-        # res.extend(matrix.pop(0))
+        first_row = matrix.pop(0)
+        res += first_row
+        # res.extend(first_row)
 
         # last column
-        if matrix and matrix[0]:
-            for row in matrix:
+        for row in matrix:
+            if row:
                 res.append(row.pop())
+
         # last row
         if matrix:
-            res += matrix.pop()[::-1]
+            last_row_reversed = matrix.pop()[::-1]
+            res += last_row_reversed
             # res.extend(reversed(matrix[-1]))
 
         # first column
-        if matrix and matrix[0]:
-            for row in matrix[::-1]:
-                # for row in reversed(matrix):
+        for row in matrix[::-1]:
+            # for row in reversed(matrix):
+            if row:
                 res.append(row.pop(0))
 
     return res
@@ -93,16 +93,17 @@ def spiralOrder3(matrix, res=[]):
     res += matrix.pop(0)
 
     # last column
-    if matrix and matrix[0]:
-        for row in matrix:
+    for row in matrix:
+        if row:
             res.append(row.pop())
 
+    # last row
     if matrix:
         res += matrix.pop()[::-1]
 
     # first column
-    if matrix and matrix[0]:
-        for row in matrix[::-1]:
+    for row in matrix[::-1]:
+        if row:
             res.append(row.pop(0))
 
     return spiralOrder3(matrix)
