@@ -57,15 +57,27 @@ def searchMatrix(matrix, target):
     return False
 
 
-def searchMatrix1(self, matrix, target):
-    '''CONVERT IT TO A SINGLE LIST THEN BINARY SEARCH -O(NM)'''
+def searchMatrix0(matrix, target):
+    '''BINARY SEARCH ON EACH ROW -> O(nlog(m))'''
+
+    n, m = len(matrix), len(matrix[0])
+
+    for i in range(n):
+        if binary_search(matrix[i], target):
+            return True
+
+    return False
+
+
+def searchMatrix1(matrix, target):
+    '''CONVERT IT TO A SINGLE LIST THEN BINARY SEARCH - O(log(NM))'''
 
     flat_list = sum(matrix, [])
     return binary_search(flat_list, target)
 
 
-def searchMatrix2(self, matrix, target: int) -> bool:
-    '''BINARY SEARCH FOR THE ROWS THEN COLUMNS O(nlogn)'''
+def searchMatrix2(matrix, target: int) -> bool:
+    '''BINARY SEARCH FOR THE ROWS THEN COLUMNS O(nlogn(nlogn))'''
 
     if not matrix:
         return False
@@ -115,7 +127,7 @@ def searchMatrix3(matrix, target: int) -> bool:
 
 
 def searchMatrix5(matrix, target):
-    '''Time: O(M*N)'''
+    '''ITERATE INTELLIGENTLY: Time: O(M*N)'''
 
     if not matrix:
         return False
@@ -132,3 +144,13 @@ def searchMatrix5(matrix, target):
             j -= 1
 
     return False
+
+
+def solutionx(matrix, target):
+    # BINARY SEARCH ROWS - To get the row with target
+    # BINARY SEARCH JUST on the found row
+
+    # Resource: https://www.youtube.com/watch?v=Ber2pi2C0j0
+    # Resource: https://github.com/neetcode-gh/leetcode/blob/main/74-Search-a-2D-Matrix.py
+
+    ...
