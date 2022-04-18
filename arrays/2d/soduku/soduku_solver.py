@@ -12,7 +12,7 @@ The '.' character indicates empty cells.
 
 class Solution:
 
-    def solve_sudoku(self, board):
+    def solveSudoku(self, board):
         self.board = board
         self.solve()
 
@@ -30,58 +30,63 @@ class Solution:
                 else:
                     print(str(self.board[i][j]) + ' ', end='')
 
+    def solve(self):
+        row, col = self.find_next_empty()
+
+        # no unassigned position is found, puzzle solved
+        if row == None and col == None:
+            return True
+
+        possible_guesses = [str(x) for x in range(1, 10)]
+        for guess in possible_guesses:
+            if self.is_safe(row, col, guess):
+                self.board[row][col] = guess
+
+                if self.solve():  # continue solving else reset to empty
+                    return True
+
+                # if solution not valid or our guess did not solve the soduku
+                # then we need to backtrack and try another number
+                self.board[row][col] = '.'  # reset the guess
+
+        return False
+
     def find_next_empty(self):
         for row in range(9):
             for col in range(9):
                 if self.board[row][col] == '.':
                     return row, col
-        return -1, -1
 
-    def solve(self):
-        row, col = self.find_next_empty()
+        return None, None
 
-        # no unassigned position is found, puzzle solved
-        if row == -1 and col == -1:
-            return True
-
-        possible_values = [str(x) for x in range(1, 10)]
-        for num in possible_values:
-            if self.is_safe(row, col, num):
-                self.board[row][col] = num
-
-                if self.solve():
-                    return True
-
-                self.board[row][col] = '.'
-
-        return False
-
-    def is_safe(self, row, col, val):
-        safe_row = self.check_row(row, val)
-        safe_col = self.check_col(col, val)
-        safe_square = self.check_square(row, col, val)
+    def is_safe(self, row, col, guess):
+        safe_row = self.check_row(row, guess)
+        safe_col = self.check_col(col, guess)
+        safe_square = self.check_square(row, col, guess)
 
         return safe_row and safe_col and safe_square
 
-    def check_row(self, row, val):
+    def check_row(self, row, guess):
+        # return not any(self.board[row][col] == guess for col in range(9))
         for col in range(9):
-            if self.board[row][col] == val:
+            if self.board[row][col] == guess:
                 return False
         return True
 
-    def check_col(self, col, val):
+    def check_col(self, col, guess):
+        # return all(self.board[row][col] != guess for row in range(9))
         for row in range(9):
-            if self.board[row][col] == val:
+            if self.board[row][col] == guess:
                 return False
         return True
 
-    def check_square(self, row, col, val):
+    def check_square(self, row, col, guess):
         box_row, box_col = row // 3, col // 3
         box_row_start, box_col_start = box_row * 3, box_col * 3
 
         for r in range(box_row_start, box_row_start + 3):
             for c in range(box_col_start, box_col_start + 3):
-                if self.board[r][c] == val:
+                if self.board[r][c] == guess:
                     return False
 
         return True

@@ -12,12 +12,14 @@ digits 1-9 without repetition.
 '''
 
 
-def isValidSudoku(self, board) -> bool:
-    n = len(board)
+from collections import defaultdict
+
+
+def isValidSudoku(board) -> bool:
     seen = set()
 
-    for row in range(n):
-        for col in range(n):
+    for row in range(9):
+        for col in range(9):
             num = board[row][col]
 
             if num != '.':
@@ -32,6 +34,33 @@ def isValidSudoku(self, board) -> bool:
                 if (col_val in seen) or (row_val in seen) or (block_val in seen):
                     return False
                 else:
+                    # seen.add(row_val)
+                    # seen.add(col_val)
+                    # seen.add(block_val)
                     seen.update([row_val, col_val, block_val])
+
+    return True
+
+
+def isValidSudoku2(board) -> bool:
+    rows = defaultdict(set)
+    cols = defaultdict(set)
+    squares = defaultdict(set)
+
+    for row in range(9):
+        for col in range(9):
+            val = board[row][col]
+
+            if val == '.':
+                continue
+
+            block_val = (row // 3, col // 3)
+
+            if (val in rows[row]) or (val in cols[col]) or (val in squares[block_val]):
+                return False
+
+            rows[row].add(val)
+            cols[col].add(val)
+            squares[block_val].add(val)
 
     return True
