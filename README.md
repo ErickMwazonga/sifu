@@ -82,6 +82,7 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 ### Books
 1. Elements of Programming interviews in python adnan aziz 
 2. Daily Coding Link: Get Exceptionally Good at Coding by Alex Miller and Lawrence Wu
+3. https://high-python-ext-3-algorithms.readthedocs.io/ko/latest/
    
 ## Courses
 1. Graphs - https://www.youtube.com/watch?v=tWVWeAqZ0WU
@@ -124,3 +125,7 @@ System Desgn
 
 System Desgn Others
 https://systeminterview.com/design-youtube.php
+
+
+Leetcode Discuss - Explanatory Contributions
+1. https://leetcode.com/Hieroglyphs/
