@@ -18,24 +18,20 @@ Examples:
 
 
 def triangularSum(nums: list[int]) -> int:
-    n = len(nums)
-
-    if n == 1:
+    if len(nums) == 1:
         return sum(nums)
 
-    next_nums = nums
-
-    while len(next_nums) > 1:
+    while len(nums) > 1:
         curr_nums = []
 
-        for i in range(1, len(next_nums)):
-            left_sum = next_nums[i-1] + next_nums[i]
+        for i in range(1, len(nums)):
+            left_sum = nums[i-1] + nums[i]
             left_sum %= 10
             curr_nums.append(left_sum)
 
-        next_nums = curr_nums
+        nums = curr_nums
 
-    return next_nums[0]
+    return nums[0]
 
 
 def triangularSum(nums: list[int]) -> int:

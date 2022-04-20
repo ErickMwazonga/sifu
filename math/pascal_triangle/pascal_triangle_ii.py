@@ -33,3 +33,21 @@ def getRow(rowIndex: int) -> list[int]:
         result.append(row)
 
     return result[-1]
+
+
+def getRow(self, n):
+    if n == 0:
+        return [1]
+
+    res = [1]
+    for i in range(1, n+1):
+        curr_row = [1]
+
+        for j in range(1, i):
+            left, right = res[j-1], res[j]
+            curr_row.append(left + right)
+
+        curr_row.append(1)
+        res = curr_row
+
+    return curr_row

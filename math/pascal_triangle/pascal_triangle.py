@@ -20,7 +20,7 @@ Output: [[1]]
 '''
 
 
-def generate(numRows: int) -> list[list[int]]:
+def generate(numRows):
     if numRows < 1:
         return []
 
@@ -36,3 +36,21 @@ def generate(numRows: int) -> list[list[int]]:
         result.append(row)
 
     return result
+
+
+def generate(self, n):
+    if n < 1:
+        return [[]]
+
+    res = [[1]]
+    for i in range(1, n):
+        row = [1]
+
+        for j in range(1, i):
+            left, right = res[i-1][j-1], res[i-1][j]
+            row.append(left+right)
+
+        row.append(1)
+        res.append(row)
+
+    return res

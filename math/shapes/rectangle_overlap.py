@@ -19,8 +19,6 @@ Input: rec1 = [0,0,1,1], rec2 = [1,0,2,1]
 Output: false
 '''
 
-from collections import namedtuple
-
 
 def isRectangleOverlap(rec1, rec2) -> bool:
     x_overlap = rec1[0] < rec2[2] and rec2[0] < rec1[2]
@@ -38,13 +36,13 @@ def isRectangleOverlap2(rec1, rec2) -> bool:
     return x_overlap and y_overlap
 
 
-def isRectangleOverlap(rec1, rec2):
-    x1, y1, x2, y2 = 0, 1, 2, 3
+def isRectangleOverlap3(rec1, rec2):
+    ax1, ay1, ax2, ay2 = rec1
+    bx1, by1, bx2, by2 = rec2
 
-    left = max(rec1[x1], rec2[x1])
-    right = min(rec1[x2], rec2[x2])
+    left, right = max(ax1, bx1), min(ax2, bx2)
+    bottom, top = max(ay1, by1), min(ay2, by2)
 
-    bottom = max(rec1[y1], rec2[y1])
-    top = min(rec1[y2], rec2[y2])
+    width, height = right - left, top - bottom
 
-    return (right - left > 0) and (top - bottom > 0)
+    return width > 0 and height > 0

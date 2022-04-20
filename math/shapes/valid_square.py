@@ -23,19 +23,27 @@ For a valid square:
 - None of the lengths/diagonals should be 0
 '''
 
+from collections import namedtuple
+
 
 def d(point1, point2):
-    return (point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2
+    '''length = (x1-x2)^2 + (y1-y2)^2'''
+
+    Point = namedtuple('Point', 'x,y')
+    p1, p2 = Point(*p1), Point(*p2)
+
+    return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2)
 
 
 def validSquare(p1, p2, p3, p4) -> bool:
     lengths = [
         d(p1, p2), d(p1, p3), d(p1, p4), d(p2, p3), d(p2, p4), d(p3, p4)
     ]
-    s = set(lengths)
 
-    no_points_are_at_the_same_location = 0 not in s
-    only_diagonals_and_sides = len(s) == 2
+    lengths = set(lengths)
+
+    no_points_are_at_the_same_location = 0 not in lengths
+    only_diagonals_and_sides = len(lengths) == 2
 
     return no_points_are_at_the_same_location and only_diagonals_and_sides
 

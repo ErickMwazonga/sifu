@@ -2,14 +2,16 @@
 
 ## Data Strctures
 1. [ ] Arrays
-2. [ ] Strings
-3. [ ] Hashmaps + Hashsets
-4. [ ] Stacks
-5. [ ] Queues
-6. [ ] LinkedList
-7. [ ] Heaps
-8. [ ] Trees
-9. [ ] Graphs
+2. [ ] Matrix
+3. [ ] Strings
+4. [ ] Hashmaps + Hashsets
+5. [ ] Stacks
+6. [ ] Queues
+7. [ ] LinkedList
+8. [ ] Heaps
+9. [ ] Trees
+10. [ ] Trie
+11. [ ] Graphs
 
 ## Algorithms
 1. [ ] General Algorithms
@@ -19,8 +21,9 @@
 5. [ ] Two Pointers
 6. [ ] Slinding Window
 7. [ ] Recursion
-8. [ ] Dynamic Programming
-9. [ ] Backtracking
+8. [ ] DFS
+9.  [ ] Dynamic Programming
+10. [ ] Backtracking
    
 ## Preparation
 https://serhatgiydiren.github.io/preparation-guide-for-tech-interviews

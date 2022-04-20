@@ -15,13 +15,31 @@ def computeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) -> int:
     second_area = (bx2 - bx1) * (by2 - by1)
 
     # overlap
-    left = max(ax1, bx1)
-    right = min(ax2, bx2)
-    bottom = max(ay1, by1)
-    top = min(ay2, by2)
+    left, right = max(ax1, bx1), min(ax2, bx2)
+    bottom, top = max(ay1, by1),  min(ay2, by2)
 
-    width = max(right - left, 0)
-    height = max(top - bottom, 0)
-    overlap = width * height
+    # What if the areas are apart
+    width, height = max(right - left, 0), max(top - bottom, 0)
+    overlap_area = width * height
 
-    return first_area + second_area - overlap
+    return first_area + second_area - overlap_area
+
+
+def computeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
+    left, right = max(ax1, bx1), min(ax2, bx2)
+    bottom, top = max(ay1, by1), min(ay2, by2)
+
+    width = right - left
+    if width < 0:
+        width = 0
+
+    height = top - bottom
+    if height < 0:
+        height = 0
+
+    overlap_area = width * height
+
+    area_a = (ax2 - ax1) * (ay2 - ay1)
+    area_b = (bx2 - bx1) * (by2 - by1)
+
+    return (area_a + area_b) - overlap_area
