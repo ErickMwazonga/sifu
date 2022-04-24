@@ -33,14 +33,11 @@ def intToRoman(num: int) -> str:
     result = ''
     mapping = mapping()
 
-    # The dictionary loop doesn't affect time complexity since it doesn't change
     for roman, value in mapping.items():
-        no_of_symbols = num // value
+        no_of_symbols, num = divmod(num, value)
 
         if no_of_symbols > 0:
             result += roman * no_of_symbols
-
-        num %= value
 
     return result
 

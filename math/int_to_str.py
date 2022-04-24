@@ -10,16 +10,16 @@ Examples:
 
 
 def int_to_str(input_int):
-    if input_int < 0:
-        is_negative = True
+    is_negative = input_int < 0
+
+    if is_negative:
         input_int *= -1
-    else:
-        is_negative = False
 
     output_str = []
     while input_int > 0:
         input_int, remainder = divmod(input_int, 10)
-        char_rep = chr(ord('0') + remainder)
+        val_repr = ord('0') + remainder
+        char_rep = chr(val_repr)
         output_str.append(char_rep)
 
     output_str = output_str[::-1]

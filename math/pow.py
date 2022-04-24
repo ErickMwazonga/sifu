@@ -1,5 +1,6 @@
 '''
 50. Pow(x, n)
+https://leetcode.com/problems/powx-n/
 
 Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
 
@@ -18,10 +19,61 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
 '''
 
 
-def pow(x: float, n: int) -> float:
-    '''Time O(log n) - 2^4 -> 2^2 * z^2 - Account for negatives'''
+def myPow(x, n):
+    '''Time: O(n)'''
+    if n == 0:
+        return 1
 
-    is_negative = True if n < 0 else False
+    if n == 1:
+        return x
+
+    is_nengative = n < 0
+    n = abs(n)
+
+    res = x
+    i = 1
+    while i < n:
+        res *= x
+        i += 1
+
+    return 1 / res if is_nengative else res
+
+
+def myPow_v2(x, n):
+    '''
+    Time O(log n) - 2^4 -> 2^2 * 2^2 
+    e.g 2^8
+    n | [n // 2] 8 4 2  1
+    x | [x ** 2] 2 4 16 256
+    '''
+
+    if n == 0:
+        return 1
+
+    if n == 1:
+        return x
+
+    is_negative = n < 0
+    n = abs(n)
+
+    res = 1
+    while n:
+        is_odd = n % 2
+
+        if is_odd:
+            n -= 1
+            res = res * x
+        else:
+            n //= 2
+            x = x * x  # x = x ** 2
+
+    return 1 / res if is_negative else res
+
+
+def pow(x: float, n: int) -> float:
+    '''Time O(log n) - 2^4 -> 2^2 * 2^2 - Account for negatives'''
+
+    is_negative = n < 0
     n = abs(n)
 
     if x == 0 or x == 1:
@@ -34,29 +86,6 @@ def pow(x: float, n: int) -> float:
         result = x * pow(x, n-1)
 
     return 1 / result if is_negative else result
-
-
-def myPow(x: float, n: int) -> float:
-    memo = {}
-
-    def power(x, n):
-        if n in memo:
-            return memo[n]
-        if n == 0:
-            return 1
-        elif n == 1:
-            return x
-        elif n < 0:
-            memo[n] = power(1/x, -n)
-            return memo[n]
-        elif n % 2 == 0:
-            memo[n] = power(x*x, n//2)
-            return memo[n]
-        else:
-            memo[n] = x * power(x*x, (n-1)//2)
-            return memo[n]
-
-    return power(x, n)
 
 
 assert pow(2, 0) == 1

@@ -14,8 +14,7 @@ Explanation:
 
 
 def subtractProductAndSum(n: int) -> int:
-    product = 1
-    _sum = 0
+    _sum, product = 0, 1
 
     while n > 0:
         n, rem = divmod(n, 10)

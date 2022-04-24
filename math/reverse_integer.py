@@ -15,7 +15,7 @@ Examples:
 
 
 def reverse(x: int) -> int:
-    is_negative = x < 0
+    sign = -1 if x < 0 else 1
 
     x = abs(x)
     reversed_x = 0
@@ -24,10 +24,7 @@ def reverse(x: int) -> int:
         x, rem = divmod(x, 10)
         reversed_x = (reversed_x * 10) + rem
 
-    if is_negative:
-        return -reversed_x
-
-    return reversed_x
+    return reversed_x * sign
 
 
 assert reverse(123) == 321

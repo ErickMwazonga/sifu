@@ -24,7 +24,8 @@ def missing_number(nums):
 
 
 def missingNumber(nums):
-    cummulative_sum = sum(range(len(nums)+1))
+    n = len(nums)
+    cummulative_sum = sum(range(n+1))
     return cummulative_sum - sum(nums)
 
 

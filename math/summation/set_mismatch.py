@@ -25,3 +25,22 @@ def findErrorNums(nums):
     miss = true_sum - set_sum
 
     return [duplicate, miss]
+
+
+class Solution:
+    def findErrorNums(self, nums):
+        missing = self.find_missing(nums)
+        duplicate = self.find_duplicate(nums)
+
+        return [duplicate, missing]
+
+    def find_missing(self, nums):
+        n = len(nums)
+        seen = set(nums)
+
+        for i in range(1, n+1):
+            if i not in seen:
+                return i
+
+    def find_duplicate(self, nums):
+        return sum(nums) - sum(set(nums))
