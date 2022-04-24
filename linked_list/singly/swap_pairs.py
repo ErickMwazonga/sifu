@@ -22,14 +22,14 @@ def swapPairs(head):
     prev, curr = dummy, head
 
     while curr and curr.next:
-        # Sae pointers
+        # Save next pointers
         nxt_pair = curr.next.next
         second = curr.next
 
         # Reverse this pair
         second.next = curr
-        curr.next = nxt_pair
         prev.next = second
+        curr.next = nxt_pair
 
         # Update pointers
         prev = curr

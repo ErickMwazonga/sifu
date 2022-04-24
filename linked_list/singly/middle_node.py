@@ -28,9 +28,7 @@ class ListNode:
         count = self.get_length(head)
         midpoint = count // 2
 
-        curr = head
-        i = 0
-
+        i, curr = 0, head
         while i < midpoint:
             curr = curr.next
             i += 1

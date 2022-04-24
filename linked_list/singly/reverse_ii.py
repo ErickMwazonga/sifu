@@ -19,17 +19,44 @@ class ListNode:
         self.next = None
 
 
-def reverseBetween(head, m, n):
-    '''https://www.youtube.com/watch?v=wk8-_M-2fzI&t=0s'''
+def reverseBetween(head, left: int, right: int):
+    dummy = ListNode(0)
+    dummy.next = head
+
+    leftprev, curr = dummy, head
+
+    for _ in range(left-1):
+        leftprev, curr = curr, curr.next
+
+    prev = None
+    for _ in range(right - left + 1):
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        # curr = nxt
+
+    leftprev.next.next = curr  # now 2's next is pointing to 5
+    leftprev.next = prev  # 1's next pointer is poiting to 4
+
+    return dummy.next
+
+
+def reverseBetween_v2(head, m, n):
+    '''
+    1. https://www.youtube.com/watch?v=wk8-_M-2fzI&t=0s
+    2. https://leetcode.com/problems/reverse-linked-list-ii/discuss/1167109/Python3-One-pass-iterative-solution-beats-95.50-(with-figure-explanation)
+    '''
 
     dummy = ListNode(0)
     dummy.next = head
 
+    # find the position
     curr, prev = head, dummy
     for _ in range(m-1):
         curr = curr.next
         prev = prev.next
 
+    # reverse
     for _ in range(n-m):
         temp = curr.next
         curr.next = temp.next

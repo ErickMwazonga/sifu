@@ -29,21 +29,21 @@ def addTwoNumbers(l1: ListNode, l2: ListNode):
     carry = 0
 
     while l1 or l2:
-        _sum = 0
-        _sum += carry
+        curr_sum = 0
+        curr_sum += carry
 
         if l1:
-            _sum += l1.val
+            curr_sum += l1.val
             l1 = l1.next
 
         if l2:
-            _sum += l2.val
+            curr_sum += l2.val
             l2 = l2.next
 
-        carry, val = divmod(_sum, 10)
+        carry, val = divmod(curr_sum, 10)
 
-        nxt = ListNode(val)
-        curr.next = nxt
+        new_node = ListNode(val)
+        curr.next = new_node
         curr = curr.next
 
     if carry > 0:

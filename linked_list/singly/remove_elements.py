@@ -22,13 +22,11 @@ def removeElements(head, val):
     prev, curr = dummy, head
 
     while curr:
-        nxt = curr.next
-
         if curr.val == val:
-            prev.next = nxt
+            prev.next = curr.next
         else:
             prev = curr
 
-        curr = nxt
+        curr = curr.next
 
     return dummy.next

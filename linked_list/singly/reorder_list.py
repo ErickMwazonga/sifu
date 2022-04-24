@@ -19,6 +19,18 @@ Output: [1,5,2,4,3]
 '''
 
 
+def reverse(node):
+    curr, prev = node, None
+
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+
+    return prev
+
+
 def reorderList(head):
     # Find Middle
     slow = fast = head
@@ -28,19 +40,19 @@ def reorderList(head):
         fast = fast.next.next
 
     # Reverse second half
-    second = slow.next
+    second = reverse(slow.next)
     slow.next = None
-    prev = None
-    while second:
-        nxt = second.next
-        second.next = prev
-        prev = second
-        second = nxt
 
     # Merge two halves
-    first, second = head, prev
+    first, second = head, second
     while second:
-        temp1, temp2 = first.next, second.next
+        nxt = first.next
         first.next = second
-        second.next = temp1
-        first, second = temp1, temp2
+        first = second
+        second = nxt
+
+    # while second:
+    #     next_first, next_sec = first.next, second.next
+    #     first.next = second
+    #     second.next = next_first
+    #     first, second = next_first, next_sec

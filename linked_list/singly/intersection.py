@@ -13,28 +13,32 @@ class ListNode:
         self.next = None
 
 
-class Solution:
-    def getIntersectionNode(self, headA, headB):
-        visited = set()
+def getIntersectionNode(headA, headB):
+    visited = set()
 
-        while headA:
-            visited.add(headA)
-            headA = headA.next
+    while headA:
+        visited.add(headA)
+        headA = headA.next
 
-        while headB:
-            if headB in visited:
-                return headB
-            headB = headB.next
+    while headB:
+        if headB in visited:
+            return headB
 
-        return None
+        headB = headB.next
 
-    def getIntersectionNode(self, headA, headB):
-        '''https://www.youtube.com/watch?v=D0X0BONOQhI'''
+    return None
 
-        a, b = headA, headB
 
-        while a != b:
-            a = a.next if a else headB
-            b = b.next if b else headA
+def getIntersectionNode(headA, headB):
+    '''
+    1. https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/1092898/JS-Python-Java-C%2B%2B-or-Easy-O(1)-Extra-Space-Solution-w-Visual-Explanation
+    2. https://www.youtube.com/watch?v=D0X0BONOQhI
+    '''
 
-        return a
+    a, b = headA, headB
+
+    while a != b:
+        a = a.next if a else headB
+        b = b.next if b else headA
+
+    return a

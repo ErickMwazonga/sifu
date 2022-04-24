@@ -28,7 +28,30 @@ class ListNode:
 
 
 def mergeKLists(lists):
-    '''https://www.youtube.com/watch?v=ptYUCjfNhJY'''
+
+    heap = []
+
+    for lst in lists:
+        while lst:
+            heappush(heap, lst.val)
+            lst = lst.next
+
+    dummy = ListNode(0)
+    curr = dummy
+
+    while heap:
+        smallest = heappop(heap)
+        curr.next = ListNode(smallest)
+        curr = curr.next
+
+    return dummy.next
+
+
+def mergeKLists(lists):
+    '''
+    https://www.youtube.com/watch?v=ptYUCjfNhJY
+    Space: O(k). k is len(lists), Time: O(n * log(k)). n is total nodes
+    '''
 
     heap = []
     for i, lst in enumerate(lists):

@@ -28,13 +28,13 @@ def detectCycle(head):
             has_cycle = True
             break
 
-    if has_cycle:
-        slow = head
+    if not has_cycle:
+        return None
 
-        while slow != fast:
-            slow = slow.next
-            fast = fast.next
+    slow = head
 
-        return slow
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
 
-    return None
+    return slow
