@@ -40,7 +40,7 @@ assert top_K_frequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
 # assert top_K_frequent([1], 1) == [1]
 
 
-def top_K_frequent_XX(nums, k):
+def top_K_frequent_v2(nums, k):
     res, freqs = [], {}
 
     for num in nums:
@@ -56,5 +56,5 @@ def top_K_frequent_XX(nums, k):
     return res
 
 
-assert top_K_frequent_XX([1, 1, 1, 2, 2, 3], 2) == [1, 2]
-assert top_K_frequent_XX([1], 1) == [1]
+assert top_K_frequent_v2([1, 1, 1, 2, 2, 3], 2) == [1, 2]
+assert top_K_frequent_v2([1], 1) == [1]

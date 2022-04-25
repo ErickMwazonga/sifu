@@ -23,7 +23,7 @@ as you are engaging multiple transactions at the same time. You must sell before
 '''
 
 
-def max_rofit2(prices):
+def max_rofit(prices):
     '''Two passes through the list, O(n) time, O(n) space'''
 
     if not prices:
@@ -55,7 +55,7 @@ def max_rofit2(prices):
 assert max_rofit2([3, 3, 5, 0, 0, 3, 1, 4]) == 6
 
 
-def max_profit(prices):
+def max_profit_v2(prices):
     first_buy, first_sell = float('-inf'), 0
     second_buy, second_sell = float('-inf'), 0
 

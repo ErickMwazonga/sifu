@@ -22,7 +22,7 @@ assert plus_one([9, 9, 9]) == [1, 0, 0, 0]
 assert plus_one([1, 9, 9]) == [2, 0, 0]
 
 
-def plus_one_iteratively(arr):
+def plus_one_v2(arr):
     n = len(arr)
 
     for i in range(n-1, -1, -1):
@@ -37,9 +37,9 @@ def plus_one_iteratively(arr):
     return res
 
 
-assert plus_one_iteratively([1, 2, 3]) == [1, 2, 4]
-assert plus_one_iteratively([9, 9, 9]) == [1, 0, 0, 0]
-assert plus_one_iteratively([1, 9, 9]) == [2, 0, 0]
+assert plus_one_v2([1, 2, 3]) == [1, 2, 4]
+assert plus_one_v2([9, 9, 9]) == [1, 0, 0, 0]
+assert plus_one_v2([1, 9, 9]) == [2, 0, 0]
 
 
 def plus_one(digits):

@@ -13,11 +13,14 @@ class Solution:
     def goodNodes(self, root) -> int:
         return self.dfs(root)
 
-    def dfs(self, root, max_node=float('-inf')):
+    def dfs(self, root, max_val=float('-inf')):
         if not root:
             return 0
-        else:
-            is_good = root.val >= max_node
-            left = self.dfs(root.left, max(max_node, root.val))
-            right = self.dfs(root.right, max(max_node, root.val))
-            return is_good + left + right
+
+        is_good = 1 if root.val >= max_val else 0
+        curr_max = max(max_val, root.val)
+
+        left = self.dfs(root.left, curr_max)
+        right = self.dfs(root.right, curr_max)
+
+        return is_good + left + right

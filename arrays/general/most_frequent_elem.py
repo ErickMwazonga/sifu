@@ -27,7 +27,7 @@ def most_freq_elem(arr):
     return most_frequent
 
 
-def most_freq_elem2(arr):
+def most_freq_elem_v2(arr):
     frequency = {}
     most_frequent, most_count = -1, 0
 
@@ -41,7 +41,7 @@ def most_freq_elem2(arr):
     return most_frequent
 
 
-def most_freq_elem3(arr):
+def most_freq_elem_v3(arr):
     frequency = {}
 
     for num in arr:
@@ -61,5 +61,5 @@ for assertion in assertions:
     _input, output = assertion['input'], assertion['output']
 
     assert most_freq_elem(_input) == output
-    assert most_freq_elem2(_input) == output
-    assert most_freq_elem3(_input) == output
+    assert most_freq_elem_v2(_input) == output
+    assert most_freq_elem_v3(_input) == output

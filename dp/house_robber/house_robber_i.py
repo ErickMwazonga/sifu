@@ -13,21 +13,33 @@ Given a list of non-negative integers representing the
 amount of money of each house, determine the maximum amount
 of money you can rob tonight without alerting the police.
 
-Input: [1,2,3,1]
+Input: [1, 2, 3, 1]
 Output: 4 -> 1 + 3 = 4.
 
-Input: [2,7,9,3,1]
+Input: [2, 7, 9, 3, 1]
 Output: 12 -> 2 + 9 + 1 = 12.
 '''
 
 
-def rob(nums: list[int]) -> int:
-    '''Time Complexity: O(n), Space Complexity: O(n)'''
+def rob(nums):
+    for i in range(1, len(nums)):
+        if i == 1:
+            nums[i] = max(nums[i], nums[i-1])
+        else:
+            rob = nums[i] + nums[i-2]
+            dont_rob = nums[i-1]
+            nums[i] = max(rob, dont_rob)
 
-    n = len(nums)
+    return nums[-1]
+
+
+def rob(nums: list[int]) -> int:
+    '''Time: O(n), Space: O(n)'''
+
     if not nums:
         return 0
 
+    n = len(nums)
     if n <= 2:
         return max(nums)
 

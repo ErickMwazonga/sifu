@@ -38,7 +38,7 @@ def search_range(nums, target):
 print(search_range([5, 7, 7, 8, 8, 10], 8))
 
 
-def first_and_last(A, target):
+def search_range_v2(A, target):
     n = len(A)
 
     for i in range(n):
@@ -52,7 +52,7 @@ def first_and_last(A, target):
     return [-1, -1]
 
 
-def find_first_and_last(A, target):
+def search_range_v3(A, target):
     # Naive Approach -> O(n)
     n = len(A)
     first, last = -1, -1

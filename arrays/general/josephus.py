@@ -17,7 +17,7 @@ def josephus(n, skip):
         n -= 1
 
 
-def josephus(n, skip):
+def josephus_v2(n, skip):
     skip = skip - 1  # list starts with 0 index
     idx = 0
 
@@ -36,5 +36,4 @@ def josephus(n, skip):
 
 
 print(josephus(9, 3))
-
 # 123456789 members sitting in a circular fashion, Output: 369485271

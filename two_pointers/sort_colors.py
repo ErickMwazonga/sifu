@@ -13,8 +13,8 @@ should run in O(n) time.
 '''
 
 
-def dutchNationalFlagSorting(A):
-    '''Time Complexity: O(n), when n is lenth of array'''
+def sortColors(A):
+    '''Time: O(n)'''
 
     low, traverse, high = 0, 0, len(A) - 1
 
@@ -36,5 +36,5 @@ def dutchNationalFlagSorting(A):
 first_A = [2, 0, 0, 1, 2, 1]
 sec_A = [0, 1, 2, 0, 1, 2]
 
-assert dutchNationalFlagSorting(first_A) == sorted(first_A)
-assert dutchNationalFlagSorting(sec_A) == sorted(sec_A)
+assert sortColors(first_A) == sorted(first_A)
+assert sortColors(sec_A) == sorted(sec_A)

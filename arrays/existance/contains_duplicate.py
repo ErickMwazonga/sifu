@@ -17,7 +17,7 @@ def containsDuplicate(nums):
     return len(nums) != len(set(nums))
 
 
-def containsDuplicate(nums):
+def containsDuplicate_v2(nums):
     seen = set()
     for num in nums:
         if num in seen:
@@ -27,7 +27,7 @@ def containsDuplicate(nums):
     return False
 
 
-def containsDuplicate2(nums):
+def containsDuplicate_v3(nums):
     hashNum = {}
 
     for num in nums:
@@ -38,7 +38,7 @@ def containsDuplicate2(nums):
     return False
 
 
-def contains_duplicate(nums):
+def contains_duplicate_v4(nums):
     freq = {}
 
     for num in nums:
@@ -51,7 +51,7 @@ def contains_duplicate(nums):
     return False
 
 
-def containsDuplicate3(nums):
+def containsDuplicate_v5(nums):
     from collections import Counter
 
     freq = Counter(nums)
@@ -62,6 +62,6 @@ def containsDuplicate3(nums):
     return False
 
 
-assert contains_duplicate([1, 2, 3, 1]) == True
-assert contains_duplicate([1, 2, 3, 4]) == False
-assert contains_duplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]) == True
+assert containsDuplicate_v2([1, 2, 3, 1]) == True
+assert containsDuplicate_v2([1, 2, 3, 4]) == False
+assert containsDuplicate_v2([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]) == True

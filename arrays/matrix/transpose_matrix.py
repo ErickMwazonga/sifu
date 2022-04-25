@@ -28,7 +28,7 @@ def transpose(matrix):
     return transposed
 
 
-def transpose2(matrix):
+def transpose_v2(matrix):
     # ONLY IF IT'S A SQUARE MATRIX IN-PLACE
 
     n, m = len(matrix), len(matrix[0])

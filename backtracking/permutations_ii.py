@@ -35,7 +35,7 @@ class Solution:
             visited.remove(i)
 
 
-class Solution1:
+class Solution_V2:
     def permuteUnique(self, nums):
         res, path = [], []
         nums.sort()

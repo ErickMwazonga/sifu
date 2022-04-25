@@ -14,7 +14,7 @@ return [0, 1].
 '''
 
 
-def two_sum_brute_force(A, target):
+def two_sum(A, target):
     '''Time: O(n^2), Space: O(1)'''
 
     for i in range(len(A)-1):
@@ -26,7 +26,7 @@ def two_sum_brute_force(A, target):
     return False
 
 
-def two_sum(nums: list, target: int) -> list:
+def two_sum_v2(nums: list, target: int) -> list:
     '''Time complexity: 0(n)'''
 
     seen = {}

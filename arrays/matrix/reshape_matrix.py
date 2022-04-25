@@ -43,7 +43,7 @@ def matrixReshape(matrix, r, c):
     return results
 
 
-def matrixReshape(mat, r: int, c: int):
+def matrixReshape_v2(mat, r: int, c: int):
     if not mat:
         return mat
 

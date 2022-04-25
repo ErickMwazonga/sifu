@@ -54,7 +54,7 @@ class Solution:
         return mapping[digit]
 
 
-class Solution:
+class Solution_V2:
     '''# Time:  O(n * 4^n), # Space: O(n) '''
 
     def letterCombinations(self, digits: str) -> list[str]:

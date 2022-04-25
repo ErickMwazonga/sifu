@@ -51,7 +51,7 @@ def spiral_order(matrix):
     return res
 
 
-def spiral_order2(matrix):
+def spiral_order_v2(matrix):
     res = []
 
     if not matrix:
@@ -85,7 +85,7 @@ def spiral_order2(matrix):
     return res
 
 
-def spiralOrder3(matrix, res=[]):
+def spiralOrder_v3(matrix, res=[]):
     if not matrix:
         return res
 
@@ -106,7 +106,7 @@ def spiralOrder3(matrix, res=[]):
         if row:
             res.append(row.pop(0))
 
-    return spiralOrder3(matrix)
+    return spiralOrder_v3(matrix)
 
 
 b = [

@@ -26,11 +26,11 @@ def findDisappearedNumbers(nums):
     return res
 
 
-def findDisappearedNumbers(nums):
+def findDisappearedNumbers_v2(nums):
     return set(range(1, len(nums) + 1)) - set(nums)
 
 
-def findDisappearedNumbersOptimized(nums):
+def findDisappearedNumbers_v3(nums):
     # mark existing
     for n in nums:
         i = abs(n) - 1
@@ -44,5 +44,5 @@ def findDisappearedNumbersOptimized(nums):
     return res
 
 
-assert findDisappearedNumbersOptimized([4, 3, 2, 7, 8, 2, 3, 1]) == [5, 6]
-assert findDisappearedNumbersOptimized([1, 1]) == [2]
+assert findDisappearedNumbers_v3([4, 3, 2, 7, 8, 2, 3, 1]) == [5, 6]
+assert findDisappearedNumbers_v3([1, 1]) == [2]

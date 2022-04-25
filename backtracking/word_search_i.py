@@ -65,7 +65,7 @@ class Solution:
         return found
 
 
-class Solution2:
+class Solution_V2:
     '''Time: O(n * m * 4^n)'''
 
     def exist(self, board, word) -> bool:

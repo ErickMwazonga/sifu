@@ -28,7 +28,6 @@ class ListNode:
 
 
 def mergeKLists(lists):
-
     heap = []
 
     for lst in lists:

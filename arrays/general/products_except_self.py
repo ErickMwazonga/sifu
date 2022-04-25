@@ -30,7 +30,7 @@ def product_except_self(nums):
     return output
 
 
-def product_except_self(nums):
+def product_except_self_v2(nums):
     size = len(nums)
 
     left_products = [1] * size

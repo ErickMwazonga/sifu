@@ -29,7 +29,7 @@ class Solution:
             self.dfs(nums, i+1, subset+[nums[i]], res)
 
 
-class Solution2:
+class Solution_V2:
     '''https://www.youtube.com/watch?v=REOH22Xwdkk&list=PLot-Xpze53lf5C3HSjCnyFghlW0G1HHXo&index=4'''
 
     def subsets(self, nums):

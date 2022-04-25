@@ -44,7 +44,7 @@ class Solution:
             cur_subset.pop()
 
 
-class Solution2:
+class Solution_V2:
     def combinationSum(self, candidates, target):
         res = []
         self.helper(candidates, target, res, total=0, index=0, subset=[])

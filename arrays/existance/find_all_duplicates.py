@@ -28,7 +28,7 @@ def findDuplicates(nums):
     return res
 
 
-def findDuplicates1(nums):
+def findDuplicates_v2(nums):
     res = []
 
     for num in nums:

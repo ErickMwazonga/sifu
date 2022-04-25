@@ -31,7 +31,7 @@ def twoSum(numbers, target):
         dic[num] = i
 
 
-def twoSum1(numbers, target):
+def twoSum_v2(numbers, target):
     l, r = 0, len(numbers)-1
 
     while l < r:

@@ -24,7 +24,7 @@ def move_zeroes(nums) -> None:
             i += 1
 
 
-def move_zeroes2(nums) -> None:
+def move_zeroes_v2(nums) -> None:
     '''Do not return anything, modify nums in-place instead.'''
 
     i, j = 0, 1
@@ -41,7 +41,7 @@ def move_zeroes2(nums) -> None:
         j += 1
 
 
-def move_zeroes(nums) -> None:
+def move_zeroes_v3(nums) -> None:
     left, right = 0, 1
 
     while right < len(nums):

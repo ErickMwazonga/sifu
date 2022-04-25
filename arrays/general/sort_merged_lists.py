@@ -56,7 +56,7 @@ def merge_lists(my_list, alices_list):
     return merged_list
 
 
-def merge(nums1, n, nums2, m) -> None:
+def merge_lists_v2(nums1, n, nums2, m) -> None:
     i, j = n - 1, m - 1
     k = m + n - 1
 

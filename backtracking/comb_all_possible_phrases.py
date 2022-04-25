@@ -42,7 +42,7 @@ def phrases(arr):
     return all_combinations
 
 
-def phrases(arr, i=0):
+def phrases_v2(arr, i=0):
     '''Time and Space O(m^n*ns)'''
 
     if i == len(arr):

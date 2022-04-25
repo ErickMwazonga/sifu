@@ -5,12 +5,12 @@ So, you're guaranteed to have at least one duplicate in the list.
 You have to write a function that prints out a duplicate in the list.
 
 Valid:
-    1. [1,2,1] -> 1
-    2. [3,3,3,3,3,3] -> 3
-    3. [1,2,1,2] -> 1,2
+1. [1,2,1] -> 1
+2. [3,3,3,3,3,3] -> 3
+3. [1,2,1,2] -> 1,2
 
 Invalid:
-    [1], [1,2]
+1. [1], [1,2]
 '''
 
 
@@ -33,7 +33,7 @@ get_duplicates([1, 2, 2, 2, 3])
 # get_duplicates([1,2,1,2])
 
 
-def findDuplicate2(nums):
+def findDuplicate_v2(nums):
     seen, res = set(), set()
 
     for num in nums:

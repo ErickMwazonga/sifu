@@ -34,7 +34,7 @@ def set_zeroes(matrix) -> None:
             matrix[j][i] = 0
 
 
-def set_zeros(A):
+def set_zeroes_v2(A):
     n, m = len(A), len(A[0])
     affected_rows, affected_cols = set(), set()
 
@@ -61,4 +61,4 @@ output = [[1, 0, 1],
           [0, 0, 0],
           [1, 0, 1]]
 
-assert set_zeros(_input) == output
+assert set_zeroes(_input) == output

@@ -57,7 +57,7 @@ class Solution:
 
         return max(left_depth, right_depth) + 1
 
-    def improved_balanced(self, root, height):
+    def improved_balanced(self, root, height):  # VALIDATE
         if not root:
             return True
 

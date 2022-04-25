@@ -19,14 +19,14 @@ def isMonotonic(nums) -> bool:
     return nums == sorted(nums) or nums == sorted(nums, reverse=True)
 
 
-def isMonotonic1(A) -> bool:
+def isMonotonic_v2(A) -> bool:
     increasing = all([A[i] >= A[i-1] for i in range(1, len(A))])
     decreasing = all([A[i] <= A[i-1] for i in range(1, len(A))])
 
     return increasing or decreasing
 
 
-def isMonotonic2(A):
+def isMonotonic_v3(A):
     def mono_inc(A):
         for i in range(1, len(A)):
             if A[i] < A[i-1]:
