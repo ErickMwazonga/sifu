@@ -15,7 +15,7 @@ def find_duplicate(nums) -> int:
         slow = nums[slow]
         fast = nums[nums[fast]]
 
-    slow = nums[0]
+    slow = 0
     while slow != fast:
         slow, fast = nums[slow], nums[fast]
 

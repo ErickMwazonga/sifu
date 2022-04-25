@@ -28,33 +28,30 @@ def merge_sorted_lists(arr1, arr2):
 
 
 def merge_lists(my_list, alices_list):
-    # Make a list big enough to fit the elements from both lists
     merged_list_size = len(my_list) + len(alices_list)
     merged_list = [None] * merged_list_size
 
-    current_index_alices = 0
-    current_index_mine = 0
-    current_index_merged = 0
+    their_index, my_index, merged_index = 0, 0, 0
 
-    while current_index_merged < merged_list_size:
-        if current_index_mine >= len(my_list):
+    while merged_index < merged_list_size:
+        if my_index >= len(my_list):
             # Case: my list is exhausted
-            merged_list[current_index_merged] = alices_list[current_index_alices]
-            current_index_alices += 1
-        elif current_index_alices >= len(alices_list):
-            # Case: Alice's list is exhausted
-            merged_list[current_index_merged] = my_list[current_index_mine]
-            current_index_mine += 1
-        elif my_list[current_index_mine] < alices_list[current_index_alices]:
+            merged_list[merged_index] = alices_list[their_index]
+            their_index += 1
+        elif their_index >= len(alices_list):
+            # Case: Their list is exhausted
+            merged_list[merged_index] = my_list[my_index]
+            my_index += 1
+        elif my_list[my_index] < alices_list[their_index]:
             # Case: my item is next
-            merged_list[current_index_merged] = my_list[current_index_mine]
-            current_index_mine += 1
+            merged_list[merged_index] = my_list[my_index]
+            my_index += 1
         else:
-            # Case: Alice's item is next
-            merged_list[current_index_merged] = alices_list[current_index_alices]
-            current_index_alices += 1
+            # Case: Their item is next
+            merged_list[merged_index] = alices_list[their_index]
+            their_index += 1
 
-        current_index_merged += 1
+        merged_index += 1
 
     return merged_list
 

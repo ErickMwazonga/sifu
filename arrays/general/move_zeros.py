@@ -47,7 +47,7 @@ def move_zeroes(nums) -> None:
     while right < len(nums):
         if nums[left] == 0 and nums[right] == 0:
             right += 1
-        elif nums[left] != 0 and right != 0:
+        elif nums[left] != 0 and nums[right] != 0:
             left += 1
             right += 1
         elif nums[left] == 0 and nums[right] != 0:

@@ -6,11 +6,6 @@ The input data consists of two lines of comma separated characters.
 A = [2, 3, 3, 5, 7, 11]
 B = [3, 3, 7, 15, 31]
 
-# One-liner. This works, but does not take advantage of
-# the fact that A and B are sorted. We can do a bit
-# better by taking advantage of this fact.
-# print(set(A) & set(B))
-
 Examples
 input
 a, b, c, d, e, f, g, h, i
@@ -43,7 +38,7 @@ def intersection(array1, array2):
     return intersection
 
 
-array1 = 'a,b,c,d,e,f,g,h,i'.split(',')
-array2 = 'd,g,i,j,k,l,m'.split(',')
+array1 = 'a, b, c, d, e, f, g, h, i'.split(',')
+array2 = 'd, g, i, j, k, l, m'.split(',')
 
 assert intersection(array1, array2) == ['d', 'g', 'i']

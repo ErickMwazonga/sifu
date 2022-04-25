@@ -17,19 +17,18 @@ Example:
 '''
 
 
-def integer_square_root(k):
-    low, high = 0, k
+def integer_square_root(x):
+    low, high = 0, x
 
-    while low < high:
+    while low <= high:
         mid = low + (high - low) // 2
-        mid_squared = mid * mid
 
-        if mid_squared == k:
+        if mid * mid == x:
             return mid
-        elif mid_squared < k:
+        elif mid * mid < x:
             low = mid + 1
         else:
-            high = mid
+            high = mid - 1
 
     return low - 1
 

@@ -29,20 +29,45 @@ Input: N = 4, trust = [[1,3],[1,4],[2,3],[2,4],[4,3]]
 Output: 3
 '''
 
+from collections import defaultdict
+
 
 def find_judge(N, trusts):
-    trustees = [[] for i in range(N)]
-    truested = [[] for i in range(N)]
+    trustees = [[] for _ in range(N)]
+    trusted = [[] for _ in range(N)]
 
     for i in range(1, N+1):
         trust, trusted = trusts[i]
 
         trustees[i] = trustees[i].append(trusted)
-        truested[i] = trusted[i].append(trusted)
+        trusted[i] = trusted[i].append(trusted)
+
+    for i in range(1, N+1):
+        if len(trustees[i]) == 0 and trusted[i] == N-1:
+            return i
+
+    return -1
+
+
+def findJudge(N, trusts):
+    trusting = defaultdict(list)
+    trusted_by = defaultdict(int)
+
+    for trust in trusts:
+        person, trusted = trust
+
+        trusting[person].append(trusted)
+        trusted_by[trusted] += 1
+
+    for i in range(1, N+1):
+        if len(trusting[i]) == 0 and trusted_by[i] == N-1:
+            return i
+
+    return -1
 
 
 '''
-[[1,3],[2,3],[3,1]]
+[[1,3], [2,3], [3,1]]
 
     1,    2,    3
 T   3     3     1 (0)

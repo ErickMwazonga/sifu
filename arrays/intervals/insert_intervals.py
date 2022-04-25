@@ -21,22 +21,24 @@ Output: [[5,7]]
 
 
 def insert_interval(intervals, newInterval):
+    '''https://www.youtube.com/watch?v=A8NUOmlwOlM&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=35'''
+
     n = len(intervals)
-    output = []
-    i = 0
+    res = []
 
-    while i < n and intervals[i][1] < newInterval[0]:
-        output.append(intervals[i])
-        i += 1
+    for i in range(n):
+        current_interval = intervals[i]
+        start, end = newInterval[0], newInterval[1]
 
-    while i < n and intervals[i][0] <= newInterval[1]:
-        newInterval[0] = min(newInterval[0], intervals[i][0])
-        newInterval[1] = max(newInterval[1], intervals[i][1])
-        i += 1
+        if start > current_interval[1]:
+            res.append(current_interval)
+        elif end < current_interval[0]:
+            res.append(newInterval)
+            return res + intervals[i:]  # all other intervals cannot overlap
+        else:
+            new_start = min(start, current_interval[0])
+            new_end = max(end, current_interval[1])
+            newInterval = [new_start, new_end]
 
-    output.append(newInterval)
-    while i < n:
-        output.append(intervals[i])
-        i += 1
-
-    return output
+    res.append(newInterval)
+    return res

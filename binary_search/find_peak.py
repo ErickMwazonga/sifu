@@ -29,8 +29,6 @@ def find_peak(arr):
         ):
             return i
 
-# ITERATIVELY
-
 
 def find_peak(A):
     left, right = 0, len(A) - 1
@@ -44,8 +42,6 @@ def find_peak(A):
             right = mid
 
     return left
-
-# RECURSIVELY
 
 
 def find_peak_rec(arr, left, right):

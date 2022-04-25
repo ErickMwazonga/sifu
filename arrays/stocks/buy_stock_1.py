@@ -27,9 +27,9 @@ def max_profit(prices) -> int:
     if n <= 1:
         return 0
 
-    min_stock, max_profit = prices[0], float('-inf')
+    min_stock, max_profit = prices[0], 0
 
-    for price in prices:
+    for price in prices[1:]:
         profit = price - min_stock
         min_stock = min(min_stock, price)
         max_profit = max(max_profit, profit)
@@ -37,7 +37,7 @@ def max_profit(prices) -> int:
     return max_profit
 
 
-def max_profit2(prices) -> int:
+def max_profit_v2(prices) -> int:
     '''Linear Time, Constant Space'''
 
     n = len(prices)

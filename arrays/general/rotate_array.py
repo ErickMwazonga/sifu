@@ -43,7 +43,7 @@ assert rotate([1, 2, 3, 4, 5, 6, 7], 3) == [5, 6, 7, 1, 2, 3, 4]
 
 
 def rotate(nums, k: int) -> None:
-    for i in range(k):
+    for _ in range(k):
         _last = nums.pop()
         nums.insert(0, _last)
 

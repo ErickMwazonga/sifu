@@ -37,8 +37,8 @@ def findMin(A: list[int]) -> int:
     return A[left]
 
 
-def findMin(A: list[int]) -> int:
-    '''O(logn)'''
+def findMin_v2(A: list[int]) -> int:
+    '''Time: O(logn)'''
 
     left, right = 0, len(A) - 1
 
@@ -49,7 +49,7 @@ def findMin(A: list[int]) -> int:
         mid = (left + right) // 2
 
         if A[mid + 1] < A[mid]:
-            return A[mid+1]
+            return A[mid + 1]
         elif A[mid] < A[mid-1]:
             return A[mid]
         elif A[mid] > A[right]:
@@ -58,3 +58,10 @@ def findMin(A: list[int]) -> int:
             right = mid
 
     return A[left]
+
+
+# 1. [6, 7, 8, 1, 2] -> 1
+# 2. [8, 9, 10, 1, 0, 1, 2] -> 0
+
+print(findMin([6, 7, 8, 1, 2]))
+print(findMin([8, 9, 10, 1, 0, 1, 2]))

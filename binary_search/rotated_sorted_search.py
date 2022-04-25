@@ -17,35 +17,6 @@ Output: -1
 '''
 
 
-class Solution:
-    def search(self, nums, target):
-        left, right = 0, len(nums) - 1
-
-        while left <= right:
-            mid = left + (right - left) // 2
-
-            if nums[mid] == target:
-                return mid
-
-            # left part is in order
-            if nums[left] <= nums[mid]:
-                # target is also in left part
-                if nums[left] <= target < nums[mid]:
-                    right = mid - 1
-                else:
-                    left = mid + 1
-
-            # right part is in order
-            else:
-                # target is also in right part
-                if nums[mid] < target <= nums[right]:
-                    left = mid + 1
-                else:
-                    right = mid - 1
-
-        return -1
-
-
 class Solution2:
     '''https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/894031/Python-O(logn)-Detailed-Explanation'''
 
@@ -57,7 +28,8 @@ class Solution2:
 
         while low <= high:
             mid = low + (high - low) // 2
-            if target == nums[mid]:
+
+            if nums[mid] == target:
                 return mid
 
             # inflection point to the right. Left is strictly increasing
@@ -66,6 +38,7 @@ class Solution2:
                     high = mid - 1
                 else:
                     low = mid + 1
+
             # inflection point to the left of me. Right is strictly increasing
             else:
                 if nums[mid] <= target <= nums[high]:

@@ -29,16 +29,38 @@ Output: false
 '''
 
 
+class Solution:
+
+    def searchMatrix(self, matrix, target):
+        row = self.get_row(matrix, target)
+
+        if row == -1:
+            return False
+
+        return self.binary_search(matrix[row], target)
+
+    def get_row(self, matrix, target):
+        if not matrix:
+            return False
+
+        low, high = 0, len(matrix) - 1
+
+        row = -1
+        while low <= high:
+            mid_row_index = (low + high) // 2
+
+            if matrix[mid_row_index][0] <= target <= matrix[mid_row_index][-1]:
+                row = mid_row_index
+                break
+            elif target > matrix[mid_row_index][-1]:
+                low = mid_row_index + 1
+            else:
+                high = mid_row_index - 1
+
+        return row
+
+
 class SortedSearch:
-    '''
-    Initialize start to 0 and end to M-1 where M= number of rows.
-    Find the middle row and then apply a binary search to search
-    for the target element in the row. If the target element is found,
-    return True else modify the middle row as needed and continue the
-    search till start ≤ end. So, the outer binary search searches
-    for the row while the inner binary search searches for the
-    element within a row. Here's the walkthrough:
-    '''
 
     def search_matrix(self, matrix, target) -> bool:
         n_rows, n_cols = len(matrix), len(matrix[0])
@@ -51,7 +73,7 @@ class SortedSearch:
         while start < end:
             mid_row = (start + end) // 2
             # inner binary search on the row
-            found = self.helper_search(matrix[mid_row], target)
+            found = binary_search(matrix[mid_row], target)
             if found:
                 return True
             elif matrix[mid_row][-1] > target:
@@ -61,18 +83,20 @@ class SortedSearch:
 
         return False
 
-    # Helper function to perform binary search for the target on a row
-    def helper_search(row, target):
-        n_cols = len(row)
-        start, end = 0, n_cols - 1
 
-        while start <= end:
-            mid = (start + end) // 2
+def binary_search(row, target):
+    '''HELPER FUNCTION: BINARY SEARCH'''
 
-            if row[mid] == target:
-                return True
-            elif row[mid] < target:
-                start = mid + 1
-            else:
-                end = mid - 1
-        return False
+    start, end = 0, len(row) - 1
+
+    while start <= end:
+        mid = (start + end) // 2
+
+        if target == row[mid]:
+            return True
+        elif target > row[mid]:
+            start = mid + 1
+        else:
+            end = mid - 1
+
+    return False

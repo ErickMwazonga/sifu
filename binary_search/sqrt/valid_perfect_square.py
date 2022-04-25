@@ -24,16 +24,17 @@ def isPerfectSquare(num):
 
 
 def isPerfectSquare(num):
-    '''O(logn)'''
+    '''Time: O(logn)'''
 
     left, right = 1, num
 
     while left <= right:
         mid = left + (right - left) // 2
+        square = mid * mid
 
-        if mid * mid == num:
+        if square == num:
             return True
-        elif mid * mid < num:
+        elif square < num:
             left = mid + 1
         else:
             right = mid - 1

@@ -13,16 +13,18 @@ Examples
 
 
 def findDuplicate(nums):
-    d = {}
+    seen = {}
+
     for each in nums:
-        if each in d:
+        if each in seen:
             return each
         else:
-            d[each] = 1
+            seen[each] = 1
 
 
-def findDuplicate1(nums):
+def findDuplicate_v1(nums):
     nums_set = set()
+
     for num in nums:
         if num in nums_set:
             return num
@@ -30,7 +32,7 @@ def findDuplicate1(nums):
         nums_set.add(num)
 
 
-def findDuplicate2(nums):
+def findDuplicate_v2(nums):
     for v in nums:
         pos = abs(v) - 1
 
@@ -38,6 +40,18 @@ def findDuplicate2(nums):
             return pos + 1
 
         nums[pos] = -nums[pos]
+
+
+def findDuplicate_v3(A):
+    n = len(A)
+
+    for i in range(n+1):
+        val_index = abs(A[i])
+
+        if A[val_index] < 0:
+            return val_index
+
+        A[val_index] = -A[val_index]
 
 
 assert findDuplicate([1, 3, 4, 2, 2]) == 2

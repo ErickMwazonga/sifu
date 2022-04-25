@@ -1,6 +1,6 @@
 '''
 74. Search a 2D Matrix
-Link: https://leetcode.com/problems/search-a-2d-matrix/
+Link: https://leetcode.com/roblems/search-a-2d-matrix/
 Credit: https://levelup.gitconnected.com/make-way-for-the-matrix-a-complete-guide-to-solving-2d-array-coding-problems-725096d122d9
 
 Write an efficient algorithm that searches
@@ -74,6 +74,37 @@ def searchMatrix1(matrix, target):
 
     flat_list = sum(matrix, [])
     return binary_search(flat_list, target)
+
+
+class Solution:
+
+    def searchMatrix(self, matrix, target):
+        row = self.get_row(matrix, target)
+
+        if row == -1:
+            return False
+
+        return self.binary_search(matrix[row], target)
+
+    def get_row(self, matrix, target):
+        if not matrix:
+            return False
+
+        low, high = 0, len(matrix) - 1
+
+        row = -1
+        while low <= high:
+            mid_row_index = (low + high) // 2
+
+            if matrix[mid_row_index][0] <= target <= matrix[mid_row_index][-1]:
+                row = mid_row_index
+                break
+            elif target > matrix[mid_row_index][-1]:
+                low = mid_row_index + 1
+            else:
+                high = mid_row_index - 1
+
+        return row
 
 
 def searchMatrix2(matrix, target: int) -> bool:

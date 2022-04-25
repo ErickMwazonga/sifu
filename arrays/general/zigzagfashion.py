@@ -32,7 +32,7 @@ assert zig_zag([1, 4, 3, 2]) == [1, 4, 2, 3]
 assert zig_zag([4, 3, 7, 8, 6, 2, 1]) == [3, 7, 4, 8, 2, 6, 1]
 
 
-def get_curve(arr):
+def zig_zag_v2(arr):
     if not arr:
         return arr
 
@@ -47,7 +47,7 @@ def get_curve(arr):
     return arr
 
 
-assert get_curve([]) == []
-assert get_curve([1, 2, 3, 4, 5, 6]) == [1, 3, 2, 5, 4, 6]
-assert get_curve([5, 2, 1, 7, 9, 8]) == [2, 5, 1, 9, 7, 8]
-assert get_curve([-2, 3, 3, -3]) == [-2, 3, -3, 3]
+assert zig_zag_v2([]) == []
+assert zig_zag_v2([1, 2, 3, 4, 5, 6]) == [1, 3, 2, 5, 4, 6]
+assert zig_zag_v2([5, 2, 1, 7, 9, 8]) == [2, 5, 1, 9, 7, 8]
+assert zig_zag_v2([-2, 3, 3, -3]) == [-2, 3, -3, 3]

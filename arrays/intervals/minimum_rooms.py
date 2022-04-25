@@ -13,14 +13,14 @@ NOTE
 
 
 def min_meeting_rooms(intervals):
-    starting_times = [i[0] for i in intervals]
-    ending_times = [i[1] for i in intervals]
+    starting_times = [i.start for i in intervals]
+    ending_times = [i.end for i in intervals]
 
     starting_times = sorted(starting_times)
     ending_times = sorted(ending_times)
 
     rooms = 0
-    while(len(starting_times) > 0):
+    while starting_times:
         startTime = starting_times.pop(0)
         # now a meeting is going to start, is there a meeting ends
         # (meaning a meeting room is released)?

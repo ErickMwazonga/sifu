@@ -20,8 +20,7 @@ def three_sum(nums, target):
 
     for i in range(n-2):
         partial_target = target - nums[i]
-        j = i + 1
-        k = n - 1
+        j, k = i + 1, n - 1
 
         while j < k:
             partial_sum = nums[j] + nums[k]

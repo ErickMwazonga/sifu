@@ -71,7 +71,7 @@ def find_first_and_last(A, target):
     return [first, last]
 
 
-class Solution():
+class Solution:
 
     def search_range(self, nums, target):
         start = self.find_starting_index(nums, target)

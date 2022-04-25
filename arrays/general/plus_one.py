@@ -29,6 +29,7 @@ def plus_one_iteratively(arr):
         if arr[i] < 9:
             arr[i] += 1
             return arr
+
         arr[i] = 0
 
     res = [0] * (n + 1)
@@ -47,6 +48,7 @@ def plus_one(digits):
     digits = [3, 6, 9, 9] -> [3, 7, 0, 0]
     digits = [9, 9, 9, 9] -> [1, 0, 0, 0, 0]
     '''
+
     i = len(digits) - 1
 
     while i >= 0:

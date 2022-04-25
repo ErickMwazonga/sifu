@@ -62,7 +62,7 @@ def find_judge(N: int, trust: list[list[int]]) -> int:
     return -1
 
 
-def find_judge2(N, trusts) -> int:
+def find_judge_v2(N, trusts) -> int:
     trusting = defaultdict(list)
     trusted_by = defaultdict(int)
 
@@ -84,7 +84,7 @@ assert find_judge(3, [[1, 3], [2, 3], [3, 1]]) == -1
 assert find_judge(3, [[1, 2], [2, 3]]) == -1
 assert find_judge(4, [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]) == 3
 
-assert find_judge2(2, [[1, 2]]) == 2
-assert find_judge2(3, [[1, 3], [2, 3], [3, 1]]) == -1
-assert find_judge2(3, [[1, 2], [2, 3]]) == -1
-assert find_judge2(4, [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]) == 3
+assert find_judge_v2(2, [[1, 2]]) == 2
+assert find_judge_v2(3, [[1, 3], [2, 3], [3, 1]]) == -1
+assert find_judge_v2(3, [[1, 2], [2, 3]]) == -1
+assert find_judge_v2(4, [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]) == 3
