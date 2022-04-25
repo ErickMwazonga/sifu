@@ -23,7 +23,7 @@ def isPerfectSquare(num):
             return False
 
 
-def isPerfectSquare(num):
+def isPerfectSquare_v2(num):
     '''Time: O(logn)'''
 
     left, right = 1, num

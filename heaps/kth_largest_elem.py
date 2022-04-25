@@ -23,18 +23,18 @@ def find_Kth_largest(nums, k):
     return nums[n - k]
 
 
-def find_Kth_largest1(nums, k):
+def find_Kth_largest_v2(nums, k):
     res = sorted(nums, reverse=True)
     return res[k - 1]
 
 
-def findKthLargest(nums, k):
+def find_Kth_largest_v3(nums, k):
     '''Time: O(nlogn)'''
 
     return sorted(nums)[-k]
 
 
-def findKthLargest2(nums, k):
+def find_Kth_largest_v4(nums, k):
     '''Time: O(klogn)'''
     import heapq
 
@@ -48,7 +48,7 @@ def findKthLargest2(nums, k):
     return -max_heap[0]
 
 
-def findKthLargest_CUSTOM(nums, k):
+def find_Kth_largest_v5(nums, k):
     heapx = theHeap.MinHeap('MAX')
     max_heap = heapx.build_heap(nums)
 
@@ -58,10 +58,10 @@ def findKthLargest_CUSTOM(nums, k):
     return max_heap[0]
 
 
-assert findKthLargest([9, 5, 3, 1, 4, 2], 3) == 4
-assert findKthLargest([3, 2, 1, 5, 6, 4], 2) == 5
-assert findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4) == 4
+assert find_Kth_largest([9, 5, 3, 1, 4, 2], 3) == 4
+assert find_Kth_largest([3, 2, 1, 5, 6, 4], 2) == 5
+assert find_Kth_largest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4) == 4
 
-assert findKthLargest_CUSTOM([9, 5, 3, 1, 4, 2], 3) == 4
-assert findKthLargest_CUSTOM([3, 2, 1, 5, 6, 4], 2) == 5
-assert findKthLargest_CUSTOM([3, 2, 3, 1, 2, 4, 5, 5, 6], 4) == 4
+assert find_Kth_largest_v2([9, 5, 3, 1, 4, 2], 3) == 4
+assert find_Kth_largest_v2([3, 2, 1, 5, 6, 4], 2) == 5
+assert find_Kth_largest_v2([3, 2, 3, 1, 2, 4, 5, 5, 6], 4) == 4

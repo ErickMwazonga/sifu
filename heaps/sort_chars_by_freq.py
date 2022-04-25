@@ -36,7 +36,7 @@ def frequencySort(s: str) -> str:
     return res
 
 
-def frequencySort(s: str) -> str:
+def frequencySort_v2(s: str) -> str:
     dic = {}
     result = ''
 

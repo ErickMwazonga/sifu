@@ -52,6 +52,7 @@ class Solution(object):
 
         right = self.grid_traveler_rec(n, m-1)
         down = self.grid_traveler_rec(n-1, m)
+
         return right + down
 
     # MEMOIZATION

@@ -11,7 +11,7 @@ Space complexity: O(1)
 '''
 
 
-def sortList(list):
+def sortArray(list):
     i = list.head
 
     while i:
@@ -24,7 +24,7 @@ def sortList(list):
         i = i.next
 
 
-def sortArray(A):
+def sortArray_v2(A):
     i = 0
 
     while i < len(A):

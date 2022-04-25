@@ -4,7 +4,7 @@ unique characters.
 '''
 
 
-def is_unique_1(input_str):
+def is_unique(input_str):
     _hash = {}
 
     for char in input_str:
@@ -14,11 +14,11 @@ def is_unique_1(input_str):
     return True
 
 
-def is_unique_2(input_str):
+def is_unique_v2(input_str):
     return len(set(input_str)) == len(input_str)
 
 
-def is_unique_3(input_str):
+def is_unique_v3(input_str):
     alpha = 'abcdefghijklmnopqrstuvwxyz'
 
     for i in input_str:
@@ -32,11 +32,11 @@ def is_unique_3(input_str):
 unique_str = 'AbCDefG'
 non_unique_str = 'non Unique STR'
 
-assert is_unique_1(unique_str) == True
-assert is_unique_1(non_unique_str) == False
+assert is_unique(unique_str) == True
+assert is_unique(non_unique_str) == False
 
-assert is_unique_2(unique_str) == True
-assert is_unique_2(non_unique_str) == False
+assert is_unique_v2(unique_str) == True
+assert is_unique_v2(non_unique_str) == False
 
-assert is_unique_3(unique_str) == True
-assert is_unique_3(non_unique_str) == False
+assert is_unique_v3(unique_str) == True
+assert is_unique_v3(non_unique_str) == False

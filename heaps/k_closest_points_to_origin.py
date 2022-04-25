@@ -39,7 +39,7 @@ def kClosest(points, k):
     return res
 
 
-def kClosest_CUSTOM(points, k):
+def kClosest_v2(points, k):
     '''# KLOGN'''
 
     heapqq = theHeap.MinHeap()
@@ -60,5 +60,5 @@ def kClosest_CUSTOM(points, k):
 assert kClosest([[1, 3], [-2, 2]], 1) == [[-2, 2]]
 assert kClosest([[3, 3], [5, -1], [-2, 4]], 2) == [[3, 3], [-2, 4]]
 
-assert kClosest_CUSTOM([[1, 3], [-2, 2]], 1) == [[-2, 2]]
-assert kClosest_CUSTOM([[3, 3], [5, -1], [-2, 4]], 2) == [[3, 3], [-2, 4]]
+assert kClosest_v2([[1, 3], [-2, 2]], 1) == [[-2, 2]]
+assert kClosest_v2([[3, 3], [5, -1], [-2, 4]], 2) == [[3, 3], [-2, 4]]

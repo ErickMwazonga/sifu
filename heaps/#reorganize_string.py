@@ -37,7 +37,7 @@ def reorganize_string(s):
     return res if len(res) == len(s) else ''
 
 
-def reorganizeString(s: str) -> str:
+def reorganize_string_v2(s: str) -> str:
     freqs = {}
     for ch in s:
         freqs[ch] = freqs.get(ch, 0) + 1

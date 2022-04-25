@@ -45,7 +45,7 @@ assert is_valid('([)]') is False
 assert is_valid('{[]}') is True
 
 
-def is_valid(s):
+def is_valid_v2(s):
     '''GLOVO INTERVIEW'''
 
     if not s:

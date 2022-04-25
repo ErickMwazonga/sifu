@@ -23,13 +23,13 @@ def missing_number(nums):
             return i
 
 
-def missingNumber(nums):
+def missingNumber_v2(nums):
     n = len(nums)
     cummulative_sum = sum(range(n+1))
     return cummulative_sum - sum(nums)
 
 
-def missingNumber(nums):
+def missingNumber_v2(nums):
     n = len(nums)
     cummulative_sum = n * (n + 1) // 2
 

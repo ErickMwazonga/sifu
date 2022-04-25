@@ -43,7 +43,7 @@ class Solution:
             return 1
         return self.climb_stairs(n - 1) + self.climb_stairs(n - 2)
 
-    def climb_stairs2(self, n):
+    def climb_stairs_v2(self, n):
         '''Time: O(n), Space: O(1)'''
 
         a, b = 1, 2
@@ -51,7 +51,7 @@ class Solution:
             a, b = b, a + b
         return a
 
-    def climb_stairs3(self, n):
+    def climb_stairs_v3(self, n):
         ways = [1, 2]
 
         for i in range(2, n):

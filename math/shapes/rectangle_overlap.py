@@ -27,7 +27,7 @@ def isRectangleOverlap(rec1, rec2) -> bool:
     return x_overlap and y_overlap
 
 
-def isRectangleOverlap2(rec1, rec2) -> bool:
+def isRectangleOverlap_v2(rec1, rec2) -> bool:
     x1, y1, x2, y2 = 0, 1, 2, 3
 
     x_overlap = rec1[x1] < rec2[x2] and rec2[x1] < rec1[x2]
@@ -36,7 +36,7 @@ def isRectangleOverlap2(rec1, rec2) -> bool:
     return x_overlap and y_overlap
 
 
-def isRectangleOverlap3(rec1, rec2):
+def isRectangleOverlap_v3(rec1, rec2):
     ax1, ay1, ax2, ay2 = rec1
     bx1, by1, bx2, by2 = rec2
 

@@ -23,8 +23,8 @@ def generateMatrix(n: int):
     matrix = [[None for _ in range(n)] for _ in range(n)]
 
     num = 1
-    top, down = 0, n-1
-    left, right = 0, n-1
+    top, down = 0, n - 1
+    left, right = 0, n - 1
 
     while left <= right and top <= down:
         # top row

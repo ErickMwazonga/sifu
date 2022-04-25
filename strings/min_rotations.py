@@ -25,7 +25,7 @@ def findRotations(s):
     return n
 
 
-def findRotations2(_str):
+def findRotations_v2(_str):
     check = ''
     n = len(_str)
 

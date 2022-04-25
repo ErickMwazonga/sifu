@@ -60,7 +60,7 @@ class Solution:
         return row
 
 
-class SortedSearch:
+class Solution_V2:
 
     def search_matrix(self, matrix, target) -> bool:
         n_rows, n_cols = len(matrix), len(matrix[0])

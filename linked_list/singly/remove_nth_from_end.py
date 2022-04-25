@@ -31,7 +31,7 @@ def removeNthFromEnd(head, n: int):
     return dummy.next
 
 
-def removeNthFromEnd(head, n):
+def removeNthFromEnd_v2(head, n):
     dummy = ListNode(0, head)
     left, right = dummy, head
 

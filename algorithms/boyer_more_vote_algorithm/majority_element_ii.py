@@ -6,9 +6,9 @@ Given an integer array of size n, find all elements that appear more than ⌊ n/
 Follow-up: Could you solve the problem in linear time and in O(1) space?
 
 Examples
-1. [3,2,3] -> [3]
+1. [3, 2, 3] -> [3]
 2. [1] -> [1]
-3. [1,2] -> [1,2]
+3. [1, 2] -> [1, 2]
 '''
 
 
@@ -34,8 +34,7 @@ def majority_element(nums):
             count2 -= 1
 
     # Get the candidate no of occurrences
-    count1 = 0
-    count2 = 0
+    count1, count2 = 0, 0
     for num in nums:
         if num == cand1:
             count1 += 1

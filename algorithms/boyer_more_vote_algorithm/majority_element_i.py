@@ -7,8 +7,8 @@ The majority element is the element that appears more than ⌊ n/2 ⌋ times.
 You may assume that the array is non-empty and the majority element always exist in the array.
 
 Examples
-1. [3,2,3] -> 3
-2. [2,2,1,1,1,2,2] -> 2
+1. [3, 2, 3] -> 3
+2. [2, 2, 1, 1, 1, 2, 2] -> 2
 '''
 
 

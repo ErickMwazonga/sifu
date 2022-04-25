@@ -17,7 +17,6 @@ As arr[0] = arr[1], the pair of indices is (0, 1),
 
 
 def count_pairs(arr):
-    n = len(arr)
     mapping = {}
     ans = 0
 
@@ -31,7 +30,7 @@ def count_pairs(arr):
     return ans
 
 
-def count_pairs3(arr):
+def count_pairs_v2(arr):
     def no_of_repeats(n):
         if n < 2:
             return 0
@@ -42,8 +41,6 @@ def count_pairs3(arr):
     return res
 
 
-arr = [1, 1, 2]
-arr1 = [1, 1, 1, 3, 3, 4, 1]
-# print(count_pairs(arr))
-print(count_pairs(arr1))
-print(count_pairs3(arr1))
+assert count_pairs([1, 1, 2]) == 1
+assert count_pairs([1, 1, 1]) == 3
+assert count_pairs([1, 2, 3]) == 0

@@ -33,7 +33,7 @@ nums = [8, 1, 2, 2, 3]
 assert smaller_numbers_than_current(nums) == [4, 0, 1, 1, 3]
 
 
-def smaller_numbers_than_current2(nums):
+def smaller_numbers_than_current_v2(nums):
     count = [0] * 102
 
     for num in nums:
@@ -46,4 +46,4 @@ def smaller_numbers_than_current2(nums):
 
 
 nums = [8, 1, 2, 2, 3]
-assert smaller_numbers_than_current2(nums) == [4, 0, 1, 1, 3]
+assert smaller_numbers_than_current(nums) == [4, 0, 1, 1, 3]

@@ -12,28 +12,24 @@ def sumOfDigits(n, sum=0):
         return sumOfDigits(n, sum + rem)
 
 
-def sumOfDigits(n):
+def sumOfDigits_v2(n):
     if n < 10:
         return n
     else:
         n, rem = divmod(n, 10)
-        return rem + sumOfDigits(n)
-
-# non-tail recursive:
+        return rem + sumOfDigits_v2(n)
 
 
-def sumOfDigts(n):
+def sumOfDigts_v3(n):
     if n < 0:  # Negative numbers
-        return sumOfDigts(-n)
+        return sumOfDigts_v3(-n)
     elif n < 10:
         return n
     else:
-        return (n % 10) + sumOfDigts(n // 10)
-
-# tail recursive:
+        return (n % 10) + sumOfDigts_v3(n // 10)
 
 
-def sumOfDigts(n, acc=0):
+def sumOfDigts_v4(n, acc=0):
     if n < 0:
         return sumOfDigits(-n)
     elif n < 10:

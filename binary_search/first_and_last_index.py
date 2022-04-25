@@ -35,9 +35,6 @@ def search_range(nums, target):
     return result
 
 
-print(search_range([5, 7, 7, 8, 8, 10], 8))
-
-
 def search_range_v2(A, target):
     n = len(A)
 

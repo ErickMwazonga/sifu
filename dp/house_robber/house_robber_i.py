@@ -33,7 +33,7 @@ def rob(nums):
     return nums[-1]
 
 
-def rob(nums: list[int]) -> int:
+def rob_v2(nums: list[int]) -> int:
     '''Time: O(n), Space: O(n)'''
 
     if not nums:
@@ -60,7 +60,7 @@ assert rob([1, 2, 3, 1]) == 4
 assert rob([2, 7, 9, 3, 1]) == 12
 
 
-def rob(nums):
+def rob_v3(nums):
     rob, not_rob = 0, 0
 
     for num in nums:

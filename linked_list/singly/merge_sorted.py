@@ -18,7 +18,7 @@ class ListNode:
         self.next = None
 
 
-def mergeTwoLists1(l1, l2):
+def mergeTwoLists(l1, l2):
     dummy = ListNode(0)
 
     curr = dummy
@@ -41,7 +41,7 @@ def mergeTwoLists1(l1, l2):
     return dummy.next
 
 
-def mergeTwoLists(a, b):
+def mergeTwoLists_v2(a, b):
     if a and b:
         if a.val > b.val:
             a, b = b, a

@@ -5,7 +5,7 @@ is there any non-empty subset whose sum to s.
 
 
 def subset_sum(A, n, sum):
-    '''Time complexity: O(2^n), Space complexity: O(n)'''
+    '''Time: O(2^n), Space: O(n)'''
 
     # return true if sum becomes 0 (subset found)
     if sum == 0:
@@ -24,12 +24,10 @@ def subset_sum(A, n, sum):
     exclude = subset_sum(A, n - 1, sum)
 
     # return true if we can get subset by including or excluding the
-    # current item
     return include or exclude
 
 
-# Return true if there exists a subsequence of A[0..n] with given sum
-def subset_sum_improved(A, n, sum, lookup):
+def subset_sum_v2(A, n, sum, lookup):
     # return true if sum becomes 0 (subset found)
     if sum == 0:
         return True
@@ -47,14 +45,13 @@ def subset_sum_improved(A, n, sum, lookup):
 
         # Case 1. include current item in the subset (A[n]) and recur
         # for remaining items (n - 1) with decreased sum (sum - A[n])
-        include = subset_sum_improved(A, n - 1, sum - A[n], lookup)
+        include = subset_sum_v2(A, n - 1, sum - A[n], lookup)
 
         # Case 2. exclude current item n from subset and recur for
         # remaining items (n - 1)
-        exclude = subset_sum_improved(A, n - 1, sum, lookup)
+        exclude = subset_sum_v2(A, n - 1, sum, lookup)
 
         # assign true if we get subset by including or excluding current item
         lookup[key] = include or exclude
 
-    # return solution to current sub-problem
     return lookup[key]

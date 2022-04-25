@@ -25,7 +25,7 @@ def computeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) -> int:
     return first_area + second_area - overlap_area
 
 
-def computeArea(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
+def computeArea_v2(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
     left, right = max(ax1, bx1), min(ax2, bx2)
     bottom, top = max(ay1, by1), min(ay2, by2)
 

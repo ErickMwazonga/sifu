@@ -22,14 +22,14 @@ def height(root):
     return depth
 
 
-def maxDepth(root):
+def height_v2(root):
     '''time: 0(n), memory: o(1)'''
 
     if not root:
         return 0
 
-    depth_left = maxDepth(root.left)
-    depth_right = maxDepth(root.right)
+    depth_left = height_v2(root.left)
+    depth_right = height_v2(root.right)
 
     depth = max(depth_left, depth_right) + 1
     return depth

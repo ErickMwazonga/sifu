@@ -54,7 +54,7 @@ def fib(n):
     return dp[-1]
 
 
-def fib2(n):
+def fib_v2(n):
     if n < 1:
         return -1
 
@@ -70,7 +70,7 @@ def fib2(n):
     return curr
 
 
-def fib5(n: int) -> int:
+def fib_v3(n: int) -> int:
     '''Time - O(n), Space - O(1)'''
 
     if n == 0:

@@ -22,7 +22,7 @@ def longestCommonPrefix(strs) -> str:
     return prefix
 
 
-def longestCommonPrefix(strs) -> str:
+def longestCommonPrefix_v2(strs) -> str:
     if not strs or len(strs) == 0:
         return ''
 

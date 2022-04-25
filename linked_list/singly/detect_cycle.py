@@ -34,7 +34,7 @@ def detectCycle(head):
     return False
 
 
-def detectCycle(head):
+def detectCycle_v2(head):
     '''
     https://www.codesdope.com/blog/article/detect-a-loop-in-linked-list-using-floyds-cycle/
     Floyd's Cycle-Finding Algorithm

@@ -36,7 +36,7 @@ assert topKFrequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
 assert topKFrequent([1], 1) == [1]
 
 
-def topKFrequent_XX(nums, k):
+def topKFrequent_v2(nums, k):
     freqs = {}
     n = len(nums)
 

@@ -26,7 +26,8 @@ def subsets(nums):
 # REQUIRE REVISION
 
 
-class Solution():
+class Solution:
+
     def subsets(self, nums):
         ret = []
         self.dfs(nums, [], ret)
@@ -37,10 +38,9 @@ class Solution():
         for i in range(len(nums)):
             self.dfs(nums[i+1:], path+[nums[i]], ret)
 
-# REQUIRE REVISION
 
+class Solution_V2:
 
-class Solution():
     def subsets(self, nums):
         sol = []
         self.helper(nums, sol, [], 0)

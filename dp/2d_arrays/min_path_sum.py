@@ -65,7 +65,7 @@ def minimum_cost_path(matrix, i=0, j=0):
         )
 
 
-def minimum_cost_path(matrix):
+def minimum_cost_path_v2(matrix):
     '''DP: Time - O(2^nm), Space - O(nm) '''
 
     n = len(matrix)

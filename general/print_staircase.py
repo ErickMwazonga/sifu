@@ -19,7 +19,7 @@ def staircase(n):
         print(_row)
 
 
-def staircase2(n):
+def staircase_v2(n):
     for i in range(n):
         for j in range(n-1, -1, -1):
             if i < j:

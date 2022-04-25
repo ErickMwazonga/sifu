@@ -23,7 +23,7 @@ def most_frequent(arr):
     return res
 
 
-def most_frequent2(arr):
+def most_frequent_v2(arr):
     freq = {}
     max_count, most_frequent = 0, -1
 
@@ -40,4 +40,4 @@ def most_frequent2(arr):
 
 A = [1, 5, 2, 1, 3, 2, 1]
 assert most_frequent(A) == 1
-assert most_frequent2(A) == 1
+assert most_frequent_v2(A) == 1

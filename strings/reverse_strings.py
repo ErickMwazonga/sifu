@@ -16,11 +16,11 @@ def reverseString(s):
     return s
 
 
-def reverseString(s):
+def reverseString_v2(s):
     s.reverse()
 
 
-def reverse(chars: list):
+def reverse_v3(chars: list):
     left = 0
     right = len(chars) - 1
 

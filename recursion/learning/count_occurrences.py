@@ -18,10 +18,8 @@ def countOccurrences(arr, num, i=0):
     else:
         return countOccurrences(arr, num, i+1)
 
-# tail recursive:
 
-
-def countOccurrences(arr, num, i=0, acc=0):
+def countOccurrences_v2(arr, num, i=0, acc=0):
     if i == len(arr):
         return acc
     elif arr[i] == num:

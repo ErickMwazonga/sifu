@@ -25,8 +25,8 @@ def isPalindrome(s: str) -> bool:
     return left == left[::-1]
 
 
-def is_palindrome2(s):
-    '''Time complexity: O(N), Space complexity: O(1)'''
+def is_palindrome_v2(s):
+    '''Time: O(N), Space: O(1)'''
 
     s = [i.lower() for i in s if i.isalnum()]
     low, high = 0, len(s) - 1

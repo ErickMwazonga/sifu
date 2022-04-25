@@ -35,7 +35,7 @@ def getRow(rowIndex: int) -> list[int]:
     return result[-1]
 
 
-def getRow(self, n):
+def getRow_v2(n):
     if n == 0:
         return [1]
 

@@ -15,7 +15,7 @@ Explanation: The linked-lists are:
   2 -> 6
 ]
 merging them into one sorted list:
-1->1->2->3->4->4->5->6
+1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6
 '''
 
 from heapq import heappop, heappush
@@ -49,7 +49,7 @@ def mergeKLists(lists):
     return head
 
 
-def mergeKLists1(lists):
+def mergeKLists_v2(lists):
     heap = []
 
     for l in lists:
@@ -65,7 +65,7 @@ def mergeKLists1(lists):
     return head.next
 
 
-def mergeKLists(lists):
+def mergeKLists_v3(lists):
     '''https://www.youtube.com/watch?v=ptYUCjfNhJY'''
 
     heap = []

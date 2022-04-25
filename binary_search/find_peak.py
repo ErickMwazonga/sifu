@@ -30,7 +30,7 @@ def find_peak(arr):
             return i
 
 
-def find_peak(A):
+def find_peak_v2(A):
     left, right = 0, len(A) - 1
 
     while left < right:
@@ -44,17 +44,17 @@ def find_peak(A):
     return left
 
 
-def find_peak_rec(arr, left, right):
+def find_peak_v3(arr, left, right):
     if left >= right:
         return left
 
     mid = (left + right) // 2
 
     if arr[mid] < arr[mid+1]:
-        return find_peak_rec(arr, mid+1, right)
+        return find_peak_v3(arr, mid+1, right)
     else:
-        return find_peak_rec(arr, left, mid)
+        return find_peak_v3(arr, left, mid)
 
 
 def find_peak2(arr):
-    return find_peak_rec(arr, 0, len(arr)-1)
+    return find_peak_v3(arr, 0, len(arr)-1)

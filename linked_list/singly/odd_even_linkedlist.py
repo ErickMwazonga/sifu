@@ -8,8 +8,8 @@ Note that the relative order inside both the even and odd groups should remain a
 You must solve the problem in O(1) extra space complexity and O(n) time complexity.
 
 Examples:
-1. [1,2,3,4,5] -> [1,3,5,2,4]
-2. [2,1,3,5,6,4,7] -> [2,3,6,7,1,5,4]
+1. [1, 2, 3, 4, 5] -> [1, 3, 5, 2, 4]
+2. [2, 1, 3, 5, 6, 4, 7] -> [2, 3, 6, 7, 1, 5, 4]
 '''
 
 

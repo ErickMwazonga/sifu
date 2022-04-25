@@ -60,8 +60,5 @@ def findMin_v2(A: list[int]) -> int:
     return A[left]
 
 
-# 1. [6, 7, 8, 1, 2] -> 1
-# 2. [8, 9, 10, 1, 0, 1, 2] -> 0
-
-print(findMin([6, 7, 8, 1, 2]))
-print(findMin([8, 9, 10, 1, 0, 1, 2]))
+findMin([6, 7, 8, 1, 2]) == 1
+findMin([8, 9, 10, 1, 0, 1, 2]) == 0

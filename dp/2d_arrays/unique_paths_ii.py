@@ -56,7 +56,7 @@ def paths(matrix):
 
 
 # RECURSION
-def paths(matrix, i=0, j=0):
+def paths_v2(matrix, i=0, j=0):
     '''Time complexity: O(2^(n*m)), Space complexity: O(n + m)'''
 
     n, m = len(matrix), len(matrix[0])

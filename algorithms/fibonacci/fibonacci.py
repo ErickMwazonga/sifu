@@ -37,7 +37,7 @@ def fib_memoized(n, memo={}):
     return memo[n]
 
 
-def fib(n):
+def fibonacci_v2(n):
     dp = [0] * n
     dp[0], dp[1] = 0, 1
 
@@ -47,7 +47,7 @@ def fib(n):
     return dp[-1]
 
 
-def fib_iter(n):
+def fibonacci_v3(n):
     '''Time - O(n), Space - O(1)'''
 
     if n <= 1:
@@ -60,6 +60,6 @@ def fib_iter(n):
     return prev
 
 
-assert fib_iter(5) == 5
-assert fib_iter(6) == 8
-assert fib_iter(7) == 13
+assert fibonacci_v3(5) == 5
+assert fibonacci_v3(6) == 8
+assert fibonacci_v3(7) == 13

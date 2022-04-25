@@ -1,14 +1,11 @@
-# solution 1:
 def reverse(str):
     if str == '':
         return ''
     else:
         return reverse(str[1:]) + str[0]
 
-# solution 2:
 
-
-def reverse(str):
+def reverse_v2(str):
     if len(str) <= 1:
         return str
     else:
@@ -17,14 +14,12 @@ def reverse(str):
         rightPart = str[mid:]
         return reverse(rightPart) + reverse(leftPart)
 
-# solution 3:
 
-
-def rec(str, rev, i=0):
+def reverse_v3(str, rev, i=0):
     if i == len(str):
         return
     else:
-        rec(str, rev, i+1)
+        reverse_v3(str, rev, i+1)
         rev.append(str[i])
 
 

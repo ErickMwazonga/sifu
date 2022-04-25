@@ -36,7 +36,7 @@ def groupAnagrams(strs):
     return list(mapping.values())
 
 
-def groupAnagrams2(strs):
+def groupAnagrams_v2(strs):
     mapping = defaultdict(list)
 
     for word in strs:
@@ -46,7 +46,7 @@ def groupAnagrams2(strs):
     return list(mapping.values())
 
 
-def groupAnagrams(strs):
+def groupAnagrams_v3(strs):
     '''Time O(m.n) -> Credit: https://programmer.group/leetcode-49-group-anagrams.html'''
 
     res = defaultdict(list)

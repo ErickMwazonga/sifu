@@ -9,10 +9,10 @@ We define an array is non-decreasing if nums[i] <= nums[i + 1]
 olds for every i (0-based) such that (0 <= i <= n - 2).
 
 Examples:
-1. [4,2,3] -> true
+1. [4, 2, 3] -> true
 Explanation: You could modify the first 4 to 1 to get a non-decreasing array.
 
-2. [4,2,1] -> false
+2. [4, 2, 1] -> false
 Explanation: You can't get a non-decreasing array by modify at most one element.
 '''
 
@@ -33,7 +33,7 @@ def check_possibility(nums):
     return True
 
 
-def check_possibility_best(nums):
+def check_possibility_v2(nums):
     count = 0
     n = len(nums)
 

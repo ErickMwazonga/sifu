@@ -67,7 +67,7 @@ class LinkedList:
 
     ''' Alternate swap node function , swap by changing the data attribute of node '''
 
-    def swap_nodes_alt(self, key_1, key_2):
+    def swap_nodes_v2(self, key_1, key_2):
         if key_1 == key_2:
             return
 

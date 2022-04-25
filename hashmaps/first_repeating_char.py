@@ -23,6 +23,6 @@ def first_repeating_character(str):
     return None
 
 
-first_repeating_character('inside code') == 'i'
-first_repeating_character('programming') == 'r'
-first_repeating_character('abcd') == None
+assert first_repeating_character('inside code') == 'i'
+assert first_repeating_character('programming') == 'r'
+assert first_repeating_character('abcd') == None

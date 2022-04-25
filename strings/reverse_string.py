@@ -19,7 +19,7 @@ def swap(s, i, j):
     return ''.join(strlst)
 
 
-def reverse(s):
+def reverse_str_v2(s):
     i = 0
     j = len(s) - 1
 
@@ -29,4 +29,4 @@ def reverse(s):
         j -= 1
 
 
-print(reverse('hello'))
+print(reverse_str_v2('hello'))

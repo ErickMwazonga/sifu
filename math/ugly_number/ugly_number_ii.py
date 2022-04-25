@@ -38,7 +38,7 @@ def nthUglyNumber(n: int) -> int:
     return ugly[-1]
 
 
-def nthUglyNumber(n: int) -> int:
+def nthUglyNumber_v2(n: int) -> int:
     '''Time: O(Nlog(N)), Space: O(N)'''
 
     heap = [1]

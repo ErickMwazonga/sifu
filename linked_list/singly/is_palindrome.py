@@ -22,7 +22,7 @@ def isPalindrome(head):
     return vals == vals[::-1]
 
 
-def isPalindrome2(head):
+def isPalindrome_v2(head):
     vals = []
 
     while head:

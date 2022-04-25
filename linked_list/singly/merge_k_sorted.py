@@ -46,7 +46,7 @@ def mergeKLists(lists):
     return dummy.next
 
 
-def mergeKLists(lists):
+def mergeKLists_v2(lists):
     '''
     https://www.youtube.com/watch?v=ptYUCjfNhJY
     Space: O(k). k is len(lists), Time: O(n * log(k)). n is total nodes

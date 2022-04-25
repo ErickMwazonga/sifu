@@ -41,7 +41,7 @@ def first_bad_version(n):
     return low
 
 
-def first_bad_version2(n):
+def first_bad_version_v2(n):
     low, high = 0, n
     bad = 1
 

@@ -23,7 +23,7 @@ def singleNumber(nums):
             return i
 
 
-def singleNumber(nums):
+def singleNumber_v2(nums):
     '''Formula: 2*(a+b+c) - (a+a+b+b+c) = c'''
 
     return 2 * sum(set(nums)) - sum(nums)

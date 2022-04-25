@@ -74,11 +74,11 @@ class LinkedList:
 
 
 llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.append("D")
+llist.append('A')
+llist.append('B')
+llist.append('C')
+llist.append('D')
 
-llist.delete_node("B")
+llist.delete_node('B')
 
 llist.print_list()

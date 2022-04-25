@@ -25,10 +25,7 @@ def int_to_str(input_int):
     output_str = output_str[::-1]
     output_str = ''.join(output_str)
 
-    if is_negative:
-        return '-' + output_str
-    else:
-        return output_str
+    return '-' + output_str if is_negative else output_str
 
 
 assert int_to_str(123) == '123'

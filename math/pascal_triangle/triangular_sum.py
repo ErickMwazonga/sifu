@@ -34,7 +34,7 @@ def triangularSum(nums: list[int]) -> int:
     return nums[0]
 
 
-def triangularSum(nums: list[int]) -> int:
+def triangularSum_v2(nums: list[int]) -> int:
     n = len(nums)
 
     while n > 0:

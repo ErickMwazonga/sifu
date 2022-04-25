@@ -38,7 +38,7 @@ def subarray_sum(nums, k):
     return count
 
 
-def subarray_sum2(nums: list[int], k: int) -> int:
+def subarray_sum_v2(nums: list[int], k: int) -> int:
     sums_so_far = defaultdict(int)
     our_sum = 0
     num_subarrays = 0
@@ -57,7 +57,7 @@ def subarray_sum2(nums: list[int], k: int) -> int:
     return num_subarrays
 
 
-def subarray_sum(nums, k):
+def subarray_sum_v3(nums, k):
     _sums = {0: 1}
     cur_sum, max_sub = 0, 0
 

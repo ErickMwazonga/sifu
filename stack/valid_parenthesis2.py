@@ -57,7 +57,7 @@ def is_valid(s):
     return True
 
 
-def is_valid_1(s):
+def is_valid_v2(s):
     '''Time complexity: O(N), Space complexity: O(N)'''
 
     left, stars = [], []

@@ -49,7 +49,7 @@ def find_judge(N, trusts):
     return -1
 
 
-def findJudge(N, trusts):
+def find_judge_v2(N, trusts):
     trusting = defaultdict(list)
     trusted_by = defaultdict(int)
 

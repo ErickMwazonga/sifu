@@ -27,7 +27,7 @@ def subsetsThatSumUpToK(arr, k, i=0, _sum=0):
         return include + exclude
 
 
-def subsetsThatSumUpToK(arr, k):
+def subsetsThatSumUpToK_v2(arr, k):
     '''Time complexity: O(nk), Space complexity: O(nk)'''
 
     def rec(arr, k, i, sum, memoiz):

@@ -37,7 +37,7 @@ def squared(n):
     return sum(squares)
 
 
-def squared2(n):
+def squared_v2(n):
     result = 0
 
     while n > 0:

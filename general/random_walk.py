@@ -18,7 +18,7 @@ def random_walk(n):
     return (x, y)
 
 
-def random_walk_2(n):
+def random_walk_v2(n):
     '''Return coordinates after 'n' block random walk.'''
 
     x, y = 0, 0
@@ -30,5 +30,5 @@ def random_walk_2(n):
 
 
 for i in range(25):
-    walk = random_walk_2(10)
+    walk = random_walk_v2(10)
     print(f'{walk} Distance from home = {abs(walk[0]) + abs(walk[1])}')

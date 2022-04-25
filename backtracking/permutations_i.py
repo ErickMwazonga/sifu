@@ -33,7 +33,7 @@ class Solution:
             self.dfs(new_nums, path+[nums[i]], res)
 
 
-class Solution2:
+class Solution_V2:
     def permute(self, nums):
         res, path = [], []
         visited = set()

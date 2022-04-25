@@ -33,7 +33,7 @@ def integer_square_root(x):
     return low - 1
 
 
-def mySqrt(x: int) -> int:
+def integer_square_root_v2(x: int) -> int:
     low, high = 0, x
 
     while low <= high:

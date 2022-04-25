@@ -35,7 +35,7 @@ def lengthOfLongestSubstring(s):
     return longest
 
 
-def longestSubstring(s):
+def lengthOfLongestSubstring_v2(s):
     start = max_length = 0
     seen_chars = {}
 

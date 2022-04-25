@@ -8,7 +8,7 @@ Space Complexity: O(1)
 '''
 
 
-def is_perm_1(str_1, str_2):
+def is_perm(str_1, str_2):
     str_1 = str_1.lower()
     str_2 = str_2.lower()
 
@@ -27,10 +27,7 @@ def is_perm_1(str_1, str_2):
     return True
 
 
-# Approach 2: Hash Table
-# Time Complexity: O(n)
-# Space Complexity: O(n)
-def is_perm_2(str_1, str_2):
+def is_perm_v2(str_1, str_2):
     str_1 = str_1.lower()
     str_2 = str_2.lower()
 
@@ -51,14 +48,11 @@ def is_perm_2(str_1, str_2):
     return all(value == 0 for value in d.values())
 
 
-is_permutation_1 = 'google'
-is_permutation_2 = 'ooggle'
+is_permutation_1, is_permutation_2 = 'google', 'ooggle'
+not_permutation_1, not_permutation_2 = 'not', 'top'
 
-not_permutation_1 = 'not'
-not_permutation_2 = 'top'
-
-print(is_perm_1(is_permutation_1, is_permutation_2))
+print(is_perm(is_permutation_1, is_permutation_2))
 #print(is_perm_1(not_permutation_1, not_permutation_2))
 
-print(is_perm_2(is_permutation_1, is_permutation_2))
+print(is_perm(is_permutation_1, is_permutation_2))
 #print(is_perm_2(not_permutation_1, not_permutation_2))

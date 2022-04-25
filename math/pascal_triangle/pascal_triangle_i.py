@@ -38,7 +38,7 @@ def generate(numRows):
     return result
 
 
-def generate(self, n):
+def generate_v2(n):
     if n < 1:
         return [[]]
 
