@@ -10,7 +10,7 @@ Note: You may assume the string contain only lowercase letters.
 
 
 def firstUniqChar(s: str):
-    '''Time complexity : O(N), Space complexity : O(N)'''
+    '''Time: O(N), Space: O(N)'''
 
     _hash = {}
 

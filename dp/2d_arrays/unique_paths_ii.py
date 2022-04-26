@@ -24,11 +24,11 @@ Output: 1
 
 
 def paths(matrix):
-    '''DP: Time complexity: O(n*m), Space complexity: O(n*m)'''
+    '''DP: Time: O(n*m), Space: O(n*m)'''
 
     n, m = len(matrix), len(matrix[0])
 
-    dp = [[0] * m for i in range(n)]
+    dp = [[0] * m for _ in range(n)]
     dp[0][0] = 0 if (matrix[0][0] == 1) else 1
 
     # First row

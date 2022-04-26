@@ -12,7 +12,7 @@ At the end of the game, there is at most one stone left.
 Return the smallest possible weight of the left stone. If there are no stones left, return 0.
 
 Example 1:
-Input: stones = [2,7,4,1,8,1]
+Input: stones = [2, 7, 4, 1, 8, 1]
 Output: 1
 Explanation:
 We combine 7 and 8 to get 1 so the array converts to [2,4,1,1,1] then,

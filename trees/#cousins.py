@@ -9,11 +9,10 @@ Return true if and only if the nodes corresponding to the values x and y are cou
 '''
 
 
-def isCousins(root: TreeNode, x: int, y: int) -> bool:
+def isCousins(root, x: int, y: int) -> bool:
     res = []  # store (parent, depth) tuple
 
-    # bfs
-    queue = [(root, None, 0)]
+    queue = [(root, None, 0)]  # bfs
     while queue:
         # minor optimization to stop early if both targets found
         if len(res) == 2:

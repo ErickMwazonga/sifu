@@ -10,7 +10,7 @@ Examples:
     Explanation: [2,3] has the largest product 6.
 
 2: [-2, 0, -1] -> 0
-    Explanation: The result cannot be 2, because [-2,-1] is not a subarray
+    Explanation: The result cannot be 2, because [-2, -1] is not a subarray
 '''
 
 

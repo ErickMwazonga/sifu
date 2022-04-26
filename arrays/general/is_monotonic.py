@@ -44,6 +44,6 @@ def isMonotonic_v3(A):
     return mono_inc(A) or mono_dec(A)
 
 
-assert isMonotonic2([1, 2, 2, 3]) == True
-assert isMonotonic2([6, 5, 4, 4]) == True
-assert isMonotonic2([1, 3, 2]) == False
+assert isMonotonic_v3([1, 2, 2, 3]) == True
+assert isMonotonic_v3([6, 5, 4, 4]) == True
+assert isMonotonic_v3([1, 3, 2]) == False

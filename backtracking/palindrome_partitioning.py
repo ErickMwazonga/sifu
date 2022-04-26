@@ -7,7 +7,7 @@ Return all possible palindrome partitioning of s.
 A palindrome string is a string that reads the same backward as forward.
 
 Examples:
-1. 'aab' ->  [['a','a','b'],['aa','b']]
+1. 'aab' ->  [['a', 'a', 'b'], ['aa', 'b']]
 2. 'a' -> [['a']]
 '''
 

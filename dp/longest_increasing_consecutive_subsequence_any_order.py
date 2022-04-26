@@ -17,7 +17,7 @@ Explanation: The subsequence 36, 35, 33, 34, 32 is the longest subsequence of co
 
 
 def longest_subsequence(A: list) -> int:
-    '''Time complexity: O(n), Space complexity: O(n)'''
+    '''Time: O(n), Space: O(n)'''
 
     visited = set(A)
     max_len = 0

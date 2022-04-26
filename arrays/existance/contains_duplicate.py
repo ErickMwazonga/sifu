@@ -19,6 +19,7 @@ def containsDuplicate(nums):
 
 def containsDuplicate_v2(nums):
     seen = set()
+
     for num in nums:
         if num in seen:
             return True

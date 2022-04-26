@@ -46,7 +46,7 @@ def hasPath(graph, src, dst):
 
     queue = [src]
 
-    while (queue.length):
+    while queue.length:
         current = queue.pop(0)
 
         if (current == dst):

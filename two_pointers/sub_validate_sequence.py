@@ -14,8 +14,9 @@ sequence = [1,6,-1,10]
 
 def isValidSubsequence(array, sequence):
     arrayIdx, seqIdx = 0, 0
+    n_array, n_sequence = len(array)
 
-    while arrayIdx < len(array) and seqIdx < len(sequence):
+    while arrayIdx < n_array and seqIdx < n_sequence:
         if array[arrayIdx] == sequence[seqIdx]:
             seqIdx += 1
 

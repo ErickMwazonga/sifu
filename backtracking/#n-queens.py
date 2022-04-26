@@ -1,7 +1,7 @@
 def isNotAttacked(board, row, col):
-    i = row-1
-    jLeft = col-1
-    jRight = col+1
+    i = row - 1
+    jLeft = col - 1
+    jRight = col + 1
 
     while i >= 0:
         if (

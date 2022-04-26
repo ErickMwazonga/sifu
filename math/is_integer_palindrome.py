@@ -1,9 +1,14 @@
 '''
-Check Whether a Number is Palindrome or Not
+9. Palindrome Number
 https://leetcode.com/problems/palindrome-number/
 
-Time complexity: O(log 10(n)), Space complexity: O(1)
-We divided the input by 10 for every iteration, so the time complexity is O(log10(n))
+Given an integer x, return true if x is palindrome integer.
+An integer is a palindrome when it reads the same backward as forward.
+
+Examples:
+1. 121 -> true
+2. -121 > false
+3. 10 -> false
 '''
 
 

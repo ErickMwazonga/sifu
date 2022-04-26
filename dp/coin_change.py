@@ -9,7 +9,7 @@ If that amount of money cannot be made up by any combination of the coins, retur
 You may assume that you have an infinite number of each kind of coin.
 
 Examples
-1. coins = [1,2,5], amount = 11 -> Output: 3 => 11 = 5 + 5 + 1
+1. coins = [1, 2, 5], amount = 11 -> Output: 3 => 11 = 5 + 5 + 1
 2. coins = [2], amount = 3 -> Output: -1 
 3. coins = [1], amount = 0 -> Output: 0
 4. coins = [1], amount = 1 -> Output: 1
@@ -18,7 +18,7 @@ Examples
 
 
 def coin_change(coins, amount):
-    ''' Time: ~N*M, ~M '''
+    '''Time: ~N*M, ~M'''
 
     MAX = float('inf')
     dp = [0] + [MAX] * amount

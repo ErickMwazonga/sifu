@@ -36,4 +36,4 @@ def create_target_array(nums, index):
 nums = [0, 1, 2, 3, 4]
 index = [0, 1, 2, 2, 1]
 
-create_target_array(nums, index) == [0, 4, 1, 3, 2]
+assert create_target_array(nums, index) == [0, 4, 1, 3, 2]

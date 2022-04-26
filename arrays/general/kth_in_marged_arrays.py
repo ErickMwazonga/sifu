@@ -25,7 +25,7 @@ k = 7
 '''
 
 
-def find_kth_element(arr1, arr2, k):
+def find_kth_element_v2(arr1, arr2, k):
     n, m = len(arr1), len(arr2)
     i, j = 0, 0
 

@@ -13,7 +13,7 @@ then there is a triplet [12, 3 and 9] present in array whose sum is 24.
 
 
 def three_sum(nums, target):
-    '''Time complexity: 0(n^2)'''
+    '''Time: 0(n^2)'''
 
     nums.sort()
     n = len(nums)

@@ -8,11 +8,11 @@ write a function to search target in nums. If target exists, then return its ind
 You must write an algorithm with O(log n) runtime complexity.
 
 Example 1:
-Input: nums = [-1,0,3,5,9,12], target = 9
+Input: nums = [-1, 0, 3, 5, 9, 12], target = 9
 Output: 4  -> Index 4
 
 Example 2:
-Input: nums = [-1,0,3,5,9,12], target = 2
+Input: nums = [-1, 0, 3, 5, 9, 12], target = 2
 Output: -1 -> Doesn't exist
 '''
 

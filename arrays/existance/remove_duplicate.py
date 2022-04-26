@@ -9,12 +9,12 @@ Do not allocate extra space for another array, you must do this by
 modifying the input array in-place with O(1) extra memory.
 
 Example 1:
-Input: [1,1,2]
+Input: [1, 1, 2]
 Output: 2 (length of 2), nums = [1,2]
 
 Example 2:
-Input: nums = [0,0,1,1,1,2,2,3,3,4]
-Output: 5, nums = [0,1,2,3,4]
+Input: nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+Output: 5, nums = [0, 1, 2, 3, 4]
 '''
 
 
@@ -30,7 +30,7 @@ def removeDuplicates(nums):
     return len(nums)
 
 
-def remove_duplicates(nums):
+def removeDuplicates_v2(nums):
     n = len(nums)
     count = 1
 
@@ -42,7 +42,7 @@ def remove_duplicates(nums):
     return count
 
 
-def removeDuplicates(A):
+def removeDuplicates_v3(A):
     count = 1
     for i in range(1, len(A)):
         if A[i] != A[i-1]:
@@ -51,7 +51,7 @@ def removeDuplicates(A):
     return count
 
 
-def remove_duplicates(arr):
+def removeDuplicates_v4(arr):
     seen, res = set(), []
 
     for num in arr:

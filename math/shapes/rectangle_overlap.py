@@ -11,11 +11,11 @@ To be clear, two rectangles that only touch at the corner or edges do not overla
 Given two axis-aligned rectangles rec1 and rec2, return true if they overlap, otherwise return false.
 
 Example 1:
-Input: rec1 = [0,0,2,2], rec2 = [1,1,3,3]
+Input: rec1 = [0, 0, 2, 2],  rec2 = [1, 1, 3, 3]
 Output: true
 
 Example 2:
-Input: rec1 = [0,0,1,1], rec2 = [1,0,2,1]
+Input: rec1 = [0, 0, 1, 1],  rec2 = [1, 0, 2, 1]
 Output: false
 '''
 
