@@ -46,6 +46,7 @@ class Solution:
             return
 
         grid[i][j] = 0  # SINK
+
         self.dfs(grid, i+1, j)
         self.dfs(grid, i, j+1)
         self.dfs(grid, i, j-1)

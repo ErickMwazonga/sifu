@@ -1,6 +1,7 @@
 '''
 19. Remove Nth Node From End of List
 https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+Resource - https://leetcode.com/problems/remove-nth-node-from-end-of-list/discuss/1164537/Short-and-Simple-One-Pass-Solution-w-Explanation-or-Beats-100-or-No-dummy-node-required
 
 Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
@@ -17,7 +18,25 @@ class ListNode:
 
 
 def removeNthFromEnd(head, n: int):
+    ptr, length = head, 0
+    while ptr:
+        ptr, length = ptr.next, length + 1
+
+    # Deleting first node
+    if length == n:
+        return head.next
+
+    ptr = head
+    for _ in range(1, length - n):
+        ptr = ptr.next
+
+    ptr.next = ptr.next.next
+    return head
+
+
+def removeNthFromEnd_v2(head, n: int):
     count, curr = 0, head
+
     while curr:
         count += 1
         curr = curr.next
@@ -31,18 +50,16 @@ def removeNthFromEnd(head, n: int):
     return dummy.next
 
 
-def removeNthFromEnd_v2(head, n):
-    dummy = ListNode(0, head)
-    left, right = dummy, head
+def removeNthFromEnd_v3(head, n):
+    fast = slow = head
+    for _ in range(n):
+        fast = fast.next
 
-    while n > 0:
-        right = right.next
-        n -= 1
+    if not fast:
+        return head.next
 
-    while right:
-        left = left.next
-        right = right.next
+    while fast.next:
+        fast, slow = fast.next, slow.next
 
-    left.next = left.next.next
-
-    return dummy.next
+    slow.next = slow.next.next
+    return head

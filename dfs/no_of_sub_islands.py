@@ -36,7 +36,7 @@ class Solution:
             return False
 
         # grid1[row][col] == 1 and grid2[row][col] == 1:
-        grid2[row][col] = 0
+        grid2[row][col] = 0  # SINK
 
         left = self.check_islands(grid1, grid2, row, col - 1)
         right = self.check_islands(grid1, grid2, row, col + 1)

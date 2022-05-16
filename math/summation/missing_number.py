@@ -14,7 +14,7 @@ Examples:
 '''
 
 
-def missing_number(nums):
+def missingNumber(nums):
     n = len(nums)
     visited = set(nums)
 

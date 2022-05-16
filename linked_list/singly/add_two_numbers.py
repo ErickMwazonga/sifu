@@ -50,3 +50,52 @@ def addTwoNumbers(l1: ListNode, l2: ListNode):
         curr.next = ListNode(carry)
 
     return dummy.next
+
+
+class Solution:
+    def addTwoNumbers(self, l1, l2):
+        list1, list2 = [], []
+
+        curr = l1
+        while curr:
+            list1.append(curr.val)
+            curr = curr.next
+
+        curr = l2
+        while curr:
+            list2.append(curr.val)
+            curr = curr.next
+
+        dummy = curr = ListNode(0)
+        carry = 0
+        while list1 or list2:
+            _sum = 0
+
+            if list1:
+                _sum += list1.pop()
+
+            if list2:
+                _sum += list2.pop()
+
+            _sum += carry
+            carry, rem = divmod(_sum, 10)
+
+            new_node = ListNode(rem)
+            curr.next = new_node
+            curr = curr.next
+
+        if carry:
+            curr.next = ListNode(1)
+
+        return self.reverse(dummy.next)
+
+    def reverse(self, head):
+        prev, curr = None, head
+
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+
+        return prev

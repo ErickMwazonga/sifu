@@ -31,17 +31,18 @@ def copyRandomList(head):
         return None
 
     mapping = {}
-    current = head
+    curr = head
 
-    while current:
-        mapping[current] = Node(current.val)
-        current = current.next
+    while curr:
+        mapping[curr] = Node(curr.val)
+        curr = curr.next
 
     for node in mapping:
+        copy = mapping[node]
         if node.next:
-            mapping[node].next = mapping[node.next]
+            copy.next = mapping[node.next]
         if node.random:
-            mapping[node].random = mapping[node.random]
+            copy.random = mapping[node.random]
 
     return mapping[head]
 
@@ -52,7 +53,7 @@ def copyRandomList_v2(head):
     curr = head
     while curr:
         copy = Node(curr.val)
-        old_to_copy[curr] = copy
+        old_to_copy[curr] = Node(curr.val)
         curr = curr.next
 
     curr = head

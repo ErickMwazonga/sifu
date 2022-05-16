@@ -14,7 +14,7 @@ class LinkedList:
     def __init__(self, head=None):
         self.head = head
 
-    def mergeSortedLists(head1, head2):
+    def mergeSortedLists(self, head1, head2):
         ptr1 = head1
         ptr2 = head2
 
@@ -45,7 +45,7 @@ class LinkedList:
 
         return returnedHead
 
-    def mergeSort(head):
+    def mergeSort(self, head):
         if head is None or head.next is None:
             return head
 
@@ -58,11 +58,10 @@ class LinkedList:
         headRightHalf = slow.next
         slow.next = None
 
-        head = mergeSort(head)
-        headRightHalf = mergeSort(headRightHalf)
+        head = self.mergeSort(head)
+        headRightHalf = self.mergeSort(headRightHalf)
 
-        return mergeSortedLists(head, headRightHalf)
+        return self.mergeSortedLists(head, headRightHalf)
 
-
-def sortList(list):
-    list.head = mergeSort(list.head)
+    def sortList(self, list):
+        list.head = self.mergeSort(list.head)

@@ -51,6 +51,7 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 19. https://hercy.me/
 20. https://github.com/jiselectric/Algorithm
 21. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
+22. https://maxming0.github.io/
 
 ## 75 Curated Questions
 

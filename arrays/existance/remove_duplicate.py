@@ -10,7 +10,7 @@ modifying the input array in-place with O(1) extra memory.
 
 Example 1:
 Input: [1, 1, 2]
-Output: 2 (length of 2), nums = [1,2]
+Output: 2 (length of 2), nums = [1, 2]
 
 Example 2:
 Input: nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]

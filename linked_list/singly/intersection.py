@@ -14,14 +14,14 @@ class ListNode:
 
 
 def getIntersectionNode(headA, headB):
-    visited = set()
+    seen = set()
 
     while headA:
-        visited.add(headA)
+        seen.add(headA)
         headA = headA.next
 
     while headB:
-        if headB in visited:
+        if headB in seen:
             return headB
 
         headB = headB.next
@@ -34,6 +34,9 @@ def getIntersectionNode(headA, headB):
     1. https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/1092898/JS-Python-Java-C%2B%2B-or-Easy-O(1)-Extra-Space-Solution-w-Visual-Explanation
     2. https://www.youtube.com/watch?v=D0X0BONOQhI
     '''
+
+    if not headA or not headB:
+        return None
 
     a, b = headA, headB
 
