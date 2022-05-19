@@ -17,37 +17,37 @@ Output: [3, 99, -1, -100]
 '''
 
 
-def rotate(nums, k) -> None:
-    '''Do not return anything, modify nums in-place instead'''
+def rotate(nums, k: int) -> None:
+    k = k % len(nums)
+    nums[:] = nums[-k:] + nums[:-k]
 
-    temps = []
+
+def rotate_v2(self, nums, k):
     n = len(nums)
+    new_nums = [0] * n
 
-    for i in range(n-k, n):
-        temps.append(nums[i])
-
-    for i in range(0, n-k):
-        temps.append(nums[i])
-
-    for i in range(0, len(nums)):
-        nums[i] = temps[i]
-
-
-assert rotate([1, 2, 3, 4, 5, 6, 7], 3) == [5, 6, 7, 1, 2, 3, 4]
-
-
-def rotate_v2(nums, k: int) -> None:
-    for _ in range(k):
-        _last = nums.pop()
-        nums.insert(0, _last)
-
-
-def rotate_v3(nums, k) -> None:
-    n = len(nums)
-    temps = nums + nums
-    start = n - k
-    end = n + k + 1
-
-    temps = temps[start:end]
     for i in range(n):
-        nums[i] = temps[i]
+        idx = (i + k) % n
+        new_nums[idx] = nums[i]
+
+    for i in range(n):
+        nums[i] = new_nums[i]
+
+
+class Solution_V3:
+    def rotate(self, nums, k) -> None:
+        n = len(nums)
+
+        k %= n
+
+        self.reverse(nums, 0, n - 1)
+        self.reverse(nums, 0, k - 1)
+        self.reverse(nums, k, n - 1)
+
+    def reverse(self, nums, start, end) -> None:
+        while start < end:
+            temp = nums[start]
+            nums[start] = nums[end]
+            nums[end] = temp
+            start += 1
+            end -= 1

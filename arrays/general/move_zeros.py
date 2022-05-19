@@ -1,6 +1,7 @@
 '''
 283. Move Zeroes
 https://leetcode.com/problems/move-zeroes/
+Resource - https://leetcode.com/problems/move-zeroes/discuss/979820/Two-Pointeror-Visual-or-Python
 
 Given an array nums, write a function to move all 0's to the end of
 it while maintaining the relative order of the non-zero elements.
@@ -16,12 +17,14 @@ Note: Do this in-place without making a copy of the array.
 def move_zeroes(nums) -> None:
     '''Do not return anything, modify nums in-place instead'''
 
-    i = 0
+    i, n = 0, len(nums)
 
-    for j in range(len(nums)):
-        if nums[j] != 0:
-            nums[i], nums[j] = nums[j], nums[i]
-            i += 1
+    for j in range(n):
+        if nums[j] == 0:
+            continue
+
+        nums[i], nums[j] = nums[j], nums[i]
+        i += 1
 
 
 def move_zeroes_v2(nums) -> None:

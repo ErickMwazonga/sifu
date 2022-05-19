@@ -1,6 +1,7 @@
 '''
 91. Decode Ways
 https://leetcode.com/problems/decode-ways/
+Resource: https://inner-game.tistory.com/460
 
 A message containing letters from A-Z is being encoded to numbers using the following mapping:
 'A' -> 1
@@ -18,39 +19,57 @@ Examples:
 '''
 
 
-def num_decodings(s: str) -> int:
-    if not s:
-        return 0
-
-    n = len(s)
-    dp = [0] * (n + 1)
-
-    # base case initialization
-    dp[0] = 1
-    dp[1] = 0 if s[0] == '0' else 1
-
-    for i in range(2, n + 1):
-        # One step jump
-        if 0 < int(s[i-1:i]) <= 9:
-            dp[i] += dp[i - 1]
-
-        # Two step jump
-        if 10 <= int(s[i-2:i]) <= 26:
-            dp[i] += dp[i - 2]
-
-    return dp[n]
-
-
 # RECURSION
-def ways_to_decode(str, i=0):
-    '''Time complexity: O(2^n), Space complexity: O(n)'''
+class Solution:
+    '''Time: O(2^n), Space: O(n)'''
 
-    n = len(str)
-    if n == 0 or (i < n and str[i] == '0'):
-        return 0
-    elif i >= n-1:
-        return 1
-    elif '10' <= (str[i] + str[i+1]) <= '26':
-        return ways_to_decode(str, i+1) + ways_to_decode(str, i+2)
-    else:
-        return ways_to_decode(str, i+1)
+    def numDecodings(self, s):
+        if not s:
+            return 0
+
+        return self.dfs(s, i=0)
+
+    def dfs(self, s, i):
+        n = len(s)
+
+        if i < n and s[i] == '0':
+            return 0
+
+        if i >= n-1:
+            return 1
+
+        ans = self.dfs(s, i+1)
+        if int(s[i:i+2]) <= 26:
+            ans += self.dfs(s, i+2)
+
+        return ans
+
+
+class Solution:
+    '''Time: O(2*n) - O(n), Space: O(n)'''
+
+    def numDecodings(self, s):
+        if not s:
+            return 0
+
+        memo = {}
+        return self.dfs(s, i=0, memo=memo)
+
+    def dfs(self, s, i, memo):
+        n = len(s)
+
+        if i < n and s[i] == '0':
+            return 0
+
+        if i >= n-1:
+            return 1
+
+        if i in memo:
+            return memo[i]
+
+        ans = self.dfs(s, i+1, memo)
+        if int(s[i:i+2]) <= 26:
+            ans += self.dfs(s, i+2, memo)
+
+        memo[i] = ans
+        return ans

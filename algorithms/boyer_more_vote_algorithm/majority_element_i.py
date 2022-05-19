@@ -14,28 +14,6 @@ Examples
 
 class Solution:
     def majority_element(self, nums: list[int]) -> int:
-        '''
-        Boyer Moore Majority Voting algorithm
-        The Boyer-Moore majority vote algorithm is an algorithm for finding the majority of a
-        sequence of elements using linear time and constant space.
-        '''
-
-        counter = 1
-        majority = nums[0]
-
-        for i in range(1, len(nums)):
-            if nums[i] == majority:
-                counter += 1
-            else:
-                counter -= 1
-
-            if counter == 0:
-                majority = nums[i]
-                counter = 1
-
-        return majority
-
-    def majority_element2(self, nums: list[int]) -> int:
         counter = {}
         majority = len(nums) // 2
 
@@ -45,6 +23,27 @@ class Solution:
         for k, v in counter.items():
             if v > majority:
                 return k
+
+    def majority_element_v2(self, nums: list[int]) -> int:
+        '''
+        Boyer Moore Majority Voting algorithm
+        The Boyer-Moore majority vote algorithm is an algorithm for finding the majority of a
+        sequence of elements using linear time and constant space.
+        '''
+
+        counter, majority = 1, nums[0]
+
+        for num in nums[1:]:
+            if num == majority:
+                counter += 1
+            else:
+                counter -= 1
+
+            if counter == 0:
+                majority = num
+                counter = 1
+
+        return majority
 
 
 soln = Solution()

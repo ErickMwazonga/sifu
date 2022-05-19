@@ -37,10 +37,10 @@ def min_distance(word1, word2):
             if word1[i-1] == word2[j-1]:
                 dp[i][j] = dp[i-1][j-1]
             else:
-                dp[i][j] = 1 + min(
-                    dp[i-1][j],  # remove
-                    dp[i][j-1],  # Insert
-                    dp[i-1][j-1]  # replace
-                )
+                insert = dp[i][j-1]
+                remove = dp[i-1][j]
+                replace = dp[i-1][j-1]
+
+                dp[i][j] = 1 + min(insert, remove, replace)
 
     return dp[n][m]

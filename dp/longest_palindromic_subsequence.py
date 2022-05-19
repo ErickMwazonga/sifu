@@ -1,41 +1,13 @@
 '''
-5. Longest Palindromic Substring
-https://leetcode.com/problems/longest-palindromic-substring/
+516. Longest Palindromic Subsequence
+https://leetcode.com/problems/longest-palindromic-subsequence/
 
-Given a string s, return the longest palindromic substring in s.
+Given a string s, find the longest palindromic subsequence's length in s.
+A subsequence is a sequence that can be derived from another sequence by 
+deleting some or no elements without changing the order of the remaining elements. 
 
 Examples:
-1. 'babad' -> 'bab' => Note: 'aba' is also a valid answer.
-2. 'cbbd' -> 'bb'
-3. 'a' -> 'a'
-4. 'ac' -> 'a'
+1. 'bbbab' -> 4
+2. 'cbbd' -> 2
+Explanation: One possible longest palindromic subsequence is 'bb'.
 '''
-
-
-class Solution:
-    def longestPalindrome(self, s: str) -> str:
-        if not s:
-            return ''
-
-        longest = ''
-        for mid in range(len(s)):
-            sub = self.find_palindrome_from(s, mid, mid)
-            if len(sub) > len(longest):
-                longest = sub
-
-            sub = self.find_palindrome_from(s, mid, mid + 1)
-            if len(sub) > len(longest):
-                longest = sub
-
-        return longest
-
-    def find_palindrome_from(self, string, left, right):
-        while left >= 0 and right < len(string):
-            if string[left] != string[right]:
-                break
-
-            left += 1
-            right -= 1
-
-        # not string[left:right+1] because we are going outside
-        return string[left + 1: right]

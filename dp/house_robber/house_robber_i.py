@@ -13,11 +13,9 @@ Given a list of non-negative integers representing the
 amount of money of each house, determine the maximum amount
 of money you can rob tonight without alerting the police.
 
-Input: [1, 2, 3, 1]
-Output: 4 -> 1 + 3 = 4.
-
-Input: [2, 7, 9, 3, 1]
-Output: 12 -> 2 + 9 + 1 = 12.
+Examples
+1. [1, 2, 3, 1] -> 4 => 1 + 3 = 4.
+2. [2, 7, 9, 3, 1] -> 12 => 2 + 9 + 1 = 12.
 '''
 
 
@@ -33,7 +31,27 @@ def rob(nums):
     return nums[-1]
 
 
-def rob_v2(nums: list[int]) -> int:
+def rob_v1(nums):
+    rob, no_rob = 0, 0
+
+    for num in nums:
+        rob_value = max(rob, no_rob + num)
+        no_rob = rob
+        rob = rob_value
+
+    return rob
+
+
+def rob_v2(nums):
+    rob, not_rob = 0, 0
+
+    for num in nums:
+        rob, not_rob = not_rob + num, max(rob, not_rob)
+
+    return max(rob, not_rob)
+
+
+def rob_v3(nums: list[int]) -> int:
     '''Time: O(n), Space: O(n)'''
 
     if not nums:
@@ -58,12 +76,3 @@ def rob_v2(nums: list[int]) -> int:
 
 assert rob([1, 2, 3, 1]) == 4
 assert rob([2, 7, 9, 3, 1]) == 12
-
-
-def rob_v3(nums):
-    rob, not_rob = 0, 0
-
-    for num in nums:
-        rob, not_rob = not_rob + num, max(rob, not_rob)
-
-    return max(rob, not_rob)

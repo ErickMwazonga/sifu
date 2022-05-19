@@ -19,8 +19,8 @@ Example 2:
 
 class Solution:
     '''
-    Time complexity: O(MN). We're solving M * Nsubproblems. Solving each subproblem is an O(1)operation.
-    Space complexity: O(MN). We're allocating a 2D array of size M * N to save the answers to subproblems
+    Time: O(MN). We're solving M * Nsubproblems. Solving each subproblem is an O(1)operation.
+    Space: O(MN). We're allocating a 2D array of size M * N to save the answers to subproblems
     '''
 
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:

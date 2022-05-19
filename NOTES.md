@@ -275,3 +275,8 @@ Returns a character (a string) from an integer (represents unicode code point of
 >>> char_rep = chr(val_repr)
 # 5
 ```
+
+### Random
+`random.randint(a, b)`
+
+Return a random integer N such that a <= N <= b. Alias for `randrange(a, b+1)`

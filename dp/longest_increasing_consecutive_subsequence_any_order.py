@@ -35,11 +35,6 @@ def longest_subsequence(A: list) -> int:
     return max_len
 
 
-assert longest_subsequence([1, 9, 3, 10, 4, 20, 2]) == 4
-assert longest_subsequence([36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]) == 5
-assert longest_subsequence([-1, 0, 1]) == 3
-
-
 def longest_subsequence_v2(A: list) -> int:
     visited = set(A)
     max_len = 0
@@ -59,6 +54,10 @@ def longest_subsequence_v2(A: list) -> int:
 
     return max_len
 
+
+assert longest_subsequence([1, 9, 3, 10, 4, 20, 2]) == 4
+assert longest_subsequence([36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42]) == 5
+assert longest_subsequence([-1, 0, 1]) == 3
 
 assert longest_subsequence_v2([1, 9, 3, 10, 4, 20, 2]) == 4
 assert longest_subsequence_v2(

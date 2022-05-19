@@ -1,13 +1,14 @@
 '''
-LeetCode 152. Maximum Product Subarray
+152. Maximum Product Subarray
 https://leetcode.com/problems/maximum-product-subarray/
+Resource: https://www.youtube.com/watch?v=lXVy6YWFcRM
 
 Given an integer array nums, find the contiguous subarray within an
 array (containing at least one number) which has the largest product.
 
 Examples:
 1. [2, 3, -2, 4] -> 6
-    Explanation: [2,3] has the largest product 6.
+    Explanation: [2, 3] has the largest product 6.
 
 2: [-2, 0, -1] -> 0
     Explanation: The result cannot be 2, because [-2, -1] is not a subarray
@@ -15,7 +16,7 @@ Examples:
 
 
 def max_product(nums: list) -> int:
-    '''Time complexity: ~N, Space complexity: ~1'''
+    '''Time: ~N, Space: ~1'''
 
     if not nums:
         return 0

@@ -1,6 +1,8 @@
 '''
 322. Coin Change
 https://leetcode.com/problems/coin-change/
+Resource: https://www.youtube.com/watch?v=H9bfqozjoqs
+Resource: https://randomwits.com/blog/coin-change-leetcode-solution
 
 You are given coins of different denominations and a total amount of money amount.
 Write a function to compute the fewest number of coins that you need to make up that amount.
@@ -18,19 +20,18 @@ Examples
 
 
 def coin_change(coins, amount):
-    '''Time: ~N*M, ~M'''
+    '''Time: ~N*M, N-amount, M-len(coins)'''
 
     MAX = float('inf')
-    dp = [0] + [MAX] * amount
 
-    for i in range(0, amount + 1):
+    dp = [MAX] * (amount + 1)
+    dp[0] = 0
+
+    for i in range(1, amount + 1):
         for coin in coins:
             balance = i - coin
 
             if balance >= 0:
                 dp[i] = min(dp[i], dp[balance] + 1)
 
-    if dp[amount] == MAX:
-        return -1
-
-    return dp[-1]
+    return -1 if dp[-1] == MAX else dp[-1]

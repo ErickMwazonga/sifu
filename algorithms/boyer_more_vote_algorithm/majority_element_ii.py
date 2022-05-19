@@ -15,8 +15,8 @@ Examples
 def majority_element(nums):
     # There can only be 2 or less majority elements
 
-    cand1, cand2 = None, None
-    count1, count2 = 0, 0
+    cand1, count1 = None, 0
+    cand2, count2 = None, 0
 
     for num in nums:
         if num == cand1:
@@ -33,6 +33,8 @@ def majority_element(nums):
             count1 -= 1
             count2 -= 1
 
+    # return [x for x in (cand1, cand2) if nums.count(x) > len(nums) // 3]
+
     # Get the candidate no of occurrences
     count1, count2 = 0, 0
     for num in nums:
@@ -43,10 +45,13 @@ def majority_element(nums):
 
     # Verify if indeed they have occurrences greate than n/3
     ans = []
-    if count1 > len(nums)/3:
+    athird = len(nums) / 3
+    if count1 > athird:
         ans.append(cand1)
-    if count2 > len(nums)/3:
+
+    if count2 > athird:
         ans.append(cand2)
+
     return ans
 
 

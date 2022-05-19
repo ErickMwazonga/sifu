@@ -1,8 +1,9 @@
 '''
 202. Happy Number
 https://leetcode.com/problems/happy-number/
+Resource: https://leetcode.com/problems/happy-number/discuss/1184930/Beats-94-Simple-Python-solution-O(log-n)-with-Proper-Explanation-(Floyd
 
-Write an algorithm to determine if a number n is "happy".
+Write an algorithm to determine if a number n is 'happy'.
 A happy number is a number defined by the following process:
 Starting with any positive integer, replace the number by the sum of the squares of its digits,
 and repeat the process until the number equals 1 (where it will stay),
@@ -11,8 +12,8 @@ Those numbers for which this process ends in 1 are happy numbers.
 
 Return True if n is a happy number, and False if not.
 
-Example:
-19 -> true
+Examples:
+1. 19 -> true
 Explanation:
 1**2 + 9**2 = 82
 8**2 + 2**2 = 68
@@ -21,7 +22,22 @@ Explanation:
 '''
 
 
-def is_happy(n: int) -> bool:
+def is_happy(n):
+    seen = {n}
+
+    while n:
+        n = squared(n)
+
+        if n == 1:
+            return True
+
+        if n in seen:
+            return False
+
+        seen.add(n)
+
+
+def is_happy_v2(n: int) -> bool:
     slow = squared(n)
     fast = squared(squared(n))
 
@@ -45,20 +61,6 @@ def squared_v2(n):
         result += last * last
 
     return result
-
-
-def is_happy2(n):
-    seen = {n}
-
-    while (n):
-        n = squared(n)
-
-        if n == 1:
-            return True
-        elif n in seen:
-            return False
-        else:
-            seen.add(n)
 
 
 assert is_happy(19) == True
