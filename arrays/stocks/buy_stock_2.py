@@ -37,8 +37,10 @@ def max_profit(prices) -> int:
     max_profit = 0
 
     for i in range(1, n):
-        if prices[i] > prices[i - 1]:
-            profit = prices[i] - prices[i - 1]
+        prev_price = prices[i - 1]
+
+        if prices[i] > prev_price:
+            profit = prices[i] - prev_price
             max_profit += profit
 
     return max_profit

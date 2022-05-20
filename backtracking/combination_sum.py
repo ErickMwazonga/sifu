@@ -11,7 +11,7 @@ Two combinations are unique if the frequency of at least one of the chosen numbe
 
 Example 1:
 Input: candidates = [2,3,6,7], target = 7
-Output: [[2,2,3],[7]]
+Output: [[2,2,3], [7]]
 
 Explanation:
 2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times. 7 is a candidate, and 7 = 7.
@@ -23,6 +23,27 @@ Output: [[2,2,2,2], [2,3,3], [3,5]]
 
 
 class Solution:
+    def combinationSum(self, candidates, target):
+        res = []
+        self.dfs(candidates, target, res, total=0, index=0, subset=[])
+
+        return res
+
+    def dfs(self, cands, target, res, total, index, subset):
+        if total == target:
+            res.append(subset[:])
+            return
+
+        if index >= len(cands) or total > target:
+            return
+
+        for i in range(index, len(cands)):
+            subset.append(cands[i])
+            self.dfs(cands, target, res, total + cands[i], i, subset)
+            subset.pop()
+
+
+class Solution_V2:
     def combinationSum(self, candidates, target):
         candidates.sort()
         res = []
@@ -42,25 +63,3 @@ class Solution:
             cur_subset.append(candidates[i])
             self.helper(candidates, remain - candidates[i], res, cur_subset, i)
             cur_subset.pop()
-
-
-class Solution_V2:
-    def combinationSum(self, candidates, target):
-        res = []
-        self.helper(candidates, target, res, total=0, index=0, subset=[])
-
-        return res
-
-    def helper(self, cands, target, res, total, index, subset):
-        if total == target:
-            res.append(subset[:])
-            return
-
-        if index >= len(cands) or total > target:
-            return
-
-        subset.append(cands[index])
-        self.helper(cands, target, res, total + cands[index], index, subset)
-        subset.pop()
-
-        self.helper(cands, target, res, total, index + 1, subset)

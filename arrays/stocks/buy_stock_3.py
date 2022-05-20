@@ -52,9 +52,6 @@ def max_rofit(prices):
     return total_max
 
 
-assert max_rofit2([3, 3, 5, 0, 0, 3, 1, 4]) == 6
-
-
 def max_profit_v2(prices):
     first_buy, first_sell = float('-inf'), 0
     second_buy, second_sell = float('-inf'), 0
@@ -66,3 +63,6 @@ def max_profit_v2(prices):
         second_sell = max(second_sell, second_buy + price)
 
     return second_sell
+
+
+assert max_rofit([3, 3, 5, 0, 0, 3, 1, 4]) == 6

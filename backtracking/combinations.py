@@ -26,7 +26,6 @@ Output: [[1]]
 class Solution:
     def combine(self, n: int, k: int):
         res = []
-
         self.dfs(n, k, res, start=1, combo=[])
         return res
 
@@ -37,5 +36,5 @@ class Solution:
 
         for i in range(start, n+1):
             combo.append(i)
-            self.dfs(n, k, res, i+1, combo)
+            self.dfs(n, k, res, i + 1, combo)
             combo.pop()

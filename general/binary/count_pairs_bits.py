@@ -5,8 +5,7 @@ Given an array arr with unique elements,
 the task is to count the total number of pairs of elements that have equal set bits count.
 
 Examples:
-Input: [2, 5, 8, 1, 3]
-Output: 4
+1. [2, 5, 8, 1, 3] -> 4
 Set bits counts for [2, 5, 8, 1, 3] are [1, 2, 1, 1, 2]
 All pairs with same set bits count are [2, 8], [2, 1], [5, 3], [8, 1]
 '''
@@ -29,5 +28,4 @@ def totalPairs(arr):
     return res
 
 
-arr = [2, 5, 8, 1, 3]
-print(totalPairs(arr))
+assert totalPairs([2, 5, 8, 1, 3]) == 4

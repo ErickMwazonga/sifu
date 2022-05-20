@@ -11,28 +11,45 @@ Example 1:
 '''
 
 
-def subsetsWithDup(self, nums):
-    res, subset = [], []
-    nums.sort()
-
-    self.dfs(nums, 0, subset, res)
-    return res
-
-
-def dfs(self, nums, index, subset, res):
-    res.append(subset)
-
-    for i in range(index, len(nums)):
-        if i > index and nums[i] == nums[i-1]:
-            continue
-
-        subset.append(nums[i])
-        self.dfs(nums, i + 1, subset, res)
-        subset.pop()
-        # self.dfs(nums, i+1, subset+[nums[i]], res)
-
-
 class Solution:
+    '''Time: O(n*2^n)'''
+
+    def subsets(self, nums):
+        nums.sort()
+
+        res, subset = [], []
+        self.dfs(nums, res, 0, subset)
+        return res
+
+    def dfs(self, nums, res, index, subset):
+        res.append(subset)
+
+        for i in range(index, len(nums)):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+
+            self.dfs(nums, res, i+1, subset+[nums[i]])
+
+
+class Solution_V1:
+    def subsetsWithDup(self, nums):
+        nums.sort()
+
+        res, subset = [], []
+        self.dfs(nums, res, subset)
+        return res
+
+    def dfs(self, nums, subset, res):
+        res.append(subset)
+
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+
+            self.dfs(nums[i+1:], res, subset + [nums[i]])
+
+
+class Solution_V2:
     def subsetsWithDup(self, nums):
         res, subset = [], []
         nums.sort()

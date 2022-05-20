@@ -12,12 +12,12 @@ The tests are generated such that there is exactly one solution. You may not use
 Your solution must use only constant extra space.
 
 Example 1:
-Input: numbers = [2,7,11,15], target = 9
-Output: [1,2]
+Input: numbers = [2, 7, 11, 15], target = 9
+Output: [1, 2]
 
 Example 2:
-Input: numbers = [2,3,4], target = 6
-Output: [1,3]
+Input: numbers = [2, 3, 4], target = 6
+Output: [1, 3]
 '''
 
 
@@ -25,8 +25,10 @@ def twoSum(numbers, target):
     dic = {}
 
     for i, num in enumerate(numbers):
-        if target-num in dic:
-            return [dic[target-num]+1, i+1]
+        rem = target-num
+
+        if rem in dic:
+            return [dic[rem] + 1, i + 1]
 
         dic[num] = i
 

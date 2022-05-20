@@ -22,15 +22,40 @@ def find_peak(arr):
 
     n = len(arr)
 
+    if n < 2:
+        return 0
+
     for i in range(n):
-        if (
-            (i == 0 or arr[i] >= arr[i-1]) and
-            (i == n-1 or arr[i] >= arr[i+1])
-        ):
+        if i == 0 and arr[i] > arr[i+1]:
             return i
 
+        if i == n-1 and arr[i] > arr[i-1]:
+            return i
 
-def find_peak_v2(A):
+        if (arr[i] > arr[i-1]) and (arr[i] > arr[i+1]):
+            return i
+
+    return -1
+
+
+def find_peak_v2(nums):
+    left, right = 0, len(nums)-1
+
+    while left < right:
+        mid = left + right // 2
+
+        if nums[mid] > nums[mid+1] and nums[mid] > nums[mid-1]:
+            return mid
+
+        if nums[mid] < nums[mid+1]:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return left
+
+
+def find_peak_v3(A):
     left, right = 0, len(A) - 1
 
     while left < right:
@@ -42,19 +67,3 @@ def find_peak_v2(A):
             right = mid
 
     return left
-
-
-def find_peak_v3(arr, left, right):
-    if left >= right:
-        return left
-
-    mid = (left + right) // 2
-
-    if arr[mid] < arr[mid+1]:
-        return find_peak_v3(arr, mid+1, right)
-    else:
-        return find_peak_v3(arr, left, mid)
-
-
-def find_peak2(arr):
-    return find_peak_v3(arr, 0, len(arr)-1)

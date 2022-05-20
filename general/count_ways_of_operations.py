@@ -10,7 +10,7 @@ Operation 2: If the number is odd then you are allowed to perform either (n+1) o
 
 Input : n = 15
 Output : 5
- 15 is odd 15+1=16    
+ 15 is odd 15 + 1=16    
  16 is even 16/2=8     
  8  is even 8/2=4 
  4  is even 4/2=2     
@@ -31,4 +31,4 @@ def count_ways(n):
         return 1 + min(count_ways(n - 1), count_ways(n + 1))
 
 
-print(count_ways(15))
+assert count_ways(15) == 4

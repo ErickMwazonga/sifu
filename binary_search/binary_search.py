@@ -55,7 +55,4 @@ def binary_search_v2(arr, low, high, x):
 
 
 arr = [2, 3, 4, 10, 40]
-x = 10
-low, high = 0, len(arr) - 1
-
-print(binary_search_v2(arr, low, high, x))
+assert binary_search_v2(arr, 0, len(arr) - 1, 10) == 3

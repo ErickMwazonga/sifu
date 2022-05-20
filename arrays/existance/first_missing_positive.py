@@ -26,6 +26,29 @@ def first_missing_positive(arr):
             return i
 
 
+def firstMissingPositive_v1(nums):
+    n = len(nums)
+
+    for i in range(n):
+        if nums[i] <= 0:
+            nums[i] = n + 1
+
+    for i in range(n):
+        num = nums[i]
+
+        if abs(num) > n:
+            continue
+
+        val = abs(num) - 1
+        nums[val] = -abs(nums[val])
+
+    for i in range(n):
+        if nums[i] > 0:
+            return i + 1
+
+    return n + 1
+
+
 def first_missing_positive_v2(nums) -> int:
     n = len(nums)
 
@@ -37,6 +60,7 @@ def first_missing_positive_v2(nums) -> int:
     # placing our marker to see what numbers have been accounted for
     for num in nums:
         num = abs(num)
+
         if num <= n and nums[num - 1] >= 0:
             nums[num - 1] *= -1
 

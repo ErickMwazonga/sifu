@@ -18,42 +18,21 @@ output ->  [
 '''
 
 
+def combinations(lists, res, comb='', i=0):
+    if not lists:
+        return
+
+    if i == len(lists):
+        res.append(comb)
+        return
+
+    for word in lists[i]:
+        out = comb + ' ' + word
+        combinations(lists, res, out, i + 1)
+
+
 def phrases(arr):
-    n = len(arr)
+    res = []
+    combinations(arr, res, '', 0)
 
-    if n == 0:
-        return []
-
-    if n == 1:
-        return arr[0]
-
-    all_combinations = arr[0]
-
-    for i in range(1, n):
-        current_combinations = []
-        current_phrases = arr[i]
-
-        for combination in all_combinations:
-            for phrase in current_phrases:
-                current_combinations.append(f'{combination} {phrase}')
-
-        all_combinations = current_combinations
-
-    return all_combinations
-
-
-def phrases_v2(arr, i=0):
-    '''Time and Space O(m^n*ns)'''
-
-    if i == len(arr):
-        return ['']
-    else:
-        fromNext = phrases(arr, i+1)
-        output = []
-
-        for word in arr[i]:
-            for phrase in fromNext:
-                curr_str = (' ' if len(phrase) > 0 else '')
-                output.append(word + curr_str + phrase)
-
-        return output
+    return res

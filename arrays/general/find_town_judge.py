@@ -16,9 +16,6 @@ If the town judge exists and can be identified, return the label of the town jud
 Otherwise, return -1.
 
 Examples
-Input: N = 2, trust = [[1, 2]]
-Output: 2
-
 Input: N = 3, trust = [[1, 3], [2, 3]]
 Output: 3
 
@@ -33,7 +30,21 @@ Output: 3
 from collections import defaultdict
 
 
-def find_judge(N: int, trust: list[list[int]]) -> int:
+def findJudge(N, trusts):
+    count = [0] * (N + 1)
+
+    for i, j in trusts:
+        count[i] -= 1
+        count[j] += 1
+
+    for i in range(1, N + 1):
+        if count[i] == N - 1:
+            return i
+
+    return -1
+
+
+def find_judge_v0(N: int, trust: list[list[int]]) -> int:
     '''Inspired by https://www.youtube.com/watch?v=ZUP_tIs4VaE&t=419s'''
 
     if N == 1 and not trust:

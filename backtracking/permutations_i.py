@@ -28,7 +28,6 @@ class Solution:
             return
 
         for i in range(len(nums)):
-            # path.append(nums[i]) # doesn't work
             new_nums = nums[:i] + nums[i+1:]
             self.dfs(new_nums, path+[nums[i]], res)
 

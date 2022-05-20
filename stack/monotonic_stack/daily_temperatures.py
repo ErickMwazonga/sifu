@@ -1,6 +1,7 @@
 '''
 739. Daily Temperatures
 https://leetcode.com/problems/daily-temperatures/
+Resource: https://www.youtube.com/watch?v=cTBiBSnjO3c
 
 Given a list of daily temperatures T, return a list such that, for each day in the input,
 tells you how many days you would have to wait until a warmer temperature.
@@ -14,18 +15,16 @@ Each temperature will be an integer in the range [30, 100].
 '''
 
 
-def dailyTemperatures(temps):
-    n = len(temps)
-    days_to_wait = [0] * n
-    stack = []  # indexes from hottest to coldest
+def dailyTemperatures(temperatures):
+    n = len(temperatures)
+    res = [0] * n
+    stack = []  # (tem, index)
 
-    for i in range(n-1, -1, -1):
-        while stack and temps[i] >= temps[stack[-1]]:
-            stack.pop()  # remove lower and not soonest
+    for i, t in enumerate(temperatures):
+        while stack and t > stack[-1][0]:
+            stack_temp, stack_idx = stack.pop()
+            res[stack_idx] = i - stack_idx
 
-        if stack:
-            days_to_wait[i] = stack[-1] - i
+        stack.append((t, i))
 
-        stack.append(i)
-
-    return days_to_wait
+    return res

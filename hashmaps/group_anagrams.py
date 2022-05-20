@@ -7,7 +7,7 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 typically using all the original letters exactly once.
 
 Example 1:
-Input: strs = ['eat','tea','tan','ate','nat','bat']
+Input: strs = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']
 Output: [['bat'], ['nat', 'tan'], ['ate', 'eat', 'tea']]
 
 More Examples:
@@ -25,7 +25,7 @@ def groupAnagrams(strs):
     mapping = {}
 
     for word in strs:
-        sorted_word = ''.join(sorted(word))
+        sorted_word = ''.join(sorted(word))  # tuple(sorted(word))
 
         # mapping[sorted_word] = mapping.get(sorted_word, []) + [item]
         if sorted_word not in mapping:
@@ -40,7 +40,7 @@ def groupAnagrams_v2(strs):
     mapping = defaultdict(list)
 
     for word in strs:
-        sorted_word = ''.join(sorted(word))
+        sorted_word = ''.join(sorted(word))  # tuple(sorted(word))
         mapping[sorted_word].append(word)
 
     return list(mapping.values())
@@ -52,12 +52,13 @@ def groupAnagrams_v3(strs):
     res = defaultdict(list)
 
     for s in strs:
-        count = [0] * 26  # Establish a 26 letter mapping
+        mapping = [0] * 26  # Establish a 26 letter mapping
 
         for char in s:
-            count[ord(char) - ord('a')] += 1  # Freq of each letter
+            val = ord(char) - ord('a')
+            mapping[val] += 1  # Freq of each letter
 
         # Add the array of the corresponding Value, list cannot be a key hence tuple
-        res[tuple(count)].append(s)
+        res[tuple(mapping)].append(s)
 
     return res.values()

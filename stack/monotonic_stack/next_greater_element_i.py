@@ -1,7 +1,7 @@
 '''
 496. Next Greater Element I
 https://leetcode.com/problems/next-greater-element-i/
-Resource: https://www.youtube.com/watch?v=68a1Dc_qVq4
+Resource: https://www.youtube.com/watch?v=68a1Dc_qVq4, https://www.youtube.com/watch?v=7v3XHLLtnfg&list=PLDMSG_DkY6zf4splOszM3iyPUeDQ_-3o5&index=8
 
 The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
 You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
@@ -18,25 +18,23 @@ Explanation: The next greater element for each value of nums1 is as follows:
 - 2 is underlined in nums2 = [1, 3, 4, 2]. There is no next greater element, so the answer is -1.
 '''
 
-# MONOTONIC STACK
-
 
 def nextGreaterElement(nums1, nums2):
     '''Time: O(N*M), Space: O(N)'''
 
     n, m = len(nums1), len(nums2)
 
-    nums1_idx = {n: i for i, n in enumerate(nums1)}
+    mapping = {n: i for i, n in enumerate(nums1)}
     res = [-1] * n
 
     for i in range(m):
-        if nums2[i] not in nums1_idx:
+        num = nums2[i]
+        if num not in mapping:
             continue
 
         for j in range(i + 1, m):
-            if nums2[j] > nums2[i]:
-                curr_num = nums2[i]
-                idx = nums1_idx[curr_num]
+            if nums2[j] > num:
+                idx = mapping[num]
                 res[idx] = nums2[j]
                 break
 
@@ -48,19 +46,20 @@ def nextGreaterElement_v2(nums1, nums2):
 
     n, m = len(nums1), len(nums2)
 
-    nums1_idx = {n: i for i, n in enumerate(nums1)}
+    mapping = {n: i for i, n in enumerate(nums1)}
     res = [-1] * n
 
     stack = []
     for i in range(m):
-        curr = nums2[i]
+        num = nums2[i]
 
-        while stack and curr > stack[-1]:
+        while stack and num > stack[-1]:
             val = stack.pop()
-            idx = nums1_idx[val]
-            res[idx] = curr
+            idx = mapping[val]
 
-        if curr in nums1_idx:
-            stack.append(curr)
+            res[idx] = num
+
+        if num in mapping:
+            stack.append(num)
 
     return res

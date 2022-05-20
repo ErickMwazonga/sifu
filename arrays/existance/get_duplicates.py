@@ -29,10 +29,6 @@ def get_duplicates(arr):
             counts[value] = 1
 
 
-get_duplicates([1, 2, 2, 2, 3])
-# get_duplicates([1,2,1,2])
-
-
 def findDuplicate_v2(nums):
     seen, res = set(), set()
 
@@ -42,3 +38,8 @@ def findDuplicate_v2(nums):
         seen.add(num)
 
     return list(res)
+
+
+assert get_duplicates([1, 2, 2, 2, 3]) == 2
+assert get_duplicates([1, 2, 1]) == 3
+assert get_duplicates([1, 2, 1, 2]) == 2

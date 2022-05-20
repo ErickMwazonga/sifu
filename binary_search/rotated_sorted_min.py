@@ -13,17 +13,36 @@ Examples
 '''
 
 
-def naive_approach(A):
-    _min = A[0]
+def findMin(A):
+    mini = A[0]
 
     for i in range(1, len(A)):
-        if _min > A[i]:
-            _min = A[i]
+        mini = min(mini, A[i])
 
-    return _min
+    return mini
 
 
-def findMin(A: list[int]) -> int:
+def findMin_v2(A: list[int]) -> int:
+    '''BEST SOLUTION -> Time: O(logn)'''
+
+    left, right = 0, len(A) - 1
+
+    while left < right:
+        mid = (left + right) // 2
+
+        if A[mid] > A[mid + 1]:
+            return A[mid + 1]
+        elif A[mid-1] > A[mid]:
+            return A[mid]
+        elif A[mid] > A[right]:
+            left = mid + 1
+        else:
+            right = mid
+
+    return A[left]
+
+
+def findMin_v3(A: list[int]) -> int:
     left, right = 0, len(A) - 1
 
     while left < right:
@@ -37,9 +56,7 @@ def findMin(A: list[int]) -> int:
     return A[left]
 
 
-def findMin_v2(A: list[int]) -> int:
-    '''Time: O(logn)'''
-
+def findMin_v4(A):
     left, right = 0, len(A) - 1
 
     if A[right] > A[left]:
@@ -48,11 +65,9 @@ def findMin_v2(A: list[int]) -> int:
     while left < right:
         mid = (left + right) // 2
 
-        if A[mid + 1] < A[mid]:
+        if A[mid] > A[mid + 1]:
             return A[mid + 1]
-        elif A[mid] < A[mid-1]:
-            return A[mid]
-        elif A[mid] > A[right]:
+        elif A[mid] > A[left]:
             left = mid + 1
         else:
             right = mid
@@ -60,5 +75,5 @@ def findMin_v2(A: list[int]) -> int:
     return A[left]
 
 
-findMin([6, 7, 8, 1, 2]) == 1
-findMin([8, 9, 10, 1, 0, 1, 2]) == 0
+assert findMin([6, 7, 8, 1, 2]) == 1
+assert findMin([8, 9, 10, 1, 0, 1, 2]) == 0

@@ -16,17 +16,30 @@ class Solution:
 
     def subsets(self, nums):
         res, subset = [], []
-        nums.sort()
-
-        self.dfs(nums, 0, subset, res)
-
+        self.dfs(nums, res, 0, subset)
         return res
 
-    def dfs(self, nums, index, subset, res):
+    def dfs(self, nums, res, index, subset):
         res.append(subset)
 
         for i in range(index, len(nums)):
-            self.dfs(nums, i+1, subset+[nums[i]], res)
+            self.dfs(nums, res, i+1, subset+[nums[i]])
+
+
+class Solution_V1:
+    '''Time: O(n*2^n)'''
+
+    def subsets(self, nums):
+        res, subset = [], []
+        self.dfs(nums, res, subset)
+
+        return res
+
+    def dfs(self, nums, res, subset):
+        res.append(subset)
+
+        for i in range(len(nums)):
+            self.dfs(nums[i+1:], res, subset+[nums[i]])
 
 
 class Solution_V2:

@@ -41,7 +41,7 @@ class Solution:
         return True
 
 
-class Solution2():
+class Solution_V2():
     def partition(self, s):
         res = []
         self.dfs(s, res, partition=[])

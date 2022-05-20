@@ -8,13 +8,13 @@ determine if a person could attend all meetings.
 (0,8),(8,10) is not conflict at 8
 
 Example1
-Input: intervals = [(0,30),(5,10),(15,20)]
+Input: intervals = [(0, 30), (5, 10), (15, 20)]
 Output: false
 Explanation: 
 (0,30), (5,10) and (0,30), (15,20) will conflict
 
 Example2
-Input: intervals = [(5,8),(9,15)]
+Input: intervals = [(5, 8), (9, 15)]
 Output: true
 '''
 
@@ -28,7 +28,7 @@ def canAttendMeetings(intervals):
     for i, interval in enumerate(intervals[1:]):
         prev = intervals[i-1]
 
-        if interval.start < prev.end:
+        if prev.end > interval.start:
             return False
 
     return True

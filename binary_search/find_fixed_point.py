@@ -34,10 +34,10 @@ def find_fixed_point(A):
 
         if A[mid] == mid:
             return A[mid]
-        elif A[mid] < mid:
-            low = mid + 1
-        else:
+        elif A[mid] > mid:
             high = mid - 1
+        else:
+            low = mid + 1
 
     return None
 
