@@ -18,7 +18,7 @@ Examples:
 class Solution:
     '''
     Time:  O(n * 4^n), # Space: O(n)
-    https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/1022553/Python-3-approaches-(iterative-DFS-BFS-recursive)-%3A-visuals-%2B-explanation
+    https://bit.ly/39NP9Ha
     '''
 
     def letterCombinations(self, digits):

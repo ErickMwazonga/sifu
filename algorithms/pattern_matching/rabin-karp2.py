@@ -25,9 +25,9 @@ It uses a rolling hash to quickly filter out positions of the text that cannot m
 and then checks for a match at the remaining positions. Generalizations of the same idea can be
 used to find more than one match of a single pattern, or to find matches for more than one pattern.
 
-https://github.com/mission-peace/interview/blob/master/python/string/rabinkarp.py
-https://brilliant.org/wiki/rabin-karp-algorithm/#:~:text=The%20best%2D%20and%20average%2Dcase,collision%20and%20therefore%20must%20check
-https://leetcode.com/problems/implement-strstr/discuss/1019737/Rabin-karp-algorithm-with-explanation-Python
+1. https://github.com/mission-peace/interview/blob/master/python/string/rabinkarp.py
+2. https://bit.ly/3wLgktM
+3. https://leetcode.com/problems/implement-strstr/discuss/1019737/Rabin-karp-algorithm-with-explanation-Python
 '''
 
 

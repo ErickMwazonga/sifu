@@ -1,7 +1,7 @@
 '''
 62. Unique Paths
 https://leetcode.com/problems/unique-paths/
-Credit: https://leetcode.com/problems/unique-paths/discuss/184248/8-lines-Java-DP-solution-0ms-beats-100-explained-with-graph
+Credit: https://bit.ly/3LLa3nG
 
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 The robot can only move either down or right at any point in time. 

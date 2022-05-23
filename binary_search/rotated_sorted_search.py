@@ -17,8 +17,8 @@ Output: -1
 '''
 
 
-class Solution2:
-    '''https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/894031/Python-O(logn)-Detailed-Explanation'''
+class Solution:
+    '''Intiution: https://bit.ly/3wHPtPw'''
 
     def search(self, nums: list[int], target: int) -> int:
         if not nums:

@@ -1,7 +1,7 @@
 '''
 92. Reverse Linked List II
 https://leetcode.com/problems/reverse-linked-list-ii/
-Credit: https://leetcode.com/problems/reverse-linked-list-ii/discuss/1167109/Python3-One-pass-iterative-solution-beats-95.50-(with-figure-explanation)
+Credit: https://bit.ly/3ai2PdI
 
 Reverse a linked list from position m to n. Do it in one-pass.
 Note: 1 ≤ m ≤ n ≤ length of list.
@@ -44,7 +44,7 @@ def reverseBetween(head, left: int, right: int):
 def reverseBetween_v2(head, m, n):
     '''
     1. https://www.youtube.com/watch?v=wk8-_M-2fzI&t=0s
-    2. https://leetcode.com/problems/reverse-linked-list-ii/discuss/1167109/Python3-One-pass-iterative-solution-beats-95.50-(with-figure-explanation)
+    2. https://bit.ly/3ai2PdI
     '''
 
     dummy = ListNode(0)

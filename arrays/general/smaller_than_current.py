@@ -1,7 +1,7 @@
 '''
 1365. How Many Numbers Are Smaller Than the Current Number
 https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
-Credit: https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/discuss/524865/Clean-Python-3-sorting-and-counting
+Credit: https://bit.ly/39Oory9
 
 Given the array nums, for each nums[i] find out 
 how many numbers in the array are smaller than it.

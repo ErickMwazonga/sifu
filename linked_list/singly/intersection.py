@@ -31,7 +31,7 @@ def getIntersectionNode(headA, headB):
 
 def getIntersectionNode(headA, headB):
     '''
-    1. https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/1092898/JS-Python-Java-C%2B%2B-or-Easy-O(1)-Extra-Space-Solution-w-Visual-Explanation
+    1. https://bit.ly/3sQn7l1
     2. https://www.youtube.com/watch?v=D0X0BONOQhI
     '''
 

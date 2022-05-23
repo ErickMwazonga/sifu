@@ -1,7 +1,7 @@
 '''
 202. Happy Number
 https://leetcode.com/problems/happy-number/
-Resource: https://leetcode.com/problems/happy-number/discuss/1184930/Beats-94-Simple-Python-solution-O(log-n)-with-Proper-Explanation-(Floyd
+Resource: https://bit.ly/3MGcBog
 
 Write an algorithm to determine if a number n is 'happy'.
 A happy number is a number defined by the following process:

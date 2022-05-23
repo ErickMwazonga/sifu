@@ -1,7 +1,7 @@
 '''
 678. Valid Parenthesis String
 https://leetcode.com/problems/valid-parenthesis-string/
-Credit: https://leetcode.com/problems/valid-parenthesis-string/discuss/107572/Java-using-2-stacks.-O(n)-space-and-time-complexity.
+Credit: https://bit.ly/3wC0ItI
 
 Given a string containing only three types of characters: '(', ')' and '*',
 write a function to check whether this string is valid.

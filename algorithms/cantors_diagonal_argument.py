@@ -1,7 +1,7 @@
 '''
 1980. Find Unique Binary String
 https://leetcode.com/problems/find-unique-binary-string/
-Credit: https://leetcode.com/problems/find-unique-binary-string/discuss/1418687/Detailed-Explanation-O(N)-Java-C%2B%2B-Python-short-concise-code-Cantor's-Diagonalization
+Credit: https://bit.ly/3PvueJj
 
 Given an array of strings nums containing n unique binary strings each of length n, 
 return a binary string of length n that does not appear in nums. If there are multiple answers, you may return any of them.

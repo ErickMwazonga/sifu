@@ -46,19 +46,25 @@ def groupAnagrams_v2(strs):
     return list(mapping.values())
 
 
-def groupAnagrams_v3(strs):
+class Solution_V3:
     '''Time O(m.n) -> Credit: https://programmer.group/leetcode-49-group-anagrams.html'''
 
-    res = defaultdict(list)
+    def groupAnagrams(self, strs):
+        grouping = defaultdict(list)
 
-    for s in strs:
-        mapping = [0] * 26  # Establish a 26 letter mapping
+        for _str in strs:
+            mapping = self.get_mapping(_str)
+            grouping[tuple(mapping)].append(_str)  # list cannot be a key
 
-        for char in s:
-            val = ord(char) - ord('a')
-            mapping[val] += 1  # Freq of each letter
+        return grouping.values()
 
-        # Add the array of the corresponding Value, list cannot be a key hence tuple
-        res[tuple(mapping)].append(s)
+    def get_mapping(self, _str):
+        '''Establish a 26 letter mapping'''
 
-    return res.values()
+        mapping = [0] * 26
+
+        for ch in _str:
+            val = ord(ch) - ord('a')
+            mapping[val] += 1
+
+        return mapping

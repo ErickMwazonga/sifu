@@ -1,7 +1,7 @@
 '''
 221. Maximal Square
 https://leetcode.com/problems/maximal-square/
-Credit: https://leetcode.com/problems/maximal-square/discuss/600149/Python-Thinking-Process-Diagrams-DP-Approach
+Credit: https://bit.ly/3GdVGHk
 
 Given a 2D binary matrix filled with 0's and 1's,
 find the largest square containing only 1's and return its area.
