@@ -37,14 +37,6 @@ def is_valid(_str: str) -> bool:
     return not stack
 
 
-assert is_valid(']') is False
-assert is_valid('()') is True
-assert is_valid('()[]{}') is True
-assert is_valid('(]') is False
-assert is_valid('([)]') is False
-assert is_valid('{[]}') is True
-
-
 def is_valid_v2(s):
     '''GLOVO INTERVIEW'''
 
@@ -69,3 +61,11 @@ def is_valid_v2(s):
                     return False
 
     return len(stack) == 0
+
+
+assert is_valid(']') is False
+assert is_valid('()') is True
+assert is_valid('()[]{}') is True
+assert is_valid('(]') is False
+assert is_valid('([)]') is False
+assert is_valid('{[]}') is True

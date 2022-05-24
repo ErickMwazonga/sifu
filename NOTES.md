@@ -22,6 +22,36 @@ for i in range(n):
     index = (index + 1) % n
 ```
 ---
+
+## `defaultdict`
+```py
+dep = [
+    ('Sales', 'John Fitina'),
+    ('Sales', 'Martin Dungicha'),
+    ('Accounting', 'Jane Kololeni'),
+    ('Marketing', 'Elizabeth Mambo'),
+    ('Marketing', 'Adam Wema')
+]
+
+from collections import defaultdict
+
+mapping = defaultdict(list)
+for department, employee in dep:
+    mapping[department].append(employee)
+
+    # [Code without default dict]
+    # if department not in mapping:
+    #     mapping[department] = []
+    # mapping[department].append(employee)
+
+# output
+{
+    'Sales': ['John Fitina', 'Martin Dungicha'],
+    'Accounting' : ['Jane Kololeni'],
+    'Marketing': ['Elizabeth Mambo', 'Adam Wema']
+}
+```
+---
 ## Flatten an Array
 
 ```py
@@ -190,13 +220,19 @@ employees.sort(key=lambda x: x.get('salary'), reverse=True)
 ```
 ---
 ## Heaps
-```py
-import heapq
-lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-```
+### Time Complexites
+`heapq.heapify()` -> `O(n)` </br>
+> Transform list x into a heap, in-place, in linear time. </br>
+
+`heapq.heappush()` -> `O(logn)` </br>
+`heapq.heappop()` ->  `O(logn)` </br> </br>
+
 
 ### minHeap
-`heapq.heapify(lst)`
+```py
+import heapq
+heapq.heapify(lst)
+```
 <br/>
 
 ### maxHeap
@@ -219,13 +255,29 @@ for num in array:
 print("maxHeap:", maxHeap)
 # maxHeap: [-9, -8, -6, -7, -2, -3, -4, -1, -5]
 ```
+
+### Multiple Items Heap
+```py
+>>> lst = [
+    (5, 'write code'),
+    (7, 'release product'), 
+    (1, 'write spec'),
+    (3, 'create tests')
+]
+>>> heap = []
+>>> for num in array:
+        heappush(heap, num)
+
+>>> heappop(heap)
+# (1, 'write spec')
+```
 ---
 ## Traversals
 ### Depth First Searh
-Implemented using a STACK
+> Implemented using a STACK
 <br/>
 ### Breadth First Search
-Implemented using a QUEUE
+> Implemented using a QUEUE
 
 ---
 ## Infinity
@@ -276,7 +328,9 @@ Returns a character (a string) from an integer (represents unicode code point of
 # 5
 ```
 
-### Random
-`random.randint(a, b)`
+## Random
+`random.randint(a, b)` -> a: inclusive, b: inclusive </br>
+> Coverage a <= n <= b </br>
 
-Return a random integer N such that a <= N <= b. Alias for `randrange(a, b+1)`
+`random.randrange(a, b)` -> a: inclusive, b: exclusive
+> Coverage a <= n < b </br>

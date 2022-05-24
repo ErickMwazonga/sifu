@@ -28,6 +28,8 @@ class TreeNode:
 
 
 class Solution:
+    '''Time: O(n - No of nodes), Space: O(logn)'''
+
     def isSymmetric(self, root: TreeNode) -> bool:
         if not root:
             return True

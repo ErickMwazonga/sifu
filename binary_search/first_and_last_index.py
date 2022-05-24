@@ -18,6 +18,9 @@ Output: [-1, -1]
 '''
 
 
+from turtle import position
+
+
 def search_range(nums, target):
     n = len(nums)
     result = [-1, -1]
@@ -72,43 +75,43 @@ class Solution:
 
     def search_range(self, nums, target):
         start = self.find_starting_index(nums, target)
-        end = self.find_fnding_index(nums, target)
+        end = self.find_ending_index(nums, target)
 
         return [start, end]
 
     def find_starting_index(self, nums, target):
+        position = -1
         low, high = 0, len(nums)
-        index = -1
 
         while low < high:
             mid = low + (high - low) // 2
 
             if nums[mid] == target:
-                index = mid
+                position = mid
                 high = mid
             elif nums[mid] > target:
                 high = mid
             else:
                 low = mid + 1
 
-        return index
+        return position
 
-    def find_fnding_index(self, nums, target):
+    def find_ending_index(self, nums, target):
         low, high = 0, len(nums)
-        index = -1
+        position = -1
 
         while low < high:
             mid = low + (high - low) // 2
 
             if nums[mid] == target:
-                index = mid
+                position = mid
                 low = mid + 1
             elif nums[mid] > target:
                 high = mid
             else:
                 low = mid + 1
 
-        return index
+        return position
 
 
 soln = Solution()
