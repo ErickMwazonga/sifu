@@ -20,14 +20,32 @@ def two_sum(A, target):
     for i in range(len(A)-1):
         for j in range(i+1, len(A)):
             if A[i] + A[j] == target:
-                print(A[i], A[j])
                 return True
 
     return False
 
 
+def two_sum_v1(A, target):
+    '''Time: O(nlogn), Space: O(1)'''
+
+    A.sort()
+    left, right = 0, len(A) - 1
+
+    while left < right:
+        curr_sum = A[left] + A[right]
+
+        if curr_sum == target:
+            return True
+        elif curr_sum > target:
+            right -= 1
+        else:
+            left += 1
+
+    return False
+
+
 def two_sum_v2(nums: list, target: int) -> list:
-    '''Time complexity: 0(n)'''
+    '''Time: 0(n), Space: 0(n)'''
 
     seen = {}
 

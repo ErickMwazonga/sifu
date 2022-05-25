@@ -1,6 +1,6 @@
 '''
 221. Maximal Square
-https://leetcode.com/problems/maximal-square/
+Link: https://leetcode.com/problems/maximal-square/
 Credit: https://bit.ly/3GdVGHk
 
 Given a 2D binary matrix filled with 0's and 1's,

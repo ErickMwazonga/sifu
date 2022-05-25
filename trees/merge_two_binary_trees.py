@@ -1,6 +1,6 @@
 '''
 617. Merge Two Binary Trees
-https://leetcode.com/problems/merge-two-binary-trees/
+Link: https://leetcode.com/problems/merge-two-binary-trees/
 
 You are given two binary trees root1 and root2.
 You need to merge the two trees into a new binary tree.

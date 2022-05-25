@@ -1,5 +1,5 @@
 '''
-https://leetcode.com/problems/fixed-point/
+Link: https://leetcode.com/problems/fixed-point/
 Credit: https://xingxingpark.com/Leetcode-1064-Fixed-Point/
 
 A fixed point in an array 'A' is an index 'i' such that A[i] is equal to 'i'.

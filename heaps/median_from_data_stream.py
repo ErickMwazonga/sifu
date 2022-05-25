@@ -1,6 +1,6 @@
 '''
 295. Find Median from Data Stream
-https://leetcode.com/problems/find-median-from-data-stream/
+Link: https://leetcode.com/problems/find-median-from-data-stream/
 Credit: https://www.youtube.com/watch?v=itmhHWaHupI  
 
 The median is the middle value in an ordered integer list. If the size of the list is even,

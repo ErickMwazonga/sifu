@@ -1,6 +1,6 @@
 '''
 Given the head of a linked list, rotate the list to the right by k places.
-https://leetcode.com/problems/rotate-list/
+Link: https://leetcode.com/problems/rotate-list/
 Resource: https://www.youtube.com/watch?v=9VPm6nEbVPA
  
 Example 1:

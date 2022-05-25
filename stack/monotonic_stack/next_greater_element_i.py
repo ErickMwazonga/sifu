@@ -1,6 +1,6 @@
 '''
 496. Next Greater Element I
-https://leetcode.com/problems/next-greater-element-i/
+Link: https://leetcode.com/problems/next-greater-element-i/
 Resource: https://www.youtube.com/watch?v=68a1Dc_qVq4, https://www.youtube.com/watch?v=7v3XHLLtnfg&list=PLDMSG_DkY6zf4splOszM3iyPUeDQ_-3o5&index=8
 
 The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.

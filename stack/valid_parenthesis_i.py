@@ -1,6 +1,6 @@
 '''
 20. Valid Parentheses
-https://leetcode.com/problems/valid-parentheses/
+Link: https://leetcode.com/problems/valid-parentheses/
 
 Given a string containing just the characters
 '(', ')', '{', '}', '[' and ']',

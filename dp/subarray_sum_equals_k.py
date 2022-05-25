@@ -1,6 +1,6 @@
 '''
 560. Subarray Sum Equals K
-https://leetcode.com/problems/subarray-sum-equals-k/
+Link: https://leetcode.com/problems/subarray-sum-equals-k/
 Resource: https://www.youtube.com/watch?v=6poxiip7sBY&list=PLDMSG_DkY6zf4splOszM3iyPUeDQ_-3o5&index=11
 
 Given an array of integers nums and an integer k

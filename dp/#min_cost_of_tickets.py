@@ -1,6 +1,6 @@
 '''
 983. Minimum Cost For Tickets
-https://leetcode.com/problems/minimum-cost-for-tickets/
+Link: https://leetcode.com/problems/minimum-cost-for-tickets/
 Resource: https://www.youtube.com/watch?v=4pY1bsBpIY4&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO&index=3
 
 You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array days. Each day is an integer from 1 to 365.

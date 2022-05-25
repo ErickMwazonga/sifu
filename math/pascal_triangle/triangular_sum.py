@@ -1,6 +1,6 @@
 '''
 2221. Find Triangular Sum of an Array
-https://leetcode.com/problems/find-triangular-sum-of-an-array/
+Link: https://leetcode.com/problems/find-triangular-sum-of-an-array/
 
 You are given a 0-indexed integer array nums, where nums[i] is a digit between 0 and 9 (inclusive).
 The triangular sum of nums is the value of the only element present in nums after the following process terminates:

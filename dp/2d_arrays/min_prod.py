@@ -1,6 +1,6 @@
 '''
 1594. Maximum Non Negative Product in a Matrix
-https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/
+Link: https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/
 
 You are given a rows x cols matrix grid. Initially, you are located at the top-left corner (0, 0),
 and in each step, you can only move right or down in the matrix.

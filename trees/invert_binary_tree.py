@@ -1,6 +1,6 @@
 '''
 226. Invert Binary Tree
-https://leetcode.com/problems/invert-binary-tree/
+Link: https://leetcode.com/problems/invert-binary-tree/
 
 Example:
 Input:

@@ -1,6 +1,6 @@
 '''
 114. Flatten Binary Tree to Linked List
-https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+Link: https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 
 Given a binary tree root, flatten it to a linked list in-place by following the preorder traversal.
 For example, given the following tree:

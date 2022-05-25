@@ -1,6 +1,6 @@
 '''
 202. Happy Number
-https://leetcode.com/problems/happy-number/
+Link: https://leetcode.com/problems/happy-number/
 Resource: https://bit.ly/3MGcBog
 
 Write an algorithm to determine if a number n is 'happy'.

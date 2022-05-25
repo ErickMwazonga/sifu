@@ -1,6 +1,6 @@
 '''
 48. Rotate Image
-https://leetcode.com/problems/rotate-image/
+Link: https://leetcode.com/problems/rotate-image/
 # C L O C K W I S E
 
 You are given an n x n 2D matrix representing an image.

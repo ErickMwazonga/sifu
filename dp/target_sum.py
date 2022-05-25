@@ -1,6 +1,6 @@
 '''
 494. Target Sum
-https://leetcode.com/problems/target-sum/
+Link: https://leetcode.com/problems/target-sum/
 
 You are given an integer array nums and an integer target.
 You want to build an expression out of nums by adding one of the symbols '+' and '-' 

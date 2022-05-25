@@ -1,6 +1,6 @@
 '''
 1046. Last Stone Weight
-https://leetcode.com/problems/last-stone-weight/
+Link: https://leetcode.com/problems/last-stone-weight/
 
 You are given an array of integers stones where stones[i] is the weight of the ith stone.
 We are playing a game with the stones. On each turn, we choose the heaviest two stones and smash them together.

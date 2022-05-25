@@ -1,7 +1,7 @@
 '''
 384. Shuffle an Array
-https://leetcode.com/problems/shuffle-an-array/
-Resource: Inspired by - https://www.youtube.com/watch?v=4zx5bM2OcvA
+Link: https://leetcode.com/problems/shuffle-an-array/
+Resource: https://www.youtube.com/watch?v=4zx5bM2OcvA
 
 Given an integer array nums, design an algorithm to randomly shuffle the array.
 Implement the Solution class:

@@ -1,7 +1,7 @@
 '''
 19. Remove Nth Node From End of List
-https://leetcode.com/problems/remove-nth-node-from-end-of-list/
-Resource - https://bit.ly/3z9B55x
+Link: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+Resource: https://bit.ly/3z9B55x
 
 Given the head of a linked list, remove the nth node from the end of the list and return its head.
 

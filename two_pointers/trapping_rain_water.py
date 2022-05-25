@@ -1,6 +1,6 @@
 '''
 42. Trapping Rain Water
-https://leetcode.com/problems/trapping-rain-water/
+Link: https://leetcode.com/problems/trapping-rain-water/
 Resource: https://www.youtube.com/watch?v=RV7jsfvJ33U&list=PLDMSG_DkY6zf4splOszM3iyPUeDQ_-3o5&index=26
 
 Given n non-negative integers representing an elevation map where the width of each bar is 1,

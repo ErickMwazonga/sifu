@@ -1,6 +1,6 @@
 '''
 238. Product of Array Except Self
-https://leetcode.com/problems/product-of-array-except-self/
+Link: https://leetcode.com/problems/product-of-array-except-self/
 
 Given an array nums of n integers where n > 1,
 return an array output such that output[i] is equal to
@@ -15,26 +15,19 @@ Note: Please solve it without division and in O(n).
 
 
 def product_except_self(nums):
-    size = len(nums)
-    output = [1] * size
+    ''' 
+    [Intuition]
+    nums -  [1, 2, 3, 4]
 
-    for i in range(1, size):
-        output[i] = nums[i-1] * output[i-1]
+    left -  [1, 1, 2, 6]
+    right - [24, 12, 4, 1]
 
-    right_product = 1
+    Output: [24, 12, 8, 6]
+    '''
 
-    for i in range(size-1, -1, -1):
-        output[i] = output[i] * right_product
-        right_product = right_product * nums[i]
-
-    return output
-
-
-def product_except_self_v2(nums):
     size = len(nums)
 
-    left_products = [1] * size
-    right_products = [1] * size
+    left_products, right_products = [1] * size, [1] * size
     output = [1] * size
 
     # Get the products before the current index
@@ -48,6 +41,22 @@ def product_except_self_v2(nums):
     # Multiply the multiples
     for i in range(size):
         output[i] = left_products[i] * right_products[i]
+
+    return output
+
+
+def product_except_self_v2(nums):
+    size = len(nums)
+    output = [1] * size
+
+    for i in range(1, size):
+        output[i] = nums[i-1] * output[i-1]
+
+    right_product = 1
+
+    for i in range(size-1, -1, -1):
+        output[i] = output[i] * right_product
+        right_product = right_product * nums[i]
 
     return output
 

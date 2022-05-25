@@ -1,7 +1,7 @@
 '''
 283. Move Zeroes
-https://leetcode.com/problems/move-zeroes/
-Resource - https://leetcode.com/problems/move-zeroes/discuss/979820/Two-Pointeror-Visual-or-Python
+Link: https://leetcode.com/problems/move-zeroes/
+Resource: https://leetcode.com/problems/move-zeroes/discuss/979820/Two-Pointeror-Visual-or-Python
 
 Given an array nums, write a function to move all 0's to the end of
 it while maintaining the relative order of the non-zero elements.

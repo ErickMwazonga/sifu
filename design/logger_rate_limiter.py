@@ -1,6 +1,6 @@
 '''
 LeetCode 359. Logger Rate Limiter
-https://leetcode.com/problems/logger-rate-limiter/
+Link: https://leetcode.com/problems/logger-rate-limiter/
 
 Design a logger system that receive stream of messages along with its timestamps,
 each message should be printed if and only if it is not printed in the last 10 seconds.

@@ -40,7 +40,7 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 8. https://velog.io/@jiselectric/Leetcode-Powx-n
 9. https://github.com/kdn251/interviews/tree/master/leetcode
 10. https://mrleonhuang.gitbooks.io/lintcode/content
-11. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
+11. Link: https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
 12. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/
 13. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
 14. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
@@ -57,8 +57,8 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 
 1. https://seanprashad.com/leetcode-patterns/
 2. https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0
-3. https://leetcode.com/list/xi4ci4ig/
-4. https://leetcode.com/discuss/interview-question?currentPage=1&orderBy=hot&query
+3. Link: https://leetcode.com/list/xi4ci4ig/
+4. Link: https://leetcode.com/discuss/interview-question?currentPage=1&orderBy=hot&query
 5. https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
 
 ## System Design
@@ -110,7 +110,7 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 
 
 1. https://baihuqian.github.io/2018-09-08-nth-digit/
-2. https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
+2. Link: https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
 3. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
 4. https://serhatgiydiren.github.io/
 
@@ -132,4 +132,4 @@ https://systeminterview.com/design-youtube.php
 
 
 Leetcode Discuss - Explanatory Contributions
-1. https://leetcode.com/Hieroglyphs/
+1. Link: https://leetcode.com/Hieroglyphs/

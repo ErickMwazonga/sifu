@@ -1,6 +1,6 @@
 '''
 694. Number of Distinct Islands (identical)
-https://leetcode.com/problems/number-of-distinct-islands/
+Link: https://leetcode.com/problems/number-of-distinct-islands/
 
 Given a non-empty 2D arraygridof 0's and 1's, an island is a group of1's (representing land)
 connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.

@@ -1,6 +1,6 @@
 '''
 709. To Lower Case
-https://leetcode.com/problems/to-lower-case/
+Link: https://leetcode.com/problems/to-lower-case/
 
 Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
 

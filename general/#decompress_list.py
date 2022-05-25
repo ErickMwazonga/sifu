@@ -1,5 +1,5 @@
 '''
-https://leetcode.com/problems/decompress-run-length-encoded-list/
+Link: https://leetcode.com/problems/decompress-run-length-encoded-list/
 We are given a list nums of integers representing a list compressed with run-length encoding.
 
 Consider each adjacent pair of elements [freq, val] = [nums[2*i], nums[2*i+1]] (with i >= 0).

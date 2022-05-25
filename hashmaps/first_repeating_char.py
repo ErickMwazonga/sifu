@@ -23,6 +23,19 @@ def first_repeating_character(str):
     return None
 
 
+def first_repeating_character_v2(str):
+    counter = {}
+
+    for ch in str:
+        counter[ch] = counter.get(ch, 0) + 1
+
+    for k, v in counter.items():
+        if v > 1:
+            return k
+
+    return None
+
+
 assert first_repeating_character('inside code') == 'i'
 assert first_repeating_character('programming') == 'r'
 assert first_repeating_character('abcd') == None

@@ -1,6 +1,6 @@
 '''
 518. Coin Change 2
-https://leetcode.com/problems/coin-change-2/
+Link: https://leetcode.com/problems/coin-change-2/
 
 You are given an integer array coins representing coins of different denominations and 
 an integer amount representing a total amount of money.

@@ -1,6 +1,6 @@
 '''
 300. Longest Increasing Subsequence
-https://leetcode.com/problems/longest-increasing-subsequence/
+Link: https://leetcode.com/problems/longest-increasing-subsequence/
 
 Given an unsorted array of integers, find the length of longest increasing subsequence.
 

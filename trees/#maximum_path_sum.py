@@ -1,6 +1,6 @@
 '''
 124. Binary Tree Maximum Path Sum
-https://leetcode.com/problems/binary-tree-maximum-path-sum/
+Link: https://leetcode.com/problems/binary-tree-maximum-path-sum/
 
 A path in a binary tree is a sequence of nodes where each pair of adjacent nodes
 in the sequence has an edge connecting them. A node can only appear

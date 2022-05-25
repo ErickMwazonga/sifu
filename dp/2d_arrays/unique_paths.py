@@ -1,6 +1,6 @@
 '''
 62. Unique Paths
-https://leetcode.com/problems/unique-paths/
+Link: https://leetcode.com/problems/unique-paths/
 Credit: https://bit.ly/3LLa3nG
 
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).

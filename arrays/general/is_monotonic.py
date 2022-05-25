@@ -1,6 +1,6 @@
 '''
 896. Monotonic Array
-https://leetcode.com/problems/monotonic-array/
+Link: https://leetcode.com/problems/monotonic-array/
 
 An array is monotonic if it is either monotone increasing or monotone decreasing.
 An array nums is monotone increasing if for all i <= j, nums[i] <= nums[j]. 

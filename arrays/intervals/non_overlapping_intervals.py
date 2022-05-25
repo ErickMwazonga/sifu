@@ -1,6 +1,6 @@
 '''
 435. Non-overlapping Intervals
-https://leetcode.com/problems/non-overlapping-intervals/
+Link: https://leetcode.com/problems/non-overlapping-intervals/
 Resource: https://www.youtube.com/watch?v=nONCGxWoUfM&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=36
 
 Given an array of intervals intervals where intervals[i] = [starti, endi],

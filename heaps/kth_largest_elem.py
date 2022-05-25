@@ -1,6 +1,6 @@
 '''
 Find the kth largest element in an unsorted array.
-https://leetcode.com/problems/kth-largest-element-in-an-array/
+Link: https://leetcode.com/problems/kth-largest-element-in-an-array/
 
 Note that it is the kth largest element in the sorted order,
 not the kth distinct element.
@@ -14,6 +14,11 @@ Output: 4
 '''
 
 import heap as theHeap
+from heapq import nlargest, heappush, heappop, nlargest
+
+
+def findKthLargest(nums, k):
+    return nlargest(k, nums)[-1]
 
 
 def find_Kth_largest(nums, k):
@@ -36,7 +41,7 @@ def find_Kth_largest_v3(nums, k):
 
     import heapq
 
-    max_heap = [-n for n in nums]
+    max_heap = [-n for n in nums]  # list(map(lambda x: -x, nums))
     heapq.heapify(max_heap)  # O(n)
 
     for _ in range(k-1):
@@ -44,6 +49,19 @@ def find_Kth_largest_v3(nums, k):
 
     # return -heapq.heappop(nums)
     return -max_heap[0]
+
+
+def findKthLargest_v4(nums, k):
+    nums = list(map(lambda x: -x, nums))
+
+    max_heap = []
+    for num in nums:
+        heappush(max_heap, num)
+
+    for _ in range(k-1):
+        heappop(max_heap)
+
+    return -heappop(max_heap)
 
 
 def find_Kth_largest_v5(nums, k):

@@ -1,6 +1,6 @@
 '''
 House Robber III
-https://leetcode.com/problems/house-robber-iii/
+Link: https://leetcode.com/problems/house-robber-iii/
 Credit: https://www.hrwhisper.me/leetcode-house-robber-iii/
 
 The thief has found himself a new place for his thievery again.

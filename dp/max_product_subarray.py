@@ -1,6 +1,6 @@
 '''
 152. Maximum Product Subarray
-https://leetcode.com/problems/maximum-product-subarray/
+Link: https://leetcode.com/problems/maximum-product-subarray/
 Resource: https://www.youtube.com/watch?v=lXVy6YWFcRM
 
 Given an integer array nums, find the contiguous subarray within an

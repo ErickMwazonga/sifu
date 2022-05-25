@@ -1,6 +1,6 @@
 '''
 LeetCode 234. Palindrome Linked List
-https://leetcode.com/problems/palindrome-linked-list/
+Link: https://leetcode.com/problems/palindrome-linked-list/
 
 Given a singly linked list, determine if it is a palindrome.
 

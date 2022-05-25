@@ -1,6 +1,6 @@
 '''
 641. Design Circular Deque
-https://leetcode.com/problems/design-circular-deque/
+Link: https://leetcode.com/problems/design-circular-deque/
 
 Design your implementation of the circular double-ended queue (deque).
 Your implementation should support following operations:

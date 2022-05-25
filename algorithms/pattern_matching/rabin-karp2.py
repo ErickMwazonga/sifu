@@ -1,6 +1,6 @@
 '''
 28. Implement strStr()
-https://leetcode.com/problems/implement-strstr/
+Link: https://leetcode.com/problems/implement-strstr/
 
 Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 Clarification:
@@ -27,7 +27,7 @@ used to find more than one match of a single pattern, or to find matches for mor
 
 1. https://github.com/mission-peace/interview/blob/master/python/string/rabinkarp.py
 2. https://bit.ly/3wLgktM
-3. https://leetcode.com/problems/implement-strstr/discuss/1019737/Rabin-karp-algorithm-with-explanation-Python
+3. Link: https://leetcode.com/problems/implement-strstr/discuss/1019737/Rabin-karp-algorithm-with-explanation-Python
 '''
 
 

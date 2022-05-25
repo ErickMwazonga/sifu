@@ -1,6 +1,6 @@
 '''
 92. Reverse Linked List II
-https://leetcode.com/problems/reverse-linked-list-ii/
+Link: https://leetcode.com/problems/reverse-linked-list-ii/
 Credit: https://bit.ly/3ai2PdI
 
 Reverse a linked list from position m to n. Do it in one-pass.

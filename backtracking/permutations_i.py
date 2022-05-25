@@ -1,6 +1,6 @@
 '''
 46. Permutations
-https://leetcode.com/problems/permutations/
+Link: https://leetcode.com/problems/permutations/
 
 RESOURCES
 1. https://www.youtube.com/watch?v=Zq4upTEaQyM

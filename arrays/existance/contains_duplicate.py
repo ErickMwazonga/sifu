@@ -1,6 +1,6 @@
 '''
 217. Contains Duplicate
-https://leetcode.com/problems/contains-duplicate/
+Link: https://leetcode.com/problems/contains-duplicate/
 
 Given an array of integers, find if the array contains any duplicates.
 Your function should return true if any value appears at least twice in
@@ -56,6 +56,7 @@ def containsDuplicate_v5(nums):
     from collections import Counter
 
     freq = Counter(nums)
+    # return any(freq[num] > 1 for num in freq)
     for _, freq in freq.items():
         if freq > 1:
             return True

@@ -1,6 +1,6 @@
 '''
 1249. Minimum Remove to Make Valid Parentheses
-https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+Link: https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
 Intuition: https://bit.ly/3LBJlxp
 
 Given a string s of '(' , ')' and lowercase English characters.

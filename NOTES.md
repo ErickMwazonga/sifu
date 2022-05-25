@@ -24,7 +24,74 @@ for i in range(n):
 ---
 
 ## `defaultdict`
+
+## 1. Default Values
+1.1. `get()`
 ```py
+data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
+print(data.get('Hobbies', 'Coding')) # Coding
+```
+> **PROBLEM** - Sets default value for all missing keys
+
+
+1.2. `setdefault()`
+```py
+data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
+data.setdefault('Hobbies', None)
+
+print(data['Hobbies']) # None
+```
+> **PROBLEM** - We need to know the key for which we want to create a default value beforehand
+
+
+1.3. Custom default value
+```py
+>>> from collections import defaultdict
+>>> ice_cream = defaultdict(lambda: 'Vanilla')
+
+>>> ice_cream['Cobih'] = 'Chunky Monkey'
+>>> ice_cream['Santa'] = 'Butter Pecan'
+
+>>> print(ice_cream['Cobih']) # Chunky Monkey
+>>> print(ice_cream['Chiwawa']) # Vanilla
+```
+
+## 2. Default Integers
+```py
+names = [
+    'Mchicha', 'Dingo', 'Evan', 'Mbenda', 'Sukari', 'Mchicha', 'Dingo', 'Mchicha'
+]
+
+counts = {}
+```
+### 2.1. Without defaultdict
+```py
+for name in names:
+    if name in counts:
+        counts[name] += 1
+    else:
+        counts[name] = 1
+
+print(counts)
+# {'Mchicha': 3, 'Dingo': 2, 'Evan': 1, 'Mbenda': 1, 'Sukari': 1}
+```
+### 2.2. With defaultdict
+```py
+from collections import defaultdict
+names = ['Nik', 'Kate', 'Evan', 'Kyra', 'John', 'Nik', 'Kate', 'Nik']
+
+counts = defaultdict(int)
+for name in names:
+    counts[name] += 1
+
+print(counts)
+# defaultdict(<class 'int'>, {'Nik': 3, 'Kate': 2, 'Evan': 1, 'Kyra': 1, 'John': 1})
+```
+
+## 3. Default Lists
+```py
+# Resource: https://realpython.com/python-defaultdict/
+
 dep = [
     ('Sales', 'John Fitina'),
     ('Sales', 'Martin Dungicha'),

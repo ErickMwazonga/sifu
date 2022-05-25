@@ -1,6 +1,6 @@
 '''
 207. Course Schedule
-https://leetcode.com/problems/course-schedule/
+Link: https://leetcode.com/problems/course-schedule/
 Credit: https://www.youtube.com/watch?v=EgI5nU9etnU&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=2
 
 There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. 

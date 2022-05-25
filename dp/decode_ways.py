@@ -1,6 +1,6 @@
 '''
 91. Decode Ways
-https://leetcode.com/problems/decode-ways/
+Link: https://leetcode.com/problems/decode-ways/
 Resource: https://inner-game.tistory.com/460
 
 A message containing letters from A-Z is being encoded to numbers using the following mapping:

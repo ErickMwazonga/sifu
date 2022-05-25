@@ -1,6 +1,6 @@
 '''
 1905. Count Sub Islands
-https://leetcode.com/problems/count-sub-islands/
+Link: https://leetcode.com/problems/count-sub-islands/
 
 You are given two m x n binary matrices grid1 and grid2 containing only 0's (representing water)
 and 1's (representing land). An island is a group of 1's connected 4-directionally (horizontal or vertical).

@@ -1,6 +1,6 @@
 '''
 498. Diagonal Traverse
-https://leetcode.com/problems/diagonal-traverse/
+Link: https://leetcode.com/problems/diagonal-traverse/
 Credit: https://bit.ly/3yTBnwZ
 
 Given a matrix of M x N elements (M rows, N columns),

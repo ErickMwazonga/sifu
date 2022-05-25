@@ -1,6 +1,6 @@
 '''
 53. Maximum Subarray
-https://leetcode.com/problems/maximum-subarray/
+Link: https://leetcode.com/problems/maximum-subarray/
 
 Given an integer array nums, find the contiguous subarray (containing at least one number)
 which has the largest sum and return its sum.
@@ -19,7 +19,7 @@ Examples
 
 
 def max_sub_array(nums: list) -> int:
-    curr_sum = max_sum = nums[0]
+    curr_sum, max_sum = nums[0], nums[0]
 
     for num in nums[1:]:
         curr_sum = max(num, curr_sum + num)
@@ -29,7 +29,7 @@ def max_sub_array(nums: list) -> int:
 
 
 def max_subarray(A):
-    max_ending_here = max_so_far = A[0]
+    max_ending_here, max_so_far = A[0], A[0]
 
     for num in A[1:]:
         max_ending_here = max(num, max_ending_here + num)

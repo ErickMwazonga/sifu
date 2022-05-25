@@ -1,6 +1,6 @@
 '''
 380. Insert Delete GetRandom O(1)
-https://leetcode.com/problems/insert-delete-getrandom-o1/
+Link: https://leetcode.com/problems/insert-delete-getrandom-o1/
 
 Implement the RandomizedSet class:
 

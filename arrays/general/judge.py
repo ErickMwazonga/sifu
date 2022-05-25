@@ -1,6 +1,6 @@
 '''
 997. Find the Town Judge
-https://leetcode.com/problems/find-the-town-judge/
+Link: https://leetcode.com/problems/find-the-town-judge/
 
 In a town, there are N people labelled from 1 to N. 
 There is a rumor that one of these people is secretly the town judge.

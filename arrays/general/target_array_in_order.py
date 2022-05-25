@@ -1,6 +1,6 @@
 '''
 1389. Create Target Array in the Given Order
-https://leetcode.com/problems/create-target-array-in-the-given-order/
+Link: https://leetcode.com/problems/create-target-array-in-the-given-order/
 
 Given two arrays of integers nums and index. Your task is to create target array under the following rules:
 

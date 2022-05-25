@@ -1,6 +1,6 @@
 '''
 678. Valid Parenthesis String
-https://leetcode.com/problems/valid-parenthesis-string/
+Link: https://leetcode.com/problems/valid-parenthesis-string/
 Credit: https://bit.ly/3wC0ItI
 
 Given a string containing only three types of characters: '(', ')' and '*',

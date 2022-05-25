@@ -1,6 +1,6 @@
 '''
 38. Count and Say
-https://leetcode.com/problems/count-and-say/
+Link: https://leetcode.com/problems/count-and-say/
 https://en.wikipedia.org/wiki/Look-and-say_sequence
 
 The count-and-say sequence is a sequence of digit strings defined by the recursive formula:

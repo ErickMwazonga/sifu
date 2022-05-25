@@ -1,6 +1,6 @@
 '''
 287. Find the Duplicate Number
-https://leetcode.com/problems/find-the-duplicate-number/
+Link: https://leetcode.com/problems/find-the-duplicate-number/
 
 Credit: https://www.youtube.com/watch?v=dfIqLxAf-8s
 Credit: https://bit.ly/3NtUh1I

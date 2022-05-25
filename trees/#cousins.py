@@ -1,6 +1,6 @@
 '''
 993. Cousins in Binary Tree
-https://leetcode.com/problems/cousins-in-binary-tree/
+Link: https://leetcode.com/problems/cousins-in-binary-tree/
 
 In a binary tree, the root node is at depth 0, and children of each depth k node are at depth k+1.
 Two nodes of a binary tree are cousins if they have the same depth, but have different parents.

@@ -1,6 +1,6 @@
 '''
 128. Longest Consecutive Sequence
-https://leetcode.com/problems/longest-consecutive-sequence/
+Link: https://leetcode.com/problems/longest-consecutive-sequence/
 
 Given an array of integers, find the length of the
 longest sub-sequence such that elements in the subsequence are

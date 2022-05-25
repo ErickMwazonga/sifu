@@ -1,6 +1,6 @@
 '''
 1382. Balance a Binary Search Tree
-https://leetcode.com/problems/balance-a-binary-search-tree/
+Link: https://leetcode.com/problems/balance-a-binary-search-tree/
 
 Given a binary search tree, return a balanced binary search tree with the same node values.
 A binary search tree is balanced if and only if the depth of the two subtrees of every node never differ by more than 1.

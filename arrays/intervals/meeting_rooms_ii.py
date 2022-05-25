@@ -1,6 +1,6 @@
 '''
 919 · Meeting Rooms II
-https://leetcode.com/problems/meeting-rooms/ OR https://www.lintcode.com/problem/919
+Link: https://leetcode.com/problems/meeting-rooms/ OR https://www.lintcode.com/problem/919
 Resource: https://www.youtube.com/watch?v=FdzJmTCVyJU&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=38
 
 Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), 

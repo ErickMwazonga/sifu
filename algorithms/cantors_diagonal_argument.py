@@ -1,6 +1,6 @@
 '''
 1980. Find Unique Binary String
-https://leetcode.com/problems/find-unique-binary-string/
+Link: https://leetcode.com/problems/find-unique-binary-string/
 Credit: https://bit.ly/3PvueJj
 
 Given an array of strings nums containing n unique binary strings each of length n, 

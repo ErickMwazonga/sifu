@@ -1,6 +1,6 @@
 '''
 103. Binary Tree Zigzag Level Order Traversal
-https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+Link: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
 Credit: https://bit.ly/3wC1mYc
 Credit: https://bit.ly/3yRjsaa
 

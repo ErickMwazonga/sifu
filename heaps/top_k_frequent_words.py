@@ -1,6 +1,6 @@
 '''
 692. Top K Frequent Words
-https://leetcode.com/problems/top-k-frequent-words/
+Link: https://leetcode.com/problems/top-k-frequent-words/
 
 Given an array of strings words and an integer k, return the k most frequent strings.
 Return the answer sorted by the frequency from highest to lowest.

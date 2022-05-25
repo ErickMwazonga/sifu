@@ -1,6 +1,6 @@
 '''
 739. Daily Temperatures
-https://leetcode.com/problems/daily-temperatures/
+Link: https://leetcode.com/problems/daily-temperatures/
 Resource: https://www.youtube.com/watch?v=cTBiBSnjO3c
 
 Given a list of daily temperatures T, return a list such that, for each day in the input,

@@ -1,6 +1,6 @@
 '''
 257. Binary Tree Paths
-https://leetcode.com/problems/binary-tree-paths/
+Link: https://leetcode.com/problems/binary-tree-paths/
 
 Given a binary tree, return all root-to-leaf paths.
 Note: A leaf is a node with no children.

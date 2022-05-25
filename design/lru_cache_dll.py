@@ -1,6 +1,6 @@
 '''
 146. LRU Cache
-https://leetcode.com/problems/lru-cache/
+Link: https://leetcode.com/problems/lru-cache/
 Credit: https://www.youtube.com/watch?v=7ABFKPK2hD4
 
 Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
