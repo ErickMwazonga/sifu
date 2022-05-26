@@ -42,15 +42,6 @@ def removeDuplicates_v2(nums):
     return count
 
 
-def removeDuplicates_v3(A):
-    count = 1
-    for i in range(1, len(A)):
-        if A[i] != A[i-1]:
-            count += 1
-
-    return count
-
-
 def removeDuplicates_v4(arr):
     seen, res = set(), []
 
@@ -59,4 +50,4 @@ def removeDuplicates_v4(arr):
             seen.add(num)
             res.append(num)
 
-    return res
+    return len(res)
