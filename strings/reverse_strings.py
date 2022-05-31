@@ -6,8 +6,8 @@ Write a function that reverses a string. The input string is given as an array o
 You must do this by modifying the input array in-place with O(1) extra memory.
 
 Examples:
-1. ["h","e","l","l","o"] -> ["o","l","l","e","h"]
-2. ["H","a","n","n","a","h"] -> ["h","a","n","n","a","H"]
+1. ['h','e','l','l','o'] -> ['o','l','l','e','h']
+2. ['H','a','n','n','a','h'] -> ['h','a','n','n','a','H']
 '''
 
 

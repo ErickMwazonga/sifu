@@ -5,8 +5,8 @@ Link: https://leetcode.com/problems/palindrome-linked-list/
 Given a singly linked list, determine if it is a palindrome.
 
 Examples
-1. 1->2   = false
-2. 1->2->2->1  = true
+1. 1 -> 2   = false
+2. 1 -> 2 -> 2 -> 1  = true
 
 Could you do it in O(n) time and O(1) space?
 '''
@@ -37,11 +37,7 @@ def isPalindrome_v2(head):
     return True
 
 
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
+class Solution_V3:
     def reverse(self, head):
         prev_node, curr_node = None, head
 
@@ -65,26 +61,26 @@ class ListNode:
 
         return True
 
-    def isPalindromeList(self, head):
-        '''REVERSE ONLY THE RIGHT HALF'''
 
-        # Find middle
-        slow = fast = head
+def isPalindromeList_v4(self, head):
+    '''REVERSE ONLY THE RIGHT HALF'''
 
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
+    # Find middle
+    slow = fast = head
 
-        # Reverse second half
-        left = head
-        right = self.reverse(slow)
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
 
-        # Check palindrome
-        while left:
-            if left.data != right.data:
-                return False
+    # Reverse second half
+    first, second = head, self.reverse(slow)
 
-            left = left.next
-            right = right.next
+    # Compare the two halves
+    while first:
+        if first.data != second.data:
+            return False
 
-        return True
+        first = first.next
+        second = second.next
+
+    return True

@@ -6,6 +6,13 @@ Given the root of a binary tree, return the leftmost value in the last row of th
 '''
 
 
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
 class Solution:
     def findBottomLeftValue(self, root: TreeNode) -> int:
         if not root:

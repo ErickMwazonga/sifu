@@ -32,6 +32,18 @@ def findDuplicate_v1(nums):
         nums_set.add(num)
 
 
+def findDuplicate_v2_1(nums):
+    for num in nums:
+        abs_num = abs(num)
+
+        if nums[abs_num] < 0:
+            return abs_num
+
+        nums[abs_num] = -nums[abs_num]
+
+    return None
+
+
 def findDuplicate_v2(nums):
     for v in nums:
         pos = abs(v) - 1
@@ -52,6 +64,21 @@ def findDuplicate_v3(A):
             return val_index
 
         A[val_index] = -A[val_index]
+
+
+def find_duplicate_v4(nums) -> int:
+    slow = nums[0]
+    fast = nums[slow]
+
+    while slow != fast:
+        slow = nums[slow]
+        fast = nums[nums[fast]]
+
+    slow = 0
+    while slow != fast:
+        slow, fast = nums[slow], nums[fast]
+
+    return slow
 
 
 assert findDuplicate([1, 3, 4, 2, 2]) == 2

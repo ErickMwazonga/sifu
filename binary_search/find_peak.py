@@ -17,6 +17,11 @@ And if there are multiple peaks in arr, just return the index of one of them.
 '''
 
 
+def find_peak_v0(nums):
+    max_num = max(nums)
+    return nums.index(max_num)
+
+
 def find_peak(arr):
     '''Time: O(n), Space: O(1)'''
 
@@ -42,12 +47,12 @@ def find_peak_v2(nums):
     left, right = 0, len(nums)-1
 
     while left < right:
-        mid = left + right // 2
+        mid = (left + right) // 2
 
         if nums[mid] > nums[mid+1] and nums[mid] > nums[mid-1]:
             return mid
 
-        if nums[mid] < nums[mid+1]:
+        if nums[mid+1] > nums[mid]:
             left = mid + 1
         else:
             right = mid - 1
@@ -55,7 +60,33 @@ def find_peak_v2(nums):
     return left
 
 
-def find_peak_v3(A):
+def findPeakElement_v3(sf, nums):
+    n = len(nums)
+
+    if n == 1:
+        return 0
+
+    left, right = 0, n - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        # if we access out of bounds, set to negative infinity
+        left_val = nums[mid - 1] if mid - 1 >= 0 else float('-inf')
+        right_val = nums[mid + 1] if mid + 1 < n else float('-inf')
+
+        if nums[mid] > right_val and nums[mid] > left_val:
+            return mid
+
+        if right_val > nums[mid]:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return None
+
+
+def find_peak_v4(A):
     left, right = 0, len(A) - 1
 
     while left < right:

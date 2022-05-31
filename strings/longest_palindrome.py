@@ -20,8 +20,8 @@ from collections import Counter
 
 def longestPalindrome(s: str) -> int:
     freq = Counter(s)
-
     length = 0
+
     for _, v in freq.items():
         length += v if v % 2 == 0 else v - 1
 
@@ -29,3 +29,18 @@ def longestPalindrome(s: str) -> int:
         length += 1
 
     return length
+
+
+def longestPalindrome(s: str) -> int:
+    freq = Counter(str)
+    count = 0
+
+    for v in freq.values():
+        if v % 2 == 0:
+            count += v
+        else:
+            count += v - 1
+
+    has_odd = any(x % 2 != 0 for x in freq.values())
+    # has_odd = any(filter(lambda x: x % 2, fres.values()))
+    return count + 1 if has_odd else count

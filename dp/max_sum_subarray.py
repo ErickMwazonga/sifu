@@ -18,17 +18,34 @@ Examples
 '''
 
 
-def max_sub_array(nums: list) -> int:
+def max_sub_array(arr):
+    '''Time: O(n^2)'''
+
+    n = len(arr)
+    maxSum = float('-inf')
+
+    for i in range(n):
+        cumulativeSum = 0
+
+        for j in range(i, n):
+            cumulativeSum += arr[j]
+            maxSum = max(maxSum, cumulativeSum)
+
+    return maxSum
+
+
+def max_sub_array_v1(nums: list) -> int:
     curr_sum, max_sum = nums[0], nums[0]
 
     for num in nums[1:]:
-        curr_sum = max(num, curr_sum + num)
+        # Check if should abandon accumulated value so far if it's a burden due to negative value accumulated
+        curr_sum = max(curr_sum + num, num)
         max_sum = max(max_sum, curr_sum)
 
     return max_sum
 
 
-def max_subarray(A):
+def max_sub_array_v2(A):
     max_ending_here, max_so_far = A[0], A[0]
 
     for num in A[1:]:
@@ -38,6 +55,6 @@ def max_subarray(A):
     return max_so_far
 
 
-assert max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
-assert max_subarray([5, 4, -1, 7, 8]) == 23
-assert max_subarray([1]) == 1
+assert max_sub_array_v1([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+assert max_sub_array_v1([5, 4, -1, 7, 8]) == 23
+assert max_sub_array_v1([1]) == 1
