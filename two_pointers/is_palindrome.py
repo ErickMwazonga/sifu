@@ -12,20 +12,7 @@ Examples
 '''
 
 
-def isPalindrome(s: str) -> bool:
-    '''Time complexity: O(N), Space complexity: O(N)'''
-
-    s = s.lower()
-    left = ''
-
-    for i in range(0, len(s)):
-        if s[i].isalnum():
-            left += s[i]
-
-    return left == left[::-1]
-
-
-def is_palindrome_v2(s):
+def is_palindrome(s):
     '''Time: O(N), Space: O(1)'''
 
     s = [i.lower() for i in s if i.isalnum()]
@@ -41,6 +28,6 @@ def is_palindrome_v2(s):
     return True
 
 
-assert isPalindrome('pap') == True
-assert isPalindrome('race a car') == False
-assert isPalindrome('A man, a plan, a canal: Panama') == True
+assert is_palindrome('pap') == True
+assert is_palindrome('race a car') == False
+assert is_palindrome('A man, a plan, a canal: Panama') == True

@@ -6,17 +6,17 @@ we have been building in this series of videos.
 '''
 
 
-def size_(self, node):
+def size(node):
     if not node:
         return 0
-    return 1 + self.size_(node.left) + self.size_(node.right)
+    return 1 + size(node.left) + size(node.right)
 
 
-def size(self):
-    if not self.root:
+def size_v2(root):
+    if not root:
         return 0
 
-    stack = [self.root]
+    stack = [root]
 
     size = 1
     while stack:

@@ -12,11 +12,9 @@ class Node:
         self.rightChild = None
 
     def isFullTree(self, root):
-        # Tree empty case
         if not root:
             return True
 
-        # Checking whether child is present
         if not root.leftChild and not root.rightChild:
             return True
 

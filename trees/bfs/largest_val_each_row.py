@@ -10,6 +10,9 @@ Examples:
 '''
 
 
+import queue
+
+
 class TreeNode:
     pass
 
@@ -19,14 +22,8 @@ class Solution:
         if not root:
             return []
 
-        res = []
-
         levels = self.levelOrder(root)
-        for level in levels:
-            max_item = max(level)
-            res.append(max_item)
-
-        return res
+        return [max(level) for level in levels]
 
     def levelOrder(self, root: TreeNode):
         queue, res = [root], []
@@ -55,23 +52,22 @@ class Solution2:
         if not root:
             return []
 
-        res, level = [], [root]
+        res, queue = [], [root]
 
-        while level:
-            new_level = []
+        while queue:
+            level = []
             max_node = float('-inf')
 
-            for node in level:
-                if node.val > max_node:
-                    max_node = node.val
+            for node in queue:
+                max_node = max(max_node, node.val)
 
                 if node.left:
-                    new_level.append(node.left)
+                    level.append(node.left)
 
                 if node.right:
-                    new_level.append(node.right)
+                    level.append(node.right)
 
             res.append(max_node)
-            level = new_level
+            queue = level
 
         return res

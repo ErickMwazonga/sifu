@@ -11,7 +11,38 @@ Examples:
 '''
 
 
-def validPalindrome(s: str) -> bool:
+def validPalindrome(s):
+    if s == s[::-1]:
+        return True
+
+    for i in range(len(s)):
+        temp = s[:i] + s[i+1:]
+
+        if temp == temp[::-1]:
+            return True
+
+    return False
+
+
+def validPalindrome_v2(s):
+    i, j = 0, len(s) - 1
+
+    def is_pali(x): return x == x[::-1]
+
+    while i < j:
+        if s[i] == s[j]:
+            i, j = i + 1, j - 1
+            continue
+
+        exclude_last = s[i:j]
+        exclude_first = s[i + 1:j + 1]
+
+        return is_pali(exclude_last) or is_pali(exclude_first)
+
+    return True
+
+
+def validPalindrome_v3(s: str) -> bool:
     left, right = 0, len(s)
 
     while left < right:

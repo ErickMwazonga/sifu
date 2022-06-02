@@ -41,4 +41,39 @@ def oddEvenList(head):
     even.next = None
     odd.next = even_head.next
 
-    return odd_head.next
+
+def oddEvenList_v2(head):
+    if not head or not head.next:
+        return head
+
+    odd, even = head, head.next
+    even_head = even
+
+    while even and even.next:
+        nxt_odd, nxt_even = odd.next.next, even.next.next
+
+        odd.next = nxt_odd
+        odd = nxt_odd
+
+        even.next = nxt_even
+        even = nxt_even
+
+    odd.next = even_head
+    return head
+
+
+def oddEvenList_v3(head):
+    if not head or not head.next:
+        return head
+
+    odd, even = head, head.next
+    even_head = even
+
+    while even and even.next:
+        odd.next = odd.next.next
+        even.next = even.next.next
+        odd = odd.next
+        even = even.next
+
+    odd.next = even_head
+    return head

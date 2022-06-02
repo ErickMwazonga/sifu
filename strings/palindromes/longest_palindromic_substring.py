@@ -23,11 +23,11 @@ class Solution:
         for mid in range(n):
             # odd case, like "aba"
             sub = self.find_palindrome_from(s, mid, mid)
-            longest = max(longest, sub)
+            longest = max((longest, sub), key=len)
 
             # even case, like "abba"
             sub = self.find_palindrome_from(s, mid, mid + 1)
-            longest = max(longest, sub)
+            longest = max((longest, sub), key=len)
 
         return longest
 
@@ -48,13 +48,10 @@ class Solution_V2:
         n, longest = len(s), ''
 
         for i in range(n):
-            # odd cases
-            odd_pali = self.get_palindrome(s, i, i)
-            longest = max((longest, odd_pali), key=len)
+            odd_pali = self.get_palindrome(s, i, i)  # odd cases
+            even_pali = self.get_palindrome(s, i, i+1)  # even cases
 
-            # even cases
-            even_pali = self.get_palindrome(s, i, i+1)
-            longest = max((longest, even_pali), key=len)
+            longest = max([longest, odd_pali, even_pali], key=len)
 
         return longest
 

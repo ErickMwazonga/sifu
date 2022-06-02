@@ -64,7 +64,7 @@ class Solution:
         return new_tree
 
 
-class Solution2:
+class Solution_V2:
     def mergeTrees(self, t1: TreeNode, t2: TreeNode) -> TreeNode:
         if not t1:
             return t2

@@ -14,8 +14,6 @@ Input: nums = [1, 2, 3], k = 3
 Output: 2
 '''
 
-from collections import defaultdict
-
 
 def subarray_sum_v0(nums, k):
     count, n = 0, len(nums)
