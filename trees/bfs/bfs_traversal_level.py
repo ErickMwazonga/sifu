@@ -45,7 +45,7 @@ def levelOrder(root: TreeNode):
         level_size = len(queue)
         level = []
 
-        for i in range(0, level_size):
+        for _ in range(0, level_size):
             node = queue.pop(0)
             level.append(node.val)
 

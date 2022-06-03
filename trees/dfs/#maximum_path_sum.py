@@ -17,21 +17,24 @@ class Tree:
         self.left = left
         self.right = right
 
-    def dfs(self, root, globalMaxSum):
-        if not root:
-            return float("-inf")
-        else:
-            left = self.dfs(root.left, globalMaxSum)
-            right = self.dfs(root.right, globalMaxSum)
 
-            maxFromTop = max(root.data, root.data+left, root.data+right)
-            maxNoTop = max(maxFromTop, root.data+left+right)
-
-            globalMaxSum[0] = max(globalMaxSum[0], maxNoTop)
-
-            return maxFromTop
+class Solution:
 
     def maxPathSum(self, root):
         globalMaxSum = [float("-inf")]  # Pass by reference
         self.dfs(root, globalMaxSum)
         return globalMaxSum[0]
+
+    def dfs(self, root, globalMaxSum):
+        if not root:
+            return float('-inf')
+
+        left = self.dfs(root.left, globalMaxSum)
+        right = self.dfs(root.right, globalMaxSum)
+
+        maxFromTop = max(root.data, root.data+left, root.data+right)
+        maxNoTop = max(maxFromTop, root.data+left+right)
+
+        globalMaxSum[0] = max(globalMaxSum[0], maxNoTop)
+
+        return maxFromTop
