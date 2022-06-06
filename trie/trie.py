@@ -1,77 +1,139 @@
 '''
-https://www.askpython.com/python/examples/trie-data-structure
+208. Implement Trie (Prefix Tree)
+Resources: [
+    https://bit.ly/3QdY1qi,
+    https://www.youtube.com/watch?v=qA8l8TAMyig,
+    https://pythonwife.com/trie-in-python/,
+    https://www.lavivienpost.com/autocomplete-with-trie-code/
+]
 '''
 
 
 class TrieNode:
-    '''A node in the trie structure'''
-
     def __init__(self, char):
-        self.char = char  # the character stored in this node
-        self.is_end = False  # whether this can be the end of a word
-        self.children = {}  # a dictionary of child nodes,  keys are characters, values are nodes
-
-        # a counter indicating how many times a word is inserted
-        # (if this node's is_end is True)
-        self.counter = 0
+        self.char = char
+        self.children = {}
+        self.is_end = False
 
 
 class Trie:
 
     def __init__(self):
-        '''
-        The trie has at least the root node.
-        The root node does not store any character
-        '''
         self.root = TrieNode('')
 
     def insert(self, word):
-        '''Insert a word into the trie'''
+        curr = self.root
 
-        curr_node = self.root
+        for ch in word:
+            if ch not in curr.children:
+                curr.children[ch] = TrieNode(ch)
 
-        # Loop through each character in the word
-        # Check if there is no child containing the character, create a new child for the current node
-        for char in word:
-            if char in curr_node.children:
-                curr_node = curr_node.children[char]
-            else:
-                # If a character is not found, create a new curr_node in the trie
-                new_curr_node = TrieNode(char)
-                curr_node.children[char] = new_curr_node
-                curr_node = new_curr_node
+            curr = curr.children[ch]
 
-        curr_node.is_end = True  # Mark the end of a word
-        curr_node.counter += 1  # To indicate that we see this word once more
-
-    def dfs(self, node, pre):
-        if node.is_end:
-            self.output.append((pre + node.char))
-
-        for child in node.children.values():
-            self.dfs(child, pre + node.char)
+        curr.is_end = True
 
     def search(self, word):
-        curr_node = self.root
+        '''Time: O(m)'''
 
-        for char in word:
-            if char in curr_node.children:
-                curr_node = curr_node.children[char]
-            else:
-                # if query doesn't match the nodes in trie
+        curr = self.root
+
+        for ch in word:
+            if ch not in curr.children:
+                return False
+
+            curr = curr.children[ch]
+
+        return curr.is_end
+
+    def startsWith(self, prefix):
+        '''Time: O(m)'''
+
+        curr = self.root
+
+        for ch in prefix:
+            if ch not in curr.children:
+                return False
+
+            curr = curr.children[ch]
+
+        return True
+
+    def dfs(self, node, combo, res):
+        if node.is_end:
+            res.append(combo)
+
+        for child in node.children.values():
+            self.dfs(child, combo + child.char, res)
+
+    def get_words(self):
+        res, combo = [], ''
+        self.dfs(self.root, combo, res)
+        return res
+
+    def autocomplete(self, prefix):
+        node = self.root
+        for ch in prefix:
+            if ch not in node.children:
                 return []
 
-        self.output = []
-        self.dfs(curr_node, word[:-1])
+            node = node.children[ch]
 
-        return self.output
+        res = []
+        self.dfs(node, prefix, res)
+        return res
+
+    def remove_word(self, node, word, idx=0):
+        # end of word but it has other children of other words, we can't remove it
+        if len(word) == idx:
+            node.is_end = False
+            return node.children > 0  # bool(node.children)
+
+        # we need to check if the current node has some children.
+        # if it has, the word we want to remove is a prefix of another word. We can not remove it.
+        char = word[idx]
+        if char not in node.children:
+            return True
+
+        next_deletion = self.remove_word(node.children[char], word, idx+1)
+        if next_deletion:
+            return True
+
+        node.children.pop(char)
+        return bool(node.children) or node.is_end
+
+    def longestPrefix(self):
+        curr = self.root
+        prefix = ''
+
+        while curr:
+            if len(curr.children) > 1 or curr.is_end:
+                return prefix
+
+            key = list(curr.children)[0]
+            prefix += key
+
+            curr = curr.children[key]
+
+        return prefix
 
 
 trie = Trie()
-trie.insert('Here')
-trie.insert('Hear')
-trie.insert('Her')
-trie.insert('He')
-trie.insert('Hello')
-trie.insert('How')
-trie.insert('xow')
+words = ['Here', 'Hear', 'Her', 'He', 'Herp', 'Hello', 'Heartbeat', 'Hebron']
+for word in words:
+    trie.insert(word)
+
+assert trie.search('Him') == False
+assert trie.search('Hello') == True
+
+assert trie.startsWith('Hel') == True
+assert trie.startsWith('Hek') == False
+
+trie_words = [
+    'He', 'Her', 'Here',  'Herp', 'Hear', 'Heartbeat', 'Hello', 'Hebron'
+]
+assert trie.get_words() == trie_words
+
+assert trie.longestPrefix() == 'He'
+
+assert trie.autocomplete('Her') == ['Her', 'Here', 'Herp']
+assert trie.autocomplete('Hea') == ['Hear', 'Heartbeat']

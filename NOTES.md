@@ -123,10 +123,12 @@ for department, employee in dep:
 
 ```py
 def transpose(strs):
-  grid = [list(str) for str in strs]
-  return list(map(list, zip(*grid)))
+    grid = [list(str) for str in strs]
+    return list(map(list, zip(*grid)))
+```
 
 ### 1. Basic iterative function
+```py
 def flatten(input):
     new_list = []
     for i in input:
@@ -134,6 +136,7 @@ def flatten(input):
             new_list.append(j)
     return new_list
 ```
+
 ### 2. Using array functions
 ```py
 def flatten(input):

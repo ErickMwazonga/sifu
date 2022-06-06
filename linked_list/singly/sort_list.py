@@ -18,7 +18,24 @@ class ListNode:
 
 
 class Solution:
-    '''MERGE SORT'''
+    '''BUBBLE SORT - Time: O(n^2), Space: O(n)'''
+
+    def sortList(list):
+        i = list.head
+
+        while i is not None:
+            j = list.head
+
+            while j.next is not None:
+                if j.data > j.next.data:
+                    j.data, j.next.data = j.next.data, j.data
+
+                j = j.next
+            i = i.next
+
+
+class Solution_v2:
+    '''MERGE SORT - Time: O(nlogn), Space: O(logn)'''
 
     def sortList(self, head):
         if not head or not head.next:
@@ -48,50 +65,6 @@ class Solution:
         slow.next = None
 
         return mid
-
-    def merge(self, list1, list2):
-        new_head = tail = ListNode()
-
-        while list1 and list2:
-            if list1.val > list2.val:
-                tail.next = list2
-                list2 = list2.next
-            else:
-                tail.next = list1
-                list1 = list1.next
-            tail = tail.next
-
-        tail.next = list1 or list2
-
-        return new_head.next
-
-
-class Solution_V2:
-    def sortList(self, head):
-        if not head or not head.next:
-            return head
-
-        # Split the list into two halfs
-        left = head
-        right = self.getMid(head)
-        tmp = right.next
-        right.next = None
-        right = tmp
-
-        left = self.sortList(head)
-        right = self.sortList(right)
-
-        return self.merge(left, right)
-
-    def getMid(self, head):
-        slow = head
-        fast = head.next
-
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-
-        return slow
 
     def merge(self, list1, list2):
         new_head = tail = ListNode()

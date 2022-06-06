@@ -48,9 +48,15 @@ class Solution_V2:
         if not haystack or not needle:
             return -1
 
-        lps = self.get_lps(needle)
-
         n, m = len(haystack), len(needle)
+
+        if m > n:
+            return -1
+
+        if m == n:
+            return 0 if haystack == needle else -1
+
+        lps = self.get_lps(needle)
         i, j = 0, 0
 
         while i < n:
@@ -66,6 +72,7 @@ class Solution_V2:
                 return i - m
 
         return -1
+        return -1 if j < m else i-j  # remove the last check
 
     def get_lps(self, s):
         lps = [0] * len(s)

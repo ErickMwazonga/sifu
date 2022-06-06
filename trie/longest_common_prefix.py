@@ -1,11 +1,13 @@
 '''
 14. Longest Common Prefix
+https://leetcode.com/problems/longest-common-prefix/
+
 Write a function to find the longest common prefix string amongst an array of strings.
 If there is no common prefix, return an empty string ''.
 
 Examples:
-1. ['flower','flow','flight'] -> 'fl'
-2. ['dog','racecar','car'] -> '' => Explanation: There is no common prefix among the input strings.
+1. ['flower', 'flow', 'flight'] -> 'fl'
+2. ['dog', 'racecar', 'car'] -> '' => Explanation: There is no common prefix among the input strings.
 '''
 
 
