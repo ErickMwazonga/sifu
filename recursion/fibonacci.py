@@ -32,15 +32,16 @@ def fib_memoized(n, memo={0: 0, 1: 1}):
 
     if n in memo:
         return memo[n]
-    else:
-        memo[n] = fib_memoized[n-1, memo] + fib_memoized[n-2, memo]
-        return memo[n]
+    
+    memo[n] = fib_memoized[n-1, memo] + fib_memoized[n-2, memo]
+    return memo[n]
 
 
 @lru_cache(maxsize=None)
 def fibonacci_memoized(n):
     if n <= 1:
         return 1
+
     return fibonacci_memoized(n - 1) + fibonacci_memoized(n - 2)
 
 
