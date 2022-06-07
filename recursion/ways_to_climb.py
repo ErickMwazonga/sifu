@@ -15,12 +15,12 @@ output: 11
 def waysToClimb(n, possibleSteps):  # RECURSION
     if n == 0:
         return 1
-    else:
-        nbWays = 0
+   
+    nbWays = 0
 
-        for steps in possibleSteps:
-            if (n-steps) >= 0:
-                nbWays += waysToClimb(n-steps, possibleSteps)
+    for steps in possibleSteps:
+        if (n-steps) >= 0:
+            nbWays += waysToClimb(n-steps, possibleSteps)
 
     return nbWays
 
@@ -30,17 +30,18 @@ def waysToClimb_v2(n, possibleSteps, lookup):  # MEMOIZATION - TOP-DOWN APPROACH
 
     if key in lookup:
         return lookup[key]
-    elif n == 0:
+
+    if n == 0:
         lookup[key] = 1
         return lookup[key]
-    else:
-        nbWays = 0
-        for steps in possibleSteps:
-            if (n-steps) >= 0:
-                nbWays += waysToClimb_v2(n-steps, possibleSteps)
-        lookup[key] = nbWays
-
-        return lookup[key]
+    
+    nbWays = 0
+    for steps in possibleSteps:
+        if (n-steps) >= 0:
+            nbWays += waysToClimb_v2(n-steps, possibleSteps)
+    
+    lookup[key] = nbWays
+    return lookup[key]
 
 
 def waysToClimb(n, possibleSteps):  # DYNAMIC PROGRAMMING - BOTTOM-UP APPROACH
