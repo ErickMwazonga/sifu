@@ -9,16 +9,15 @@ Examples:
 2. aaa -> a, aa, aaa
 '''
 
-
 def getSubsequences(s):
     subsequences = []
-
-    def helper(s, i, subsequence):
-        if len(s) == i:
-            subsequences.append(subsequence)
-        else:
-            helper(s, i+1, subsequence + s[i])
-            helper(s, i+1, subsequence)
-
     helper(s, 0, '')
     return subsequences
+
+
+def dfs(s, i, subsequence, subsequences):
+    if i == len(s):
+        subsequences.append(subsequence)
+    else:
+        dfs(s, i+1, subsequence + s[i])
+        dfs(s, i+1, subsequence)
