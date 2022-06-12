@@ -1,7 +1,7 @@
 '''
 Common elements in 2 sorted arrays
 
-Design an algorithm to find all the non-common elements in two sorted lists of numbers. 
+Design an algorithm to find all the common elements in two sorted lists of numbers. 
 For example, for the lists 
 A - [1, 1, 2, 3, 5, 5]
 B - [2, 2, 3, 4, 5, 7]
@@ -9,7 +9,7 @@ output - [2, 3, 5]
 '''
 
 
-def get_common_elems(A, B):
+def get_common_elements(A, B):
     len_A, len_B = len(A), len(B)
 
     ai, bi = 0, 0

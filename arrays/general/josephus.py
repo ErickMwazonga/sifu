@@ -8,12 +8,13 @@ we kill the kth person and remove that person from the circle.
 
 
 def josephus(n, skip):
+    lst = list(range(1, n + 1))
     skip = skip - 1  # list starts with 0 index
     idx = 0
 
     while n > 0:
         idx = (idx + skip) % n  # hash index to every 3rd
-        list.pop(idx)
+        lst.pop(idx)
         n -= 1
 
 
@@ -35,5 +36,4 @@ def josephus_v2(n, skip):
     return killed_in_order
 
 
-print(josephus(9, 3))
-# 123456789 members sitting in a circular fashion, Output: 369485271
+assert josephus_v2(9, 3) == [3, 6, 9, 4, 8, 5, 2, 7, 1]

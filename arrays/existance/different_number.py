@@ -54,7 +54,7 @@ def getDifferentNumber_v3(arr):
             temp, arr[temp] = arr[temp], temp
 
     for i in range(n):
-        if (arr[i] != i):
+        if arr[i] != i:
             return i
 
     return n

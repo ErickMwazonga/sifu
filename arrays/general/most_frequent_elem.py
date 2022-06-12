@@ -42,12 +42,12 @@ def most_freq_elem_v2(arr):
 
 
 def most_freq_elem_v3(arr):
-    frequency = {}
+    freqs = {}
 
     for num in arr:
-        frequency[num] = frequency.get(num, 0) + 1
+        freqs[num] = freqs.get(num, 0) + 1
 
-    return max(frequency, key=frequency.get)
+    return max(freqs, key=freqs.get)
 
 
 # TESTING

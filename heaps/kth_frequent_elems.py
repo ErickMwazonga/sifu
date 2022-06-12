@@ -28,7 +28,6 @@ def top_K_frequent(nums, k):
     for key, val in freqs.items():
         bucket[val].append(key)
 
-    print(bucket)
     res = []
     for i in range(n, -1, -1):
         res.extend(bucket[i])
@@ -37,7 +36,7 @@ def top_K_frequent(nums, k):
 
 
 assert top_K_frequent([1, 1, 1, 2, 2, 3], 2) == [1, 2]
-# assert top_K_frequent([1], 1) == [1]
+assert top_K_frequent([1], 1) == [1]
 
 
 def top_K_frequent_v2(nums, k):
@@ -50,7 +49,7 @@ def top_K_frequent_v2(nums, k):
     heapq.heapify(freqs)
 
     for _ in range(k):
-        v, k = heapq.heappop(freqs)
+        _, k = heapq.heappop(freqs)
         res.append(k)
 
     return res

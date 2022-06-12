@@ -18,18 +18,18 @@ Output: [[1, 5]]
 
 def merge(intervals):
     intervals.sort(key=lambda pair: pair[0])
-    output = [intervals[0]]
+    res = [intervals[0]]
 
     for interval in intervals[1:]:
         start, end = interval
-        last_end = output[-1][1]
+        last_end = res[-1][1]
 
         if start > last_end:
-            output.append(interval)
+            res.append(interval)
         else:
-            output[-1][1] = max(last_end, end)
+            res[-1][1] = max(last_end, end)
 
-    return output
+    return res
 
 
 def merge_ranges(meetings):

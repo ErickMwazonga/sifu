@@ -30,7 +30,21 @@ Output: 3
 from collections import defaultdict
 
 
-def findJudge(N, trusts):
+def findJudge(N: int, trusts) -> int:
+    count = [[0, 0] for _ in range(N + 1)]
+
+    for i, j in trusts:
+        count[i][0] += 1  # trusting
+        count[j][1] += 1  # trusted
+
+    for i in range(1, N + 1):
+        if count[i][0] == 0 and count[i][1] == N - 1:
+            return i
+
+    return -1
+
+
+def find_judge(N, trusts):
     count = [0] * (N + 1)
 
     for i, j in trusts:
@@ -44,7 +58,7 @@ def findJudge(N, trusts):
     return -1
 
 
-def find_judge_v0(N: int, trust: list[list[int]]) -> int:
+def find_judge_v1(N: int, trust: list[list[int]]) -> int:
     '''Inspired by https://www.youtube.com/watch?v=ZUP_tIs4VaE&t=419s'''
 
     if N == 1 and not trust:

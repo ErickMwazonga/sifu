@@ -16,22 +16,23 @@ def three_sum(nums, target):
     '''Time: 0(n^2)'''
 
     nums.sort()
-    n = len(nums)
+    n, res = len(nums), set()
 
-    for i in range(n-2):
-        partial_target = target - nums[i]
+    for i in range(n):
+        target = target - nums[i]
         j, k = i + 1, n - 1
 
         while j < k:
-            partial_sum = nums[j] + nums[k]
+            _sum = nums[j] + nums[k]
 
-            if partial_sum == partial_target:
-                print([nums[i], nums[j], nums[k]])
+            if _sum == target:
+                res.add([nums[i], nums[j], nums[k]])
                 return True
-            elif partial_sum > partial_target:
+            elif _sum > target:
                 k -= 1
             else:
                 j += 1
+
     return False
 
 

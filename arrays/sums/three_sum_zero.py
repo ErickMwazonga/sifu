@@ -20,26 +20,24 @@ A solution set is:
 
 def threeSum(nums):
     nums.sort()
-    n = len(nums)
-    result = set()
+    n, res = len(nums), set()
 
-    for i in range(n-2):
-        low = i + 1
-        high = n - 1
+    for i in range(n):
+        low, high = i + 1, n - 1
+        target = 0 - nums[i]
 
         while low < high:
-            s = nums[i] + nums[low] + nums[high]
+            _sum = nums[low] + nums[high]
 
-            if s == 0:
-                result.add((nums[i], nums[low], nums[high]))
+            if _sum == target:
+                res.add((nums[i], nums[low], nums[high]))
+                low, high = low + 1, high - 1
+            elif _sum < target:
                 low += 1
-                high -= 1
-            if s < 0:
-                low += 1
-            if s > 0:
+            else:
                 high -= 1
 
-    return result
+    return res
 
 
 a = [-1, 0, 1, 2, -1, -4]

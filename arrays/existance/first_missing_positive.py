@@ -19,9 +19,9 @@ therefore the overall asymptotic time complexity is O(n).
 
 
 def first_missing_positive(arr):
-    visisted = set(arr)
+    n, visisted = len(arr), set(arr)
 
-    for i in range(1, len(arr) + 2):
+    for i in range(1, n + 2):
         if i not in visisted:
             return i
 
@@ -33,14 +33,12 @@ def firstMissingPositive_v1(nums):
         if nums[i] <= 0:
             nums[i] = n + 1
 
-    for i in range(n):
-        num = nums[i]
-
+    for num in nums:
         if abs(num) > n:
             continue
 
-        val = abs(num) - 1
-        nums[val] = -abs(nums[val])
+        idx = abs(num) - 1
+        nums[idx] = -abs(nums[idx])
 
     for i in range(n):
         if nums[i] > 0:

@@ -67,11 +67,13 @@ def plus_one(digits):
 
 
 def plus_one(A):
+    n = len(A)
     A[-1] += 1
 
-    for i in reversed(range(1, len(A))):
+    for i in reversed(range(1, n)):
         if A[i] != 10:
             break
+
         A[i] = 0
         A[i-1] += 1
 

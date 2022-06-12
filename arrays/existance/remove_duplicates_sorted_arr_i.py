@@ -31,8 +31,7 @@ def removeDuplicates(nums):
 
 
 def removeDuplicates_v2(nums):
-    n = len(nums)
-    count = 1
+    count, n = 1, len(nums)
 
     for i in range(1, n):
         if nums[i] > nums[i-1]:

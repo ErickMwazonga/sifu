@@ -19,7 +19,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 '''
 
 
-def removeDuplicatesff(nums):
+def removeDuplicates(nums):
     n = len(nums)
 
     if n < 3:
@@ -51,17 +51,13 @@ def removeDuplicates_v2(nums):
 
 
 def removeDuplicates_v3(nums):
-    # We don't have to worry about the first two (0, 1 array index) numbers in the array.
-    # We have to decide whether to keep the third (array index 2) element or overwrite it and so on.
-    write_index = 2
+    n, pos = len(nums), 2
 
-    for i in range(2, len(nums)):
-        # If the last two numbers in the array are the same as the current one, don't increment the write_index.
-        # Our search for the next number to be added to the list continues.
-        if nums[write_index - 2] == nums[write_index - 1] == nums[i]:
+    for i in range(2, n):
+        if nums[pos - 2] == nums[pos - 1] == nums[i]:
             continue
-            # We have found a non duplicate, copy the number into the position of the write_index and increment it.
-        nums[write_index] = nums[i]
-        write_index += 1
 
-    return write_index
+        nums[pos] = nums[i]
+        pos += 1
+
+    return pos

@@ -22,13 +22,13 @@ def eraseOverlapIntervals(intervals):
     intervals.sort()
 
     count = 0
-    prevEnd = intervals[0][1]
+    prev_end = intervals[0][1]
 
     for start, end in intervals[1:]:
-        if start >= prevEnd:  # Not overlapping
-            prevEnd = end
+        if start >= prev_end:  # Not overlapping
+            prev_end = end
         else:  # Overlapping
             count += 1
-            prevEnd = min(end, prevEnd)
+            prev_end = min(end, prev_end)
 
     return count

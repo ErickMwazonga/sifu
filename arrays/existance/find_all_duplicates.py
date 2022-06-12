@@ -32,11 +32,11 @@ def findDuplicates_v2(nums):
     res = []
 
     for num in nums:
-        index = abs(num) - 1
+        idx = abs(num) - 1
 
-        if nums[index] < 0:
-            res.append(index + 1)
+        if nums[idx] < 0:
+            res.append(idx + 1)
 
-        nums[index] = -nums[index]
+        nums[idx] = -nums[idx]
 
     return res

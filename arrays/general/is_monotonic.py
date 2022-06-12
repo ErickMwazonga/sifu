@@ -16,14 +16,19 @@ Examples:
 
 
 def isMonotonic(nums) -> bool:
-    return nums == sorted(nums) or nums == sorted(nums, reverse=True)
+    is_increasing = nums == sorted(nums)
+    is_decreasing = nums == sorted(nums, reverse=True)
+
+    return is_increasing or is_decreasing
 
 
 def isMonotonic_v2(A) -> bool:
-    increasing = all([A[i] >= A[i-1] for i in range(1, len(A))])
-    decreasing = all([A[i] <= A[i-1] for i in range(1, len(A))])
+    n = len(A)
 
-    return increasing or decreasing
+    is_increasing = all([A[i] >= A[i-1] for i in range(1, n)])
+    is_decreasing = all([A[i] <= A[i-1] for i in range(1, n)])
+
+    return is_increasing or is_decreasing
 
 
 def isMonotonic_v3(A):

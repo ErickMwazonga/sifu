@@ -22,23 +22,54 @@ room2: (5, 10), (15, 20)
 import heapq
 
 
-def minMeetingRooms(intervals):
-    start = sorted([i.start for i in intervals])
-    end = sorted([i.end for i in intervals])
+def minimum_rooms(intervals):
+    starting_times = sorted([i[0] for i in intervals])
+    ending_times = sorted([i[1] for i in intervals])
 
-    res, count = 0, 0
-    s, e = 0, 0
-    while s < len(intervals):
-        if start[s] < end[e]:
-            s += 1
-            count += 1
+    rooms = 0
+    while starting_times:
+        startTime = starting_times.pop(0)
+        # now a meeting is going to start, is there a meeting ends
+        # (meaning a meeting room is released)?
+        endTime = ending_times[0]
+
+        if endTime <= startTime:
+            ending_times.pop(0)
         else:
-            e += 1
-            count -= 1
+            # need to ask for a new room
+            rooms += 1
 
-        res = max(res, count)
+    return rooms
 
-    return res
+
+def minimum_rooms_v2(intervals):
+    '''
+    Inspired by
+    https://medium.com/javascript-in-plain-english/snapchat-coding-interview-questions-377fc67e0cbe
+    '''
+
+    starting_times, ending_times = [], []
+
+    starting_times = sorted([i[0] for i in intervals])
+    ending_times = sorted([i[1] for i in intervals])
+
+    starting_index = ending_index = 0
+    max_rooms = current_rooms = 0
+
+    while starting_index < len(starting_times) and ending_index < len(ending_times):
+        if starting_index >= len(starting_times):
+            break
+
+        if starting_times[starting_index] < ending_times[ending_index]:
+            current_rooms += 1
+            starting_index += 1
+        else:
+            current_rooms -= 1
+            ending_index += 1
+
+        max_rooms = max(max_rooms, current_rooms)
+
+    return max_rooms
 
 
 def minMeetingRooms_v2(intervals) -> int:
@@ -55,3 +86,60 @@ def minMeetingRooms_v2(intervals) -> int:
             heapq.heappush(meetings, interval[1])
 
     return len(meetings)
+
+
+def minimum_rooms(intervals):
+    starting_times = sorted([i[0] for i in intervals])
+    ending_times = sorted([i[1] for i in intervals])
+
+    rooms = 0
+    while starting_times:
+        startTime = starting_times.pop(0)
+        # now a meeting is going to start, is there a meeting ends
+        # (meaning a meeting room is released)?
+        endTime = ending_times[0]
+
+        if endTime <= startTime:
+            ending_times.pop(0)
+        else:
+            # need to ask for a new room
+            rooms += 1
+
+    return rooms
+
+
+def minimum_rooms_v2(intervals):
+    '''
+    Inspired by
+    https://medium.com/javascript-in-plain-english/snapchat-coding-interview-questions-377fc67e0cbe
+    '''
+
+    starting_times, ending_times = [], []
+
+    starting_times = sorted([i[0] for i in intervals])
+    ending_times = sorted([i[1] for i in intervals])
+
+    starting_index = ending_index = 0
+    max_rooms = current_rooms = 0
+
+    while starting_index < len(starting_times) and ending_index < len(ending_times):
+        if starting_index >= len(starting_times):
+            break
+
+        if starting_times[starting_index] < ending_times[ending_index]:
+            current_rooms += 1
+            starting_index += 1
+        else:
+            current_rooms -= 1
+            ending_index += 1
+
+        max_rooms = max(max_rooms, current_rooms)
+
+    return max_rooms
+
+
+intervals = [[30, 75], [0, 50], [60, 150]]
+assert minimum_rooms(intervals) == 2
+
+intervals = [[5, 7], [0, 9], [5, 9]]
+assert minimum_rooms(intervals) == 3

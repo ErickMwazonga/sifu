@@ -21,10 +21,10 @@ Output: [1, 3]
 '''
 
 
-def twoSum(numbers, target):
+def twoSum(nums, target):
     dic = {}
 
-    for i, num in enumerate(numbers):
+    for i, num in enumerate(nums):
         rem = target-num
 
         if rem in dic:
@@ -33,14 +33,14 @@ def twoSum(numbers, target):
         dic[num] = i
 
 
-def twoSum_v2(numbers, target):
-    l, r = 0, len(numbers)-1
+def twoSum_v2(nums, target):
+    l, r = 0, len(nums)-1
 
     while l < r:
-        s = numbers[l] + numbers[r]
+        s = nums[l] + nums[r]
 
         if s == target:
-            return [l+1, r+1]
+            return [l + 1, r + 1]
         elif s < target:
             l += 1
         else:

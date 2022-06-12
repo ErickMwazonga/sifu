@@ -15,12 +15,10 @@ Examples:
 def get_odd_occurrence(arr):
     '''Time complexity: O(n)'''
 
-    size = len(arr)
     _hash = {}
 
-    for i in range(size):
-        elem = arr[i]
-        _hash[elem] = _hash.get(elem, 0) + 1
+    for num in arr:
+        _hash[num] = _hash.get(num, 0) + 1
 
     for k, v in _hash.items():
         if v % 2 != 0:

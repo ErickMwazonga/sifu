@@ -22,7 +22,7 @@ def rotate(nums, k: int) -> None:
     nums[:] = nums[-k:] + nums[:-k]
 
 
-def rotate_v2(self, nums, k):
+def rotate_v2(nums, k):
     n = len(nums)
     new_nums = [0] * n
 
@@ -30,15 +30,14 @@ def rotate_v2(self, nums, k):
         idx = (i + k) % n
         new_nums[idx] = nums[i]
 
-    for i in range(n):
-        nums[i] = new_nums[i]
+    nums[:] = new_nums[:]
 
 
-class Solution_V3:
+class Solution_v3:
     def rotate(self, nums, k) -> None:
         n = len(nums)
 
-        k %= n
+        k %= n  # to cater for k > n
 
         self.reverse(nums, 0, n - 1)
         self.reverse(nums, 0, k - 1)
@@ -46,8 +45,5 @@ class Solution_V3:
 
     def reverse(self, nums, start, end) -> None:
         while start < end:
-            temp = nums[start]
-            nums[start] = nums[end]
-            nums[end] = temp
-            start += 1
-            end -= 1
+            nums[start], nums[end] = nums[end], nums[start]
+            start, end = start + 1, end - 1

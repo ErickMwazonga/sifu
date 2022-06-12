@@ -23,22 +23,24 @@ Output: [[5, 7]]
 def insert_interval(intervals, newInterval):
     '''https://www.youtube.com/watch?v=A8NUOmlwOlM&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=35'''
 
-    n = len(intervals)
-    res = []
+    n, res = len(intervals), []
 
     for i in range(n):
         current_interval = intervals[i]
-        start, end = newInterval[0], newInterval[1]
+        curr_start, curr_end = current_interval[0], current_interval[1]
+        new_start, new_end = newInterval[0], newInterval[1]
 
-        if start > current_interval[1]:
-            res.append(current_interval)
-        elif end < current_interval[0]:
+        if new_end < curr_start:
             res.append(newInterval)
             return res + intervals[i:]  # all other intervals cannot overlap
+
+        if new_start > curr_end:
+            res.append(current_interval)
         else:
-            new_start = min(start, current_interval[0])
-            new_end = max(end, current_interval[1])
-            newInterval = [new_start, new_end]
+            merged_start = min(new_start, curr_start)
+            merged_end = max(new_end, curr_end)
+
+            newInterval = [merged_start, merged_end]
 
     res.append(newInterval)
     return res

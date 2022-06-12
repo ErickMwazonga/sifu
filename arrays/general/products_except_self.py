@@ -25,36 +25,36 @@ def product_except_self(nums):
     Output: [24, 12, 8, 6]
     '''
 
-    size = len(nums)
+    n = len(nums)
 
-    left_products, right_products = [1] * size, [1] * size
-    output = [1] * size
+    left_products, right_products = [1] * n, [1] * n
+    output = [1] * n
 
     # Get the products before the current index
-    for i in range(1, size):
+    for i in range(1, n):
         left_products[i] = nums[i-1] * left_products[i-1]
 
     # Get the products after the current index
-    for i in range(size-2, -1, -1):
+    for i in range(n-2, -1, -1):
         right_products[i] = nums[i+1] * right_products[i+1]
 
     # Multiply the multiples
-    for i in range(size):
+    for i in range(n):
         output[i] = left_products[i] * right_products[i]
 
     return output
 
 
 def product_except_self_v2(nums):
-    size = len(nums)
-    output = [1] * size
+    n = len(nums)
+    output = [1] * n
 
-    for i in range(1, size):
+    for i in range(1, n):
         output[i] = nums[i-1] * output[i-1]
 
     right_product = 1
 
-    for i in range(size-1, -1, -1):
+    for i in range(n-1, -1, -1):
         output[i] = output[i] * right_product
         right_product = right_product * nums[i]
 
