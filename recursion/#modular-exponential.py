@@ -21,11 +21,12 @@ def mod(x, n, m):
 
     if n == 0:
         return 1
-    elif n % 2 == 0:
+
+    if n % 2 == 0:
         y = mod(x, n/2, m)
         return (y * y) % m
-    else:
-        return (((x % m) * mod(x, n-1, m)) % m)
+
+    return (((x % m) * mod(x, n-1, m)) % m)
 
 
 assert mod(2, 3, 5) == 3
