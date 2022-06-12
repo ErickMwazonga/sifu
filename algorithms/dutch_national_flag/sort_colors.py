@@ -7,24 +7,24 @@ but you must do this in place, in linear time and without
 any extra space (such as creating an extra array).
 This is called the Dutch national flag sorting problem.
 
-For example, if the input array is [2,0,0,1,2,1] then
-your program should output [0,0,1,1,2,2] and the algorithm
+For example, if the input array is [2, 0, 0, 1, 2, 1] then
+your program should output [0, 0, 1, 1, 2, 2] and the algorithm
 should run in O(n) time.
 '''
 
 
 def sortColors(nums) -> None:
-    c0 = c1 = c2 = 0
+    count_0 = count_1 = count_2 = 0
 
     for num in nums:
         if num == 0:
-            c0 += 1
+            count_0 += 1
         elif num == 1:
-            c1 += 1
+            count_1 += 1
         else:
-            c2 += 1
+            count_2 += 1
 
-    return [0] * c0 + [1] * c1 + [2] * c2
+    return [0] * count_0 + [1] * count_1 + [2] * count_2
 
 
 def sortColors(nums) -> None:

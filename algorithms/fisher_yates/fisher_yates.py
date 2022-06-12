@@ -18,7 +18,7 @@ def shuffle(A) -> list[int]:
 
     shuffled = []
 
-    while len(A):
+    while A:
         rand_idx = random.randrange(0, len(A))
         shuffled.append(A[rand_idx])
         A.pop(rand_idx)

@@ -23,6 +23,7 @@ def containsDuplicate_v2(nums):
     for num in nums:
         if num in seen:
             return True
+
         seen.add(nums)
 
     return False
@@ -34,6 +35,7 @@ def containsDuplicate_v3(nums):
     for num in nums:
         if num in hashNum:
             return True
+
         hashNum[num] = 1
 
     return False
@@ -47,6 +49,7 @@ def contains_duplicate_v4(nums):
 
         if count > 1:
             return True
+
         freq[num] = count
 
     return False
@@ -56,12 +59,7 @@ def containsDuplicate_v5(nums):
     from collections import Counter
 
     freq = Counter(nums)
-    # return any(freq[num] > 1 for num in freq)
-    for _, freq in freq.items():
-        if freq > 1:
-            return True
-
-    return False
+    return any(freq[num] > 1 for num in freq)
 
 
 assert containsDuplicate_v2([1, 2, 3, 1]) == True

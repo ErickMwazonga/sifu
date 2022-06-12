@@ -41,15 +41,26 @@ class Solution:
 
         if n <= 1:
             return 1
+
         return self.climb_stairs(n - 1) + self.climb_stairs(n - 2)
+
+    def climb_stairs_v1(self, n):
+        prev, curr = 0, 1
+
+        for _ in range(n):
+            prev, curr = curr, prev + curr
+
+        return curr
 
     def climb_stairs_v2(self, n):
         '''Time: O(n), Space: O(1)'''
 
-        a, b = 1, 2
+        prev, curr = 1, 2
+
         for _ in range(n - 1):
-            a, b = b, a + b
-        return a
+            prev, curr = curr, prev + curr
+
+        return prev
 
     def climb_stairs_v3(self, n):
         ways = [1, 2]

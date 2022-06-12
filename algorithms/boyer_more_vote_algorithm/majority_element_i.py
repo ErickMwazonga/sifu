@@ -12,40 +12,50 @@ Examples
 '''
 
 
-class Solution:
-    def majority_element(self, nums: list[int]) -> int:
-        counter = {}
-        majority = len(nums) // 2
+def majority_element(nums: list[int]) -> int:
+    counter = {}
+    majority = len(nums) // 2
 
-        for num in nums:
-            counter[num] = counter.get(num, 0) + 1
+    for num in nums:
+        counter[num] = counter.get(num, 0) + 1
 
-        for k, v in counter.items():
-            if v > majority:
-                return k
-
-    def majority_element_v2(self, nums: list[int]) -> int:
-        '''
-        Boyer Moore Majority Voting algorithm
-        The Boyer-Moore majority vote algorithm is an algorithm for finding the majority of a
-        sequence of elements using linear time and constant space.
-        '''
-
-        counter, majority = 1, nums[0]
-
-        for num in nums[1:]:
-            if num == majority:
-                counter += 1
-            else:
-                counter -= 1
-
-            if counter == 0:
-                majority = num
-                counter = 1
-
-        return majority
+    for k, v in counter.items():
+        if v > majority:
+            return k
 
 
-soln = Solution()
-assert soln.majority_element([3, 2, 3]) == 3
-assert soln.majority_element([2, 2, 1, 1, 1, 2, 2]) == 2
+def majorityElement_v1(nums) -> int:
+    '''
+    Boyer Moore Majority Voting algorithm
+    The Boyer-Moore majority vote algorithm is an algorithm for finding the majority of a
+    sequence of elements using linear time and constant space.
+    '''
+    counter, majority = 1, nums[0]
+
+    for num in nums[1:]:
+        if counter == 0:
+            majority = num
+
+        counter += 1 if num == majority else -1
+
+    return majority
+
+
+def majority_element_v2(nums: list[int]) -> int:
+    counter, majority = 1, nums[0]
+
+    for num in nums[1:]:
+        if num == majority:
+            counter += 1
+        else:
+            counter -= 1
+
+        if counter == 0:
+            majority = num
+            counter = 1
+
+    return majority
+
+
+assert majority_element([3, 2, 3]) == 3
+assert majority_element([2, 2, 1, 1, 1, 2, 2]) == 2

@@ -21,46 +21,46 @@ Explanation:
 1**2 + 0**2 + 0**2 = 1
 '''
 
-
-def is_happy(n):
-    seen = {n}
-
-    while n:
-        n = squared(n)
-
-        if n == 1:
-            return True
-
-        if n in seen:
-            return False
-
-        seen.add(n)
+from curses.ascii import SO
 
 
-def is_happy_v2(n: int) -> bool:
-    slow = squared(n)
-    fast = squared(squared(n))
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        seen = {n}
 
-    while slow != fast:
-        slow = squared(slow)
-        fast = squared(squared(fast))
+        while n:
+            n = self.squared(n)
 
-    return slow == 1
+            if n == 1:
+                return True
+            if n in seen:
+                return False
+
+            seen.add(n)
+
+    def is_happy_v2(self, n: int) -> bool:
+        slow = self.squared(n)
+        fast = self.squared(slow)
+
+        while slow != fast:
+            slow = self.squared(slow)
+            fast = self.squared(self.squared(fast))
+
+        return slow == 1
+
+    def squared(self, n):
+        squares = [int(x) ** 2 for x in str(n)]
+        return sum(squares)
+
+    def squared_v2(self, n):
+        result = 0
+
+        while n > 0:
+            n, last = divmod(n, 10)
+            result += last * last
+
+        return result
 
 
-def squared(n):
-    squares = [int(x) ** 2 for x in str(n)]
-    return sum(squares)
-
-
-def squared_v2(n):
-    result = 0
-
-    while n > 0:
-        n, last = divmod(n, 10)
-        result += last * last
-
-    return result
-
-
-assert is_happy(19) == True
+soln = Solution()
+assert soln.is_happy(19) == True

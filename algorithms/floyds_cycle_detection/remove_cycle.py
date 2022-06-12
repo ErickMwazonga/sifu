@@ -6,21 +6,23 @@ class ListNode:
 
 def remove_loop(head: ListNode) -> bool:
     slow = fast = head
-    flag = False
+    has_cycle = False
 
     while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
 
         if slow == fast:
-            flag = True
+            has_cycle = True
             break
 
-    if flag:
-        slow = head
-        while slow.next != fast.next:
-            slow = slow.next
-            fast = fast.next
-        fast.next = None
+    if not has_cycle:
+        return head
+
+    slow = head
+    while slow.next != fast.next:
+        slow = slow.next
+        fast = fast.next
+    fast.next = None
 
     return head

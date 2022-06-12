@@ -12,47 +12,44 @@ Examples
 '''
 
 
-def majority_element(nums):
-    # There can only be 2 or less majority elements
+class Solution:
+    def majorityElement(self, nums):
+        cand1, cand2 = self.get_candidates(nums)
 
-    cand1, count1 = None, 0
-    cand2, count2 = None, 0
+        # return [x for x in (cand1, cand2) if nums.count(x) > len(nums) // 3]
 
-    for num in nums:
-        if num == cand1:
-            count1 += 1
-        elif num == cand2:
-            count2 += 1
-        elif count1 == 0:
-            cand1 = num
-            count1 += 1
-        elif count2 == 0:
-            cand2 = num
-            count2 += 1
-        else:
-            count1 -= 1
-            count2 -= 1
+        # Get the candidate no of occurrences
+        count1, count2 = 0, 0
+        for num in nums:
+            count1 += 1 if num == cand1 else 0
+            count2 += 1 if num == cand2 else 0
 
-    # return [x for x in (cand1, cand2) if nums.count(x) > len(nums) // 3]
+        # Verify if indeed they have occurrences greate than n/3
+        ans = []
+        athird = len(nums) // 3
+        ans += [cand1] if count1 > athird else []
+        ans += [cand2] if count2 > athird else []
 
-    # Get the candidate no of occurrences
-    count1, count2 = 0, 0
-    for num in nums:
-        if num == cand1:
-            count1 += 1
-        elif num == cand2:
-            count2 += 1
+        return ans
 
-    # Verify if indeed they have occurrences greate than n/3
-    ans = []
-    athird = len(nums) / 3
-    if count1 > athird:
-        ans.append(cand1)
+    def get_candidates(self, nums):
+        cand1, count1 = None, 0
+        cand2, count2 = None, 0
 
-    if count2 > athird:
-        ans.append(cand2)
+        for num in nums:
+            if num == cand1:
+                count1 += 1
+            elif num == cand2:
+                count2 += 1
+            elif count1 == 0:
+                cand1, count1 = num, 1
+            elif count2 == 0:
+                cand2, count2 = num, 1
+            else:
+                count1, count2 = count1 - 1, count2 - 1
 
-    return ans
+        return cand1, cand2
 
 
-assert majority_element([1, 2]) == [1, 2]
+soln = Solution()
+assert soln.majority_element([1, 2]) == [1, 2]

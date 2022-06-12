@@ -12,22 +12,22 @@ Note that pos is not passed as a parameter.
 
 def detect_cycle(head):
     slow = fast = head
-    flag = False
+    has_cycle = False
 
     while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
 
         if slow == fast:
-            flag = True
+            has_cycle = True
             break
 
-    if flag:
-        slow = head
-        while slow != fast:
-            slow = slow.next
-            fast = fast.next
+    if not has_cycle:
+        return None
 
-        return slow
+    slow = head
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
 
-    return None
+    return slow
