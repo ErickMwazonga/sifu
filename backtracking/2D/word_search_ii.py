@@ -57,6 +57,7 @@ class Solution:
             trie.insert(word)
 
         n, m = len(board), len(board[0])
+
         res = []
         for i in range(n):
             for j in range(m):
@@ -72,16 +73,16 @@ class Solution:
         if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]):
             return
 
-        tmp = board[i][j]
-        node = node.children.get(tmp)
+        val = board[i][j]
+        node = node.children.get(val)
 
         if not node:
             return
 
-        board[i][j] = "#"
-        self.dfs(board, node, i+1, j, path+tmp, res)
-        self.dfs(board, node, i-1, j, path+tmp, res)
-        self.dfs(board, node, i, j-1, path+tmp, res)
-        self.dfs(board, node, i, j+1, path+tmp, res)
+        board[i][j] = '#'  # visit
+        self.dfs(board, node, i+1, j, path+val, res)
+        self.dfs(board, node, i-1, j, path+val, res)
+        self.dfs(board, node, i, j-1, path+val, res)
+        self.dfs(board, node, i, j+1, path+val, res)
 
-        board[i][j] = tmp
+        board[i][j] = val  # unvisit

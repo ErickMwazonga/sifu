@@ -1,5 +1,5 @@
 '''
-LeetCode 160. Intersection of Two Linked Lists
+160. Intersection of Two Linked Lists
 Link: https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 Write a program to find the node at which the intersection of two singly linked lists begins.
@@ -45,3 +45,31 @@ def getIntersectionNode(headA, headB):
         b = b.next if b else headA
 
     return a
+
+
+class Solution_V3:
+    def getLength(self, head):
+        length = 0
+        while head:
+            head = head.next
+            length += 1
+        return length
+
+    def getIntersectionNode(self, headA, headB):
+        lenA = self.getLength(headA)
+        lenB = self.getLength(headB)
+
+        # make A to be the longest by swapping
+        if lenB > lenA:
+            headA, headB = headB, headA
+            lenA, lenB = lenB, lenA
+
+        diff = lenA - lenB
+        while diff:
+            headA = headA.next
+            diff -= 1
+
+        while headA != headB:
+            headA, headB = headA.next, headB.next
+
+        return headA

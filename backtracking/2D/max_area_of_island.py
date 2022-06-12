@@ -27,24 +27,25 @@ class Solution:
         if not grid:
             return 0
 
-        max_count = 0
+        max_area = 0
         n, m = len(grid), len(grid[0])
 
         for row in range(n):
             for col in range(m):
                 if grid[row][col] == 1:
-                    count = self.dfs(grid, row, col)
-                    max_count = max(max_count, count)
+                    curr_area = self.dfs(grid, row, col)
+                    max_area = max(max_area, curr_area)
 
-        return max_count
+        return max_area
 
     def dfs(self, grid, row, col):
         n, m = len(grid), len(grid[0])
 
-        outside = row < 0 or col < 0 or row >= n or col >= m
-        if outside or grid[row][col] == 0:
+        out_bounds = row < 0 or row >= n or col < 0 or col >= m
+        if out_bounds or grid[row][col] == 0:
             return 0
 
+        area = 1
         grid[row][col] = 0  # SINK
 
         right = self.dfs(grid, row, col + 1)
@@ -52,7 +53,7 @@ class Solution:
         down = self.dfs(grid, row + 1, col)
         up = self.dfs(grid, row - 1, col)
 
-        return 1 + up + down + left + right
+        return area + up + down + left + right
 
 
 matrix = [

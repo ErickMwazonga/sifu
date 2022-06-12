@@ -14,33 +14,38 @@ Return the number of islands in grid2 that are considered sub-islands.
 
 class Solution:
     def count_sub_islands(self, grid1, grid2) -> int:
-        num_sub_islands = 0
+        if not grid1 or not grid2:
+            return 0
 
-        for row in range(len(grid2)):
-            for col in range(len(grid2[row])):
+        num_sub_islands = 0
+        n, m = len(grid2), len(grid2[0])
+
+        for row in range(n):
+            for col in range(m):
                 # If grid2 is land, and grid2 is a sub-island of grid 1
-                if grid2[row][col] == 1 and self.check_islands(grid1, grid2, row, col):
+                if grid2[row][col] == 1 and self.is_sub_island(grid1, grid2, row, col):
                     num_sub_islands += 1
 
         return num_sub_islands
 
-    def check_islands(self, grid1, grid2, row, col):
+    def is_sub_island(self, grid1, grid2, row, col):
         n, m = len(grid2), len(grid2[0])
-        outside = row < 0 or row >= n or col < 0 or col >= m
+        out_bounds = row < 0 or row >= n or col < 0 or col >= m
 
-        if outside or grid2[row][col] == 0:
+        if out_bounds or grid2[row][col] == 0:
             return True
 
         # If one of the cells in either grid is land and the other is water, then current cell can not be a sub-island.
-        if (grid1[row][col] == 0 and grid2[row][col] == 1) or (grid1[row][col] == 1 and grid2[row][col] == 0):
+        val1, val2 = grid1[row][col], grid2[row][col]
+        if (val1 == 0 and val2 == 1) or (val1 == 1 and val2 == 0):
             return False
 
         # grid1[row][col] == 1 and grid2[row][col] == 1:
         grid2[row][col] = 0  # SINK
 
-        left = self.check_islands(grid1, grid2, row, col - 1)
-        right = self.check_islands(grid1, grid2, row, col + 1)
-        top = self.check_islands(grid1, grid2, row - 1, col)
-        bottom = self.check_islands(grid1, grid2, row + 1, col)
+        left = self.is_sub_island(grid1, grid2, row, col - 1)
+        right = self.is_sub_island(grid1, grid2, row, col + 1)
+        top = self.is_sub_island(grid1, grid2, row - 1, col)
+        bottom = self.is_sub_island(grid1, grid2, row + 1, col)
 
         return left and right and top and bottom

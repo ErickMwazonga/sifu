@@ -26,15 +26,15 @@ class Solution:
         haystack_length, needle_length = len(haystack), len(needle)
 
         if not needle or not haystack:
-            return 0
-
-        if haystack == needle:
-            return 0
+            return -1
 
         if needle_length > haystack_length:
-            return 0
+            return -1
 
-        # for i in range(haystack_length - n + 1):
+        if haystack == needle:
+            return 0 if haystack == needle else -1
+
+        # for i in range(haystack_length - needle_length + 1):
         for i in range(haystack_length):
             if haystack[i:i + needle_length] == needle:
                 return i
@@ -56,30 +56,29 @@ class Solution_V2:
         if m == n:
             return 0 if haystack == needle else -1
 
-        lps = self.get_lps(needle)
+        lps = self.build_lps(needle)
         i, j = 0, 0
 
         while i < n:
             if haystack[i] == needle[j]:
                 i, j = i + 1, j + 1
+
+                if j == m:
+                    return i - m  # i - j
             else:
                 if j == 0:
                     i += 1
                 else:
                     j = lps[j-1]
 
-            if j == m:
-                return i - m
-
         return -1
-        return -1 if j < m else i-j  # remove the last check
 
-    def get_lps(self, s):
-        lps = [0] * len(s)
+    def build_lps(self, pattern):
+        lps = [0] * len()
         prev_lps, i = 0, 1
 
-        while i < len(s):
-            if s[i] == s[prev_lps]:
+        while i < len(pattern):
+            if pattern[i] == pattern[prev_lps]:
                 lps[i] = prev_lps + 1
                 prev_lps, i = prev_lps + 1, i + 1
             else:

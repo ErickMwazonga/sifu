@@ -20,19 +20,24 @@ Examples:
 '''
 
 
-def get_lps(s):
-    lps = [0] * len(s)  # first lps val will always be one
-    prev_lps, i = 0, 1
+class Solution:
+    def longest_lps(self, pattern):
+        lps = self.build_lps(pattern)
+        return lps[-1]
 
-    while i < len(s):
-        if s[i] == s[prev_lps]:
-            lps[i] = prev_lps + 1
-            prev_lps, i = prev_lps + 1, i + 1
-        else:
-            if prev_lps == 0:
-                lps[i] = 0
-                i += 1
+    def build_lps(pattern):
+        lps = [0] * len(pattern)  # first lps val will always be one
+        prev_lps, i = 0, 1
+
+        while i < len(pattern):
+            if pattern[i] == pattern[prev_lps]:
+                lps[i] = prev_lps + 1
+                prev_lps, i = prev_lps + 1, i + 1
             else:
-                prev_lps = lps[prev_lps - 1]
+                if prev_lps == 0:
+                    lps[i] = 0
+                    i += 1
+                else:
+                    prev_lps = lps[prev_lps - 1]
 
-    return lps
+        return lps

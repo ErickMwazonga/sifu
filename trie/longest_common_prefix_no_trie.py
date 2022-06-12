@@ -12,12 +12,12 @@ Examples:
 
 
 def longestCommonPrefix(strs) -> str:
-    l = list(zip(*strs))
+    commonLetters = list(zip(*strs))
     prefix = ''
 
-    for i in l:
-        if len(set(i)) == 1:
-            prefix += i[0]
+    for letters in commonLetters:
+        if len(set(letters)) == 1:
+            prefix += letters[0]
         else:
             break
 

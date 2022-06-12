@@ -32,7 +32,7 @@ class Solution:
 
         for row in range(rows):
             for col in range(cols):
-                if self.dfs(board, row, col, word, 0):
+                if self.dfs(board, row, col, word, word_index=0):
                     return True
 
         return False
@@ -43,10 +43,7 @@ class Solution:
 
         n, m = len(board), len(board[0])
         outside = row < 0 or row >= n or col < 0 or col >= m
-        if outside or word[word_index] != board[row][col]:
-            return False
-
-        if board[row][col] == '#':
+        if outside or word[word_index] != board[row][col] or board[row][col] == '#':
             return False
 
         # visit node and it's neighbors
@@ -54,19 +51,18 @@ class Solution:
         board[row][col] = '#'
 
         # check whether can find 'word' along one direction
-        up = self.dfs(board, row+1, col, word, word_index+1)
-        down = self.dfs(board, row-1, col, word, word_index+1)
-        left = self.dfs(board, row, col+1, word, word_index+1)
-        right = self.dfs(board, row, col-1, word, word_index+1)
-
-        found = up or down or left or right
+        up = self.dfs(board, row + 1, col, word, word_index + 1)
+        down = self.dfs(board, row - 1, col, word, word_index + 1)
+        left = self.dfs(board, row, col + 1, word, word_index + 1)
+        right = self.dfs(board, row, col - 1, word, word_index + 1)
 
         board[row][col] = val
-        return found
+
+        return up or down or left or right
 
 
 class Solution_V2:
-    '''Time: O(n * m * 4^n)'''
+    '''Time: O(nm * 4^n) - n(len of word)'''
 
     def exist(self, board, word) -> bool:
         if not board:

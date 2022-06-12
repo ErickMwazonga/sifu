@@ -60,7 +60,7 @@ class Trie:
 
     def dfs(self, node, combo, res):
         if node.is_end:
-            res.append(combo)
+            res.append(combo)  # Its starts from the root node
 
         for child in node.children.values():
             self.dfs(child, combo + child.char, res)

@@ -29,7 +29,8 @@ for i in range(n):
 1.1. `get()`
 ```py
 data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
-print(data.get('Hobbies', 'Coding')) # Coding
+hobby = data.get('Hobbies', 'Coding')
+print(hobby) # Coding
 ```
 > **PROBLEM** - Sets default value for all missing keys
 

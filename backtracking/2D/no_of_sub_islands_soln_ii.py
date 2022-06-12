@@ -29,18 +29,18 @@ class Solution:
                     self.dfs(grid2, i, j)
 
         # counting sub-islands
-        _count = 0
+        count = 0
         for i in range(n):
             for j in range(m):
                 if grid2[i][j] == 1:
                     self.dfs(grid2, i, j)
-                    _count += 1
+                    count += 1
 
-        return _count
+        return count
 
     def dfs(self, grid, i, j):
-        # n, m = len(grid), len(grid[i])
-        outside = i < 0 or i >= len(grid) or j < 0 or j >= len(grid[i])
+        n, m = len(grid), len(grid[i])
+        outside = i < 0 or i >= n or j < 0 or j >= m
 
         if outside or grid[i][j] == 0:
             return

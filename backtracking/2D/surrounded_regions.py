@@ -26,30 +26,34 @@ class Solution:
 
         n, m = len(board), len(board[0])
 
-        # change left and right border O into D
+        # surround left and right boarder with its environs
         for row in range(n):
             self.dfs(board, row, 0)
             self.dfs(board, row, m - 1)
 
-        # change up and down border O into D
+        # surround top and bottom border with it's environs
         for col in range(m):
             self.dfs(board, 0, col)
             self.dfs(board, n - 1, col)
 
         for i in range(n):
             for j in range(m):
-                if board[i][j] == 'O':
+                val = board[i][j]
+
+                if val == 'O':
                     board[i][j] = 'X'
-                elif board[i][j] == 'D':
+
+                if val == '#':
                     board[i][j] = 'O'
 
     def dfs(self, board, i: int, j: int) -> None:
         n, m = len(board), len(board[0])
 
-        if i < 0 or j < 0 or i >= n or j >= m or board[i][j] != 'O':
+        out_bounds = i < 0 or i >= n or j < 0 or j >= m
+        if out_bounds or board[i][j] != 'O':
             return
 
-        board[i][j] = 'D'  # SURROUND
+        board[i][j] = '#'  # SURROUND
 
         self.dfs(board, i + 1, j)
         self.dfs(board, i - 1, j)

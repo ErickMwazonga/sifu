@@ -13,23 +13,54 @@ Examples:
 Explanation: The word 'world' can be built one character at a time by 'w', 'wo', 'wor', and 'worl'.
 
 2. ['a','banana','app','appl','ap','apply','apple'] -> 'apple'
-Explanation: Both 'apply' and 'apple' can be built from other words in the dictionary. However, 'apple' is lexicographically smaller than 'apply'.
+Explanation: Both 'apply' and 'apple' can be built from other words in the dictionary. 
+However, 'apple' is lexicographically smaller than 'apply'.
 '''
 
 
-def longestWord(words: list[str]) -> str:
-    words.sort()
-    seen, longest = set(), ''
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.is_end = False
 
-    seen.add('')
 
-    for word in words:
-        last_version = word[:-1]
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
 
-        if last_version not in seen:
-            continue
+    def insert(self, word):
+        curr = self.root
 
-        longest = max((longest, word), key=len)
-        seen.add(word)
+        for ch in word:
+            if ch not in curr.children:
+                curr.children[ch] = TrieNode()
+            curr = curr.children[ch]
 
-    return longest
+        curr.is_end = True
+
+
+class Solution:
+    # DRAW EXAMPLE TO FIND ANSWER
+    def longestWord(self, words: list[str]) -> str:
+        # sort by combination(len, lexicographically(word))
+        words = sorted(words, key=lambda word: (-len(word), word))
+
+        trie = Trie()
+        for word in words:
+            trie.insert(word)
+
+        for word in words:
+            is_longest = True
+            cur = trie.root
+
+            for letter in word:
+                if not cur.children[letter].is_end:
+                    is_longest = False
+                    break
+
+                cur = cur.children[letter]
+
+            if is_longest:
+                return word
+
+        return ''

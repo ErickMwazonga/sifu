@@ -23,28 +23,28 @@ class Solution_V1:
         half_length = n // 2
 
         for i in range(1, half_length + 1):
-            if s == s[:i] * (n//i):
+            if s == s[:i] * (n // i):
                 return True
 
         return False
 
 
-class Solution_V3:
+class Solution_V2:
     '''Time: O(n), Space: O(n)'''
 
     def repeated_substring(self, s):
         n = len(s)
-        lps_table = self.get_lps(s)
-        lps = lps_table[n-1]
+        lps = self.build_lps(s)
+        k = lps[n-1]
 
-        return lps > 0 and n % (n-lps) == 0
+        return k > 0 and n % (n - k) == 0
 
-    def get_lps(self, s):
-        lps = [0] * len(s)  # first lps val will always be one
+    def build_lps(self, pattern):
+        lps = [0] * len(pattern)  # first lps val will always be one
         prev_lps, i = 0, 1
 
-        while i < len(s):
-            if s[i] == s[prev_lps]:
+        while i < len(pattern):
+            if pattern[i] == pattern[prev_lps]:
                 lps[i] = prev_lps + 1
                 prev_lps, i = prev_lps + 1, i + 1
             else:
@@ -61,4 +61,4 @@ class Solution_V3:
     '''Time: O(n), Space: O(n)'''
 
     def repeated_substring_v3(s):
-        return s in (s+s)[1:-1]
+        return s in (s + s)[1:-1]

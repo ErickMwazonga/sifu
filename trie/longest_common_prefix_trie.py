@@ -37,15 +37,15 @@ class Trie:
 
     def longestPrefix(self):
         curr = self.root
-        prefix = []
+        prefix = ''
 
         while len(curr.children) == 1 and not curr.is_end:
             key = list(curr.children.keys())[0]  # list(root.children)[0]
-            prefix.append(key)
+            prefix += key
 
             curr = curr.children[key]
 
-        return ''.join(prefix)
+        return prefix
 
     def longestPrefix_v2(self):
         curr = self.root

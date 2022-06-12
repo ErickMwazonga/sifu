@@ -2,7 +2,7 @@
 694. Number of Distinct Islands (identical)
 Link: https://leetcode.com/problems/number-of-distinct-islands/
 
-Given a non-empty 2D arraygridof 0's and 1's, an island is a group of1's (representing land)
+Given a non-empty 2D arraygridof 0's and 1's, an island is a group of 1's (representing land)
 connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
 
 Count the number of distinct islands. An island is considered to be the same as another if and only
@@ -42,8 +42,8 @@ class Solution:
     def compute_path(self, grid, i, j, direction):
         n, m = len(grid), len(grid[0])
 
-        outside = i < 0 or i >= n or j < 0 or j >= m
-        if outside or grid[i][j] == 0:
+        out_bounds = i < 0 or i >= n or j < 0 or j >= m
+        if out_bounds or grid[i][j] == 0:
             return 'O'
 
         grid[i][j] = 0  # SINK

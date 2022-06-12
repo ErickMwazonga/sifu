@@ -42,9 +42,9 @@ class Solution:
 
     def dfs(self, grid, row, col):
         n, m = len(grid), len(grid[0])
-        outside = row < 0 or col < 0 or row >= n or col >= m
+        out_bounds = row < 0 or row >= n or col < 0 or col >= m
 
-        if outside or grid[row][col] == '0':
+        if out_bounds or grid[row][col] == '0':
             return
 
         grid[row][col] = '0'  # SINK

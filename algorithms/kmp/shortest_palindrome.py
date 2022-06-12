@@ -13,17 +13,17 @@ Examples:
 
 
 class Solution:
-
     def shortestPalindrome(self, s: str) -> str:
         rev_s = s[::-1]
-        merged_s = s + '#' + rev_s  # to prevent lps overlapp
+        pattern = s + '#' + rev_s  # to prevent lps overlapp
 
-        lps = self.get_lps(merged_s)
+        lps = self.build_lps(pattern)
         k = lps[-1]
 
-        return rev_s[:-k] + s
+        return rev_s + s[k:]
+        # return rev_s[:-k] + s
 
-    def get_lps(self, s):
+    def build_lps(self, s):
         lps = [0] * len(s)  # first lps val will always be one
         prev_lps, i = 0, 1
 

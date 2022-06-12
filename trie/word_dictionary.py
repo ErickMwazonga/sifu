@@ -6,7 +6,8 @@ Design a data structure that supports adding new words and finding if a string m
 Implement the WordDictionary class:
 WordDictionary() Initializes the object.
 void addWord(word) Adds word to the data structure, it can be matched later.
-bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise. word may contain dots '.' where dots can be matched with any letter.
+bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise.
+    word may contain dots '.' where dots can be matched with any letter.
 
 Example:
 Input
@@ -41,20 +42,40 @@ class WordDictionary:
 
     def search(self, word: str) -> bool:
         root = self.root
-        return self.dfs(root, word, i=0)
+        return self.dfs(root, word, idx=0)
 
-    def dfs(self, node, word, i):
-        if i == len(word):
+    def dfs(self, node, word, idx):
+        if not node:
+            return False
+
+        if idx == len(word):
             return node.is_end
 
-        if word[i] == '.':
-            for child in node.children:
-                new_node = node.children[child]
-                if self.dfs(new_node, word, i+1):
-                    return True
+        char = word[idx]
+        if char != '.':
+            return self.dfs(node.children.get(char), word, idx + 1)
         else:
-            if word[i] in node.children:
-                new_node = node.children[word[i]]
-                return self.dfs(new_node, word, i+1)
+            for child in node.children:
+                if self.dfs(node.children[child], word, idx + 1):
+                    return True
 
         return False
+
+    def dfs_v2(self, node, word, idx):
+        if idx == len(word):
+            return node.is_end
+
+        if idx > len(word):
+            return False
+
+        val = word[idx]
+        if (val != '.') and (val not in node.children):
+            return False
+
+        if val != '.':
+            self.dfs(node.children.get(val), word, idx + 1)
+        else:
+            for child in node.children:
+                self.dfs(node.children[child], word, idx + 1)
+
+        return True
