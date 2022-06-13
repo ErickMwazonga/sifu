@@ -10,34 +10,33 @@ The same number may be chosen from candidates an unlimited number of times.
 Two combinations are unique if the frequency of at least one of the chosen numbers is different.
 
 Example 1:
-Input: candidates = [2,3,6,7], target = 7
-Output: [[2,2,3], [7]]
+Input: candidates = [2, 3, 6, 7], target = 7
+Output: [[2, 2, 3], [7]]
 
 Explanation:
 2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times. 7 is a candidate, and 7 = 7.
 
 Example 2:
-Input: candidates = [2,3,5], target = 8
-Output: [[2,2,2,2], [2,3,3], [3,5]]
+Input: candidates = [2, 3, 5],  target = 8
+Output: [[2, 2, 2, 2],  [2, 3, 3],  [3, 5]]
 '''
 
 
 class Solution:
     def combinationSum(self, candidates, target):
         res = []
-        self.dfs(candidates, target, res, total=0, index=0, subset=[])
-
+        self.dfs(candidates, target, res, total=0, idx=0, subset=[])
         return res
 
-    def dfs(self, cands, target, res, total, index, subset):
+    def dfs(self, cands, target, res, total, idx, subset):
         if total == target:
             res.append(subset[:])
             return
 
-        if index >= len(cands) or total > target:
+        if idx >= len(cands) or total > target:
             return
 
-        for i in range(index, len(cands)):
+        for i in range(idx, len(cands)):
             subset.append(cands[i])
             self.dfs(cands, target, res, total + cands[i], i, subset)
             subset.pop()
@@ -48,18 +47,18 @@ class Solution_V2:
         candidates.sort()
         res = []
 
-        self.helper(candidates, target, res, cur_subset=[], index=0)
+        self.helper(candidates, target, res, subset=[], idx=0)
 
         return res
 
-    def helper(self, candidates, remain, res, cur_subset, index):
+    def helper(self, candidates, remain, res, subset, idx):
         if remain == 0:
-            return res.append(cur_subset)
+            return res.append(subset)
 
-        for i in range(index, len(candidates)):
+        for i in range(idx, len(candidates)):
             if candidates[i] > remain:
                 return
 
-            cur_subset.append(candidates[i])
-            self.helper(candidates, remain - candidates[i], res, cur_subset, i)
-            cur_subset.pop()
+            subset.append(candidates[i])
+            self.helper(candidates, remain - candidates[i], res, subset, i)
+            subset.pop()

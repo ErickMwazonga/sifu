@@ -23,10 +23,10 @@ class Solution:
     def sortList(list):
         i = list.head
 
-        while i is not None:
+        while i:
             j = list.head
 
-            while j.next is not None:
+            while j.next:
                 if j.data > j.next.data:
                     j.data, j.next.data = j.next.data, j.data
 
@@ -54,8 +54,7 @@ class Solution_v2:
         return self.merge(left, right)
 
     def getMid(self, head):
-        slow = head
-        fast = head.next
+        slow, fast = head, head.next
 
         while fast and fast.next:
             slow = slow.next
@@ -67,17 +66,18 @@ class Solution_v2:
         return mid
 
     def merge(self, list1, list2):
-        new_head = tail = ListNode()
+        new_head = curr = ListNode()
 
         while list1 and list2:
             if list1.val > list2.val:
-                tail.next = list2
+                curr.next = list2
                 list2 = list2.next
             else:
-                tail.next = list1
+                curr.next = list1
                 list1 = list1.next
-            tail = tail.next
 
-        tail.next = list1 or list2
+            curr = curr.next
+
+        curr.next = list1 or list2
 
         return new_head.next

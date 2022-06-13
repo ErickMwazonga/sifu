@@ -23,12 +23,12 @@ class Solution:
             res.append(partition[:])
             return
 
-        for end in range(start, len(s)):
-            if not self.is_palindrome(s, start, end):
+        for i in range(start, len(s)):
+            if not self.is_palindrome(s, start, i):
                 return
 
-            partition.append(s[start:end+1])
-            self.backtrack(s, res, end+1, partition)
+            partition.append(s[start:i+1])
+            self.backtrack(s, res, i + 1, partition)
             partition.pop()
 
     def is_palindrome(self, s, i, j):

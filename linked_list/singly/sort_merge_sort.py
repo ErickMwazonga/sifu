@@ -15,11 +15,9 @@ class LinkedList:
         self.head = head
 
     def mergeSortedLists(self, head1, head2):
-        ptr1 = head1
-        ptr2 = head2
+        ptr1, ptr2 = head1, head2
 
-        returnedHead = None
-        tail = None
+        returnedHead, tail = None, None
 
         while ptr1 or ptr2:
             if ptr1 and ptr2:

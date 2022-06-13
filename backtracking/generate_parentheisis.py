@@ -22,20 +22,23 @@ class Solution:
         # only ad closing parenthesis if closed < open
         # valid IFF open == closed == n
 
-        res, stack = [], ''
-        self.backtrack(n, res, stack, openN=0, closedN=0)
+        res, comb = [], ''
+        self.dfs(n, res, comb, openN=0, closedN=0)
         return res
 
-    def backtrack(self, n, res, stack, openN, closedN):
+    def dfs(self, n, res, comb, openN, closedN):
         if openN == closedN == n:
-            res.append(stack)
+            res.append(comb)
+            return
+
+        if closedN > openN:
             return
 
         if openN < n:
-            self.backtrack(n, res, stack + '(', openN + 1, closedN)
+            self.dfs(n, res, comb + '(', openN + 1, closedN)
 
         if closedN < openN:
-            self.backtrack(n, res, stack + ')', openN, closedN + 1)
+            self.dfs(n, res, comb + ')', openN, closedN + 1)
 
 
 class Solution_V2:
@@ -52,6 +55,7 @@ class Solution_V2:
     def dfs(self, left, right, res, combo):
         if right < left:
             return
+
         if not left and not right:
             res.append(combo)
             return

@@ -25,9 +25,8 @@ def max_product(nums: list) -> int:
 
     for num in nums[1:]:
         choices = num, curr_min * num, curr_max * num
-        curr_min = min(choices)
-        curr_max = max(choices)
 
+        curr_min, curr_max = min(choices), max(choices)
         max_so_far = max(max_so_far, curr_max)
 
     return max_so_far

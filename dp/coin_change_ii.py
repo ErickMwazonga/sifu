@@ -23,9 +23,9 @@ Explanation: there are four ways to make up the amount:
 
 class Solution:
     def change(self, amount, coins):
-        return self.dfs(0, coins, amount, {})
+        return self.dfs(coins, amount, i=0, dp={})
 
-    def dfs(self, i, coins, amount, dp):
+    def dfs(self, coins, amount, i, dp):
         if amount == 0:
             return 1
 
@@ -35,8 +35,8 @@ class Solution:
         if (i, amount) in dp:
             return dp[(i, amount)]
 
-        include = self.dfs(i, coins, amount - coins[i], dp)
-        exclude = self.dfs(i + 1, coins, amount, dp)
+        include = self.dfs(coins, amount - coins[i], i, dp)
+        exclude = self.dfs(coins, amount, i + 1, dp)
 
         res = include + exclude
         dp[(i, amount)] = res

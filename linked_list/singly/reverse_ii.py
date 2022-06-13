@@ -20,8 +20,7 @@ class ListNode:
 
 
 def reverseBetween(head, left: int, right: int):
-    dummy = ListNode(0)
-    dummy.next = head
+    dummy = ListNode(0, head)
 
     leftprev, curr = dummy, head
 
@@ -47,8 +46,7 @@ def reverseBetween_v2(head, m, n):
     2. https://bit.ly/3ai2PdI
     '''
 
-    dummy = ListNode(0)
-    dummy.next = head
+    dummy = ListNode(0, head)
 
     # find the position
     curr, prev = head, dummy

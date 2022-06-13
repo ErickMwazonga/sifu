@@ -32,7 +32,6 @@ def detectCycle(head):
         return None
 
     slow = head
-
     while slow != fast:
         slow = slow.next
         fast = fast.next

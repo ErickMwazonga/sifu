@@ -52,8 +52,8 @@ class Heap:
         n = len(A)
         no_leaf_nodes_max_idx = (n // 2) - 1
 
-        for k in range(no_leaf_nodes_max_idx, -1, -1):
-            self.heapify(A, k)
+        for i in range(no_leaf_nodes_max_idx, -1, -1):
+            self.heapify(A, i)
 
         return A
 

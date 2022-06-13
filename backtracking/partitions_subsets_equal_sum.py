@@ -9,7 +9,7 @@ Examples:
 1. [1, 5, 11, 5] -> True
     Explanation: The array can be partitioned as [1, 5, 5] and [11].
 
-2. [1, 2, 3, 5] False
+2. [1, 2, 3, 5] -> False
     Explanation: The array cannot be partitioned into equal sum subsets.
 '''
 
@@ -22,9 +22,9 @@ class Solution:
         if rem != 0:
             return False
 
-        return self.helper(nums, target, 0, memo={})
+        return self.dfs(nums, target, 0, memo={})
 
-    def helper(self, nums, target, i, memo):
+    def dfs(self, nums, target, i, memo):
         key = (i, target)
 
         if key in memo:
@@ -36,8 +36,8 @@ class Solution:
         if target == 0:
             return True
 
-        include = self.helper(nums, target-nums[i], i+1, memo)
-        exclude = self.helper(nums, target, i+1, memo)
+        include = self.dfs(nums, target-nums[i], i+1, memo)
+        exclude = self.dfs(nums, target, i+1, memo)
 
         memo[key] = include or exclude
 

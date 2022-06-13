@@ -18,31 +18,14 @@ Example 1:
 
 class Solution:
     def permute(self, nums):
-        res = []
-        self.dfs(nums, [], res)
+        res, visited = [], set()
+
+        self.backtrack(nums, res, visited, comob=[])
         return res
 
-    def dfs(self, nums, path, res):
-        if not nums:
-            res.append(path)
-            return
-
-        for i in range(len(nums)):
-            new_nums = nums[:i] + nums[i+1:]
-            self.dfs(new_nums, path+[nums[i]], res)
-
-
-class Solution_V2:
-    def permute(self, nums):
-        res, path = [], []
-        visited = set()
-
-        self.backtrack(nums, res, visited, path)
-        return res
-
-    def backtrack(self, nums, res, visited, path):
-        if len(path) == len(nums):
-            res.append(path)
+    def backtrack(self, nums, res, visited, comb):
+        if len(comb) == len(nums):
+            res.append(comb)
             return
 
         for i in range(len(nums)):
@@ -51,5 +34,22 @@ class Solution_V2:
 
             visited.add(i)
 
-            self.backtrack(nums, res, visited, path + [nums[i]])
+            self.backtrack(nums, res, visited, comb + [nums[i]])
             visited.remove(i)
+
+
+class Solution_V2:
+
+    def permute(self, nums):
+        res = []
+        self.dfs(nums, comb=[], res=res)
+        return res
+
+    def dfs(self, nums, combo, res):
+        if not nums:
+            res.append(combo)
+            return
+
+        for i in range(len(nums)):
+            new_nums = nums[:i] + nums[i+1:]
+            self.dfs(new_nums, combo+[nums[i]], res)

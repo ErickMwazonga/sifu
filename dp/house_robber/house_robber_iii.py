@@ -39,7 +39,8 @@ Input: [3,4,5,1,3,null,1]
 
 class Solution:
     def rob(self, root) -> int:
-        return max(self.dfs(root))
+        with_root, without_root = self.dfs(root)
+        return max(with_root, without_root)
 
     def dfs(self, root):
         '''[With Root, Without Root]'''

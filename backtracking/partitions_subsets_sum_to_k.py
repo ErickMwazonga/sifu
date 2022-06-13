@@ -7,12 +7,12 @@ Given an integer array nums and an integer k, return true if it is possible to d
  
 Example 1:
 Input: nums = [4, 3, 2, 3, 5, 2, 1], k = 4
-Output: true
+Output: True
 Explanation: It is possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.
 
 Example 2:
 Input: nums = [1, 2, 3, 4], k = 3
-Output: false
+Output: False
 '''
 
 

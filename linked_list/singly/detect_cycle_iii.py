@@ -19,14 +19,15 @@ def removeLoop(head):
             has_cycle = True
             break
 
-    if has_cycle:
-        slow = head
+    if not has_cycle:
+        return head
 
-        while slow.next != fast.next:
-            slow = slow.next
-            fast = fast.next
+    slow = head
+    while slow.next != fast.next:
+        slow = slow.next
+        fast = fast.next
 
-        # Make next of fast i.e last node of Linked List None.
-        fast.next = None
+    # Make next of fast i.e last node of Linked List None.
+    fast.next = None
 
     return head

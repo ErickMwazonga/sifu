@@ -26,20 +26,19 @@ class Solution:
             return []
 
         res = []
-        self.dfs(digits, res, curr_str='', i=0)
+        self.dfs(digits, res, comb='', i=0)
         return res
 
-    def dfs(self, digits, res, curr_str, i):
-        if len(curr_str) == len(digits):
-            res.append(curr_str)
+    def dfs(self, digits, res, comb, i):
+        if len(comb) == len(digits):
+            res.append(comb)
             return
 
-        nextDigit = digits[i]
-        possibleChars = self.digitToLetters(nextDigit)
+        possibleChars = self.mapping(digits[i])
         for ch in possibleChars:
-            self.dfs(digits, res, curr_str + ch, i + 1)
+            self.dfs(digits, res, comb + ch, i + 1)
 
-    def digitToLetters(self, digit):
+    def mapping(self, digit):
         mapping = {
             '2': 'abc',
             '3': 'def',

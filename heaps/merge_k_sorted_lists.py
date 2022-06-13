@@ -73,8 +73,7 @@ def mergeKLists_v3(lists):
         if lst:
             heappush(heap, (lst.val, i, lst))
 
-    dummy = ListNode(0)
-    curr = dummy
+    curr = dummy = ListNode(0)
 
     while heap:
         _, i, node = heappop(heap)

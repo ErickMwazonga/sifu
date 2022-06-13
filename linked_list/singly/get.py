@@ -16,16 +16,14 @@ class LinkedList:
             cur_node = cur_node.next
 
     def append(self, data):
-        new_node = Node(data)
-
-        if self.head is None:
-            self.head = new_node
+        if not self.head:
+            self.head = Node(data)
             return
 
         last_node = self.head
         while last_node.next:
             last_node = last_node.next
-        last_node.next = new_node
+        last_node.next = Node(data)
 
     def get_node(self, val):
         curr = self.head
@@ -50,15 +48,13 @@ class LinkedList:
         if i < 0:
             raise ValueError('No negatives!!! 🐱')
 
-        curr = head
-        position = 0
-
+        idx, curr = 0, head
         while curr:
-            if position == i:
+            if idx == i:
                 return curr
 
             curr = curr.next
-            position += 1
+            idx += 1
 
         raise ValueError('Not Found')
 

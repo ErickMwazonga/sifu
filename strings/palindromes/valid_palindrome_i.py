@@ -10,7 +10,7 @@ Given a string s, return true if it is a palindrome, or false otherwise.
 Examples:
 1. 'A man, a plan, a canal: Panama' -> True
     Explanation: 'amanaplanacanalpanama' is a palindrome.
-2 'race a car' -> F alse
+2 'race a car' -> False
     Explanation: 'raceacar' is not a palindrome.
 '''
 
@@ -38,14 +38,14 @@ def isPalindrome(s):
         if not s[i].isalnum():
             i += 1
             continue
-            
+
         if not s[j].isalnum():
             j -= 1
             continue
-        
+
         if s[i].lower() != s[j].lower():
             return False
-        
+
         i, j = i + 1, j - 1
 
     return True

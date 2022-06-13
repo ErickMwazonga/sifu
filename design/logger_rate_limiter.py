@@ -41,7 +41,8 @@ class Logger:
 
         if message in self.message_set:
             return False
-        else:
-            self.message_set.add(message)
-            self.message_queue.append((message, timestamp))
-            return True
+
+        self.message_set.add(message)
+        self.message_queue.append((message, timestamp))
+
+        return True

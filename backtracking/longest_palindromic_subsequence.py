@@ -9,7 +9,7 @@ deleting some or no elements without changing the order of the remaining element
 Examples:
 1. 'bbbab' -> 4
 2. 'cbbd' -> 2
-Explanation: One possible longest palindromic subsequence is 'bb'.
+    Explanation: One possible longest palindromic subsequence is 'bb'.
 '''
 
 
@@ -17,7 +17,7 @@ class Solution:
     '''WITHOUT MEMOIZATION'''
 
     def longestPalindromeSubseq(self, s: str) -> int:
-        return self.dfs(s, 0, len(s) - 1)
+        return self.dfs(s, start=0, end=len(s) - 1)
 
     def dfs(self, s, start: int, end: int) -> int:
         if start > end:
@@ -28,11 +28,11 @@ class Solution:
 
         if s[start] == s[end]:
             return 2 + self.dfs(s, start + 1, end - 1)
-        else:
-            length_left = self.dfs(s, start + 1, end)
-            length_right = self.dfs(s, start, end - 1)
 
-            return max(length_left, length_right)
+        length_left = self.dfs(s, start + 1, end)
+        length_right = self.dfs(s, start, end - 1)
+
+        return max(length_left, length_right)
 
 
 class Solution_V2:

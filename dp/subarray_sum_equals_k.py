@@ -35,17 +35,17 @@ def subarray_sum(nums, k):
     # this is the input list ex :   [1 4 9 -5 8] -> the sum array (s) ex : [0  1  5  13  8  16 ]
 
     mapping = {0: 1}  # { sum: count }
-    count = our_sum = 0
+    count = curr_sum = 0
 
     for num in nums:
-        our_sum += num  # cumilative sums, s:
+        curr_sum += num  # cumilative sums, s:
 
         # we make sure to check if the sum - k is already in the dictionary, if so, increase the count.
-        if our_sum - k in mapping:
-            count += mapping[our_sum - k]
+        if curr_sum - k in mapping:
+            count += mapping[curr_sum - k]
 
         # we check if s is already in the mapping, if so, increase by 1, if not assign 1.
-        mapping[num] = mapping.get(our_sum, 0) + 1
+        mapping[num] = mapping.get(curr_sum, 0) + 1
 
     return count
 

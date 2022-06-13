@@ -12,9 +12,7 @@ Examples
 
 
 def remove_duplicates(head):
-    curr = head
-    prev = None
-
+    prev, curr = None, head
     _hash = set()
 
     while curr:

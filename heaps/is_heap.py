@@ -30,16 +30,17 @@ def isMinHeap(root, i, n):
         return False
 
     # Heap property
-    if ((root.left and root.left.data <= root.data) or
-            (root.right and root.right.data <= root.data)):
+    not_left = root.left and root.left.data >= root.data
+    not_right = root.right and root.right.data <= root.data
+    if not_left or not_right:
         return False
 
     # check for left and right subtree
-    check_left = isMinHeap(root.left, 2*i + 1, n)
-    check_right = isMinHeap(root.left, 2*i + 2, n)
+    check_left = isMinHeap(root.left, 2 * i + 1, n)
+    check_right = isMinHeap(root.left, 2 * i + 2, n)
+
     return check_left and check_right
 
 
 def isHeap(root):
-    i = 0
-    return isMinHeap(root, i, size(root))
+    return isMinHeap(root, i=0, n=size(root))

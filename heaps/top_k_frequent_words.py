@@ -8,12 +8,13 @@ Sort the words with the same frequency by their lexicographical order.
 
 Example 1:
 Input: words = ['i','love','leetcode','i','love','coding'], k = 2
-Output: ['i','love']
+Output: ['i', 'love']
 
 Example 2:
 Input: words = ['the','day','is','sunny','the','the','the','sunny','is','is'], k = 4
 Output: ['the','is','sunny','day']
 '''
+
 import heapq
 
 

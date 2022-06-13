@@ -1,6 +1,6 @@
 '''
 473. Matchsticks to Square
-https://leetcode.com/problems/matchsticks-to-square/
+Link: https://leetcode.com/problems/matchsticks-to-square/
 Resource: https://www.youtube.com/watch?v=hUe0cUKV-YY
 
 You are given an integer array matchsticks where matchsticks[i] is the length of the ith matchstick.
@@ -18,6 +18,7 @@ Examples:
 
 
 class Solution:
+
     def makesquare(self, matchsticks) -> bool:
         target = sum(matchsticks) // 4
         sides = [0] * 4

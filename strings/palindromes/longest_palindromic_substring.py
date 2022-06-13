@@ -31,16 +31,15 @@ class Solution:
 
         return longest
 
-    def find_palindrome_from(self, string, left, right):
-        while left >= 0 and right < len(string):
-            if string[left] != string[right]:
+    def find_palindrome_from(self, s, left, right):
+        while left >= 0 and right < len(s):
+            if s[left] != s[right]:
                 break
 
-            left -= 1
-            right += 1
+            left, right = left - 1, right + 1  # move outwards
 
         # Because left will go negatively e.g -1
-        return string[left + 1: right]
+        return s[left + 1: right]
 
 
 class Solution_V2:

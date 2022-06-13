@@ -31,8 +31,7 @@ def delete_node_at_pos(self, pos):
         return
 
     # Node to be deleted is not head.
-    prev = None
-    count = 0
+    prev, count = None, 0
     while curr and count != pos:
         prev = curr
         curr = curr.next

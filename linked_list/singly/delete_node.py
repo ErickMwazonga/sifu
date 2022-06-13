@@ -13,9 +13,9 @@ Output: [4, 1, 9]
 
 
 def deleteNode(node):
-    next_node = node.next
+    nxt = node.next
 
-    node.val = next_node.val
-    node.next = next_node.next
+    node.val = nxt.val
+    node.next = nxt.next
 
-    # del next_node
+    # del nxt

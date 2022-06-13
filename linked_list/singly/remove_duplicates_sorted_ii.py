@@ -7,11 +7,11 @@ leaving only distinct numbers from the original list. Return the linked list sor
 
 Example 1:
 Input: head = [1,2,3,3,4,4,5]
-Output: [1,2,5]
+Output: [1, 2, 5]
 
 Example 2:
 Input: head = [1,1,1,2,3]
-Output: [2,3]
+Output: [2, 3]
 '''
 
 
@@ -31,8 +31,7 @@ class Solution:
             counter[val] = counter.get(val, 0) + 1
             curr = curr.next
 
-        dummy = Node(0)
-        dummy.next = head
+        dummy = Node(0, head)
 
         prev, curr = dummy, head
         while curr:

@@ -32,12 +32,11 @@ def validPalindrome_v2(s):
     while i < j:
         if s[i] == s[j]:
             i, j = i + 1, j - 1
-            continue
+        else:
+            exclude_last = s[i:j]
+            exclude_first = s[i + 1:j + 1]
 
-        exclude_last = s[i:j]
-        exclude_first = s[i + 1:j + 1]
-
-        return is_pali(exclude_last) or is_pali(exclude_first)
+            return is_pali(exclude_last) or is_pali(exclude_first)
 
     return True
 
@@ -48,8 +47,7 @@ def validPalindrome_v3(s: str) -> bool:
     while left < right:
         if s[left] == s[right]:
             # Move inwards
-            left += 1
-            right -= 1
+            left, right = left - 1, right + 1
         else:
             # Get the subsets eliminating either of the chars
             first, second = s[left+1: right+1], s[left: right]

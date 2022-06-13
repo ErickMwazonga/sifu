@@ -1,12 +1,10 @@
-def reverse(self):
-    tmp = None
-    cur = self.head
+def reverse(head):
+    prev, curr = None, head
 
-    while cur:
-        tmp = cur.prev
-        cur.prev = cur.next
-        cur.next = tmp
-        cur = cur.prev
+    while curr:
+        prev, nxt = curr.prev, curr.next
+        curr.prev = nxt
+        curr.next = prev
+        curr = curr.prev
 
-    if tmp:
-        self.head = tmp.prev
+    head = prev.prev

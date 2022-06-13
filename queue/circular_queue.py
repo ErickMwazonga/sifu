@@ -46,7 +46,8 @@ class CircularQueue:
     def enQueue(self, value: int) -> bool:
         if self.isFull():
             return False
-        elif self.isEmpty():
+
+        if self.isEmpty():
             self.front = self.rear = 0
         else:
             self.rear = (self.rear + 1) % self.max_size
@@ -58,7 +59,8 @@ class CircularQueue:
     def deQueue(self) -> bool:
         if self.isEmpty():
             return False
-        elif self.front == self.rear:  # One element left
+
+        if self.front == self.rear:  # One element left
             self.front = self.rear = -1
         else:
             self.front = (self.front + 1) % self.max_size

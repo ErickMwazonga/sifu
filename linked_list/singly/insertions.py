@@ -61,8 +61,7 @@ class LinkedList:
             new_node.next = head
             return new_node
 
-        count = 1
-        curr = head
+        count, curr = 1, head
         while curr:
             if count == index:
                 inserted_node = Node(data)

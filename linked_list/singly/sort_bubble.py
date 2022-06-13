@@ -21,6 +21,7 @@ def sortArray(list):
             if j.data > j.next.data:
                 j.data, j.next.data = j.next.data, j.data
             j = j.next
+
         i = i.next
 
 

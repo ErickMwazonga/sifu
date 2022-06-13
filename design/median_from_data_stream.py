@@ -21,31 +21,38 @@ Output
 [null, null, null, 1.5, null, 2.0]
 '''
 
-import heapq
+from heapq import heappop, heappush
 
 
 class MedianFinder:
 
     def __init__(self):
-        self.small, self.large = [], []  # maxHeap, minHeap (python default)
+        self.small = []  # maxHeap,
+        self.large = []  # minHeap (python default)
 
     def addNum(self, num: int) -> None:
-        heapq.heappush(self.small, -num)
+        heappush(self.small, -num)
 
+        # every element in small has to lesser than every element in large
         if (self.small and self.large) and (-self.small[0] > self.large[0]):
-            val = -heapq.heappop(self.small)
-            heapq.heappush(self.large, val)
+            val = -heappop(self.small)
+            heappush(self.large, val)
 
+        # uneven sizes
         if len(self.small) - len(self.large) > 1:
-            val = -heapq.heappop(self.small)
-            heapq.heappush(self.large, val)
-        elif len(self.large) - len(self.small) > 1:
-            val = heapq.heappop(self.large)
-            heapq.heappush(self.small, -val)
+            popped = -heappop(self.small)
+            heappush(self.large, popped)
+        if len(self.large) - len(self.small) > 1:
+            popped = heappop(self.large)
+            heappush(self.small, -popped)
 
     def findMedian(self) -> float:
-        if len(self.small) > len(self.large):
+        n_small, n_large = len(self.small), len(self.large)
+
+        if n_small > n_large:
             return -self.small[0]
-        elif len(self.large) > len(self.small):
+
+        if n_large > n_small:
             return self.large[0]
+
         return (-self.small[0] + self.large[0]) / 2

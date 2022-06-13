@@ -18,21 +18,21 @@ output ->  [
 '''
 
 
-def combinations(lists, res, comb='', i=0):
-    if not lists:
-        return
+class Solution:
+    def phrases(self, arr):
+        res = []
+        self.dfs(arr, res, comb='', i=0)
 
-    if i == len(lists):
-        res.append(comb)
-        return
+        return res
 
-    for word in lists[i]:
-        out = comb + ' ' + word
-        combinations(lists, res, out, i + 1)
+    def dfs(self, lists, res, comb='', i=0):
+        if not lists:
+            return
 
+        if i == len(lists):
+            res.append(comb)
+            return
 
-def phrases(arr):
-    res = []
-    combinations(arr, res, '', 0)
-
-    return res
+        for word in lists[i]:
+            out = comb + ' ' + word
+            self.dfs(lists, res, comb, i + 1)

@@ -14,16 +14,16 @@ Given a list of non-negative integers representing the
 amount of money of each house, determine the maximum amount of
 money you can rob tonight without alerting the police.
 
-Example
-Input: [2, 3, 2] -> 3
+Examples
+1. [2, 3, 2] -> 3
 Explanation:
-You cannot rob house 1 (money = 2) and then rob house 3 (money = 2),
-because they are adjacent houses.
+    You cannot rob house 1 (money = 2) and then rob house 3 (money = 2),
+    because they are adjacent houses.
 '''
 
 
 class Solution:
-    '''Time:  O(n) # Space: O(n)'''
+    '''Time: O(n), Space: O(n)'''
 
     def rob(self, nums: list[int]) -> int:
         if len(nums) <= 2:

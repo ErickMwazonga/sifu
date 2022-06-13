@@ -15,10 +15,10 @@ If the number of keys exceeds the capacity from this operation, evict the least 
 
 
 class Node:
-
     def __init__(self, key, val):
         self.key = key
         self.val = val
+
         self.prev = None
         self.next = None
 

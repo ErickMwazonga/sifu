@@ -32,6 +32,9 @@ def coin_change(coins, amount):
             balance = i - coin
 
             if balance >= 0:
-                dp[i] = min(dp[i], dp[balance] + 1)
+                include = dp[i]
+                exclude = 1 + dp[balance]
+
+                dp[i] = min(include, exclude)
 
     return -1 if dp[-1] == MAX else dp[-1]

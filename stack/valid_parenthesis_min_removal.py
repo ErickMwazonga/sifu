@@ -35,6 +35,7 @@ def minRemoveToMakeValid(s):
                 s[i] = ''
 
     while stack:
-        s[stack.pop()] = ''
+        popped = stack.pop()
+        s[popped] = ''
 
     return ''.join(s)

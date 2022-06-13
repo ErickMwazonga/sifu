@@ -19,9 +19,8 @@ class ListNode:
 
 
 def mergeTwoLists(l1, l2):
-    dummy = ListNode(0)
+    curr = dummy = ListNode(0)
 
-    curr = dummy
     while list1 and list2:
         if list1.val <= list2.val:
             curr.next = list1
@@ -33,11 +32,6 @@ def mergeTwoLists(l1, l2):
         curr = curr.next
 
     curr.next = list2 or list2
-    # if list2:
-    #     curr.next = list2
-    # if list1:
-    #     curr.next = list1
-
     return dummy.next
 
 

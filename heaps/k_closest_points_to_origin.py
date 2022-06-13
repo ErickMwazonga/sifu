@@ -33,7 +33,7 @@ def kClosest(points, k):
         heapq.heappush(heap, [dist, point])
 
     for _ in range(k):
-        distance, point = heapq.heappop(heap)
+        _, point = heapq.heappop(heap)
         res.append(point)
 
     return res
@@ -51,7 +51,7 @@ def kClosest_v2(points, k):
         heapqq.heappush(heap, [dist, point])
 
     for _ in range(k):
-        distance, point = heapqq.heappop(heap)
+        _, point = heapqq.heappop(heap)
         res.append(point)
 
     return res
