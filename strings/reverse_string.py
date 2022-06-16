@@ -12,9 +12,7 @@ def reverse_str(s):
 
 def swap(s, i, j):
     strlst = list(s)
-    temp = strlst[i]
-    strlst[i] = strlst[j]
-    strlst[j] = temp
+    strlst[i], strlst[j] = strlst[j], strlst[j]
 
     return ''.join(strlst)
 

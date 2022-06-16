@@ -6,16 +6,14 @@ Given two n x n binary matrices mat and target, return true if it is possible to
 to target by rotating mat in 90-degree increments, or false otherwise.
 
 Example 1:
-Input: mat = [[0,1], [1,0]], target = [[1,0], [0,1]]
+Input: mat = [[0, 1], [1, 0]], target = [[1, 0], [0, 1]]
 Output: true
 Explanation: We can rotate mat 90 degrees clockwise to make mat equal target.
 
 Example 3:
-Input: mat = [[0,0,0],[0,1,0],[1,1,1]], target = [[1,1,1],[0,1,0],[0,0,0]]
+Input: mat = [[0,0,0], [0,1,0], [1,1,1]], target = [[1,1,1], [0,1,0], [0,0,0]]
 Output: true
- 
-Constraints:
-1 <= n <= 10
+
 '''
 
 

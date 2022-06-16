@@ -1,7 +1,7 @@
 '''
 621. Task Scheduler
 Link: https://leetcode.com/problems/task-scheduler/
-Credit: https://leetcode.com/problems/task-scheduler/discuss/760778/Python-solution-with-easy-to-understand-video-explanation
+Resource: https://leetcode.com/problems/task-scheduler/discuss/760778/Python-solution-with-easy-to-understand-video-explanation
 
 Given a characters array tasks, representing the tasks a CPU needs to do,
 where each letter represents a different task.

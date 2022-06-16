@@ -1,7 +1,7 @@
 '''
 867. Transpose Matrix
 Link: https://leetcode.com/problems/transpose-matrix/
-Credit: https://levelup.gitconnected.com/make-way-for-the-matrix-a-complete-guide-to-solving-2d-array-coding-problems-725096d122d9
+Resource: https://levelup.gitconnected.com/make-way-for-the-matrix-a-complete-guide-to-solving-2d-array-coding-problems-725096d122d9
 
 Given a 2D integer array matrix, return the transpose of matrix.
 The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.

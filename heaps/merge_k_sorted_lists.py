@@ -28,7 +28,7 @@ class ListNode:
 
 
 def mergeKLists(lists):
-    '''Credit: https://www.youtube.com/watch?v=zLcNwcR6yO4'''
+    '''Resource: https://www.youtube.com/watch?v=zLcNwcR6yO4'''
 
     heap = []
 

@@ -6,11 +6,10 @@ The task is to count the total number of indices (i, j) such that arr[i] = arr[j
 
 Examples :
 1. [1, 1, 2] -> 1
-As arr[0] = arr[1], the pair of indices is (0, 1)
+   As arr[0] = arr[1], the pair of indices is (0, 1)
 
 2. [1, 1, 1] -> 3
-As arr[0] = arr[1], the pair of indices is (0, 1), 
-(0, 2) and (1, 2)
+   As arr[0] = arr[1], the pair of indices is (0, 1), (0, 2) and (1, 2)
 
 3. [1, 2, 3] -> 0
 '''

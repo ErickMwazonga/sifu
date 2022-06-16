@@ -16,7 +16,7 @@ Output: false
 Input: p1 = [1,0], p2 = [-1,0], p3 = [0,1], p4 = [0,-1]
 Output: true
 
-[INSTINCTS]
+[INTUITION]
 For a valid square:
 - All lengths should be equal hence just 1 entry to the set
 - Both diagonals should be equal hence the second entry to the set

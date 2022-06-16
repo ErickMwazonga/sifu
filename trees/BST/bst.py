@@ -10,8 +10,6 @@ PROPERTIES
 - Both subtrees of each node are also BSTs i.e. they have the above two properties
 '''
 
-# Create a node
-
 
 class Node:
     def __init__(self, key):

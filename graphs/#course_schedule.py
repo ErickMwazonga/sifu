@@ -1,7 +1,7 @@
 '''
 207. Course Schedule
 Link: https://leetcode.com/problems/course-schedule/
-Credit: https://www.youtube.com/watch?v=EgI5nU9etnU&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=2
+Resource: https://www.youtube.com/watch?v=EgI5nU9etnU&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=2
 
 There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. 
 You are given an array prerequisites where prerequisites[i] = [ai, bi] 
@@ -20,6 +20,7 @@ To take course 1 you should have finished course 0. So it is possible
 
 def canFinish(numCourses, prerequisites):
     pre_map = {i: [] for i in range(numCourses)}
+
     for course, pre in prerequisites:
         pre_map[course].append(pre)
 

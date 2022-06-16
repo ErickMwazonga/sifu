@@ -1,7 +1,7 @@
 '''
 12. Integer to Roman
 Link: https://leetcode.com/problems/integer-to-roman/
-Credit: https://www.youtube.com/watch?v=yzB4M-UXqgI
+Resource: https://www.youtube.com/watch?v=yzB4M-UXqgI
 
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 Symbol       Value
@@ -23,9 +23,9 @@ Examples:
 2. 4 -> 'IV'
 3. 9 -> 'IX'
 4. 58 -> 'LVIII'
-    Explanation: L = 50, V = 5, III = 3.
+   Explanation: L = 50, V = 5, III = 3.
 5. 1994 -> 'MCMXCIV'
-    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+   Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 '''
 
 

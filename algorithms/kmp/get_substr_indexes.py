@@ -1,7 +1,7 @@
 '''
 Given a string and substring, return the indexes of first char of the substring in the main string
 Input
-    main_str = dgfabdghabchdabcgh
+    mainstr = dgfabdghabchdabcgh
     substr = abc 
 Output - [8, 11]
 '''

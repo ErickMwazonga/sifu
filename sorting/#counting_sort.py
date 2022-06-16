@@ -1,15 +1,14 @@
 '''
 Counting Sort
 https://www.interviewcake.com/concept/python3/counting-sort
-Credit: https://www.programiz.com/dsa/counting-sort
-Credit: https://www.programiz.com/dsa/counting-sort
+Resource: https://www.programiz.com/dsa/counting-sort
 
 Counting sort is a sorting algorithm that sorts the elements
 of an array by counting the number of occurrences of each unique
 element in the array. The count is stored in an auxiliary array
 and the sorting is done by mapping the count as an index of the auxiliary array.
 
-Overall complexity = O(max)+O(size)+O(max)+O(size) = O(max+size)
+Overall complexity = O(max) + O(size) + O(max) + O(size) = O(max + size)
 
 Worst Case Complexity: O(n+k)
 Best Case Complexity: O(n+k)

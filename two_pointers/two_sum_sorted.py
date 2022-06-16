@@ -8,11 +8,11 @@ The function twoSum should return indices of the two numbers such that they
 add up to the target, where index1 must be less than index2.
 
 Example 1:
-Input: numbers = [2,7,11,15], target = 9 -> [1,2]
+Input: numbers = [2, 7, 11, 15],  target = 9 -> [1, 2]
 Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 
 Example 2:
-Input: numbers = [2,3,4], target = 6 -> [1,3]
+Input: numbers = [2, 3, 4], target = 6 -> [1, 3]
 '''
 
 

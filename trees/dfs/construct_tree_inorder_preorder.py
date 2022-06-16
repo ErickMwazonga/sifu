@@ -3,8 +3,8 @@
 Link: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
 Solution:
-Credit: https://bit.ly/3GcK0UV
-Credit: https://bit.ly/3lAN6IV
+Resource: https://bit.ly/3GcK0UV
+Resource: https://bit.ly/3lAN6IV
 
 Given preorder and inorder traversal of a tree, construct the binary tree.
 For example, given

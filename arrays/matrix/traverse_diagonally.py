@@ -1,7 +1,7 @@
 '''
 498. Diagonal Traverse
 Link: https://leetcode.com/problems/diagonal-traverse/
-Credit: https://bit.ly/3yTBnwZ
+Resource: https://bit.ly/3yTBnwZ
 
 Given a matrix of M x N elements (M rows, N columns),
 return all elements of the matrix in diagonal order as shown in the below image.

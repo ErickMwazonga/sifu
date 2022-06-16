@@ -5,8 +5,6 @@ If array is sorted in reverse order that inversion count is the maximum.
 GENERALLY two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j
 '''
 
-# REVISIT MERGE SORT
-
 
 def mergeSort(A):
     n = len(A)
@@ -34,14 +32,12 @@ def mergeSort(A):
     # Copy any remaining elements of L[]
     while i < len(L):
         A[k] = L[i]
-        i += 1
-        k += 1
+        i, k = i + 1, k + 1
 
     # Copy any remaining elements of R[]
     while j < len(R):
         A[k] = R[j]
-        j += 1
-        k += 1
+        j, k = j + 1, k + 1
 
 
 def countInversions(A):
@@ -73,13 +69,11 @@ def countInversions(A):
 
     while i < len(left_half):
         A[k] = left_half[i]
-        i += 1
-        k += 1
+        i, k = i + 1, k + 1
 
     while j < len(right_half):
         A[k] = right_half[j]
-        j += 1
-        k += 1
+        j, k = j + 1, k + 1
 
     return inversion_count + left_inversion_count + right_inversion_count
 

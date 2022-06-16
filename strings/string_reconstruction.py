@@ -14,8 +14,7 @@ return either ['bed', 'bath', 'and', 'beyond] or ['bedbath', 'and', 'beyond'].
 
 
 def reconstruction(words, s):
-    words = set(words)
-    res = []
+    words, res = set(words), []
 
     n = len(s)
     i = j = 0

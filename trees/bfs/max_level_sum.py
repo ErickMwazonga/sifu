@@ -6,7 +6,7 @@ Given the root of a binary tree, the level of its root is 1, the level of its ch
 Return the smallest level x such that the sum of all the values of nodes at level x is maximal.
 
 Example 1:
-Input: root = [1,7,0,7,-8,null,null]
+Input: root = [1, 7, 0, 7, -8, null, null]
 Output: 2
 Explanation: 
 Level 1 sum = 1.
@@ -17,7 +17,7 @@ So we return the level with the maximum sum which is level 2.
 
 
 class Solution:
-    def maxLevelSum(self, root: TreeNode) -> int:
+    def maxLevelSum(self, root) -> int:
         if not root:
             return []
 

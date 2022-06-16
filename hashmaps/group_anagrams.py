@@ -47,7 +47,7 @@ def groupAnagrams_v2(strs):
 
 
 class Solution_V3:
-    '''Time O(m.n) -> Credit: https://programmer.group/leetcode-49-group-anagrams.html'''
+    '''Time O(m.n) -> Resource: https://programmer.group/leetcode-49-group-anagrams.html'''
 
     def groupAnagrams(self, strs):
         grouping = defaultdict(list)

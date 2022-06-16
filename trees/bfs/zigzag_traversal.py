@@ -1,14 +1,14 @@
 '''
 103. Binary Tree Zigzag Level Order Traversal
 Link: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
-Credit: https://bit.ly/3wC1mYc
-Credit: https://bit.ly/3yRjsaa
+Resource: https://bit.ly/3wC1mYc
+Resource: https://bit.ly/3yRjsaa
 
 Given a binary tree, return the zigzag level order traversal of its nodes' values.
 (ie, from left to right, then right to left for the next level and alternate between).
 
 For example:
-Given binary tree [3,9,20,null,null,15,7],
+Given binary tree [3, 9, 20, null, null, 15, 7],
     3
    / \
   9  20

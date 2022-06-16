@@ -7,6 +7,7 @@ Suppose that nums is rotated at some pivot unknown to you beforehand (i.e., [0,1
 might become [4, 5, 6, 7, 0, 1, 2]).
 
 If target is found in the array return its index, otherwise, return -1.
+
 Example 1:
 Input: nums = [4, 5, 6, 7, 0, 1, 2], target = 0
 Output: 4
@@ -18,7 +19,7 @@ Output: -1
 
 
 class Solution:
-    '''Intiution: https://bit.ly/3wHPtPw'''
+    '''[INTUITION]: https://bit.ly/3wHPtPw'''
 
     def search(self, nums: list[int], target: int) -> int:
         if not nums:

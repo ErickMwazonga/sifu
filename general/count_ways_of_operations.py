@@ -8,6 +8,7 @@ You can perform any one of the below operations in each step.
 Operation 1: If the number is even then you can divide the number by 2.
 Operation 2: If the number is odd then you are allowed to perform either (n+1) or (n-1).
 
+Examples
 Input : n = 15
 Output : 5
  15 is odd 15 + 1=16    

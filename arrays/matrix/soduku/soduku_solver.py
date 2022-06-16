@@ -1,7 +1,7 @@
 '''
 37. Sudoku Solver
 Link: https://leetcode.com/problems/sudoku-solver/
-Credit: https://aakashjhawar.medium.com/sudoku-solver-using-opencv-and-dl-part-2-bbe0e6ac87c5
+Resource: https://aakashjhawar.medium.com/sudoku-solver-using-opencv-and-dl-part-2-bbe0e6ac87c5
 
 Write a program to solve a Sudoku puzzle by filling the empty cells.
 A sudoku solution must satisfy all of the following rules:

@@ -1,7 +1,7 @@
 '''
 79. Word Search
 Link: https://leetcode.com/problems/word-search/
-Credit: https://www.youtube.com/watch?v=RqffW0smIbQ
+Resource: https://www.youtube.com/watch?v=RqffW0smIbQ
 
 Given a 2D board and a word, find if the word exists in the grid.
 The word can be constructed from letters of sequentially adjacent cell,

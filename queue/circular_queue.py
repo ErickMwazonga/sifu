@@ -8,13 +8,13 @@ last position is connected back to the first position to make a circle.
 It is also called "Ring Buffer".
 
 Implementation the MyCircularQueue class:
-MyCircularQueue(k) Initializes the object with the size of the queue to be k.
-int Front() Gets the front item from the queue. If the queue is empty, return -1.
-int Rear() Gets the last item from the queue. If the queue is empty, return -1.
-boolean enQueue(int value) Inserts an element into the circular queue. Return true if the operation is successful.
-boolean deQueue() Deletes an element from the circular queue. Return true if the operation is successful.
-boolean isEmpty() Checks whether the circular queue is empty or not.
-boolean isFull() Checks whether the circular queue is full or not.
+1. MyCircularQueue(k) Initializes the object with the size of the queue to be k.
+2. int Front() Gets the front item from the queue. If the queue is empty, return -1.
+3. int Rear() Gets the last item from the queue. If the queue is empty, return -1.
+4. boolean enQueue(int value) Inserts an element into the circular queue. Return true if the operation is successful.
+5. boolean deQueue() Deletes an element from the circular queue. Return true if the operation is successful.
+6. boolean isEmpty() Checks whether the circular queue is empty or not.
+7. boolean isFull() Checks whether the circular queue is full or not.
 '''
 
 

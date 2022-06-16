@@ -1,5 +1,6 @@
 '''
-Bubble Sort:
+Bubble Sort
+
 It compares the adjacent elements and
 swaps their positions if they are not in the
 intended order iteratively until they are sorted.

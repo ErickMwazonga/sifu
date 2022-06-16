@@ -1,7 +1,7 @@
 '''
 123. Best Time to Buy and Sell Stock III
 Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
-Credit: https://www.programcreek.com/2014/02/leetcode-best-time-to-buy-and-sell-stock-iii-java/
+Resource: https://www.programcreek.com/2014/02/leetcode-best-time-to-buy-and-sell-stock-iii-java/
 
 Say you have an array for which the ith element is the price of a given stock on day i.
 Design an algorithm to find the maximum profit. You may complete at most two transactions.

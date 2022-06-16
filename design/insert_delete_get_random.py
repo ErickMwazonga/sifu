@@ -5,11 +5,11 @@ Link: https://leetcode.com/problems/insert-delete-getrandom-o1/
 Implement the RandomizedSet class:
 
 Design a data structure that supports all following operations in average O(1) time.
-    insert(val): Inserts an item val to the set if not already present.
-    remove(val): Removes an item val from the set if present.
-    getRandom: Returns a random element from current set of elements
-        (it's guaranteed that at least one element exists when this method is called).
-        Each element must have the same probability of being returned.
+1. insert(val): Inserts an item val to the set if not already present.
+2. remove(val): Removes an item val from the set if present.
+3. getRandom: Returns a random element from current set of elements
+    (it's guaranteed that at least one element exists when this method is called).
+    Each element must have the same probability of being returned.
 
 Example 1:
 Input

@@ -7,8 +7,8 @@ make the expression balanced.
 Return -1 if the given expression can't be balanced.
 
 Examples
-1. {{{ -> -1
-2. {{{{}} -> 1
+1. '{{{' -> -1
+2. '{{{{}}' -> 1
 '''
 
 

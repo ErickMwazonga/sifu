@@ -7,11 +7,11 @@ Given an integer n, return true if n is an ugly number.
 
 Examples:
 1. 6 -> true
-    Explanation: 6 = 2 x 3
+   Explanation: 6 = 2 x 3
 2. 1 -> true
-    Explanation: 1 has no prime factors, therefore all of its prime factors are limited to 2, 3, and 5.
+   Explanation: 1 has no prime factors, therefore all of its prime factors are limited to 2, 3, and 5.
 3. 14 -> false
-    Explanation: 14 is not ugly since it includes the prime factor 7.
+   Explanation: 14 is not ugly since it includes the prime factor 7.
 '''
 
 

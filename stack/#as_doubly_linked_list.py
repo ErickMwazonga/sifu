@@ -1,23 +1,17 @@
 # A complete working Python program to demonstrate all
 # stack operations using a doubly linked list
 
-# Node class
 class Node:
-    # Function to initialise the node object
     def __init__(self, data):
-        self.data = data  # Assign data
-        self.next = None  # Initialize next as null
-        self.prev = None  # Initialize prev as null
-
-# Stack class contains a Node object
+        self.data = data
+        self.next = None
+        self.prev = None
 
 
 class Stack:
-    # Function to initialize head
     def __init__(self):
         self.head = None
 
-    # Function to add an element data in the stack
     def push(self, data):
         if not self.head:
             self.head = Node(data)
@@ -28,21 +22,18 @@ class Stack:
             new_node.prev = None
             self.head = new_node
 
-    # Function to pop top element and return the element from the stack
     def pop(self):
         if not self.head:
             return None
-        else:
-            temp = self.head.data
-            self.head = self.head.next
-            self.head.prev = None
-            return temp
 
-    # Function to return top element in the stack
+        temp = self.head.data
+        self.head = self.head.next
+        self.head.prev = None
+        return temp
+
     def top(self):
         return self.head.data
 
-    # Function to return the size of the stack
     def size(self):
         temp = self.head
         count = 0
@@ -50,13 +41,12 @@ class Stack:
         while not temp:
             count = count + 1
             temp = temp.next
+
         return count
 
-    # Function to check if the stack is empty or not
     def isEmpty(self):
         return not self.head
 
-    # Function to print the stack
     def printstack(self):
         print("stack elements are:")
         temp = self.head
@@ -66,43 +56,20 @@ class Stack:
             temp = temp.next
 
 
-# Code execution starts here
-if __name__ == '__main__':
+stack = Stack()
 
-    # Start with the empty stack
-    stack = Stack()
+stack.push(4)
+stack.push(5)
+stack.push(6)
+stack.push(7)
 
-    # Insert 4 at the beginning. So stack becomes 4->None
-    print("Stack operations using Doubly LinkedList")
-    stack.push(4)
+stack.printstack()
 
-    # Insert 5 at the beginning. So stack becomes 4->5->None
-    stack.push(5)
+print("\nTop element is ", stack.top())
+print("Size of the stack is ", stack.size())
 
-    # Insert 6 at the beginning. So stack becomes 4->5->6->None
-    stack.push(6)
+stack.pop()
+stack.pop()
+stack.printstack()
 
-    # Insert 7 at the beginning. So stack becomes 4->5->6->7->None
-    stack.push(7)
-
-    # Print the stack
-    stack.printstack()
-
-    # Print the top element
-    print("\nTop element is ", stack.top())
-
-    # Print the stack size
-    print("Size of the stack is ", stack.size())
-
-    # pop the top element
-    stack.pop()
-
-    # pop the top element
-    stack.pop()
-
-    # two elements are popped
-    # Print the stack
-    stack.printstack()
-
-    # Print True if the stack is empty else False
-    print("\nstack is empty:", stack.isEmpty())
+print("\nstack is empty:", stack.isEmpty())

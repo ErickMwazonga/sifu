@@ -5,10 +5,10 @@ Link: https://leetcode.com/problems/valid-anagram/
 Given two strings s and t , write a function to determine if t is an anagram of s.
 
 Examples
-Input: s = 'anagram', t = 'nagaram'
+1. Input: s = 'anagram', t = 'nagaram'
 Output: true
 
-Input: s = 'rat', t = 'car'
+2. Input: s = 'rat', t = 'car'
 Output: false
 You may assume the string contains only lowercase alphabets.
 '''

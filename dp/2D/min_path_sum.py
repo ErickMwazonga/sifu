@@ -24,7 +24,7 @@ def min_path_sum(grid):
 
     n, m = len(grid), len[grid[0]]
 
-    dp = [[0] * m for i in range(n)]
+    dp = [[0] * m for _ in range(n)]
     dp[0][0] = grid[0][0]
 
     # first row

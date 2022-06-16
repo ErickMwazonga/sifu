@@ -9,10 +9,10 @@ If there is more than one possible answer, return the longest word with the smal
 If there is no answer, return the empty string.
 
 Examples:
-1. ['w','wo','wor','worl','world'] -> 'world'
+1. ['w', 'wo', 'wor', 'worl', 'world'] -> 'world'
 Explanation: The word 'world' can be built one character at a time by 'w', 'wo', 'wor', and 'worl'.
 
-2. ['a','banana','app','appl','ap','apply','apple'] -> 'apple'
+2. ['a', 'banana', 'app', 'appl', 'ap', 'apply', 'apple'] -> 'apple'
 Explanation: Both 'apply' and 'apple' can be built from other words in the dictionary. However, 'apple' is lexicographically smaller than 'apply'.
 '''
 
