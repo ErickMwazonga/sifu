@@ -29,7 +29,7 @@ def isPrefixOfWord(sentence: str, searchWord: str) -> int:
     return -1
 
 
-def isPrefixOfWord2(sentence: str, searchWord: str) -> int:
+def isPrefixOfWord_v2(sentence: str, searchWord: str) -> int:
     sentence = sentence.split(' ')
 
     for i, word in enumerate(sentence):
