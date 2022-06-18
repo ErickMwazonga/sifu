@@ -9,7 +9,7 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
 Note that 1 does not map to any letters.
 
 Examples:
-1. '23' -> ['ad','ae','af','bd','be','bf','cd','ce','cf']
+1. '23' -> ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
 2. '' -> []
 3. '2' -> ['a', 'b', 'c']
 '''

@@ -12,8 +12,7 @@ def isNotAttacked(board, row, col):
             return False
         else:
             i -= 1
-            jLeft -= 1
-            jRight += 1
+            jLeft, jRight = jLeft - 1, jRight + 1
 
     return True
 

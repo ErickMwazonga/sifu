@@ -5,8 +5,8 @@ Link: https://leetcode.com/problems/permutations-ii/
 Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.
 
 Examples:
-1. [1,1,2] -> [[1,1,2], [1,2,1], [2,1,1]]
-2. [1,2,3] -> [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]
+1. [1, 1, 2] -> [[1,1,2], [1,2,1], [2,1,1]]
+2. [1, 2, 3] -> [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]
 '''
 
 from collections import Counter

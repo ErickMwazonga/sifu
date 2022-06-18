@@ -4,7 +4,7 @@ Rearrange array in zig-zag fashion
 Given an array of DISTINCT elements, rearrange the elements of array in zig-zag fashion in O(n) time. 
 The converted array should be in form a < b > c < d > e < f. 
 
-Example:
+Examples:
 1. [4, 3, 7, 8, 6, 2, 1] -> [3, 7, 4, 8, 2, 6, 1]
 2. [1, 4, 3, 2] -> [1, 4, 2, 3]
 '''

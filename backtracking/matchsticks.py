@@ -10,10 +10,10 @@ Return true if you can make this square and false otherwise.
 
 Examples:
 1. [1, 1, 2, 2, 2] -> True
-    Explanation: You can form a square with length 2, one side of the square came two sticks with length 1.
+   Explanation: You can form a square with length 2, one side of the square came two sticks with length 1.
 
 2. [3, 3, 3, 3, 4] -> False
-    Explanation: You cannot find a way to form a square with all the matchsticks.
+   Explanation: You cannot find a way to form a square with all the matchsticks.
 '''
 
 

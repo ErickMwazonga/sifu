@@ -6,7 +6,7 @@ Given an integer array nums that may contain duplicates, return all possible sub
 The solution set must not contain duplicate subsets. Return the solution in any order.
 
 Example 1:
-1. [1, 2, 2] -> [[], [1], [1,2], [1,2,2], [2], [2,2]]
+1. [1, 2, 2] -> [[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
 2. [0] -> [[], [0]]
 '''
 

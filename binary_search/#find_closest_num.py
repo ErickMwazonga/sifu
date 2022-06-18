@@ -3,14 +3,14 @@ Given an array of sorted integers. We need to find the closest value to the give
 Resource: https://www.youtube.com/watch?v=0gkWZNE1H4Y&list=PL5tcWHG-UPH1kjiE-Fqt1xCSkcwyfn2Jb
 
 Array may contain duplicate values and negative numbers.
-Examples:
-Input: [1, 2, 4, 5, 6, 6, 8, 9]
-Target number = 11
+
+Example 1:
+Input: [1, 2, 4, 5, 6, 6, 8, 9], Target = 11
 Output: 9
     9 is closest to 11 in given array
-    
-Input: [2, 5, 6, 7, 8, 8, 9]
-Target number = 4
+
+Example 2: 
+Input: [2, 5, 6, 7, 8, 8, 9], Target = 4
 Output: 5
 Given [1, 2, 3] and target = 2, return 1.
 Given [1, 4, 6] and target = 3, return 1.
