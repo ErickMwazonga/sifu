@@ -1,6 +1,6 @@
 # Sifu
 
-## Data Strctures
+## Data Structures
 1. [ ] Arrays
 2. [ ] Matrix
 3. [ ] Strings
@@ -24,12 +24,13 @@
 8. [ ] DFS
 9.  [ ] Dynamic Programming
 10. [ ] Backtracking
+11. [ ] String Matching - KMP
    
 ## Preparation
-https://serhatgiydiren.github.io/preparation-guide-for-tech-interviews
+### Guide
+1. https://serhatgiydiren.github.io/preparation-guide-for-tech-interviews
 
-A list of grouped leetcode DSA problems with solutions that helps one prepare well for a coding interview.
-
+### Curated DSA Websites
 1. https://goodtecher.com/
 2. https://github.com/iverson52000/DataStructure_Algorithm
 3. https://zhaonanli.gitbooks.io/leetcode/content
@@ -40,7 +41,7 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 8. https://velog.io/@jiselectric/Leetcode-Powx-n
 9. https://github.com/kdn251/interviews/tree/master/leetcode
 10. https://mrleonhuang.gitbooks.io/lintcode/content
-11. Link: https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
+11. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
 12. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/
 13. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
 14. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
@@ -54,22 +55,19 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 22. https://maxming0.github.io/
 
 ## 75 Curated Questions
-
 1. https://seanprashad.com/leetcode-patterns/
 2. https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0
-3. Link: https://leetcode.com/list/xi4ci4ig/
-4. Link: https://leetcode.com/discuss/interview-question?currentPage=1&orderBy=hot&query
+3. https://leetcode.com/list/xi4ci4ig/
+4. https://leetcode.com/discuss/interview-question?currentPage=1&orderBy=hot&query
 5. https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
 
 ## System Design
-
 1. https://afteracademy.com/tech-interview/system-design/top-questions
 2. https://github.com/shashank88/system_design
 3. https://thinksoftware.medium.com/how-to-ace-object-oriented-design-interviews-4f9a667e0780
 4. https://www.thinksoftwarelearning.com/courses/SystemDesignBible
 
 ## Groupings
-
 1. **2D**
    DFS - [79, 130, 200, 695]
    DP - [62, 63, 64, 221, 1594]
@@ -89,17 +87,18 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 3. https://high-python-ext-3-algorithms.readthedocs.io/ko/latest/
    
 ## Courses
-1. Graphs - https://www.youtube.com/watch?v=tWVWeAqZ0WU
-2. 10 Frequest asked questions - https://www.youtube.com/watch?v=o3DUXPRyvT8
-3. Top Coding question - https://www.youtube.com/watch?v=cWUmrgMw220&t=2283s
-### Sites
+1. [Graphs](https://www.youtube.com/watch?v=tWVWeAqZ0WU) 
+2. [10 Frequest asked questions](https://www.youtube.com/watch?v=o3DUXPRyvT8) 
+3. [Top Coding question](https://www.youtube.com/watch?v=cWUmrgMw220&t=2283s) 
+
+## Sites
 1. https://structy.net/
 2. https://www.algoexpert.io/product
 
-## Youtube
-1. Alvin the programmer - https://www.youtube.com/c/alvin-the-programmer
-2. Neetcode - https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
-
+## YOUTUBE Channels
+1. Inside Code 
+2. [Neetcode](https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g) 
+3. [Alvin the programmer](https://www.youtube.com/c/Alvin-the-programmer) 
 
 ## Others
 1. https://www.lewuathe.com/radix-sort-in-python.html
@@ -107,16 +106,13 @@ A list of grouped leetcode DSA problems with solutions that helps one prepare we
 3. https://www.geeksforgeeks.org/python-program-for-radix-sort/
 4. https://www.alphacodingskills.com/python/pages/python-program-for-radix-sort.php#:~:text=Python%20Program%20-%20Radix%20Sort%20Radix%20sort%20is,counting%20sort%20as%20a%20subroutine%20to%20perform%20sorting.
 5. https://www.educative.io/blog/crack-amazon-coding-interview-questions
-
-
-1. https://baihuqian.github.io/2018-09-08-nth-digit/
-2. Link: https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
-3. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
-4. https://serhatgiydiren.github.io/
+6. https://baihuqian.github.io/2018-09-08-nth-digit/
+7. https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
+8. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
+9. https://serhatgiydiren.github.io/
 
 FAANG Questions
 1. https://github.com/ombharatiya/FAANG-Coding-Interview-Questions
-
 
 System Desgn
 1. https://github.com/donnemartin/system-design-primer
@@ -128,8 +124,7 @@ System Desgn
 7. https://www.enjoyalgorithms.com/blog
 
 System Desgn Others
-https://systeminterview.com/design-youtube.php
-
+1. https://systeminterview.com/design-youtube.php
 
 Leetcode Discuss - Explanatory Contributions
-1. Link: https://leetcode.com/Hieroglyphs/
+1. https://leetcode.com/Hieroglyphs/

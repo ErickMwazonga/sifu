@@ -14,6 +14,7 @@ A prefix of a string s is any leading contiguous substring of s.
 Examples:
 1. sentence = 'i love eating burger', searchWord = 'burg' => 4
     Explanation: 'burg' is prefix of 'burger' which is the 4th word in the sentence.
+
 2. sentence = 'this problem is an easy problem', searchWord = 'pro' => 2
     Explanation: 'pro' is prefix of 'problem' which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.
 '''
@@ -29,7 +30,7 @@ def isPrefixOfWord(sentence: str, searchWord: str) -> int:
     return -1
 
 
-def isPrefixOfWord2(sentence: str, searchWord: str) -> int:
+def isPrefixOfWord_v2(sentence: str, searchWord: str) -> int:
     sentence = sentence.split(' ')
 
     for i, word in enumerate(sentence):
