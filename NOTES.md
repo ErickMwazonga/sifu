@@ -1,7 +1,7 @@
 # Table of contents
 
 ## Circular Indexing / Iteration
-Given an array [1, 2, 3, 4, 5, 6]
+Given an array `[1, 2, 3, 4, 5, 6]`
 
 To get the next index for circular indexing:
 
@@ -23,7 +23,7 @@ for i in range(n):
 ```
 ---
 
-## `defaultdict`
+## D E F A U L T S
 
 ## 1. Default Values
 1.1. `get()`
@@ -351,10 +351,39 @@ print("maxHeap:", maxHeap)
 > Implemented using a QUEUE
 
 ---
-## Infinity
--sys.maxsize
--inf, inf
 
+## Infinity
+### 1. Using `float('inf')` and `float('-inf)`
+```py
+positive_infinity = float('inf') # inf
+negative_infinity = float('-inf') # -inf
+```
+
+### 2. Using Python’s math module
+```py
+import math
+ 
+positive_infinity = float('inf') # inf
+negative_infinity = float('-inf') # -inf
+```
+
+### 3. Integer `maxsize`
+```py
+import sys
+
+maxSize = sys.maxsize # 9223372036854775807
+minSize = -sys.maxsize # -9223372036854775807
+```
+
+### 4. using Python’s decimal module
+```py
+from decimal import Decimal
+ 
+positive_infinity = Decimal('Infinity') # Infinity
+negative_infinity = Decimal('-Infinity') # -Infinity
+```
+
+---
 
 ## Algorithms' Summary
 Self notes:
@@ -365,6 +394,8 @@ Self notes:
   - The constrained applied to find the solution is called Bounding function.
   - Backtracking follows **Depth-First Search method**.
   - Branch and Bound is also a Brute Force approach, which uses Breadth-First Search method.
+  
+---
 
 ## STR TO INT: INT TO STR
 ### `ord()`
@@ -384,8 +415,7 @@ import string
 #### Getting a corresponding integer from an integer character
 ```py
 >>> ch = '5'
->>> ord(ch) - ord('0')
-# 5
+>>> ord(ch) - ord('0') # 5
 ```
 
 ### `chr()`
@@ -395,13 +425,12 @@ Returns a character (a string) from an integer (represents unicode code point of
 >>> val = 5 
 # it's corresponding unicode is 53 = 48 + 5: ord('0') + 5
 >>> val_repr = ord('0') + val
->>> char_rep = chr(val_repr)
-# 5
+>>> char_rep = chr(val_repr) # 5
 ```
 
 ## Random
 `random.randint(a, b)` -> a: inclusive, b: inclusive </br>
-> Coverage a <= n <= b </br>
+> coverage a <= n <= b </br>
 
 `random.randrange(a, b)` -> a: inclusive, b: exclusive
-> Coverage a <= n < b </br>
+> coverage a <= n < b </br>

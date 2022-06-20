@@ -66,18 +66,28 @@
 2. https://github.com/shashank88/system_design
 3. https://thinksoftware.medium.com/how-to-ace-object-oriented-design-interviews-4f9a667e0780
 4. https://www.thinksoftwarelearning.com/courses/SystemDesignBible
+5. https://github.com/donnemartin/system-design-primer
+6. https://www.youtube.com/watch?v=seeiGC2HP48&list=PL_esswHjNwIeiFfVFer8uYly3Zk6YqXd0
+7. https://www.youtube.com/watch?v=MZwctuH8OjE&list=UU-nf8kVIeRMAzW3SRMzJ8-g&index=18
+8. https://iq.opengenus.org/microsoft-teams-system-design/
+9. https://iq.opengenus.org/memcached-in-system-design/
+10. LLD - https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-car-rental-system.md
+11. https://www.enjoyalgorithms.com/blog
+
+## System Desgn Others
+1. https://systeminterview.com/design-youtube.php
 
 ## Groupings
-1. **2D**
-   DFS - [79, 130, 200, 695]
+1. **2D** <br/>
+   DFS - [79, 130, 200, 695] <br/>
    DP - [62, 63, 64, 221, 1594]
-2. **BINARY SEARCH**
+2. **BINARY SEARCH** <br/>
    [33, 34, 69, 74, 153, 162, 374]
-3. **TREES**
-   BFS - [102, 199, 1161, 107, 103, 513, 515]
-4. **STACK**
+3. **TREES** <br/>
+   BFS - [102, 103, 107, 199, 513, 515, 1161]
+4. **STACK** <br/>
    [20, 155, 232, 225, 316, 678, 739, 844]
-5. **DESIGN**
+5. **DESIGN** <br/>
    [146, 359, 380, 384, 621, 933]
 
 
@@ -92,11 +102,11 @@
 3. [Top Coding question](https://www.youtube.com/watch?v=cWUmrgMw220&t=2283s) 
 
 ## Sites
-1. https://structy.net/
-2. https://www.algoexpert.io/product
+1. [Structy](https://structy.net/)
+2. [AlgoExpert](https://www.algoexpert.io/product)
 
 ## YOUTUBE Channels
-1. Inside Code 
+1. [Inside Code](https://www.youtube.com/c/Insidecode/videos?app=desktop)
 2. [Neetcode](https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g) 
 3. [Alvin the programmer](https://www.youtube.com/c/Alvin-the-programmer) 
 
@@ -107,24 +117,12 @@
 4. https://www.alphacodingskills.com/python/pages/python-program-for-radix-sort.php#:~:text=Python%20Program%20-%20Radix%20Sort%20Radix%20sort%20is,counting%20sort%20as%20a%20subroutine%20to%20perform%20sorting.
 5. https://www.educative.io/blog/crack-amazon-coding-interview-questions
 6. https://baihuqian.github.io/2018-09-08-nth-digit/
-7. https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
-8. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
-9. https://serhatgiydiren.github.io/
+7. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
+8. https://serhatgiydiren.github.io/
 
-FAANG Questions
+## FAANG Questions
 1. https://github.com/ombharatiya/FAANG-Coding-Interview-Questions
 
-System Desgn
-1. https://github.com/donnemartin/system-design-primer
-2. https://www.youtube.com/watch?v=seeiGC2HP48&list=PL_esswHjNwIeiFfVFer8uYly3Zk6YqXd0
-3. https://www.youtube.com/watch?v=MZwctuH8OjE&list=UU-nf8kVIeRMAzW3SRMzJ8-g&index=18
-4. https://iq.opengenus.org/microsoft-teams-system-design/
-5. https://iq.opengenus.org/memcached-in-system-design/
-6. LLD - https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-car-rental-system.md
-7. https://www.enjoyalgorithms.com/blog
-
-System Desgn Others
-1. https://systeminterview.com/design-youtube.php
-
-Leetcode Discuss - Explanatory Contributions
+## Leetcode Discuss - Explanatory Contributions
 1. https://leetcode.com/Hieroglyphs/
+2. https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
