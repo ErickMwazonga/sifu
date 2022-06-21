@@ -7,7 +7,7 @@ An integer is a palindrome when it reads the same backward as forward.
 
 Examples:
 1. 121 -> true
-2. -121 > false
+2. -121 -> false
 3. 10 -> false
 '''
 

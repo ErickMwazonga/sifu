@@ -8,8 +8,7 @@ deleting some or no elements without changing the order of the remaining element
 
 Examples:
 1. 'bbbab' -> 4
-2. 'cbbd' -> 2
-    Explanation: One possible longest palindromic subsequence is 'bb'.
+2. 'cbbd' -> 2 => One possible longest palindromic subsequence is 'bb'.
 '''
 
 

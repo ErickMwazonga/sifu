@@ -1,4 +1,5 @@
 '''
+Fixed Point
 Link: https://leetcode.com/problems/fixed-point/
 Resource: https://xingxingpark.com/Leetcode-1064-Fixed-Point/
 
@@ -8,9 +9,9 @@ function that returns a 'fixed point' in the array. If there is not a
 fixed point return 'None'
 
 Examples
-1. [-10, -5, 0, 3, 7] -> 3 # Fixed point is 3:
-2. [0, 2, 5, 8, 17] -> 0 # Fixed point is 0:
-3. [-10, -5, 3, 4, 7, 9] -> None # No fixed point. Return 'None'
+1. [-10, -5, 0, 3, 7] -> 3 => Fixed point is 3:
+2. [0, 2, 5, 8, 17] -> 0 => Fixed point is 0:
+3. [-10, -5, 3, 4, 7, 9] -> None => No fixed point. Return 'None'
 '''
 
 

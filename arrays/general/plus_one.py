@@ -56,9 +56,9 @@ def plus_one(digits):
 
         if digits[i] != 10:
             break
-        else:
-            digits[i] = 0
-            i -= 1
+
+        digits[i] = 0
+        i -= 1
 
     if i == -1:
         digits.insert(0, 1)

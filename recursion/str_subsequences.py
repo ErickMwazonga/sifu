@@ -9,9 +9,10 @@ Examples:
 2. aaa -> a, aa, aaa
 '''
 
+
 def getSubsequences(s):
     subsequences = []
-    helper(s, 0, '')
+    dfs(s, 0, '')
     return subsequences
 
 

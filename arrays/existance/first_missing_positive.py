@@ -11,7 +11,6 @@ Examples:
 3. [7, 8, 9, 11, 12] -> 1
 
 Your algorithm should run in O(n) time and uses constant extra space.
-the additional space depends on your implementation.
 But the time complexity is O(n), because membership check in a set is O(1)
 and the for loop complexity is O(n) (same for array to set()).
 therefore the overall asymptotic time complexity is O(n).

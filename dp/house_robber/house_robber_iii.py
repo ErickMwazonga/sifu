@@ -25,7 +25,7 @@ Output: 7
 Explanation: Maximum amount of money the thief can rob = 3 + 3 + 1 = 7.
 
 E X P L A N A T I O N
-Input: [3,4,5,1,3,null,1]
+Input: [3, 4, 5, 1, 3, null, 1]
  input tree            dp tree:
      3                  [3+3+1,4+5]
     / \                /        \

@@ -10,7 +10,7 @@ is connected to (0-indexed). It is -1 if there is no cycle. Note that pos is not
 Do not modify the linked list.
 
 Example 1:
-Input: head = [3,2,0,-4], pos = 1
+Input: head = [3, 2, 0, -4], pos = 1
 Output: tail connects to node index 1
 Explanation: There is a cycle in the linked list, where tail connects to the second node.
 '''

@@ -13,14 +13,12 @@ or no elements without changing the order of the remaining elements.
 Example 1:
 Input: nums = [2, 1, 3, 3], k = 2
 Output: [3, 3]
-Explanation:
-    The subsequence has the largest sum of 3 + 3 = 6.
+Explanation: The subsequence has the largest sum of 3 + 3 = 6.
 
 Example 2:
 Input: nums = [-1, -2, 3, 4], k = 3
 Output: [-1, 3, 4]
-Explanation:
-    The subsequence has the largest sum of -1 + 3 + 4 = 6.
+Explanation: The subsequence has the largest sum of -1 + 3 + 4 = 6.
 '''
 
 import heapq

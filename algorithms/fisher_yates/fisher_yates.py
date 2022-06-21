@@ -4,6 +4,7 @@ Link: https://leetcode.com/problems/shuffle-an-array/
 Resource: https://www.youtube.com/watch?v=4zx5bM2OcvA
 
 Given an integer array nums, design an algorithm to randomly shuffle the array.
+
 Implement the Solution class:
 1. Solution(int[] nums) Initializes the object with the integer array nums.
 2. int[] reset() Resets the array to its original configuration and returns it.

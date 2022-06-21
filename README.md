@@ -1,5 +1,14 @@
 # Sifu
 
+## Annotations
+`No. input -> output => Explanation` <br/>
+`No: Enumerator, example number`
+
+Examples:<br/>
+`[1, 2, 3, 4, 5] -> 3 => Node 3 from this list` <br/>
+`1. [1, 2, 3, 4, 5] -> 3 => Node 3 from this list`
+
+---
 ## Data Structures
 1. [ ] Arrays
 2. [ ] Matrix

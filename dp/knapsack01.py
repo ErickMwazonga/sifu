@@ -31,13 +31,11 @@ def knapSack(values, w, W):
         return dp[n][W]
 
 
-if __name__ == '__main__':
+# set of items each with a weight and a value
+v = [20, 5, 10, 40, 15, 25]
+w = [1, 2, 3, 8, 7, 4]
 
-    # Input: set of items each with a weight and a value
-    v = [20, 5, 10, 40, 15, 25]
-    w = [1, 2, 3, 8, 7, 4]
+# Knapsack capacity
+W = 10
 
-    # Knapsack capacity
-    W = 10
-
-    print('Knapsack value is', knapSack(v, w, W))
+print('Knapsack value is', knapSack(v, w, W))

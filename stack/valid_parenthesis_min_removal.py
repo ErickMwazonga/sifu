@@ -13,12 +13,9 @@ It can be written as AB (A concatenated with B), where A and B are valid strings
 It can be written as (A), where A is a valid string.
 
 Examples:
-1. 'lee(t(c)o)de)' -> 'lee(t(c)o)de'
-Explanation: 'lee(t(co)de)' , 'lee(t(c)ode)' would also be accepted.
-
-2. 'a)b(c)d' -> 'ab(c)d'
-3. '))((' ->  ''
-Explanation: An empty string is also valid
+1. 'a)b(c)d' -> 'ab(c)d'
+2. 'lee(t(c)o)de)' -> 'lee(t(c)o)de' => 'lee(t(co)de)', 'lee(t(c)ode)' would also be accepted.
+3. '))((' ->  '' => An empty string is also valid
 '''
 
 

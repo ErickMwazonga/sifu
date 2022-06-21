@@ -18,7 +18,7 @@ Explanation:
 
 Example 2:
 Input: candidates = [2, 3, 5],  target = 8
-Output: [[2, 2, 2, 2],  [2, 3, 3],  [3, 5]]
+Output: [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
 '''
 
 

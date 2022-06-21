@@ -11,9 +11,9 @@ In Pascal's triangle, each number is the sum of the two numbers directly above i
   [1,   4,   6,   4,    1]
 
 Examples:
-rowIndex = 3 -> [1,3,3,1]
-rowIndex = 0 -> [1]
-rowIndex = 1 -> [1,1]
+1. rowIndex = 3 -> [1, 3, 3, 1]
+2. rowIndex = 0 -> [1]
+3. rowIndex = 1 -> [1, 1]
 '''
 
 

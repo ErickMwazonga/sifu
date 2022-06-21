@@ -33,9 +33,7 @@ def reverse_words(message):
 
 
 def reverse_characters(message, left, right):
-    # Walk towards the middle, from both sides
     while left < right:
         # Swap the left char and right char
         message[left], message[right] = message[right], message[left]
-        left += 1
-        right -= 1
+        left, right = left + 1, right - 1

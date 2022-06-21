@@ -22,8 +22,7 @@ Examples
 The idea is to check if there is any point violating the rule of valid parenthesis.
 In other words, from left to right, any point in the middle should have
 #left brackets + #stars >= #right brackets
-The same principles apply when
-start from right to left, any point in the middle
+The same principles apply when start from right to left, any point in the middle
 #right brackets + #stars >= #left brackets
 '''
 

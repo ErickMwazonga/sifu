@@ -19,7 +19,6 @@ Examples:
 '''
 
 
-# RECURSION
 class Solution:
     '''Time: O(2^n), Space: O(n)'''
 
@@ -45,7 +44,7 @@ class Solution:
         return ans
 
 
-class Solution:
+class Solution_V2:
     '''Time: O(2*n) - O(n), Space: O(n)'''
 
     def numDecodings(self, s):

@@ -22,10 +22,8 @@ Examples:
 1. 3 -> 'III'
 2. 4 -> 'IV'
 3. 9 -> 'IX'
-4. 58 -> 'LVIII'
-   Explanation: L = 50, V = 5, III = 3.
-5. 1994 -> 'MCMXCIV'
-   Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+4. 58 -> 'LVIII' => L = 50, V = 5, III = 3.
+5. 1994 -> 'MCMXCIV' => M = 1000, CM = 900, XC = 90 and IV = 4.
 '''
 
 

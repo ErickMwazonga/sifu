@@ -7,7 +7,7 @@ The function should return the length of the shortest path between A and B.
 Consider the length as the number of edges in the path, not the number of nodes.
 If there is no path between A and B, then return -1.
 
-test_00:
+Example 1
 const edges = [
   ['w', 'x'],
   ['x', 'y'],
@@ -15,9 +15,9 @@ const edges = [
   ['z', 'v'],
   ['w', 'v']
 ];
-shortestPath(edges, 'w', 'z'); // -> 2
+shortestPath(edges, 'w', 'z') -> 2
 
-test_01:
+Example 2
 const edges = [
   ['w', 'x'],
   ['x', 'y'],
@@ -25,7 +25,7 @@ const edges = [
   ['z', 'v'],
   ['w', 'v']
 ];
-shortestPath(edges, 'a', 'e'); // -> 3
+shortestPath(edges, 'a', 'e') -> 3
 '''
 
 

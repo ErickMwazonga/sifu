@@ -14,7 +14,7 @@ CASE 2: The thief to be caugth lies to the right of the police.
 
 Examples
 1. [T, P, P, P, T, T, T], K = 2 -> 3
-Explanation
+    Explanation
     P at index 1 will catch T at index 0.
     P at index 2 will catch T at index 4.
     P at index 3 will catch T at index 5.

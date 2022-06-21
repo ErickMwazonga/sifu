@@ -26,7 +26,7 @@ Output: 28
 '''
 
 
-class Solution(object):
+class Solution:
 
     # DP
     def unique_paths(self, n: int, m: int) -> int:

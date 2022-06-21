@@ -31,7 +31,7 @@ class Solution:
             self.dfs(nums, res, i+1, subset+[nums[i]])
 
 
-class Solution_V1:
+class Solution_V2:
     def subsetsWithDup(self, nums):
         nums.sort()
 
@@ -49,7 +49,7 @@ class Solution_V1:
             self.dfs(nums[i+1:], res, subset + [nums[i]])
 
 
-class Solution_V2:
+class Solution_V3:
     def subsetsWithDup(self, nums):
         res, subset = [], []
         nums.sort()

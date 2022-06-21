@@ -49,20 +49,21 @@ def min_path_sum(grid):
 def minimum_cost_path(matrix, i=0, j=0):
     ''' Time - O(2^nm), Space - O(nm) '''
 
-    n = len(matrix)
-    m = len(matrix[0])
+    n, m = len(matrix), len(matrix[0])
 
     if i == n-1 and j == m-1:
         return matrix[i][j]
-    elif i == n-1:
+
+    if i == n-1:
         return matrix[i][j] + minimum_cost_path(matrix, i, j+1)
-    elif j == m-1:
+
+    if j == m-1:
         return matrix[i][j] + minimum_cost_path(matrix, i+1, j)
-    else:
-        return matrix[i][j] + min(
-            minimum_cost_path(matrix, i+1, j),
-            minimum_cost_path(matrix, i, j+1)
-        )
+
+    return matrix[i][j] + min(
+        minimum_cost_path(matrix, i+1, j),
+        minimum_cost_path(matrix, i, j+1)
+    )
 
 
 def minimum_cost_path_v2(matrix):

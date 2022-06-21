@@ -16,9 +16,9 @@ Input: n = 5, bad = 4
 Output: 4
 
 Explanation:
-call isBadVersion(3) -> false
-call isBadVersion(5) -> true
-call isBadVersion(4) -> true
+call isBadVersion(3) -> False
+call isBadVersion(5) -> True
+call isBadVersion(4) -> True
 Then 4 is the first bad version.
 '''
 

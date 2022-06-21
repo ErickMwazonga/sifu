@@ -19,11 +19,12 @@ For example, '2001:0db8:85a3:0000:0000:8a2e:0370:7334' and '2001:db8:85a3:0:0:8A
 are valid IPv6 addresses, while '2001:0db8:85a3::8A2E:037j:7334' and '02001:0db8:85a3:0000:0000:8a2e:0370:7334'
 are invalid IPv6 addresses.
 
-'172.16.254.1' -> 'IPv4'
-'2001:0db8:85a3:0:0:8A2E:0370:7334' -> 'IPv6'
-'256.256.256.256' ->'Neither'
-'2001:0db8:85a3:0:0:8A2E:0370:7334:' -> 'Neither'
-'1e1.4.5.6' -> 'Neither'
+Examples
+1. '172.16.254.1' -> 'IPv4'
+2. '2001:0db8:85a3:0:0:8A2E:0370:7334' -> 'IPv6'
+3. '256.256.256.256' ->'Neither'
+4. '2001:0db8:85a3:0:0:8A2E:0370:7334:' -> 'Neither'
+5. '1e1.4.5.6' -> 'Neither'
  
 Constraints:
 IP consists only of English letters, digits and the characters '.' and ':'

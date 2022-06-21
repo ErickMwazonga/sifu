@@ -21,12 +21,13 @@ for i in range(n):
     res.append(A[index])
     index = (index + 1) % n
 ```
+
 ---
 
 ## D E F A U L T S
 
 ## 1. Default Values
-1.1. `get()`
+### 1.1. `get()`
 ```py
 data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
 hobby = data.get('Hobbies', 'Coding')
@@ -35,7 +36,7 @@ print(hobby) # Coding
 > **PROBLEM** - Sets default value for all missing keys
 
 
-1.2. `setdefault()`
+### 1.2. `setdefault()`
 ```py
 data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
 data.setdefault('Hobbies', None)
@@ -45,7 +46,7 @@ print(data['Hobbies']) # None
 > **PROBLEM** - We need to know the key for which we want to create a default value beforehand
 
 
-1.3. Custom default value
+### 1.3. Custom default value
 ```py
 >>> from collections import defaultdict
 >>> ice_cream = defaultdict(lambda: 'Vanilla')
@@ -58,22 +59,21 @@ print(data['Hobbies']) # None
 ```
 
 ## 2. Default Integers
+### 2.1. Without defaultdict
 ```py
 names = [
     'Mchicha', 'Dingo', 'Evan', 'Mbenda', 'Sukari', 'Mchicha', 'Dingo', 'Mchicha'
 ]
 
-counts = {}
-```
-### 2.1. Without defaultdict
-```py
-for name in names:
-    if name in counts:
-        counts[name] += 1
-    else:
-        counts[name] = 1
+freqs = {}
 
-print(counts)
+for name in names:
+    if name in freqs:
+        freqs[name] += 1
+    else:
+        freqs[name] = 1
+
+print(freqs)
 # {'Mchicha': 3, 'Dingo': 2, 'Evan': 1, 'Mbenda': 1, 'Sukari': 1}
 ```
 ### 2.2. With defaultdict
@@ -248,7 +248,7 @@ print(vowels) # ['u', 'o', 'i', 'e', 'a']
 list.sort(key=len)
 sorted(list, key=len)
 
-e,g
+e.g
 words = ['pinapples', 'grape', 'apples', 'mangoes']
 sorted(words, key=len) # ['grape', 'apples', 'mangoes', 'pinapples']
 ```
@@ -266,13 +266,13 @@ sorted_dict = sorted(d.items(), key=lambda x: x[1])
 sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
 sorted_dict = dict(sorted_dict)
 
-# NB
-Sorting by the first index is the default sorting mechanism
->>> nums = [[7, 9], [2, 4], [8, 1], [5, 6]]
->>> sorted_nums = sorted(nums, key=lambda x: x[0])
->>> sorted_list = sorted(nums)
+# Note
+# Sorting by the first index is the default sorting mechanism
+nums = [[7, 9], [2, 4], [8, 1], [5, 6]]
+sorted_nums = sorted(nums, key=lambda x: x[0])
+sorted_list = sorted(nums)
 
->>> sorted_nums == sorted_list # TRUE
+assert sorted_nums == sorted_list # TRUE
 
 ---
 
@@ -347,6 +347,7 @@ print("maxHeap:", maxHeap)
 ### Depth First Searh
 > Implemented using a STACK
 <br/>
+
 ### Breadth First Search
 > Implemented using a QUEUE
 

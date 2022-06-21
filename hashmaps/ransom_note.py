@@ -10,13 +10,13 @@ Each letter in the magazine string can only be used once in your ransom note.
 
 Examples
 Input: ransomNote = 'a', magazine = 'b'
-Output: false
+Output: False
 
 Input: ransomNote = 'aa', magazine = 'ab'
-Output: false
+Output: False
 
 Input: ransomNote = 'aa', magazine = 'aab'
-Output: true
+Output: True
 '''
 
 

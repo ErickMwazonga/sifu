@@ -2,9 +2,8 @@
 Given two strings, write a method to decide if 
 one is a permutation of the other.
 
-Approach 1: Sorting
-Time Complexity: O(n log n)
-Space Complexity: O(1)
+Approach: Sorting
+Time Complexity: O(nlogn), Space Complexity: O(1)
 '''
 
 

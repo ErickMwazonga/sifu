@@ -51,4 +51,4 @@ def smaller_numbers_than_current_v2(nums):
 
 
 nums, res = [8, 1, 2, 2, 3], [4, 0, 1, 1, 3]
-assert smaller_numbers_than_current(nums) == res
+assert smaller_numbers_than_current_v2(nums) == res

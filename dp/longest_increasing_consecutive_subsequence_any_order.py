@@ -10,7 +10,7 @@ Example 1
 [1, 9, 3, 10, 4, 20, 2] -> 4
 Explanation: The subsequence 1, 3, 4, 2 is the longest subsequence of consecutive elements
 
-Example 1
+Example 2
 [36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42] -> 5
 Explanation: The subsequence 36, 35, 33, 34, 32 is the longest subsequence of consecutive elements.
 '''

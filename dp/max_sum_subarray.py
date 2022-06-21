@@ -8,13 +8,10 @@ Follow up: If you have figured out the O(n) solution, try coding another solutio
 divide and conquer approach, which is more subtle.
 
 Examples
-1. [-2, 1, -3, 4, -1, 2, 1, -5, 4] -> 6
-    Explanation: [4,-1,2,1] has the largest sum = 6.
-2. [1] -> 1
-3. [2, 3, -6, 4, 2, -8, 3] -> 6
-    Explanation: the maximum subarray is [4, 2], its sum is 6
-4. [2, 3, -1, 4, -10, 2, 5] -> 8
-    Explanation: the maximum subarray is [2, 3, -1, 4], its sum is 8
+1. [1] -> 1
+2. [-2, 1, -3, 4, -1, 2, 1, -5, 4] -> 6 => [4, -1, 2, 1] has the largest sum = 6.
+3. [2, 3, -6, 4, 2, -8, 3] -> 6 => the maximum subarray is [4, 2], its sum is 6
+4. [2, 3, -1, 4, -10, 2, 5] -> 8 =>  the maximum subarray is [2, 3, -1, 4], its sum is 8
 '''
 
 

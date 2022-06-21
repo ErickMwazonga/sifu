@@ -5,8 +5,8 @@ Link: https://leetcode.com/problems/palindrome-linked-list/
 Given a singly linked list, determine if it is a palindrome.
 
 Examples
-1. 1 -> 2   = false
-2. 1 -> 2 -> 2 -> 1  = true
+1. 1 -> 2 = False
+2. 1 -> 2 -> 2 -> 1 = True
 
 Could you do it in O(n) time and O(1) space?
 '''

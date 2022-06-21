@@ -22,8 +22,7 @@ def is_palindrome(s):
         if s[low] != s[high]:
             return False
 
-        low += 1
-        high -= 1
+        low, high = low + 1, high - 1
 
     return True
 

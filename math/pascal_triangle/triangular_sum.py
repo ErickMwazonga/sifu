@@ -12,7 +12,7 @@ Repeat the entire process starting from step 1.
 Return the triangular sum of nums.
 
 Examples:
-1. [1,2,3,4,5] -> 8
+1. [1, 2, 3, 4, 5] -> 8
 2. [5] -> 5
 '''
 

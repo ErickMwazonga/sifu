@@ -13,12 +13,10 @@ that each group is a contiguous section all of the same character.
 Then for each group, say the number of characters, then say the character.
 To convert the saying into a digit string, replace the counts with a number and concatenate every saying.
 
-For example, the saying and conversion for digit string '3322251':
-
 Given a positive integer n, return the nth term of the count-and-say sequence.
 
 Example 1:
-1 -> '1' :[Explanation: This is the base case]
+1 -> '1' : [Explanation: This is the base case]
 
 Example 2:
 4 -> 1211'

@@ -5,8 +5,8 @@ https://structy.net/problems/undirected-path
 Write a function, undirectedPath, that takes in an array of edges for an undirected graph and two nodes (nodeA, nodeB). 
 The function should return a boolean indicating whether or not there exists a path between nodeA and nodeB.
 
-test_00:
-const edges = [
+Example:
+edges = [
   ['i', 'j'],
   ['k', 'i'],
   ['m', 'k'],

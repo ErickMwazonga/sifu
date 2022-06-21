@@ -6,12 +6,9 @@ An ugly number is a positive integer whose prime factors are limited to 2, 3, an
 Given an integer n, return true if n is an ugly number.
 
 Examples:
-1. 6 -> true
-   Explanation: 6 = 2 x 3
-2. 1 -> true
-   Explanation: 1 has no prime factors, therefore all of its prime factors are limited to 2, 3, and 5.
-3. 14 -> false
-   Explanation: 14 is not ugly since it includes the prime factor 7.
+1. 6 -> True => 6 = 2 x 3
+2. 1 -> True => 1 has no prime factors, therefore all of its prime factors are limited to 2, 3, and 5.
+3. 14 -> False => 14 is not ugly since it includes the prime factor 7.
 '''
 
 

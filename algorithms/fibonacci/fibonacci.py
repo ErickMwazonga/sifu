@@ -9,10 +9,11 @@ F(0) = 0, F(1) = 1
 F(n) = F(n - 1) + F(n - 2), for n > 1.
 
 Given n, calculate F(n).
+
 Examples:
-2 -> 1 => Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
-3 -> 2 => Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
-4 -> 3 => Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+1 -> 2 => Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+2 -> 3 => Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+3 -> 4 => Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 '''
 
 
@@ -61,6 +62,6 @@ def fibonacci_v3(n):
     return prev
 
 
-assert fibonacci_v3(5) == 5
-assert fibonacci_v3(6) == 8
+assert fibonacci(5) == 5
+assert fibonacci_v2(6) == 8
 assert fibonacci_v3(7) == 13

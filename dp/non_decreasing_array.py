@@ -9,11 +9,8 @@ We define an array is non-decreasing if nums[i] <= nums[i + 1]
 olds for every i (0-based) such that (0 <= i <= n - 2).
 
 Examples:
-1. [4, 2, 3] -> True
-Explanation: You could modify the first 4 to 1 to get a non-decreasing array.
-
-2. [4, 2, 1] -> False
-Explanation: You can't get a non-decreasing array by modify at most one element.
+1. [4, 2, 3] -> True => You could modify the first 4 to 1 to get a non-decreasing array.
+2. [4, 2, 1] -> False => You can't get a non-decreasing array by modify at most one element.
 '''
 
 

@@ -5,8 +5,7 @@ FIFO
 1. enqueue: To add a new data element at the rear of the queue.
 2. dequeue: To remove an element from the front of the queue.
 3. isEmpty: To return True if the queue is empty, else return False.
-4. size: To check the size of the queue, in other words count the number
-    of elements in the queue and return it.
+4. size: To count the number of elements in the queue and return it.
 5. show: To print all the queue elements.
 '''
 

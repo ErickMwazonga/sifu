@@ -5,8 +5,7 @@ def sec_diagonal(A):
     res = []
     while i < n and j >= 0:
         res.append(A[i][j])
-        i += 1
-        j -= 1
+        i, j = i + 1, j - 1
 
     return res
 

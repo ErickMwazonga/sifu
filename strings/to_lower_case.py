@@ -11,31 +11,34 @@ Examples
 '''
 
 
-def toLowerCase(self, str):
+def toLowerCase(str):
     lowered = []
-    for i in str:
-        char_code = ord(i)
+
+    for ch in str:
+        char_code = ord(ch)
         # if A-Z
         if char_code < 91 and char_code > 64:
             lowered += chr(char_code + 32)
         else:
-            lowered += i
+            lowered += ch
 
     return ''.join(lowered)
 
 
-def toLowerCase_v2(self, str: str) -> str:
+def toLowerCase_v2(str: str) -> str:
     res = ''
 
-    for i in range(len(str)):
-        if(ord(str[i]) >= 65 and ord(str[i]) <= 90):
-            res += chr(ord(str[i])+32)
+    for ch in str:
+        val = ord(ch)
+
+        if(65 <= val <= 90):  # if (ord(ch) >= 65 and ord(ch) <= 90):
+            res += chr(val + 32)
         else:
-            res += str[i]
+            res += str[ch]
 
     return res
 
 
 assert toLowerCase('Hello') == 'hello'
 assert toLowerCase('here') == 'here'
-assert toLowerCase('LOVELY') == 'lovely'
+assert toLowerCase_v2('LOVELY') == 'lovely'

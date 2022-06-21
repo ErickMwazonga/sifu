@@ -7,7 +7,7 @@ to target by rotating mat in 90-degree increments, or false otherwise.
 
 Example 1:
 Input: mat = [[0, 1], [1, 0]], target = [[1, 0], [0, 1]]
-Output: true
+Output: True
 Explanation: We can rotate mat 90 degrees clockwise to make mat equal target.
 
 Example 3:

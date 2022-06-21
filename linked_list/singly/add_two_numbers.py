@@ -10,11 +10,11 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 Example 1:
     Input: list1 = 3 -> 2 -> 1 -> null, list2 = 5 -> 9 -> 4 -> 3 -> null
     Output: 8 -> 1 -> 6 -> 3 -> null
-        Explanation: 123 + 3495 = 3618
+    Explanation: 123 + 3495 = 3618
 Example 2:
     Input: list1 = 1 -> 6 -> 5 -> 4 -> null, list2 = 4 -> 8 -> 2 -> 7 -> 9 -> null
     Output: 5 -> 4 -> 8 -> 1 -> 0 -> 1 -> null
-        Explanation: 4561 + 97284 + 101845
+    Explanation: 4561 + 97284 + 101845
 '''
 
 

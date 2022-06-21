@@ -35,4 +35,4 @@ class Solution:
 
         for word in lists[i]:
             out = comb + ' ' + word
-            self.dfs(lists, res, comb, i + 1)
+            self.dfs(lists, res, out, i + 1)

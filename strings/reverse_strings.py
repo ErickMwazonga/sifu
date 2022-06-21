@@ -26,7 +26,6 @@ def reverse_v3(chars: list):
 
     while left < right:
         chars[left], chars[right] = chars[right], chars[left]
-        left += 1
-        right -= 1
+        left, right = left + 1, right - 1
 
     return chars

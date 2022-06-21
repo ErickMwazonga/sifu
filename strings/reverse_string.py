@@ -18,13 +18,11 @@ def swap(s, i, j):
 
 
 def reverse_str_v2(s):
-    i = 0
-    j = len(s) - 1
+    i, j = 0, len(s)
 
     while i < j:
         swap(s, i, j)
-        i += 1
-        j -= 1
+        i, j = i + 1, j - 1
 
 
 print(reverse_str_v2('hello'))
