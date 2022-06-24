@@ -49,33 +49,33 @@ With `# prefix` can mean one of the following: <br />
 ### Curated DSA Websites
 1. https://goodtecher.com/
 2. https://github.com/iverson52000/DataStructure_Algorithm
-3. https://zhaonanli.gitbooks.io/leetcode/content
-4. https://somjang.tistory.com/entry/leetCode-729-My-Calendar-I-Python?category=351755
-5. https://leetcode.xnerv.wang/zigzag-conversion/
-6. https://techlarry.github.io/Leetcode/202.%20Happy%20Number/
-7. https://adit0503.gitbook.io/leetcode/200.-number-of-islands
-8. https://velog.io/@jiselectric/Leetcode-Powx-n
-9. https://github.com/kdn251/interviews/tree/master/leetcode
-10. https://mrleonhuang.gitbooks.io/lintcode/content
-11. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
-12. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/
-13. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
-14. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
-15. https://youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
-16. https://walkccc.me/LeetCode/problems/0009/
-17. https://linlaw0229.github.io/
-18. https://czxttkl.com/category/leetcode/
-19. https://hercy.me/
-20. https://github.com/jiselectric/Algorithm
-21. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
-22. https://maxming0.github.io/
+3. https://github.com/jiselectric/Algorithm
+4. https://github.com/kdn251/interviews/tree/master/leetcode
+5. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
+6. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
+7. https://zhaonanli.gitbooks.io/leetcode/content
+8. https://techlarry.github.io/Leetcode/202.%20Happy%20Number/
+9.  https://adit0503.gitbook.io/leetcode/200.-number-of-islands
+10. https://maxming0.github.io/
+11. https://linlaw0229.github.io/
+12. https://velog.io/@jiselectric/Leetcode-Powx-n
+13. https://mrleonhuang.gitbooks.io/lintcode/content
+14. https://leetcode.xnerv.wang/zigzag-conversion/
+15. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
+16. https://somjang.tistory.com/entry/leetCode-729-My-Calendar-I-Python?category=351755
+17. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/
+18. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
+19. https://youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
+20. https://walkccc.me/LeetCode/problems/0009/
+21. https://czxttkl.com/category/leetcode/
+22. https://hercy.me/ 
 
 ## 75 Curated Questions
 1. https://seanprashad.com/leetcode-patterns/
 2. https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0
 3. https://leetcode.com/list/xi4ci4ig/
 4. https://leetcode.com/discuss/interview-question?currentPage=1&orderBy=hot&query
-5. https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
+5. https://bit.ly/3ncS4wf
 
 ## System Design
 1. https://afteracademy.com/tech-interview/system-design/top-questions
@@ -130,7 +130,7 @@ With `# prefix` can mean one of the following: <br />
 1. https://www.lewuathe.com/radix-sort-in-python.html
 2. https://stackabuse.com/radix-sort-in-python/
 3. https://www.geeksforgeeks.org/python-program-for-radix-sort/
-4. https://www.alphacodingskills.com/python/pages/python-program-for-radix-sort.php#:~:text=Python%20Program%20-%20Radix%20Sort%20Radix%20sort%20is,counting%20sort%20as%20a%20subroutine%20to%20perform%20sorting.
+4. https://bit.ly/3nfLrtg
 5. https://www.educative.io/blog/crack-amazon-coding-interview-questions
 6. https://baihuqian.github.io/2018-09-08-nth-digit/
 7. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
