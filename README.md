@@ -1,10 +1,17 @@
 # Sifu
 
 ## Annotations
+### **File Names**
+With `# prefix` can mean one of the following: <br />
+1. No implementation yet(NO CODE :-))
+2. Need to simplify the logic
+3. The CODE cannot run AS IS **or** It doesn't pass the test cases
+
+### **Examples**
 `No. input -> output => Explanation` <br/>
 `No: Enumerator, example number`
 
-Examples:<br/>
+*Examples*<br/>
 `[1, 2, 3, 4, 5] -> 3 => Node 3 from this list` <br/>
 `1. [1, 2, 3, 4, 5] -> 3 => Node 3 from this list`
 

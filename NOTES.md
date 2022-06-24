@@ -1,6 +1,6 @@
-# Table of contents
+# `Table of contents`
 
-## Circular Indexing / Iteration
+## `Circular Indexing / Iteration`
 Given an array `[1, 2, 3, 4, 5, 6]`
 
 To get the next index for circular indexing:
@@ -24,9 +24,9 @@ for i in range(n):
 
 ---
 
-## D E F A U L T S
+## `D E F A U L T S`
 
-## 1. Default Values
+### `1. Default Values`
 ### 1.1. `get()`
 ```py
 data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
@@ -48,17 +48,17 @@ print(data['Hobbies']) # None
 
 ### 1.3. Custom default value
 ```py
->>> from collections import defaultdict
->>> ice_cream = defaultdict(lambda: 'Vanilla')
+from collections import defaultdict
+ice_cream = defaultdict(lambda: 'Vanilla')
 
->>> ice_cream['Cobih'] = 'Chunky Monkey'
->>> ice_cream['Santa'] = 'Butter Pecan'
+ice_cream['Cobih'] = 'Chunky Monkey'
+ice_cream['Santa'] = 'Butter Pecan'
 
->>> print(ice_cream['Cobih']) # Chunky Monkey
->>> print(ice_cream['Chiwawa']) # Vanilla
+print(ice_cream['Cobih']) # Chunky Monkey
+print(ice_cream['Chiwawa']) # Vanilla
 ```
 
-## 2. Default Integers
+### `2. Default Integers`
 ### 2.1. Without defaultdict
 ```py
 names = [
@@ -68,6 +68,8 @@ names = [
 freqs = {}
 
 for name in names:
+    # freqs[name] = freqs.get(name, 0) + 1
+
     if name in freqs:
         freqs[name] += 1
     else:
@@ -89,7 +91,7 @@ print(counts)
 # defaultdict(<class 'int'>, {'Nik': 3, 'Kate': 2, 'Evan': 1, 'Kyra': 1, 'John': 1})
 ```
 
-## 3. Default Lists
+### `3. Default Lists`
 ```py
 # Resource: https://realpython.com/python-defaultdict/
 
@@ -120,7 +122,7 @@ for department, employee in dep:
 }
 ```
 ---
-## Flatten an Array
+## `Flatten an Array`
 
 ```py
 def transpose(strs):
@@ -130,20 +132,20 @@ def transpose(strs):
 
 ### 1. Basic iterative function
 ```py
-def flatten(input):
+def flatten(matrix):
     new_list = []
-    for i in input:
-        for j in i:
-            new_list.append(j)
+    for row in matrix:
+        for num in row:
+            new_list.append(num)
     return new_list
 ```
 
 ### 2. Using array functions
 ```py
-def flatten(input):
+def flatten(matrix):
     new_list = []
-    for i in input:
-        new_list.extend(i)
+    for row in matrix:
+        new_list.extend(row)
     return new_list
 ```
 ### 3. Flatten List of Lists Using sum
@@ -155,14 +157,14 @@ flat_list = sum(regular_list, []) # [] + [1, 2, 3, 4] + [5, 6, 7] + [8, 9]
 flat_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 ---
-## Find i,j in a flattened 2d matrix
+## `Find i,j in a flattened 2d matrix`
 Given a 2 matrix, 
 ```py
 [[1, 2, 3],
  [3, 4, 5],
  [6, 7, 8]]
 ```
-that has be flattened to [1, 2, 3, 4, 5, 6, 7, 8, 9].
+Flattened to [1, 2, 3, 4, 5, 6, 7, 8, 9].
 
 **Challenge**: 
 How do you find the position of an element in the matrix given index i in the flattened list?
@@ -181,12 +183,13 @@ i, j = divmod(7, cols) # (2, 1) -> i.e row: 2, col: 1
 print(matrix[2][1]) # 7
 ```
 ---
-## Reverse Iterables
+## `Reverse Iterables`
 ### 1. By `reverse()`
 It reverses an iterable in-place
 ```py
 systems = ['Windows', 'macOS', 'Linux']
 systems.reverse()
+
 print(systems) # ['Linux', 'macOS', 'Windows']
 ```
 
@@ -213,7 +216,7 @@ for system in reversed(systems):
     print(system)
 ```
 
-## Sort Iterables
+## `Sort Iterables`
 ### 1. By `sort()`
 Sorts an iterable in place
 
@@ -248,7 +251,7 @@ print(vowels) # ['u', 'o', 'i', 'e', 'a']
 list.sort(key=len)
 sorted(list, key=len)
 
-e.g
+e.g.
 words = ['pinapples', 'grape', 'apples', 'mangoes']
 sorted(words, key=len) # ['grape', 'apples', 'mangoes', 'pinapples']
 ```
@@ -265,16 +268,14 @@ sorted(nums, key=sum) # [[2, 4], [8, 1], [5, 6], [7, 9]]
 sorted_dict = sorted(d.items(), key=lambda x: x[1])
 sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
 sorted_dict = dict(sorted_dict)
-
-# Note
-# Sorting by the first index is the default sorting mechanism
+```
+### Sorting by the first index is the default sorting mechanism
+```py
 nums = [[7, 9], [2, 4], [8, 1], [5, 6]]
 sorted_nums = sorted(nums, key=lambda x: x[0])
 sorted_list = sorted(nums)
 
 assert sorted_nums == sorted_list # TRUE
-
----
 
 # Alternatively
 sorted(d, key=d.get, reverse=True):
@@ -290,7 +291,7 @@ employees.sort(key=lambda x: x.get('Name'))
 employees.sort(key=lambda x: x.get('salary'), reverse=True)
 ```
 ---
-## Heaps
+## `Heaps`
 ### Time Complexites
 `heapq.heapify()` -> `O(n)` </br>
 > Transform list x into a heap, in-place, in linear time. </br>
@@ -299,31 +300,31 @@ employees.sort(key=lambda x: x.get('salary'), reverse=True)
 `heapq.heappop()` ->  `O(logn)` </br> </br>
 
 
-### minHeap
+### `minHeap`
 ```py
-import heapq
-heapq.heapify(lst)
+>>> import heapq
+>>> heapq.heapify(lst)
 ```
 <br/>
 
-### maxHeap
+### `maxHeap`
 1. Solution: `heapq._heapify_max(lst)`
 
 ```py
-lst = [5, 1, 3, 7, 2]
+>>> lst = [5, 1, 3, 7, 2]
 
-heapq._heapify_max(lst)
-pop_max = heapq._heappop_max(lst)
+>>> heapq._heapify_max(lst)
+>>> pop_max = heapq._heappop_max(lst)
 ```
 2. Solution: **Use Negatives**
 
 ```py
-array = [1, 4, 6, 2, 5, 3, 9, 8, 7]
-maxHeap = []
-for num in array:
-    heapq.heappush(maxHeap, -num)
+>>> array = [1, 4, 6, 2, 5, 3, 9, 8, 7]
+>>> maxHeap = []
+>>> for num in array:
+        heapq.heappush(maxHeap, -num)
 
-print("maxHeap:", maxHeap)
+>>> print('maxHeap:', maxHeap)
 # maxHeap: [-9, -8, -6, -7, -2, -3, -4, -1, -5]
 ```
 
@@ -343,7 +344,7 @@ print("maxHeap:", maxHeap)
 # (1, 'write spec')
 ```
 ---
-## Traversals
+## `Traversals`
 ### Depth First Searh
 > Implemented using a STACK
 <br/>
@@ -353,7 +354,7 @@ print("maxHeap:", maxHeap)
 
 ---
 
-## Infinity
+## `Infinity`
 ### 1. Using `float('inf')` and `float('-inf)`
 ```py
 positive_infinity = float('inf') # inf
@@ -376,7 +377,7 @@ maxSize = sys.maxsize # 9223372036854775807
 minSize = -sys.maxsize # -9223372036854775807
 ```
 
-### 4. using Python’s decimal module
+### 4. Using Python’s decimal module
 ```py
 from decimal import Decimal
  
@@ -386,11 +387,15 @@ negative_infinity = Decimal('-Infinity') # -Infinity
 
 ---
 
-## Algorithms' Summary
-Self notes:
-- **Brute Force** approach finds all the possible solutions and selects desired solution per given the constraints.
-- **Dynamic Programming** also uses Brute Force approach to find the OPTIMUM solution, either maximum or minimum.
-- **Backtracking** also uses Brute Force approach but to find ALL the solutions.
+## `Algorithms' Summary`
+### **1. Brute Force**
+This approach finds all the possible solutions and selects desired solution per given the constraints.
+
+### **2. Dynamic Programming** 
+It uses Brute Force approach to find the OPTIMUM solution, either maximum or minimum.
+
+### **3. Backtracking** 
+It uses Brute Force approach but to find ALL the solutions.
   - Solutions to the Backtracking problems can be represented as **State-Space Tree**.
   - The constrained applied to find the solution is called Bounding function.
   - Backtracking follows **Depth-First Search method**.
@@ -398,14 +403,14 @@ Self notes:
   
 ---
 
-## STR TO INT: INT TO STR
+## `STR TO INT: INT TO STR`
 ### `ord()`
 Returns an integer representing the Unicode character for your input string.
 ```py
 >>> [ord(str(i)) for i in range(0, 10)]
 # [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
 
-import string
+>>> import string
 >>> [ord(i) for i in string.ascii_uppercase]
 # [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90]
 
@@ -425,9 +430,11 @@ Returns a character (a string) from an integer (represents unicode code point of
 ```py
 >>> val = 5 
 # it's corresponding unicode is 53 = 48 + 5: ord('0') + 5
+
 >>> val_repr = ord('0') + val
 >>> char_rep = chr(val_repr) # 5
 ```
+---
 
 ## Random
 `random.randint(a, b)` -> a: inclusive, b: inclusive </br>
@@ -435,3 +442,17 @@ Returns a character (a string) from an integer (represents unicode code point of
 
 `random.randrange(a, b)` -> a: inclusive, b: exclusive
 > coverage a <= n < b </br>
+
+---
+## Sorting Algorithms(Major)
+
+### Time Complexities
+| Algorithm	     | Time Complexity	 | Space Complexity |
+|----------------|-------------------|------------------| 
+| Selection Sort | O(n^2)            | O(1)             |
+| Bubble Sort    | O(n^2)            | O(1)             |
+| Insertion Sort | O(n^2)            | O(1)             |
+| Quick Sort     | O(n^2)            | O(log(n))        |
+| Heap Sort      | O(n log(n))	     | O(1)             |
+| Merge Sort     | O(n log(n))	     | O(n)             |
+| Heap Sort      | O(n log(n))	     | O(1)             |
