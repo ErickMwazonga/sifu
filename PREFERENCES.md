@@ -6,7 +6,8 @@
 ### Multiple variables' declaration(Inline Declaration)
 Given two or more variables that need to be declared at ago `IFF`: <br/>
 1. The variables are somehow related
-2. The variables names do not pass the preferred length of a line(80 characters), otherwise do not use inline declaration.
+2. The variables names do not extend beyond the preferred length of a line(80 characters)
+3. The declarations are readable
 
 #### Related variables
 ```py
@@ -18,7 +19,7 @@ i = 0
 j = 0
 ```
 
-#### Considering the recommended chars per line and variable names
+#### Considering the recommended chars per line and readability
 ```py
 # recommeded
 max_summation_of_characters_upto_here = 0
