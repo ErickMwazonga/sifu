@@ -8,36 +8,37 @@ A - [1, 2, 3, 4, 5, 6, 7]
 B - [4, 5, 6, 7, 1, 2, 3]
 
 Output - True
+
+INTUITION
+Normal element index = i
+Rotated element index = (i + k) % n
+    where: n - no of elements, k - offset
 '''
 
 
 def is_rotation(A, B):
-    len_A, len_B = len(A), len(B)
+    n, m = len(A), len(B)
 
-    if len_A != len_A:
+    if n != m:
         return False
 
-    # Find the index of the first num of A in B
-    a = A[0]
-    ai = -1
+    offset = -1
+    first_char = A[0]
 
     for i, num in enumerate(B):
-        if a == num:
-            ai = i
+        if first_char == num:
+            offset = i
+            break
 
-    # First num in A is not in B
-    if ai == -1:
+    if offset == -1:
         return False
 
-    for i in range(1, len_A):
-        j = (ai + 1) % len_B
-        ai += 1
-
-        if A[i] != B[j]:
+    for i in range(n):
+        key = (i + offset) % n
+        if A[i] != B[key]:
             return False
 
     return True
-
 
 A = [1, 2, 3, 4, 5, 6, 7]
 B = [4, 5, 6, 7, 1, 2, 3]

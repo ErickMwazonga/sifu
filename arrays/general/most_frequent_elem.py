@@ -34,8 +34,9 @@ def most_freq_elem_v2(arr):
     for num in arr:
         frequency[num] = frequency.get(num, 0) + 1
 
-        if frequency[num] > most_count:
-            most_count = frequency[num]
+        curr_count = frequency[num]
+        if curr_count > most_count:
+            most_count = curr_count
             most_frequent = num
 
     return most_frequent

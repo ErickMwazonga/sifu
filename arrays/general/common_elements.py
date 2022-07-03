@@ -18,8 +18,7 @@ def get_common_elements(A, B):
     while ai < len_A and bi < len_B:
         if A[ai] == B[bi]:
             result.append(A[ai])
-            ai += 1
-            bi += 1
+            ai, bi = ai + 1, bi + 1
         elif A[ai] > B[bi]:
             bi += 1
         else:
@@ -29,4 +28,4 @@ def get_common_elements(A, B):
 
 
 a, b = [1, 1, 2, 3, 5, 5], [2, 2, 3, 4, 5, 7]
-assert get_common_elems(a, b) == [2, 3, 5]
+assert get_common_elements(a, b) == [2, 3, 5]
