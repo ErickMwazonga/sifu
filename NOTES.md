@@ -338,16 +338,17 @@ employees.sort(key=lambda x: x.get('salary'), reverse=True)
 `heapq.heappush()` -> `O(logn)` </br>
 `heapq.heappop()` ->  `O(logn)` </br> </br>
 
-
 ### `minHeap`
 ```py
 >>> import heapq
 >>> heapq.heapify(lst)
 ```
-<br/>
 
 ### `maxHeap`
-1. Solution: `heapq._heapify_max(lst)`
+Max heap is not supported by default by heapq module in python.
+However, there are some workaround to simulate/implement it.
+
+1. `heapq._heapify_max(lst)`
 
 ```py
 >>> lst = [5, 1, 3, 7, 2]
@@ -355,7 +356,7 @@ employees.sort(key=lambda x: x.get('salary'), reverse=True)
 >>> heapq._heapify_max(lst)
 >>> pop_max = heapq._heappop_max(lst)
 ```
-2. Solution: **Use Negatives**
+2. **Using Negatives**
 
 ```py
 >>> array = [1, 4, 6, 2, 5, 3, 9, 8, 7]
