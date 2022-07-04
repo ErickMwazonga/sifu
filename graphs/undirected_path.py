@@ -16,21 +16,19 @@ edges = [
 '''
 
 
+from collections import defaultdict
+
+
 def undirected_path(edges, nodeA, nodeB):
     graph = build_graph(edges)
     return has_path(graph, nodeA, nodeB, set())
 
 
 def build_graph(edges):
-    graph = {}
+    graph = defaultdict(list)
 
     for edge in edges:
         a, b = edge
-
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
 
         graph[a].append(b)
         graph[b].append(a)
@@ -48,7 +46,7 @@ def has_path(graph, src, dst, visited):
     visited.add(src)
 
     for neighbor in graph[src]:
-        if (has_path(graph, neighbor, dst, visited) == True):
+        if has_path(graph, neighbor, dst, visited) == True:
             return True
 
     return False

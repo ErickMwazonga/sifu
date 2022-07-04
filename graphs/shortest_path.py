@@ -14,7 +14,7 @@ const edges = [
   ['z', 'y'],
   ['z', 'v'],
   ['w', 'v']
-];
+]
 shortestPath(edges, 'w', 'z') -> 2
 
 Example 2
@@ -24,43 +24,53 @@ const edges = [
   ['z', 'y'],
   ['z', 'v'],
   ['w', 'v']
-];
+]
 shortestPath(edges, 'a', 'e') -> 3
 '''
 
-
-def shortestPath(edges, nodeA, nodeB):
-    graph = buildGraph(edges)
-
-    visited = set(nodeA)
-    queue = [[nodeA, 0]]
-
-    while queue:
-        node, distance = queue.pop(0)
-
-        if node == nodeB:
-            return distance
-
-        for neighbor in graph[node]:
-            if neighbor not in visited:
-                visited.add(neighbor)
-                queue.push([neighbor, distance + 1])
-
-    return -1
+from collections import defaultdict
 
 
-def buildGraph(edges):
-    graph = {}
+class Solution:
 
-    for edge in edges:
-        a, b = edge
+    def shortestPath(self, edges, nodeA, nodeB):
+        graph = self.adjacency_list(edges)  # graph
 
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
+        visited = set(nodeA)
+        queue = [[nodeA, 0]]
 
-        graph[a].append(b)
-        graph[b].append(a)
+        while queue:
+            node, distance = queue.pop(0)
 
-    return graph
+            if node == nodeB:
+                return distance
+
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.push([neighbor, distance + 1])
+
+        return -1
+
+    def adjacency_list(self, edges):
+        graph = defaultdict(list)
+
+        for edge in edges:
+            a, b = edge
+
+            graph[a].append(b)
+            graph[b].append(a)
+
+        return graph
+
+
+edges = [
+    ['w', 'x'],
+    ['x', 'y'],
+    ['z', 'y'],
+    ['z', 'v'],
+    ['w', 'v']
+]
+
+soln = Solution()
+soln.shortestPath(edges, 'a', 'e')

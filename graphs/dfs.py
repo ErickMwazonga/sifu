@@ -53,14 +53,13 @@ class Graph:
     '''Time complexity: O(|V|+|E|), Space complexity: O(|V|)'''
 
     def __init__(self, adjList={}):
-        # the adjacency list is of type Dict[int,list[int]]
-        self.adjList = adjList
+        self.adjList = adjList  # of type Dict[int,list[int]]
 
     def dfs(self, graph, root, visited=set()):
         if root in visited:
             return
-        else:
-            visited.add(root)
 
-            for neighbour in graph.adjList[root]:
-                self.dfs(graph, neighbour, visited)
+        visited.add(root)
+
+        for neighbour in graph.adjList[root]:
+            self.dfs(graph, neighbour, visited)

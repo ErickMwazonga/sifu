@@ -49,7 +49,7 @@ def hasPath(graph, src, dst):
     while queue.length:
         current = queue.pop(0)
 
-        if (current == dst):
+        if current == dst:
             return True
 
         for neighbor in graph[current]:

@@ -61,7 +61,6 @@ class Graph:
 
         while queue:
             vertex = queue.pop(0)
-            print(vertex)
 
             for neighbor in graph.adjList[vertex]:
                 if neighbor not in visited:
@@ -76,7 +75,6 @@ class Graph:
         while i < len(queue):
             vertex = queue[i]
             i += 1
-            print(vertex)
 
             for neighbor in graph.adjList[vertex]:
                 if neighbor not in visited:

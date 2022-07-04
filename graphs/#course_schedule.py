@@ -48,4 +48,5 @@ def dfs(course, pre_map, visited):
 
     visited.remove(course)
     pre_map[course] = []
+
     return True
