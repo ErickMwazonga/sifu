@@ -29,14 +29,12 @@ def mergeSort(A):
     # Copy any remaining elements of L[]
     while i < len(L):
         A[k] = L[i]
-        i += 1
-        k += 1
+        i, k = i + 1, k + 1
 
     # Copy any remaining elements of R[]
     while j < len(R):
         A[k] = R[j]
-        j += 1
-        k += 1
+        j, k = j + 1, k + 1
 
 
 A = [8, 7, 2, 1, 0, 9, 6]
@@ -45,7 +43,7 @@ mergeSort(A)
 assert A == [0, 1, 2, 6, 7, 8, 9]
 
 
-def mergeSortV2(A):
+def mergeSort_V2(A):
     n = len(A)
 
     if n < 2:
@@ -54,8 +52,8 @@ def mergeSortV2(A):
     mid = n // 2
     L, R = A[:mid], A[mid:]
 
-    mergeSort(L)
-    mergeSort(R)
+    mergeSort_V2(L)
+    mergeSort_V2(R)
 
     i = j = k = 0
 

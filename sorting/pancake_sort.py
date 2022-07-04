@@ -40,5 +40,4 @@ def pancake_sort(arr):
     return arr
 
 
-# print(pancake_sort([3,2,1,4]))
 assert pancake_sort([3, 2, 1, 4]) == [1, 2, 3, 4]

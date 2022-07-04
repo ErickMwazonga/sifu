@@ -13,7 +13,45 @@ Space: O(1) -> extra variable temp for swapping.
 '''
 
 
+from re import L
+
+
 def bubbleSort(A: list):
+    n = len(A)
+
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if A[j] > A[j+1]:
+                A[j], A[j+1] = A[j+1], A[j]
+
+
+def bubbleSort_v2(A: list):
+    n = len(A)
+
+    for i in range(n):
+        for j in range(i, n-1):
+            if A[j+1] < A[j]:
+                A[j], A[j+1] = A[j+1], A[j]
+
+
+def bubbleSort_v3(A: list):
+    '''Optimization: What if the array is sorted after first swap?'''
+
+    n = len(A)
+
+    for i in range(n):
+        swapped = False
+
+        for j in range(i, n-1):
+            if A[j+1] < A[j]:
+                A[j], A[j+1] = A[j+1], A[j]
+                swapped = True
+
+        if not swapped:
+            break
+
+
+def bubbleSort_v4(A: list):
     n = len(A)
     unsorted_until_index = n - 1
 

@@ -50,7 +50,7 @@ qs.quickSort(data)
 assert data == [0, 1, 2, 6, 7, 8, 9]
 
 
-class QuickSort2:
+class QuickSort_V2:
     def quick_sort(self, A):
         length = len(A)
 

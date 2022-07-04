@@ -49,11 +49,12 @@ def partition(A, lo, hi):
             j -= 1
             if j == lo:
                 break
+
         if j <= i:
             break
         swap(A, i, j)
+
     swap(A, lo, j)
-    print(A)
     return j
 
 

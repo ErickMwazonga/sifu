@@ -2,33 +2,30 @@ from random import randint
 
 
 def swap(A, i, j):
-	A[i], A[j] = A[j], A[i]
+    A[i], A[j] = A[j], A[i]
 
-# Partition using Lomuto partition scheme
+
 def partition(A, left, right, pIndex):
-	# Pick pIndex as pivot from the list
-	pivot = A[pIndex]
+    '''Partition using Lomuto partition scheme'''
 
-	# Move pivot to end
-	swap(A, pIndex, right)
+    pivot = A[pIndex]  # Pick pIndex as pivot from the list
+    swap(A, pIndex, right)  # Move pivot to end
 
-	# elements less than pivot will be pushed to the left of pIndex
-	# elements more than pivot will be pushed to the right of pIndex
-	# equal elements can go either way
-	pIndex = left
+    # elements less than pivot will be pushed to the left of pIndex
+    # elements more than pivot will be pushed to the right of pIndex
+    # equal elements can go either way
+    pIndex = left
 
-	# each time we finds an element less than or equal to pivot, pIndex
-	# is incremented and that element would be placed before the pivot.
-	for i in range(left, right):
-		if A[i] <= pivot:
-			swap(A, i, pIndex)
-			pIndex = pIndex + 1
+    # each time we finds an element less than or equal to pivot, pIndex
+    # is incremented and that element would be placed before the pivot.
+    for i in range(left, right):
+        if A[i] <= pivot:
+            swap(A, i, pIndex)
+            pIndex = pIndex + 1
 
-	# Move pivot to its place
-	swap(A, pIndex, right)
+    swap(A, pIndex, right)  # Move pivot to its place
 
-	# return pIndex (index of pivot element)
-	return pIndex
+    return pIndex  # return pIndex (index of pivot element)
 
 
 # Returns the k-th smallest element of list within left..right
@@ -36,32 +33,22 @@ def partition(A, left, right, pIndex):
 # changing for each round - but the list is still the same size.
 # Thus, k does not need to be updated with each round.
 def quickSelect(A, left, right, k):
+    # If the list contains only one element, return that element
+    if left == right:
+        return A[left]
 
-	# If the list contains only one element, return that element
-	if left == right:
-		return A[left]
+    pIndex = randint(left, right)  # select a pIndex between left and right
+    pIndex = partition(A, left, right, pIndex)
 
-	# select a pIndex between left and right
-	pIndex = randint(left, right)
-
-	pIndex = partition(A, left, right, pIndex)
-
-	# The pivot is in its sorted position
-	if k == pIndex:
-		return A[k]
-
-	# if k is less than the pivot index
-	elif k < pIndex:
-		return quickSelect(A, left, pIndex - 1, k)
-
-	# if k is more than the pivot index
-	else:
-		return quickSelect(A, pIndex + 1, right, k)
+    if k == pIndex:  # The pivot is in its sorted position
+        return A[k]
+    elif k < pIndex:  # if k is less than the pivot index
+        return quickSelect(A, left, pIndex - 1, k)
+    else:  # if k is more than the pivot index
+        return quickSelect(A, pIndex + 1, right, k)
 
 
-if __name__ == '__main__':
+A = [7, 4, 6, 3, 9, 1]
+k = 2
 
-	A = [7, 4, 6, 3, 9, 1]
-	k = 2
-
-	print("K'th smallest element is", quickSelect(A, 0, len(A) - 1, k))
+print("K'th smallest element is", quickSelect(A, 0, len(A) - 1, k))

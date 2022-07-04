@@ -12,11 +12,11 @@ Space: O(1) -> extra variable temp for min index.
 '''
 
 # ---------------------------------
-# [BUCKET SORT] VS[INSERTION SORT]
+# [BUCKET SORT] VS [INSERTION SORT]
 # ---------------------------------
 
 
-def insertionSort(A):
+def insertion_sort(A):
     n = len(A)
 
     for i in range(1, n):
@@ -30,7 +30,7 @@ def insertionSort(A):
         A[pos] = temp_val
 
 
-def insertion_sort(A: list) -> list:
+def insertion_sort_v2(A: list) -> list:
     n = len(A)
 
     for step in range(1, n):
@@ -49,4 +49,5 @@ def insertion_sort(A: list) -> list:
 
 data = [9, 5, 1, 4, 3]
 insertion_sort(data)
+
 assert data == [1, 3, 4, 5, 9]
