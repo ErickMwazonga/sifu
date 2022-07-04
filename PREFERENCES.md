@@ -39,5 +39,6 @@ while i < n and j < m:
 # not recommended
 while i < n and j < m:
     # logic...
-    i, j = i + 1, j + 1
+    i += 1
+    j += 1
 ```
