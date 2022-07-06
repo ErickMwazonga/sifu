@@ -517,8 +517,8 @@ class Solution:
         res.append(num)
         return
 
-soln = Solution()
-soln.addNum(99) # [1, 2, 99]
+>>> soln = Solution()
+>>> soln.addNum(99) # [1, 2, 99]
 ``` 
 ### Immutable Object - Boolean
 ```py
@@ -541,8 +541,8 @@ class Solution:
         hasPath = True
         return
 
-soln = Solution()
-soln.addPath() # False instead of True(Modified in the dfs funtion)
+>>> soln = Solution()
+>>> soln.addPath() # False instead of True(Modified in the dfs funtion)
 
 # Solution to passing Immutable objects to a funciton
 class Solution:
@@ -555,8 +555,8 @@ class Solution:
         hasPath[0] = True
         return
 
-soln = Solution()
-soln.addPath() # True -> Since list is mutable
+>>> soln = Solution()
+>>> soln.addPath() # True -> Since list is mutable
 ```
 ---
 ## Sorting Algorithms(Major)
