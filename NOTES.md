@@ -345,7 +345,7 @@ employees.sort(key=lambda x: x.get('salary'), reverse=True)
 ```
 
 ### `maxHeap`
-Max heap is not supported by default by heapq module in python.
+Max heap is not supported by default by heapq module in python.<br/>
 However, there are some workaround to simulate/implement it.
 
 1. `heapq._heapify_max(lst)`
@@ -369,6 +369,8 @@ However, there are some workaround to simulate/implement it.
 ```
 
 ### Multiple Items Heap
+Heap elements can be tuples. <br/>
+This is useful for assigning comparison values (such as task priorities) alongside the main record being tracked
 ```py
 >>> lst = [
     (5, 'write code'),
@@ -387,7 +389,6 @@ However, there are some workaround to simulate/implement it.
 ## `Traversals`
 ### Depth First Searh
 > Implemented using a STACK
-<br/>
 
 ### Breadth First Search
 > Implemented using a QUEUE
@@ -484,8 +485,81 @@ Returns a character (a string) from an integer (represents unicode code point of
 > coverage a <= n < b </br>
 
 ---
-## Sorting Algorithms(Major)
+## Graph Theory
+1. https://medium.com/@nick.kearns_74871/graph-theory-and-flight-maps-df2e9f7fa684
 
+## Recursive Function - Pass by Value / Pass by Reference
+Recursive functions cannot pass boolean in a recursive function and change it in the recursive function.
+Because, boolean like many other types is `immutable`, hence passed by value and not reference.
+
+### References:
+1. https://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference
+2. https://stackoverflow.com/questions/13299427/python-functions-call-by-reference
+
+### Mutable Object - List
+```py
+def recursive_function(res: list) -> list:
+    res.extend([3, 4])
+    return res
+
+>>> res: list = [1, 2]
+>>> recursive_function(res) # [1, 2, 3, 4]
+>>> res # [1, 2, 3, 4]
+
+# Application Example
+class Solution:
+    def addNum(self, num: int) -> list:
+        res: list = [1, 2]
+        self.dfs(num, res)
+        return res
+    
+    def dfs(self, num: int, res: list) -> None:
+        res.append(num)
+        return
+
+soln = Solution()
+soln.addNum(99) # [1, 2, 99]
+``` 
+### Immutable Object - Boolean
+```py
+def recursive_function(found: bool) -> bool:
+    found = True
+    return found
+
+>>> found: bool = False
+>>> recursive_function(found) # True
+>>> found # False
+
+# Application Example
+class Solution:
+    def addPath(self) -> bool:
+        hasPath: bool = False
+        self.dfs(hasPath)
+        return hasPath
+    
+    def dfs(self, hasPath: bool) -> None:
+        hasPath = True
+        return
+
+soln = Solution()
+soln.addPath() # False instead of True(Modified in the dfs funtion)
+
+# Solution to passing Immutable objects to a funciton
+class Solution:
+    def addPath(self) -> bool:
+        hasPath: list[bool] = [False]
+        self.dfs(hasPath)
+        return hasPath[0]
+    
+    def dfs(self, hasPath: list[bool]) -> None:
+        hasPath[0] = True
+        return
+
+soln = Solution()
+soln.addPath() # True -> Since list is mutable
+```
+---
+## Sorting Algorithms(Major)
 ### Time Complexities
 | Algorithm	     | Time Complexity	 | Space Complexity |
 |----------------|-------------------|------------------| 
