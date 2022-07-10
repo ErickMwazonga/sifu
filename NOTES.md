@@ -1,21 +1,21 @@
-# `Table of contents`
+# Table of contents
 
-## `Circular Indexing / Iteration`
+## Circular Indexing / Iteration
 Given an array `[1, 2, 3, 4, 5, 6]`
 
 To get the next index for circular indexing:
 
 ```py
-n = len(arr)
-index = 0
+n: int = len(arr)
+index: int = 0
 
-next_index = (index + 0) % n
+next_index: int = (index + 0) % n
 ```
 
 Another Example
 ```py
-n = len(arr)
-index = 3
+n: int = len(arr)
+index: int = 3
 
 for i in range(n):
     res.append(A[index])
@@ -32,17 +32,17 @@ Rotated element index = (i + k) % n
 '''
 
 
-def is_rotation(A, B):
+def is_rotation(A: list[int], B: list[int]) -> bool:
     n, m = len(A), len(B)
 
     if n != m:
         return False
 
-    offset = -1
-    first_char = A[0]
+    offset: int = -1
+    first_num: int = A[0]
 
     for i, num in enumerate(B):
-        if first_char == num:
+        if first_num == num:
             offset = i
             break
 
@@ -56,20 +56,22 @@ def is_rotation(A, B):
 
     return True
 
-A = [1, 2, 3, 4, 5, 6, 7]
-B = [4, 5, 6, 7, 1, 2, 3]
+A: int = [1, 2, 3, 4, 5, 6, 7]
+B: int = [4, 5, 6, 7, 1, 2, 3]
+
 assert is_rotation(A, B) == True
 ```
 
 ---
 
-## `D E F A U L T S`
+## D E F A U L T S
 
-### `1. Default Values`
+### 1. Default Values
 ### 1.1. `get()`
 ```py
-data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
-hobby = data.get('Hobbies', 'Coding')
+data: dict[str, str] = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
+hobby: str = data.get('Hobbies', 'Coding')
+
 print(hobby) # Coding
 ```
 > **PROBLEM** - Sets default value for all missing keys
@@ -77,7 +79,7 @@ print(hobby) # Coding
 
 ### 1.2. `setdefault()`
 ```py
-data = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
+data: dict[str, str] = {'Name': 'Zinga', 'Location': 'Migombani', 'Age': 33}
 data.setdefault('Hobbies', None)
 
 print(data['Hobbies']) # None
@@ -88,7 +90,8 @@ print(data['Hobbies']) # None
 ### 1.3. Custom default value
 ```py
 from collections import defaultdict
-ice_cream = defaultdict(lambda: 'Vanilla')
+
+ice_cream: dict[str, str] = defaultdict(lambda: 'Vanilla')
 
 ice_cream['Cobih'] = 'Chunky Monkey'
 ice_cream['Santa'] = 'Butter Pecan'
@@ -97,14 +100,14 @@ print(ice_cream['Cobih']) # Chunky Monkey
 print(ice_cream['Chiwawa']) # Vanilla
 ```
 
-### `2. Default Integers`
+### 2. Default Integers
 ### 2.1. Without defaultdict
 ```py
-names = [
-    'Mchicha', 'Dingo', 'Evan', 'Mbenda', 'Sukari', 'Mchicha', 'Dingo', 'Mchicha'
+names: list[str] = [
+    'Mchicha', 'Dingo', 'Evan', 'Mbenda', 'Sukari', 'Dingo', 'Mchicha'
 ]
 
-freqs = {}
+freqs: dict[str, int] = {}
 
 for name in names:
     # freqs[name] = freqs.get(name, 0) + 1
@@ -115,26 +118,27 @@ for name in names:
         freqs[name] = 1
 
 print(freqs)
-# {'Mchicha': 3, 'Dingo': 2, 'Evan': 1, 'Mbenda': 1, 'Sukari': 1}
+# {'Mchicha': 2, 'Dingo': 2, 'Evan': 1, 'Mbenda': 1, 'Sukari': 1}
 ```
 ### 2.2. With defaultdict
 ```py
 from collections import defaultdict
-names = ['Nik', 'Kate', 'Evan', 'Kyra', 'John', 'Nik', 'Kate', 'Nik']
 
-counts = defaultdict(int)
+names: list[str] = ['Nik', 'Kate', 'Evan', 'Kyra', 'John', 'Kate', 'Nik']
+
+counts: dict[str, int] = defaultdict(int)
 for name in names:
     counts[name] += 1
 
 print(counts)
-# defaultdict(<class 'int'>, {'Nik': 3, 'Kate': 2, 'Evan': 1, 'Kyra': 1, 'John': 1})
+# defaultdict(<class 'int'>, {'Nik': 2, 'Kate': 2, 'Evan': 1, 'Kyra': 1, 'John': 1})
 ```
 
-### `3. Default Lists`
+### 3. Default Lists
 ```py
 # Resource: https://realpython.com/python-defaultdict/
 
-dep = [
+dep: list[tuple[str, str]] = [
     ('Sales', 'John Fitina'),
     ('Sales', 'Martin Dungicha'),
     ('Accounting', 'Jane Kololeni'),
@@ -144,7 +148,7 @@ dep = [
 
 from collections import defaultdict
 
-mapping = defaultdict(list)
+mapping: dict[str, list] = defaultdict(list)
 for department, employee in dep:
     mapping[department].append(employee)
 
@@ -161,49 +165,53 @@ for department, employee in dep:
 }
 ```
 ---
-## `Flatten an Array`
+## Flatten an Array
 
 ```py
-def transpose(strs):
-    grid = [list(str) for str in strs]
+def transpose(nums: list[int]) :
+    grid: list[int] = [list(num) for num in nums]
     return list(map(list, zip(*grid)))
 ```
 
 ### 1. Basic iterative function
 ```py
-def flatten(matrix):
-    new_list = []
+def flatten(matrix: list[list]):
+    new_list: list[int] = []
+
     for row in matrix:
         for num in row:
             new_list.append(num)
+
     return new_list
 ```
 
 ### 2. Using array functions
 ```py
-def flatten(matrix):
-    new_list = []
+def flatten(matrix: list[list]):
+    new_list: list[int] = []
+
     for row in matrix:
         new_list.extend(row)
+
     return new_list
 ```
-### 3. Flatten List of Lists Using sum
+### 3. Flatten List of Lists using sum
 `sum` has an optional argument: sum(iterable [, start]), so you can do:
 ```py
-regular_list = [[1, 2, 3, 4], [5, 6, 7], [8, 9]]
-flat_list = sum(regular_list, []) # [] + [1, 2, 3, 4] + [5, 6, 7] + [8, 9]
+regular_list: list[list[int]] = [[1, 2, 3, 4], [5, 6, 7], [8, 9]]
+flat_list: list[list[int]] = sum(regular_list, []) # [] + [1, 2, 3, 4] + [5, 6, 7] + [8, 9]
 
-flat_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> flat_list # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 ---
-## `Find i,j in a flattened 2d matrix`
+## Find i, j in a flattened 2d matrix
 Given a 2 matrix, 
 ```py
 [[1, 2, 3],
  [3, 4, 5],
  [6, 7, 8]]
 ```
-Flattened to [1, 2, 3, 4, 5, 6, 7, 8, 9].
+Flattened to `[1, 2, 3, 4, 5, 6, 7, 8, 9]`
 
 **Challenge**: 
 How do you find the position of an element in the matrix given index i in the flattened list?
@@ -222,11 +230,11 @@ i, j = divmod(7, cols) # (2, 1) -> i.e row: 2, col: 1
 print(matrix[2][1]) # 7
 ```
 ---
-## `Reverse Iterables`
+## Reverse Iterables
 ### 1. By `reverse()`
 It reverses an iterable in-place
 ```py
-systems = ['Windows', 'macOS', 'Linux']
+systems: list[str] = ['Windows', 'macOS', 'Linux']
 systems.reverse()
 
 print(systems) # ['Linux', 'macOS', 'Windows']
@@ -234,20 +242,21 @@ print(systems) # ['Linux', 'macOS', 'Windows']
 
 ### 2. By Slicing -> `[::-1]`
 ```py
-systems = ['Windows', 'macOS', 'Linux']
-reversed_list = systems[::-1]
+systems: list[str] = ['Windows', 'macOS', 'Linux']
+reversed_list: list[str] = systems[::-1]
 print(systems) # ['Linux', 'macOS', 'Windows']
 
 # Printing Elements in Reversed Order
-n = len(systems)
+n: int = len(systems)
 for i in range(n-1, -1, -1):
     print(systems[i])
 ```
 
 ### 3. By `reversed()`
 ```py
-systems = ['Windows', 'macOS', 'Linux']
-reversed_systems = reversed(systems)
+systems: list[str] = ['Windows', 'macOS', 'Linux']
+reversed_systems: list[str] = reversed(systems)
+
 print(list(reversed_systems)) # ['Linux', 'macOS', 'Windows']
 
 # Printing Elements in Reversed Order
@@ -255,20 +264,22 @@ for system in reversed(systems):
     print(system)
 ```
 
-## `Sort Iterables`
+## Sort Iterables
 ### 1. By `sort()`
 Sorts an iterable in place
 
 ```py
-prime = [11, 3, 7, 5, 2]
+prime: list[int] = [11, 3, 7, 5, 2]
 prime.sort()
+
 print(prime) # [2, 3, 5, 7, 11]
 ```
 
 ### 2. By `sorted()`
 ```py
-prime = [11, 3, 7, 5, 2]
-new_prime = sorted(prime)
+prime: list[int] = [11, 3, 7, 5, 2]
+new_prime: list[int] = sorted(prime)
+
 print(new_prime) # [2, 3, 5, 7, 11]
 ```
 
@@ -279,8 +290,9 @@ print(new_prime) # [2, 3, 5, 7, 11]
 
 ### Sort the list in Descending order
 ```py
-vowels = ['e', 'a', 'u', 'o', 'i']
+vowels: list = ['e', 'a', 'u', 'o', 'i']
 vowels.sort(reverse=True)
+
 print(vowels) # ['u', 'o', 'i', 'e', 'a']
 ```
 
@@ -291,13 +303,13 @@ list.sort(key=len)
 sorted(list, key=len)
 
 e.g.
-words = ['pinapples', 'grape', 'apples', 'mangoes']
+words: list[str] = ['pinapples', 'grape', 'apples', 'mangoes']
 sorted(words, key=len) # ['grape', 'apples', 'mangoes', 'pinapples']
 ```
 
 ### Sort a list of list by sum
 ```py
-nums = [[7, 9], [2, 4], [8, 1], [5, 6]]
+nums: list[list[int]] = [[7, 9], [2, 4], [8, 1], [5, 6]]
 sorted(nums, key=sum) # [[2, 4], [8, 1], [5, 6], [7, 9]]
 ```
 
@@ -330,7 +342,35 @@ employees.sort(key=lambda x: x.get('Name'))
 employees.sort(key=lambda x: x.get('salary'), reverse=True)
 ```
 ---
-## `Heaps`
+## Single line variable declaration - Mutability
+### Immutable data types - integers
+```py
+>>> a, b, c = 1, 2, 3
+>>> print(a, b, c) # 1 2 3
+
+>>> a = b = c = 1 # all three names refer to same int object with value 1
+>>> print(a, b, c) # 1 1 1
+
+>>> b = 2 # b now refers to another int object, one with a value of 2
+>>> print(a, b, c) # 1 2 1
+```
+
+### Mutable data types - integers
+```py
+>>> x = y = [7, 8, 9] # x and y refer to the same list object -> [7, 8, 9]
+>>> x = [13, 8, 9] # x now refers to a different list object -> [13, 8, 9]
+>>> print(y) # [7, 8, 9] -> y still refers to the list it was first assigned
+
+# Referring to the same object in memory
+>>> x = y = [7, 8, 9] # x and y are two different names for the SAME list object
+>>> x[0] = 13 # value of object x is being updated through one of its names
+
+>>> print(x) # [13, 8, 9]
+>>> print(y) # [13, 8, 9] -> The change is cascaded because they refer to the same object in memnory
+```
+
+---
+## Heaps
 ### Time Complexites
 `heapq.heapify()` -> `O(n)` </br>
 > Transform list x into a heap, in-place, in linear time. </br>
@@ -338,20 +378,20 @@ employees.sort(key=lambda x: x.get('salary'), reverse=True)
 `heapq.heappush()` -> `O(logn)` </br>
 `heapq.heappop()` ->  `O(logn)` </br> </br>
 
-### `minHeap`
+### Min Heap
 ```py
 >>> import heapq
 >>> heapq.heapify(lst)
 ```
 
-### `maxHeap`
+### Max Heap
 Max heap is not supported by default by heapq module in python.<br/>
 However, there are some workaround to simulate/implement it.
 
 1. `heapq._heapify_max(lst)`
 
 ```py
->>> lst = [5, 1, 3, 7, 2]
+>>> lst: list[int] = [5, 1, 3, 7, 2]
 
 >>> heapq._heapify_max(lst)
 >>> pop_max = heapq._heappop_max(lst)
@@ -359,7 +399,7 @@ However, there are some workaround to simulate/implement it.
 2. **Using Negatives**
 
 ```py
->>> array = [1, 4, 6, 2, 5, 3, 9, 8, 7]
+>>> array: list[int] = [1, 4, 6, 2, 5, 3, 9, 8, 7]
 >>> maxHeap = []
 >>> for num in array:
         heapq.heappush(maxHeap, -num)
@@ -386,7 +426,7 @@ This is useful for assigning comparison values (such as task priorities) alongsi
 # (1, 'write spec')
 ```
 ---
-## `Traversals`
+## Traversals
 ### Depth First Searh
 > Implemented using a STACK
 
@@ -395,7 +435,7 @@ This is useful for assigning comparison values (such as task priorities) alongsi
 
 ---
 
-## `Infinity`
+## Infinity
 ### 1. Using `float('inf')` and `float('-inf)`
 ```py
 positive_infinity = float('inf') # inf
@@ -428,7 +468,7 @@ negative_infinity = Decimal('-Infinity') # -Infinity
 
 ---
 
-## `Algorithms' Summary`
+## **Algorithms' Summary**
 ### **1. Brute Force**
 This approach finds all the possible solutions and selects desired solution per given the constraints.
 
@@ -444,7 +484,7 @@ It uses Brute Force approach but to find ALL the solutions.
   
 ---
 
-## `STR TO INT: INT TO STR`
+## `str to int` <> `int to str`
 ### `ord()`
 Returns an integer representing the Unicode character for your input string.
 ```py
@@ -498,18 +538,18 @@ Because, boolean like many other types is `immutable`, hence passed by value and
 
 ### Mutable Object - List
 ```py
-def recursive_function(res: list) -> list:
+def recursive_function(res: list[int]) -> list[int]:
     res.extend([3, 4])
     return res
 
->>> res: list = [1, 2]
+>>> res: list[int] = [1, 2]
 >>> recursive_function(res) # [1, 2, 3, 4]
 >>> res # [1, 2, 3, 4]
 
 # Application Example
 class Solution:
-    def addNum(self, num: int) -> list:
-        res: list = [1, 2]
+    def addNum(self, num: int) -> list[int]:
+        res: list[int] = [1, 2]
         self.dfs(num, res)
         return res
     
@@ -523,7 +563,7 @@ class Solution:
 ### Immutable Object - Boolean
 ```py
 def recursive_function(found: bool) -> bool:
-    found = True
+    found: bool = True
     return found
 
 >>> found: bool = False
