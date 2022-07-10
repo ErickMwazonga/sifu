@@ -264,10 +264,13 @@ for system in reversed(systems):
     print(system)
 ```
 
-## Sort Iterables
-### 1. By `sort()`
-Sorts an iterable in place
+## `Sort Iterables`
+### Syntax: Pameters
+`sort()` and `sorted()` hav two optional parameters:<br>
+1. `reverse` - If True, the sorted list is descending order<br> 
+2. `key` - function that serves as a key for the sort comparison<br> <br> 
 
+### Sort in place - `sort()`
 ```py
 prime: list[int] = [11, 3, 7, 5, 2]
 prime.sort()
@@ -275,18 +278,13 @@ prime.sort()
 print(prime) # [2, 3, 5, 7, 11]
 ```
 
-### 2. By `sorted()`
+### Sort to a different variable - `sorted()`
 ```py
 prime: list[int] = [11, 3, 7, 5, 2]
 new_prime: list[int] = sorted(prime)
 
 print(new_prime) # [2, 3, 5, 7, 11]
 ```
-
-### Syntax: Pameters
-`sort()` and `sorted()` hav two optional parameters:<br>
-1. `reverse` - If True, the sorted list is descending order<br> 
-2. `key` - function that serves as a key for the sort comparison
 
 ### Sort the list in Descending order
 ```py
@@ -313,14 +311,13 @@ nums: list[list[int]] = [[7, 9], [2, 4], [8, 1], [5, 6]]
 sorted(nums, key=sum) # [[2, 4], [8, 1], [5, 6], [7, 9]]
 ```
 
----
 ### Sort dictionary
 ```py
 sorted_dict = sorted(d.items(), key=lambda x: x[1])
 sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
 sorted_dict = dict(sorted_dict)
 ```
-### Sorting by the first index is the default sorting mechanism
+### Sorting dictionary by the first index is the default sorting mechanism
 ```py
 nums = [[7, 9], [2, 4], [8, 1], [5, 6]]
 sorted_nums = sorted(nums, key=lambda x: x[0])
@@ -492,10 +489,10 @@ Returns an integer representing the Unicode character for your input string.
 # [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
 
 >>> import string
->>> [ord(i) for i in string.ascii_uppercase]
+>>> [ord(i) for i in string.ascii_uppercase] # [65 -> 90]
 # [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90]
 
->>> [ord(i) for i in string.ascii_lowercase]
+>>> [ord(i) for i in string.ascii_lowercase] # [97 -> 122]
 # [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]
 ```
 
