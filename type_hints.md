@@ -57,6 +57,29 @@ from typing import Dict
 
 x: dict[str, float] = {'Version': 2.0}  # Python 3.9+
 x: Dict[str, float] = {'Version': 2.0}
+
+from collections import defaultdict
+mapping: dict[str, list] = defaultdict(list)
+```
+
+## TypedDict
+It allows us to declare a structure for dicts, mapping their keys (strings) to the types of their values.
+```py
+from typing import TypedDict
+
+class Person(TypedDict):
+    name: str
+    country: str
+    jobs: list[str]
+
+
+def get_people() -> Person:
+    person: Person = {
+        'name': 'Erick',
+        'country': 'Kenya',
+        'jobs': ['Software Engineer', 'Data Scientist'],
+    }
+    return person
 ```
 
 ## Functions Annotations
@@ -86,4 +109,25 @@ from typing import Union
 
 Number = Union[int, float]
 Number_V2 = int | float
+```
+
+## None Type
+```py
+def demostrate(param: None) -> None:
+    return param
+```
+
+## Inline - Multiple Variables' Declaration
+### Without hinting
+```py
+a, b, c = 1, 2, 3
+```
+
+### With hinting
+```py
+# not working
+a: int, b: int, c: int = 1, 2, 3
+
+# working
+a: int = 0; b: int = 1; c: int = 2
 ```
