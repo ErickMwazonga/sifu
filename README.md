@@ -3,9 +3,11 @@
 ## Annotations
 ### **File Names**
 With `# prefix` can mean one of the following: <br />
-1. No implementation yet(NO CODE :-))
-2. Need to simplify the logic
-3. The CODE cannot run AS IS **or** It doesn't pass the test cases
+   1. No implementation yet(NO CODE :-))
+   2. Need to simplify the logic
+   3. The CODE cannot run AS IS **or** It doesn't pass the test cases
+   
+Consider this as a draft file.
 
 ### **Examples**
 `No. input -> output => Explanation` <br/>
@@ -121,7 +123,7 @@ With `# prefix` can mean one of the following: <br />
 1. [Structy](https://structy.net/)
 2. [AlgoExpert](https://www.algoexpert.io/product)
 
-## YOUTUBE Channels
+## Youtube Channels
 1. [Inside Code](https://www.youtube.com/c/Insidecode/videos?app=desktop)
 2. [Neetcode](https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g) 
 3. [Alvin the programmer](https://www.youtube.com/c/Alvin-the-programmer) 
