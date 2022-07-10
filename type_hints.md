@@ -117,6 +117,44 @@ def demostrate(param: None) -> None:
     return param
 ```
 
+## Optional
+`Optional[...]` is a shorthand notation for `Union[..., None]`, telling the type checker that either an object of the specific type is required, or None is required.
+
+```py
+from typing import Optional
+
+def test(a: Optional[int] = None) -> Optional[int]:
+    print(a)
+
+
+test(1) # 1
+test() # None
+
+
+def test(a: Optional[list] = None) -> Optional[list]:
+    print(a)
+
+test([1, 2, 3]) # [1, 2, 3]
+test() # None
+
+# practical example
+ID = Union[str, int] # str | int
+
+def api_function(param: Optional[ID] = None) -> None:
+    '''
+    API STUB
+
+    If param is given, it should be a string, or an integer is also accepted.
+    Otherwise, it can be None
+    '''
+    ...
+
+# From Python 3.9+ you are not required to use typing module:
+def foo(bar: str = None):
+    ....
+```
+
+
 ## Inline - Multiple Variables' Declaration
 ### Without hinting
 ```py
@@ -130,4 +168,28 @@ a: int, b: int, c: int = 1, 2, 3
 
 # working
 a: int = 0; b: int = 1; c: int = 2
+```
+
+## NoReturn
+Sometimes functions never return, for example by always raising an exception. <br>
+For such functions’ return types, we can “get away” with using None, but it’s best to use the special NoReturn type).
+
+```py
+from typing import Literal, NoReturn
+
+def assert_never(value: NoReturn) -> NoReturn:
+    assert False
+```
+
+## Constants - Final
+### `typing.Final`
+A special typing construct to indicate to type checkers that a name cannot be re-assigned or overridden in a subclass. 
+
+```py
+PORT: Final = 3000
+PORT_NO: Final[int] = 22 # Explicitly definind data type
+PORT = 4000  # Error reported by type checker
+
+class Connection:
+    TIMEOUT: Final[int] = 10
 ```
