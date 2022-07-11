@@ -15,14 +15,17 @@ python_is_great: bool = True
 
 ## Tuples
 ```py
-from typing import Tuple
+from typing import Tuple, Any
 
 # For tuples of fixed size, we specify the types of all the elements
 person: tuple[str, str, int] = ('Erick', 'Nairobi', 1990) # Python 3.9+
 person_v2: Tuple[str, str, int] = ('Erick', 'Nairobi', 1990)
 
-# For tuples of variable size, we use one type and ellipsis
+# To specify a variable-length tuple of homogeneous type, use literal ellipsis, e.g. Tuple[int, ...]
 people: tuple[str, ...] = ('Erick', 'Sifa', 'Willy')
+
+# A plain Tuple is equivalent to Tuple[Any, ...], and in turn to tuple.
+people: tuple[Any, ...] = ('Erick', 19, Nairobi)
 
 # Using Alias
 Person = list[tuple[str, str, int]]
@@ -82,7 +85,25 @@ def get_people() -> Person:
     return person
 ```
 
-## Functions Annotations
+## None Type
+```py
+def demostrate(param: None) -> None:
+    return param
+```
+
+## Any Type
+A special kind of type is Any. <br>
+Every data type is a type of the `Any` type.
+
+```py
+from typing import Any
+
+nums: Any = None
+nums = []          # OK
+nums = 2           # OK
+```
+
+## Function Annotations
 ```py
 def function_name(param1: type, param2: type) -> return_type:
     ...
@@ -92,43 +113,18 @@ def changeLog(language: str, version: float) -> str:
     ...
 ```
 
-## Adding type hints for multiple types
-```py
-from typing import Union
-
-Number = Union[int, float]
-Number_V2 = int | float # Python 3.10+
-
-def add(x: Number, y: Number) -> Number:
-    return x + y
-```
-
-## Type aliases
-```py
-from typing import Union
-
-Number = Union[int, float]
-Number_V2 = int | float
-```
-
-## None Type
-```py
-def demostrate(param: None) -> None:
-    return param
-```
-
-## Optional
+## Optional Arguments
 `Optional[...]` is a shorthand notation for `Union[..., None]`, telling the type checker that either an object of the specific type is required, or None is required.
 
 ```py
 from typing import Optional
 
-def test(a: Optional[int] = None) -> Optional[int]:
-    print(a)
+def player(name: str, start: Optional[str] = None) -> str:
+    print(start)
 
 
-test(1) # 1
-test() # None
+player('Erick', 2022) # 2022
+player('Erick') # None
 
 
 def test(a: Optional[list] = None) -> Optional[list]:
@@ -154,6 +150,27 @@ def foo(bar: str = None):
     ....
 ```
 
+## Adding type hints for multiple types
+```py
+from typing import Union
+
+Number = Union[int, float]
+Number_V2 = int | float # Python 3.10+
+
+def add(x: Number, y: Number) -> Number:
+    return x + y
+```
+
+## Type aliases
+```py
+from typing import Union, TypeAlias
+
+Number = Union[int, float]
+Number: TypeAlias = Union[int, float]
+
+Number_V2 = int | float
+Number_V2: TypeAlias = Union[int, float]
+```
 
 ## Inline - Multiple Variables' Declaration
 ### Without hinting
@@ -181,7 +198,7 @@ def assert_never(value: NoReturn) -> NoReturn:
     assert False
 ```
 
-## Constants - Final
+## Constants
 ### `typing.Final`
 A special typing construct to indicate to type checkers that a name cannot be re-assigned or overridden in a subclass. 
 
