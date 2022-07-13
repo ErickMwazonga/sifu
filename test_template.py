@@ -1,9 +1,10 @@
+from dataclasses import dataclass
+from typing import NoReturn
 import unittest
 
 
 class Solution:
-
-    def get_sum(a, b):
+    def get_sum(a: int, b: int) -> int:
         return a + b
 
 
@@ -57,6 +58,38 @@ class TestSuite(unittest.TestCase):
     def tearDown(self):
         # close any open generators - files, sockets, connections
         ...
+
+
+@dataclass
+class User:
+    first_name: str
+    last_name: str
+
+    def full_name(self) -> str:
+        return f'{self.first_name} {self.last_name}'
+
+
+class TestFramework:
+    '''
+    Structure your tests in an Arrange-Act-Assert way:
+
+    Arrange - set-up logic
+    Act - invokes the system you're about to test
+    Assert - verifies that the action of the system under test behaves as expected
+    '''
+
+    def test_full_name_consists_of_first_name_and_last_name() -> NoReturn:
+        # arrange
+        first_name: str = 'Erick'
+        last_name: str = 'Mwazonga'
+
+        user: User = User(first_name=first_name, last_name=last_name)
+
+        # act
+        full_name: str = user.full_name()
+
+        # assert
+        assert full_name == 'Erick Mwazonga'
 
 
 if __name__ == '__main__':
