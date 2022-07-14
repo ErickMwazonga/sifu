@@ -17,25 +17,23 @@ class Graph:
         if node not in self.adjList:
             self.adjList[node] = []
 
-    def add_edge(self, s, d):
-        # self.adjList[s].append(d)
-        if s not in self.adjList:
-            self.adjList[s] = [d]
+    def add_edge(self, source, destination):
+        # self.adjList[source].append(d)
+
+        if source not in self.adjList:
+            self.adjList[source] = [destination]
         else:
-            self.adjList[s].append(d)
+            self.adjList[source].append(destination)
 
     def print_graph(self):
         for k, v in self.adjList.items():
             print(f'{k} -> {v}')
 
 
-if __name__ == "__main__":
+graph = Graph()
+graph.add_edge(0, 1)
+graph.add_edge(0, 2)
+graph.add_edge(0, 3)
+graph.add_edge(1, 2)
 
-    # Create graph and edges
-    graph = Graph()
-    graph.add_edge(0, 1)
-    graph.add_edge(0, 2)
-    graph.add_edge(0, 3)
-    graph.add_edge(1, 2)
-
-    graph.print_graph()
+graph.print_graph()

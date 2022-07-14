@@ -8,7 +8,7 @@ Consider the length as the number of edges in the path, not the number of nodes.
 If there is no path between A and B, then return -1.
 
 Example 1
-const edges = [
+edges = [
   ['w', 'x'],
   ['x', 'y'],
   ['z', 'y'],
@@ -18,7 +18,7 @@ const edges = [
 shortestPath(edges, 'w', 'z') -> 2
 
 Example 2
-const edges = [
+edges = [
   ['w', 'x'],
   ['x', 'y'],
   ['z', 'y'],
@@ -73,4 +73,4 @@ edges = [
 ]
 
 soln = Solution()
-soln.shortestPath(edges, 'a', 'e')
+assert soln.shortestPath(edges, 'a', 'e') == 3
