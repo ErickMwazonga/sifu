@@ -18,14 +18,14 @@ class Album:
 
         self.tracks = []
 
-        artist.add_album(self)
+    def __post_init__(self):
+        self.artist.add_album(self)
 
     def add_track(self, title, artist=None):
         if artist is None:
             artist = self.artist
 
         track_number = len(self.tracks)
-
         song = Song(title, artist, self, track_number)
 
         self.tracks.append(song)
