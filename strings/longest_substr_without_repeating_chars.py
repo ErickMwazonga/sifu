@@ -16,7 +16,7 @@ Examples:
 '''
 
 
-def lengthOfLongestSubstring(s):
+def lengthOfLongestSubstring(s: str) -> int:
     '''Time: O(n), Space: O(k) - [k = length of the longest substring w/o repeating characters]'''
 
     n = len(s)
@@ -35,7 +35,7 @@ def lengthOfLongestSubstring(s):
     return longest
 
 
-def lengthOfLongestSubstring_v2(s):
+def lengthOfLongestSubstring_v2(s: str) -> int:
     start = max_length = 0
     seen_chars = {}
 

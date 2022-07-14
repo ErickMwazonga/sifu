@@ -8,7 +8,10 @@ Examples
 '''
 
 
-def findRotations(s):
+from typing import Optional
+
+
+def findRotations(s: str) -> int:
     # tmp is the concatenated string.
     tmp = s + s
     n = len(s)
@@ -25,7 +28,7 @@ def findRotations(s):
     return n
 
 
-def findRotations_v2(_str):
+def findRotations_v2(_str: str) -> Optional[int]:
     check = ''
     n = len(_str)
 
@@ -34,3 +37,5 @@ def findRotations_v2(_str):
 
         if check == _str:
             return i
+
+    return None # for mypy

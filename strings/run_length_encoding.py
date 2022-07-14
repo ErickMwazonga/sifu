@@ -15,7 +15,7 @@ Decode: '9W7B' -> 'WWWWWWWWWBBBBBBB'
 '''
 
 
-def encode(_str):
+def encode(_str: str) -> str:
     n = len(_str)
 
     if _str == _str[0] * n:
@@ -38,7 +38,7 @@ def encode(_str):
     return encoding
 
 
-def decode(_str):
+def decode(_str: str) -> str:
     n = len(_str)
     decoding = ''
 

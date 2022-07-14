@@ -15,7 +15,7 @@ After you are done modifying the input array, return the new length of the array
 You must write an algorithm that uses only constant extra space.
  
 Example 1:
-Input: chars = ['a','a','b','b','c','c','c']
+Input: chars = ['a', 'a', 'b', 'b', 'c', 'c', 'c']
 Output: Return 6, and the first 6 characters of the input array should be: ['a','2','b','2','c','3']
 Explanation: The groups are 'aa', 'bb', and 'ccc'. This compresses to 'a2b2c3'.
 
@@ -26,7 +26,7 @@ Explanation: The only group is 'a', which remains uncompressed since it's a sing
 '''
 
 
-def compress(chars) -> int:
+def compress(chars: list[str]) -> int:
     n = len(chars)
 
     if n == 1:
@@ -37,7 +37,6 @@ def compress(chars) -> int:
 
     while i < n:
         if chars[i] != chars[i-1]:
-            print(i)
             chars[start+1] = str(_count)
             start, _count = i, 1
             length += 2
@@ -49,9 +48,7 @@ def compress(chars) -> int:
     chars[start+1] = str(_count)
     length += 2
     chars = chars[:length]
-
-    print(chars, length)
-
+    
     return length
 
 

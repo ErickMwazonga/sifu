@@ -39,7 +39,7 @@ class Solution:
 
         return num
 
-    def mapping(self, char):
+    def mapping(self, char: str) -> int:
         return ord(char) - ord('A') + 1
 
 

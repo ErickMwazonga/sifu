@@ -12,7 +12,7 @@ Examples:
 '''
 
 
-def spreadsheet_decode_column(col_num):
+def spreadsheet_decode_column(col_num: int) -> str:
     '''Decodes a column number into a column id.'''
 
     col_str = ''

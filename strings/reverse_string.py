@@ -1,28 +1,30 @@
-def reverse_str(s):
+def reverse_str(s: str) -> str:
     reversedString = ''
-    idx = len(str) - 1  # calculate length of string and save in index
+    idx = len(s) - 1  # calculate length of string and save in index
 
     while idx > 0:
         # save the value of str[index-1] in reverseString
-        reversedString += str[idx]
+        reversedString += s[idx]
         idx -= 1  # decrement index
 
-    print(reversedString)
+    return reversedString
 
 
-def swap(s, i, j):
+def swap(s: str, i: int, j: int) -> str:
     strlst = list(s)
-    strlst[i], strlst[j] = strlst[j], strlst[j]
+    strlst[i], strlst[j] = strlst[j], strlst[i]
 
     return ''.join(strlst)
 
 
-def reverse_str_v2(s):
-    i, j = 0, len(s)
+def reverse_str_v2(s: str) -> str:
+    i, j = 0, len(s) - 1
 
-    while i < j:
-        swap(s, i, j)
+    while i <= j:
+        s = swap(s, i, j)
         i, j = i + 1, j - 1
 
+    return s
 
-print(reverse_str_v2('hello'))
+
+assert reverse_str_v2('hello') == 'olleh'

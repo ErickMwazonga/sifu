@@ -11,10 +11,10 @@ Examples
 '''
 
 
-def toLowerCase(str):
-    lowered = []
+def toLowerCase(_str: str) -> str:
+    lowered: list = []
 
-    for ch in str:
+    for ch in _str:
         char_code = ord(ch)
         # if A-Z
         if char_code < 91 and char_code > 64:
@@ -25,16 +25,16 @@ def toLowerCase(str):
     return ''.join(lowered)
 
 
-def toLowerCase_v2(str: str) -> str:
+def toLowerCase_v2(_str: str) -> str:
     res = ''
 
-    for ch in str:
+    for ch in _str:
         val = ord(ch)
 
-        if(65 <= val <= 90):  # if (ord(ch) >= 65 and ord(ch) <= 90):
+        if (65 <= val <= 90):  # if (ord(ch) >= 65 and ord(ch) <= 90):
             res += chr(val + 32)
         else:
-            res += str[ch]
+            res += _str[ch]
 
     return res
 

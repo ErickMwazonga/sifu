@@ -11,16 +11,15 @@ Examples:
 '''
 
 
-def reverseString(s):
+def reverseString(s: list[str]) -> None:
     s[:] = s[::-1]
-    return s
 
 
-def reverseString_v2(s):
+def reverseString_v2(s: list[str]) -> None:
     s.reverse()
 
 
-def reverse_v3(chars: list):
+def reverse_v3(chars: list[str]) -> list:
     left = 0
     right = len(chars) - 1
 

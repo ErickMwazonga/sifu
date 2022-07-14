@@ -14,13 +14,14 @@ You may assume the string contains only lowercase alphabets.
 '''
 
 
-def is_anagram(s1, s2):
+def is_anagram(s1: str, s2: str) -> bool:
     if len(s1) != len(s2):
         return False
+
     return sorted(s1) == sorted(s2)
 
 
-def is_anagram_v2(s1, s2):
+def is_anagram_v2(s1: str, s2: str) -> bool:
     if len(s1) != len(s2):
         return False
 

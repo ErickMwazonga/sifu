@@ -21,10 +21,10 @@ Example 1:
 Example 2:
 4 -> 1211'
 Explanation:
-countAndSay(1) = '1'
-countAndSay(2) = say '1' = one 1 = '11'
-countAndSay(3) = say '11' = two 1's = '21'
-countAndSay(4) = say '21' = one 2 + one 1 = '12' + '11' = '1211'
+    countAndSay(1) = '1'
+    countAndSay(2) = say '1' = one 1 = '11'
+    countAndSay(3) = say '11' = two 1's = '21'
+    countAndSay(4) = say '21' = one 2 + one 1 = '12' + '11' = '1211'
 
 Another Explanation
 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ... 
@@ -42,7 +42,7 @@ counting the number of digits in groups of the same digit. For example:
 
 class Solution:
 
-    def nextNumber(self, s):
+    def nextNumber(self, s: str) -> str:
         res = []
         s = str(s)
         i, n = 0, len(s)
@@ -59,7 +59,7 @@ class Solution:
 
         return ''.join(res)
 
-    def countAndSay(self, n):
+    def countAndSay(self, n: int) -> str:
         s = '1'
 
         if n == 1:
@@ -72,5 +72,5 @@ class Solution:
 
 
 soln = Solution()
-soln.nextNumber(1) == '1'
-soln.nextNumber(4) == '1211'
+assert soln.countAndSay(1) == '1'
+assert soln.countAndSay(4) == '1211'

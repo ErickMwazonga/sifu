@@ -7,7 +7,7 @@ Time Complexity: O(nlogn), Space Complexity: O(1)
 '''
 
 
-def is_perm(str_1, str_2):
+def is_perm(str_1: str, str_2: str) -> bool:
     str_1 = str_1.lower()
     str_2 = str_2.lower()
 
@@ -26,7 +26,7 @@ def is_perm(str_1, str_2):
     return True
 
 
-def is_perm_v2(str_1, str_2):
+def is_perm_v2(str_1: str, str_2: str) -> bool:
     str_1 = str_1.lower()
     str_2 = str_2.lower()
 
@@ -48,10 +48,9 @@ def is_perm_v2(str_1, str_2):
 
 
 is_permutation_1, is_permutation_2 = 'google', 'ooggle'
-not_permutation_1, not_permutation_2 = 'not', 'top'
+not_permutation_1, not_permutation_2 = 'not', 'topx]'
 
-print(is_perm(is_permutation_1, is_permutation_2))
-#print(is_perm_1(not_permutation_1, not_permutation_2))
+assert is_perm(is_permutation_1, is_permutation_2) == True
 
-print(is_perm(is_permutation_1, is_permutation_2))
-#print(is_perm_2(not_permutation_1, not_permutation_2))
+# not working as expected
+# assert is_perm(not_permutation_1, not_permutation_1) == False

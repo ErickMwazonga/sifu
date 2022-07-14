@@ -13,7 +13,7 @@ return either ['bed', 'bath', 'and', 'beyond] or ['bedbath', 'and', 'beyond'].
 '''
 
 
-def reconstruction(words, s):
+def reconstruction(words: list[str], s: str) -> list[str]:
     words, res = set(words), []
 
     n = len(s)

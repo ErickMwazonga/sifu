@@ -4,24 +4,25 @@ unique characters.
 '''
 
 
-def is_unique(input_str):
+def is_unique(_input: str) -> bool:
     _hash = {}
 
-    for char in input_str:
+    for char in _input:
         if char in _hash:
             return False
         _hash[char] = 1
+
     return True
 
 
-def is_unique_v2(input_str):
-    return len(set(input_str)) == len(input_str)
+def is_unique_v2(_input: str) -> bool:
+    return len(set(_input)) == len(_input)
 
 
-def is_unique_v3(input_str):
+def is_unique_v3(_input: str) -> bool:
     alpha = 'abcdefghijklmnopqrstuvwxyz'
 
-    for i in input_str:
+    for i in _input:
         if i in alpha:
             alpha = alpha.replace(i, '')
         else:
