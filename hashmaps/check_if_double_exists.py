@@ -3,7 +3,7 @@ Check if N and its Double exits
 '''
 
 
-def check_exists(arr):
+def check_exists(arr: list[int]) -> bool:
     _hash = set(arr)
 
     for num in arr:

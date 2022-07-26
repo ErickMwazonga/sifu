@@ -2,15 +2,18 @@
 Write an algorithm that returns the first non-repeated character in a string. For example:
 
 Examples
-1. 'ACBA' -> B
+1. 'ACBA' -> 'B'
 2. 'BCABAC' -> None
-3. 'BAC' -> B
-4. 'GlovoOnGlovo' -> O
-5. 'What is the first non-repeated character?' -> W
+3. 'BAC' -> 'B'
+4. 'GlovoOnGlovo' -> 'O'
+5. 'What is the first non-repeated character?' -> 'W'
 '''
 
 
-def get_first_non_repeated_character(s):
+from typing import Optional
+
+
+def get_first_non_repeated_character(s: str) -> Optional[str]:
     '''Time O(n), Space O(1) - You only have a limited no of characters'''
 
     if not s:

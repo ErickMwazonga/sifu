@@ -17,6 +17,7 @@ Output: 0.25000
 
 def myPow(x, n):
     '''Time: O(n)'''
+    
     if n == 0:
         return 1
 

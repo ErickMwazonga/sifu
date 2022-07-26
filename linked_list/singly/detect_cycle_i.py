@@ -18,7 +18,7 @@ class Node:
         self.next = next
 
 
-def detectCycle(head):
+def detectCycle(head: Node) -> bool:
     '''time - O(n), space - O(n)'''
 
     curr = head
@@ -34,7 +34,7 @@ def detectCycle(head):
     return False
 
 
-def detectCycle_v2(head):
+def detectCycle_v2(head: Node) -> bool:
     '''
     https://www.codesdope.com/blog/article/detect-a-loop-in-linked-list-using-floyds-cycle/
     Floyd's Cycle-Finding Algorithm

@@ -1,7 +1,7 @@
 '''
 First repeating character
 
-Given a string str, create a function that returns the first repeating character.
+Given a string _str, create a function that returns the first repeating character.
 If such character doesn't exist, return the null character '\0'.
 
 Examples
@@ -11,10 +11,13 @@ Examples
 '''
 
 
-def first_repeating_character(str):
+from typing import Optional
+
+
+def first_repeating_character(_str: str) -> Optional[str]:
     seen = set()
 
-    for char in str:
+    for char in _str:
         if char in seen:
             return char
 
@@ -23,10 +26,10 @@ def first_repeating_character(str):
     return None
 
 
-def first_repeating_character_v2(str):
+def first_repeating_character_v2(_str: str) -> Optional[str]:
     counter = {}
 
-    for ch in str:
+    for ch in _str:
         counter[ch] = counter.get(ch, 0) + 1
 
     for k, v in counter.items():

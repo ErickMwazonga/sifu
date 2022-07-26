@@ -1,4 +1,5 @@
 '''
+1313. Decompress Run-Length Encoded List
 Link: https://leetcode.com/problems/decompress-run-length-encoded-list/
 We are given a list nums of integers representing a list compressed with run-length encoding.
 
@@ -25,4 +26,4 @@ def decompressRLElist(nums):
     return res
 
 
-decompressRLElist([1, 1, 2, 3]) == [1, 3, 3]
+assert decompressRLElist([1, 1, 2, 3]) == [1, 3, 3]

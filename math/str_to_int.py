@@ -12,7 +12,7 @@ Examples:
 '''
 
 
-def myAtoi(_str):
+def myAtoi(_str: str) -> int:
     if not _str:
         return 0
 

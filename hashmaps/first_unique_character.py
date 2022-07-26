@@ -9,7 +9,7 @@ Note: You may assume the string contain only lowercase letters.
 '''
 
 
-def firstUniqChar(s: str):
+def firstUniqChar(s: str) -> int:
     '''Time: O(N), Space: O(N)'''
 
     _hash = {}

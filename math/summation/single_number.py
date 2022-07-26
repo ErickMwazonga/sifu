@@ -12,7 +12,7 @@ Examples:
 '''
 
 
-def singleNumber(nums):
+def singleNumber(nums: list[int]):
     frequency = {}
 
     for i in nums:
@@ -23,7 +23,7 @@ def singleNumber(nums):
             return i
 
 
-def singleNumber_v2(nums):
+def singleNumber_v2(nums: list[int]):
     '''Formula: 2*(a+b+c) - (a+a+b+b+c) = c'''
 
     return 2 * sum(set(nums)) - sum(nums)

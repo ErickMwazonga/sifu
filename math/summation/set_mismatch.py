@@ -14,7 +14,7 @@ Examples:
 '''
 
 
-def findErrorNums(nums):
+def findErrorNums(nums: list[int]) -> list[int]:
     n = len(nums)
     true_sum = n * (n + 1) // 2
 
@@ -28,19 +28,21 @@ def findErrorNums(nums):
 
 
 class Solution:
-    def findErrorNums(self, nums):
+    def findErrorNums(self, nums: list[int]) -> list[int]:
         missing = self.find_missing(nums)
         duplicate = self.find_duplicate(nums)
 
         return [duplicate, missing]
 
-    def find_missing(self, nums):
+    def find_missing(self, nums: list[int]) -> int:
         n = len(nums)
         seen = set(nums)
 
         for i in range(1, n+1):
             if i not in seen:
                 return i
+        
+        return -1
 
-    def find_duplicate(self, nums):
+    def find_duplicate(self, nums: list[int]) -> int:
         return sum(nums) - sum(set(nums))

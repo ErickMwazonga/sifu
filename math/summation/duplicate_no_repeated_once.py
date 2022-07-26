@@ -11,7 +11,7 @@ Examples
 '''
 
 
-def get_duplicate(A):
+def get_duplicate(A: list[int]) -> int:
     '''Time: O(1)'''
 
     n = len(A) - 1

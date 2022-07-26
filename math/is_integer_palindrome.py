@@ -6,13 +6,13 @@ Given an integer x, return true if x is palindrome integer.
 An integer is a palindrome when it reads the same backward as forward.
 
 Examples:
-1. 121 -> true
-2. -121 -> false
-3. 10 -> false
+1. 121 -> True
+2. -121 -> False
+3. 10 -> False
 '''
 
 
-def is_palindrome(num):
+def is_palindrome(num: int) -> bool:
     if num < 0:
         return False
 

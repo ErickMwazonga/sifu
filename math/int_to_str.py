@@ -9,7 +9,7 @@ Examples:
 '''
 
 
-def int_to_str(input_int):
+def int_to_str(input_int: int) -> str:
     is_negative = input_int < 0
 
     if is_negative:

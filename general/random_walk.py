@@ -5,8 +5,9 @@ def random_walk(n):
     '''Return coordinates after 'n' block random walk.'''
 
     x = y = 0
-    for i in range(n):
+    for _ in range(n):
         step = random.choice(['N', 'S', 'E', 'W'])
+
         if step == 'N':
             y += 1
         elif step == 'S':
@@ -22,10 +23,10 @@ def random_walk_v2(n):
     '''Return coordinates after 'n' block random walk.'''
 
     x, y = 0, 0
-    for i in range(n):
-        (dx, dy) = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
-        x += dx
-        y += dy
+    for _ in range(n):
+        dx, dy = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
+        x, y = dx + 1, dy + 1
+        
     return (x, y)
 
 

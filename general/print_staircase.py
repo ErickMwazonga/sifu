@@ -14,7 +14,7 @@ Write a program that prints a staircase of size n.
 
 
 def staircase(n):
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
         _row = (' ' * (n-i)) + ('#' * i)
         print(_row)
 

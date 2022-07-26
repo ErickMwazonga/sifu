@@ -15,7 +15,7 @@ Examples :
 '''
 
 
-def count_pairs(arr):
+def count_pairs(arr: list[int]) -> int:
     mapping = {}
     ans = 0
 

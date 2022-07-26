@@ -14,22 +14,24 @@ Examples:
 '''
 
 
-def missingNumber(nums):
+def missingNumber(nums: list[int]) -> int:
     n = len(nums)
     visited = set(nums)
 
     for i in range(0, n + 1):
         if i not in visited:
             return i
+    
+    return -1
 
 
-def missingNumber_v2(nums):
+def missingNumber_v2(nums: list[int]) -> int:
     n = len(nums)
     cummulative_sum = sum(range(n+1))
     return cummulative_sum - sum(nums)
 
 
-def missingNumber_v2(nums):
+def missingNumber_v2(nums: list[int]) -> int:
     n = len(nums)
     cummulative_sum = n * (n + 1) // 2
 

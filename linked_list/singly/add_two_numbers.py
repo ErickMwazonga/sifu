@@ -18,42 +18,46 @@ Example 2:
 '''
 
 
+from typing import Optional
+
+
 class ListNode:
     def __init__(self, val):
         self.val = val
         self.next = None
 
 
-def addTwoNumbers(l1: ListNode, l2: ListNode):
-    curr = dummy = ListNode(0)
-    carry = 0
-
-    while l1 or l2:
-        curr_sum = 0
-        curr_sum += carry
-
-        if l1:
-            curr_sum += l1.val
-            l1 = l1.next
-
-        if l2:
-            curr_sum += l2.val
-            l2 = l2.next
-
-        carry, val = divmod(curr_sum, 10)
-
-        new_node = ListNode(val)
-        curr.next = new_node
-        curr = curr.next
-
-    if carry > 0:
-        curr.next = ListNode(carry)
-
-    return dummy.next
-
-
 class Solution:
-    def addTwoNumbers(self, l1, l2):
+    def addTwoNumbers(l1: ListNode, l2: ListNode) -> Optional[ListNode]:
+        curr = dummy = ListNode(0)
+        carry = 0
+
+        while l1 or l2:
+            curr_sum = 0
+            curr_sum += carry
+
+            if l1:
+                curr_sum += l1.val
+                l1 = l1.next
+
+            if l2:
+                curr_sum += l2.val
+                l2 = l2.next
+
+            carry, val = divmod(curr_sum, 10)
+
+            new_node = ListNode(val)
+            curr.next = new_node
+            curr = curr.next
+
+        if carry > 0:
+            curr.next = ListNode(carry)
+
+        return dummy.next
+
+
+class Solution_V2:
+    def addTwoNumbers(self, l1, l2) -> Optional[ListNode]:
         list1, list2 = [], []
 
         curr = l1
@@ -89,7 +93,7 @@ class Solution:
 
         return self.reverse(dummy.next)
 
-    def reverse(self, head):
+    def reverse(self, head: ListNode) -> ListNode:
         prev, curr = None, head
 
         while curr:
