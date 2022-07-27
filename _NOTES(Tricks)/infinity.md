@@ -9,8 +9,8 @@ negative_infinity = float('-inf') # -inf
 ```py
 import math
  
-positive_infinity = float('inf') # inf
-negative_infinity = float('-inf') # -inf
+positive_infinity = math.inf # inf
+negative_infinity = -math.inf # -inf
 ```
 
 ## 3. Integer `maxsize`
