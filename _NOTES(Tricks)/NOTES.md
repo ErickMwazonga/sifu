@@ -18,7 +18,6 @@ It uses Brute Force approach but to find ALL the solutions.
 1. [Graph Theory](https://medium.com/@nick.kearns_74871/graph-theory-and-flight-maps-df2e9f7fa684)
   
 
-
 ## Recursive Function - Pass by Value / Pass by Reference
 Recursive functions cannot pass boolean in a recursive function and change it in the recursive function. <br>
 Because, boolean like many other types is `immutable`, hence passed by value and not reference.

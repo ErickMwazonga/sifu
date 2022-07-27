@@ -190,7 +190,7 @@ def foo(bar: str = None):
 from typing import Union
 
 Number = Union[int, float]
-Number_V2 = int | float # Python 3.10+
+Number = int | float # Python 3.10+
 
 def add(x: Number, y: Number) -> Number:
     return x + y
@@ -239,7 +239,8 @@ A special typing construct to indicate to type checkers that a name cannot be re
 
 ```py
 PORT: Final = 3000
-PORT_NO: Final[int] = 22 # Explicitly definind data type
+PORT: Final[int] = 22 # Explicitly definind data type
+
 PORT = 4000  # Error reported by type checker
 
 class Connection:
