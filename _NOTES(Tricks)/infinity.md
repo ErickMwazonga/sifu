@@ -1,5 +1,5 @@
 # Infinity
-## 1. Using `float('inf')` and `float('-inf)`
+## 1. Using `float('inf')` and `float('-inf')`
 ```py
 positive_infinity = float('inf') # inf
 negative_infinity = float('-inf') # -inf
