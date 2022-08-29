@@ -14,7 +14,7 @@ Examples:
 '''
 
 
-def removeDuplicates(nums):
+def removeDuplicates(nums: list[int]) -> int:
     i = 1
 
     while i < len(nums):
@@ -26,7 +26,7 @@ def removeDuplicates(nums):
     return len(nums)
 
 
-def removeDuplicates_v2(nums):
+def removeDuplicates_v2(nums: list[int]) -> int:
     count, n = 1, len(nums)
 
     for i in range(1, n):
@@ -37,10 +37,10 @@ def removeDuplicates_v2(nums):
     return count
 
 
-def removeDuplicates_v4(arr):
+def removeDuplicates_v4(nums: list[int]) -> int:
     seen, res = set(), []
 
-    for num in arr:
+    for num in nums:
         if num not in seen:
             seen.add(num)
             res.append(num)

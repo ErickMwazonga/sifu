@@ -13,11 +13,11 @@ Examples
 '''
 
 
-def containsDuplicate(nums):
+def containsDuplicate(nums: list[int]) -> bool:
     return len(nums) != len(set(nums))
 
 
-def containsDuplicate_v2(nums):
+def containsDuplicate_v2(nums: list[int]) -> bool:
     seen = set()
 
     for num in nums:
@@ -29,7 +29,7 @@ def containsDuplicate_v2(nums):
     return False
 
 
-def containsDuplicate_v3(nums):
+def containsDuplicate_v3(nums: list[int]) -> bool:
     hashNum = {}
 
     for num in nums:
@@ -41,7 +41,7 @@ def containsDuplicate_v3(nums):
     return False
 
 
-def contains_duplicate_v4(nums):
+def contains_duplicate_v4(nums: list[int]) -> bool:
     freq = {}
 
     for num in nums:
@@ -55,7 +55,7 @@ def contains_duplicate_v4(nums):
     return False
 
 
-def containsDuplicate_v5(nums):
+def containsDuplicate_v5(nums: list[int]) -> bool:
     from collections import Counter
 
     freq = Counter(nums)

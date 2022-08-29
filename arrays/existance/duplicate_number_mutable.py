@@ -12,7 +12,7 @@ Examples
 '''
 
 
-def findDuplicate(nums):
+def findDuplicate(nums: list[int]) -> int:
     for num in nums:
         abs_num = abs(num)
 
@@ -22,7 +22,7 @@ def findDuplicate(nums):
         nums[abs_num] = -nums[abs_num]
 
 
-def findDuplicate_v2(A):
+def findDuplicate_v2(A: list[int]) -> int:
     n = len(A)
 
     for i in range(n+1):

@@ -17,15 +17,15 @@ therefore the overall asymptotic time complexity is O(n).
 '''
 
 
-def first_missing_positive(arr):
-    n, visisted = len(arr), set(arr)
+def first_missing_positive(nums: list[int]) -> int:
+    n, visisted = len(nums), set(nums)
 
     for i in range(1, n + 2):
         if i not in visisted:
             return i
 
 
-def firstMissingPositive_v1(nums):
+def firstMissingPositive_v1(nums: list[int]) -> int:
     n = len(nums)
 
     for i in range(n):
@@ -46,7 +46,7 @@ def firstMissingPositive_v1(nums):
     return n + 1
 
 
-def first_missing_positive_v2(nums) -> int:
+def first_missing_positive_v2(nums: list[int]) -> int:
     n = len(nums)
 
     # cleaning up the array (negative nos + nos > n)

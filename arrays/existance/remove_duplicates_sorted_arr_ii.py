@@ -19,7 +19,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 '''
 
 
-def removeDuplicates(nums):
+def removeDuplicates(nums: list[int]) -> int:
     n = len(nums)
 
     if n < 3:
@@ -34,7 +34,7 @@ def removeDuplicates(nums):
     return idx
 
 
-def removeDuplicates_v2(nums):
+def removeDuplicates_v2(nums: list[int]) -> int:
     n = len(nums)
 
     if n < 3:
@@ -50,11 +50,11 @@ def removeDuplicates_v2(nums):
     return pos + 1
 
 
-def removeDuplicates_v3(nums):
+def removeDuplicates_v3(nums: list[int]) -> int:
     n, pos = len(nums), 2
 
     for i in range(2, n):
-        if nums[pos - 2] == nums[pos - 1] == nums[i]:
+        if nums[pos-2] == nums[pos-1] == nums[i]:
             continue
 
         nums[pos] = nums[i]

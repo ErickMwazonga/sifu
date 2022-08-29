@@ -22,7 +22,7 @@ Examples:
 '''
 
 
-def getDifferentNumber(arr):
+def getDifferentNumber(arr: list[int]) -> int:
     n = len(arr)
     arrSorted = sorted(arr)
 

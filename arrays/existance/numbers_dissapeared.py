@@ -15,22 +15,22 @@ You may assume the returned list does not count as extra space.
 '''
 
 
-def findDisappearedNumbers(nums):
+def findDisappearedNumbers(nums: list[int]) -> list[int]:
     existing = set(nums)
     res = []
 
-    for i in range(1, len(nums)+1):
+    for i in range(1, len(nums) + 1):
         if i not in existing:
             res.append(i)
 
     return res
 
 
-def findDisappearedNumbers_v2(nums):
+def findDisappearedNumbers_v2(nums: list[int]) -> list[int]:
     return set(range(1, len(nums) + 1)) - set(nums)
 
 
-def findDisappearedNumbers_v3(nums):
+def findDisappearedNumbers_v3(nums: list[int]) -> list[int]:
     # mark existing
     for n in nums:
         i = abs(n) - 1
