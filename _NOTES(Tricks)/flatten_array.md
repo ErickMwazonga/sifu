@@ -1,11 +1,5 @@
 # Flatten an Array
 
-```py
-def transpose(nums: list[int]) :
-    grid: list[int] = [list(num) for num in nums]
-    return list(map(list, zip(*grid)))
-```
-
 ## 1. Basic iterative function
 ```py
 def flatten(matrix: list[list]):
@@ -29,7 +23,7 @@ def flatten(matrix: list[list]):
     return new_list
 ```
 ## 3. Flatten List of Lists using sum
-`sum` has an optional argument: sum(iterable [, start]), so you can do:
+`sum` has an optional argument: `sum(iterable [, start])`, so you can do:
 ```py
 Row = list[int]
 

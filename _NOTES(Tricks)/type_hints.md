@@ -227,9 +227,9 @@ Sometimes functions never return, for example by always raising an exception. <b
 For such functions' return types, we can `get away` with using None, but it’s best to use the special NoReturn type).
 
 ```py
-from typing import Literal, NoReturn
+from typing import NoReturn
 
-def assert_never(value: NoReturn) -> NoReturn:
+def assert_never() -> NoReturn:
     assert False
 ```
 

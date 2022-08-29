@@ -40,13 +40,15 @@ a = 283, b = 66, 283 + 66 = 349
 ### Using lambda function
 ```py
 from functools import reduce
+
 scores = [79, 65, 64, 75, 66]
 
-total = reduce(lambda a, b: a + b, scores)
+# total = reduce(lambda a, b: a + b, scores)
+total = reduce(lambda a, b: a + b, scores, 0)
 >>> total # 349
 ```
 
-## Example 2 - Min and Max of all numbers
+## Example 2 - Minimum and Maximum of all numbers
 ### Using custom function
 ```py
 from functools import reduce
@@ -71,6 +73,9 @@ from functools import reduce
 
 nums = [3, 5, 2, 4, 7, 1]
 
-min_val =  reduce(lambda a, b: min(a, b), nums) # 1
-max_val =  reduce(lambda a, b: max(a, b), nums) # 7
+min_val = reduce(lambda a, b: min(a, b), nums) # 1
+# min_val = reduce(lambda a, b: a if a < b else b, numbers)
+
+max_val = reduce(lambda a, b: max(a, b), nums) # 7
+# max_val = reduce(lambda a, b: a if a < b else b, numbers)
 ```

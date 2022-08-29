@@ -27,12 +27,13 @@ class Movie:
         return f'A movie with title: {self.title} has been created'
 
     def add_director(self, director_name: str):
-        if (director_name in self.directors):
+        if director_name in self.directors:
             return(f'The Director {director_name} already exists')
 
         self.directors.append(director_name)
         return(
-            f'The Director {director_name} has been added to movie {self.title}')
+            f'The Director {director_name} has been added to movie {self.title}'
+        )
 
     def get_directors(self):
         for key, director in self.directors.enumerate():
@@ -49,7 +50,7 @@ class MovieClub:
     def add_movie_instance(self, movie: Movie):
         title = movie.title
 
-        if (title in self.movies.keys()):
+        if title in self.movies.keys():
             return(f'The movie {title} already exists')
 
         self.movies[title] = movie
@@ -78,6 +79,7 @@ fast_n_furious = Movie('Fast n Furious', 'Stingo')
 assert fast_n_furious.directors == ['Stingo']
 fast_n_furious.add_director('Mambo')
 assert fast_n_furious.directors == ['Stingo', 'Mambo']
+
 # Existing Director
 fast_n_furious.add_director('Mambo') == 'The Director Mambo already exists'
 
