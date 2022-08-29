@@ -18,9 +18,6 @@ Output: [-1, -1]
 '''
 
 
-from turtle import position
-
-
 def search_range(nums, target):
     n = len(nums)
     result = [-1, -1]

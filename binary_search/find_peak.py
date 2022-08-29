@@ -17,12 +17,12 @@ And if there are multiple peaks in arr, just return the index of one of them.
 '''
 
 
-def find_peak_v0(nums):
+def find_peak(nums):
     max_num = max(nums)
     return nums.index(max_num)
 
 
-def find_peak(arr):
+def find_peak_v1(arr):
     '''Time: O(n), Space: O(1)'''
 
     n = len(arr)
@@ -60,7 +60,7 @@ def find_peak_v2(nums):
     return left
 
 
-def findPeakElement_v3(sf, nums):
+def findPeakElement_v3(nums):
     n = len(nums)
 
     if n == 1:

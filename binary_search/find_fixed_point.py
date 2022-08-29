@@ -15,7 +15,10 @@ Examples
 '''
 
 
-def find_fixed_point_linear(A):
+from typing import Optional
+
+
+def find_fixed_point_linear(A: list[int]) -> Optional[int]:
     '''Time: O(n), Space: O(1)'''
 
     for i in range(len(A)):
@@ -25,7 +28,7 @@ def find_fixed_point_linear(A):
     return None
 
 
-def find_fixed_point(A):
+def find_fixed_point(A: list[int]) -> Optional[int]:
     '''Time: O(log n), Space: O(1)'''
 
     low, high = 0, len(A) - 1

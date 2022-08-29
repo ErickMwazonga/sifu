@@ -19,7 +19,7 @@ Output: 30
 '''
 
 
-def minEatingSpeed(piles, H):
+def minEatingSpeed(piles: list[int], H: int) -> int:
     l, r = 1, max(piles)
     k = 0
 

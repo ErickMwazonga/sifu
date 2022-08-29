@@ -13,7 +13,7 @@ Examples
 '''
 
 
-def findMin(A):
+def findMin(A: list[int]) -> int:
     mini = A[0]
 
     for i in range(1, len(A)):
@@ -56,7 +56,7 @@ def findMin_v3(A: list[int]) -> int:
     return A[left]
 
 
-def findMin_v4(A):
+def findMin_v4(A: list[int]) -> int:
     left, right = 0, len(A) - 1
 
     if A[right] > A[left]:

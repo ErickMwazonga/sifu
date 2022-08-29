@@ -10,9 +10,6 @@ Returns index 3 since 108 appears for the first time at
 index 3.
 '''
 
-A = [-14, -10, 2, 108, 108, 243, 285, 285, 285, 401]
-target = 108
-
 
 def find(nums, target):
     index = -1

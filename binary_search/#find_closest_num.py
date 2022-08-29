@@ -19,7 +19,7 @@ Given [1, 3, 3, 4] and target = 2, return 0 or 1 or 2.
 '''
 
 
-def closestNumber(A, target):
+def closestNumber(A: list[int], target: int) -> int:
     if not A:
         return -1
 
