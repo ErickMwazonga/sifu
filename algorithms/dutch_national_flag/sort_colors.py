@@ -14,7 +14,7 @@ Example
 '''
 
 
-def sortColors(nums) -> None:
+def sortColors(nums: list[int]) -> None:
     colors = {0: 0, 1: 0, 2: 0}
 
     for num in nums:
@@ -23,7 +23,7 @@ def sortColors(nums) -> None:
     return ([0] * colors[0]) + ([1] * colors[1]) + ([2] * colors[2])
 
 
-def sortColors(nums) -> None:
+def sortColors_v2(nums: list[int]) -> None:
     if not nums:
         return nums
 
@@ -40,7 +40,7 @@ def sortColors(nums) -> None:
         i += 1
 
 
-def sortColors(A):
+def sortColors_v3(A: list[int]):
     '''Time: O(n)'''
 
     low, traverse, high = 0, 0, len(A) - 1

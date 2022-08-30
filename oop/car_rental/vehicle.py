@@ -30,6 +30,7 @@ class Car(Vehicle):
     ):
         super().__init__(
             license_num, stock_num, capacity, barcode, has_sunroof, status, model, make, manufacturing_year, mileage
+        )
 
         self.__type=type
 

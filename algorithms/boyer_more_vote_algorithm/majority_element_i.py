@@ -24,7 +24,7 @@ def majority_element(nums: list[int]) -> int:
             return k
 
 
-def majorityElement_v1(nums) -> int:
+def majorityElement_v1(nums: list[int]) -> int:
     '''
     Boyer Moore Majority Voting algorithm
     The Boyer-Moore majority vote algorithm is an algorithm for finding the majority of a

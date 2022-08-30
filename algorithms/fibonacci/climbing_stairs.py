@@ -33,50 +33,48 @@ To generalize, f(n) = f(n - 1) + f(n - 2). That's just the Fibonacci sequence!
 '''
 
 
-class Solution:
+def climb_stairs(n: int) -> int:
+    '''Time: O(2^n), Space: O(N)'''
 
-    def climb_stairs(self, n):
-        '''Time: O(2^n), Space: O(N)'''
+    if n <= 1:
+        return 1
 
-        if n <= 1:
-            return 1
+    return climb_stairs(n - 1) + climb_stairs(n - 2)
 
-        return self.climb_stairs(n - 1) + self.climb_stairs(n - 2)
+def climb_stairs_v1(n: int) -> int:
+    prev, curr = 0, 1
 
-    def climb_stairs_v1(self, n):
-        prev, curr = 0, 1
+    for _ in range(n):
+        prev, curr = curr, prev + curr
 
-        for _ in range(n):
-            prev, curr = curr, prev + curr
+    return curr
 
-        return curr
+def climb_stairs_v2(n: int) -> int:
+    '''Time: O(n), Space: O(1)'''
 
-    def climb_stairs_v2(self, n):
-        '''Time: O(n), Space: O(1)'''
+    prev, curr = 1, 2
 
-        prev, curr = 1, 2
+    for _ in range(n - 1):
+        prev, curr = curr, prev + curr
 
-        for _ in range(n - 1):
-            prev, curr = curr, prev + curr
+    return prev
 
-        return prev
+def climb_stairs_v3(n: int) -> int:
+    ways = [1, 2]
 
-    def climb_stairs_v3(self, n):
-        ways = [1, 2]
+    for i in range(2, n):
+        distinct_ways = ways[i-1] + ways[i-2]
+        ways.append(distinct_ways)
 
-        for i in range(2, n):
-            distinct_ways = ways[i-1] + ways[i-2]
-            ways.append(distinct_ways)
+    return ways[n - 1]
 
-        return ways[n - 1]
+def climb_stairs_fibonacci(n: int) -> int:
+    dp = [0] * n
 
-    def fib(n):
-        dp = [0] * n
+    for i in range(n):
+        if i <= 2:
+            dp[i] = i + 1
+        else:
+            dp[i] = dp[i-1] + dp[i-2]
 
-        for i in range(n):
-            if i <= 2:
-                dp[i] = i + 1
-            else:
-                dp[i] = dp[i-1] + dp[i-2]
-
-        return dp[-1]
+    return dp[-1]

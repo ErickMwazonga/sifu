@@ -28,7 +28,7 @@ def max_sub_array(nums: list[int]) -> int:
     return max_sum
 
 
-def max_sub_array_v2(A):
+def max_sub_array_v2(A: list[int]) -> int:
     max_ending_here = max_so_far = A[0]
 
     for num in A[1:]:

@@ -15,7 +15,7 @@ Explanation: '101' does not appear in nums. '000', '010', '100', and '110' would
 '''
 
 
-def findDifferentBinaryString(nums) -> str:
+def findDifferentBinaryString(nums: list[str]) -> str:
     ans = ''
 
     for i, group in enumerate(nums):

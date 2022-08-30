@@ -14,7 +14,7 @@ Implement the Solution class:
 import random
 
 
-def shuffle(A) -> list[int]:
+def shuffle(A: list[int]) -> list[int]:
     '''Time: O(n**2), Space: O(n)'''
 
     shuffled = []
@@ -28,7 +28,7 @@ def shuffle(A) -> list[int]:
     return A
 
 
-def shuffle_v2(A) -> list[int]:
+def shuffle_v2(A: list[int]) -> list[int]:
     '''
     Returns a random shuffling of the array.
     Inspired by - https://www.youtube.com/watch?v=4zx5bM2OcvA

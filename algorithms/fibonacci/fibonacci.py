@@ -17,7 +17,7 @@ Examples:
 '''
 
 
-def fibonacci(n):
+def fibonacci(n: int) -> int:
     '''O(2^n) -> Exponential'''
 
     if n <= 1:
@@ -39,7 +39,7 @@ def fib_memoized(n, memo={}):
     return memo[n]
 
 
-def fibonacci_v2(n):
+def fibonacci_v2(n: int) -> int:
     dp = [0] * n
     dp[0], dp[1] = 0, 1
 
@@ -49,7 +49,7 @@ def fibonacci_v2(n):
     return dp[-1]
 
 
-def fibonacci_v3(n):
+def fibonacci_v3(n: int) -> int:
     '''Time - O(n), Space - O(1)'''
 
     if n <= 1:
