@@ -13,7 +13,7 @@ Examples
 '''
 
 
-def find_duplicate(nums) -> int:
+def find_duplicate(nums: list[int]) -> int:
     slow = nums[0]
     fast = nums[slow]
 

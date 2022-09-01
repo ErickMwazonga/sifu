@@ -13,9 +13,7 @@ Examples:
 3. [1] -> []
 '''
 
-ListItems = list[int]
-
-def findDuplicates(nums: ListItems) -> ListItems:
+def findDuplicates(nums: list[int]) -> list[int]:
     freqs = {}
 
     for num in nums:
@@ -29,7 +27,7 @@ def findDuplicates(nums: ListItems) -> ListItems:
     return res
 
 
-def findDuplicates_v2(nums):
+def findDuplicates_v2(nums: list[int]) -> list[int]:
     res = []
 
     for num in nums:

@@ -40,7 +40,7 @@ def sortColors_v2(nums: list[int]) -> None:
         i += 1
 
 
-def sortColors_v3(A: list[int]):
+def sortColors_v3(A: list[int]) -> None:
     '''Time: O(n)'''
 
     low, traverse, high = 0, 0, len(A) - 1

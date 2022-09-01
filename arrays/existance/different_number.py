@@ -33,7 +33,7 @@ def getDifferentNumber(arr: list[int]) -> int:
     return n
 
 
-def getDifferentNumber_v2(arr):
+def getDifferentNumber_v2(arr: list[int]) -> int:
     n = len(arr)
     hashset = set(arr)
 
@@ -44,7 +44,7 @@ def getDifferentNumber_v2(arr):
     return n
 
 
-def getDifferentNumber_v3(arr):
+def getDifferentNumber_v3(arr: list[int]) -> int:
     n = len(arr)
     temp = 0
 

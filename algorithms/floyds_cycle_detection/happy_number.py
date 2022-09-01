@@ -21,8 +21,6 @@ Explanation:
 1**2 + 0**2 + 0**2 = 1
 '''
 
-from curses.ascii import SO
-
 
 class Solution:
     def isHappy(self, n: int) -> bool:
@@ -48,11 +46,11 @@ class Solution:
 
         return slow == 1
 
-    def squared(self, n):
+    def squared(self, n: int) -> int:
         squares = [int(x) ** 2 for x in str(n)]
         return sum(squares)
 
-    def squared_v2(self, n):
+    def squared_v2(self, n: int) -> int:
         result = 0
 
         while n > 0:

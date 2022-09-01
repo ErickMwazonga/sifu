@@ -37,7 +37,7 @@ def removeDuplicates_v2(nums: list[int]) -> int:
     return count
 
 
-def removeDuplicates_v4(nums: list[int]) -> int:
+def removeDuplicates_v3(nums: list[int]) -> int:
     seen, res = set(), []
 
     for num in nums:
