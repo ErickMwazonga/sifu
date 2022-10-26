@@ -39,20 +39,25 @@ def binary_search(arr, x):
 
     return -1
 
+def binary_search_v2(arr, target):
+    low, high = 0, len(arr)
+    ans = binary_search_helper(arr, low, high, target)
+    return ans
 
-def binary_search_v2(arr, low, high, x):
-    if low <= high:
-        mid = low + (high - low) // 2
-
-        if x == arr[mid]:
-            return mid
-        elif x > arr[mid]:
-            return binary_search_v2(arr, mid+1, high, x)
-        else:
-            return binary_search_v2(arr, low, mid-1, x)
-    else:
+def binary_search_helper(arr, low, high, x):
+    if low > high:
         return -1
 
+    mid = low + (high - low) // 2
 
-arr = [2, 3, 4, 10, 40]
-assert binary_search_v2(arr, 0, len(arr) - 1, 10) == 3
+    if x == arr[mid]:
+        return mid
+
+    if x > arr[mid]:
+        return binary_search_helper(arr, mid+1, high, x)
+    else:
+        return binary_search_helper(arr, low, mid-1, x)
+    
+
+assert binary_search_v2([2, 3, 4, 10, 40], 3) == 1
+assert binary_search_v2([-1, 0, 3, 5, 9, 12], 9) == 4
