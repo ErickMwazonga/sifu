@@ -17,14 +17,14 @@ Output: -1 -> Doesn't exist
 '''
 
 
-def linear_search(data, target):
+def linear_search(data: list[int], target: int) -> bool:
     for i in range(len(data)):
         if data[i] == target:
             return True
     return False
 
 
-def binary_search(arr, x):
+def binary_search(arr: list[int], x: int) -> int:
     low, high = 0, len(arr) - 1
 
     while low <= high:
@@ -39,12 +39,12 @@ def binary_search(arr, x):
 
     return -1
 
-def binary_search_v2(arr, target):
+def binary_search_v2(arr: list[int], target: int) -> int:
     low, high = 0, len(arr)
     ans = binary_search_helper(arr, low, high, target)
     return ans
 
-def binary_search_helper(arr, low, high, x):
+def binary_search_helper(arr: list[int], low: int, high: int, x: int) -> int:
     if low > high:
         return -1
 
