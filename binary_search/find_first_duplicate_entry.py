@@ -11,7 +11,7 @@ index 3.
 '''
 
 
-def find(nums, target):
+def find(nums: list[int], target: int) -> int:
     index = -1
     low, high = 0, len(nums) - 1
 

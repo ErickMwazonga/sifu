@@ -28,10 +28,11 @@ target = 13
 Output: false
 '''
 
+MATRIX = list[list[int]]
 
 class Solution:
 
-    def searchMatrix(self, matrix, target):
+    def searchMatrix(self, matrix: MATRIX, target: int):
         row = self.get_row(matrix, target)
 
         if row == -1:
@@ -39,7 +40,7 @@ class Solution:
 
         return binary_search(matrix[row], target)
 
-    def get_row(self, matrix, target):
+    def get_row(self, matrix: MATRIX, target: int) -> list[int]:
         if not matrix:
             return False
 
@@ -62,7 +63,7 @@ class Solution:
 
 class Solution_V2:
 
-    def search_matrix(self, matrix, target) -> bool:
+    def search_matrix(self, matrix: MATRIX, target: int) -> bool:
         n_rows, n_cols = len(matrix), len(matrix[0])
 
         if not n_rows or not n_cols:
@@ -84,7 +85,7 @@ class Solution_V2:
         return False
 
 
-def binary_search(row, target):
+def binary_search(row: list[int], target: int) -> bool:
     '''HELPER FUNCTION: BINARY SEARCH'''
 
     start, end = 0, len(row) - 1

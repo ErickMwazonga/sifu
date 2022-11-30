@@ -17,7 +17,7 @@ Output: 4
 '''
 
 
-def search_insert(nums, target):
+def search_insert(nums: list[int], target: int) -> int:
     '''Intuition - Just find the lowest than target'''
 
     low, high = 0, len(nums)
