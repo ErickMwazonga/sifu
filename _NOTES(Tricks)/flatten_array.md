@@ -37,7 +37,12 @@ syntax: `result = sum(input_list, [])`
 ```py
 Row = list[int]
 
-nums: list[Row] = [[1, 2, 3, 4], [5, 6, 7], [8, 9]]
+nums: list[Row] = [
+    [1, 2, 3, 4],
+    [5, 6, 7],
+    [8, 9]
+]
+
 flat_list: list[Row] = sum(nums, []) # [] + [1, 2, 3, 4] + [5, 6, 7] + [8, 9]
 
 >>> flat_list # [1, 2, 3, 4, 5, 6, 7, 8, 9]
