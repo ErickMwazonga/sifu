@@ -1,30 +1,44 @@
 # Infinity
+
 ## 1. Using `float('inf')` and `float('-inf')`
+
 ```py
 positive_infinity = float('inf') # inf
 negative_infinity = float('-inf') # -inf
 ```
 
 ## 2. Using Python’s math module
+
 ```py
 import math
- 
+
 positive_infinity = math.inf # inf
 negative_infinity = -math.inf # -inf
 ```
 
 ## 3. Integer `maxsize`
+
 ```py
 import sys
 
-maxSize = sys.maxsize # 9223372036854775807
-minSize = -sys.maxsize # -9223372036854775807
+max_size = sys.maxsize # 9223372036854775807
+min_size = -sys.maxsize # -9223372036854775807
 ```
 
 ## 4. Using Python’s decimal module
+
 ```py
 from decimal import Decimal
- 
+
 positive_infinity = Decimal('Infinity') # Infinity
 negative_infinity = Decimal('-Infinity') # -Infinity
+```
+
+## 5. Using Numpy Library
+
+```py
+from numpy import inf
+
+positive_infinity = inf # Inf
+negative_infinity = -inf # -Inf
 ```

@@ -15,7 +15,7 @@ Examples:
 def spreadsheet_decode_column(col_num: int) -> str:
     '''Decodes a column number into a column id.'''
 
-    col_str = ''
+    col_str: str = ''
 
     while col_num > 0:
         col_num, remainder = divmod(col_num - 1, 26)

@@ -57,5 +57,5 @@ def majority_element_v2(nums: list[int]) -> int:
     return majority
 
 
-assert majority_element([3, 2, 3]) == 3
 assert majority_element([2, 2, 1, 1, 1, 2, 2]) == 2
+assert majority_element([3, 2, 3]) == 3
