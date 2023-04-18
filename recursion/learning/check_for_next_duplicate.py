@@ -9,7 +9,7 @@ Examples
 '''
 
 
-def hasAdjacentDuplicates(s, i=0):
+def hasAdjacentDuplicates(s: str, i: int = 0) -> bool:
     if i >= len(s) - 1:
         return False
     

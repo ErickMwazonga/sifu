@@ -66,7 +66,7 @@ result = list(more_itertools.flatten(input_list))
 
 ## 6. Using Numpy `cancatenate` function
 
-```PY
+```py
 import numpy as np
 result = list(np.concatenate(input_list))
 ```
