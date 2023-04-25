@@ -18,9 +18,12 @@ Any 'O' that is not on the border and it is not connected to an 'O' on the borde
 Two cells are connected if they are adjacent cells connected horizontally or vertically.
 '''
 
+Matrix = list[list[str]]
+
 
 class Solution:
-    def solve(self, board) -> None:
+
+    def solve(self, board: Matrix) -> None:
         if not board:
             return
 
@@ -59,3 +62,47 @@ class Solution:
         self.dfs(board, i - 1, j)
         self.dfs(board, i, j + 1)
         self.dfs(board, i, j - 1)
+
+
+class Solution2:
+
+    def solve(self, grid: Matrix) -> None:
+        n, m = len(grid), len(grid[0])
+
+        # mark unsorrounded regions
+        for row in range(n):
+            for col in range(m):
+                if self.is_open_boundary(grid, row, col):
+                    self.sink_island(grid, row, col)
+
+        # sink sorrounded regions
+        for row in range(n):
+            for col in range(m):
+                # sink sorrounded regions
+                if grid[row][col] == 'O':
+                    grid[row][col] = 'X'
+
+                # unmark unsorrounded regions
+                if grid[row][col] == 'Q':
+                    grid[row][col] = 'O'
+
+    def is_open_boundary(self, grid, row, col):
+        n, m = len(grid), len(grid[0])
+        at_the_edge = (row == 0 or row == n - 1 or col == 0 or col == m - 1)
+        return grid[row][col] == 'O' and at_the_edge
+
+    def is_cell_outside(self, grid, row, col):
+        n, m = len(grid), len(grid[0])
+        return row < 0 or row >= n or col < 0 or col >= m
+
+    def sink_island(self, grid, row, col):
+        if self.is_cell_outside(grid, row, col):
+            return
+
+        if grid[row][col] != 'O':
+            return
+
+        grid[row][col] = 'Q'
+        directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+        for x, y in directions:
+            self.sink_island(grid, row + x, col + y)

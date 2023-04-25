@@ -25,34 +25,40 @@ Output: 3
 
 
 class Solution:
-    def num_of_lands(self, grid) -> int:
-        if not grid:
-            return 0
 
-        count = 0
-        n, m = len(grid), len(grid[0])
+	def num_of_lands(self, grid) -> int:
+		if not grid:
+			return 0
 
-        for row in range(n):
-            for col in range(m):
-                if grid[row][col] == '1':
-                    self.dfs(grid, row, col)
-                    count += 1
+		count = 0
+		n, m = len(grid), len(grid[0])
 
-        return count
+		for row in range(n):
+			for col in range(m):
+				if grid[row][col] == '1':
+					self.dfs(grid, row, col)
+					count += 1
 
-    def dfs(self, grid, row, col):
-        n, m = len(grid), len(grid[0])
-        out_bounds = row < 0 or row >= n or col < 0 or col >= m
+		return count
 
-        if out_bounds or grid[row][col] == '0':
-            return
+	def is_cell_outside(self, grid, row, col):
+		n, m = len(grid), len(grid[0])
+		out_bounds = row < 0 or row >= n or col < 0 or col >= m
+		return out_bounds
 
-        grid[row][col] = '0'  # SINK
+	def dfs(self, grid, row, col): 
+		'''SINK ISLAND'''
+		
+		out_bounds = self.is_cell_outside(grid, row, col)
+		if out_bounds or grid[row][col] == '0':
+			return
 
-        self.dfs(grid, row, col + 1)
-        self.dfs(grid, row, col - 1)
-        self.dfs(grid, row + 1, col)
-        self.dfs(grid, row - 1, col)
+		grid[row][col] = '0'  # SINK
+
+		self.dfs(grid, row, col + 1)
+		self.dfs(grid, row, col - 1)
+		self.dfs(grid, row + 1, col)
+		self.dfs(grid, row - 1, col)
 
 
 soln = Solution()
