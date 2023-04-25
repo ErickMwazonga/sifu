@@ -16,53 +16,60 @@ Matrix = list[Unit]
 
 
 class SodukuValidator:
-    def check_board(self, board: Matrix) -> bool:
-        if not board:
+    
+    def __init__(self, board: Matrix) -> None:
+        self.board = board
+        
+    def check_board(self) -> bool:
+        if not self.board:
             return False
-        if len(board) != 9:
+        
+        if len(self.board) != 9:
             return False
-        for row in board:
+        
+        for row in self.board:
             if len(row) != 9:
                 return False
+            
         return True
 
     def is_unit_valid(self, unit: Unit) -> bool:
         unit = [i for i in unit if i != '.' and i]
         return len(unit) == len(set(unit))
 
-    def check_rows(self, board: Matrix) -> bool:
-        for row in board:
+    def check_rows(self) -> bool:
+        for row in self.board:
             if not self.is_unit_valid(row):
                 return False
         return True
 
-    def check_cols(self, board: Matrix) -> bool:
-        n = len(board)
+    def check_cols(self) -> bool:
+        n = len(self.board)
+        
         for i in range(n):
             column = []
             for j in range(n):
-                column.append(board[j][i])
+                column.append(self.board[j][i])
 
             if not self.is_unit_valid(column):
                 return False
         return True
 
-    def check_subgrid(self, board: Matrix) -> bool:
+    def check_subgrid(self) -> bool:
         for i in range(0, 9, 3):
             for j in range(0, 9, 3):
-                s_square = board[i][j:j+3] + \
-                    board[i+1][j:j+3] + board[i+2][j:j+3]
+                s_square = self.board[i][j:j+3] + \
+                    self.board[i+1][j:j+3] + self.board[i+2][j:j+3]
 
                 if not self.is_unit_valid(s_square):
                     return False
         return True
 
-    def isValidSudoku(self, board: Matrix) -> bool:
-        if not self.check_board(board):
+    def isValidSudoku(self) -> bool:
+        if not self.check_board():
             return False
-        return self.check_rows(board) and self.check_cols(board) and self.check_subgrid(board)
+        return self.check_rows() and self.check_cols() and self.check_subgrid()
 
-    # Other nice to have utils
     def transformer(self, grouping: Unit) -> list:
         for i in range(len(grouping)):
             try:
@@ -70,6 +77,7 @@ class SodukuValidator:
             except ValueError:
                 value = 0
             grouping[i] = value
+            
         return grouping
 
     def check_duplicates(self, grouping: Unit) -> bool:
@@ -150,10 +158,21 @@ invalid2 = [
     ['.', '.', '.', '.', '8', '.', '.', '7', '9']
 ]
 
-sv = SodukuValidator()
-assert sv.isValidSudoku(valid) == True
-assert sv.isValidSudoku(invalid) == False
-assert sv.isValidSudoku(easy) == True
-assert sv.isValidSudoku(hard) == True
-assert sv.isValidSudoku(valid2) == True
-assert sv.isValidSudoku(invalid2) == False
+sv = SodukuValidator(valid)
+assert sv.isValidSudoku() == True
+
+sv = SodukuValidator(valid2)
+assert sv.isValidSudoku() == True
+
+sv = SodukuValidator(invalid)
+assert sv.isValidSudoku() == False
+
+sv = SodukuValidator(invalid2)
+assert sv.isValidSudoku() == False
+
+sv = SodukuValidator(easy)
+assert sv.isValidSudoku() == True
+
+sv = SodukuValidator(hard)
+assert sv.isValidSudoku() == True
+

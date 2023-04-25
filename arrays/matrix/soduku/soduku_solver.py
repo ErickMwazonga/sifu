@@ -34,7 +34,7 @@ class Solution:
         row, col = self.find_next_empty()
 
         # no unassigned position is found, puzzle solved
-        if row == None and col == None:
+        if not row and not col:
             return True
 
         possible_guesses = [str(x) for x in range(1, 10)]

@@ -41,24 +41,26 @@ def isValidSudoku(board) -> bool:
 
 
 def isValidSudoku2(board) -> bool:
-    rows = defaultdict(set)
-    cols = defaultdict(set)
-    squares = defaultdict(set)
+	rows = defaultdict(set)
+	cols = defaultdict(set)
+	squares = defaultdict(set)
 
-    for row in range(9):
-        for col in range(9):
-            val = board[row][col]
+	for row in range(9):
+		for col in range(9):
+			val = board[row][col]
 
-            if val == '.':
-                continue
+			if val == '.':
+				continue
 
-            block_val = (row // 3, col // 3)
+			block_val = (row // 3, col // 3)
 
-            if (val in rows[row]) or (val in cols[col]) or (val in squares[block_val]):
-                return False
+			values = [rows[row], cols[col], squares[block_val]]
+			# if (val in rows[row]) or (val in cols[col]) or (val in squares[block_val]):
+			if val in values:
+				return False
 
-            rows[row].add(val)
-            cols[col].add(val)
-            squares[block_val].add(val)
+			rows[row].add(val)
+			cols[col].add(val)
+			squares[block_val].add(val)
 
-    return True
+	return True

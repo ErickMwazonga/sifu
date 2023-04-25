@@ -18,6 +18,7 @@ Output: true
 
 
 class Solution:
+    
     def findRotation(self, matrix, target):
         # return any(matrix == self.rotate90(matrix) for _ in range(10))
         for _ in range(4):
