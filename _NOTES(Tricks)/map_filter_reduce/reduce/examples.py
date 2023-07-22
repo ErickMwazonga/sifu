@@ -32,12 +32,14 @@ numbers = [1, 2, 3, 4, 5]
 cumulative_sum = reduce(lambda acc, num: acc + [acc[-1] + num] if acc else [num], numbers, [])
 assert cumulative_sum == [1, 3, 6, 10, 15]
 
-# Given a list of tuples containing a name and an age, create a dictionary where the keys are the names and the values are the ages using reduce.
+# Given a list of tuples containing a name and an age, 
+# create a dictionary where the keys are the names and the values are the ages using reduce.
 people = [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
 age_dict = reduce(lambda acc, person: {**acc, person[0]: person[1]}, people, {})
 assert age_dict == {'Alice': 25, 'Bob': 30, 'Charlie': 35}
 
-# Given a list of strings, create a dictionary where the keys are the strings and the values are the number of times each string appears in the list using reduce.
+# Given a list of strings, create a dictionary where the keys are the strings and 
+# the values are the number of times each string appears in the list using reduce.
 strings = ['foo', 'bar', 'foo', 'spam', 'eggs', 'foo']
 string_count = reduce(lambda acc, string: {**acc, string: acc.get(string, 0) + 1}, strings, {})
 assert string_count == {'foo': 3, 'bar': 1, 'spam': 1, 'eggs': 1}
@@ -57,7 +59,8 @@ strings = ['foo', 'bar', 'spam', 'eggs']
 reverse_strings = reduce(lambda acc, string: [string] + acc, strings, [])
 assert reverse_strings == ['eggs', 'spam', 'bar', 'foo']
 
-# Given a list of tuples containing a name and a list of scores, create a dictionary where the keys are the names and the values are the average score using reduce:
+# Given a list of tuples containing a name and a list of scores, create a dictionary where 
+# the keys are the names and the values are the average score using reduce:
 scores = [('Alice', [80, 90, 95]), ('Bob', [75, 85, 90]), ('Charlie', [90, 95, 100])]
 average_scores = reduce(lambda acc, score: {**acc, score[0]: sum(score[1]) / len(score[1])}, scores, {})
 assert average_scores == {'Alice': 88.33333333333333, 'Bob': 83.33333333333333, 'Charlie': 95.0}
