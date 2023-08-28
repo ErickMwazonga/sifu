@@ -35,7 +35,8 @@ def search_matrix(matrix, target):
 
         if target == current_value:
             return True
-        elif target > current_value:
+        
+        if target > current_value:
             i += 1
         else:
             j -= 1

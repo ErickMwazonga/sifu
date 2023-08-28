@@ -55,7 +55,7 @@ class CurrencyConverter:
             visited = set([to])
             found = False
 
-            if to not in adjacency_list and _from not in adjacency_list:
+            if (to not in adjacency_list) and (_from not in adjacency_list):
                 output.append(-1)
                 continue
 
