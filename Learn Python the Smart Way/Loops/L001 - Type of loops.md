@@ -23,8 +23,6 @@ ending_position = len(nums) - 1 # 10 - 1 -> 9
 
 while i <= ending_position:
     print(nums[i])
-
-
 ```
 
 ```py
