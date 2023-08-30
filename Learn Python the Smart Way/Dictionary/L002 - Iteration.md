@@ -10,21 +10,21 @@ D = {
 }
 ```
 
-### get all keys
+### 1. Get all keys
 
 ```py
 >>> list(D.keys())
 # ['name', 'age', 'job']
 ```
 
-### get all values
+### 2. Get all values
 
 ```py
 >>> list(D.values())
 # ['Sifu', 19, 'Engineer']
 ```
 
-### get all pairs
+### 3. Get all pairs
 
 ```py
 >>> list(D.items())
