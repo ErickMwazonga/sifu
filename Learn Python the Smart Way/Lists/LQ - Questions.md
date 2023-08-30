@@ -61,3 +61,117 @@ def merge_two_lists(a, b):
     merged_list.extend(a[i:])
     merged_list.extend(b[j:])
 ```
+
+### Q3 - Second Largest Number
+
+Largest number - Sorting
+
+```py
+def largest_number(lst: list[int]) -> int:
+    return max(sorted(lst)) # nlogn
+```
+
+Largest number - Looping
+
+```py
+def largest_number(lst: list[int]) -> int:
+    # largest = float('-inf')
+    if not lst:
+        return -1
+
+    largest = lst[-1]
+    for num in lst:
+        if num > largest:
+            largest = num
+
+    return largest
+```
+
+What if all numbers in the list are negative
+
+Second Largest number - Sorting
+
+```py
+def largest_number(lst: list[int]) -> int:
+    if len(lst) > 1:
+        return sorted(lst)[-2]
+    return -1
+
+    # return sorted(lst)[-2] if len(lst) > 1 else -1 # nlogn
+```
+
+'''
+Largest number - Looping  
+ [23, 15, 8, 45, 28, 34]
+largest  
+2 largest  
+[]
+
+- largest = -inf
+- 2 largest = -inf
+
+[23]
+
+- largest = 23
+- 2 largest = -inf
+
+[-4, -45, -23, -1] -> -1
+
+NOTE
+
+- FIND MAXIMUM - should use -inf
+- FINDING MINIMUM - should use inf
+
+[23, 15, 8, 45, 28, 34]
+
+largest
+[] -> -1
+[23] -> 23
+[34, 23, 56, 12] -> 56
+
+second largest
+[] -> -1
+[23] -> -1
+[34, 67] -> 34
+
+23
+
+second_largest = 18
+largest = 34
+
+[34, 23, 56, 12, 45, 5, 24] -> 34
+'''
+
+```py
+def second_largest_number(nums: list[int]) -> int:
+    if not nums:
+        return -1
+
+    if len(nums) == 2:
+        return min(nums)
+
+    # largest, second_largest = nums[0], nums[0]
+    # largest, second_largest = float('-inf'), float('-inf')
+
+    second_largest, largest = float('-inf'), nums[0]
+
+    for num in lst:
+        # if num < largest and num < second_largest:
+        if num < second_largest:
+            continue
+
+        if num > largest:
+            # second_largest = largest
+            # largest = num
+
+            temp = largest
+            largest = num
+            second_largest = temp
+
+        # if second_largest < num and second_largest < largest:
+        if second_largest < num < largest:
+            second_largest = num
+
+    return second_largest
+
+```

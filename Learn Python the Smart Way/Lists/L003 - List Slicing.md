@@ -1,5 +1,7 @@
 ## List Slicing
 
+### Syntax
+
 ### Basic Example
 
 ```py
