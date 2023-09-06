@@ -3,6 +3,7 @@ import random
 
 MAX_DELAY_IN_SECONDS = 60
 
+
 def backoff(max_retries, base_delay=1, max_delay=MAX_DELAY_IN_SECONDS):
     def decorator(func):
         def wrapper(*args, **kwargs):
