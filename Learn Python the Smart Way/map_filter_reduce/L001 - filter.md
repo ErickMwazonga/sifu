@@ -1,16 +1,20 @@
 # `Filter()`
-The filter function passes each element of an iterable through a boolean function hence removing elements that returns false.
+
+The `filter` function passes each element of an iterable through a boolean function hence removing elements that returns false.
 
 ## Syntax
+
 `filter(func, iterable)`
 
 Notes:
+
 1. Only one iterable is required.
-2. The func returns a boolean type. If it doesn't, filter simply returns the iterable passed to it. 
+2. The func returns a boolean type. If it doesn't, filter simply returns the iterable passed to it.
 3. The func MUST only take one argument.
 4. `filter` passes each element in the iterable through func and returns only the ones that evaluate to true.
 
 ### Example 1 - Get A grades
+
 ```py
 scores = [66, 90, 68, 59, 76, 60, 88, 74, 81, 65]
 
@@ -26,6 +30,7 @@ list(a_grades) # [90, 88, 81]
 ```
 
 ### Example 2 - Palindromes
+
 ```py
 words = ['demigod', 'rewire', 'madam', 'freer', 'anutforajaroftuna', 'kiosk']
 
@@ -34,6 +39,7 @@ list(palindromes) # ['madam', 'anutforajaroftuna']
 ```
 
 ### Example 3 - Even Numbers
+
 ```py
 nums = [1, 2, 3, 4, 5, 6, 7]
 

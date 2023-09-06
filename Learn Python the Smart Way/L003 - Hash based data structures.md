@@ -45,14 +45,3 @@ def num_list(lst):
 
     return -1
 ```
-
-## Questions
-
-Q1 - Given a list, return the most frequent number
-
-```py
-nums = [1, 3, 2, 4, 1, 5, 2, 1, 3]
-
-[1, 3, 2, 4, 1, 5, 2, 1, 3] -> 1
-[] -> -1
-```

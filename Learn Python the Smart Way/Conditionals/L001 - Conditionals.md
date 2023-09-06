@@ -1,13 +1,34 @@
-## Ternary Expressions
+## Conditionals
 
-```js
-// Javascript
-const can_vote = true;
-const vote_status = can_vote ? 'Go and vote' : 'Can't vote'
-```
+### One condition
 
 ```py
-# Python
-can_vote = True
-vote_status = 'Go and vote' if can_vote else 'Can`t vote'
+age = 34
+
+if age >= 18:
+	print('You can vote')
+```
+
+### Two condition
+
+```py
+age = 5
+
+if age >= 18:
+	print('You can vote')
+else:
+    print('You can't vote')
+```
+
+### More than two condition
+
+```py
+age = 5
+
+if age <= 10:
+	print('You are still a baby')
+elif 10 < age < 18:
+    print('You are a teen but not old enough to vote')
+else:
+    print('You can vote')
 ```

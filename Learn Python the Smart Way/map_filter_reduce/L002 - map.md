@@ -1,15 +1,14 @@
 # `map()`
 
-Map, Filter, and Reduce are paradigms of functional programming. <br>
-They allow the programmer (you) to write simpler, shorter code, without neccessarily needing to bother about intricacies like loops and branching.
-
 It works with iterables to transform an existing elements of an iterable to a new list. <br/>
 Syntax - `map(func, *iterables)`
 
-
 ## Single Iterable
+
 ### Example 1 - Square Items
+
 Square elements in list by 2
+
 ```py
 nums = [1, 2, 3, 4, 5]
 
@@ -27,7 +26,9 @@ squared= list(squared)
 ```
 
 ### Example 2 - Str to int
+
 Convert integer-strings to integers
+
 ```py
 nums = ['13', '17', '18', '21', '32']
 
@@ -44,7 +45,9 @@ nums_ints = list(map(int, nums))
 ```
 
 ### Example 3 - Capitalize Strings
+
 Capitalize each word in a list of strings
+
 ```py
 names = ['bazeng', 'chiko', 'madanga']
 
@@ -61,6 +64,7 @@ new_names = map(lambda name: name.capitalize(), names)
 ```
 
 ### Example 4 - Static Functions
+
 ```py
 # absolute function
 nums = [-2, -1, 0, 1, 2]
@@ -83,7 +87,9 @@ sqrt_nums_ints = list(map(int, sqrt_nums)) # [2, 3, 4, 5, 6]
 ```
 
 ## Multiple Iterables
+
 ### Example 1 - `Round()`
+
 The `round()` built-in function takes two arguments -- the number to round up and the number of decimal places to round the number up to.
 
 ```py
@@ -95,7 +101,8 @@ list(new_areas) # [3.6, 5.58, 4.009, 56.2424, 32.00013]
 ```
 
 ### Example 2 - `zip()`
-The zip() function is a function that takes a number of iterables and then creates a tuple containing each of the elements in the iterables. 
+
+The zip() function is a function that takes a number of iterables and then creates a tuple containing each of the elements in the iterables.
 
 ```py
 nums = [1, 2, 3, 4]
@@ -106,6 +113,7 @@ list(merge) # [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]
 ```
 
 ### Example 3 - `pow()`
+
 ```py
 bases = [10, 20, 30, 40, 50]
 index = [1, 2, 3, 4, 5]
@@ -115,7 +123,9 @@ list(powers) # [10, 400, 27000, 2560000, 312500000]
 ```
 
 ## Custom Function
+
 ### Square of elements
+
 ```py
 def square(x):
     return x * x
@@ -123,13 +133,14 @@ def square(x):
 nums = [1, 2, 3, 4, 5]
 
 nums_squared = map(square, nums)
-nums_squared_v2 =  map(lambda x: square(x), nums) 
+nums_squared_v2 =  map(lambda x: square(x), nums)
 
 list(nums_squared) # [1, 4, 9, 16, 25]
 list(nums_squared_v2) # [1, 4, 9, 16, 25]
 ```
 
 ### Multiple iterables
+
 ```py
 list1 = [1, 2, 3, 4, 5]
 list2 = [6, 7, 8, 9, 10]
