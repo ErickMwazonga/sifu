@@ -30,6 +30,7 @@ Output: false
 
 MATRIX = list[list[int]]
 
+
 class Solution:
 
     def searchMatrix(self, matrix: MATRIX, target: int):

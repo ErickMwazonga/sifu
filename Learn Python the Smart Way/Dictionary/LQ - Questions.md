@@ -44,12 +44,10 @@ def anagram2(a: str, b: str) -> bool:
     for ch in b:
         b_freq[ch] = b_freq.get(ch, 0) + 1
 
-    for ch, freq in a_freq:
-        if ch not in b_freq:
+    for key in a_freq:
+        # if a_freq[key] != b_freq[key]: # but the key might not be there
+        if a_freq[key] != b_freq.get(ch, 0):
             return False
 
-        if freq != b_freq[ch]:
-            return False
-
-    retun True
+    return True
 ```

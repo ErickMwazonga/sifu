@@ -29,3 +29,15 @@
 
 - sum
 - Anonymous functions
+
+## REMAINING
+
+- CLASSES
+- STACK & QUEUES
+- Anonymous functions
+
+- JSON
+- Requests
+- APIS
+- DATABASE/SQL/ORM
+- Framework
