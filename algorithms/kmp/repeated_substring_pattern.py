@@ -60,5 +60,5 @@ class Solution_V2:
 class Solution_V3:
     '''Time: O(n), Space: O(n)'''
 
-    def repeated_substring_v3(s):
+    def repeated_substring_v3(self, s):
         return s in (s + s)[1:-1]

@@ -3,6 +3,7 @@ from .constants import AccountStatus
 
 
 class Account(ABC):
+
     def __init__(self, id, password, person, status=AccountStatus.NONE):
         self.__id = id
         self.__password = password

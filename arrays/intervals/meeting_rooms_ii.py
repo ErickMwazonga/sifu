@@ -3,7 +3,7 @@
 Link: https://leetcode.com/problems/meeting-rooms/ OR https://www.lintcode.com/problem/919
 Resource: https://www.youtube.com/watch?v=FdzJmTCVyJU&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=38
 
-Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), 
+Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei),
 find the minimum number of conference rooms required.)
 
 NB: (0, 8), (8, 10) is not conflict at 8
@@ -72,7 +72,7 @@ def minimum_rooms_v2(intervals):
     return max_rooms
 
 
-def minMeetingRooms_v2(intervals) -> int:
+def minMeetingRooms_v3(intervals) -> int:
     meetings = []
 
     intervals = sorted(intervals, key=lambda x: x[0])
@@ -88,7 +88,7 @@ def minMeetingRooms_v2(intervals) -> int:
     return len(meetings)
 
 
-def minimum_rooms(intervals):
+def minimum_rooms_v4(intervals):
     starting_times = sorted([i[0] for i in intervals])
     ending_times = sorted([i[1] for i in intervals])
 
@@ -108,7 +108,7 @@ def minimum_rooms(intervals):
     return rooms
 
 
-def minimum_rooms_v2(intervals):
+def minimum_rooms_v5(intervals):
     '''
     Inspired by
     https://medium.com/javascript-in-plain-english/snapchat-coding-interview-questions-377fc67e0cbe

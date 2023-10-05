@@ -2,7 +2,7 @@ import heap as theHeap
 
 
 def heap_sort(A):
-    heapq = theHeap.MinHeap()
+    heapq = theHeap.Heap()
 
     # heap = []
     # for elem in A:
@@ -19,4 +19,4 @@ def heap_sort(A):
 
 
 A = [13, 21, 15, 5, 26, 4, 17, 18, 24, 2]
-heap_sort(A) == [2, 4, 5, 13, 15, 17, 18, 21, 24, 26]
+assert(heap_sort(A) == [2, 4, 5, 13, 15, 17, 18, 21, 24, 26])

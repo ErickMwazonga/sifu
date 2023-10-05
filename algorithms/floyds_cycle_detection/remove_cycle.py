@@ -4,7 +4,7 @@ class ListNode:
         self.next = None
 
 
-def remove_loop(head: ListNode) -> bool:
+def remove_loop(head: ListNode) -> ListNode:
     slow = fast = head
     has_cycle = False
 

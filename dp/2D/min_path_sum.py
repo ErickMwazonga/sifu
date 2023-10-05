@@ -22,7 +22,7 @@ def min_path_sum(grid):
     if not grid:
         return
 
-    n, m = len(grid), len[grid[0]]
+    n, m = len(grid), len([grid[0]])
 
     dp = [[0] * m for _ in range(n)]
     dp[0][0] = grid[0][0]

@@ -21,9 +21,9 @@ Examples:
 
 
 def isPrefixOfWord(sentence: str, searchWord: str) -> int:
-    sentence = sentence.split(' ')
+    words = sentence.split(' ')
 
-    for idx, word in enumerate(sentence):
+    for idx, word in enumerate(words):
         if searchWord == word[:len(searchWord)]:
             return idx + 1
 
@@ -31,9 +31,9 @@ def isPrefixOfWord(sentence: str, searchWord: str) -> int:
 
 
 def isPrefixOfWord_v2(sentence: str, searchWord: str) -> int:
-    sentence = sentence.split(' ')
+    words = sentence.split(' ')
 
-    for i, word in enumerate(sentence):
+    for i, word in enumerate(words):
         if word.startswith(searchWord):
             return i+1
 

@@ -13,6 +13,7 @@ Examples:
 
 
 class Solution:
+
     def shortestPalindrome(self, s: str) -> str:
         rev_s = s[::-1]
         pattern = s + '#' + rev_s  # to prevent lps overlapp

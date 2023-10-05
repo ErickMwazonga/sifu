@@ -13,7 +13,8 @@ Examples
 
 
 class Solution:
-    def majorityElement(self, nums: list[int]) -> list[int]:
+
+    def majority_element(self, nums: list[int]) -> list[int]:
         cand1, cand2 = self.get_candidates(nums)
 
         # return [x for x in (cand1, cand2) if nums.count(x) > len(nums) // 3]
@@ -32,7 +33,7 @@ class Solution:
 
         return ans
 
-    def get_candidates(self, nums: list[int]) -> tuple[int, ...]:
+    def get_candidates(self, nums: list[int]) -> tuple[int | None, int | None]:
         cand1, count1 = None, 0
         cand2, count2 = None, 0
 

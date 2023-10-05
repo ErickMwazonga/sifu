@@ -6,7 +6,7 @@ With `# prefix` can mean one of the following: <br />
    1. No implementation yet(NO CODE :-))
    2. Need to simplify the logic
    3. The CODE cannot run AS IS **or** It doesn't pass the test cases
-   
+
 Consider this as a draft file.
 
 ### **Examples**
@@ -43,7 +43,7 @@ Consider this as a draft file.
 9.  [ ] Dynamic Programming
 10. [ ] Backtracking
 11. [ ] String Matching - KMP
-   
+
 ## Preparation
 ### Guide
 1. https://serhatgiydiren.github.io/preparation-guide-for-tech-interviews
@@ -70,7 +70,7 @@ Consider this as a draft file.
 19. https://youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
 20. https://walkccc.me/LeetCode/problems/0009/
 21. https://czxttkl.com/category/leetcode/
-22. https://hercy.me/ 
+22. https://hercy.me/
 
 ## 75 Curated Questions
 1. https://seanprashad.com/leetcode-patterns/
@@ -110,14 +110,14 @@ Consider this as a draft file.
 
 
 ### Books
-1. Elements of Programming interviews in python adnan aziz 
+1. Elements of Programming interviews in python adnan aziz
 2. Daily Coding Link: Get Exceptionally Good at Coding by Alex Miller and Lawrence Wu
 3. https://high-python-ext-3-algorithms.readthedocs.io/ko/latest/
-   
+
 ## Courses
-1. [Graphs](https://www.youtube.com/watch?v=tWVWeAqZ0WU) 
-2. [10 Frequest asked questions](https://www.youtube.com/watch?v=o3DUXPRyvT8) 
-3. [Top Coding question](https://www.youtube.com/watch?v=cWUmrgMw220&t=2283s) 
+1. [Graphs](https://www.youtube.com/watch?v=tWVWeAqZ0WU)
+2. [10 Frequest asked questions](https://www.youtube.com/watch?v=o3DUXPRyvT8)
+3. [Top Coding question](https://www.youtube.com/watch?v=cWUmrgMw220&t=2283s)
 
 ## Sites
 1. [Structy](https://structy.net/)
@@ -125,8 +125,8 @@ Consider this as a draft file.
 
 ## Youtube Channels
 1. [Inside Code](https://www.youtube.com/c/Insidecode/videos?app=desktop)
-2. [Neetcode](https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g) 
-3. [Alvin the programmer](https://www.youtube.com/c/Alvin-the-programmer) 
+2. [Neetcode](https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g)
+3. [Alvin the programmer](https://www.youtube.com/c/Alvin-the-programmer)
 
 ## Others
 1. https://www.lewuathe.com/radix-sort-in-python.html
@@ -144,3 +144,6 @@ Consider this as a draft file.
 ## Leetcode Discuss - Explanatory Contributions
 1. https://leetcode.com/Hieroglyphs/
 2. https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
+
+## LEARN PYTHON
+1. https://diveinto.org/python3/table-of-contents.html

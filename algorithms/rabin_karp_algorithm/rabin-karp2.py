@@ -32,6 +32,7 @@ used to find more than one match of a single pattern, or to find matches for mor
 
 
 class Solution:
+
     def __init__(self):
         self.base = 26  # base of the polynomial hash
         self.prime_mod = 101  # to avoid hash overflow, doesn't have to be prime number

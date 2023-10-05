@@ -4,7 +4,8 @@ import unittest
 
 
 class Solution:
-    def get_sum(a: int, b: int) -> int:
+
+    def get_sum(self, a: int, b: int) -> int:
         return a + b
 
 

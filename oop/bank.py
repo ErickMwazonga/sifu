@@ -11,9 +11,9 @@ class Bank_Account:
     def __init__(self, owner, account_number, balance=0):
         self._owner = owner
         self._account_number = account_number
-        self._created_at = datetime.now().date()
+        self._created_at = datetime.datetime.now().date()
 
-        if balance < self.__MIN_BALANCE:
+        if balance < self._MIN_BALANCE:
             raise ValueError('Balance to small!')
         else:
             self._balance = balance

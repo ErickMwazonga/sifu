@@ -17,10 +17,11 @@ Example 1:
 
 
 class Solution:
+
     def permute(self, nums):
         res, visited = [], set()
 
-        self.backtrack(nums, res, visited, comob=[])
+        self.backtrack(nums, res, visited, comb=[])
         return res
 
     def backtrack(self, nums, res, visited, comb):
@@ -45,11 +46,11 @@ class Solution_V2:
         self.dfs(nums, comb=[], res=res)
         return res
 
-    def dfs(self, nums, combo, res):
+    def dfs(self, nums, comb, res):
         if not nums:
-            res.append(combo)
+            res.append(comb)
             return
 
         for i in range(len(nums)):
             new_nums = nums[:i] + nums[i+1:]
-            self.dfs(new_nums, combo+[nums[i]], res)
+            self.dfs(new_nums, comb+[nums[i]], res)

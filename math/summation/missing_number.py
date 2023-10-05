@@ -2,7 +2,7 @@
 268. Missing Number
 Link: https://leetcode.com/problems/missing-number/
 
-Given an array nums containing n distinct numbers in the range [0, n], 
+Given an array nums containing n distinct numbers in the range [0, n],
 return the only number in the range that is missing from the array.
 
 Examples:
@@ -21,7 +21,7 @@ def missingNumber(nums: list[int]) -> int:
     for i in range(0, n + 1):
         if i not in visited:
             return i
-    
+
     return -1
 
 
@@ -31,7 +31,7 @@ def missingNumber_v2(nums: list[int]) -> int:
     return cummulative_sum - sum(nums)
 
 
-def missingNumber_v2(nums: list[int]) -> int:
+def missingNumber_v3(nums: list[int]) -> int:
     n = len(nums)
     cummulative_sum = n * (n + 1) // 2
 

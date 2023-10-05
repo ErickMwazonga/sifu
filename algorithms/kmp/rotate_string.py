@@ -18,14 +18,15 @@ Output: false
 
 
 class Solution:
-    def rotateString(s: str, goal: str) -> bool:
+
+    def rotateString(self, s: str, goal: str) -> bool:
         for i in range(len(s)):
             if s[i:] + s[:i] == goal:
                 return True
 
         return False
 
-    def rotateString_v2(s, goal):
+    def rotateString_v2(self, s, goal):
         n, m = len(s), len(goal)
 
         if n > m:
@@ -38,6 +39,7 @@ class Solution:
 
 
 class Solution_V2:
+
     def rotateString(self, s: str, goal: str) -> bool:
         if len(s) != len(goal):
             return False

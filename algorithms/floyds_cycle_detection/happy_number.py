@@ -23,7 +23,8 @@ Explanation:
 
 
 class Solution:
-    def isHappy(self, n: int) -> bool:
+
+    def is_happy(self, n: int) -> bool | None:
         seen = {n}
 
         while n:

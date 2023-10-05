@@ -1,7 +1,7 @@
 '''
 TIKTOK - LONDON
 Two sorted array
-input1: [-1, 2, 4, 6] n 
+input1: [-1, 2, 4, 6] n
 input2: [1, 2, 3, 5, 7] m
 k = positive integer, e.g. 1, 2 ... n+m
 
@@ -17,15 +17,15 @@ k = 8: return 7
 
 1. merge 2 arrays # sorted merged array
 2. find kth
-             
-input1: [-1, 2] n 
+
+input1: [-1, 2] n
 input2: [1, 2, 3, 5, 7] m
 
 k = 7
 '''
 
 
-def find_kth_element_v2(arr1, arr2, k):
+def find_kth_element_v1(arr1, arr2, k):
     n, m = len(arr1), len(arr2)
     i, j = 0, 0
 

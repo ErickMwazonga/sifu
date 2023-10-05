@@ -44,7 +44,7 @@ def two_sum_v1(A, target):
     return False
 
 
-def two_sum_v2(nums: list, target: int) -> list:
+def two_sum_v2(nums: list, target: int) -> list | None:
     '''Time: 0(n), Space: 0(n)'''
 
     seen = {}

@@ -25,12 +25,12 @@ def search_range(nums, target):
     for i, num in enumerate(nums):
         if num != target:
             continue
-        else:
-            result[0], result[1] = i, i
 
-            while i+1 < n and nums[i+1] == target:
-                result[1] = i
-                i += 1
+        result[0], result[1] = i, i
+
+        while i+1 < n and nums[i+1] == target:
+            result[1] = i
+            i += 1
 
     return result
 

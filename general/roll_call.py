@@ -9,7 +9,7 @@ class ROLL_CALL:
     def get_users(self) -> list[str]:
         return self.users
 
-    def add_user(self, name: str) -> None:
+    def add_user(self, name: str) -> str | None:
         if name in self.users:
             return "User already exists"
 
@@ -30,7 +30,7 @@ class ROLL_CALL:
         curr_roll_call = [*self.users]
         random.shuffle(curr_roll_call)
         self.current_roll_call = curr_roll_call
-        
+
         print(self.users)
         return curr_roll_call
 

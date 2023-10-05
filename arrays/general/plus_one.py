@@ -1,6 +1,6 @@
 '''
 Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
-The digits are stored such that the most significant digit 
+The digits are stored such that the most significant digit
 is at the head of the list, and each element in the  array contain a single digit.
 
 You may assume the integer does not contain any leading zero, except the number 0 itself.
@@ -42,7 +42,7 @@ assert plus_one_v2([9, 9, 9]) == [1, 0, 0, 0]
 assert plus_one_v2([1, 9, 9]) == [2, 0, 0]
 
 
-def plus_one(digits):
+def plus_one_v3(digits):
     '''
     digits = [2, 1, 6] -> [2, 1, 7]
     digits = [3, 6, 9, 9] -> [3, 7, 0, 0]
@@ -66,7 +66,7 @@ def plus_one(digits):
     return digits
 
 
-def plus_one(A):
+def plus_one_v4(A):
     n = len(A)
     A[-1] += 1
 

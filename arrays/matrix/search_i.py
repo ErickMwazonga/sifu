@@ -84,7 +84,7 @@ class Solution:
         if row == -1:
             return False
 
-        return self.binary_search(matrix[row], target)
+        return binary_search(matrix[row], target)
 
     def get_row(self, matrix, target):
         if not matrix:

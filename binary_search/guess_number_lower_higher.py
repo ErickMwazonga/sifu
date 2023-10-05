@@ -15,7 +15,7 @@ Return the number that I picked.
 '''
 
 
-def guess():
+def guess(mid):
     pass
 
 

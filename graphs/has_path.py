@@ -69,7 +69,7 @@ class BFS:
 
         queue = [src]
 
-        while queue.length:
+        while len(queue):
             current = queue.pop(0)
 
             if current == dest:

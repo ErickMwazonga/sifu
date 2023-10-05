@@ -13,6 +13,7 @@ DO NOT allocate another 2D matrix and do the rotation.
 
 
 class Solution:
+
     def rotate_final(self, matrix):
         # Two steps: reverse and transpose in place
         matrix.reverse()

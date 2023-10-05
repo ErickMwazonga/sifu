@@ -17,7 +17,7 @@ therefore the overall asymptotic time complexity is O(n).
 '''
 
 
-def first_missing_positive(nums: list[int]) -> int:
+def first_missing_positive(nums: list[int]) -> int | None:
     n, visisted = len(nums), set(nums)
 
     for i in range(1, n + 2):

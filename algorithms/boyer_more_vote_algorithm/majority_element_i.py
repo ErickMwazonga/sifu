@@ -23,6 +23,8 @@ def majority_element(nums: list[int]) -> int:
         if v > majority:
             return k
 
+    return -1
+
 
 def majorityElement_v1(nums: list[int]) -> int:
     '''

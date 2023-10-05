@@ -3,14 +3,14 @@
 Link: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 Similar: https://leetcode.com/problems/first-missing-positive/
 
-Given an array nums of n integers where nums[i] is in the range [1, n], 
+Given an array nums of n integers where nums[i] is in the range [1, n],
 return an array of all the integers in the range [1, n] that do not appear in nums.
 
 Examples:
 1. [4, 3, 2, 7, 8, 2, 3, 1] -> [5, 6]
 2. [1, 1] -> [2]
- 
-Follow up: Could you do it without extra space and in O(n) runtime? 
+
+Follow up: Could you do it without extra space and in O(n) runtime?
 You may assume the returned list does not count as extra space.
 '''
 
@@ -27,7 +27,8 @@ def findDisappearedNumbers(nums: list[int]) -> list[int]:
 
 
 def findDisappearedNumbers_v2(nums: list[int]) -> list[int]:
-    return set(range(1, len(nums) + 1)) - set(nums)
+    possible_values = range(1, len(nums) + 1)
+    return list(set(possible_values) - set(nums))
 
 
 def findDisappearedNumbers_v3(nums: list[int]) -> list[int]:

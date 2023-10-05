@@ -14,7 +14,7 @@ Example
 '''
 
 
-def sortColors(nums: list[int]) -> None:
+def sortColors(nums: list[int]) -> list[int]:
     colors = {0: 0, 1: 0, 2: 0}
 
     for num in nums:
@@ -25,7 +25,7 @@ def sortColors(nums: list[int]) -> None:
 
 def sortColors_v2(nums: list[int]) -> None:
     if not nums:
-        return nums
+        return
 
     count = [0] * 3
     count = [count[num] + 1 for num in nums]
@@ -56,8 +56,6 @@ def sortColors_v3(A: list[int]) -> None:
         else:
             A[traverse], A[high] = A[high], A[traverse]
             high -= 1
-
-    return A
 
 
 first_A = [2, 0, 0, 1, 2, 1]

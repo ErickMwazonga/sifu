@@ -2,9 +2,9 @@
 1408. String Matching in an Array
 https://leetcode.com/problems/string-matching-in-an-array/
 
-Given an array of string words. Return all strings in words which is substring of another word in any order. 
+Given an array of string words. Return all strings in words which is substring of another word in any order.
 String words[i] is substring of words[j], if can be obtained removing some characters to left and/or right side of words[j].
- 
+
 Example 1:
 1. ['mass', 'as', 'hero', 'superhero'] -> ['as', 'hero']
     Explanation: 'as' is substring of 'mass' and 'hero' is substring of 'superhero'.
@@ -18,11 +18,12 @@ Example 1:
 
 
 class Solution:
-    def stringMatching(words):
+
+    def stringMatching(self, words):
         a = ' '.join(words)
         return [w for w in words if a.count(w) > 1]
 
-    def stringMatching_v2(words):
+    def stringMatching_v2(self, words):
         res = []
 
         for i in range(len(words)):
