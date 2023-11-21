@@ -1,24 +1,30 @@
 # Sifu
 
 ## Annotations
+
 ### **File Names**
+
 With `# prefix` can mean one of the following: <br />
-   1. No implementation yet(NO CODE :-))
-   2. Need to simplify the logic
-   3. The CODE cannot run AS IS **or** It doesn't pass the test cases
+
+1.  No implementation yet(NO CODE :-))
+2.  Need to simplify the logic
+3.  The CODE cannot run AS IS **or** It doesn't pass the test cases
 
 Consider this as a draft file.
 
 ### **Examples**
+
 `No. input -> output => Explanation` <br/>
 `No: Enumerator, example number`
 
-*Examples*<br/>
+_Examples_<br/>
 `[1, 2, 3, 4, 5] -> 3 => Node 3 from this list` <br/>
 `1. [1, 2, 3, 4, 5] -> 3 => Node 3 from this list`
 
 ---
+
 ## Data Structures
+
 1. [ ] Arrays
 2. [ ] Matrix
 3. [ ] Strings
@@ -32,6 +38,7 @@ Consider this as a draft file.
 11. [ ] Graphs
 
 ## Algorithms
+
 1. [ ] General Algorithms
 2. [ ] Sorting
 3. [ ] Binary Search
@@ -40,15 +47,18 @@ Consider this as a draft file.
 6. [ ] Slinding Window
 7. [ ] Recursion
 8. [ ] DFS
-9.  [ ] Dynamic Programming
+9. [ ] Dynamic Programming
 10. [ ] Backtracking
 11. [ ] String Matching - KMP
 
 ## Preparation
+
 ### Guide
+
 1. https://serhatgiydiren.github.io/preparation-guide-for-tech-interviews
 
 ### Curated DSA Websites
+
 1. https://goodtecher.com/
 2. https://github.com/iverson52000/DataStructure_Algorithm
 3. https://github.com/jiselectric/Algorithm
@@ -57,7 +67,7 @@ Consider this as a draft file.
 6. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
 7. https://zhaonanli.gitbooks.io/leetcode/content
 8. https://techlarry.github.io/Leetcode/202.%20Happy%20Number/
-9.  https://adit0503.gitbook.io/leetcode/200.-number-of-islands
+9. https://adit0503.gitbook.io/leetcode/200.-number-of-islands
 10. https://maxming0.github.io/
 11. https://linlaw0229.github.io/
 12. https://velog.io/@jiselectric/Leetcode-Powx-n
@@ -73,6 +83,7 @@ Consider this as a draft file.
 22. https://hercy.me/
 
 ## 75 Curated Questions
+
 1. https://seanprashad.com/leetcode-patterns/
 2. https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0
 3. https://leetcode.com/list/xi4ci4ig/
@@ -80,6 +91,7 @@ Consider this as a draft file.
 5. https://bit.ly/3ncS4wf
 
 ## System Design
+
 1. https://afteracademy.com/tech-interview/system-design/top-questions
 2. https://github.com/shashank88/system_design
 3. https://thinksoftware.medium.com/how-to-ace-object-oriented-design-interviews-4f9a667e0780
@@ -93,9 +105,11 @@ Consider this as a draft file.
 11. https://www.enjoyalgorithms.com/blog
 
 ## System Desgn Others
+
 1. https://systeminterview.com/design-youtube.php
 
 ## Groupings
+
 1. **2D** <br/>
    DFS - [79, 130, 200, 695] <br/>
    DP - [62, 63, 64, 221, 1594]
@@ -108,27 +122,31 @@ Consider this as a draft file.
 5. **DESIGN** <br/>
    [146, 359, 380, 384, 621, 933]
 
-
 ### Books
+
 1. Elements of Programming interviews in python adnan aziz
 2. Daily Coding Link: Get Exceptionally Good at Coding by Alex Miller and Lawrence Wu
 3. https://high-python-ext-3-algorithms.readthedocs.io/ko/latest/
 
 ## Courses
+
 1. [Graphs](https://www.youtube.com/watch?v=tWVWeAqZ0WU)
 2. [10 Frequest asked questions](https://www.youtube.com/watch?v=o3DUXPRyvT8)
 3. [Top Coding question](https://www.youtube.com/watch?v=cWUmrgMw220&t=2283s)
 
 ## Sites
+
 1. [Structy](https://structy.net/)
 2. [AlgoExpert](https://www.algoexpert.io/product)
 
 ## Youtube Channels
+
 1. [Inside Code](https://www.youtube.com/c/Insidecode/videos?app=desktop)
 2. [Neetcode](https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g)
 3. [Alvin the programmer](https://www.youtube.com/c/Alvin-the-programmer)
 
 ## Others
+
 1. https://www.lewuathe.com/radix-sort-in-python.html
 2. https://stackabuse.com/radix-sort-in-python/
 3. https://www.geeksforgeeks.org/python-program-for-radix-sort/
@@ -139,11 +157,22 @@ Consider this as a draft file.
 8. https://serhatgiydiren.github.io/
 
 ## FAANG Questions
+
 1. https://github.com/ombharatiya/FAANG-Coding-Interview-Questions
 
 ## Leetcode Discuss - Explanatory Contributions
+
 1. https://leetcode.com/Hieroglyphs/
 2. https://leetcode.com/discuss/study-guide/1688903/solved-all-two-pointers-problems-in-100-days
 
+## General Programming
+
+1. https://thevalleyofcode.com/
+
 ## LEARN PYTHON
+
 1. https://diveinto.org/python3/table-of-contents.html
+
+## ENGINERRING MANAGEMENT
+
+1. https://github.com/ryanburgess/engineer-manager

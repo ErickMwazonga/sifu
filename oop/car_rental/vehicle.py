@@ -37,7 +37,18 @@ class Car(Vehicle):
 
 class Van(Vehicle):
     def __init__(
-        self, license_num, stock_num, capacity, barcode, has_sunroof, status, model, make, manufacturing_year, mileage, type
+        self,
+        license_num,
+        stock_num,
+        capacity,
+        barcode,
+        has_sunroof,
+        status,
+        model,
+        make,
+        manufacturing_year,
+        mileage,
+        type
     ):
         super().__init__(
             license_num, stock_num, capacity, barcode, has_sunroof, status, model, make, manufacturing_year, mileage

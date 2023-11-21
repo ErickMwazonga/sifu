@@ -61,7 +61,7 @@ class DFS:
 
 
 class BFS:
-    def hasPath_v2(graph, src, dest):
+    def hasPath_v2(self, graph, src, dest):
         '''
         n = number of nodes, e = number edges
         Time: O(e), Space: O(n)
