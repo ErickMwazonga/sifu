@@ -2,7 +2,7 @@
 997. Find the Town Judge
 Link: https://leetcode.com/problems/find-the-town-judge/
 
-In a town, there are N people labelled from 1 to N. 
+In a town, there are N people labelled from 1 to N.
 There is a rumor that one of these people is secretly the town judge.
 
 If the town judge exists, then:
@@ -12,7 +12,7 @@ There is exactly one person that satisfies properties 1 and 2.
 You are given trust, an array of pairs trust[i] = [a, b]
 representing that the person labelled a trusts the person labelled b.
 
-If the town judge exists and can be identified, return the label of the town judge. 
+If the town judge exists and can be identified, return the label of the town judge.
 Otherwise, return -1.
 
 Examples
@@ -24,13 +24,16 @@ Output: -1
 
 Input: N = 4, trust = [[1,3], [1,4], [2,3], [2,4], [4,3]]
 Output: 3
+
+INTUITION
+- BUILD AN ADJACENCY LIST
 '''
 
 
 from collections import defaultdict
 
 
-def findJudge(N: int, trusts) -> int:
+def find_judge(N: int, trusts) -> int:
     count = [[0, 0] for _ in range(N + 1)]
 
     for i, j in trusts:
@@ -44,7 +47,7 @@ def findJudge(N: int, trusts) -> int:
     return -1
 
 
-def find_judge(N, trusts):
+def find_judge_v0(N, trusts):
     count = [0] * (N + 1)
 
     for i, j in trusts:
@@ -97,9 +100,23 @@ def find_judge_v2(N, trusts) -> int:
         trusting[person].append(trusted)
         trusted_by[trusted] += 1
 
-    for i in range(1, N+1):
+    for i in range(1, N + 1):
         if len(trusting[i]) == 0 and trusted_by[i] == N-1:
             return i
+
+    return -1
+
+def find_judge_v3(N, trust) -> int:
+    trusting = defaultdict(set)
+    trusted_by = defaultdict(set)
+
+    for trusts, trusted in trust:
+        trusting[trusts].add(trusted)
+        trusted_by[trusted].add(trusts)
+
+    for x in range(1, N + 1):
+        if (x not in trusting) and (len(trusted_by[x]) == N-1):
+            return x
 
     return -1
 

@@ -34,6 +34,37 @@ def bfs(graph, root):
 
     return res
 
+class Graph_BFS:
+    '''Time complexity: O(|V|+|E|), Space complexity: O(|V|)'''
+
+    def __init__(self, adjList={}):
+        self.adjList = adjList
+
+    def bfs(self, graph, root):
+        queue = [root]
+        visited = {root}
+
+        while queue:
+            vertex = queue.pop(0)
+
+            for neighbor in graph.adjList[vertex]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+                    visited.add(neighbor)
+
+    def bfs_improved(self, graph, root):
+        queue = [root]
+        visited = {root}
+        i = 0
+
+        while i < len(queue):
+            vertex = queue[i]
+            i += 1
+
+            for neighbor in graph.adjList[vertex]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+                    visited.add(neighbor)
 
 graph = {
     5: [8, 1, 12],
@@ -49,34 +80,24 @@ graph = {
 assert bfs(graph, 5) == [5, 8, 1, 12, 14, 4, 7, 16]
 
 
-class Graph:
-    '''Time complexity: O(|V|+|E|), Space complexity: O(|V|)'''
+def bfs_x(graph, root):
+    visited, queue, res = set(), [root], []
 
-    def __init__(self, adjList={}):
-        self.adjList = adjList
+    while queue:
+        curr_node = queue.pop(0)
 
-    def bfs(graph, root):
-        queue = [root]
-        visited = {root}
+        if curr_node in visited:
+            continue
 
-        while queue:
-            vertex = queue.pop(0)
+        visited.add(curr_node)
+        res.append(curr_node)
 
-            for neighbor in graph.adjList[vertex]:
-                if neighbor not in visited:
-                    queue.append(neighbor)
-                    visited.add(neighbor)
+        for neighbour in graph[curr_node]:
+            if neighbour not in visited:
+                queue.append(neighbour)
 
-    def bfs_improved(graph, root):
-        queue = [root]
-        visited = {root}
-        i = 0
+    # Cannot return set because it is not ordered
+    return res
 
-        while i < len(queue):
-            vertex = queue[i]
-            i += 1
 
-            for neighbor in graph.adjList[vertex]:
-                if neighbor not in visited:
-                    queue.append(neighbor)
-                    visited.add(neighbor)
+print(bfs_x(graph, 5))

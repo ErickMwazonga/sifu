@@ -3,7 +3,17 @@
 [1, [2, 3], [1], [], 5, [6, [7, 9]]] -> [1, 2, 3, 1, 5, 6, 7, 9]
 '''
 
-def flatten(arr):
+def flatten(arr, res = []):
+    for x in arr:
+        if not isinstance(x, list):
+            res.append(x)
+            continue
+        flatten(x, res)
+        
+    return res
+
+
+def flatten_v1(arr):
     if not arr:
         return []
     
@@ -41,4 +51,7 @@ def flatten_v4(arr):
         else:
             yield item
             
-# result = list(flatten_v4([1, [2, 3], [1], [], 5, [6, [7, 9]]]))
+_input1 = [1, [2, 3], [1], [], 5, [6, [7, 9]]]
+_input2 = [1, [2, 3], [4, 5, [6, [7, 8], 9], 10, [11, 12]]]
+
+print(flatten(_input1))

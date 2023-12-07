@@ -1,4 +1,5 @@
 # Adjacency List representation in Python
+
 from collections import defaultdict
 
 
@@ -10,20 +11,14 @@ class Node:
 
 class Graph:
     def __init__(self):
-        self.adjList = {}
-        # self.adjList = defaultdict(list)
+        self.adjList = defaultdict(list)
 
     def add_node(self, node):
         if node not in self.adjList:
             self.adjList[node] = []
 
     def add_edge(self, source, destination):
-        # self.adjList[source].append(d)
-
-        if source not in self.adjList:
-            self.adjList[source] = [destination]
-        else:
-            self.adjList[source].append(destination)
+        self.adjList[source].append(destination)
 
     def print_graph(self):
         for k, v in self.adjList.items():
