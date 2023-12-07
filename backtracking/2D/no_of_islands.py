@@ -26,39 +26,55 @@ Output: 3
 
 class Solution:
 
-	def num_of_lands(self, grid) -> int:
-		if not grid:
-			return 0
+    def num_of_lands(self, grid) -> int:
+        if not grid:
+            return 0
 
-		count = 0
-		n, m = len(grid), len(grid[0])
+        count = 0
+        n, m = len(grid), len(grid[0])
 
-		for row in range(n):
-			for col in range(m):
-				if grid[row][col] == '1':
-					self.dfs(grid, row, col)
-					count += 1
+        for row in range(n):
+            for col in range(m):
+                if grid[row][col] != '1':
+                    continue
 
-		return count
+                self.dfs(grid, row, col)
+                count += 1
 
-	def is_cell_outside(self, grid, row, col):
-		n, m = len(grid), len(grid[0])
-		out_bounds = row < 0 or row >= n or col < 0 or col >= m
-		return out_bounds
+        return count
 
-	def dfs(self, grid, row, col): 
-		'''SINK ISLAND'''
-		
-		out_bounds = self.is_cell_outside(grid, row, col)
-		if out_bounds or grid[row][col] == '0':
-			return
+    def get_directions(self):
+        return [(-1, 0), (1, 0), (0, 1), (0, -1)]
 
-		grid[row][col] = '0'  # SINK
+    def is_valid_cell(self, grid, row, col):
+        n, m = len(grid), len(grid[0])
+        return (0 <= row < n) and (0 <= col < m)
 
-		self.dfs(grid, row, col + 1)
-		self.dfs(grid, row, col - 1)
-		self.dfs(grid, row + 1, col)
-		self.dfs(grid, row - 1, col)
+    def dfs(self, grid, row, col):
+        '''SINK ISLAND'''
+
+        out_bounds = not self.is_valid_cell(grid, row, col)
+        if out_bounds or grid[row][col] == '0':
+           	return
+
+        grid[row][col] = '0'  # SINK
+
+        self.dfs(grid, row, col + 1)
+        self.dfs(grid, row, col - 1)
+        self.dfs(grid, row + 1, col)
+        self.dfs(grid, row - 1, col)
+
+    def dfs_v2(self, grid, row, col):
+        '''SINK ISLAND'''
+
+        out_of_bounds = not self.is_valid_cell(grid, row, col)
+        if out_of_bounds or grid[row][col] == '0':
+            return
+
+        grid[row][col] = '0'  # SINK
+
+        for x, y in self.get_directions():
+            self.dfs(grid, row + x, col + y)
 
 
 soln = Solution()

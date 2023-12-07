@@ -28,40 +28,38 @@ edges = [
 shortestPath(edges, 'a', 'e') -> 3
 '''
 
-from collections import defaultdict
+from collections import defaultdict, deque
 
 
 class Solution:
 
-    def shortestPath(self, edges, nodeA, nodeB):
-        graph = self.adjacency_list(edges)  # graph
+    def build_graph(self, edges):
+        graph = defaultdict(list)
+        for source, dest in edges:
+            graph[source].append(dest)
+            graph[dest].append(source)
+        return graph
 
+    def shortestPath(self, edges, nodeA, nodeB):
+        graph = self.build_graph(edges)  # graph
+
+        queue = deque([(nodeA, 0)])
         visited = set(nodeA)
-        queue = [[nodeA, 0]]
 
         while queue:
-            node, distance = queue.pop(0)
+            curr_node, distance = queue.popleft()
 
-            if node == nodeB:
+            if curr_node == nodeB:
                 return distance
 
-            for neighbor in graph[node]:
-                if neighbor not in visited:
-                    visited.add(neighbor)
-                    queue.push([neighbor, distance + 1])
+            for neighbor in graph[curr_node]:
+                if neighbor in visited:
+                    continue
+
+                visited.add(neighbor)
+                queue.append((neighbor, distance + 1))
 
         return -1
-
-    def adjacency_list(self, edges):
-        graph = defaultdict(list)
-
-        for edge in edges:
-            a, b = edge
-
-            graph[a].append(b)
-            graph[b].append(a)
-
-        return graph
 
 
 edges = [

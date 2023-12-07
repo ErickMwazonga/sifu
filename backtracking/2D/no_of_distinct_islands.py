@@ -33,16 +33,26 @@ class Solution:
 
         for i in range(n):
             for j in range(m):
-                if grid[i][j] == 1:
-                    path = self.compute_path(grid, i, j, 'X')
-                    distinct_paths.add(path)
+                if grid[i][j] != 1:
+                    continue
+
+                path = self.compute_path(grid, i, j, 'X')
+                distinct_paths.add(path)
 
         return len(distinct_paths)
+
+    def get_directions(self):
+        return [(-1, 0, 'U'), (1, 0, 'D'), (0, 1, 'R'), (0, -1, 'L')]
+
+    def is_valid_cell(self, grid, row, col):
+        n, m = len(grid), len(grid[0])
+        return (0 <= row < n) and (0 <= col < m)
+
 
     def compute_path(self, grid, i, j, direction):
         n, m = len(grid), len(grid[0])
 
-        out_bounds = i < 0 or i >= n or j < 0 or j >= m
+        out_bounds = not self.is_valid_cell(grid, i, j)
         if out_bounds or grid[i][j] == 0:
             return 'O'
 
@@ -54,6 +64,21 @@ class Solution:
         down = self.compute_path(grid, i + 1, j, 'D')
 
         return direction + left + right + up + down
+
+    def compute_path_v2(self, grid, i, j, direction):
+        n, m = len(grid), len(grid[0])
+
+        out_bounds = not self.is_valid_cell(grid, i, j)
+        if out_bounds or grid[i][j] == 0:
+            return 'O'
+
+        grid[i][j] = 0  # SINK
+
+        path = ''
+        for x, y, dir_char in self.get_directions():
+            path += self.compute_path(grid, i + x, j + y, dir_char)
+
+        return direction + path
 
 
 input1 = [

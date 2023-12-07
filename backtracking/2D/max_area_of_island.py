@@ -23,40 +23,58 @@ because the island must be connected 4-directionally.
 
 
 class Solution:
-	def max_area_of_island(self, grid) -> int:
-		if not grid:
-			return 0
+    def max_area_of_island(self, grid) -> int:
+        if not grid:
+            return 0
 
-		max_area = 0
-		n, m = len(grid), len(grid[0])
+        max_area = 0
+        n, m = len(grid), len(grid[0])
 
-		for row in range(n):
-			for col in range(m):
-				if grid[row][col] == 1:
-					curr_area = self.dfs(grid, row, col)
-					max_area = max(max_area, curr_area)
+        for row in range(n):
+            for col in range(m):
+                if grid[row][col] != 1:
+                    continue
+                curr_area = self.dfs(grid, row, col)
+                max_area = max(max_area, curr_area)
 
-		return max_area
+        return max_area
 
-	def is_cel_outside(self, grid, row, col):
-		n, m = len(grid), len(grid[0])
-		return row < 0 or col < 0 or row >= n or col >= m
+    def get_directions(self):
+        return [(-1, 0), (1, 0), (0, 1), (0, -1)]
 
-	def dfs(self, grid, row, col):
-		out_bounds = self.is_cel_outside(grid, row, col)
-		if out_bounds or grid[row][col] == 0:
-			return 0
+    def is_valid_cell(self, grid, row, col):
+        n, m = len(grid), len(grid[0])
+        return (0 <= row < n) and (0 <= col < m)
 
-		area = 1
-		grid[row][col] = 0  # SINK
+    def dfs(self, grid, row, col):
+        out_bounds = self.is_valid_cell(grid, row, col)
+        if out_bounds or grid[row][col] == 0:
+            return 0
 
-		right = self.dfs(grid, row, col + 1)
-		left = self.dfs(grid, row, col - 1)
-		down = self.dfs(grid, row + 1, col)
-		up = self.dfs(grid, row - 1, col)
+        area = 1
+        grid[row][col] = 0  # SINK
 
-		return area + up + down + left + right
+        right = self.dfs(grid, row, col + 1)
+        left = self.dfs(grid, row, col - 1)
+        down = self.dfs(grid, row + 1, col)
+        up = self.dfs(grid, row - 1, col)
+
+        return area + up + down + left + right
 		# return 1 + area + up + down + left + right
+
+    def dfs_v2(self, grid, row, col):
+        out_bounds = not self.is_valid_cell(grid, row, col)
+        if out_bounds or grid[row][col] == 0:
+            return 0
+
+
+        grid[row][col] = 0  # SINK
+
+        area = 1
+        for x, y in self.get_directions():
+            area += self.dfs(grid, row + x, col + y)
+
+        return area
 
 
 matrix = [
