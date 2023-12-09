@@ -27,23 +27,19 @@ Output: 3
 class Solution:
 
     def num_of_lands(self, grid) -> int:
-        if not grid:
-            return 0
-
         count = 0
         n, m = len(grid), len(grid[0])
 
         for row in range(n):
             for col in range(m):
-                if grid[row][col] != '1':
-                    continue
-
-                self.dfs(grid, row, col)
-                count += 1
+                if grid[row][col] == '1':
+                    self.dfs(grid, row, col)
+                    count += 1
 
         return count
 
-    def get_directions(self):
+    @property
+    def directions(self):
         return [(-1, 0), (1, 0), (0, 1), (0, -1)]
 
     def is_valid_cell(self, grid, row, col):
@@ -73,8 +69,8 @@ class Solution:
 
         grid[row][col] = '0'  # SINK
 
-        for x, y in self.get_directions():
-            self.dfs(grid, row + x, col + y)
+        for dx, dy in self.directions:
+            self.dfs(grid, row + dx, col + dy)
 
 
 soln = Solution()

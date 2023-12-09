@@ -7,7 +7,7 @@ A region is captured by flipping all 'O's into 'X's in that surrounded region.
 
 Input:                     Output
 X X X X                    X X X X
-X O O X     -------->      X X X X 
+X O O X     -------->      X X X X
 X X O X                    X X X X
 X O X X                    X O X X
 
@@ -104,5 +104,5 @@ class Solution2:
 
         grid[row][col] = 'Q'
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
-        for x, y in directions:
-            self.sink_island(grid, row + x, col + y)
+        for dx, dy in directions:
+            self.sink_island(grid, row + dx, col + dy)

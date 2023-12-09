@@ -32,14 +32,14 @@ class Solution:
 
         for row in range(n):
             for col in range(m):
-                if grid[row][col] != 1:
-                    continue
-                curr_area = self.dfs(grid, row, col)
-                max_area = max(max_area, curr_area)
+                if grid[row][col] == 1:
+                    curr_area = self.dfs(grid, row, col)
+                    max_area = max(max_area, curr_area)
 
         return max_area
 
-    def get_directions(self):
+    @property
+    def directions(self):
         return [(-1, 0), (1, 0), (0, 1), (0, -1)]
 
     def is_valid_cell(self, grid, row, col):
@@ -67,12 +67,11 @@ class Solution:
         if out_bounds or grid[row][col] == 0:
             return 0
 
-
         grid[row][col] = 0  # SINK
 
         area = 1
-        for x, y in self.get_directions():
-            area += self.dfs(grid, row + x, col + y)
+        for dx, dy in self.directions:
+            area += self.dfs(grid, row + dx, col + dy)
 
         return area
 

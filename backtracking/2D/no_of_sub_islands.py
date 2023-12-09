@@ -6,7 +6,7 @@ You are given two m x n binary matrices grid1 and grid2 containing only 0's (rep
 and 1's (representing land). An island is a group of 1's connected 4-directionally (horizontal or vertical).
 Any cells outside of the grid are considered water cells.
 
-An island in grid2 is considered a sub-island if there is an island in grid1 that contains 
+An island in grid2 is considered a sub-island if there is an island in grid1 that contains
 all the cells that make up this island in grid2.
 Return the number of islands in grid2 that are considered sub-islands.
 '''
@@ -58,5 +58,5 @@ class Solution:
 
         grid[row][col] = 0  # VISITED/SINK
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
-        for x, y in directions:
-            self.sink_island(grid, row + x, col + y)
+        for dx, dy in directions:
+            self.sink_island(grid, row + dx, col + dy)

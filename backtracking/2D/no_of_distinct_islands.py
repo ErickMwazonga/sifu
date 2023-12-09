@@ -33,15 +33,14 @@ class Solution:
 
         for i in range(n):
             for j in range(m):
-                if grid[i][j] != 1:
-                    continue
-
-                path = self.compute_path(grid, i, j, 'X')
-                distinct_paths.add(path)
+                if grid[i][j] == 1:
+                    path = self.compute_path(grid, i, j, 'X')
+                    distinct_paths.add(path)
 
         return len(distinct_paths)
 
-    def get_directions(self):
+    @property
+    def directions(self):
         return [(-1, 0, 'U'), (1, 0, 'D'), (0, 1, 'R'), (0, -1, 'L')]
 
     def is_valid_cell(self, grid, row, col):
@@ -75,8 +74,8 @@ class Solution:
         grid[i][j] = 0  # SINK
 
         path = ''
-        for x, y, dir_char in self.get_directions():
-            path += self.compute_path(grid, i + x, j + y, dir_char)
+        for dx, dy, dir_char in self.directions:
+            path += self.compute_path(grid, i + dx, j + dy, dir_char)
 
         return direction + path
 

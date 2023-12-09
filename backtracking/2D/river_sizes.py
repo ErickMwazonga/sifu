@@ -33,12 +33,12 @@ class Solution:
         for i in range(n):
             for j in range(m):
                 if matrix[i][j] == 1:
-                    river_size = self.check(i, j, matrix)
+                    river_size = self.check(matrix, i, j)
                     output.append(river_size)
 
         return output
 
-    def check(self, i, j, matrix):
+    def check(self, matrix, i, j):
         n, m = len(matrix), len(matrix[i])
         out_bounds = i < 0 or i >= n or j < 0 or j >= m
 
@@ -47,12 +47,27 @@ class Solution:
 
         matrix[i][j] = 0  # SINK
 
-        top = self.check(i - 1, j, matrix)
-        down = self.check(i + 1, j, matrix)
-        left = self.check(i, j - 1, matrix)
-        right = self.check(i, j + 1, matrix)
+        top = self.check(matrix, i - 1, j)
+        down = self.check(matrix, i + 1, j)
+        left = self.check(matrix, i, j - 1)
+        right = self.check(matrix, i, j + 1)
 
         return 1 + top + down + left + right
+
+    def check_v2(self, matrix, i, j):
+         n, m = len(matrix), len(matrix[i])
+         out_bounds = i < 0 or i >= n or j < 0 or j >= m
+         if out_bounds or matrix[i][j] == 0:
+             return 0
+
+         matrix[i][j] = 0  # SINK
+         size = 1
+
+         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+         for dx, dy in directions:
+             size += self.check(matrix, i + dx, j + dy)
+
+         return size
 
 
 input = [
@@ -63,4 +78,5 @@ input = [
     [1, 0, 1, 1, 0]
 ]
 
-assert sorted(river_sizes(input)) == [1, 2, 2, 2, 5]
+soln = Solution()
+assert sorted(soln.river_sizes(input)) == [1, 2, 2, 2, 5]
