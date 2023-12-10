@@ -12,9 +12,9 @@ Table: Activity
 | games_played | int     |
 +--------------+---------+
 ```
-(player_id, event_date) is the primary key of this table. 
+(player_id, event_date) is the primary key of this table.
 This table shows the activity of players of some game.
-Each row is a record of a player who logged in and played a number of games (possibly 0) 
+Each row is a record of a player who logged in and played a number of games (possibly 0)
 before logging out on some day using some device.
 Write an SQL query that reports the first login date for each player.
 
@@ -46,9 +46,9 @@ Group by the player id and use the minimum event date value.
 
 ### SQL Solution
 ```sql
-SELECT 
-    player_id, 
+SELECT
+    player_id,
     MIN(event_date) AS first_login
-FROM Activity 
+FROM Activity
 GROUP BY player_id
 ```
