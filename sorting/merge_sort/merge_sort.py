@@ -1,75 +1,60 @@
-def mergeSort(A):
-    '''Time O(n*log n), Space O(n)'''
+class MergeSort:
 
-    n = len(A)
+    def mergeSort(self, A):
+        '''Time O(n*log n), Space O(n)'''
 
-    if n < 2:
-        return A
+        if len(A) < 2:
+            return A
 
-    mid = n // 2
-    L, R = A[:mid], A[mid:]
+        mid = len(A) // 2
+        left, right = A[:mid], A[mid:]
 
-    # Sort the two halves
-    mergeSort(L)
-    mergeSort(R)
+        self.mergeSort(left)
+        self.mergeSort(right)
 
-    i = j = k = 0
+        self.merge(A, left, right)
 
-    # Until we reach either end of either L or M
-    # pick smaller among them
-    while i < len(L) and j < len(R):
-        if L[i] < R[j]:
-            A[k] = L[i]
-            i += 1
-        else:
-            A[k] = R[j]
-            j += 1
-        k += 1
+    def merge(self, A, left, right):
+        i = j = k = 0
 
-    # Copy any remaining elements of L[]
-    while i < len(L):
-        A[k] = L[i]
-        i, k = i + 1, k + 1
-
-    # Copy any remaining elements of R[]
-    while j < len(R):
-        A[k] = R[j]
-        j, k = j + 1, k + 1
-
-
-A = [8, 7, 2, 1, 0, 9, 6]
-
-mergeSort(A)
-assert A == [0, 1, 2, 6, 7, 8, 9]
-
-
-def mergeSort_V2(A):
-    n = len(A)
-
-    if n < 2:
-        return
-
-    mid = n // 2
-    L, R = A[:mid], A[mid:]
-
-    mergeSort_V2(L)
-    mergeSort_V2(R)
-
-    i = j = k = 0
-
-    while i < len(L) or j < len(R):
-        if i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                A[k] = L[i]
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                A[k] = left[i]
                 i += 1
             else:
-                A[k] = R[j]
+                A[k] = right[j]
                 j += 1
-        elif i < len(L):
-            A[k] = L[i]
-            i += 1
-        else:
-            A[k] = R[j]
-            j += 1
+            k += 1
 
-        k += 1
+        while i < len(left):
+            A[k] = left[i]
+            i, k = i + 1, k + 1
+
+        while j < len(right):
+            A[k] = right[j]
+            j, k = j + 1, k + 1
+
+    def merge_v2(self, A, left, right):
+        i = j = k = 0
+
+        while i < len(left) or j < len(right):
+            if i < len(left) and j < len(right):
+                if left[i] < right[j]:
+                    A[k] = left[i]
+                    i += 1
+                else:
+                    A[k] = right[j]
+                    j += 1
+            elif i < len(left):
+                A[k] = left[i]
+                i += 1
+            else:
+                A[k] = left[j]
+                j += 1
+
+            k += 1
+
+
+soln = MergeSort()
+A = [8, 7, 2, 1, 0, 9, 6]
+assert soln.mergeSort(A) == list(sorted(A))

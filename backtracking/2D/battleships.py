@@ -17,6 +17,8 @@ Example:
     ['.', '.', '.', 'X']
 ]
 '''
+
+
 class Solution:
     def countBattleships(self, board: list[list[str]]) -> int:
         n, m = len(board), len(board[0])

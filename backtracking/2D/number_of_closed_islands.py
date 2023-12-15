@@ -21,10 +21,10 @@ Explanation:
 Islands in gray are closed because they are completely surrounded by water (group of 1s).
 
 Example 2:
-Input: grid = [[0,0,1,0,0],[0,1,0,1,0],[0,1,1,1,0]]
+Input: grid = [[0,0,1,0,0], [0,1,0,1,0], [0,1,1,1,0]]
 Output: 1
-Example 3:
 
+Example 3:
 Input: grid = [
     [1,1,1,1,1,1,1],
     [1,0,0,0,0,0,1],

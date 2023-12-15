@@ -11,7 +11,7 @@ One cell is a square with side length 1. The grid is rectangular, width and heig
 Determine the perimeter of the island.
 
 Example 1:
-Input: grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
+Input: grid = [[0,1,0,0], [1,1,1,0], [0,1,0,0], [1,1,0,0]]
 Output: 16
 Explanation: The perimeter is the 16 yellow stripes in the image above.
 
@@ -20,12 +20,13 @@ Input: grid = [[1]]
 Output: 4
 
 Example 3:
-Input: grid = [[1,0]]
+Input: grid = [[1, 0]]
 Output: 4
 '''
 
 
 class Solution:
+
     def islandPerimeter(self, grid: list[list[int]]) -> int:
         n, m = len(grid), len(grid[0])
 

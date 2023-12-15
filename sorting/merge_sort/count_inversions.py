@@ -6,77 +6,125 @@ GENERALLY two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j
 '''
 
 
-def mergeSort(A):
-    n = len(A)
+class MergeSort:
 
-    if n < 2:
-        return A
+    def mergeSort(self, A):
+        '''Time O(n*log n), Space O(n)'''
 
-    mid = n // 2
-    L, R = A[:mid], A[mid:]
+        if len(A) < 2:
+            return A
 
-    mergeSort(L)
-    mergeSort(R)
+        mid = len(A) // 2
+        left, right = A[:mid], A[mid:]
 
-    i = j = k = 0
+        self.mergeSort(left)
+        self.mergeSort(right)
 
-    while i < len(L) and j < len(R):
-        if L[i] < R[j]:
-            A[k] = L[i]
-            i += 1
-        else:
-            A[k] = R[j]
-            j += 1
-        k += 1
+        self.merge(A, left, right)
 
-    # Copy any remaining elements of L[]
-    while i < len(L):
-        A[k] = L[i]
-        i, k = i + 1, k + 1
+    def merge(self, A, left, right):
+        i = j = k = 0
 
-    # Copy any remaining elements of R[]
-    while j < len(R):
-        A[k] = R[j]
-        j, k = j + 1, k + 1
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                A[k] = left[i]
+                i += 1
+            else:
+                A[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(left):
+            A[k] = left[i]
+            i, k = i + 1, k + 1
+
+        while j < len(right):
+            A[k] = right[j]
+            j, k = j + 1, k + 1
 
 
-def countInversions(A):
-    n = len(A)
 
-    if n < 2:
-        return 0
+class CountInversions:
 
-    mid = n // 2
-    left_half, right_half = A[:mid], A[mid:]
+    def countInversions(self, A):
+        n = len(A)
 
-    left_inversion_count = countInversions(left_half)
-    right_inversion_count = countInversions(right_half)
+        if n < 2:
+            return 0
 
-    i = j = k = 0
-    inversion_count = 0
+        mid = n // 2
+        left_half, right_half = A[:mid], A[mid:]
 
-    while i < len(left_half) and j < len(right_half):
-        if left_half[i] < right_half[j]:
+        left_inversion_count = self.countInversions(left_half)
+        right_inversion_count = self.countInversions(right_half)
+
+        inversion_count = self.merge_and_count_inversions(A, left_half, right_half)
+
+        return inversion_count + left_inversion_count + right_inversion_count
+
+
+    def merge_and_count_inversions(self, A, left_half, right_half):
+        i = j = k = 0
+        inversion_count = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                A[k] = left_half[i]
+                i += 1
+            else:
+                A[k] = right_half[j]
+                j += 1
+                inversion_count += len(left_half) - i
+            k += 1
+
+        while i < len(left_half):
             A[k] = left_half[i]
-            i += 1
-        else:
+            i, k = i + 1, k + 1
+
+        while j < len(right_half):
             A[k] = right_half[j]
-            j += 1
-            # Count left elements after the current as inversions since
-            # they are greater than current right element
-            inversion_count += len(left_half) - i
-        k += 1
+            j, k = j + 1, k + 1
 
-    while i < len(left_half):
-        A[k] = left_half[i]
-        i, k = i + 1, k + 1
+        return inversion_count
 
-    while j < len(right_half):
-        A[k] = right_half[j]
-        j, k = j + 1, k + 1
+    def countInversions_v2(self, A):
+        n = len(A)
 
-    return inversion_count + left_inversion_count + right_inversion_count
+        if n < 2:
+            return 0
+
+        mid = n // 2
+        left_half, right_half = A[:mid], A[mid:]
+
+        left_inversion_count = self.countInversions_v2(left_half)
+        right_inversion_count = self.countInversions_v2(right_half)
+
+        i = j = k = 0
+        inversion_count = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                A[k] = left_half[i]
+                i += 1
+            else:
+                A[k] = right_half[j]
+                j += 1
+                # Count left elements after the current as inversions since
+                # they are greater than current right element
+                inversion_count += len(left_half) - i
+            k += 1
+
+        while i < len(left_half):
+            A[k] = left_half[i]
+            i, k = i + 1, k + 1
+
+        while j < len(right_half):
+            A[k] = right_half[j]
+            j, k = j + 1, k + 1
+
+        return inversion_count + left_inversion_count + right_inversion_count
 
 
-assert countInversions([2, 4, 3, 1, 5]) == 4
-assert countInversions([1, 20, 6, 4, 5]) == 5
+soln = CountInversions()
+assert soln.countInversions([2, 4, 3, 1, 5]) == 4
+assert soln.countInversions([1, 20, 6, 4, 5]) == 5

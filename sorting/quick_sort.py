@@ -15,6 +15,7 @@ The space complexity -> O(log n).
 
 
 class QuickSort:
+
     def swap(self, A, i, j):
         A[i], A[j] = A[j], A[i]
 
@@ -39,18 +40,12 @@ class QuickSort:
         self.qs_helper(A, pi+1, high)
 
     def quickSort(self, A):
-        n = len(data)
+        n = len(A)
         self.qs_helper(A, 0, n-1)
 
 
-data = [8, 7, 2, 1, 0, 9, 6]
-qs = QuickSort()
-qs.quickSort(data)
-
-assert data == [0, 1, 2, 6, 7, 8, 9]
-
-
 class QuickSort_V2:
+
     def quick_sort(self, A):
         length = len(A)
 
@@ -67,3 +62,11 @@ class QuickSort_V2:
                 items_lower.append(item)
 
         return self.quick_sort(items_lower) + [pivot] + self.quick_sort(items_greater)
+
+
+
+data = [8, 7, 2, 1, 0, 9, 6]
+qs = QuickSort()
+qs.quickSort(data)
+
+assert data == list(sorted(A))

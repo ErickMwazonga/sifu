@@ -13,9 +13,6 @@ Space: O(1) -> extra variable temp for swapping.
 '''
 
 
-from re import L
-
-
 def bubbleSort(A: list):
     n = len(A)
 

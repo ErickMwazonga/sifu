@@ -30,4 +30,4 @@ def selection_sort(A):
 
 data = [-2, 45, 0, 11, -9]
 selection_sort(data)
-assert data == [-9, -2, 0, 11, 45]
+assert data == list(sorted(data))

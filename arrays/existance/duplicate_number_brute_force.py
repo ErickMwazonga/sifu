@@ -12,17 +12,17 @@ Examples
 '''
 
 
-def findDuplicate(nums: list[int]) -> int:
+def findDuplicate(nums: list[int]) -> int | None:
     seen = {}
 
     for each in nums:
         if each in seen:
             return each
-        else:
-            seen[each] = 1
+
+        seen[each] = 1
 
 
-def findDuplicate_v1(nums: list[int]) -> int:
+def findDuplicate_v1(nums: list[int]) -> int | None:
     nums_set = set()
 
     for num in nums:
@@ -32,7 +32,7 @@ def findDuplicate_v1(nums: list[int]) -> int:
         nums_set.add(num)
 
 
-def findDuplicate_v2(nums: list[int]) -> int:
+def findDuplicate_v2(nums: list[int]) -> int | None:
     for num in nums:
         abs_num = abs(num)
 
@@ -41,10 +41,8 @@ def findDuplicate_v2(nums: list[int]) -> int:
 
         nums[abs_num] = -nums[abs_num]
 
-    return None
 
-
-def findDuplicate_v3(nums: list[int]) -> int:
+def findDuplicate_v3(nums: list[int]) -> int | None:
     for v in nums:
         pos = abs(v) - 1
 
@@ -54,7 +52,7 @@ def findDuplicate_v3(nums: list[int]) -> int:
         nums[pos] = -nums[pos]
 
 
-def findDuplicate_v4(A: list[int]) -> int:
+def findDuplicate_v4(A: list[int]) -> int | None:
     n = len(A)
 
     for i in range(n+1):
