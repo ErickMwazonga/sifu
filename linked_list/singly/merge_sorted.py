@@ -18,7 +18,7 @@ class ListNode:
         self.next = None
 
 
-def mergeTwoLists(l1, l2):
+def mergeTwoLists(list1, list2):
     curr = dummy = ListNode(0)
 
     while list1 and list2:

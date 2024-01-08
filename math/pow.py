@@ -15,9 +15,9 @@ Output: 0.25000
 '''
 
 
-def myPow(x, n):
+def myPow(x: float, n: int) -> float:
     '''Time: O(n)'''
-    
+
     if n == 0:
         return 1
 
@@ -36,9 +36,9 @@ def myPow(x, n):
     return 1 / res if is_nengative else res
 
 
-def myPow_v2(x, n):
+def myPow_v2(x: float, n: int) -> float:
     '''
-    Time O(log n) - 2^4 -> 2^2 * 2^2 
+    Time O(log n) - 2^4 -> 2^2 * 2^2
     e.g 2^8
     n | [n // 2] 8 4 2  1
     x | [x ** 2] 2 4 16 256

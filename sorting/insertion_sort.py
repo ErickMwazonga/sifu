@@ -16,7 +16,7 @@ Space: O(1) -> extra variable temp for min index.
 # ---------------------------------
 
 
-def insertion_sort(A):
+def insertion_sort(A: list) -> None:
     n = len(A)
 
     for i in range(1, n):
@@ -30,7 +30,7 @@ def insertion_sort(A):
         A[pos] = temp_val
 
 
-def insertion_sort_v2(A: list) -> list:
+def insertion_sort_v2(A: list) -> None:
     n = len(A)
 
     for step in range(1, n):

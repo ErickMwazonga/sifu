@@ -23,6 +23,6 @@ def countOccurrences_v2(arr: list[int], num: int, i: int = 0, acc: int = 0):
         return acc
 
     if arr[i] == num:
-        return countOccurrences(arr, num, i+1, acc+1)
+        return countOccurrences(arr, num, i+1, acc + 1)
     else:
         return countOccurrences(arr, num, i+1, acc)

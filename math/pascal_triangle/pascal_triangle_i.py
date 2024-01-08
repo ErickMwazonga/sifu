@@ -30,7 +30,7 @@ def generate(n: int):
     return ans
 
 
-def generate_v1(numRows):
+def generate_v1(numRows: int):
     if numRows < 1:
         return []
 
@@ -48,7 +48,7 @@ def generate_v1(numRows):
     return result
 
 
-def generate_v2(n):
+def generate_v2(n: int):
     if n < 1:
         return [[]]
 

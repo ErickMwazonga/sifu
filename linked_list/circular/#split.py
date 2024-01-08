@@ -9,12 +9,12 @@ class CircularLinkedList:
         self.head = None
 
     def __len__(self):
-        cur = self.head
+        curr = self.head
         count = 0
-        while cur:
+        while curr:
             count += 1
-            cur = cur.next
-            if cur == self.head:
+            curr = curr.next
+            if curr == self.head:
                 break
         return count
 
@@ -24,19 +24,19 @@ class CircularLinkedList:
             self.head.next = self.head
         else:
             new_node = Node(data)
-            cur = self.head
-            while cur.next != self.head:
-                cur = cur.next
-            cur.next = new_node
+            curr = self.head
+            while curr.next != self.head:
+                curr = curr.next
+            curr.next = new_node
             new_node.next = self.head
 
     def print_list(self):
-        cur = self.head
+        curr = self.head
 
-        while cur:
-            print(cur.data)
-            cur = cur.next
-            if cur == self.head:
+        while curr:
+            print(curr.data)
+            curr = curr.next
+            if curr == self.head:
                 break
 
     def split_list(self):
@@ -51,19 +51,19 @@ class CircularLinkedList:
         count = 0
 
         prev = None
-        cur = self.head
+        curr = self.head
 
-        while cur and count < mid:
+        while curr and count < mid:
             count += 1
-            prev = cur
-            cur = cur.next
+            prev = curr
+            curr = curr.next
         prev.next = self.head
 
         split_cllist = CircularLinkedList()
-        while cur.next != self.head:
-            split_cllist.append(cur.data)
-            cur = cur.next
-        split_cllist.append(cur.data)
+        while curr.next != self.head:
+            split_cllist.append(curr.data)
+            curr = curr.next
+        split_cllist.append(curr.data)
 
         self.print_list()
         print("\n")

@@ -8,17 +8,15 @@ def traverse(nums: list[int], target: int, left: int, right: int) -> bool:
 
 	if left > right:
 		return False
-	
+
 	if nums[mid] == target:
 		return True
-	
+
 	if nums[mid] > target:
 		return traverse(nums, target, left, mid - 1)
 	else:
 		return traverse(nums, target, mid + 1, right)
-	
-binary_search([1, 2, 3, 4, 5, 6], 10) == False
-binary_search([1, 2, 3, 4, 5, 6], 6) == True
 
 
-
+assert binary_search([1, 2, 3, 4, 5, 6], 10) == False
+assert binary_search([1, 2, 3, 4, 5, 6], 6) == True

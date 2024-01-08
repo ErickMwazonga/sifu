@@ -53,6 +53,8 @@ def validPalindrome_v3(s: str) -> bool:
             first, second = s[left+1: right+1], s[left: right]
             return first == first[::-1] or second == second[::-1]
 
+    return False
+
 
 assert validPalindrome('aba') == True
 assert validPalindrome('abca') == True

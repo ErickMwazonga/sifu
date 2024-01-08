@@ -20,7 +20,7 @@ def isPalindrome(s):
     return newS == newS[::-1]
 
 
-def isPalindrome2(s: str) -> bool:
+def isPalindrome_v2(s: str) -> bool:
     s = s.lower()
     res = ''
 
@@ -31,7 +31,7 @@ def isPalindrome2(s: str) -> bool:
     return res == res[::-1]
 
 
-def isPalindrome(s):
+def isPalindrome_v3(s):
     i, j = 0, len(s) - 1
 
     while i < j:

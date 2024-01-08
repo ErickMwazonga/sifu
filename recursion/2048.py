@@ -1,4 +1,4 @@
-def merger(arr: list[int], direction: int) -> list[int]:
+def merger(arr: list[int], direction: str) -> list[int]:
 	if direction == 'left':
 		return merge(arr)
 
@@ -7,11 +7,11 @@ def merger(arr: list[int], direction: int) -> list[int]:
 		merged_right = merge(right_reversed)
 		return list(reversed(merged_right))
 
-    
+
 def merge(arr):
 	if len(arr) == 1:
 		return arr
-	
+
 	# Recursively merge the first n-1 tiles of the array
 	merged = merge(arr[:-1])
 

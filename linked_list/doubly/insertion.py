@@ -78,5 +78,3 @@ dllist.append(4)
 dllist.prepend(5)
 dllist.add_after_node(3, 6)
 dllist.add_before_node(4, 9)
-
-dllist.print_list()
