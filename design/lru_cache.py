@@ -34,11 +34,11 @@ class LRUCache_V2:
         self.size = 0
 
     def get(self, key: int) -> int:
-        if key in self.dict:
-            self.dict.move_to_end(key)
-            return self.dict[key]
-        else:
+        if key not in self.dict:
             return -1
+
+        self.dict.move_to_end(key)
+        return self.dict[key]
 
     def put(self, key: int, value: int) -> None:
         if key in self.dict:
