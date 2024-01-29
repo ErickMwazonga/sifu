@@ -1,10 +1,27 @@
 '''
+904 · Plus One Linked List
 Link: https://leetcode.com/problems/plus-one-linked-list/
+Link 2: https://www.lintcode.com/problem/904/
 
-Number is represented in linked list such that each digit corresponds to a node in linked list. Add 1 to it.
-For example 1999 is represented as (1-> 9-> 9 -> 9) and adding 1 to it should change it to (2->0->0->0)
-Below are the steps :
+Given a non-negative integer represented as non-empty a singly linked list of digits, plus one to the integer.
+You may assume the integer do not contain any leading zero, except the number 0 itself.
 
+The digits are stored such that the most significant digit is at the head of the list.
+
+Examples
+Example 1
+Input: 1 -> 2 -> 3 -> null
+Output: 1 -> 2 -> 4 -> null
+Explanation:
+123 + 1 = 124
+
+Example2
+Input: 9 -> 9 -> null
+Output: 1 -> 0 -> 0 -> null
+Explanation:
+99 + 1 = 100
+
+INTUITION
 1. Reverse given linked list. For example, 1-> 9-> 9 -> 9 is converted to 9-> 9 -> 9 ->1.
 2. Start traversing linked list from leftmost node and add 1 to it. 
     If there is a carry, move to the next node. Keep moving to the next node while there is a carry.
@@ -18,49 +35,83 @@ class Node:
         self.next = None
 
 
-def printList(head):
-    if not head:
-        return
+class Solution:
 
-    while(head):
-        print('{}'.format(head.data), end='')
-        head = head.next
+    def printList(head):
+        if not head:
+            return
 
-
-def reverse(head):
-    prev, curr = None, head
-
-    while curr:
-        next_node = curr.next
-        curr.next = prev
-        prev = curr
-        curr = next_node
-
-    return prev
+        while head:
+            print(head.data, end='')
+            head = head.next
 
 
-def addOne(head):
-    head = reverse(head)
-    curr = last = head
+    def reverse(self, head):
+        prev, curr = None, head
 
-    carry = 1
+        while curr:
+            next_node = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_node
 
-    while curr:
-        curr.data += carry
+        return prev
+    
+    def plus_one(self, head):
+        '''
+        TIME: O(N), SPACE: O(N)
+        INTUITION: Convert to list, add 1 then convert back to linked list.
+        '''
 
-        carry, rem = divmod(curr.data, 10)
-        curr.data = rem
+        # convert the linked list to a list
+        numbers = []
+        while head:
+            numbers.append(head.data)
+            head = head.next
 
-        if not curr.next:
-            last = curr
+        # perform the addition
+        carry = 1
+        for i in range(len(numbers)-1, -1, -1):
+            numbers[i] += carry
+            carry, numbers[i] = divmod(numbers[i], 10)
 
-        curr = curr.next
+        # create a new linked list from the digits
+        new_head = Node(0)
+        curr = new_head
+        for digit in numbers:
+            curr.next = Node(digit)
+            curr = curr.next
 
-    if carry == 1:
-        last.next = Node(carry)
+        return new_head
 
-    head = reverse(head)
-    return head
+
+    def plus_one_v2(self, head):
+        '''
+        TIME: O(N), SPACE: O(1)
+        INTUITION: Add 1 as you iterate through the linked list, then reverse
+        '''
+         
+        head = self.reverse(head)
+        curr = last = head
+
+        carry = 1
+
+        while curr:
+            curr.data += carry
+
+            carry, rem = divmod(curr.data, 10)
+            curr.data = rem
+
+            if not curr.next:
+                last = curr
+
+            curr = curr.next
+
+        if carry == 1:
+            last.next = Node(carry)
+
+        head = self.reverse(head)
+        return head
 
 
 if __name__ == '__main__':
@@ -69,10 +120,11 @@ if __name__ == '__main__':
     head.next.next = Node(9)
     head.next.next.next = Node(9)
 
+    soln = Solution()
     print('List is: ', end='')
-    printList(head)
+    soln.printList(head)
 
-    head = addOne(head)
+    head = soln.plus_one_v2(head)
 
     print('\nResultant list is: ', end='')
-    printList(head)
+    soln.printList(head)

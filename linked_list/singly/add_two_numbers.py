@@ -28,7 +28,19 @@ class ListNode:
 
 
 class Solution:
-    def addTwoNumbers(l1: ListNode, l2: ListNode) -> Optional[ListNode]:
+    
+    def reverse(self, head: ListNode) -> ListNode:
+        prev, curr = None, head
+
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+
+        return prev
+     
+    def add_two_numbers(l1: ListNode, l2: ListNode) -> Optional[ListNode]:
         curr = dummy = ListNode(0)
         carry = 0
 
@@ -55,9 +67,7 @@ class Solution:
 
         return dummy.next
 
-
-class Solution_V2:
-    def addTwoNumbers(self, l1, l2) -> Optional[ListNode]:
+    def add_two_numbers_v2(self, l1, l2) -> Optional[ListNode]:
         list1, list2 = [], []
 
         curr = l1
@@ -93,13 +103,3 @@ class Solution_V2:
 
         return self.reverse(dummy.next)
 
-    def reverse(self, head: ListNode) -> ListNode:
-        prev, curr = None, head
-
-        while curr:
-            nxt = curr.next
-            curr.next = prev
-            prev = curr
-            curr = nxt
-
-        return prev
