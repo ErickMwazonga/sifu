@@ -20,12 +20,6 @@ Input: 9 -> 9 -> null
 Output: 1 -> 0 -> 0 -> null
 Explanation:
 99 + 1 = 100
-
-INTUITION
-1. Reverse given linked list. For example, 1-> 9-> 9 -> 9 is converted to 9-> 9 -> 9 ->1.
-2. Start traversing linked list from leftmost node and add 1 to it. 
-    If there is a carry, move to the next node. Keep moving to the next node while there is a carry.
-3. Reverse modified linked list and return head.
 '''
 
 
@@ -88,7 +82,7 @@ class Solution:
     def plus_one_v2(self, head):
         '''
         TIME: O(N), SPACE: O(1)
-        INTUITION: Add 1 as you iterate through the linked list, then reverse
+        INTUITION: Reverse, add 1 as you iterate through the linked list, then reverse
         '''
          
         head = self.reverse(head)
