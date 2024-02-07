@@ -66,8 +66,26 @@ class Solution:
             curr.next = ListNode(carry)
 
         return dummy.next
+    
+    def add_two_numbers_v2(l1: ListNode, l2: ListNode) -> Optional[ListNode]:
+        curr = dummy = ListNode(0)
+        carry = 0
 
-    def add_two_numbers_v2(self, l1, l2) -> Optional[ListNode]:
+        while l1 or l2 or carry:
+            if l1:
+                carry += l1.val
+                l1 = l1.next
+            if l2:
+                carry += l2.val
+                l2 = l2.next
+
+            carry, rem = divmod(carry, 10)
+            curr.next = ListNode(rem)
+            curr = curr.next
+        
+        return dummy.next
+
+    def add_two_numbers_v3(self, l1, l2) -> Optional[ListNode]:
         list1, list2 = [], []
 
         curr = l1

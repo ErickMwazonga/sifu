@@ -21,9 +21,6 @@ def is_anagram(s1: str, s2: str) -> bool:
     INTUITION: Compare counts of each char in both strings
     Time O(N^2), Space O(1)
     '''
-    
-    if len(s1) != len(s2):
-        return False
 
     for ch in set(s1):
         if s1.count(ch) != s2.count(ch):
@@ -38,40 +35,42 @@ def is_anagram_v2(s1: str, s2: str) -> bool:
     Time O(NlogN), Space O(1)
     '''
 
-    if len(s1) != len(s2):
-        return False
-
     return sorted(s1) == sorted(s2)
 
 
 def is_anagram_v2(s1: str, s2: str) -> bool:
     '''
     INTUITION: Compare frequencies
-    Time O(NlogN), Space O(1)
+    Time O(N), Space O(26) # there can only be 26 distinct chars in the freqs
     '''
 
-    if len(s1) != len(s2):
-        return False
-
-    _freqs, _freq2 = {}, {}
+    freqs, freq2 = {}, {}
 
     for ch in s1:
-        _freqs[ch] = _freqs.get(ch, 0) + 1
+        freqs[ch] = freqs.get(ch, 0) + 1
 
     for ch in s2:
-        _freq2[ch] = _freq2.get(ch, 0) + 1
+        freq2[ch] = freq2.get(ch, 0) + 1
 
-    for ch in _freqs:
-        if ch not in _freq2 or _freqs[ch] != _freq2[ch]:
+    # return freqs == freq2
+    for ch in freqs:
+        if ch not in freq2 or freqs[ch] != freq2[ch]:
             return False
 
     return True
 
-
 def is_anagram_v3(s1: str, s2: str) -> bool:
     '''
+    INTUITION: Compare frequencies improved
+    Time O(N), Space O(26) # there can only be 26 distinct chars in the freqs
+    '''
+
+    return Counter(s1) == Counter(s2)
+
+def is_anagram_v4(s1: str, s2: str) -> bool:
+    '''
     INTUITION: Reduce frequency on encounters
-    Time O(NlogN), Space O(1)
+    Time O(N), Space O(26)
     '''
     
     if len(s1) != len(s2):
@@ -85,6 +84,22 @@ def is_anagram_v3(s1: str, s2: str) -> bool:
         char_count[ch] -= 1
     
     return True
+
+class IsAngramV5:
+    '''
+    INTUITION: Angrams will have the same encoding of 26 letter frequencies
+    Time O(N), Space O(26)
+    '''
+
+    def is_anagram(self, s1, s2):
+        return self.encode_word(s1) == self.encode_word(s2)
+
+    def encode_word(self, word: str) -> tuple:
+        encoding = [0] * 26
+        for ch in word:
+            ch_occurence = ord(ch) - ord('a')
+            encoding[ch_occurence] += 1
+        return tuple(encoding)
 
 
 
