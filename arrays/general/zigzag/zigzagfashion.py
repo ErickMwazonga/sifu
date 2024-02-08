@@ -10,7 +10,7 @@ Examples:
 '''
 
 
-def zig_zag(arr):
+def zig_zag(arr: list[int]) -> list[int]:
     i, n = 1, len(arr)
 
     while i < n:
@@ -28,11 +28,7 @@ def zig_zag(arr):
     return arr
 
 
-assert zig_zag([1, 4, 3, 2]) == [1, 4, 2, 3]
-assert zig_zag([4, 3, 7, 8, 6, 2, 1]) == [3, 7, 4, 8, 2, 6, 1]
-
-
-def zig_zag_v2(arr):
+def zig_zag_v2(arr: list[int]) -> list[int]:
     if not arr:
         return arr
 
@@ -46,6 +42,9 @@ def zig_zag_v2(arr):
 
     return arr
 
+
+assert zig_zag([1, 4, 3, 2]) == [1, 4, 2, 3]
+assert zig_zag([4, 3, 7, 8, 6, 2, 1]) == [3, 7, 4, 8, 2, 6, 1]
 
 assert zig_zag_v2([]) == []
 assert zig_zag_v2([1, 2, 3, 4, 5, 6]) == [1, 3, 2, 5, 4, 6]
