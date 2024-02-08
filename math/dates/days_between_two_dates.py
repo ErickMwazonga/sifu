@@ -66,8 +66,3 @@ class Solution_V2:
 
         total += days
         return total
-
-
-        
-                
-        
