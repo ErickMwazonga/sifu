@@ -87,11 +87,3 @@ class Solution:
         departure = min(leaveAlice, leaveBob)
 
         return departure - arrival + 1
-
-
-
-
-date1 = CustomDate("08-05")
-date2 = CustomDate("03-04")
-
-print()
