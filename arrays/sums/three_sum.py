@@ -11,30 +11,35 @@ if the given array is [12, 3, 4, 1, 6, 9] and given sum is 24,
 then there is a triplet [12, 3 and 9] present in array whose sum is 24.
 '''
 
+class Solution:
 
-def three_sum(nums, target):
-    '''Time: 0(n^2)'''
+    def three_sum(self, nums: list[int], target: int) -> bool:
+        '''Time: 0(n^2)'''
 
-    nums.sort()
-    n, res = len(nums), set()
+        nums.sort()
+        n = len(nums)
 
-    for i in range(n):
-        target = target - nums[i]
-        j, k = i + 1, n - 1
-
-        while j < k:
-            _sum = nums[j] + nums[k]
-
-            if _sum == target:
-                res.add([nums[i], nums[j], nums[k]])
+        for i in range(n):
+            rem_target = target - nums[i]
+            if self.two_sum(nums, i + 1, n - 1, rem_target):
                 return True
-            elif _sum > target:
-                k -= 1
+
+        return False
+    
+    def two_sum(self, nums: list[int], left: int, right: int, target: int) -> bool:
+        while left < right:
+            curr_sum = nums[left] + nums[right]
+
+            if curr_sum == target:
+                return True
+            elif curr_sum > target:
+                right -= 1
             else:
-                j += 1
+                left += 1
 
-    return False
+        return False
 
 
-assert three_sum([12, 3, 4, 1, 6, 9], 24) == True
-assert three_sum([12, 3, 4, 1, 6, 9], 28) == False
+soln = Solution()
+assert soln.three_sum([12, 3, 4, 1, 6, 9], 24) == True
+assert soln.three_sum([12, 3, 4, 1, 6, 9], 28) == False

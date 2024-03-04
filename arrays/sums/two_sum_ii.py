@@ -21,27 +21,34 @@ Output: [1, 3]
 '''
 
 
-def twoSum(nums, target):
-    dic = {}
+def two_sum_v1(nums: list[int], target: int) -> list[int] | None:
+    seen = {}
 
     for i, num in enumerate(nums):
-        rem = target-num
+        rem = target - num
 
-        if rem in dic:
-            return [dic[rem] + 1, i + 1]
+        if rem in seen:
+            return [seen[rem] + 1, i + 1]
 
-        dic[num] = i
+        seen[num] = i
 
 
-def twoSum_v2(nums, target):
-    l, r = 0, len(nums)-1
+def two_sum_v2(nums: list[int], target: int) -> list[int] | None:
+    left, right = 0, len(nums) - 1
 
-    while l < r:
-        s = nums[l] + nums[r]
+    # It cannot be left <= right because we'll be adding the value against itself at the end
+    while left < right:
+        curr_sum = nums[left] + nums[right]
 
-        if s == target:
-            return [l + 1, r + 1]
-        elif s < target:
-            l += 1
+        if curr_sum == target:
+            return [left + 1, right + 1]
+        elif curr_sum < target:
+            left += 1
         else:
-            r -= 1
+            right -= 1
+
+print(two_sum_v2([2, 7, 11, 15], 9))
+print(two_sum_v2([2, 3, 4], 6))
+
+assert two_sum_v2([2, 7, 11, 15], 9) == [1, 2]
+assert two_sum_v2([2, 3, 4], 6) == [1, 3]

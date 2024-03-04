@@ -14,34 +14,16 @@ return [0, 1].
 '''
 
 
-def two_sum(A, target):
-    '''Time: O(n^2), Space: O(1)'''
+def two_sum_v1(nums: list[int], target: int) -> list | None:
+    '''Time: 0(n^2), Space: 0(1)'''
 
-    for i in range(len(A)-1):
-        for j in range(i+1, len(A)):
-            if A[i] + A[j] == target:
-                return True
+    n = len(nums)
 
-    return False
-
-
-def two_sum_v1(A, target):
-    '''Time: O(nlogn), Space: O(1)'''
-
-    A.sort()
-    left, right = 0, len(A) - 1
-
-    while left < right:
-        curr_sum = A[left] + A[right]
-
-        if curr_sum == target:
-            return True
-        elif curr_sum > target:
-            right -= 1
-        else:
-            left += 1
-
-    return False
+    for i in range(n):
+        for j in range(i + 1, n):
+            rem = target - nums[i]
+            if rem == nums[j]:
+                return [i, j]
 
 
 def two_sum_v2(nums: list, target: int) -> list | None:
@@ -58,5 +40,5 @@ def two_sum_v2(nums: list, target: int) -> list | None:
         seen[value] = key
 
 
-assert sorted(two_sum([2, 7, 11, 15], 9)) == sorted([0, 1])
-assert sorted(two_sum([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
+assert sorted(two_sum_v2([2, 7, 11, 15], 9)) == sorted([0, 1])
+assert sorted(two_sum_v2([2, 6, 11, 7, 15], 9)) == sorted([0, 3])
