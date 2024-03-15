@@ -25,6 +25,11 @@ Output: 3
 
 
 class Solution:
+    '''
+    Time Complexity O(V + E) -> Vertices -> Cell, Edges -> Directions
+    V = N * M, E = 4 * (N * M)
+    FINAL - N * M
+    '''
 
     def num_of_lands(self, grid) -> int:
         count = 0
@@ -51,7 +56,7 @@ class Solution:
 
         out_bounds = not self.is_valid_cell(grid, row, col)
         if out_bounds or grid[row][col] == '0':
-           	return
+            return
 
         grid[row][col] = '0'  # SINK
 

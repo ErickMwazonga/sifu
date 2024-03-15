@@ -17,18 +17,23 @@ Output: -1
 Explanation: In this case it is not possible to get a pair sum less that 15.
 '''
 
-
 def twoSumLessThanK(nums: list[int], target: int) -> int:
+    '''Time: O(nlogn), Space: O(1)'''
+
     nums.sort()
 
     ans = -1
-    i, j = 0, len(nums) - 1
-    while i < j:
-        curr_sum = nums[i] + nums[j]
+    left, right = 0, len(nums) - 1
+    while left < right:
+        curr_sum = nums[left] + nums[right]
         if curr_sum < target:
             ans = max(ans, curr_sum)
-            i += 1
+            left += 1
         else:
-            j -= 1
+            right -= 1
         
     return ans
+
+
+assert twoSumLessThanK([34, 23, 1, 24, 75, 33, 54, 8], 60) == 58
+assert twoSumLessThanK([10, 20, 30], 15) == -1
