@@ -33,6 +33,6 @@ def sumOfDigts_v4(n, acc=0):
     if n < 0:
         return sumOfDigits(-n)
     elif n < 10:
-        return n+acc
+        return n + acc
     else:
-        return sumOfDigits(n//10, acc+n % 10)
+        return sumOfDigits(n // 10, acc + n % 10)
