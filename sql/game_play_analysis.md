@@ -1,8 +1,8 @@
-## LeetCode 511. Game Play Analysis I
-Link: https://leetcode.com/problems/game-play-analysis-i/
+### 511. Game Play Analysis I
+https://leetcode.com/problems/game-play-analysis-i/
 
-Table: Activity
 ```
+Table: Activity
 +--------------+---------+
 | Column Name  | Type    |
 +--------------+---------+
@@ -11,7 +11,7 @@ Table: Activity
 | event_date   | date    |
 | games_played | int     |
 +--------------+---------+
-```
+
 (player_id, event_date) is the primary key of this table.
 This table shows the activity of players of some game.
 Each row is a record of a player who logged in and played a number of games (possibly 0)
@@ -21,7 +21,6 @@ Write an SQL query that reports the first login date for each player.
 The query result format is in the following example:
 
 Activity table:
-```
 +-----------+-----------+------------+--------------+
 | player_id | device_id | event_date | games_played |
 +-----------+-----------+------------+--------------+
@@ -40,9 +39,10 @@ Result table:
 | 2         | 2017-06-25  |
 | 3         | 2016-03-02  |
 +-----------+-------------+
-```
+
 Explanation
 Group by the player id and use the minimum event date value.
+```
 
 ### SQL Solution
 ```sql

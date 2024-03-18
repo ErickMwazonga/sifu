@@ -1,7 +1,7 @@
-'''
-197. Rising Temperature
+## 197. Rising Temperature
 https://leetcode.com/problems/rising-temperature/description/
 
+```
 Table: Weather
 +---------------+---------+
 | Column Name   | Type    |
@@ -40,7 +40,7 @@ Output:
 Explanation: 
 In 2015-01-02, the temperature was higher than the previous day (10 -> 25).
 In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
-'''
+```
 
 ```sql
 SELECT w1.id

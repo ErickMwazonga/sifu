@@ -1,7 +1,7 @@
-'''
-1148. Article Views I
+## 1. Article Views I
 https://leetcode.com/problems/article-views-i/description/
 
+```
 Table: Views
 +---------------+---------+
 | Column Name   | Type    |
@@ -40,11 +40,11 @@ Output:
 | 4    |
 | 7    |
 +------+
-'''
+```
 
 ### SQL Solution
 ```sql
 SELECT distinct(author_id) as id FROM Views
-    WHERE author_id = viewer_id
-    ORDER BY author_id;
+WHERE author_id = viewer_id
+ORDER BY author_id;
 ```

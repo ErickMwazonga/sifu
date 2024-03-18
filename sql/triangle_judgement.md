@@ -1,7 +1,7 @@
-'''
-610. Triangle Judgement
-Link - https://leetcode.com/problems/triangle-judgement/description/
+## 610. Triangle Judgement
+https://leetcode.com/problems/triangle-judgement/description/
 
+```
 Table: Triangle
 +-------------+------+
 | Column Name | Type |
@@ -12,7 +12,6 @@ Table: Triangle
 +-------------+------+
 In SQL, (x, y, z) is the primary key column for this table.
 Each row of this table contains the lengths of three line segments.
-
 
 Report for every three line segments whether they can form a triangle.
 Return the result table in any order.
@@ -41,7 +40,7 @@ We need to find whether the given three line segments can form a triangle.
 
 Triangle Inequality Theorem
 for a triangle to be formed, the sum of the lengths of any two sides must be greater than (or equal to) the length of the third side.
-'''
+```
 
 ### SQL Solution 1
 ```sql

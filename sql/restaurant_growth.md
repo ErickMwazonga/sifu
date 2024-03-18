@@ -1,10 +1,8 @@
-'''
 ## 1321. Restaurant Growth
-Link: https://leetcode.com/problems/restaurant-growth/
+https://leetcode.com/problems/restaurant-growth/
 
-
+```
 Table: Customer
-
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
@@ -60,4 +58,4 @@ Explanation:
 (120 + 130 + 110 + 140 + 150 + 80 + 110)/7 = 120
 4th moving average from 2019-01-04 to 2019-01-10 has an average_amount of
 (130 + 110 + 140 + 150 + 80 + 110 + 130 + 150)/7 = 142.86
-'''
+```
