@@ -1,20 +1,7 @@
 # SEEN
-1. LRU CACHE
-2. Shuffle Array
-3. Optimized Fib
-4. LCA
-5. Soduku Validator
-6. Phone Combinations
-7. IP validator
-8. Logger Rate Limiter
-9. Longest substring(non-repeating characters)
-10. Rotten tomatoes graph problem
-11. Spiral Matrix
-12. Palindrome String
-13. Reverse a Linked List.
-14. Traverse a binary tree in a zig zag manner
-15. LinkedList intersection
-16. Reverse array in place
-17. Design the tictoc game
-18. Anagram
-19. A stream of names(String), most repeated name
+1. [Blind 75](https://www.techinterviewhandbook.org/grind75) | [Leetcode Link](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
+2. [Best Practice Questions](https://www.techinterviewhandbook.org/best-practice-questions/)
+3. [Neetcode 150](https://neetcode.io/practice)
+4. [Leetcode Top 150](https://leetcode.com/studyplan/top-interview-150/)
+5. [Leetcode Top 100 Liked Questions](https://leetcode.com/problem-list/top-100-liked-questions/)
+6. [60 LeetCode problems to solve for coding interview](https://medium.com/@koheiarai94/60-leetcode-questions-to-prepare-for-coding-interview-8abbb6af589e)
