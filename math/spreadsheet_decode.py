@@ -2,8 +2,7 @@
 168. Excel Sheet Column Title
 Link: https://leetcode.com/problems/excel-sheet-column-title/
 
-Implement a function that converts an integer to the spreadsheet
-column ID.
+Implement a function that converts an integer to the spreadsheet column ID.
 
 Examples:
 1. 1 -> A
