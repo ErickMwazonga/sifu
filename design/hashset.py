@@ -6,9 +6,9 @@ Explanation: https://www.youtube.com/watch?v=VymjPQUXjL8
 Design a HashSet without using any built-in hash table libraries.
 Implement MyHashSet class:
 
-void add(key) Inserts the value key into the HashSet.
-bool contains(key) Returns whether the value key exists in the HashSet or not.
-void remove(key) Removes the value key in the HashSet. If key does not exist in the HashSet, do nothing.
+1. void add(key) Inserts the value key into the HashSet.
+2. bool contains(key) Returns whether the value key exists in the HashSet or not.
+3. void remove(key) Removes the value key in the HashSet. If key does not exist in the HashSet, do nothing.
 
 Example 1:
 Input
