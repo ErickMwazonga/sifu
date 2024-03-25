@@ -63,3 +63,26 @@ def removeNthFromEnd_v3(head, n):
 
     slow.next = slow.next.next
     return head
+
+class SolutionV4:
+    def removeNthFromEnd(self, head, n):
+        target = self.length(head) - n
+        if target == 0:
+            return head.next
+
+        curr, i = head, 0
+        while i < target - 1:
+            curr = curr.next
+            i += 1
+
+        curr.next = curr.next.next
+        return head
+
+    def length(self, head):
+        curr, N = head, 0 
+        while curr:
+            N += 1
+            curr = curr.next
+        return N
+
+

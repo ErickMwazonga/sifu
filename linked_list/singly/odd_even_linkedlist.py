@@ -21,11 +21,8 @@ class ListNode:
 
 
 def oddEvenList(head):
-    odd_head = ListNode(0)
-    odd = odd_head
-
-    even_head = ListNode(0)
-    even = even_head
+    odd_head = odd = ListNode(0)
+    even_head = even = ListNode(0)
 
     count = 1
     while head:
@@ -39,8 +36,9 @@ def oddEvenList(head):
         count += 1
         head = head.next
 
-    even.next = None
+    even.next = None # Terminate the end of even list
     odd.next = even_head.next
+    return odd_head.next
 
 
 def oddEvenList_v2(head):
@@ -54,9 +52,9 @@ def oddEvenList_v2(head):
         nxt_odd, nxt_even = odd.next.next, even.next.next
 
         odd.next = nxt_odd
-        odd = nxt_odd
-
         even.next = nxt_even
+
+        odd = nxt_odd
         even = nxt_even
 
     odd.next = even_head

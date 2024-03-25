@@ -7,7 +7,7 @@ Given the head of a singly linked list, reverse the list, and return the reverse
 
 
 def reverse(head):
-    '''Time-O(n), Space-O(1)'''
+    '''Time - O(n), Space - O(1)'''
 
     prev, curr = None, head
 
@@ -21,7 +21,7 @@ def reverse(head):
 
 
 def reverse_recursive(head):
-    '''Time-O(n), Space-O(n)'''
+    '''Time - O(n), Space - O(n)'''
 
     if not head or not head.next:
         return head

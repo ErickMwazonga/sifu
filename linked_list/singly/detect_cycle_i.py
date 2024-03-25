@@ -19,16 +19,16 @@ class Node:
 
 
 def detectCycle(head: Node) -> bool:
-    '''time - O(n), space - O(n)'''
+    '''Time - O(n), Space - O(n)'''
 
     curr = head
-    _hash = set()
+    seen = set()
 
     while curr:
-        if curr in _hash:
+        if curr in seen:
             return True
 
-        _hash.add(curr)
+        seen.add(curr)
         curr = curr.next
 
     return False

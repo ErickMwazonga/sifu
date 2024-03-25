@@ -19,28 +19,36 @@ class ListNode:
         self.next = None
 
 
-def reverseBetween(head, left: int, right: int):
+def reverseBetween_v1(head, left: int, right: int):
     dummy = ListNode(0, head)
+    prev, curr = dummy, head
 
-    leftprev, curr = dummy, head
+    # find reversal point
+    i = 1
+    while i < left:
+        prev = curr
+        curr = curr.next
+        i += 1
 
-    for _ in range(left-1):
-        leftprev, curr = curr, curr.next
+    before_reversal = prev
+    start_of_reversal = curr
 
-    prev = None
-    for _ in range(right - left + 1):
+    # reverse section
+    while i <= right:
         nxt = curr.next
         curr.next = prev
         prev = curr
-        # curr = nxt
-
-    leftprev.next.next = curr  # now 2's next is pointing to 5
-    leftprev.next = prev  # 1's next pointer is poiting to 4
+        curr = nxt
+        i += 1
+    
+    # calibrate
+    before_reversal.next = prev
+    start_of_reversal.next = curr
 
     return dummy.next
 
 
-def reverseBetween_v2(head, m, n):
+def reverseBetween_v2(head, left, right):
     '''
     1. https://www.youtube.com/watch?v=wk8-_M-2fzI&t=0s
     2. https://bit.ly/3ai2PdI
@@ -48,14 +56,14 @@ def reverseBetween_v2(head, m, n):
 
     dummy = ListNode(0, head)
 
-    # find the position
-    curr, prev = head, dummy
-    for _ in range(m-1):
+    # find the position before reversal
+    prev, curr = dummy, head
+    for _ in range(left - 1):
         curr = curr.next
         prev = prev.next
 
     # reverse
-    for _ in range(n-m):
+    for _ in range(right - left):
         temp = curr.next
         curr.next = temp.next
         temp.next = prev.next

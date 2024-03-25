@@ -4,6 +4,12 @@ Link: https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 Write a program to find the node at which the intersection of two singly linked lists begins.
 For example, the following two linked lists:
+
+INTUITION
+- Iterate the 2 lists with combination of each other until they meet because their lengths will be equal
+[4,1,8,4,5] + [5,6,1,8,4,5] -> [4,1,8,4,5,5,6,1,8,4,5] 
+[5,6,1,8,4,5] + [4,1,8,4,5] -> [5,6,1,8,4,5,4,1,8,4,5]
+[8, 4, 5] >> Will point to the same memory location
 '''
 
 
@@ -23,7 +29,6 @@ def getIntersectionNode(headA, headB):
     while headB:
         if headB in seen:
             return headB
-
         headB = headB.next
 
     return None
@@ -39,37 +44,35 @@ def getIntersectionNode(headA, headB):
         return None
 
     a, b = headA, headB
-
     while a != b:
         a = a.next if a else headB
         b = b.next if b else headA
 
     return a
 
-
 class Solution_V3:
-    def getLength(self, head):
-        length = 0
-        while head:
-            head = head.next
-            length += 1
-        return length
-
     def getIntersectionNode(self, headA, headB):
-        lenA = self.getLength(headA)
-        lenB = self.getLength(headB)
+        lenA = self.length(headA)
+        lenB = self.length(headB)
+        
+        # Find the longer and shorter lists
+        longer = headA if lenA > lenB else headB
+        shorter = headB if lenA > lenB else headA
+        
+        # Align the longer list to the same starting point as the shorter list
+        for _ in range(abs(lenA - lenB)):
+            longer = longer.next
+        
+        # Iterate through both lists until intersection is found
+        while shorter != longer:
+            shorter = shorter.next
+            longer = longer.next
+        
+        return shorter
 
-        # make A to be the longest by swapping
-        if lenB > lenA:
-            headA, headB = headB, headA
-            lenA, lenB = lenB, lenA
-
-        diff = lenA - lenB
-        while diff:
-            headA = headA.next
-            diff -= 1
-
-        while headA != headB:
-            headA, headB = headA.next, headB.next
-
-        return headA
+    def length(self, head: ListNode) -> int:
+        length, curr = 0, head
+        while curr:
+            length += 1
+            curr = curr.next
+        return length
