@@ -22,7 +22,6 @@ def max_profit(prices) -> int:
         return 0
 
     min_price, max_profit = prices[0], 0
-
     for price in prices[1:]:
         profit = price - min_price
         min_price = min(min_price, price)
@@ -32,8 +31,10 @@ def max_profit(prices) -> int:
 
 
 def maxProfit_v1(prices):
+    if len(prices) <= 1:
+        return 0
+    
     min_price, max_profit = prices[0], float('-inf')
-
     for price in prices:
         profit = price - min_price
         min_price = min(min_price, price)
@@ -51,12 +52,24 @@ def max_profit_v2(prices) -> int:
         return 0
 
     min_so_far, max_profit = prices[0], 0
-
     for price in enumerate(prices, 1):
         min_so_far = min(min_so_far, price)
         max_profit = max(max_profit, price - min_so_far)
 
     return max_profit
+
+def max_profit_v3(prices: list[int]) -> int:
+    '''Inspiration: https://www.youtube.com/watch?v=ioFPBdChabY'''
+
+    profit = 0
+    buy = prices[0]
+    for sell in prices[1:]:
+        if sell > buy:
+            profit = max(profit, sell - buy)
+        else:
+            buy = sell
+    
+    return profit
 
 
 assert max_profit([7, 1, 5, 3, 6, 4]) == 5

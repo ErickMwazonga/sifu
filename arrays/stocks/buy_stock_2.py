@@ -23,11 +23,7 @@ Explanation:
 def max_profit(prices) -> int:
     n = len(prices)
 
-    if n <= 1:
-        return 0
-
     max_profit = 0
-
     for i in range(1, n):
         prev_price = prices[i - 1]
 
