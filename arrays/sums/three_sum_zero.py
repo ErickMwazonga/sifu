@@ -22,6 +22,38 @@ Input: nums = [0, 0, 0]
 Output: [[0, 0, 0]]
 '''
 
+from typing import List
+
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+
+        result, length = set(), len(nums)
+        for i, num in enumerate(nums):
+            remaining_target = 0 - num
+            two_sum_result = self.find_two_sum(nums, remaining_target, i + 1, length - 1)
+
+            three_sum_result = [[num] + two_sum for two_sum in two_sum_result]
+            for triplet in three_sum_result:
+                result.add(tuple(triplet))
+
+        return [list(triplet) for triplet in result]
+
+    def find_two_sum(self, nums: List[int], target: int, left: int, right: int) -> List:
+        result = []
+        while left < right:
+            current_sum = nums[left] + nums[right]
+            # there could be other comninations that add upto the raget
+            if current_sum == target: 
+                result.append([nums[left], nums[right]])
+                left, right = left + 1, right - 1
+            elif current_sum < target:
+                left += 1
+            else:
+                right -= 1
+        return result
+
+
 
 def three_sum_v1(nums: list[int]) -> list[list[int]]:
     nums.sort()

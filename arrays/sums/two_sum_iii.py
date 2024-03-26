@@ -13,7 +13,7 @@ Implement the TwoSum class:
 
 Example 1:
 Input
-["TwoSum", "add", "add", "add", "find", "find"]
+['TwoSum', 'add', 'add', 'add', 'find', 'find']
 [[], [1], [3], [5], [4], [7]]
 Output
 [null, null, null, null, true, false]
@@ -21,8 +21,8 @@ Output
 Explanation
 TwoSum twoSum = new TwoSum();
 twoSum.add(1);   // [] --> [1]
-twoSum.add(3);   // [1] --> [1,3]
-twoSum.add(5);   // [1,3] --> [1,3,5]
+twoSum.add(3);   // [1] --> [1, 3]
+twoSum.add(5);   // [1, 3] --> [1, 3, 5]
 twoSum.find(4);  // 1 + 3 = 4, return true
 twoSum.find(7);  // No two integers sum up to 7, return false
 '''
@@ -52,4 +52,24 @@ class TwoSum:
                 if num != complement or count > 1:
                     return True
     
+        return False
+    
+    def find_v2(self, value: int) -> bool:
+        if self.two_sum(self.map.keys(), value):
+            return True
+
+        #  if a number and itself add upto the target value
+        for k, v in self.map.items():
+            if k + k == value and v > 1:
+                return True
+        
+        return False
+    
+    def two_sum(self, nums: list[int], target: int) -> bool:
+        seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return True
+            seen[num] = i
         return False

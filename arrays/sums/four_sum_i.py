@@ -39,3 +39,55 @@ def fourSum(nums: list[int], target: int) -> list[list[int]]:
                     j, k = j + 1, k - 1
                     
     return list(quadruplets)
+
+class Solution_V2:
+    def fourSum(self, nums: list[int], target: int) -> list[list[int]]:
+        nums.sort()
+        res = set()
+
+        self.ksum(nums, res, [], 4, 0, target)
+        return [list(tup) for tup in res]
+
+
+    def ksum(self, nums, res, curr, k, start, target):
+        if k == 2:
+            left, right = start, len(nums) - 1
+            while left < right:
+                curr_sum = nums[left] + nums[right]
+                if  curr_sum == target:
+                    res.add(tuple(curr + [nums[left], nums[right]]))
+                    left, right = left + 1, right - 1
+                elif curr_sum < target:
+                    left += 1
+                else:
+                    right -= 1
+        else:
+            for i in range(start, len(nums) - k + 1):
+                self.ksum(nums, res, curr + [nums[i]], k - 1, i + 1, target - nums[i])
+
+
+class Solution_V3:
+    def fourSum(self, nums: list[int], target: int) -> list[list[int]]:
+        nums.sort()
+        res = set()
+        self.ksum(nums, res, [], 4, 0, target)
+        return [list(tup) for tup in res]
+
+    def ksum(self, nums, res, curr, k, start, target):
+        if k == 2:
+            self.two_sum(nums, res, curr, start, target)
+        else:
+            for i in range(start, len(nums) - k + 1):
+                self.ksum(nums, res, curr + [nums[i]], k - 1, i + 1, target - nums[i])
+
+    def two_sum(self, nums, res, curr, start, target):
+        left, right = start, len(nums) - 1
+        while left < right:
+            curr_sum = nums[left] + nums[right]
+            if curr_sum == target:
+                res.add(tuple(curr + [nums[left], nums[right]]))
+                left, right = left + 1, right - 1
+            elif curr_sum < target:
+                left += 1
+            else:
+                right -= 1

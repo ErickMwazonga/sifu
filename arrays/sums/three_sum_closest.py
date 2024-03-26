@@ -41,3 +41,26 @@ def threeSumClosest(nums: list[int], target: int) -> int:
                 right -= 1
 
     return res
+
+def threeSumClosest_v2(nums: list[int], target: int) -> int:
+    nums.sort()
+    smallest = [float('inf'), float('inf')] # diff, sum
+
+    for i, num in enumerate(nums):
+        left, right = i + 1, len(nums) - 1
+
+        while left < right:
+            curr_sum = num + nums[left] + nums[right]
+
+            diff = abs(target - curr_sum)
+            if diff < smallest[0]:
+                smallest = [diff, curr_sum]
+
+            if curr_sum == target:
+                return curr_sum
+            elif curr_sum > target:
+                right -= 1
+            else:
+                left += 1
+
+    return smallest[1]

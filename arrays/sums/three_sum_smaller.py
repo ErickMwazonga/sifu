@@ -42,3 +42,5 @@ def threeSumSmaller(nums: list[int], target: int) -> int:
 
 
 assert len(threeSumSmaller([-2, 0, 1, 3], 2)) == 2
+assert len(threeSumSmaller([], 0)) == 0
+assert len(threeSumSmaller([0], 0)) == 0
