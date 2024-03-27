@@ -19,45 +19,26 @@ graph = {
 hasPath(graph, 'f', 'k') # True
 '''
 
+from collections import deque
 
 class DFS:
-    def hasPath(self, graph, src, dest):
-        '''
-        n = number of nodes, e = number edges
-        Time: O(e), Space: O(n)
-        '''
 
-        if src == dest:
+    def hasPath(graph, source, dest, visited):
+        if source == dest:
             return True
-
-        for neighbor in graph[src]:
-            if self.hasPath(graph, neighbor, dest):
-                return True
-
+        
+        visited.add(source)
+        for neighbor in graph[source]:
+            if neighbor not in visited:
+                if dfs(neighbor, neighbor, dest, visited):
+                    return True
         return False
+
 
     def check_path(self, graph, src, dest):
-        # cannot pass boolean to a recursive function - NOTEs
-        has_path = [False]
-        self.hasPath_v2(graph, src, dest, has_path)
+        visited = set()
+        return self.hasPath_v2(graph, src, dest, visited)
 
-        return has_path[0]
-
-    def hasPath_v2(self, graph, src, dest, has_path):
-        print(src, dest, src == dest)
-
-        if src == dest:
-            print('EXECUTED')
-            has_path[0] = True
-            return
-
-        if not graph[src]:
-            return
-
-        for neighbor in graph[src]:
-            self.hasPath_v2(graph, neighbor, dest, has_path)
-
-        return False
 
 
 class BFS:
@@ -66,20 +47,19 @@ class BFS:
         n = number of nodes, e = number edges
         Time: O(e), Space: O(n)
         '''
-
-        queue = [src]
-
-        while len(queue):
-            current = queue.pop(0)
-
-            if current == dest:
+        visited = set()
+        queue = deque([src])
+        
+        while queue:
+            curr = queue.popleft()
+            if curr == dest:
                 return True
-
-            for neighbor in graph[current]:
-                queue.push(neighbor)
-
+            
+            visited.add(curr)
+            for child in graph.get(curr, []):
+                if child not in visited:
+                    queue.append(child)
         return False
-
 
 graph = {
     'f': ['g', 'i'],

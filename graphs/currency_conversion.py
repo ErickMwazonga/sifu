@@ -23,13 +23,47 @@ Find the rate for the 'To/From' curency. In this case, the correct result is 1.8
     'AUD': [('USD', 0.69)], 
     'GBP': [('JPY', 142.86)]
 }
-
-
 '''
-from collections import defaultdict
+
+from collections import defaultdict, deque
+
+class CurrencyConverter_DFS:
+
+    def build_graph(self, rates):
+        graph = defaultdict(list)
+        for rate in rates:
+            from_currency, to_currency, value = rate
+            graph[from_currency].append((to_currency, value))
+            graph[to_currency].append((from_currency, 1 / value))
+        return graph
+
+    def calculate_conversion_rates(self, rates, from_currency, to_currency):
+        # Build graph
+        graph = self.build_graph(rates)
+            
+        # Perform DFS for each query
+        visited = set()
+        rate = self.dfs(graph, from_currency, to_currency, 1.0, visited)
+        return rate
+        
+    def dfs(self, graph, start, end, rate, visited):
+        # if no path to destination is found
+        if start not in graph or start in visited:
+            return -1.0
+        if start == end:
+            return rate
+        
+        visited.add(start)
+        neighbors = graph[start]
+        for neighbor, neighbor_value in neighbors:
+            rate = self.dfs(graph, neighbor, end, rate * neighbor_value, visited)
+            if rate != -1.0:
+                return rate
+        return -1.0
 
 
-class CurrencyConverter:
+
+class CurrencyConverter_BFS:
 
     def create_adjacency_list(self, rates):
         adjacency_list = defaultdict(list)
@@ -41,45 +75,31 @@ class CurrencyConverter:
             adjacency_list[_from].append((to, 1 / _rate))
 
         return adjacency_list
+    
+    def get_conversion(self, rates, to, _from):
+        graph = self.create_adjacency_list(rates)
 
-    def get_conversion(self, rates, queries):
-        '''BFS'''
+        queue = deque([(_from, 1)])
+        visited = set([_from])
 
-        output = []
-        adjacency_list = self.create_adjacency_list(rates)
+        if to not in graph or _from not in graph:
+            return -1
 
-        for query in queries:
-            to, _from = query
+        while queue:
+            curr_node, curr_multiplier = queue.popleft()
 
-            queue = [(to, 1)]
-            visited = set([to])
-            found = False
+            if curr_node == _from:
+                return curr_multiplier
 
-            if (to not in adjacency_list) and (_from not in adjacency_list):
-                output.append(-1)
-                continue
+            for neighbor, multiplier in graph[curr_node]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append((neighbor, multiplier * curr_multiplier))
 
-            while queue:
-                curr_node, curr_multiplier = queue.pop(0)
-
-                if curr_node == _from:
-                    output.append(round(curr_multiplier, 2))
-                    found = True
-                    break
-
-                for neighbour, multiplier in adjacency_list[curr_node]:
-                    if neighbour not in visited:
-                        visited.add(neighbour)
-                        queue.append((neighbour, multiplier * curr_multiplier))
-
-            if not found:
-                output.append(-1)
-
-        return output
+        return -1
 
 
 rates = [['USD', 'JPY', 110], ['USD', 'AUD', 1.45], ['JPY', 'GBP', 0.0070]]
-queries = [['GBP', 'AUD']]
 
-currency_converter = CurrencyConverter()
-assert currency_converter.get_conversion(rates, queries) == [1.88]
+currency_converter = CurrencyConverter_DFS()
+assert currency_converter.get_conversion(rates, 'GBP', 'AUD') == [1.88]
