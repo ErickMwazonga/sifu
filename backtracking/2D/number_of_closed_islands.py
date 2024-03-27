@@ -1,6 +1,6 @@
 '''
 1254. Number of Closed Islands
-https://leetcode.com/problems/number-of-closed-islands/description/
+https://leetcode.com/problems/number-of-closed-islands/
 
 Given a 2D grid consists of 0s (land) and 1s (water).
 An island is a maximal 4-directionally connected group of 0s and
@@ -40,6 +40,8 @@ Output: 2
 INTUITION:
     IF WE ARE OUT OF THE BOUNDARIES -> ABSOLUTELY FALSE
 '''
+
+from typing import List
 
 class Solution:
     def closedIsland(self, grid: List[List[int]]) -> int:
