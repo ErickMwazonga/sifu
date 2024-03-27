@@ -8,22 +8,22 @@ is possible to reach this board position during the course of a valid tic-tac-to
 The board is a 3 x 3 array that consists of characters ' ', 'X', and 'O'. The ' ' character represents an empty square.
 
 Here are the rules of Tic-Tac-Toe:
-Players take turns placing characters into empty squares ' '.
-The first player always places 'X' characters, while the second player always places 'O' characters.
-'X' and 'O' characters are always placed into empty squares, never filled ones.
-The game ends when there are three of the same (non-empty) character filling any row, column, or diagonal.
-The game also ends if all squares are non-empty.
-No more moves can be played if the game is over.
+1. Players take turns placing characters into empty squares ' '.
+2. The first player always places 'X' characters, while the second player always places 'O' characters.
+3. 'X' and 'O' characters are always placed into empty squares, never filled ones.
+4. The game ends when there are three of the same (non-empty) character filling any row, column, or diagonal.
+5. The game also ends if all squares are non-empty.
+6. No more moves can be played if the game is over.
 
 
 Examples:
-1. ["O  ","   ","   "] -> false
-    Explanation: The first player always plays "X".
+1. ['O'  ','   ','   '] -> false
+    Explanation: The first player always plays 'X'.
 
-2. ["XOX"," X ","   "] -> false
+2. ['XOX', ' X ', '   '] -> false
     Explanation: Players take turns making moves.
 
-3. ["XOX","O O","XOX"] -> true
+3. ['XOX', 'O O', 'XOX'] -> true
 '''
 
 from functools import reduce
