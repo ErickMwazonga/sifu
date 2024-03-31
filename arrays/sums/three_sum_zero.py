@@ -1,5 +1,5 @@
 '''
-15. 3Sum -> 0
+15. 3Sum Zero
 Link: https://leetcode.com/problems/3sum/
 
 Are there elements a, b, c in nums such that a + b + c = 0?
@@ -27,11 +27,34 @@ from typing import List
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
+        result = set()
 
-        result, length = set(), len(nums)
         for i, num in enumerate(nums):
             remaining_target = 0 - num
-            two_sum_result = self.find_two_sum(nums, remaining_target, i + 1, length - 1)
+            left, right = i + 1, len(nums) - 1
+
+            while left < right:
+                curr_sum = nums[left] + nums[right]
+                if curr_sum == remaining_target:
+                    # a hashset can only have immutable keys 
+                    # hence adding tuple not list -> TypeError: unhashable type: 'list'
+                    result.add((num, nums[left], nums[right]))
+                    left, right = left + 1, right - 1
+                elif curr_sum < remaining_target:
+                    left += 1
+                else:
+                    right -= 1
+
+        return [list(triplet) for triplet in result] # list(map(list, res))
+
+class Solution_V2:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        result, N = set(), len(nums)
+
+        for i, num in enumerate(nums):
+            remaining_target = 0 - num
+            two_sum_result = self.find_two_sum(nums, remaining_target, i + 1, N - 1)
 
             three_sum_result = [[num] + two_sum for two_sum in two_sum_result]
             for triplet in three_sum_result:
@@ -53,29 +76,6 @@ class Solution:
                 right -= 1
         return result
 
-
-
-def three_sum_v1(nums: list[int]) -> list[list[int]]:
-    nums.sort()
-    n, res, target = len(nums), set(), 0
-
-    for i in range(n):
-        low, high = i + 1, n - 1
-        rem_target = target - nums[i]
-
-        while low < high:
-            curr_sum = nums[low] + nums[high]
-
-            if curr_sum == rem_target:
-                # list cannot be a set elem coz it's mutable -> TypeError: unhashable type: 'list'
-                res.add((nums[i], nums[low], nums[high]))
-                low, high = low + 1, high - 1
-            elif curr_sum < rem_target:
-                low += 1
-            else:
-                high -= 1
-
-    return list(map(list, res))
 
 def three_sum_v2(nums: list[int]) -> list[list[int]]:
     nums.sort()

@@ -34,12 +34,12 @@ class Solution:
         if i < n and s[i] == '0':
             return 0
 
-        if i >= n-1:
+        if i >= n - 1:
             return 1
 
         ans = self.dfs(s, i+1)
         if int(s[i:i+2]) <= 26:
-            ans += self.dfs(s, i+2)
+            ans += self.dfs(s, i + 2)
 
         return ans
 

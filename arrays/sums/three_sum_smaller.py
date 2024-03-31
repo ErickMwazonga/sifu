@@ -1,5 +1,6 @@
 '''
 259 - 3Sum Smaller
+https://leetcode.com/problems/3sum-smaller/
 
 Given an array of n integers nums and an integer target, 
 find the number of index triplets i, j, k with 0 <= i < j < k < n 

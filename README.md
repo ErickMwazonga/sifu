@@ -60,27 +60,28 @@ _Examples_<br/>
 ### Curated DSA Websites
 
 1. https://goodtecher.com/
-2. https://github.com/iverson52000/DataStructure_Algorithm
-3. https://github.com/jiselectric/Algorithm
-4. https://github.com/kdn251/interviews/tree/master/leetcode
-5. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
-6. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
-7. https://zhaonanli.gitbooks.io/leetcode/content
-8. https://techlarry.github.io/Leetcode/202.%20Happy%20Number/
-9. https://adit0503.gitbook.io/leetcode/200.-number-of-islands
-10. https://maxming0.github.io/
-11. https://linlaw0229.github.io/
-12. https://velog.io/@jiselectric/Leetcode-Powx-n
-13. https://mrleonhuang.gitbooks.io/lintcode/content
-14. https://leetcode.xnerv.wang/zigzag-conversion/
-15. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
-16. https://somjang.tistory.com/entry/leetCode-729-My-Calendar-I-Python?category=351755
-17. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/
-18. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
-19. https://youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
-20. https://walkccc.me/LeetCode/problems/0009/
-21. https://czxttkl.com/category/leetcode/
-22. https://hercy.me/
+2. https://aaronice.gitbook.io/lintcode
+3. https://github.com/iverson52000/DataStructure_Algorithm
+4. https://github.com/jiselectric/Algorithm
+5. https://github.com/kdn251/interviews/tree/master/leetcode
+6. https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Summary/leetcode%20Notes.pdf
+7. https://github.com/jwasham/code-catalog-python/blob/master/catalog/suggested/
+8. https://zhaonanli.gitbooks.io/leetcode/content
+9. https://techlarry.github.io/Leetcode/202.%20Happy%20Number/
+10. https://adit0503.gitbook.io/leetcode/200.-number-of-islands
+11. https://maxming0.github.io/
+12. https://linlaw0229.github.io/
+13. https://velog.io/@jiselectric/Leetcode-Powx-n
+14. https://mrleonhuang.gitbooks.io/lintcode/content
+15. https://leetcode.xnerv.wang/zigzag-conversion/
+16. https://leetcode.com/discuss/general-discussion/494279/comprehensive-data-structure-and-algorithm-study-guide
+17. https://somjang.tistory.com/entry/leetCode-729-My-Calendar-I-Python?category=351755
+18. https://quanticdev.com/algorithms/dynamic-programming/sliding-window/
+19. https://igotanoffer.com/blogs/tech/google-software-engineer-interview
+20. https://youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
+21. https://walkccc.me/LeetCode/problems/0009/
+22. https://czxttkl.com/category/leetcode/
+23. https://hercy.me/
 
 ## 75 Curated Questions
 

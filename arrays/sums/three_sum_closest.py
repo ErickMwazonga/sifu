@@ -22,7 +22,7 @@ Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
 
 def threeSumClosest(nums: list[int], target: int) -> int:
     nums.sort()
-    N, res = len(nums), float('inf')
+    N, closest = len(nums), float('inf')
 
     for i in range(N):
         left, right = i + 1, N - 1
@@ -30,8 +30,8 @@ def threeSumClosest(nums: list[int], target: int) -> int:
         while left < right:
             curr_sum = nums[i] + nums[left] + nums[right]
 
-            if abs(curr_sum - target) < abs(res - target):
-                res = curr_sum
+            if abs(curr_sum - target) < abs(closest - target):
+                closest = curr_sum
 
             if curr_sum == target:
                 return curr_sum
@@ -40,7 +40,7 @@ def threeSumClosest(nums: list[int], target: int) -> int:
             else:
                 right -= 1
 
-    return res
+    return closest
 
 def threeSumClosest_v2(nums: list[int], target: int) -> int:
     nums.sort()
