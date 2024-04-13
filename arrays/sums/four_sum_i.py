@@ -23,20 +23,19 @@ def fourSum(nums: list[int], target: int) -> list[list[int]]:
     nums.sort()
     n, quadruplets = len(nums), set()
 
-    for l in range(n):
-        for i in range(l + 1, n):
-            j = i + 1
-            k = n - 1
+    for i in range(n):
+        for j in range(i + 1, n):
+            left, right = j + 1, n - 1
 
-            while j < k:
-                curr_sum = nums[j] + nums[k] + nums[l] + nums[i]
-                if curr_sum < target:
-                    j += 1 
-                elif curr_sum > target:
-                    k -= 1
-                elif curr_sum == target:
-                    quadruplets.add((nums[l], nums[i], nums[j], nums[k]))
-                    j, k = j + 1, k - 1
+            while left < right:
+                curr_sum = nums[i] + nums[j] + nums[left] + nums[right]
+                if curr_sum == target:
+                    quadruplets.add((nums[i], nums[j], nums[left], nums[right]))
+                    left, right = left + 1, right - 1
+                elif curr_sum < target:
+                    left += 1 
+                else:
+                    right -= 1
                     
     return list(quadruplets)
 

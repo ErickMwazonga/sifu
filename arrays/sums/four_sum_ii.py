@@ -2,7 +2,8 @@
 454. 4Sum II
 https://leetcode.com/problems/4sum-ii/
 
-Given four integer arrays nums1, nums2, nums3, and nums4 all of length n, return the number of tuples (i, j, k, l) such that:
+Given four integer arrays nums1, nums2, nums3, and nums4 all of length n,
+return the number of tuples (i, j, k, l) such that:
     1. 0 <= i, j, k, l < n
     2. nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0
     
@@ -24,7 +25,9 @@ from typing import List
 
 
 class Solution:
-    def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:
+    def fourSumCount(
+        self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]
+    ) -> int:
         # Store the sum of pairs from nums1 and nums2 in a hashmap
         sum_map = defaultdict(int)
         for num1 in nums1:
