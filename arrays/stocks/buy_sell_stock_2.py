@@ -9,18 +9,19 @@ Design an algorithm to find the maximum profit.
 You may complete as many transactions as you like
 (i.e., buy one and sell one share of the stock multiple times).
 
-Note: You may not engage in multiple transactions at the same time 
+Note: You may not engage in multiple transactions at the same time
 (i.e., you must sell the stock before you buy again).
 
 Example:
 Input: [7, 1, 5, 3, 6, 4] -> 7
-Explanation: 
+Explanation:
     Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
     Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
 '''
 
+
 class Solution:
-    def maxProfit(self, prices: list[int]) -> int:
+    def max_profit(self, prices: list[int]) -> int:
         return self.calculate(prices, 0, False, {})
 
     def calculate(self, prices: list[int], idx: int, has_share: bool, memo: dict) -> int:
@@ -47,6 +48,18 @@ class Solution:
 
         memo[(idx, has_share)] = res
         return res
+
+
+class Solution_V2:
+
+    def max_profit(self, prices) -> int:
+        max_profit = 0
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i - 1]:
+                profit = prices[i] - prices[i - 1]
+                max_profit += profit
+
+        return max_profit
 
 
 soln = Solution()
