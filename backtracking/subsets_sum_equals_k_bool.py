@@ -1,5 +1,5 @@
 '''
-Given a set of positive integers and an integer s, 
+Given a set of positive integers and an integer s,
 is there any non-empty subset whose sum to s.
 '''
 
@@ -13,13 +13,13 @@ def subset_sum(A, n, sum):
     if n < 0 or sum < 0:
         return False
 
-    include = subset_sum(A, n - 1, sum - A[n])  # Case 1. include
-    exclude = subset_sum(A, n - 1, sum)   # Case 2. exclude
+    include = subset_sum(A, n - 1, sum - A[n])
+    exclude = subset_sum(A, n - 1, sum)
 
     return include or exclude
 
 
-def subset_sum_v2(A, n, sum, lookup):
+def subset_sum_v2(A, n, sum, memo):
     if sum == 0:
         return True
 
@@ -27,12 +27,11 @@ def subset_sum_v2(A, n, sum, lookup):
         return False
 
     key = (n, sum)
-    if key in lookup:
-        return lookup[key]
+    if key in memo:
+        return memo[key]
 
-    include = subset_sum_v2(A, n - 1, sum - A[n], lookup)  # Case 1. include
-    exclude = subset_sum_v2(A, n - 1, sum, lookup)  # Case 2. exclude
+    include = subset_sum_v2(A, n - 1, sum - A[n], memo)
+    exclude = subset_sum_v2(A, n - 1, sum, memo)
 
-    lookup[key] = include or exclude
-
-    return lookup[key]
+    memo[key] = include or exclude
+    return memo[key]

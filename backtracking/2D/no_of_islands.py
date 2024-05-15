@@ -27,8 +27,8 @@ Output: 3
 class Solution:
     '''
     Time Complexity O(V + E) -> Vertices -> Cell, Edges -> Directions
-    V = N * M, E = 4 * (N * M)
-    FINAL - N * M
+    V = N * M, E = 4 * (N * M) -> N * M
+    Space = O(N * M) -> Recursive call stack
     '''
 
     def num_of_lands(self, grid) -> int:

@@ -10,54 +10,55 @@ Examples:
 2. [0] -> [[], [0]]
 '''
 
-
 class Solution:
-    '''Time: O(n*2^n)'''
+    '''
+    https://www.youtube.com/watch?v=REOH22Xwdkk&list=PLot-Xpze53lf5C3HSjCnyFghlW0G1HHXo&index=4
+    Time Complexity: O(2^N)
+    Space Complexity: O(2^N)
+    '''
 
     def subsets(self, nums):
-        res, subset = [], []
-        self.dfs(nums, res, 0, subset)
+        res = []
+        self.dfs(nums, res, subset = [], i = 0)
         return res
 
-    def dfs(self, nums, res, index, subset):
-        res.append(subset)
+    def dfs(self, nums, res, subset, i):
+        if i >= len(nums):
+            res.append(subset[:])
+            return
 
-        for i in range(index, len(nums)):
-            self.dfs(nums, res, i+1, subset+[nums[i]])
+        # Include i
+        self.dfs(nums, res, subset + [nums[i]], i + 1)
+
+        # Exclude i
+        self.dfs(nums, res, subset, i + 1)
 
 
 class Solution_V1:
     '''Time: O(n*2^n)'''
 
     def subsets(self, nums):
-        res, subset = [], []
-        self.dfs(nums, res, subset)
+        res = []
+        self.dfs(nums, res, index=0, subset=[])
+        return res
 
+    def dfs(self, nums, res, index, subset):
+        res.append(subset)
+
+        for i in range(index, len(nums)):
+            self.dfs(nums, res, i + 1, subset + [nums[i]])
+
+
+class Solution_V2:
+    '''Time: O(n*2^n)'''
+
+    def subsets(self, nums):
+        res = []
+        self.dfs(nums, res, subset=[])
         return res
 
     def dfs(self, nums, res, subset):
         res.append(subset)
 
         for i in range(len(nums)):
-            self.dfs(nums[i+1:], res, subset+[nums[i]])
-
-
-class Solution_V2:
-    '''https://www.youtube.com/watch?v=REOH22Xwdkk&list=PLot-Xpze53lf5C3HSjCnyFghlW0G1HHXo&index=4'''
-
-    def subsets(self, nums):
-        res, subset = [], []
-        self.dfs(nums, subset, res, 0)
-
-        return res
-
-    def dfs(self, nums, subset, res, i):
-        if i >= len(nums):
-            res.append(subset[:])
-            return
-
-        # Include i
-        self.dfs(nums, subset + [nums[i]], res, i + 1)
-
-        # Exclude i
-        self.dfs(nums, subset, res, i + 1)
+            self.dfs(nums[i+1:], res, subset + [nums[i]])

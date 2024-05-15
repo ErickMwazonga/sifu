@@ -19,12 +19,13 @@ def subsetsThatSumUpToK(arr, k, i=0, _sum=0):
 
     if _sum == k:
         return 1
-    elif _sum > k or i >= len(arr):
+
+    if _sum > k or i >= len(arr):
         return 0
-    else:
-        include = subsetsThatSumUpToK(arr, k, i+1, _sum + arr[i])
-        exclude = subsetsThatSumUpToK(arr, k, i+1, _sum)
-        return include + exclude
+
+    include = subsetsThatSumUpToK(arr, k, i+1, _sum + arr[i])
+    exclude = subsetsThatSumUpToK(arr, k, i+1, _sum)
+    return include + exclude
 
 
 def subsetsThatSumUpToK_v2(arr, k):

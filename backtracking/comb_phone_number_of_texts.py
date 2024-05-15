@@ -31,6 +31,7 @@ Explanation:
 There are 2082876103 possible text messages Alice could have sent.
 Since we need to return the answer modulo 109 + 7, we return 2082876103 % (109 + 7) = 82876089.
 '''
+
 from typing import List
 
 
@@ -38,14 +39,14 @@ class Solution:
     def countTexts(self, pressedKeys: str) -> int:
         memo = [0] * len(pressedKeys)
         return self.dfs(pressedKeys, memo, 0)
-    
+
     def dfs(self, pressedKeys: str, memo: List[int], index: int) -> int:
         if index == len(pressedKeys):
             return 1
-        
+
         if memo[index] != 0:
             return memo[index]
-        
+
         count = 0
         for i in range(4):
             if pressedKeys[index] not in ['7', '9'] and i == 3:
@@ -54,9 +55,9 @@ class Solution:
                 break
             if i != 0 and pressedKeys[index + i] != pressedKeys[index + i - 1]:
                 break
-                
+
             count += self.dfs(pressedKeys, memo, index + i + 1)
             count %= 1000000007
-        
+
         memo[index] = count
         return count
