@@ -19,7 +19,7 @@ def fibonacci(n):
 def fibonacci_memo(n: int) -> int:
     '''Time - O(n), Space - O(n)'''
 
-    memo: Dict[int: int] = {0: 0, 1: 1}
+    memo: Dict[int, int] = {0: 0, 1: 1}
 
     if n not in memo:
         memo[n] = memo[n-1] + memo[n-2]  # memoization
@@ -32,8 +32,8 @@ def fib_memoized(n, memo={0: 0, 1: 1}):
 
     if n in memo:
         return memo[n]
-    
-    memo[n] = fib_memoized[n-1, memo] + fib_memoized[n-2, memo]
+
+    memo[n] = fib_memoized(n-1, memo) + fib_memoized(n-2, memo)
     return memo[n]
 
 

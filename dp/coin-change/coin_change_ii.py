@@ -23,25 +23,23 @@ Explanation: there are four ways to make up the amount:
 
 class Solution:
     def change(self, amount, coins):
-        return self.dfs(coins, amount, i=0, dp={})
+        return self.dfs(coins, amount, i=0, memo={})
 
-    def dfs(self, coins, amount, i, dp):
+    def dfs(self, coins, amount, i, memo):
         if amount == 0:
             return 1
 
         if amount < 0 or i == len(coins):
             return 0
 
-        if (i, amount) in dp:
-            return dp[(i, amount)]
+        if (i, amount) in memo:
+            return memo[(i, amount)]
 
-        include = self.dfs(coins, amount - coins[i], i, dp)
-        exclude = self.dfs(coins, amount, i + 1, dp)
+        include = self.dfs(coins, amount - coins[i], i, memo)
+        exclude = self.dfs(coins, amount, i + 1, memo)
 
-        res = include + exclude
-        dp[(i, amount)] = res
-
-        return res
+        memo[(i, amount)] = include + exclude
+        return memo[(i, amount)]
 
 
 class Solution_V2:
@@ -65,7 +63,5 @@ class Solution_V2:
         include = self.dfs(amount, coins, i, target + coins[i], cache)
         exclude = self.dfs(amount, coins, i + 1,  target, cache)
 
-        res = include + exclude
-        cache[(i, target)] = res
-
-        return res
+        cache[(i, target)] = include + exclude
+        return cache[(i, target)]

@@ -27,8 +27,7 @@ or by getting to the 2nd step and going up by two. So f(4) = f(3) + f(2).
 To generalize, f(n) = f(n - 1) + f(n - 2). That's just the Fibonacci sequence!
 '''
 
-
-class Solution:
+class Solution_DP:
 
     def climb_stairs(self, n):
         '''Time: O(2^n), Space: O(n)'''
@@ -40,6 +39,27 @@ class Solution:
         two_step = self.climb_stairs(n - 2)
 
         return one_step + two_step
+
+    def climbStairs_dp(self, n: int, memo: dict = {}) -> int:
+        '''Time: O(n), Space: O(n)'''
+
+        if n < 0:
+            return 0
+
+        if n == 0:
+            return 1
+
+        if n in memo:
+            return memo[n]
+
+        take_1_step = self.climbStairs_dp(n - 1)
+        take_2_steps = self.climbStairs_dp(n - 2)
+
+        memo[n] = take_1_step + take_2_steps
+        return memo[n]
+
+
+class Solution_Iterative:
 
     def climb_stairs_v2(self, n):
         '''Time: O(n), Space: O(1)'''
@@ -57,6 +77,8 @@ class Solution:
             ways.append(distinct_ways)
 
         return ways[n - 1]
+
+class Solution_Bottom_UP:
 
     def fib(self, n):
         dp = [0] * n
