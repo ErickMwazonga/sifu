@@ -23,7 +23,7 @@ class SolutionV2:
             return memo[idx]
 
         # take
-        take = self.dp(tags, idx + 1, memo) + tags[idx]
+        take = tags[idx] + self.dp(tags, idx + 1, memo)
 
         # leave
         leave = self.dp(tags, idx + 1, memo)

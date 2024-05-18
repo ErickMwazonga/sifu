@@ -3,7 +3,8 @@
 Link: https://leetcode.com/problems/minimum-cost-for-tickets/
 Resource: https://www.youtube.com/watch?v=4pY1bsBpIY4&list=PLot-Xpze53lcvx_tjrr_m2lgD2NsRHlNO&index=3
 
-You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array days. Each day is an integer from 1 to 365.
+You have planned some train traveling one year in advance.
+The days of the year in which you will travel are given as an integer array days. Each day is an integer from 1 to 365.
 
 Train tickets are sold in three different ways:
 a 1-day pass is sold for costs[0] dollars,
@@ -23,3 +24,36 @@ On day 3, you bought a 7-day pass for costs[1] = $7, which covered days 3, 4, ..
 On day 20, you bought a 1-day pass for costs[0] = $2, which covered day 20.
 In total, you spent $11 and covered all the days of your travel.
 '''
+
+
+class Solution:
+    _MAX = float('inf')
+
+    def mincostTickets(self, days: list[int], costs: list[int]) -> int | float:
+        costs = list(zip([1, 7, 30], costs))
+        return self.backtrack(days, costs, 0, 0, {})
+
+    def backtrack(self, days, costs, i, upto_day, memo) -> int | float:
+        if i >= len(days):
+            return 0
+
+        if (i, upto_day) in memo:
+            return memo[(i, upto_day)]
+
+        if days[i] <= upto_day:
+            return self.backtrack(days, costs, i + 1, upto_day, memo)
+
+        min_cost = self._MAX
+        for choice, cost in costs:
+            j = i
+
+            while j < len(days) and days[j] < days[i] + choice:
+                j += 1
+
+            min_cost = min(
+                min_cost,
+                cost + self.backtrack(days, costs, j, days[j - 1], memo)
+            )
+
+        memo[(i, upto_day)] = min_cost
+        return min_cost

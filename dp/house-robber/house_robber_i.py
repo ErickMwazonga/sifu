@@ -3,14 +3,11 @@
 Link: https://leetcode.com/problems/house-robber/
 
 You are a professional robber planning to rob houses along a street.
-Each house has a certain amount of money stashed,
-the only constraint stopping you from robbing each of them
-is that adjacent houses have security system connected and 
-it will automatically contact the police if two adjacent
+Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them
+is that adjacent houses have security system connected and it will automatically contact the police if two adjacent
 houses were broken into on the same night.
 
-Given a list of non-negative integers representing the
-amount of money of each house, determine the maximum amount
+Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount
 of money you can rob tonight without alerting the police.
 
 Examples
@@ -19,60 +16,71 @@ Examples
 '''
 
 
-def rob(nums):
-    for i in range(1, len(nums)):
-        if i == 1:
-            nums[i] = max(nums[i], nums[i-1])
-        else:
-            rob = nums[i] + nums[i-2]
-            dont_rob = nums[i-1]
-            nums[i] = max(rob, dont_rob)
+class Solution:
+    '''PASSES'''
 
-    return nums[-1]
+    def rob(self, nums: list[int]) -> int:
+        return self.backtrack(nums, 0, {})
 
+    def backtrack(self, nums: list[int], i: int, memo: dict) -> int:
+        if i >= len(nums):
+            return 0
 
-def rob_v1(nums):
-    rob, no_rob = 0, 0
+        if i in memo:
+            return memo[i]
 
-    for num in nums:
-        rob_value = max(rob, no_rob + num)
-        no_rob = rob
-        rob = rob_value
+        rob = nums[i] + self.backtrack(nums, i + 2, memo)
+        skip = self.backtrack(nums, i + 1, memo)
 
-    return rob
+        memo[i] = max(rob, skip)
+        return memo[i]
 
 
-def rob_v2(nums):
-    rob, not_rob = 0, 0
+class SolutionV2:
+    '''FAILS'''
 
-    for num in nums:
-        rob, not_rob = not_rob + num, max(rob, not_rob)
+    def rob(self, nums: list[int]) -> int:
+        return self.backtrack(nums, 0, 0, {})
 
-    return max(rob, not_rob)
+    def backtrack(self, nums: list[int], total: int, i: int, memo: dict) -> int:
+        if i >= len(nums):
+            return total
 
+        if i in memo:
+            return memo[i]
 
-def rob_v3(nums: list[int]) -> int:
-    '''Time: O(n), Space: O(n)'''
+        rob = self.backtrack(nums, total + nums[i], i + 2, memo)
+        skip = self.backtrack(nums, total, i + 1, memo)
 
-    if not nums:
-        return 0
-
-    n = len(nums)
-    if n <= 2:
-        return max(nums)
-
-    dp = [0] * n
-    dp[0] = nums[0]
-    dp[1] = max(nums[0], nums[1])
-
-    for i in range(2, n):
-        # The max if we rob it or not
-        rob = nums[i] + dp[i-2]
-        dont_rob = dp[i-1]
-        dp[i] = max(rob, dont_rob)
-
-    return dp[-1]
+        memo[i] = max(rob, skip)
+        return memo[i]
 
 
-assert rob([1, 2, 3, 1]) == 4
-assert rob([2, 7, 9, 3, 1]) == 12
+
+class SolutionV3:
+    def rob_v3(self, nums: list[int]) -> int:
+        '''Time: O(n), Space: O(n)'''
+
+        if not nums:
+            return 0
+
+        n = len(nums)
+        if n <= 2:
+            return max(nums)
+
+        dp = [0] * n
+        dp[0] = nums[0]
+        dp[1] = max(nums[0], nums[1])
+
+        for i in range(2, n):
+            # The max if we rob it or not
+            rob = nums[i] + dp[i-2]
+            dont_rob = dp[i-1]
+            dp[i] = max(rob, dont_rob)
+
+        return dp[-1]
+
+
+soln = Solution()
+assert soln.rob([1, 2, 3, 1]) == 4
+assert soln.rob([2, 7, 9, 3, 1]) == 12
