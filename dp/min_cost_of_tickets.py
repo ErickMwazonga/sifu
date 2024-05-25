@@ -31,28 +31,24 @@ class Solution:
 
     def mincostTickets(self, days: list[int], costs: list[int]) -> int | float:
         costs = list(zip([1, 7, 30], costs))
-        return self.backtrack(days, costs, 0, 0, {})
+        return self.backtrack(days, costs, 0, {}, 0)
 
-    def backtrack(self, days, costs, i, upto_day, memo) -> int | float:
+    def backtrack(self, days, costs, i, memo, upto_day)  -> int | float:
         if i >= len(days):
             return 0
 
         if (i, upto_day) in memo:
             return memo[(i, upto_day)]
 
-        if days[i] <= upto_day:
-            return self.backtrack(days, costs, i + 1, upto_day, memo)
-
         min_cost = self._MAX
         for choice, cost in costs:
             j = i
-
             while j < len(days) and days[j] < days[i] + choice:
                 j += 1
 
             min_cost = min(
                 min_cost,
-                cost + self.backtrack(days, costs, j, days[j - 1], memo)
+                cost + self.backtrack(days, costs, j, memo, days[j - 1])
             )
 
         memo[(i, upto_day)] = min_cost
