@@ -11,22 +11,29 @@ Examples:
 '''
 
 
-def sortedSquares(A):
+
+def sortedSquares(nums: list[int]) -> list[int]:
+    '''Time - O(NlogN)'''
+
+    return sorted(map(lambda x: x ** 2, nums))
+
+
+def sortedSquares_v2( nums: list[int]) -> list[int]:
+    '''Time - O(N)'''
+
     res = []
+    left, right = 0, len(nums) - 1
 
-    i, j = 0, len(A) - 1
-
-    while i <= j:
-        if abs(A[i]) > abs(A[j]):
-            _sq = A[i] ** 2
-            res.insert(0, _sq)
-            i += 1
+    while left <= right:
+        if abs(nums[left]) > abs(nums[right]):
+            res.append(nums[left] ** 2)
+            left += 1
         else:
-            _sq = A[j] ** 2
-            res.insert(0, _sq)
-            j -= 1
+            res.append(nums[right] ** 2)
+            right -= 1
 
-    return res
+    return res[::-1]
+
 
 
 assert sortedSquares([-4, -1, 0, 3, 10]) == [0, 1, 9, 16, 100]
