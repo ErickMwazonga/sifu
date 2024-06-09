@@ -48,68 +48,53 @@ class Solution:
 
         val = board[row][col]
         board[row][col] = '#'  # visit node and it's neighbors
+        # visited = set()
 
         # check whether can find 'word' along one direction
-        up = self.dfs(board, row+1, col, word, word_index+1)
-        down = self.dfs(board, row-1, col, word, word_index+1)
-        left = self.dfs(board, row, col+1, word, word_index+1)
-        right = self.dfs(board, row, col-1, word, word_index+1)
+        checks = []
+        for dx, dy in self.directions:
+            check = self.dfs(board, row + dx, col + dy, word, word_index + 1)
+            checks.append(check)
 
-        found = up or down or left or right
+        found = any(checks)
 
         board[row][col] = val  # unvisit
+        # visited.remove((row, col))  # reset visited
         return found
+
+    @property
+    def directions(self):
+        return [(-1, 0), (1, 0), (0, 1), (0, -1)]
 
 
 class Solution_V2:
-    '''Time: O(n * m * 4^n)'''
-
-    def exist(self, board, word) -> bool:
-        if not board:
+    def exist(self, board: list[list[str]], word: str) -> bool:
+        if not word:
             return False
 
-        rows, cols = len(board), len(board[0])
-        visited = set()
-
-        for row in range(rows):
-            for col in range(cols):
-                if self.dfs(board, row, col, word, 0, visited):
+        n, m = len(board), len(board[0])
+        for row in range(n):
+            for col in range(m):
+                if self.dfs(board, word, 0, row, col):
                     return True
 
         return False
 
-    def dfs(self, board, row, col, word, word_index, visited):
-        if word_index == len(word):
+    def dfs(self, board, word, index, x, y):
+        n, m = len(board), len(board[0])
+        if index == len(word):
             return True
 
-        n, m = len(board), len(board[0])
-        outside = row < 0 or row >= n or col < 0 or col >= m
-        if outside or word[word_index] != board[row][col]:
+        if not(0 <= x < n) or not(0 <= y < m) or board[x][y] != word[index]:
             return False
 
-        if (row, col) in visited:
-            return False
+        val = board[x][y]
+        board[x][y] = '#'
 
-        # visit node and it's neighbors
-        visited.add((row, col))
-        up = self.dfs(board, row+1, col, word, word_index+1, visited)
-        down = self.dfs(board, row-1, col, word, word_index+1, visited)
-        left = self.dfs(board, row, col+1, word, word_index+1, visited)
-        right = self.dfs(board, row, col-1, word, word_index+1, visited)
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        for dx, dy in directions:
+            if self.dfs(board, word, index + 1, x + dx, y + dy):
+                return True
 
-        found = up or down or left or right
-
-        visited.remove((row, col))  # reset visited
-        return found
-
-
-board = [
-    ['A', 'B', 'C', 'E'],
-    ['S', 'F', 'C', 'S'],
-    ['A', 'D', 'E', 'E']
-]
-
-soln = Solution()
-assert soln.exist(board, 'ABCCED') == True
-assert soln.exist(board, 'SEE') == True
-assert soln.exist(board, 'ABCB') == False
+        board[x][y] = val
+        return False

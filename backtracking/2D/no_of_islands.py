@@ -60,38 +60,5 @@ class Solution:
 
         grid[row][col] = '0'  # SINK
 
-        self.dfs(grid, row, col + 1)
-        self.dfs(grid, row, col - 1)
-        self.dfs(grid, row + 1, col)
-        self.dfs(grid, row - 1, col)
-
-    def dfs_v2(self, grid, row, col):
-        '''SINK ISLAND'''
-
-        out_of_bounds = not self.is_valid_cell(grid, row, col)
-        if out_of_bounds or grid[row][col] == '0':
-            return
-
-        grid[row][col] = '0'  # SINK
-
         for dx, dy in self.directions:
             self.dfs(grid, row + dx, col + dy)
-
-
-soln = Solution()
-
-grid1 = [
-    ['1', '1', '1', '1', '0'],
-    ['1', '1', '0', '1', '0'],
-    ['1', '1', '0', '0', '0'],
-    ['0', '0', '0', '0', '0']
-]
-assert soln.num_of_lands(grid1) == 1
-
-grid2 = [
-    ['1', '1', '0', '0', '0'],
-    ['1', '1', '0', '0', '0'],
-    ['0', '0', '1', '0', '0'],
-    ['0', '0', '0', '1', '1']
-]
-assert soln.num_of_lands(grid2) == 3

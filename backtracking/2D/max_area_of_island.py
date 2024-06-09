@@ -51,22 +51,6 @@ class Solution:
         if out_bounds or grid[row][col] == 0:
             return 0
 
-        area = 1
-        grid[row][col] = 0  # SINK
-
-        right = self.dfs(grid, row, col + 1)
-        left = self.dfs(grid, row, col - 1)
-        down = self.dfs(grid, row + 1, col)
-        up = self.dfs(grid, row - 1, col)
-
-        return area + up + down + left + right
-		# return 1 + area + up + down + left + right
-
-    def dfs_v2(self, grid, row, col):
-        out_bounds = not self.is_valid_cell(grid, row, col)
-        if out_bounds or grid[row][col] == 0:
-            return 0
-
         grid[row][col] = 0  # SINK
 
         area = 1
@@ -74,18 +58,3 @@ class Solution:
             area += self.dfs(grid, row + dx, col + dy)
 
         return area
-
-
-matrix = [
-    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-    [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
-    [0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
-]
-
-soln = Solution()
-assert soln.max_area_of_island(matrix) == 6

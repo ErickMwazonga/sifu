@@ -39,18 +39,16 @@ class Solution:
 
         return len(distinct_paths)
 
-    @property
-    def directions(self):
-        return [(-1, 0, 'U'), (1, 0, 'D'), (0, 1, 'R'), (0, -1, 'L')]
 
     def is_valid_cell(self, grid, row, col):
         n, m = len(grid), len(grid[0])
         return (0 <= row < n) and (0 <= col < m)
 
+    @property
+    def directions(self):
+        return [(-1, 0, 'U'), (1, 0, 'D'), (0, 1, 'R'), (0, -1, 'L')]
 
     def compute_path(self, grid, i, j, direction):
-        n, m = len(grid), len(grid[0])
-
         out_bounds = not self.is_valid_cell(grid, i, j)
         if out_bounds or grid[i][j] == 0:
             return 'O'
@@ -65,8 +63,6 @@ class Solution:
         return direction + left + right + up + down
 
     def compute_path_v2(self, grid, i, j, direction):
-        n, m = len(grid), len(grid[0])
-
         out_bounds = not self.is_valid_cell(grid, i, j)
         if out_bounds or grid[i][j] == 0:
             return 'O'
@@ -78,22 +74,3 @@ class Solution:
             path += self.compute_path(grid, i + dx, j + dy, dir_char)
 
         return direction + path
-
-
-input1 = [
-    [1, 1, 0, 0, 0],
-    [1, 1, 0, 0, 0],
-    [0, 0, 0, 1, 1],
-    [0, 0, 0, 1, 1]
-]
-
-input2 = [
-    [1, 1, 0, 1, 1],
-    [1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1],
-    [1, 1, 0, 1, 1]
-]
-
-soln = Solution()
-assert soln.num_distinct_islands(input1) == 1
-assert soln.num_distinct_islands(input2) == 3

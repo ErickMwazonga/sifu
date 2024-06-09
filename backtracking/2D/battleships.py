@@ -33,8 +33,6 @@ class Solution:
         return _count
 
     def dfs(self, board, row, col):
-        n, m = len(board), len(board[0])
-
         if not self.in_bounds(board, row, col):
             return
 
@@ -42,20 +40,6 @@ class Solution:
             return
 
         board[row][col] = '#' # sink
-
-        self.dfs(board, row + 1,col)
-        self.dfs(board, row - 1, col)
-        self.dfs(board, row, col + 1)
-        self.dfs(board, row, col - 1)
-
-    def dfs_v2(self, board, row, col):
-        if not self.in_bounds(board, row, col):
-            return
-
-        if board[row][col] != 'X':
-            return
-
-        board[row][col] = '#'
 
         for dx, dy in self.directions:
             self.dfs(board, row + dx, col + dy)

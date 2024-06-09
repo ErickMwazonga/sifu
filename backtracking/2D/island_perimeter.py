@@ -16,13 +16,9 @@ Input: grid = [[0,1,0,0], [1,1,1,0], [0,1,0,0], [1,1,0,0]]
 Output: 16
 Explanation: The perimeter is the 16 yellow stripes in the image above.
 
-Example 2:
-Input: grid = [[1]]
-Output: 4
-
-Example 3:
-Input: grid = [[1, 0]]
-Output: 4
+More Examples:
+1. [[1]] -> 4
+2. [[1, 0]] -> 4
 '''
 
 
@@ -59,7 +55,6 @@ class Solution:
         grid[row][col] = '#'
         curr_count = 0
         for dx, dy in self.directions:
-            x, y = row + dx, col + dy
-            curr_count += self.dfs(grid, x, y)
+            curr_count += self.dfs(grid, row + dx, col + dy)
 
         return curr_count

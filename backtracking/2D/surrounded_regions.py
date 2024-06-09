@@ -58,10 +58,9 @@ class Solution:
 
         board[i][j] = '#'  # SURROUND
 
-        self.dfs(board, i + 1, j)
-        self.dfs(board, i - 1, j)
-        self.dfs(board, i, j + 1)
-        self.dfs(board, i, j - 1)
+        directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+        for dx, dy in directions:
+            self.dfs(board, i + dx, j + dy)
 
 
 class Solution2:

@@ -20,6 +20,8 @@ INF  -1 INF  -1             1  -1   2  -1
   0  -1 INF INF             0  -1   3   4
 '''
 
+from collections import deque
+
 
 class Solution_DFS:
     '''DFS - Time: O(NM)^2, Space: O(NM)'''
@@ -59,3 +61,21 @@ class Solution_DFS:
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
         for dx, dy in directions:
             self.dfs(rooms, i + dx, j + dy, dist + 1)
+
+
+class Solution_BFS(object):
+    def wallsAndGates(self, rooms):
+        queue = deque([])
+        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        for i in range(0, len(rooms)):
+            for j in range(0, len(rooms[0])):
+                if rooms[i][j] == 0:
+                    queue.append((i, j))
+
+        while queue:
+            i, j = queue.popleft()
+            for di, dj in directions:
+                p, q = i + di, j + dj
+                if 0 <= p < len(rooms) and 0 <= q < len(rooms[0]) and rooms[p][q] == float('inf'):
+                    rooms[p][q] = rooms[i][j] + 1
+                    queue.append((p, q))

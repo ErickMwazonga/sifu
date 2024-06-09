@@ -39,44 +39,21 @@ class Solution:
         return output
 
     def check(self, matrix, i, j):
-        n, m = len(matrix), len(matrix[i])
-        out_bounds = i < 0 or i >= n or j < 0 or j >= m
-
-        if out_bounds or matrix[i][j] == 0:
+        if not self.in_bounds(matrix, i, j) or matrix[i][j] == 0:
             return 0
 
-        matrix[i][j] = 0  # SINK
+        matrix[i][j] = 0  # SINK/VISIT
+        size = 1
 
-        top = self.check(matrix, i - 1, j)
-        down = self.check(matrix, i + 1, j)
-        left = self.check(matrix, i, j - 1)
-        right = self.check(matrix, i, j + 1)
+        for dx, dy in self.directions:
+            size += self.check(matrix, i + dx, j + dy)
 
-        return 1 + top + down + left + right
+        return size
 
-    def check_v2(self, matrix, i, j):
-         n, m = len(matrix), len(matrix[i])
-         out_bounds = i < 0 or i >= n or j < 0 or j >= m
-         if out_bounds or matrix[i][j] == 0:
-             return 0
+    @property
+    def directions(self):
+        return [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
-         matrix[i][j] = 0  # SINK
-         size = 1
-
-         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
-         for dx, dy in directions:
-             size += self.check(matrix, i + dx, j + dy)
-
-         return size
-
-
-input = [
-    [1, 0, 0, 1, 0],
-    [1, 0, 1, 0, 0],
-    [0, 0, 1, 0, 1],
-    [1, 0, 1, 0, 1],
-    [1, 0, 1, 1, 0]
-]
-
-soln = Solution()
-assert sorted(soln.river_sizes(input)) == [1, 2, 2, 2, 5]
+    def in_bounds(self, grid, x, y):
+        n, m = len(grid), len(grid[0])
+        return (0 <= x < n) and (0 <= y < m)

@@ -1,6 +1,6 @@
 '''
 733. Flood Fill
-https://leetcode.com/problems/flood-fill/description/
+https://leetcode.com/problems/flood-fill/
 
 An image is represented by an m x n integer grid image where image[i][j] represents the pixel value of the image.
 
@@ -34,17 +34,17 @@ class Solution:
         self.dfs(image, sr, sc, start_color, color)
         return image
 
-    def dfs(self, image, sr, sc, start_color, color):
+    def dfs(self, image, sr, sc, start_color, new_color):
         if not self.in_bounds(image, sr, sc):
             return
 
-        if image[sr][sc] == color: return
+        if image[sr][sc] == new_color: return
         if image[sr][sc] != start_color: return
 
-        image[sr][sc] = color
+        image[sr][sc] = new_color
 
         for dx, dy in self.directions:
-            self.dfs(image, sr + dx, sc + dy, start_color, color)
+            self.dfs(image, sr + dx, sc + dy, start_color, new_color)
 
     @property
     def directions(self):

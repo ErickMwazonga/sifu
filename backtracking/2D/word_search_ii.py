@@ -80,9 +80,8 @@ class Solution:
             return
 
         board[i][j] = '#'  # visit
-        self.dfs(board, node, i+1, j, path+val, res)
-        self.dfs(board, node, i-1, j, path+val, res)
-        self.dfs(board, node, i, j-1, path+val, res)
-        self.dfs(board, node, i, j+1, path+val, res)
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        for dx, dy in directions:
+            self.dfs(board, node, i + dx, j + dy, path + val, res)
 
         board[i][j] = val  # unvisit

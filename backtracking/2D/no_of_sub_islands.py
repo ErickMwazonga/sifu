@@ -16,9 +16,9 @@ Matrix = list[list[int]]
 
 class Solution:
     '''
-    IDEA:
-    👉 firstly remove all the non-common island
-    👉 Now count the sub-islands
+    INTUITION:
+    STEP 1. Remove all the non-common island
+    STEP 2. Now count the sub-islands
     '''
 
     def countSubIslands(self, grid1: Matrix, grid2: Matrix) -> int:
@@ -32,10 +32,6 @@ class Solution:
 
         remaining_sub_islands = self.count_islands(grid2)
         return remaining_sub_islands
-
-    def is_cell_outside(self, grid, row, col):
-        n, m = len(grid), len(grid[0])
-        return row < 0 or row >= n or col < 0 or col >= m
 
     def count_islands(self, grid):
         n, m = len(grid), len(grid[0])
@@ -56,7 +52,11 @@ class Solution:
         if grid[row][col] == 0:
             return
 
-        grid[row][col] = 0  # VISITED/SINK
+        grid[row][col] = 0  # VISIT/SINK
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
         for dx, dy in directions:
             self.sink_island(grid, row + dx, col + dy)
+
+    def is_cell_outside(self, grid, row, col):
+        n, m = len(grid), len(grid[0])
+        return row < 0 or row >= n or col < 0 or col >= m
