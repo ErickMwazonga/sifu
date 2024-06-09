@@ -32,6 +32,53 @@ MATRIX = list[list[int]]
 
 
 class Solution:
+    '''
+    Explanation: https://youtu.be/x-dYOtIudzc?list=PLKYEe2WisBTH7I9sCPjSZCs-iBAH4ybmS
+    INTUITION: divmod(total_no_of_cells, no_of_cols) == row, col
+    '''
+
+    def searchMatrix(self, matrix, target: int):
+        n, m = len(matrix), len(matrix[0])
+        total_cells = n * m
+        low, high = 0, total_cells - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+            row, col = divmod(mid, m)
+
+            mid_val = matrix[row][col]
+            if mid_val == target:
+                return True
+            elif mid_val < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return False
+
+
+class Solution_V1:
+
+    def searchMatrix(matrix: list[list[int]], target: int) -> bool:
+        '''Time - N * M -> flattening the matrix'''
+
+        nums = sum(matrix, []) # flatten matrix
+        low, high = 0, len(nums) - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            if nums[mid] == target:
+                return True
+            elif nums[mid] > target:
+                high = mid - 1 
+            else:
+                low = mid + 1 
+
+        return False
+
+class Solution_V2:
+    '''Time - log(M) + log(N)'''
 
     def searchMatrix(self, matrix: MATRIX, target: int):
         row = self.get_row(matrix, target)
@@ -52,8 +99,7 @@ class Solution:
             mid_row_index = (low + high) // 2
 
             if matrix[mid_row_index][0] <= target <= matrix[mid_row_index][-1]:
-                row = mid_row_index
-                break
+                return mid_row_index
             elif target > matrix[mid_row_index][-1]:
                 low = mid_row_index + 1
             else:
@@ -62,7 +108,7 @@ class Solution:
         return row
 
 
-class Solution_V2:
+class Solution_V3:
 
     def search_matrix(self, matrix: MATRIX, target: int) -> bool:
         n_rows, n_cols = len(matrix), len(matrix[0])

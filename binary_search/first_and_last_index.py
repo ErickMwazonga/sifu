@@ -42,7 +42,7 @@ def search_range_v2(A, target):
         if A[i] == target:
             start = i
 
-            while i+1 < n and arr[i+1] == target:
+            while i+1 < n and A[i+1] == target:
                 i += 1
             return [start, i]
 
@@ -109,8 +109,3 @@ class Solution:
                 low = mid + 1
 
         return position
-
-
-soln = Solution()
-arr, target = [1, 4, 7, 8, 11, 11, 11, 11, 11, 13], 11
-assert soln.search_range(arr, target) == [4, 8]

@@ -18,23 +18,29 @@ Input: piles = [30, 11, 23, 4, 20], h = 5
 Output: 30
 '''
 
+import math
 
-def minEatingSpeed(piles: list[int], H: int) -> int:
-    l, r = 1, max(piles)
-    k = 0
+class Solution:
+    '''Time: O(n * log(max(piles)))'''
 
-    while l <= r:
-        m = (l + r) // 2
+    def minEatingSpeed(self, piles: list[int], H: int) -> int:
+        l, r = 1, max(piles)
+        k = 0
 
+        while l <= r:
+            m = (l + r) // 2
+
+            if self.k_works(piles, m, H):
+                k = m
+                r = m - 1
+            else:
+                l = m + 1
+
+        return k
+    
+    def k_works(self, piles, k, H):
         totalTime = 0
         for p in piles:
-            totalTime += ((p-1) // m) + 1
-            # totalTime += math.ceil(p / k)
+            totalTime += math.ceil(p / k)
 
-        if totalTime <= H:
-            k = m
-            r = m - 1
-        else:
-            l = m + 1
-
-    return k
+        return totalTime <= H

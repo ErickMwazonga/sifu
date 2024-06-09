@@ -1,6 +1,6 @@
 '''
-35. Search Insert Position - 
-Problem - Link: https://leetcode.com/problems/search-insert-position/
+35. Search Insert Position
+Link: https://leetcode.com/problems/search-insert-position/
 
 Given a sorted array of distinct integers and a target value, 
 return the index if the target is found. If not, 
@@ -20,13 +20,28 @@ Output: 4
 def search_insert(nums: list[int], target: int) -> int:
     '''Intuition - Just find the lowest than target'''
 
-    low, high = 0, len(nums)
+    low, high = 0, len(nums) - 1
 
-    while low < high:
+    while low <= high:
         mid = low + (high - low) // 2
 
         if nums[mid] >= target:
             high = mid
+        else:
+            low = mid + 1
+
+    return low
+
+def search_insert_v2(nums: list[int], target: int) -> int:
+    low, high = 0, len(nums) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] > target:
+            high = mid - 1
         else:
             low = mid + 1
 

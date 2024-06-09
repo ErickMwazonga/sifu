@@ -1,5 +1,5 @@
 '''
-153 Find the Minimum Element in a Sorted and Rotated Array
+153. Find the Minimum Element in a Sorted and Rotated Array
 Link: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 
 Given an array which is sorted in ascending order is
@@ -13,17 +13,24 @@ Examples
 '''
 
 
-def findMin(A: list[int]) -> int:
-    mini = A[0]
-
-    for i in range(1, len(A)):
-        mini = min(mini, A[i])
-
-    return mini
-
-
 def findMin_v2(A: list[int]) -> int:
-    '''BEST SOLUTION -> Time: O(logn)'''
+    '''Explanation -> https://www.youtube.com/watch?v=H2U24n4bcQQ'''
+    
+    left, right = 0, len(A) - 1
+
+    while left < right:
+        mid = (left + right) // 2
+
+        if A[mid] > A[right]:
+            left = mid + 1
+        else:
+            right = mid
+
+    return A[left]
+
+
+def findMin_v3(A: list[int]) -> int:
+    '''Time: O(logn)'''
 
     left, right = 0, len(A) - 1
 
@@ -35,20 +42,6 @@ def findMin_v2(A: list[int]) -> int:
         elif A[mid-1] > A[mid]:
             return A[mid]
         elif A[mid] > A[right]:
-            left = mid + 1
-        else:
-            right = mid
-
-    return A[left]
-
-
-def findMin_v3(A: list[int]) -> int:
-    left, right = 0, len(A) - 1
-
-    while left < right:
-        mid = (left + right) // 2
-
-        if A[mid] > A[right]:
             left = mid + 1
         else:
             right = mid
@@ -74,6 +67,3 @@ def findMin_v4(A: list[int]) -> int:
 
     return A[left]
 
-
-assert findMin([6, 7, 8, 1, 2]) == 1
-assert findMin([8, 9, 10, 1, 0, 1, 2]) == 0

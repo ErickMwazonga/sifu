@@ -24,15 +24,16 @@ def linear_search(data: list[int], target: int) -> bool:
     return False
 
 
-def binary_search(arr: list[int], x: int) -> int:
+def binary_search(arr: list[int], target: int) -> int:
     low, high = 0, len(arr) - 1
 
     while low <= high:
-        mid = low + (high - low) // 2  # To prevent overflow
+        mid = (low + high) // 2
+        # mid = low + (high - low) // 2  # To prevent overflow
 
-        if x == arr[mid]:
+        if target == arr[mid]:
             return mid
-        elif x > arr[mid]:
+        elif target > arr[mid]:
             low = mid + 1
         else:
             high = mid - 1

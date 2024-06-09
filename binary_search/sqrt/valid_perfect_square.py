@@ -13,7 +13,7 @@ Examples:
 
 
 def isPerfectSquare(num):
-    '''O(sqrt(n))'''
+    '''Time: O(sqrt(n))'''
 
     for i in range(1, num + 1):
         if i * i == num:

@@ -23,7 +23,7 @@ Then 4 is the first bad version.
 '''
 
 
-def is_bad_version(n):
+def isBadVersion(n):
     pass
 
 
@@ -31,24 +31,37 @@ def first_bad_version(n):
     low, high = 0, n
 
     while low < high:
-        mid = low + (high - low) // 2
+        mid = (low + high) // 2
 
-        if is_bad_version(mid):
+        if isBadVersion(mid):
             high = mid
         else:
             low = mid + 1
 
     return low
 
+def first_bad_version_v2(n: int) -> int:
+    low, high = 0, n - 1
 
-def first_bad_version_v2(n):
+    while low <= high:
+        mid = (low + high) // 2
+
+        if isBadVersion(mid):
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return high + 1
+
+
+def first_bad_version_v3(n):
     low, high = 0, n
     bad = 1
 
     while low < high:
-        mid = low + (high - low) // 2
+        mid = (low + high) // 2
 
-        if is_bad_version(mid):
+        if isBadVersion(mid):
             high = mid
             bad = mid
         else:
