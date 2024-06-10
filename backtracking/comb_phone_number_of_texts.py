@@ -23,8 +23,8 @@ Explanation:
 The possible text messages Alice could have sent are:
 "aaadd", "abdd", "badd", "cdd", "aaae", "abe", "bae", and "ce".
 Since there are 8 possible messages, we return 8.
-Example 2:
 
+Example 2:
 Input: pressedKeys = "222222222222222222222222222222222222"
 Output: 82876089
 Explanation:

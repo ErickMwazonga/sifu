@@ -3,7 +3,6 @@ Walls and Gates
 Link: https://leetcode.com/problems/walls-and-gates
 Resource: https://www.youtube.com/watch?v=e69C6xhiSQE
 
-
 You are given a m x n 2D grid initialized with these three possible values.
 -1 - A wall or an obstacle.
 0 - A gate.
@@ -63,10 +62,13 @@ class Solution_DFS:
             self.dfs(rooms, i + dx, j + dy, dist + 1)
 
 
-class Solution_BFS(object):
+class Solution_BFS:
+    @property
+    def directions(self):
+        return [(0, -1), (0, 1), (-1, 0), (1, 0)]
+    
     def wallsAndGates(self, rooms):
         queue = deque([])
-        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
         for i in range(0, len(rooms)):
             for j in range(0, len(rooms[0])):
                 if rooms[i][j] == 0:
@@ -74,8 +76,9 @@ class Solution_BFS(object):
 
         while queue:
             i, j = queue.popleft()
-            for di, dj in directions:
-                p, q = i + di, j + dj
-                if 0 <= p < len(rooms) and 0 <= q < len(rooms[0]) and rooms[p][q] == float('inf'):
-                    rooms[p][q] = rooms[i][j] + 1
-                    queue.append((p, q))
+            for di, dj in self.directions:
+                x, y = i + di, j + dj
+                inbounds = 0 <= x < len(rooms) and 0 <= y < len(rooms[0])
+                if inbounds and rooms[x][y] == float('inf'):
+                    rooms[x][y] = rooms[i][j] + 1
+                    queue.append((x, y))

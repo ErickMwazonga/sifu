@@ -22,9 +22,6 @@ class Solution:
     '''
 
     def letterCombinations(self, digits):
-        if not digits:
-            return []
-
         res = []
         self.dfs(digits, res, comb='', i=0)
         return res
