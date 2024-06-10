@@ -6,8 +6,8 @@ Array may contain duplicate values and negative numbers.
 
 Example 1:
 Input: [1, 2, 4, 5, 6, 6, 8, 9], Target = 11
-Output: 9
-    9 is closest to 11 in given array
+Output: 9 
+    Explanation: 9 is closest to 11 in given array
 
 Example 2: 
 Input: [2, 5, 6, 7, 8, 8, 9], Target = 4
@@ -26,7 +26,7 @@ def closestNumber(A: list[int], target: int) -> int:
     low, high = 0, len(A) - 1
 
     while low + 1 < high:
-        mid = low + (high - low) // 2
+        mid = (low + high) // 2
 
         if A[mid] <= target:
             low = mid
@@ -36,10 +36,7 @@ def closestNumber(A: list[int], target: int) -> int:
     left = abs(A[low] - target)
     right = abs(A[high] - target)
 
-    if left <= right:
-        return low
-
-    return high
+    return low if left <= right else high
 
 
 assert closestNumber([1, 2, 4, 5, 6, 6, 8, 9], 11) == 9

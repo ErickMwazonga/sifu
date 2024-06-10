@@ -9,6 +9,7 @@ and only the integer part of the result is returned.
 Write a function that takes a non-negative integer and returns
 the largest integer whose square is less than or equal to
 the integer given.
+
 Example:
     Assume input is integer 300.
     Then the expected output of the function should be

@@ -12,3 +12,7 @@
 3. [35. Search Insert Position](./search_insert_position.py)
 4. [74. Search a 2D Matrix](./search_sorted_2d.py)
 5. [875. Koko Eating Bananas](./koko_eating_bananas.py)
+
+## Resources
+1. [Greg Hogg - Binary Search](https://www.youtube.com/playlist?list=PLKYEe2WisBTH7I9sCPjSZCs-iBAH4ybmS)
+2. [Neetcode - Binary Search](https://www.youtube.com/playlist?list=PLot-Xpze53leNZQd0iINpD-MAhMOMzWvO)

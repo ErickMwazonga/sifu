@@ -17,6 +17,7 @@ Input: nums = [4, 5, 6, 7, 0, 1, 2], target = 3
 Output: -1
 '''
 
+from typing import List
 
 class Solution:
     '''[INTUITION]: https://www.youtube.com/watch?v=4Ik1nCLjwcI&list=PLKYEe2WisBTH7I9sCPjSZCs-iBAH4ybmS&index=6'''
@@ -62,3 +63,44 @@ class Solution:
                 high = mid
 
         return low
+
+
+class SolutionV2:
+    '''
+    INSPIRATION: https://guides.codepath.com/compsci/Search-in-Rotated-Sorted-Array
+    '''
+    def search(self, nums: List[int], target: int) -> int:
+        minIndex = self.findMinIndex(nums)
+
+        # Run binary search for target in left and right half.
+        checkLeftHalf = self.binarySearch(nums, 0, minIndex, target)
+        checkRightHalf = self.binarySearch(nums, minIndex, len(nums) - 1, target)
+
+        # Return the search results. The max function checks between a positive value(found index) vs negative value(not found index).
+        return max(checkLeftHalf, checkRightHalf)
+
+    def binarySearch(self, nums: List[int], left: int, right: int, target: int) -> int:
+        l, r = left, right
+
+        while l <= r:
+            mid = (l+r) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                l = mid + 1
+            else:
+                r = mid - 1
+            
+        return -1 
+
+    def findMinIndex(self, nums: List[int]) -> int:
+        l, r = 0, len(nums) - 1
+
+        while l < r:
+            mid = (l + r) // 2
+            if nums[mid] > nums[r]:
+                l = mid + 1
+            else:
+                r = mid
+        
+        return r
