@@ -13,8 +13,9 @@
 3. [35. Search Insert Position](./search_insert_position.py)
 4. [74. Search a 2D Matrix](./search_sorted_2d.py)
 5. [162. Find Peak Element](./find_peak_element.py)
-6. [34. Find First and Last Position of Element in Sorted Array](./first_and_last_index.py)
-7. [875. Koko Eating Bananas](./koko_eating_bananas.py)
+6. [852. Peak Index in a Mountain Array](./peak_index_mountain.py)
+7. [34. Find First and Last Position of Element in Sorted Array](./first_and_last_index.py)
+8. [875. Koko Eating Bananas](./koko_eating_bananas.py)
 
 ### Hard
 1. [4. Median of Two Sorted Arrays](./median_of_2_sorted_arrays.py)
