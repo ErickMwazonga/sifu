@@ -74,7 +74,7 @@ class Solution_V2:
         return -1
 
     def build_lps(self, pattern):
-        lps = [0] * len()
+        lps = [0] * len(pattern)
         prev_lps, i = 0, 1
 
         while i < len(pattern):

@@ -23,7 +23,7 @@ def containsDuplicate(nums: list[int]) -> bool:
         return False
 
     n_unique_nums = len(set(nums))  # Pigeons
-    n = len(nums)        # Pigeonholes
+    n = len(nums) # Pigeonholes
 
     return n_unique_nums // n == 0
 

@@ -28,8 +28,7 @@ def intersection(array1, array2):
         if array1[i] == array2[j]:
             if i == 0 or array1[i] != array1[i - 1]:
                 intersection.append(array1[i])
-                i += 1
-                j += 1
+                i, j = i + 1, j + 1
         elif array1[i] > array2[j]:
             j += 1
         else:

@@ -13,7 +13,7 @@ Examples
 
 from collections import Counter
 
-def majorityElement(nums: list[int]) -> list[int]:
+def majority_element(nums: list[int]) -> list[int]:
     counts = Counter(nums)
     threshold = len(nums) // 3
     majority_elements = []
@@ -27,10 +27,10 @@ def majorityElement(nums: list[int]) -> list[int]:
 
 
 class Solution:
-    def majorityElement(self, nums: list[int]) -> list[int]:
+    def majority_element(self, nums: list[int]) -> list[int]:
         candidate1, candidate2 = None, None
         count1, count2 = 0, 0
-        
+
         # First pass to find potential candidates
         for num in nums:
             if num == candidate1:
@@ -45,7 +45,7 @@ class Solution:
                 count2 = 1
             else:
                 count1, count2 = count1 - 1, count2 - 1
-        
+
         # Second pass to verify candidates
         count1, count2 = 0, 0
         for num in nums:
@@ -53,14 +53,14 @@ class Solution:
                 count1 += 1
             elif num == candidate2:
                 count2 += 1
-        
+
         threshold = len(nums) // 3
         result = []
         if count1 > threshold:
             result.append(candidate1)
         if count2 > threshold:
             result.append(candidate2)
-        
+
         return result
 
 
@@ -68,7 +68,7 @@ class Solution_V2:
 
     def majority_element(self, nums: list[int]) -> list[int]:
         candidate1, candidate2 = self.get_candidates(nums)
-    
+
         counter1, counter2 = 0, 0
         for num in nums:
             if num == candidate1:
