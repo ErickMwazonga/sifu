@@ -25,31 +25,31 @@ _Examples_<br/>
 
 ## Data Structures
 
-1. [ ] Arrays
-2. [ ] Matrix
-3. [ ] Strings
-4. [ ] Hashmaps + Hashsets
-5. [ ] Stacks
-6. [ ] Queues
-7. [ ] LinkedList
-8. [ ] Heaps
-9. [ ] Trees
-10. [ ] Trie
-11. [ ] Graphs
+1. [x] Arrays
+2. [x] Matrix
+3. [x] Strings
+4. [x] Hashmaps + Hashsets
+5. [x] Stacks
+6. [x] Queues
+7. [x] LinkedList
+8. [x] Heaps
+9. [x] Trees
+10. [x] Trie
+11. [x] Graphs
 
 ## Algorithms
 
-1. [ ] General Algorithms
-2. [ ] Sorting
-3. [ ] Binary Search
-4. [ ] Numbers n Math
-5. [ ] Two Pointers
-6. [ ] Slinding Window
-7. [ ] Recursion
-8. [ ] DFS
-9. [ ] Dynamic Programming
-10. [ ] Backtracking
-11. [ ] String Matching - KMP
+1. [x] General Algorithms
+2. [x] Sorting
+3. [x] Binary Search
+4. [x] Numbers n Math
+5. [x] Two Pointers
+6. [x] Slinding Window
+7. [x] Recursion
+8. [x] DFS
+9. [x] Dynamic Programming
+10. [x] Backtracking
+11. [x] String Matching - KMP
 
 ## Preparation
 
@@ -108,6 +108,12 @@ _Examples_<br/>
 ## System Desgn Others
 
 1. https://systeminterview.com/design-youtube.php
+
+
+## Software Papers
+
+1. https://github.com/facundoolano/software-papers
+2. https://interviewready.io/blog/white-papers-worth-reading-for-software-engineers
 
 ## Groupings
 

@@ -35,9 +35,3 @@ class Stack:
 
     def show(self):
         return self.items
-
-
-# s = Stack()
-# s.append('1')
-# s.append('2')
-# print(s.show())

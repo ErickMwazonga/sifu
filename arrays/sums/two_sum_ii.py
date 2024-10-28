@@ -2,8 +2,8 @@
 167. Two Sum II - Input Array Is Sorted
 Link: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 
-Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, 
-find two numbers such that they add up to a specific target number. Let these two numbers be 
+Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order,
+find two numbers such that they add up to a specific target number. Let these two numbers be
 numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
 
 Return the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.
@@ -47,8 +47,6 @@ def two_sum_v2(nums: list[int], target: int) -> list[int] | None:
         else:
             right -= 1
 
-print(two_sum_v2([2, 7, 11, 15], 9))
-print(two_sum_v2([2, 3, 4], 6))
 
 assert two_sum_v2([2, 7, 11, 15], 9) == [1, 2]
 assert two_sum_v2([2, 3, 4], 6) == [1, 3]

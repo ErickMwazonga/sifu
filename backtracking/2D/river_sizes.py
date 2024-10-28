@@ -29,7 +29,7 @@ class Solution:
     def river_sizes(self, matrix):
         output = []
 
-        n, m = len(matrix), len(matrix[i])
+        n, m = len(matrix), len(matrix[0])
         for i in range(n):
             for j in range(m):
                 if matrix[i][j] == 1:

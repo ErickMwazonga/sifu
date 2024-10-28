@@ -15,9 +15,8 @@ Each temperature will be an integer in the range [30, 100].
 '''
 
 
-def dailyTemperatures(temperatures):
-    n = len(temperatures)
-    res = [0] * n
+def dailyTemperatures(temperatures: list[int]) -> list[int]:
+    res = [0] * len(temperatures)
     stack = []  # (tem, index)
 
     for i, t in enumerate(temperatures):
@@ -26,5 +25,21 @@ def dailyTemperatures(temperatures):
             res[stack_idx] = i - stack_idx
 
         stack.append((t, i))
+
+    return res
+
+def dailyTemperatures_v2(temperatures: list[int]) -> list[int]:
+    res = [0] * len(temperatures)
+    stack = []
+
+    for i, temp in enumerate(temperatures):
+        if not stack:
+            stack.append([i, temp])
+        else:
+            while stack and temp > stack[-1][1]:
+                last_wet_idx, last_wet_temp = stack.pop()
+                res[last_wet_idx] = i - last_wet_idx
+
+            stack.append([i, temp])
 
     return res

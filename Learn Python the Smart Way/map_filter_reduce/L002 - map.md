@@ -18,7 +18,7 @@ for num in nums:
     squared.append(num**2)
 
 # List comprehension
-squared = [num**2 for num in nums]
+squared = [num ** 2 for num in nums]
 
 # map()
 squared = map(lambda num: num**2, nums)

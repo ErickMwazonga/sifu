@@ -95,35 +95,3 @@ assert is_valid('(*))') == True
 assert is_valid('(*)))') == False
 assert is_valid('(*()') == True
 assert is_valid(')(') == False
-
-
-def checkValidString(self, s):
-    '''
-    :type s: str
-    :rtype: bool
-    '''
-    # stack 1, try to test all the ( and * can balance all the )
-    S = []
-    # go through s from left to right
-    for x in s:
-        if x == '(' or x == '*':
-            S.append(x)
-        else:
-            if len(S) > 0:
-                S.pop()
-            else:
-                return False        # this means left ( is not enough
-
-    # stack 2, try to test all the ) and * can balance all the (
-    S = []
-    # go through s from right to left
-    for x in s[::-1]:
-        if x == ')' or x == '*':
-            S.append(x)
-        else:
-            if len(S) > 0:
-                S.pop()
-            else:
-                return False        # this means right ) is not enough
-
-    return True

@@ -15,8 +15,8 @@ Replace the color of all of the aforementioned pixels with color.
 Return the modified image after performing the flood fill.
 
 Example 1:
-Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, color = 2
-Output: [[2,2,2],[2,2,0],[2,0,1]]
+Input: image = [[1,1,1], [1,1,0], [1,0,1]], sr = 1, sc = 1, color = 2
+Output: [[2,2,2], [2,2,0], [2,0,1]]
 Explanation: From the center of the image with position (sr, sc) = (1, 1) (i.e., the red pixel),
 all pixels connected by a path of the same color as the starting pixel (i.e., the blue pixels) are colored with the new color.
 Note the bottom corner is not colored 2, because it is not 4-directionally connected to the starting pixel.
@@ -27,29 +27,60 @@ Output: [[0,0,0], [0,0,0]]
 Explanation: The starting pixel is already colored 0, so no changes are made to the image.
 '''
 
-class Solution:
+from collections import deque
 
-    def floodFill(self, image, sr: int, sc: int, color: int):
-        start_color = image[sr][sc]
-        self.dfs(image, sr, sc, start_color, color)
+
+class SOLUTION_DFS:
+
+    def floodFill(self, image: list[list[int]], sr: int, sc: int, color: int) -> list[list[int]]:
+        old_color, new_color = image[sr][sc], color
+        if old_color == new_color:
+            return image
+
+        self.dfs(image, sr, sc, old_color, new_color)
         return image
 
-    def dfs(self, image, sr, sc, start_color, new_color):
-        if not self.in_bounds(image, sr, sc):
+    def dfs(self, grid, i, j, old_color, new_color):
+        n, m = len(grid), len(grid[0])
+
+        inbound = (0 <= i < n) and (0 <= j < m)
+        # if not inbound or image[sr][sc] != old_color or image[sr][sc] == new_color:
+        if not inbound or grid[i][j] != old_color:
             return
 
-        if image[sr][sc] == new_color: return
-        if image[sr][sc] != start_color: return
+        grid[i][j] = new_color
 
-        image[sr][sc] = new_color
+        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        for dx, dy in directions:
+            self.dfs(grid, i + dx, j + dy, old_color, new_color)
 
-        for dx, dy in self.directions:
-            self.dfs(image, sr + dx, sc + dy, start_color, new_color)
 
-    @property
-    def directions(self):
-        return [(0, -1), (0, 1), (-1, 0), (1, 0)]
+class SOLUTION_BFS:
+    def floodFill(self, image: list[list[int]], sr: int, sc: int, color: int) -> list[list[int]]:
+        old_color, new_color = image[sr][sc], color
+        if old_color == new_color:
+            return image
 
-    def in_bounds(self, image, row, col):
+        self.bfs(image, sr, sc, old_color, new_color)
+        return image
+
+    def bfs(self, image, row, col, old_color, new_color):
         n, m = len(image), len(image[0])
-        return (0 <= row < n) and (0 <= col < m)
+
+        queue = deque([(row, col)])
+
+        while queue:
+            # Get next neighbour
+            i, j = queue.popleft()
+
+            # Change the color of the current pixel
+            image[i][j] = new_color
+
+            # Check the four neighbors
+            directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+            for dx, dy in directions:
+                ni, nj = i + dx, j + dy
+
+                inbound = (0 <= i < n) and (0 <= j < m)
+                if inbound and image[ni][nj] == old_color:
+                    queue.append((ni, nj))
