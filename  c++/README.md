@@ -107,10 +107,10 @@ int bananas = fruitCount.at("banana");    // throws if key not found
 bool hasMango = fruitCount.find("mango") != fruitCount.end();
 bool hasMango = fruitCount.count("mango") > 0;
 bool hasMango = fruitCount.contains("mango"); // C++20 
-```
 
 // remove a key-value pair
 fruitCount.erase("banana");
+```
 
 ## Tricks
 ### ✅ Inline Variable Declaration
@@ -136,4 +136,23 @@ condition ? value_if_true : value_if_false;
 ```cpp
 int a = 10, b = 20;
 int maxVal = (a > b) ? a : b;  // maxVal = 20
+```
+
+### ✅ Structured Bindings (C++17)
+Unpack tuples or pairs into variables cleanly.
+
+#### 🔹 Examples
+```cpp
+pair<int, string> person = {"Erick", 12};
+auto [name, age] = person;
+```
+
+### ✅ 7. Swap without temp variable
+```cpp
+a ^= b;
+b ^= a;
+a ^= b;
+
+// short-hand
+std::swap(a, b);
 ```
