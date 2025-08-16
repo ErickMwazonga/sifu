@@ -23,22 +23,6 @@ Explanation: The subarrays that sum to 7 are:
 '''
 
 
-# brute force solution -> time: O(n^2) space : O(1)
-def subarray_sum_v0(nums, k):
-    count, n = 0, len(nums)
-
-    for i in range(n):
-        curr_sum = 0
-
-        for j in range(i, n):
-            curr_sum += nums[j]
-
-            if curr_sum == k:
-                count += 1
-
-    return count
-
-
 def subarray_sum(nums, k):
     # first we start from a sum which is equal to 0, and the count of it is 1.
     # this is the input list ex :   [1 4 9 -5 8] -> the sum array (s) ex : [0  1  5  13  8  16 ]

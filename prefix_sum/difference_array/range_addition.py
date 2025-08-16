@@ -35,7 +35,7 @@ def getModifiedArray(length, updates):
         if end + 1 < length:
             diff[end + 1] -= inc
 
-    # Ccmpute final array with running sum
+    # Compute final array with running sum
     result = [0] * length
     result[0] = diff[0]
     for i in range(1, length):
@@ -50,4 +50,5 @@ def getModifiedArrayV2(length: int,  updates: list[list[int]]) -> list[int]:
         prefix[l] += c
         if r + 1 < length:
             prefix[r + 1] -= c
+            
     return list(accumulate(prefix))
