@@ -112,6 +112,29 @@ bool hasMango = fruitCount.contains("mango"); // C++20
 fruitCount.erase("banana");
 ```
 
+## Classes
+
+#### 🔹 Examples
+```cpp
+class NumArray {
+private:
+    vector<int> prefixSums;
+
+public:
+    NumArray(vector<int>& nums) {
+        // this->prefixSums.resize(nums.size() + 1, 0);
+        prefixSums.resize(nums.size() + 1, 0);
+        for (int i = 0; i < nums.size(); ++i) {
+            this->prefixSums[i + 1] = this->prefixSums[i] + nums[i];
+        }
+    }
+    
+    int sumRange(int left, int right) {
+        return this->prefixSums[right + 1] - this->prefixSums[left];
+    }
+};
+```
+
 ## Tricks
 ### ✅ Inline Variable Declaration
 Declare and initialize variables on the same line.

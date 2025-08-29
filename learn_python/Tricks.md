@@ -17,7 +17,7 @@
 `bool(a) + bool(b) == 1`
 
 
-## `isdigit()` doesn't check for negative numbers
+### `isdigit()` doesn't check for negative numbers
 ```python
 >>> '2'.isdigit() # True
 >>> '-2'.isdigit() # False

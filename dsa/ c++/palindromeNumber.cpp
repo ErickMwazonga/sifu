@@ -8,7 +8,7 @@ public:
         }
 
         int original = x;
-        long long reversedNum = 0;
+        long reversedNum = 0;
         while (x > 0) {
             int rem = x % 10;
             reversedNum = reversedNum * 10 + rem;

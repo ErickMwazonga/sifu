@@ -105,7 +105,7 @@ _Examples_<br/>
 10. LLD - https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-car-rental-system.md
 11. https://www.enjoyalgorithms.com/blog
 
-## System Desgn Others
+## System Design Others
 
 1. https://systeminterview.com/design-youtube.php
 
@@ -145,6 +145,7 @@ _Examples_<br/>
 
 1. [Structy](https://structy.net/)
 2. [AlgoExpert](https://www.algoexpert.io/product)
+3. [HelloInterview](https://www.hellointerview.com)
 
 ## Youtube Channels
 
@@ -162,6 +163,9 @@ _Examples_<br/>
 6. https://baihuqian.github.io/2018-09-08-nth-digit/
 7. https://github.com/yangshun/tech-interview-handbook/blob/master/experimental/design/README.md
 8. https://serhatgiydiren.github.io/
+
+## Time complexities
+1. [Analysis of Recursion](https://www.youtube.com/watch?v=npPsc8vTT7Y&list=PLQfaHkBRINszD1kQmn1YM2RPjenZbmVDM)
 
 ## FAANG Questions
 
@@ -183,3 +187,11 @@ _Examples_<br/>
 ## ENGINERRING MANAGEMENT
 
 1. https://github.com/ryanburgess/engineer-manager
+
+---
+
+## TODO
+1. Difference Array
+- https://www.geeksforgeeks.org/dsa/difference-array-range-update-query-o1/
+- https://medium.com/@ishankkatiyar162/understanding-difference-array-the-underrated-constant-time-range-update-algorithm-part-1-e432ada7f1f5
+- https://medium.com/@nishant_salhotra/programming-techniques-the-difference-array-5cb22aeedf84

@@ -94,6 +94,8 @@ def three_sum_v2(nums: list[int]) -> list[list[int]]:
 
             if curr_sum == rem_target:
                 res.append([nums[i], nums[low], nums[high]])
+
+                # skip duplicates
                 while low < high and nums[low] == nums[low + 1]:
                     low += 1
                 while low < high and nums[high] == nums[high - 1]:
