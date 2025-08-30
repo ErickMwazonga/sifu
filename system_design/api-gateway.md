@@ -6,12 +6,6 @@ An API Gateway acts as a reverse proxy between clients (e.g., web browsers, mobi
 
 Imagine it as a postman who delivers mail to the correct house, checks the sender's identity, manages delivery schedules, and even translates letters when needed.
 
-## Examples
-1. AWS API Gateway
-2. Apigee (Google Cloud)
-3. Microsoft Azure API Management
-4. Kong - An open-source API Gateway and platform known for its flexibility and plugin-based architecture.
-
 ## Core Features of an API Gateway
 
 ### 1. Authentication and Authorization
@@ -172,6 +166,34 @@ An e-commerce API at /api/orders/create requires a JSON payload with mandatory f
 5. **Enhances Scalability**:  
    Service orchestration and protocol translation enable seamless integration of diverse services, supporting system growth.
 
-## Articles
+## Examples
+1. AWS API Gateway
+2. Apigee (Google Cloud)
+3. Microsoft Azure API Management
+4. Kong - An open-source API Gateway and platform known for its flexibility and plugin-based architecture.
+
+## Considerations / Limitations
+1. Throttling & Limits
+
+   By default, API Gateway applies 10,000 requests per second (RPS) soft limit per account per region.
+
+   Burst capacity (concurrent requests) is also limited.
+
+   - **Mitigation**: Request limit increases, implement client-side retries with backoff, and use SQS/Kinesis to smooth spikes.
+  
+2. Payload & Protocol Limits
+
+   Max payload size: 10 MB for REST APIs and HTTP APIs (WebSocket API = 128 KB).
+
+   Doesn’t support streaming large files directly.
+
+   - **Mitigation**: For large file uploads/downloads, use S3 pre-signed URLs instead of going through API Gateway.
+
+## Questions
+1. API Gateway vs LB - Which comes first?
+   - https://medium.com/@sandeepsharmaster/architecture-essentials-pairing-api-gateways-with-load-balancers-325e80ca38e5
+   - https://stackoverflow.com/questions/61174839/load-balancer-and-api-gateway-confusion
+
+## References
 1. https://medium.com/@joudwawad/aws-api-gateway-deep-dive-rest-apis-5ae16a326b3a
 2. https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway
