@@ -41,6 +41,7 @@ Caching is the process of storing copies of data in a high-speed storage layer (
    Balancing incoming network traffic and requests across multiple servers and potentially caching these requests.
 
 4. Database Query Caching
+    
     Database query caching saves the result set of a query in the cache. When the same query is executed, the DBMS first checks the cache. If found, the results are returned from the cache, skipping the actual database hit.
 
     Database-specific solutions exist, like MySQL Query Cache, or you can use an ORM that includes caching, like Hibernate for Java.

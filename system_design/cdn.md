@@ -33,6 +33,29 @@ When a user requests your website, the CDN routes them to the nearest server for
 4. Fastly: A news site caches articles and purges caches instantly, maintaining sub-second load times.
 5. Microsoft Azure CDN: A corporate site delivers brochures globally, reducing load times by 60% with compression.
 
+## Considerations / Limitations
+1. Cache Invalidation / Stale Content
+   
+   CDNs cache content at edge locations to reduce origin load and latency. Updating content on the origin doesn’t automatically update the cache. Users may see stale data.
+
+   - **Mitigation**:
+      - Use short cache TTLs for dynamic content.
+      - Purge/invalidate cache when content changes.
+  
+2. Dynamic Content / Personalization
+   
+   CDNs work best with static content (images, JS, CSS, videos). For dynamic, user-specific content, caching is tricky -- Personalized pages may bypass the CDN → higher origin load.
+
+3. Consistency & Cache Propagation
+
+   Global CDNs may have multiple edge nodes. Propagating updates to all nodes may take seconds to minutes, depending on provider.
+   - **Mitigation**: Plan cache invalidation carefully and design for eventual consistency.
+
+4. Request Routing & Latency
+
+   CDNs route requests to the nearest edge location. In some cases, the nearest edge may not be the fastest path due to network issues. 
+   
+   Certain regions may have fewer PoPs, causing higher latency.
 
 ## References
 1. https://www.akamai.com/glossary/what-is-a-cdn
