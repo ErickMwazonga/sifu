@@ -18,9 +18,13 @@
 ### Versioning
 APIs evolve over time, and you need a strategy for handling changes without breaking existing clients. This is particularly important for public APIs where you can't control when clients update their code.
 
-The most common approach is URL versioning, where you include the version number in the path: /v1/events or /v2/events. This is explicit and easy to understand. Clients know exactly which version they're using just by looking at the URL. It's also simple to implement since you can route different versions to different code paths.
+1. **URI Versioning**: Include the version in the URL (e.g., /v1/users).
 
-- **Header versioning** puts the version in an HTTP header instead: Accept-Version: v2 or API-Version: 2. This keeps URLs cleaner and follows HTTP standards better, but it's less obvious to developers and harder to test in browsers.
+2. **Header Versioning**: Specify the version in request headers (e.g., Accept: application/vnd.api.v1+json).
+
+3. **Query Parameter Versioning**: Use a query parameter (e.g., /users?version=1).
+
+> Importance: Versioning prevents breaking changes for existing clients, supports gradual migration, and maintains a good developer experience. For example, when deprecating an API version, I provided a six-month transition period with clear documentation and migration guides to minimize disruption.
 
 ### Rate Limiting and Throttling
 Rate limiting prevents abuse by restricting how many requests a client can make in a given time period. This protects your system from both malicious attacks and accidental overuse.

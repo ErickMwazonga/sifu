@@ -13,7 +13,7 @@ Object Storage is a special type of storage designed to handle massive amounts o
 
 2. **Scalability**: Hosted blob storage solutions like AWS S3 can be considered infinitely scalable. They can store an unlimited amount of data and can handle an unlimited number of requests (obviously within the limits of your account). 
 
-3. **Cost**: Blob storage services are designed to be cost effective. They are much cheaper than storing large blobs of data in a traditional database. For example, AWS S3 charges $0.023 per GB per month for the first 50 TB of storage. This is much cheaper than storing the same data in a database like DynamoDB, which charges $1.25 per GB per month for the first 10 TB of storage.
+3. **Cost**: Blob storage services are designed to be cost effective. They are much cheaper than storing large blobs of data in a traditional database. 
    
 4. Storage Classes / Tiers
 5. Replication - Cross-region or cross-zone replication which is useful for disaster recovery and geo-distribution.
@@ -26,7 +26,7 @@ Object Storage is a special type of storage designed to handle massive amounts o
 
    With bucket versioning, we can store multiple versions of the same object in a bucket, and restore them - this prevents accidental deletes or overwrites. To some extent, versioning also lets us work around the immutability of the write-ahead log.
    
-9. Chunking / Multipart uploads
+9.  Chunking / Multipart uploads
    
    With multipart uploads, we can upload objects in smaller parts, either sequentially or in parallel, and after all parts are uploaded, we reassemble the object from its parts. This is useful for large uploads (e.g. videos) that may take long and so are at risk of failing mid-upload. On upload failure, the client resumes from the last successfully uploaded part, instead of having to start over from the beginning. What could this look like?
 
@@ -60,7 +60,7 @@ Pre-signed URLs are commonly used when you want temporary, controlled access to 
 ### How it works
 1. Upload
    - When clients want to upload a file, they request a presigned URL from the server.
-   - he server returns a presigned URL to the client, recording it in the database.
+   - The server returns a presigned URL to the client, recording it in the database.
    - The client uploads the file to the presigned URL.
    - The blob storage triggers a notification to the server that the upload is complete and the status is updated.
 
@@ -98,6 +98,41 @@ Pre-signed URLs are commonly used when you want temporary, controlled access to 
 
     - **Mitigation:** Handle retries gracefully by requesting a new pre-signed URL.
 
+## Multi-part upload with S3
+
+1. Initiate Multipart Upload
+    
+    - Client calls `CreateMultipartUpload` with bucket, file key, and optional metadata.
+    - S3 returns an `UploadId` to identify this upload session.
+
+2. Split File into Parts
+
+    - Client divides the file into chunks (typically 5 MB–5 GB each).
+    - Each chunk is assigned a part number (starting at 1).
+
+3. Upload Each Part
+
+    - Client uploads each chunk via `UploadPart` with `UploadId` and `PartNumber`.
+    - S3 returns an `ETag` for each uploaded part.
+    - Client tracks `PartNumber` → `ETag` mapping.
+    - Failed parts can be retried individually without restarting the whole upload.
+
+4. Complete Multipart Upload
+
+    - Client calls `CompleteMultipartUpload` with all part numbers and `ETags`.
+    - S3 validates the parts and assembles the final object.
+
+5. Verify Success
+
+    - Client confirms upload by:
+        - Checking S3’s response from `CompleteMultipartUpload` (includes object ETag and location), or
+        - Using HeadObject to ensure object exists, size matches, and optionally verifying checksum.
+
+6. Abort Multipart Upload (Optional)
+    - If the upload is canceled or fails irrecoverably, client calls AbortMultipartUpload.
+
+    - S3 deletes all uploaded parts associated with the UploadId.
+
 ## Examples
 1. Amazon S3 - S3 is a Simple Storage Service that is used for storing large files and retrieving them quickly.
 
@@ -108,3 +143,4 @@ Pre-signed URLs are commonly used when you want temporary, controlled access to 
 ## References
 1. https://medium.com/@tahir.rauf/system-design-dropbox-35cc80ff3e79
 2. https://ivov.dev/notes/s3-object-storage
+3. https://fourtheorem.com/the-illustrated-guide-to-s3-pre-signed-urls/
